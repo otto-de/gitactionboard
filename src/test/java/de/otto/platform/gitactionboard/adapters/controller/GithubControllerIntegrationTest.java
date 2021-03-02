@@ -1,0 +1,289 @@
+package de.otto.platform.gitactionboard.adapters.controller;
+
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.verify;
+import static de.otto.platform.gitactionboard.TestUtil.readFile;
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+import static org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN;
+import static org.springframework.http.HttpHeaders.AUTHORIZATION;
+import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.matching.EqualToPattern;
+import de.otto.platform.gitactionboard.IntegrationTest;
+import de.otto.platform.gitactionboard.WireMockExtension;
+import lombok.SneakyThrows;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
+
+@DirtiesContext
+@IntegrationTest
+class GithubControllerIntegrationTest {
+  private static final String API_BASE_PATH = "/repos/johndoe/hello-world";
+
+  private static final String WORKFLOWS_URL = String.format("%s/actions/workflows", API_BASE_PATH);
+  private static final String RUNS_URL_1 =
+      String.format("%s/actions/workflows/2151835/runs?per_page=2", API_BASE_PATH);
+  private static final String RUN_URL_2 =
+      String.format("%s/actions/workflows/2057656/runs?per_page=2", API_BASE_PATH);
+  private static final String JOBS_URL_1 =
+      String.format("%s/actions/runs/%s/jobs", API_BASE_PATH, 260614021);
+  private static final String JOBS_URL_2 =
+      String.format("%s/actions/runs/%s/jobs", API_BASE_PATH, 260614024);
+
+  private void stubApiRequests() {
+    stubFor(
+        WireMock.get(WORKFLOWS_URL)
+            .willReturn(
+                aResponse()
+                    .withStatus(SC_OK)
+                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+                    .withBody(readFile("testData/workflows.json"))));
+
+    stubFor(
+        WireMock.get(RUNS_URL_1)
+            .willReturn(
+                aResponse()
+                    .withStatus(SC_OK)
+                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+                    .withBody(readFile("testData/workflowRuns2151835.json"))));
+
+    stubFor(
+        WireMock.get(RUN_URL_2)
+            .willReturn(
+                aResponse()
+                    .withStatus(SC_OK)
+                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+                    .withBody(readFile("testData/workflowRuns2057656.json"))));
+
+    stubFor(
+        WireMock.get(JOBS_URL_1)
+            .willReturn(
+                aResponse()
+                    .withStatus(SC_OK)
+                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+                    .withBody(readFile("testData/jobsDetails260614021.json"))));
+
+    stubFor(
+        WireMock.get(JOBS_URL_2)
+            .willReturn(
+                aResponse()
+                    .withStatus(SC_OK)
+                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+                    .withBody(readFile("testData/jobsDetails260614024.json"))));
+  }
+
+  @BeforeEach
+  void setUp() {
+    WireMock.reset();
+  }
+
+  @AfterEach
+  void tearDown() {
+    WireMock.reset();
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @ExtendWith(WireMockExtension.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {
+        "spring.cache.cache-names=cctray,cctrayXml,jobDetails",
+        "spring.cache.type=caffeine"
+      })
+  @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+  class WithCacheCctrayXml {
+    @Autowired private MockMvc mockMvc;
+
+    @BeforeEach
+    void setUp() {
+      stubApiRequests();
+    }
+
+    @Test
+    @Order(value = 0)
+    @SneakyThrows
+    void shouldFetchCctrayXml() {
+      final ResultMatcher resultMatcher = content().xml(readFile("testData/cctray.xml"));
+
+      invokeGetApiAndValidate(
+          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+
+      invokeGetApiAndValidate(
+          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+    }
+
+    @Test
+    @Order(value = 1)
+    @SneakyThrows
+    void shouldFetchCctrayJsonWithoutCallingApis() {
+      final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
+
+      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+
+      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @ExtendWith(WireMockExtension.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {
+        "spring.cache.cache-names=cctray,cctrayXml,jobDetails",
+        "spring.cache.type=caffeine"
+      })
+  @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+  class WithCacheCctrayJson {
+    @Autowired private MockMvc mockMvc;
+
+    @BeforeEach
+    void setUp() {
+      stubApiRequests();
+    }
+
+    @Test
+    @Order(value = 1)
+    @SneakyThrows
+    void shouldFetchCctrayXmlWithoutCallingApis() {
+      final ResultMatcher resultMatcher = content().xml(readFile("testData/cctray.xml"));
+
+      invokeGetApiAndValidate(
+          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+
+      invokeGetApiAndValidate(
+          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
+    }
+
+    @Test
+    @Order(value = 0)
+    @SneakyThrows
+    void shouldFetchCctrayJson() {
+      final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
+
+      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+
+      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @ExtendWith(WireMockExtension.class)
+  @SpringBootTest(webEnvironment = RANDOM_PORT)
+  class WithoutCache {
+
+    @Autowired private MockMvc mockMvc;
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCctrayXml() {
+      stubApiRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          "/v1/cctray.xml",
+          "application/xml;charset=UTF-8",
+          content().xml(readFile("testData/cctray.xml")));
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCctrayJson() {
+      stubApiRequests();
+
+      final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
+
+      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldNotThrowErrorIfWorkflowsApiCallFails() {
+      stubFor(
+          WireMock.get(WORKFLOWS_URL)
+              .willReturn(
+                  aResponse()
+                      .withStatus(SC_NOT_FOUND)
+                      .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)));
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          "/v1/cctray.xml",
+          "application/xml;charset=UTF-8",
+          content().xml("<Projects></Projects>"));
+    }
+  }
+
+  @SneakyThrows
+  private void invokeGetApiAndValidate(
+      MockMvc mockMvc, String endPoint, String expectedContentType, ResultMatcher resultMatcher) {
+    mockMvc
+        .perform(get(endPoint))
+        .andExpect(status().isOk())
+        .andExpect(header().stringValues(ACCESS_CONTROL_ALLOW_ORIGIN, "*"))
+        .andExpect(header().stringValues(CONTENT_TYPE, expectedContentType))
+        .andExpect(resultMatcher);
+  }
+}

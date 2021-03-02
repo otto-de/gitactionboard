@@ -1,0 +1,70 @@
+name: checks
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * 1-5'
+env:
+  SERVICE_NAME: gitactionboard
+
+jobs:
+  talisman-checks:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install talisman and add to PATH
+        run: |
+          sh bin/install-talisman.sh
+          echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Talisman Verify
+        run: ./run.sh talisman-verify
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+  dependency-checks:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v2
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install jenv
+        run: |
+          git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+          echo "$HOME/.jenv/bin" >> $GITHUB_PATH
+      - name: Configure jenv
+        run: |
+          jenv init -
+          jenv add /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+        shell: bash
+      - name: Cache nvd nist data
+        uses: actions/cache@v2
+        id: nvd-nist-cache
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/.nvd-nist-cache
+          key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-nvd-nist-cache
+      - name: Cache gradle wrapper and jars
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      - name: Dependency Check
+        run: ./run.sh check
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Upload dependency check report to artifacts
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: dependency-check-report.html
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/build/reports/dependency-check-report.html
