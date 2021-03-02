@@ -1,10 +1,14 @@
 fileignoreconfig:
 - filename: .github/workflows/build.yml
-  checksum: 03e1dccd91c9596c0df4de90bdb8ee97a4289f77f1b24cebca49eb65638e593c
+  checksum: 18555aa1347a792a1c5bced36258f06e291c5a7d54480d41eb8b4cb85e526505
 - filename: .github/workflows/checks.yml
   checksum: 6b0dd6679a6b63c068877096040828c8a0307cbc3e6d2309d4138c42741c7c5e
 - filename: bin/install-talisman.sh
   checksum: 6cb43d69c3c23bfe775580307cf2fac9a8cabb6fac57bc03bb8c0a2d84f0a5a5
+- filename: doc/sample1.png
+  checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
+- filename: doc/sample2.png
+  checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
 - filename: src/main/resources/public/scripts/index.js
   checksum: e27dea6fcdbeab5c345607ba102e0db87c2796986d6d810bc3bf206bff7bc4a8
 - filename: src/test/resources/testData/jobsDetails260614021.json
@@ -15,7 +19,3 @@ fileignoreconfig:
   checksum: 183fb88166d0048221f1fa7878aaaf0445bde2f10f5907c304c3d2b19ff75b09
 - filename: src/test/resources/testData/workflowRuns2151835.json
   checksum: aef3d7757b0045ec03ab359d88764458b1b596124d280139c1018732afd8376e
-- filename: doc/sample1.png
-  checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
-- filename: doc/sample2.png
-  checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
