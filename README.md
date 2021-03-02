@@ -55,6 +55,12 @@ Note: To create a personal access token follow the instructions present [here](h
 
 - `http://localhost:<host machine port>`
 
+![UI dashboard sample 1](doc/sample1.png)
+
+![UI dashboard sample 2](doc/sample2.png)
+
+![UI dashboard sample 3](doc/sample3.png)
+
 ##### UI Dashboard Configurations
 
 You can use the following query params to configure UI dashboard

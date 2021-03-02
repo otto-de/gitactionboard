@@ -15,3 +15,7 @@ fileignoreconfig:
   checksum: 183fb88166d0048221f1fa7878aaaf0445bde2f10f5907c304c3d2b19ff75b09
 - filename: src/test/resources/testData/workflowRuns2151835.json
   checksum: aef3d7757b0045ec03ab359d88764458b1b596124d280139c1018732afd8376e
+- filename: doc/sample1.png
+  checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
+- filename: doc/sample2.png
+  checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
