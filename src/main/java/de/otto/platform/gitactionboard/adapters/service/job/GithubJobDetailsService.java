@@ -1,5 +1,8 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
+import static de.otto.platform.gitactionboard.adapters.service.job.RunStatus.COMPLETED;
+
+import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.domain.JobDetails;
@@ -8,6 +11,7 @@ import de.otto.platform.gitactionboard.domain.Workflow;
 import de.otto.platform.gitactionboard.domain.service.JobDetailsService;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
@@ -22,6 +26,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class GithubJobDetailsService implements JobDetailsService {
   private final RestTemplate restTemplate;
+  private final Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
 
   @Override
   @Async
@@ -61,7 +66,7 @@ public class GithubJobDetailsService implements JobDetailsService {
       WorkflowRunDetails currentWorkflowRun,
       WorkflowRunDetails previousWorkflowRun) {
 
-    if (RunStatus.COMPLETED.equals(currentWorkflowRun.getStatus())) {
+    if (COMPLETED.equals(currentWorkflowRun.getStatus())) {
       return currentJobs;
     }
     return fetchPreviousJobs(workflow, currentJobs, previousWorkflowRun);
@@ -81,7 +86,7 @@ public class GithubJobDetailsService implements JobDetailsService {
         .map(
             workflowsJobDetails ->
                 workflowsJobDetails.toBuilder()
-                    .status(RunStatus.COMPLETED)
+                    .status(COMPLETED)
                     .conclusion(RunConclusion.SUCCESS)
                     .completedAt(previousWorkflowRun.getUpdatedAt())
                     .startedAt(previousWorkflowRun.getCreatedAt())
@@ -159,6 +164,39 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private List<WorkflowsJobDetails> fetchWorkflowJobDetails(
+      WorkflowRunDetails workflowRunDetails, Workflow workflow) {
+    final String cacheKey = getCacheKey(workflow, workflowRunDetails);
+    final List<WorkflowsJobDetails> cachedJobDetails =
+        workflowJobDetailsCache.getIfPresent(cacheKey);
+
+    if (shouldFetchJobDetails(cachedJobDetails)) {
+      final List<WorkflowsJobDetails> jobDetails =
+          getWorkflowsJobDetails(workflowRunDetails, workflow);
+      workflowJobDetailsCache.put(cacheKey, jobDetails);
+      return jobDetails;
+    }
+
+    return cachedJobDetails;
+  }
+
+  private boolean shouldFetchJobDetails(List<WorkflowsJobDetails> workflowsJobDetails) {
+    return Objects.isNull(workflowsJobDetails)
+        || workflowsJobDetails.isEmpty()
+        || anyJobNotCompleted(workflowsJobDetails);
+  }
+
+  private String getCacheKey(Workflow workflow, WorkflowRunDetails workflowRunDetails) {
+    return String.format(
+        "%s_%d_%d", workflow.getRepoName(), workflow.getId(), workflowRunDetails.getId());
+  }
+
+  private boolean anyJobNotCompleted(List<WorkflowsJobDetails> workflowsJobDetails) {
+    return workflowsJobDetails.stream()
+        .map(WorkflowsJobDetails::getStatus)
+        .anyMatch(runStatus -> !COMPLETED.equals(runStatus));
+  }
+
+  private List<WorkflowsJobDetails> getWorkflowsJobDetails(
       WorkflowRunDetails workflowRunDetails, Workflow workflow) {
     log.info(
         "Fetching job details for {} with run id {} and run number {}",

@@ -9,8 +9,12 @@ fileignoreconfig:
   checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
+- filename: src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
+  checksum: 75da4096b4a6c10142fb55d3c2249bb0255b80096d7f7fa3990ead97e5c7f227
 - filename: src/main/resources/public/scripts/index.js
   checksum: e27dea6fcdbeab5c345607ba102e0db87c2796986d6d810bc3bf206bff7bc4a8
+- filename: src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java
+  checksum: ded8e222fa1df369ea451b69fdca488a8589cb97adaf561011d2a3b48a29a7a4
 - filename: src/test/resources/testData/jobsDetails260614021.json
   checksum: 3d9e2320233496cc000277cf986308d25a5163c6cd211873988b8d278813459c
 - filename: src/test/resources/testData/jobsDetails260614024.json

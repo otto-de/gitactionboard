@@ -19,10 +19,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.github.benmanes.caffeine.cache.Cache;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.matching.EqualToPattern;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.WireMockExtension;
+import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
+import java.util.List;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -119,9 +122,16 @@ class GithubControllerIntegrationTest {
   class WithCacheCctrayXml {
     @Autowired private MockMvc mockMvc;
 
+    @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+
     @BeforeEach
     void setUp() {
       stubApiRequests();
+    }
+
+    @AfterEach
+    void tearDown() {
+      workflowJobDetailsCache.invalidateAll();
     }
 
     @Test
@@ -172,9 +182,16 @@ class GithubControllerIntegrationTest {
   class WithCacheCctrayJson {
     @Autowired private MockMvc mockMvc;
 
+    @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+
     @BeforeEach
     void setUp() {
       stubApiRequests();
+    }
+
+    @AfterEach
+    void tearDown() {
+      workflowJobDetailsCache.invalidateAll();
     }
 
     @Test
@@ -219,6 +236,13 @@ class GithubControllerIntegrationTest {
   class WithoutCache {
 
     @Autowired private MockMvc mockMvc;
+
+    @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+
+    @AfterEach
+    void tearDown() {
+      workflowJobDetailsCache.invalidateAll();
+    }
 
     @Test
     @SneakyThrows

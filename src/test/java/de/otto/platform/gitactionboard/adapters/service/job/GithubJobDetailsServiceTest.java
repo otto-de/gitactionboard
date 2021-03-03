@@ -11,12 +11,15 @@ import static de.otto.platform.gitactionboard.domain.Activity.SLEEPING;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.TestUtil;
+import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import de.otto.platform.gitactionboard.domain.JobDetails;
@@ -62,6 +65,8 @@ class GithubJobDetailsServiceTest {
 
   @Mock private RestTemplate restTemplate;
 
+  @Mock private Cache<String, List<WorkflowsJobDetails>> mockWorkflowJobDetailsCache;
+
   private GithubJobDetailsService githubJobDetailsService;
   private static WorkflowsJobDetailsResponse BASE_JOB_DETAILS_RESPONSE;
   private static WorkflowsRunDetailsResponse BASE_WORKFLOWS_RUN_DETAILS_RESPONSE;
@@ -104,7 +109,8 @@ class GithubJobDetailsServiceTest {
 
   @BeforeEach
   void setUp() {
-    githubJobDetailsService = new GithubJobDetailsService(restTemplate);
+    githubJobDetailsService =
+        new GithubJobDetailsService(restTemplate, mockWorkflowJobDetailsCache);
   }
 
   @Test
@@ -233,6 +239,9 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    final String cacheKey = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
+    verify(mockWorkflowJobDetailsCache).put(cacheKey, currentWorkflowsJobDetailsResponse.getJobs());
   }
 
   @ParameterizedTest(
@@ -301,6 +310,9 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    final String cacheKey = createCacheKey(runId, workflow.getRepoName(), workflow.getId());
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
+    verify(mockWorkflowJobDetailsCache).put(cacheKey, workflowsJobDetailsResponse.getJobs());
   }
 
   @ParameterizedTest(
@@ -397,6 +409,15 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    final String cacheKey1 = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey2 =
+        createCacheKey(previousRunId, workflow.getRepoName(), workflow.getId());
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
+    verify(mockWorkflowJobDetailsCache)
+        .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
+    verify(mockWorkflowJobDetailsCache)
+        .put(cacheKey2, previousWorkflowsJobDetailsResponse.getJobs());
   }
 
   @Test
@@ -460,6 +481,10 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    final String cacheKey1 = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
+    verify(mockWorkflowJobDetailsCache)
+        .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
   }
 
   @ParameterizedTest(
@@ -552,6 +577,19 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    final String cacheKey1 = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey2 =
+        createCacheKey(previousRunId, workflow.getRepoName(), workflow.getId());
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
+    verify(mockWorkflowJobDetailsCache)
+        .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
+    verify(mockWorkflowJobDetailsCache)
+        .put(cacheKey2, previousWorkflowsJobDetailsResponse.getJobs());
+  }
+
+  private String createCacheKey(int runId, String repoName, int workflowId) {
+    return String.format("%s_%d_%d", repoName, workflowId, runId);
   }
 
   @Test
@@ -585,5 +623,63 @@ class GithubJobDetailsServiceTest {
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
 
     assertThat(githubJobDetailsService.fetchJobDetails(workflow).get()).isEmpty();
+  }
+
+  @Test
+  @SneakyThrows
+  void shouldNotFetchJobDetailsForGivenWorkflowWhenTheDetailsIsPresentInCacheWithCompletedStatus() {
+    final WorkflowRunDetails latestWorkflowRunDetails =
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+            .status(COMPLETED)
+            .conclusion(SUCCESS)
+            .build();
+
+    final WorkflowRunDetails previousWorkflowRunDetails =
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
+            .status(COMPLETED)
+            .conclusion(FAILURE)
+            .build();
+
+    final WorkflowsRunDetailsResponse workflowsRunDetailsResponse =
+        WorkflowsRunDetailsResponse.builder()
+            .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
+            .build();
+
+    when(restTemplate.getForObject(
+            String.format(
+                "/%s/actions/workflows/%s/runs?per_page=2",
+                workflow.getRepoName(), workflow.getId()),
+            WorkflowsRunDetailsResponse.class))
+        .thenReturn(workflowsRunDetailsResponse);
+
+    final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final String cacheKey = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+
+    final List<WorkflowsJobDetails> workflowsJobDetails =
+        List.of(
+            BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                .status(COMPLETED)
+                .conclusion(SUCCESS)
+                .build());
+
+    when(mockWorkflowJobDetailsCache.getIfPresent(cacheKey)).thenReturn(workflowsJobDetails);
+
+    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+
+    final List<JobDetails> expectedJobDetails =
+        List.of(
+            JOB_DETAILS_1132386046.toBuilder()
+                .activity(SLEEPING)
+                .lastBuildStatus(Status.SUCCESS)
+                .build());
+
+    assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+
+    verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
+    verify(mockWorkflowJobDetailsCache, never()).put(cacheKey, workflowsJobDetails);
+    verify(restTemplate, never())
+        .getForObject(
+            String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), currentRunId),
+            WorkflowsJobDetailsResponse.class);
   }
 }
