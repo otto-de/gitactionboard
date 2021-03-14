@@ -218,7 +218,9 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final WorkflowRunDetails workflowRunDetails =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(0);
+    final int currentRunId = workflowRunDetails.getId();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), currentRunId),
@@ -239,7 +241,12 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
-    final String cacheKey = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey =
+        createCacheKey(
+            currentRunId,
+            workflow.getRepoName(),
+            workflow.getId(),
+            workflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
     verify(mockWorkflowJobDetailsCache).put(cacheKey, currentWorkflowsJobDetailsResponse.getJobs());
   }
@@ -273,7 +280,9 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
-    final int runId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final WorkflowRunDetails workflowRunDetails =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(0);
+    final int runId = workflowRunDetails.getId();
 
     final WorkflowsJobDetailsResponse workflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
@@ -310,7 +319,9 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
-    final String cacheKey = createCacheKey(runId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey =
+        createCacheKey(
+            runId, workflow.getRepoName(), workflow.getId(), workflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
     verify(mockWorkflowJobDetailsCache).put(cacheKey, workflowsJobDetailsResponse.getJobs());
   }
@@ -363,6 +374,8 @@ class GithubJobDetailsServiceTest {
             .build();
 
     final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final Instant currentRunUpdatedAt =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), currentRunId),
@@ -388,6 +401,8 @@ class GithubJobDetailsServiceTest {
             .build();
 
     final int previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
+    final Instant previousRunUpdatedAt =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), previousRunId),
@@ -409,9 +424,11 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
-    final String cacheKey1 = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey1 =
+        createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
     final String cacheKey2 =
-        createCacheKey(previousRunId, workflow.getRepoName(), workflow.getId());
+        createCacheKey(
+            previousRunId, workflow.getRepoName(), workflow.getId(), previousRunUpdatedAt);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
     verify(mockWorkflowJobDetailsCache)
@@ -461,6 +478,8 @@ class GithubJobDetailsServiceTest {
             .build();
 
     final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final Instant currentRunUpdatedAt =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), currentRunId),
@@ -481,7 +500,8 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
-    final String cacheKey1 = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey1 =
+        createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache)
         .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
@@ -536,6 +556,8 @@ class GithubJobDetailsServiceTest {
             .build();
 
     final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final Instant currentRunUpdatedAt =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), currentRunId),
@@ -555,6 +577,8 @@ class GithubJobDetailsServiceTest {
             .build();
 
     final int previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
+    final Instant previousRunUpdatedAt =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), previousRunId),
@@ -577,9 +601,11 @@ class GithubJobDetailsServiceTest {
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
-    final String cacheKey1 = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final String cacheKey1 =
+        createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
     final String cacheKey2 =
-        createCacheKey(previousRunId, workflow.getRepoName(), workflow.getId());
+        createCacheKey(
+            previousRunId, workflow.getRepoName(), workflow.getId(), previousRunUpdatedAt);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
     verify(mockWorkflowJobDetailsCache)
@@ -588,8 +614,8 @@ class GithubJobDetailsServiceTest {
         .put(cacheKey2, previousWorkflowsJobDetailsResponse.getJobs());
   }
 
-  private String createCacheKey(int runId, String repoName, int workflowId) {
-    return String.format("%s_%d_%d", repoName, workflowId, runId);
+  private String createCacheKey(int runId, String repoName, int workflowId, Instant updatedAt) {
+    return String.format("%s_%d_%d_%s", repoName, workflowId, runId, updatedAt.getEpochSecond());
   }
 
   @Test
@@ -652,8 +678,15 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
-    final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
-    final String cacheKey = createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId());
+    final WorkflowRunDetails workflowRunDetails =
+        workflowsRunDetailsResponse.getWorkflowRuns().get(0);
+    final int currentRunId = workflowRunDetails.getId();
+    final String cacheKey =
+        createCacheKey(
+            currentRunId,
+            workflow.getRepoName(),
+            workflow.getId(),
+            workflowRunDetails.getUpdatedAt());
 
     final List<WorkflowsJobDetails> workflowsJobDetails =
         List.of(

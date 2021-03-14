@@ -187,7 +187,11 @@ public class GithubJobDetailsService implements JobDetailsService {
 
   private String getCacheKey(Workflow workflow, WorkflowRunDetails workflowRunDetails) {
     return String.format(
-        "%s_%d_%d", workflow.getRepoName(), workflow.getId(), workflowRunDetails.getId());
+        "%s_%d_%d_%s",
+        workflow.getRepoName(),
+        workflow.getId(),
+        workflowRunDetails.getId(),
+        workflowRunDetails.getUpdatedAt().getEpochSecond());
   }
 
   private boolean anyJobNotCompleted(List<WorkflowsJobDetails> workflowsJobDetails) {
