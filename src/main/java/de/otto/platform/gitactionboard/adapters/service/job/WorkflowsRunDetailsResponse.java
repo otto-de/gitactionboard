@@ -17,14 +17,14 @@ public class WorkflowsRunDetailsResponse {
   @Value
   @Builder(toBuilder = true)
   public static class WorkflowRunDetails {
-    int id;
+    long id;
 
     @NonNull RunStatus status;
 
     RunConclusion conclusion;
 
     @JsonProperty("run_number")
-    int runNumber;
+    long runNumber;
 
     @NonNull
     @JsonProperty("updated_at")

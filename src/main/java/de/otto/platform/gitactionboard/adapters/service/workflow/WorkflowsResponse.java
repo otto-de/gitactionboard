@@ -13,7 +13,7 @@ public class WorkflowsResponse {
   @Value
   @Builder
   public static class WorkflowIdentifier {
-    int id;
+    long id;
     @NonNull String name;
   }
 }

@@ -9,5 +9,5 @@ import lombok.Value;
 public class Workflow {
   @NonNull String name;
   @NonNull String repoName;
-  int id;
+  long id;
 }

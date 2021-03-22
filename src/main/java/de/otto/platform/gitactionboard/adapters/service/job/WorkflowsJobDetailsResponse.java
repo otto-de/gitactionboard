@@ -15,7 +15,7 @@ public class WorkflowsJobDetailsResponse {
   @Data
   @Builder(toBuilder = true)
   public static class WorkflowsJobDetails {
-    int id;
+    long id;
 
     @NonNull String name;
 

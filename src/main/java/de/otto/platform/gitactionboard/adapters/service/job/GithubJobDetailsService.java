@@ -40,7 +40,7 @@ public class GithubJobDetailsService implements JobDetailsService {
               final List<WorkflowsJobDetails> currentJobs =
                   fetchWorkflowJobDetails(currentWorkflowRun, workflow);
 
-              final int runNumber = currentWorkflowRun.getRunNumber();
+              final long runNumber = currentWorkflowRun.getRunNumber();
               if (workflowsRunDetails.size() == 1) {
                 return convertToJobDetails(runNumber, currentJobs, workflow);
               }
@@ -99,12 +99,12 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private List<JobDetails> convertToJobDetails(
-      int runNumber, List<WorkflowsJobDetails> currentJobs, Workflow workflow) {
+      long runNumber, List<WorkflowsJobDetails> currentJobs, Workflow workflow) {
     return convertToJobDetails(runNumber, currentJobs, workflow, currentJobs);
   }
 
   private List<JobDetails> convertToJobDetails(
-      int runNumber,
+      long runNumber,
       List<WorkflowsJobDetails> currentJobs,
       Workflow workflow,
       List<WorkflowsJobDetails> previousJobs) {
@@ -121,7 +121,7 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private JobDetails createJobDetails(
-      int runNumber,
+      long runNumber,
       Workflow workflow,
       WorkflowsJobDetails currentJob,
       WorkflowsJobDetails previousJob) {

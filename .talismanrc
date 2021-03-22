@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
 - filename: src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
-  checksum: 33ac5fdf5f27b4308b74cc2f7e69067bb45a97ebd84c7c23ea8e0d1a99f23ae8
+  checksum: e820eba383cc9f5b5c3b1548f0fecae6417597510b2076e113bd7d38f811e9b1
 - filename: src/main/resources/public/scripts/index.js
   checksum: e27dea6fcdbeab5c345607ba102e0db87c2796986d6d810bc3bf206bff7bc4a8
 - filename: src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java

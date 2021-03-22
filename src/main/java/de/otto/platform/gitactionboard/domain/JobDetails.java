@@ -8,11 +8,11 @@ import lombok.Value;
 @Value
 @Builder(toBuilder = true)
 public class JobDetails {
-  int id;
+  long id;
 
   @NonNull String name;
 
-  int runNumber;
+  long runNumber;
 
   @NonNull String url;
 

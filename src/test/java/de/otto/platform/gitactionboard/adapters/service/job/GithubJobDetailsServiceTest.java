@@ -70,7 +70,7 @@ class GithubJobDetailsServiceTest {
   private GithubJobDetailsService githubJobDetailsService;
   private static WorkflowsJobDetailsResponse BASE_JOB_DETAILS_RESPONSE;
   private static WorkflowsRunDetailsResponse BASE_WORKFLOWS_RUN_DETAILS_RESPONSE;
-  private static int RUN_ID_1;
+  private static long RUN_ID_1;
 
   @BeforeAll
   @SneakyThrows
@@ -220,7 +220,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails workflowRunDetails =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0);
-    final int currentRunId = workflowRunDetails.getId();
+    final long currentRunId = workflowRunDetails.getId();
 
     when(restTemplate.getForObject(
             String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), currentRunId),
@@ -282,7 +282,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails workflowRunDetails =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0);
-    final int runId = workflowRunDetails.getId();
+    final long runId = workflowRunDetails.getId();
 
     final WorkflowsJobDetailsResponse workflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
@@ -373,7 +373,7 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
     final Instant currentRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
@@ -400,7 +400,7 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final int previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
+    final long previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
     final Instant previousRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
@@ -477,7 +477,7 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
     final Instant currentRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
@@ -555,7 +555,7 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final int currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
     final Instant currentRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
@@ -576,7 +576,7 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final int previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
+    final long previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
     final Instant previousRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
@@ -614,7 +614,7 @@ class GithubJobDetailsServiceTest {
         .put(cacheKey2, previousWorkflowsJobDetailsResponse.getJobs());
   }
 
-  private String createCacheKey(int runId, String repoName, int workflowId, Instant updatedAt) {
+  private String createCacheKey(long runId, String repoName, long workflowId, Instant updatedAt) {
     return String.format("%s_%d_%d_%s", repoName, workflowId, runId, updatedAt.getEpochSecond());
   }
 
@@ -680,7 +680,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails workflowRunDetails =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0);
-    final int currentRunId = workflowRunDetails.getId();
+    final long currentRunId = workflowRunDetails.getId();
     final String cacheKey =
         createCacheKey(
             currentRunId,
