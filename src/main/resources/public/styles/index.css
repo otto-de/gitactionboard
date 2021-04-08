@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "Grenze Gotisch";
-  src: url("../fonts/GrenzeGotisch-Bold.ttf");
-}
-
-@font-face {
   font-family: "OpenSans";
   src: url("../fonts/OpenSans-Bold.ttf");
 }
@@ -14,7 +9,7 @@
 }
 
 #header {
-  font-family: "Grenze Gotisch", sans-serif;
+  font-family: "OpenSans", sans-serif;
   text-decoration: underline;
   font-size: 40px;
 }
