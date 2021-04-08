@@ -36,7 +36,7 @@ const marshalData = (data) =>
   );
 
 const fetchData = () =>
-  fetch("/v1/cctray")
+  fetch("./v1/cctray")
     .then((res) => res.json())
     .then(marshalData)
     .catch((reason) => {
