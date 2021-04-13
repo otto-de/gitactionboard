@@ -12,7 +12,7 @@ fileignoreconfig:
 - filename: src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
   checksum: e820eba383cc9f5b5c3b1548f0fecae6417597510b2076e113bd7d38f811e9b1
 - filename: src/main/resources/public/scripts/index.js
-  checksum: e27dea6fcdbeab5c345607ba102e0db87c2796986d6d810bc3bf206bff7bc4a8
+  checksum: a2984fbff6842ef83c3fae0999dc3e4c2658bc7aeccee0d19ae50b1afe49b93e
 - filename: src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java
   checksum: ded8e222fa1df369ea451b69fdca488a8589cb97adaf561011d2a3b48a29a7a4
 - filename: src/test/resources/testData/jobsDetails260614021.json
