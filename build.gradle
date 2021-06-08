@@ -1,14 +1,14 @@
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "2.4.4"
+    id "org.springframework.boot" version "2.5.0"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "io.freefair.lombok" version "5.3.3.3"
-    id "com.github.spotbugs" version "4.7.0"
+    id "com.github.spotbugs" version "4.7.1"
     id "com.github.sherter.google-java-format" version "0.9"
     id "jacoco"
-    id "com.github.ben-manes.versions" version "0.38.0"
-    id "org.owasp.dependencycheck" version "6.1.5"
+    id "com.github.ben-manes.versions" version "0.39.0"
+    id "org.owasp.dependencycheck" version "6.2.0"
 }
 
 jacoco {
@@ -43,10 +43,10 @@ lombok {
 }
 
 ext {
-    jacksonDataBindVersion = "2.11.2"
+    jacksonDataBindVersion = "2.12.3"
     javaUuidGeneratorVersion = "4.0.1"
     logstashVersion = "6.6"
-    caffeineVersion = "3.0.1"
+    caffeineVersion = "3.0.2"
     wiremockVersion = "2.27.2"
 }
 
