@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#REVISION=$(git rev-parse HEAD)
+REVISION=$(git rev-parse HEAD)
 SERVICE_NAME="gitactionboard"
 
 _ensure_jenv() {

@@ -1,4 +1,4 @@
-FROM gradle:7.0.3-jdk11 as builder
+FROM gradle:7.2.0-jdk11 as builder
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle --no-daemon bootJar
