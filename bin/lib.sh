@@ -17,25 +17,31 @@ _ensure_jenv() {
 }
 
 _check() {
+  pushd "backend" >/dev/null || exit
   _ensure_jenv
   jenv exec ./gradlew clean dependencyCheckAnalyze --info --stacktrace
+  popd >/dev/null || exit
 
 }
 
 _license_report() {
+  pushd "backend" >/dev/null || exit
   _ensure_jenv
   jenv exec ./gradlew clean generateLicenseReport
+  popd >/dev/null || exit
 
 }
 
 _test() {
-  prettier --check "src/**/*.{json,js,css,html}" "**/*.md"
+  prettier --check "backend/src/**/*.{json,js,css,html}" "**/*.md"
 
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
 
+  pushd "backend" >/dev/null || exit
   _ensure_jenv
   jenv exec ./gradlew clean check
+  popd >/dev/null || exit
 
   while IFS= read -r -d '' file; do
     hadolint "${file}"
@@ -43,18 +49,22 @@ _test() {
 }
 
 _format_sources() {
-  prettier --write "src/**/*.{json,js,css,html}" "**/*.md"
+  prettier --write "backend/src/**/*.{json,js,css,html}" "**/*.md"
 
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
 
+  pushd "backend" >/dev/null || exit
   _ensure_jenv
-  "${SCRIPT_DIR}/gradlew" goJF
+  "${SCRIPT_DIR}/backend/gradlew" goJF
+  popd >/dev/null || exit
 }
 
 _run_locally() {
+  pushd "backend" >/dev/null || exit
   _ensure_jenv
   SPRING_PROFILES_ACTIVE=local GITHUB_ACCESS_TOKEN="${1}" jenv exec ./gradlew clean bootRun
+  popd >/dev/null || exit
 }
 
 _docker_build() {

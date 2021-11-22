@@ -9,17 +9,3 @@ fileignoreconfig:
   checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
-- filename: src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
-  checksum: e820eba383cc9f5b5c3b1548f0fecae6417597510b2076e113bd7d38f811e9b1
-- filename: src/main/resources/public/scripts/index.js
-  checksum: a2984fbff6842ef83c3fae0999dc3e4c2658bc7aeccee0d19ae50b1afe49b93e
-- filename: src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java
-  checksum: ded8e222fa1df369ea451b69fdca488a8589cb97adaf561011d2a3b48a29a7a4
-- filename: src/test/resources/testData/jobsDetails260614021.json
-  checksum: 3d9e2320233496cc000277cf986308d25a5163c6cd211873988b8d278813459c
-- filename: src/test/resources/testData/jobsDetails260614024.json
-  checksum: a36b545a627552347551f546713b5dc9819831a981f0533cb44ce1484043031b
-- filename: src/test/resources/testData/workflowRuns2057656.json
-  checksum: 183fb88166d0048221f1fa7878aaaf0445bde2f10f5907c304c3d2b19ff75b09
-- filename: src/test/resources/testData/workflowRuns2151835.json
-  checksum: aef3d7757b0045ec03ab359d88764458b1b596124d280139c1018732afd8376e
