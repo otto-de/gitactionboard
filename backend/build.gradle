@@ -43,9 +43,9 @@ lombok {
 }
 
 ext {
-    jacksonDataBindVersion = "2.12.3"
+    jacksonDataBindVersion = "2.13.0"
     javaUuidGeneratorVersion = "4.0.1"
-    logstashVersion = "6.6"
+    logstashVersion = "7.0"
     caffeineVersion = "3.0.4"
     wiremockVersion = "2.27.2"
 }
