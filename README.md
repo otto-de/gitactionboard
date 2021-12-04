@@ -144,7 +144,6 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
 - [ShellCheck](https://www.shellcheck.net/)
 - [Prettier](https://prettier.io/)
 - [talisman](https://github.com/thoughtworks/talisman)
-- [jq](https://stedolan.github.io/jq/)
 
 ### Tests
 
