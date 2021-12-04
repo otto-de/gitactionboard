@@ -47,9 +47,10 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload Spotbug and test report to artifacts
         uses: actions/upload-artifact@v2
+        if: always()
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports
-          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/build/reports/
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
 
   determaine_should_publish_image:
     runs-on: ubuntu-18.04
