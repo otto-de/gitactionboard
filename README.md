@@ -219,16 +219,18 @@ To build docker image run:
 
 ### Release a new Docker image
 
-To release a new docker image to docker hub using CI/CD, follow the following steps:
+A new docker image can be published to [docker hub](https://hub.docker.com/repository/docker/ottoopensource/gitactionboard) using CI/CD. To achieve the same we need to follow the following steps:
 
-- Create a new git **tag**, named as `v*.*.*`
-
-```shell
-  git tag v<major>.<minor>.<patch>
-```
-
-- Push the **tag** to github
+- Once changes are pushed to github, create a new release version
 
 ```shell
-git push origin v<major>.<minor>.<patch>
+./run.sh bump-version <major|minor|patch>
 ```
+
+- Push the newly created **tag** to github
+
+```shell
+git push origin "$(git describe --tags)"
+```
+
+> **_NOTE:_** We are following [semantic versioning](https://semver.org/) strategy using [io.alcide:gradle-semantic-build-versioning](https://github.com/alcideio/gradle-semantic-build-versioning) plugin

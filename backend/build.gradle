@@ -54,6 +54,10 @@ repositories {
     mavenCentral()
 }
 
+bootJar {
+    archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
+}
+
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-cache"
@@ -71,7 +75,6 @@ dependencies {
 }
 
 group = "de.otto.platform"
-version = "1.0.0"
 sourceCompatibility = 11
 targetCompatibility = 11
 
@@ -141,5 +144,9 @@ jacocoTestReport {
 }
 
 integrationTest.finalizedBy jacocoTestReport, mergeTestReports
+
+tag {
+    message fromMandatorySystemProperty('message')
+}
 
 apply from: "${rootDir}/gradle/spotbugs.gradle"

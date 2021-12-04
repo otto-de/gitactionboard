@@ -1,0 +1,11 @@
+startingVersion = '1.0.0'
+tagPrefix = 'v'
+tagPattern = ~/^v/
+
+autobump {
+    majorPattern = null
+    minorPattern = null
+    patchPattern = null
+    newPreReleasePattern = null
+    promoteToReleasePattern = null
+}

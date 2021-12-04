@@ -5,7 +5,7 @@ RUN gradle --no-daemon bootJar
 
 FROM openjdk:11-jre-slim
 EXPOSE 8080
-COPY --from=builder /home/gradle/src/backend/build/libs/gitactionboard-1.0.0.jar /app/
+COPY --from=builder /home/gradle/src/backend/build/libs/gitactionboard.jar /app/
 WORKDIR /app
 
-CMD ["java", "-jar", "gitactionboard-1.0.0.jar"]
+CMD ["java", "-jar", "gitactionboard.jar"]
