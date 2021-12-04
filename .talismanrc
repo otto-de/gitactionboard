@@ -4,8 +4,9 @@ fileignoreconfig:
 - filename: .github/workflows/checks.yml
   checksum: 6b0dd6679a6b63c068877096040828c8a0307cbc3e6d2309d4138c42741c7c5e
 - filename: bin/install-talisman.sh
-  checksum: 6cb43d69c3c23bfe775580307cf2fac9a8cabb6fac57bc03bb8c0a2d84f0a5a5
+  checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png
   checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
+version: "1.0"
