@@ -3,6 +3,8 @@ fileignoreconfig:
   checksum: 1a83078404045b2b035d4a0618ed6b825e14a138bef3997de5df901eca87c741
 - filename: .github/workflows/checks.yml
   checksum: 6b0dd6679a6b63c068877096040828c8a0307cbc3e6d2309d4138c42741c7c5e
+- filename: backend/gradle/config/checkstyle.xml
+  checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: bin/install-talisman.sh
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png

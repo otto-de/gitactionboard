@@ -1,0 +1,16 @@
+apply plugin: 'checkstyle'
+
+checkstyle {
+  ignoreFailures = false
+  maxWarnings = 0
+  configFile file("${projectDir}/gradle/config/checkstyle.xml")
+  toolVersion = 9.2
+}
+
+tasks.withType(Checkstyle) {
+  group = 'Checkstyle'
+  reports {
+    xml.enabled(true)
+    html.enabled(true)
+  }
+}

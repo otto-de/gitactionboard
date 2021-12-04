@@ -1,7 +1,5 @@
-apply plugin: 'com.github.spotbugs'
-
 spotbugs {
-    toolVersion = '4.2.3'
+    toolVersion = '4.5.0'
     ignoreFailures = false
     showProgress = true
     effort = 'max'
