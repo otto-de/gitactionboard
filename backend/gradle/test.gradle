@@ -34,7 +34,7 @@ task integrationTest(type: Test) {
     description = "Runs the integration tests."
     group = "verification"
 
-    mustRunAfter test
+    dependsOn test
 
     useJUnitPlatform() {
         includeTags "integration"
@@ -54,12 +54,4 @@ task mergeTestReports(type: TestReport) {
     reportOn files("$buildDir/test-results/test/binary", "$buildDir/test-results/integrationTest/binary")
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled false
-        html.enabled true
-        csv.enabled false
-    }
-}
-
-integrationTest.finalizedBy jacocoTestReport, mergeTestReports
+integrationTest.finalizedBy mergeTestReports

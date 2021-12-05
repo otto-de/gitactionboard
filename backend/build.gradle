@@ -6,13 +6,8 @@ plugins {
     id "io.freefair.lombok" version "6.3.0"
     id "com.github.spotbugs" version "4.8.0"
     id "com.github.sherter.google-java-format" version "0.9"
-    id "jacoco"
     id "com.github.ben-manes.versions" version "0.39.0"
     id "org.owasp.dependencycheck" version "6.5.0.1"
-}
-
-jacoco {
-    toolVersion = "0.8.7"
 }
 
 googleJavaFormat {
@@ -71,3 +66,4 @@ apply from: "${rootDir}/gradle/spotbugs.gradle"
 apply from: "${rootDir}/gradle/dependencycheck.gradle"
 apply from: "${rootDir}/gradle/checkstyle.gradle"
 apply from: "${rootDir}/gradle/pmd.gradle"
+apply from: "${rootDir}/gradle/jacoco.gradle"
