@@ -10,6 +10,6 @@ fileignoreconfig:
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
 - filename: frontend/src/components/Jobs.vue
-  checksum: 2b96ad7395c5d2b4d2d9f55f4d546958f92c10953767d3384a6a7fe1529b764f
+  checksum: 77f7b7baa16cf8e4878e2e9aa0a25adc1efb8fcf254bd8b8739b27b94d4006f1
 - filename: frontend/src/components/Job.vue
   checksum: afcc579fea225b40c6bc65df4b731b2fa2a5f859ec24b9491be6dd2f2a614a09

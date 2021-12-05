@@ -8,46 +8,89 @@
 </template>
 
 <script>
+
+const ONE_MINUTE = 60000;
+
+let idleTimer;
+let renderPageTimer;
+let idleTime;
+
 import Job from "@/components/Job";
 
 export default {
   name: "Jobs",
   components: { Job },
   mounted: function(){
-    return this.fetchJobs()
+    if (!this.disableMaxIdleTime) {
+      this.initiateIdleTimer();
+    }
+    this.renderPage().then(() => {
+      renderPageTimer = setInterval(this.renderPage, 5000);
+    });
   },
   props: {
     showHealthyBuilds: {
       type: Boolean,
-      // required: true
+      required: true
+    },
+    disableMaxIdleTime: {
+      type: Boolean,
+      required: true
+    },
+    maxIdleTime: {
+      type: Number,
+      required: true
     }
   },
   data() {
     return {
-      jobs: []
+      jobs: [],
+      idleTime: 0,
+      renderPageTimer,
+      idleTimer,
+      ONE_MINUTE
     }
   },
   methods: {
-    fetchData: function () {
-          return fetch("/v1/cctray")
-              .then((res) => res.json())
-              .then(this.marshalData)
-              .catch((reason) => {
-                console.error(reason);
-                return Promise.reject(reason);
-              });
-    },
-    isIdleHealthyBuild: function (lastBuildStatus, activity) {
+    isIdleHealthyBuild(lastBuildStatus, activity) {
       return lastBuildStatus === "Success" && activity === "Sleeping"
     },
-    marshalData: function (data) {
-      return data.filter(({ lastBuildStatus, activity }) => {
+    marshalData(data) {
+      return data.filter(({lastBuildStatus, activity}) => {
             return this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity);
           }
       );
     },
-    fetchJobs: function () {
-      return this.fetchData()
+    initiateIdleTimer() {
+      this.resetTimer();
+      window.onmousemove = this.resetTimer;
+      window.onmousedown = this.resetTimer;
+      window.ontouchstart = this.resetTimer;
+      window.onclick = this.resetTimer;
+      window.onkeypress = this.resetTimer;
+    },
+    renderPage() {
+      if (this.disableMaxIdleTime) {
+        return this.fetchData();
+      }
+      if (this.maxIdleTime >= idleTime) return this.fetchData();
+      clearInterval(renderPageTimer);
+      const message = "Stopped auto page re-rendering due to max idle timeout";
+      console.warn(message);
+      alert(message);
+    },
+    incrementIdleTime() {
+      idleTime++;
+    },
+    resetTimer() {
+      clearInterval(idleTimer);
+      idleTime = 0;
+      idleTimer = setInterval(this.incrementIdleTime, ONE_MINUTE);
+    },
+    fetchData() {
+      return fetch("/v1/cctray")
+          .then((res) => res.json())
+          .then(this.marshalData)
           .then((data) => this.jobs = data)
           .catch((reason) => {
             console.error(reason);

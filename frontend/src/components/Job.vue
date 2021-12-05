@@ -18,13 +18,13 @@ export default {
     }
   },
   methods: {
-    getBuildAndActivityStatus: function (job) {
+    getBuildAndActivityStatus(job) {
       const lastBuildStatusIndicator = this.getBuildStatus(job.lastBuildStatus);
       return job.activity === "Building" ?
           `job ${lastBuildStatusIndicator} building` :
           `job ${lastBuildStatusIndicator}`;
     },
-    getBuildStatus: function (status) {
+    getBuildStatus(status) {
       switch (status) {
         case 'Success':
           return 'success';
