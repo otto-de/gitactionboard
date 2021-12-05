@@ -48,7 +48,7 @@ class GithubWorkflowServiceTest {
 
     final List<WorkflowIdentifier> workflowsFromResponse = workflowsResponse.getWorkflows();
 
-    assertThat(workflows).hasSameSizeAs(workflowsFromResponse);
+    assertThat(workflows).hasSize(2);
 
     assertThat(workflows.get(0))
         .isEqualTo(

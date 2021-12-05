@@ -15,5 +15,11 @@ public class WorkflowsResponse {
   public static class WorkflowIdentifier {
     long id;
     @NonNull String name;
+    @NonNull String path;
+    @NonNull String state;
+
+    public boolean isActive() {
+      return "active".equals(state) && path.startsWith(".github");
+    }
   }
 }
