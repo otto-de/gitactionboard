@@ -30,6 +30,7 @@ ext {
     logstashVersion = "7.0"
     caffeineVersion = "3.0.4"
     wiremockVersion = "2.27.2"
+    archUnitVersion = "0.22.0"
 }
 
 repositories {
@@ -54,6 +55,7 @@ dependencies {
         exclude group: "org.junit.vintage", module: "junit-vintage-engine"
     }
     testImplementation "com.github.tomakehurst:wiremock:${wiremockVersion}"
+    testImplementation "com.tngtech.archunit:archunit-junit5:${archUnitVersion}"
 }
 
 group = "de.otto.platform"
