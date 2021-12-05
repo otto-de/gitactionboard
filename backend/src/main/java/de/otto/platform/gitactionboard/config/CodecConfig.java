@@ -31,6 +31,8 @@ public class CodecConfig {
   }
 
   static class IsoWithMillisInstantSerializer extends InstantSerializer {
+    private static final long serialVersionUID = 1L;
+
     private static final DateTimeFormatter ISO_WITH_MILLIS =
         new DateTimeFormatterBuilder().appendInstant(3).toFormatter();
 

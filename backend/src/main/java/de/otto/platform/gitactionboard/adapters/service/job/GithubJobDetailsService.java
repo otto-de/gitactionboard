@@ -34,7 +34,7 @@ public class GithubJobDetailsService implements JobDetailsService {
     return CompletableFuture.supplyAsync(
             () -> {
               final List<WorkflowRunDetails> workflowsRunDetails = fetchWorkflowDetails(workflow);
-              if (workflowsRunDetails.size() == 0) return Collections.<JobDetails>emptyList();
+              if (workflowsRunDetails.isEmpty()) return Collections.<JobDetails>emptyList();
 
               final WorkflowRunDetails currentWorkflowRun = workflowsRunDetails.get(0);
               final List<WorkflowsJobDetails> currentJobs =
