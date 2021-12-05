@@ -1,14 +1,16 @@
 <template>
   <div id="jobs" >
     <div v-for="job in jobsInfo" :key="job.name" class="job" :class="[getBuildAndActivityStatus(job)]">
-      <div class="job_name"><a>{{ job.name }}</a></div>
+      <Job :name="job.name" />
     </div>
   </div>
 </template>
 
 <script>
+import Job from "@/components/Job";
 export default {
   name: "Jobs",
+  components: {Job},
   mounted: function(){
     this.fetchJobs()
   },
