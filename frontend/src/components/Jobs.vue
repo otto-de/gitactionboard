@@ -1,56 +1,58 @@
 <template>
-  <div id="jobs" >
-    <div v-for="job in jobsInfo" :key="job.name" class="job" :class="[getBuildAndActivityStatus(job)]">
-      <Job :name="job.name" />
-    </div>
-  </div>
+<div id="jobs">
+<template v-for="job in jobs" :key="job">
+  <Job :job="job" />
+</template>
+</div>
+<div id="all-passed-container" v-if="jobs.length === 0"></div>
 </template>
 
 <script>
 import Job from "@/components/Job";
+
 export default {
   name: "Jobs",
-  components: {Job},
+  components: { Job },
   mounted: function(){
-    this.fetchJobs()
+    return this.fetchJobs()
+  },
+  props: {
+    showHealthyBuilds: {
+      type: Boolean,
+      // required: true
+    }
   },
   data() {
     return {
-      jobsInfo: []
+      jobs: []
     }
   },
   methods: {
     fetchData: function () {
           return fetch("/v1/cctray")
               .then((res) => res.json())
+              .then(this.marshalData)
               .catch((reason) => {
                 console.error(reason);
                 return Promise.reject(reason);
               });
     },
+    isIdleHealthyBuild: function (lastBuildStatus, activity) {
+      return lastBuildStatus === "Success" && activity === "Sleeping"
+    },
+    marshalData: function (data) {
+      return data.filter(({ lastBuildStatus, activity }) => {
+            return this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity);
+          }
+      );
+    },
     fetchJobs: function () {
       return this.fetchData()
-          .then((data) => this.jobsInfo = data)
+          .then((data) => this.jobs = data)
           .catch((reason) => {
             console.error(reason);
             return Promise.reject(reason);
           });
-    },
-    getBuildAndActivityStatus: function (job) {
-      const lastBuildStatusIndicator = this.getBuildStatus(job.lastBuildStatus);
-      return job.activity === "Building" ?
-          `job ${lastBuildStatusIndicator} building` :
-          `job ${lastBuildStatusIndicator}`;
-    },
-    getBuildStatus: function (status) {
-      switch (status) {
-        case 'Success':
-          return 'success';
-        case 'Unknown':
-          return 'unknown';
-        default:
-          return 'failure';
-      }
     }
   }
 }
@@ -66,60 +68,6 @@ export default {
   grid-gap: 10px;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.job {
-  box-shadow: 5px 5px 10px #777;
-  border-radius: 6px;
-  height: 90px;
-  border: 2px solid #000000;
-  padding: 5px;
-}
-
-.job_name {
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  height: 100%;
-  overflow: scroll;
-  display: inline-grid;
-  align-items: center;
-}
-
-.success {
-  background-color: #3a964a;
-}
-
-.failure {
-  background-color: #e23d2c;
-}
-
-.unknown {
-  background-color: #6d6a6a;
-}
-
-.job.building.success {
-  background-image: repeating-linear-gradient(
-      135deg,
-      #3a964a 30px,
-      #000000 50px
-  );
-}
-
-.job.building.failure {
-  background-image: repeating-linear-gradient(
-      135deg,
-      #e23d2c 30px,
-      #000000 50px
-  );
-}
-
-.job.building.unknown {
-  background-image: repeating-linear-gradient(
-      135deg,
-      #6d6a6a 30px,
-      #000000 50px
-  );
 }
 
 </style>

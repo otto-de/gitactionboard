@@ -1,31 +1,30 @@
 <template>
   <div id="container">
-    <div id="header-container">
-      <span id="header">Gitaction Board</span>
-    </div>
-    <Jobs/>
+    <Header/>
+    <Jobs :showHealthyBuilds="shouldShowHealthyBuilds()"/>
   </div>
 </template>
 
 <script>
-
 import Jobs from "@/components/Jobs";
+import Header from "@/components/Header";
+const HIDE_HEALTHY_PARAM = "hide-healthy";
+const URL_SEARCH_PARAMS = new URLSearchParams(window.location.search);
 
 export default {
   name: "Dashboard",
-  components: { Jobs }
+  components: { Header, Jobs },
+  data() {
+    return {
+      URL_SEARCH_PARAMS,
+      HIDE_HEALTHY_PARAM
+    }
+  },
+  methods: {
+    shouldShowHealthyBuilds: function () {
+      const hideHealthBuildConfig = URL_SEARCH_PARAMS.get(HIDE_HEALTHY_PARAM);
+      return !hideHealthBuildConfig || hideHealthBuildConfig === "false";
+    }
+  }
 }
 </script>
-
-<style scoped>
-#header-container {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-#header {
-  font-family: "OpenSans", sans-serif;
-  text-decoration: underline;
-  font-size: 40px;
-}
-</style>
