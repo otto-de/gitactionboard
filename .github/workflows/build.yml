@@ -45,7 +45,7 @@ jobs:
       - name: Run all tests
         run: ./run.sh test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-      - name: Upload Spotbug and test report to artifacts
+      - name: Upload build report to artifacts
         uses: actions/upload-artifact@v2
         if: always()
         with:

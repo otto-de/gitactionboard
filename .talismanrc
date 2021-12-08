@@ -1,6 +1,6 @@
 fileignoreconfig:
 - filename: .github/workflows/build.yml
-  checksum: eaeb2b32c3e50eb1a5974d7d1248a96574e71056347af0c459ec12c55fe3986b
+  checksum: 46c4e83084479c543150af5f566e8f812e44b2b50b0c7fe11c2f16ff005a4c72
 - filename: .github/workflows/checks.yml
   checksum: 6b0dd6679a6b63c068877096040828c8a0307cbc3e6d2309d4138c42741c7c5e
 - filename: backend/gradle/config/checkstyle.xml
