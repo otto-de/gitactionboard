@@ -11,4 +11,6 @@ fileignoreconfig:
   checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
+  checksum: b4c700cb2efed3d2f318e3ee16e7dbd2eafa4bcde584256b4ffaa66ddae63ac7
 version: "1.0"
