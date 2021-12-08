@@ -37,7 +37,7 @@
   font-weight: bold;
   font-size: 14px;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   display: inline-grid;
   align-items: center;
 }
