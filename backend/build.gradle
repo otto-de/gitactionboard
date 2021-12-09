@@ -40,6 +40,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
     implementation "com.fasterxml.jackson.core:jackson-core:${jacksonDataBindVersion}"
     implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDataBindVersion}"
     implementation "com.fasterxml.uuid:java-uuid-generator:${javaUuidGeneratorVersion}"
