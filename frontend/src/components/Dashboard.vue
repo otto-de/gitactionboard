@@ -1,9 +1,11 @@
 <template>
   <div id="container">
-    <Header/>
-    <Jobs :showHealthyBuilds="shouldShowHealthyBuilds()"
-          :disableMaxIdleTime="shouldDisableIdleOptimization()"
-          :maxIdleTime="getMaxIdleTime()"/>
+    <Header />
+    <Jobs
+      :show-healthy-builds="shouldShowHealthyBuilds()"
+      :disable-max-idle-time="shouldDisableIdleOptimization()"
+      :max-idle-time="getMaxIdleTime()"
+    />
   </div>
 </template>
 

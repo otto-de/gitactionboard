@@ -1,10 +1,16 @@
 <template>
-<div id="jobs">
-<template v-for="job in jobs" :key="job">
-  <Job :job="job" />
-</template>
-</div>
-<div id="all-passed-container" v-if="jobs.length === 0"></div>
+  <div id="jobs">
+    <template
+      v-for="job in jobs"
+      :key="job"
+    >
+      <Job :job="job" />
+    </template>
+  </div>
+  <div
+    v-if="jobs.length === 0"
+    id="all-passed-container"
+  />
 </template>
 
 <script>
@@ -20,14 +26,6 @@ import Job from "@/components/Job";
 export default {
   name: "Jobs",
   components: { Job },
-  mounted: function(){
-    if (!this.disableMaxIdleTime) {
-      this.initiateIdleTimer();
-    }
-    this.renderPage().then(() => {
-      renderPageTimer = setInterval(this.renderPage, 5000);
-    });
-  },
   props: {
     showHealthyBuilds: {
       type: Boolean,
@@ -50,6 +48,14 @@ export default {
       idleTimer,
       ONE_MINUTE
     }
+  },
+  mounted: function(){
+    if (!this.disableMaxIdleTime) {
+      this.initiateIdleTimer();
+    }
+    this.renderPage().then(() => {
+      renderPageTimer = setInterval(this.renderPage, 5000);
+    });
   },
   methods: {
     isIdleHealthyBuild(lastBuildStatus, activity) {
@@ -88,7 +94,7 @@ export default {
       idleTimer = setInterval(this.incrementIdleTime, ONE_MINUTE);
     },
     fetchData() {
-      return fetch("/v1/cctray")
+      return fetch("./v1/cctray")
           .then((res) => res.json())
           .then(this.marshalData)
           .then((data) => this.jobs = data)

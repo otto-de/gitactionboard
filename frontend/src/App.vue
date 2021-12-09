@@ -1,5 +1,5 @@
 <template>
-  <JobStatusComponent></JobStatusComponent>
+  <JobStatusComponent />
 </template>
 
 <script>

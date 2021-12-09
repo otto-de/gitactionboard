@@ -1,10 +1,18 @@
 <template>
-  <div :key="job.name" :id="job.name" :class="[getBuildAndActivityStatus(job)]">
-  <div class="job_name">
-    <a :href="job.webUrl"  :id="job.name + '_url'" target="_blank">
-      {{ job.name }}
-    </a>
-  </div>
+  <div
+    :id="job.name"
+    :key="job.name"
+    :class="[getBuildAndActivityStatus(job)]"
+  >
+    <div class="job_name">
+      <a
+        :id="job.name + '_url'"
+        :href="job.webUrl"
+        target="_blank"
+      >
+        {{ job.name }}
+      </a>
+    </div>
   </div>
 </template>
 
@@ -45,7 +53,7 @@ export default {
   font-weight: bold;
   font-size: 14px;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   display: inline-grid;
   align-items: center;
 }

@@ -15,7 +15,7 @@ Usage: $0 command
 commands:
   check                                                Run checks (OWASP dependency check)
   format                                               Auto format source files
-  run-locally [auth token]                             Run local version of service
+  run-locally [auth token] [with frontend]             Run local version of service with/without frontend
   test                                                 Build and test the service
   docker-build                                         Build docker image
   talisman-verify                                      Verify no sensitive information is committed using talisman
