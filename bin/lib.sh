@@ -38,7 +38,7 @@ _check() {
 
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
   _ensure_nvm
-  npm audit --audit-level=moderate
+  npm audit --production --audit-level=moderate
   popd >/dev/null || exit
 
 }
