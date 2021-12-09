@@ -43,7 +43,10 @@ public class GithubWorkflowService implements WorkflowService {
             restTemplate.getForObject(
                 String.format("/%s/actions/workflows", repoName), WorkflowsResponse.class))
         .map(WorkflowsResponse::getWorkflows)
-        .orElse(Collections.emptyList());
+        .orElse(Collections.emptyList())
+        .stream()
+        .filter(WorkflowIdentifier::isActive)
+        .collect(Collectors.toUnmodifiableList());
   }
 
   private Workflow buildWorkflow(String repoName, WorkflowIdentifier workflowIdentifier) {

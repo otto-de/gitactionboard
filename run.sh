@@ -15,10 +15,11 @@ Usage: $0 command
 commands:
   check                                                Run checks (OWASP dependency check)
   format                                               Auto format source files
-  run-locally <auth token>                             Run local version of service
-  test                                                 Build and test the invoicing service
+  run-locally [auth token]                             Run local version of service
+  test                                                 Build and test the service
   docker-build                                         Build docker image
   talisman-verify                                      Verify no sensitive information is committed using talisman
+  bump-version <major|minor|patch>                     Release a new <major|minor|patch> version
 EOF
   exit 1
 }
@@ -32,5 +33,6 @@ case ${CMD} in
   test) _test ;;
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;
+  bump-version) _bump_version "${1}" ;;
   *) _usage ;;
 esac

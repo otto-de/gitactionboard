@@ -56,6 +56,9 @@ class GithubControllerIntegrationTest {
       String.format("%s/actions/runs/%s/jobs", API_BASE_PATH, 260614021);
   private static final String JOBS_URL_2 =
       String.format("%s/actions/runs/%s/jobs", API_BASE_PATH, 260614024);
+  private static final String CCTRAY_XML_ENDPOINT = "/v1/cctray.xml";
+  private static final String APPLICATION_XML_CONTENT_TYPE = "application/xml;charset=UTF-8";
+  private static final String CCTRAY_ENDPOINT = "/v1/cctray";
 
   private void stubApiRequests() {
     stubFor(
@@ -141,10 +144,10 @@ class GithubControllerIntegrationTest {
       final ResultMatcher resultMatcher = content().xml(readFile("testData/cctray.xml"));
 
       invokeGetApiAndValidate(
-          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher);
 
       invokeGetApiAndValidate(
-          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher);
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern("");
@@ -161,9 +164,9 @@ class GithubControllerIntegrationTest {
     void shouldFetchCctrayJsonWithoutCallingApis() {
       final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
 
-      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+      invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+      invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
       assertThat(WireMock.getAllServeEvents()).isEmpty();
     }
@@ -201,10 +204,10 @@ class GithubControllerIntegrationTest {
       final ResultMatcher resultMatcher = content().xml(readFile("testData/cctray.xml"));
 
       invokeGetApiAndValidate(
-          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher);
 
       invokeGetApiAndValidate(
-          mockMvc, "/v1/cctray.xml", "application/xml;charset=UTF-8", resultMatcher);
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher);
 
       assertThat(WireMock.getAllServeEvents()).isEmpty();
     }
@@ -215,9 +218,9 @@ class GithubControllerIntegrationTest {
     void shouldFetchCctrayJson() {
       final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
 
-      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+      invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+      invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern("");
@@ -251,8 +254,8 @@ class GithubControllerIntegrationTest {
 
       invokeGetApiAndValidate(
           mockMvc,
-          "/v1/cctray.xml",
-          "application/xml;charset=UTF-8",
+          CCTRAY_XML_ENDPOINT,
+          APPLICATION_XML_CONTENT_TYPE,
           content().xml(readFile("testData/cctray.xml")));
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
@@ -271,7 +274,7 @@ class GithubControllerIntegrationTest {
 
       final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
 
-      invokeGetApiAndValidate(mockMvc, "/v1/cctray", APPLICATION_JSON_VALUE, resultMatcher);
+      invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern("");
@@ -284,6 +287,7 @@ class GithubControllerIntegrationTest {
 
     @Test
     @SneakyThrows
+    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
     void shouldNotThrowErrorIfWorkflowsApiCallFails() {
       stubFor(
           WireMock.get(WORKFLOWS_URL)
@@ -294,8 +298,8 @@ class GithubControllerIntegrationTest {
 
       invokeGetApiAndValidate(
           mockMvc,
-          "/v1/cctray.xml",
-          "application/xml;charset=UTF-8",
+          CCTRAY_XML_ENDPOINT,
+          APPLICATION_XML_CONTENT_TYPE,
           content().xml("<Projects></Projects>"));
     }
   }

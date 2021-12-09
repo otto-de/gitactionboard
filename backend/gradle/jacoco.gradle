@@ -1,0 +1,61 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
+def excludes = []
+
+def jacocoExecutionDataFiles = fileTree(buildDir)
+        .include("/jacoco/test.exec")
+        .include("/jacoco/integrationTest.exec")
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        html.enabled true
+        csv.enabled false
+    }
+
+    dependsOn integrationTest
+}
+
+jacocoTestCoverageVerification {
+    dependsOn jacocoTestReport
+
+    violationRules {
+        executionData.from = files(jacocoExecutionDataFiles)
+        rule {
+            limit {
+                counter = 'LINE'
+                minimum = 0.80
+            }
+        }
+        rule {
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 0.90
+            }
+        }
+        rule {
+            limit {
+                counter = 'METHOD'
+                minimum = 0.85
+            }
+        }
+        rule {
+            limit {
+                counter = 'CLASS'
+                minimum = 0.90
+            }
+        }
+    }
+
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: excludes)
+        })
+    }
+}
+
+integrationTest.finalizedBy jacocoTestCoverageVerification, mergeTestReports

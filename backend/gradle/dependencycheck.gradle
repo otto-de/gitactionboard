@@ -1,0 +1,17 @@
+dependencyCheck {
+    dependencyCheck {
+        //Build will fail when vulnerabilities have a CVSS scoring above medium
+        failBuildOnCVSS = 7
+
+        suppressionFile = "${projectDir}/.dependency-check-suppression.xml"
+
+        data {
+            directory = "${projectDir}/.nvd-nist-cache"
+        }
+    }
+
+    analyzers {
+        assemblyEnabled = false
+        experimentalEnabled = false
+    }
+}

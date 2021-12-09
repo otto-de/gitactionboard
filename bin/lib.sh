@@ -134,3 +134,11 @@ _talisman_verify() {
     exit 1
   fi
 }
+
+_bump_version(){
+  local bump_component="${1}"
+  pushd "backend" >/dev/null || exit
+    _ensure_jenv
+    jenv exec ./gradlew tag -Prelease -PbumpComponent="${bump_component}" -Dmessage="$(git log -1 --format=%s)"
+  popd >/dev/null || exit
+}

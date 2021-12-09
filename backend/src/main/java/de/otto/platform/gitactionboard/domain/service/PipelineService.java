@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.domain.service;
 
 import de.otto.platform.gitactionboard.domain.JobDetails;
 import de.otto.platform.gitactionboard.domain.Workflow;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -16,6 +17,8 @@ import org.springframework.stereotype.Service;
 public class PipelineService {
   private final WorkflowService workflowService;
   private final JobDetailsService jobDetailsService;
+
+  @SuppressFBWarnings("EI_EXPOSE_REP2")
   private final List<String> repoNames;
 
   public PipelineService(
