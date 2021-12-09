@@ -14,10 +14,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @ConditionalOnProperty(name = "spring.security.oauth2.enable", havingValue = "true")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private final String actuatorBasePath;
+  private final GithubAuthenticationSuccessHandler authenticationSuccessHandler;
 
   public WebSecurityConfig(
-      @Value("${management.endpoints.web.base-path:/actuator}") String actuatorBasePath) {
+      @Value("${management.endpoints.web.base-path:/actuator}") String actuatorBasePath,
+      GithubAuthenticationSuccessHandler authenticationSuccessHandler) {
     this.actuatorBasePath = actuatorBasePath;
+    this.authenticationSuccessHandler = authenticationSuccessHandler;
   }
 
   @Override
@@ -36,6 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .anyRequest()
         .authenticated()
         .and()
-        .oauth2Login();
+        .oauth2Login()
+        .successHandler(authenticationSuccessHandler);
   }
 }
