@@ -28,7 +28,7 @@ shift || true
 case ${CMD} in
   check) _check ;;
   format) _format_sources ;;
-  run-locally) _run_locally "${1:-}" ;;
+  run-locally) _run_locally "${1:-}" "${2:-true}" ;;
   test) _test ;;
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;

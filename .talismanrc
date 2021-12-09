@@ -11,5 +11,7 @@ fileignoreconfig:
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
 - filename: frontend/src/components/Jobs.vue
   checksum: 77f7b7baa16cf8e4878e2e9aa0a25adc1efb8fcf254bd8b8739b27b94d4006f1
+- filename: frontend/package-lock.json
+  checksum: 9afe69e08c49b13e1d986d6e20c014b17351840c72952aee14c25ba2b4757e31
 - filename: frontend/src/components/Job.vue
-  checksum: afcc579fea225b40c6bc65df4b731b2fa2a5f859ec24b9491be6dd2f2a614a09
+  checksum: b225a327deb6a186d1969102ad4ad3cf09cc0a44607594e92a67099d5b6e1016

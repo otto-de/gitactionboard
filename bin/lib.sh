@@ -16,16 +16,35 @@ _ensure_jenv() {
   fi
 }
 
+_ensure_nvm() {
+  if ! type nvm &>/dev/null; then
+    export NVM_DIR="$HOME/.nvm"
+    # shellcheck disable=SC1091
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  fi
+
+  if ! type nvm &>/dev/null; then
+    echo "Please install nvm!" 1>&2
+    exit 1
+  fi
+  nvm use || nvm install
+}
+
 _check() {
-  pushd "backend" >/dev/null || exit
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
   jenv exec ./gradlew clean dependencyCheckAnalyze --info --stacktrace
+  popd >/dev/null || exit
+
+  pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+  _ensure_nvm
+  npm audit --audit-level=moderate
   popd >/dev/null || exit
 
 }
 
 _license_report() {
-  pushd "backend" >/dev/null || exit
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
   jenv exec ./gradlew clean generateLicenseReport
   popd >/dev/null || exit
@@ -38,9 +57,14 @@ _test() {
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
 
-  pushd "backend" >/dev/null || exit
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
   jenv exec ./gradlew clean check
+  popd >/dev/null || exit
+
+  pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+  _ensure_nvm
+  npm run lint
   popd >/dev/null || exit
 
   while IFS= read -r -d '' file; do
@@ -54,14 +78,43 @@ _format_sources() {
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
 
-  pushd "backend" >/dev/null || exit
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
   "${SCRIPT_DIR}/backend/gradlew" goJF
+  popd >/dev/null || exit
+
+  pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+  _ensure_nvm
+  npm run lint:fix
   popd >/dev/null || exit
 }
 
 _run_locally() {
-  pushd "backend" >/dev/null || exit
+  local with_frontend="${2}"
+
+  _revert() {
+    if [ "${with_frontend}" ]; then
+      pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+      echo "Removing backend/src/main/resources/public"
+      rm -rf "${SCRIPT_DIR}/backend/src/main/resources/public"
+      popd >/dev/null || exit
+    fi
+
+    exit 0
+  }
+
+  trap _revert SIGTERM SIGINT ERR
+
+  if [ "${with_frontend}" ]; then
+    pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+    _ensure_nvm
+    npm run build
+    echo "Copying dist to ../backend/src/main/resources/public"
+    cp -r dist ../backend/src/main/resources/public
+    popd >/dev/null || exit
+  fi
+
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
   SPRING_PROFILES_ACTIVE=local GITHUB_ACCESS_TOKEN="${1}" jenv exec ./gradlew clean bootRun
   popd >/dev/null || exit
