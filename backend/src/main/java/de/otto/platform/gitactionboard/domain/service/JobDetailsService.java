@@ -7,5 +7,5 @@ import java.util.concurrent.CompletableFuture;
 
 @FunctionalInterface
 public interface JobDetailsService {
-  CompletableFuture<List<JobDetails>> fetchJobDetails(Workflow workflow);
+  CompletableFuture<List<JobDetails>> fetchJobDetails(Workflow workflow, String accessToken);
 }

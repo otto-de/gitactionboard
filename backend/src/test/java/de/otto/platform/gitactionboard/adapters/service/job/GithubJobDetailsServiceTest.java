@@ -19,6 +19,7 @@ import static org.mockito.Mockito.when;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.TestUtil;
+import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.config.CodecConfig;
@@ -43,7 +44,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 
 @ExtendWith(MockitoExtension.class)
 class GithubJobDetailsServiceTest {
@@ -61,11 +61,12 @@ class GithubJobDetailsServiceTest {
   private static final ObjectMapper objectMapper = CodecConfig.OBJECT_MAPPER_BUILDER.build();
   private static final String RUN_DETAILS_URL_TEMPLATE = "/%s/actions/workflows/%s/runs?per_page=2";
   private static final String JOB_DETAILS_URL_TEMPLATE = "/%s/actions/runs/%s/jobs";
+  private static final String ACCESS_TOKEN = "accessToken";
 
   private final Workflow workflow =
       Workflow.builder().id(2151835).name(WORKFLOW_NAME).repoName(REPO_NAME).build();
 
-  @Mock private RestTemplate restTemplate;
+  @Mock private ApiService apiService;
 
   @Mock private Cache<String, List<WorkflowsJobDetails>> mockWorkflowJobDetailsCache;
 
@@ -111,20 +112,21 @@ class GithubJobDetailsServiceTest {
 
   @BeforeEach
   void setUp() {
-    githubJobDetailsService =
-        new GithubJobDetailsService(restTemplate, mockWorkflowJobDetailsCache);
+    githubJobDetailsService = new GithubJobDetailsService(apiService, mockWorkflowJobDetailsCache);
   }
 
   @Test
   @SneakyThrows
   void shouldReturnEmptyListAsJobDetailsIfWorkflowNeverRan() {
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(
             WorkflowsRunDetailsResponse.builder().workflowRuns(Collections.emptyList()).build());
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
     assertThat(jobDetails).isEmpty();
   }
 
@@ -133,7 +135,7 @@ class GithubJobDetailsServiceTest {
   void shouldFetchJobDetailsWhenWorkflowRanOnlyOnce() {
     final String runDetailUri =
         String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId());
-    when(restTemplate.getForObject(runDetailUri, WorkflowsRunDetailsResponse.class))
+    when(apiService.getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class))
         .thenReturn(
             WorkflowsRunDetailsResponse.builder()
                 .workflowRuns(List.of(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0)))
@@ -141,32 +143,38 @@ class GithubJobDetailsServiceTest {
 
     final String jobDetailsUri =
         String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), RUN_ID_1);
-    when(restTemplate.getForObject(jobDetailsUri, WorkflowsJobDetailsResponse.class))
+    when(apiService.getForObject(jobDetailsUri, ACCESS_TOKEN, WorkflowsJobDetailsResponse.class))
         .thenReturn(BASE_JOB_DETAILS_RESPONSE);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
     final List<JobDetails> expectedJobDetails =
         List.of(JOB_DETAILS_1132386046, JOB_DETAILS_1132386127);
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
-    verify(restTemplate, times(1)).getForObject(runDetailUri, WorkflowsRunDetailsResponse.class);
-    verify(restTemplate, times(1)).getForObject(jobDetailsUri, WorkflowsJobDetailsResponse.class);
+    verify(apiService, times(1))
+        .getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class);
+    verify(apiService, times(1))
+        .getForObject(jobDetailsUri, ACCESS_TOKEN, WorkflowsJobDetailsResponse.class);
   }
 
   @Test
   @SneakyThrows
   void shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsSuccess() {
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE);
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), RUN_ID_1),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(BASE_JOB_DETAILS_RESPONSE);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final List<JobDetails> expectedJobDetails =
         List.of(JOB_DETAILS_1132386046, JOB_DETAILS_1132386127);
@@ -194,8 +202,9 @@ class GithubJobDetailsServiceTest {
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
@@ -217,12 +226,14 @@ class GithubJobDetailsServiceTest {
         workflowsRunDetailsResponse.getWorkflowRuns().get(0);
     final long currentRunId = workflowRunDetails.getId();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final List<JobDetails> expectedJobDetails =
         List.of(
@@ -268,8 +279,9 @@ class GithubJobDetailsServiceTest {
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
@@ -293,12 +305,14 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), runId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(workflowsJobDetailsResponse);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final Instant lastBuildTime = Instant.parse("2020-09-17T06:14:21Z");
     final List<JobDetails> expectedJobDetails =
@@ -344,8 +358,9 @@ class GithubJobDetailsServiceTest {
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
@@ -369,8 +384,9 @@ class GithubJobDetailsServiceTest {
     final Instant currentRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
 
@@ -397,12 +413,14 @@ class GithubJobDetailsServiceTest {
     final Instant previousRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), previousRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(previousWorkflowsJobDetailsResponse);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final List<JobDetails> expectedJobDetails =
         List.of(
@@ -447,8 +465,9 @@ class GithubJobDetailsServiceTest {
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
@@ -472,12 +491,14 @@ class GithubJobDetailsServiceTest {
     final Instant currentRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final Instant lastBuildTime = Instant.parse("2020-09-17T06:14:21Z");
     final List<JobDetails> expectedJobDetails =
@@ -524,8 +545,9 @@ class GithubJobDetailsServiceTest {
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
@@ -549,8 +571,9 @@ class GithubJobDetailsServiceTest {
     final Instant currentRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
 
@@ -572,12 +595,14 @@ class GithubJobDetailsServiceTest {
     final Instant previousRunUpdatedAt =
         workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), previousRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(previousWorkflowsJobDetailsResponse);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final List<JobDetails> expectedJobDetails =
         List.of(
@@ -613,30 +638,33 @@ class GithubJobDetailsServiceTest {
   @Test
   @SneakyThrows
   void shouldNotThrowErrorIfTheFetchWorkflowsRunsCallFails() {
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
-    assertThat(githubJobDetailsService.fetchJobDetails(workflow).get()).isEmpty();
+    assertThat(githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get()).isEmpty();
   }
 
   @Test
   @SneakyThrows
   void shouldNotThrowErrorIfTheFetchJobDetailsRunsCallFails() {
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE);
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(
                 JOB_DETAILS_URL_TEMPLATE,
                 workflow.getRepoName(),
                 BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).getId()),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
 
-    assertThat(githubJobDetailsService.fetchJobDetails(workflow).get()).isEmpty();
+    assertThat(githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get()).isEmpty();
   }
 
   @Test
@@ -659,8 +687,9 @@ class GithubJobDetailsServiceTest {
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
 
-    when(restTemplate.getForObject(
+    when(apiService.getForObject(
             String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
@@ -683,7 +712,8 @@ class GithubJobDetailsServiceTest {
 
     when(mockWorkflowJobDetailsCache.getIfPresent(cacheKey)).thenReturn(workflowsJobDetails);
 
-    final List<JobDetails> jobDetails = githubJobDetailsService.fetchJobDetails(workflow).get();
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
     final List<JobDetails> expectedJobDetails =
         List.of(
@@ -696,9 +726,10 @@ class GithubJobDetailsServiceTest {
 
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
     verify(mockWorkflowJobDetailsCache, never()).put(cacheKey, workflowsJobDetails);
-    verify(restTemplate, never())
+    verify(apiService, never())
         .getForObject(
             String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class);
   }
 }

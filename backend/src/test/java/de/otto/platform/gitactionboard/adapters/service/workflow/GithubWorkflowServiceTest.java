@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.TestUtil;
+import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import de.otto.platform.gitactionboard.domain.Workflow;
@@ -18,19 +19,19 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 
 @ExtendWith(MockitoExtension.class)
 class GithubWorkflowServiceTest {
 
+  private static final String ACCESS_TOKEN = "accessToken";
   private final ObjectMapper objectMapper = CodecConfig.OBJECT_MAPPER_BUILDER.build();
-  @Mock private RestTemplate restTemplate;
+  @Mock private ApiService apiService;
 
   private GithubWorkflowService githubWorkflowService;
 
   @BeforeEach
   void setUp() {
-    githubWorkflowService = new GithubWorkflowService(restTemplate);
+    githubWorkflowService = new GithubWorkflowService(apiService);
   }
 
   @Test
@@ -40,11 +41,14 @@ class GithubWorkflowServiceTest {
         objectMapper.readValue(
             TestUtil.readFile("testData/workflows.json"), WorkflowsResponse.class);
 
-    when(restTemplate.getForObject(
-            String.format("/%s/actions/workflows", REPO_NAME), WorkflowsResponse.class))
+    when(apiService.getForObject(
+            String.format("/%s/actions/workflows", REPO_NAME),
+            ACCESS_TOKEN,
+            WorkflowsResponse.class))
         .thenReturn(workflowsResponse);
 
-    final List<Workflow> workflows = githubWorkflowService.fetchWorkflows(REPO_NAME).get();
+    final List<Workflow> workflows =
+        githubWorkflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN).get();
 
     final List<WorkflowIdentifier> workflowsFromResponse = workflowsResponse.getWorkflows();
 
@@ -70,7 +74,8 @@ class GithubWorkflowServiceTest {
   @Test
   @SneakyThrows
   void shouldReturnEmptyListWhenResponseIsNull() {
-    final List<Workflow> workflows = githubWorkflowService.fetchWorkflows(REPO_NAME).get();
+    final List<Workflow> workflows =
+        githubWorkflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN).get();
 
     assertThat(workflows).isEmpty();
   }
@@ -78,11 +83,14 @@ class GithubWorkflowServiceTest {
   @Test
   @SneakyThrows
   void shouldReturnEmptyListIfAnyExceptionOccurs() {
-    when(restTemplate.getForObject(
-            String.format("/%s/actions/workflows", REPO_NAME), WorkflowsResponse.class))
+    when(apiService.getForObject(
+            String.format("/%s/actions/workflows", REPO_NAME),
+            ACCESS_TOKEN,
+            WorkflowsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
 
-    final List<Workflow> workflows = githubWorkflowService.fetchWorkflows(REPO_NAME).get();
+    final List<Workflow> workflows =
+        githubWorkflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN).get();
 
     assertThat(workflows).isEmpty();
   }
