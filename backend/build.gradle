@@ -1,10 +1,10 @@
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "2.5.6"
+    id "org.springframework.boot" version "2.6.1"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "io.freefair.lombok" version "6.3.0"
-    id "com.github.spotbugs" version "4.8.0"
+    id "com.github.spotbugs" version "5.0.2"
     id "com.github.sherter.google-java-format" version "0.9"
     id "com.github.ben-manes.versions" version "0.39.0"
     id "org.owasp.dependencycheck" version "6.5.0.1"
@@ -22,8 +22,8 @@ lombok {
 ext {
     jacksonDataBindVersion = "2.13.0"
     javaUuidGeneratorVersion = "4.0.1"
-    logstashVersion = "7.0"
-    caffeineVersion = "3.0.4"
+    logstashVersion = "7.0.1"
+    caffeineVersion = "3.0.5"
     wiremockVersion = "2.27.2"
     archUnitVersion = "0.22.0"
 }
