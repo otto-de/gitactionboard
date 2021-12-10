@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.config;
 
 import static org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter.Directive.ALL;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -20,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private final String actuatorBasePath;
   private final GithubAuthenticationSuccessHandler authenticationSuccessHandler;
 
+  @SuppressFBWarnings("EI_EXPOSE_REP2")
   public WebSecurityConfig(
       @Value("${management.endpoints.web.base-path:/actuator}") String actuatorBasePath,
       GithubAuthenticationSuccessHandler authenticationSuccessHandler) {
