@@ -32,9 +32,13 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   private static final String AVATAR_URL = "avatar_url";
   private static final String NAME = "name";
   private static final String USERNAME = "username";
+  private static final String ACCESS_TOKEN = "access_token";
+  private static final String REFRESH_TOKEN = "refresh_token";
+
   private static final int ONE_DAY = 60 * 60 * 24;
   private static final int SEVEN_HOURS = 60 * 60 * 7;
   private static final int FIVE_MONTHS = 60 * 60 * 5 * 30;
+
   private final OAuth2AuthorizedClientService clientService;
 
   @SuppressFBWarnings("EI_EXPOSE_REP2")
@@ -72,15 +76,15 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
   private Cookie createAccessTokenCookie(OAuth2AccessToken oAuth2AccessToken) {
     return createCookie(
-        "access_token", String.format("token %s", oAuth2AccessToken.getTokenValue()), SEVEN_HOURS);
+        ACCESS_TOKEN, String.format("token %s", oAuth2AccessToken.getTokenValue()), SEVEN_HOURS);
   }
 
   private Cookie createRefreshTokenCookie(OAuth2RefreshToken oAuth2RefreshToken) {
-    return createCookie("refresh_token", oAuth2RefreshToken.getTokenValue(), FIVE_MONTHS);
+    return createCookie(REFRESH_TOKEN, oAuth2RefreshToken.getTokenValue(), FIVE_MONTHS);
   }
 
   private OAuth2AuthorizedClient getAuthorisedClient(Authentication authentication) {
-    if (authentication.getClass().isAssignableFrom(OAuth2AuthenticationToken.class)) {
+    if (OAuth2AuthenticationToken.class.isAssignableFrom(authentication.getClass())) {
       final OAuth2AuthenticationToken oauthToken = (OAuth2AuthenticationToken) authentication;
       final String clientRegistrationId = oauthToken.getAuthorizedClientRegistrationId();
       return clientService.loadAuthorizedClient(clientRegistrationId, oauthToken.getName());

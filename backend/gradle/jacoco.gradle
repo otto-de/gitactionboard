@@ -5,8 +5,8 @@ jacoco {
 }
 
 def excludes = [
-        "de/otto/platform/gitactionboard/config/GithubAuthenticationSuccessHandler.class",
-        "de/otto/platform/gitactionboard/config/WebSecurityConfig.class"
+        "de/otto/platform/gitactionboard/config/WebSecurityConfig.class",
+        "de/otto/platform/gitactionboard/config/NoOpsWebSecurityConfig.class",
 ]
 
 def jacocoExecutionDataFiles = fileTree(buildDir)

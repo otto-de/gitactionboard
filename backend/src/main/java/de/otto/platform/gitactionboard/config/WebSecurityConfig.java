@@ -3,6 +3,7 @@ package de.otto.platform.gitactionboard.config;
 import static org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter.Directive.ALL;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -27,6 +28,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       GithubAuthenticationSuccessHandler authenticationSuccessHandler) {
     this.actuatorBasePath = actuatorBasePath;
     this.authenticationSuccessHandler = authenticationSuccessHandler;
+  }
+
+  @PostConstruct
+  @SuppressWarnings("PMD.UnusedPrivateMethod")
+  private void logInfo() {
+    log.info("Enabled Github authentication as value is present for GITHUB_OAUTH2_CLIENT_ID");
   }
 
   @Override
