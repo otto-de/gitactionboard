@@ -8,7 +8,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
   checksum: b4c700cb2efed3d2f318e3ee16e7dbd2eafa4bcde584256b4ffaa66ddae63ac7
 - filename: backend/src/main/resources/application.properties
-  checksum: ce54d7a6794876264b536c392c651c1488e7d6af3f3370b73c83d59ab60ca3d5
+  checksum: a8e9a356bb11b97e2229340e5339a7e0105ecd51dc79bc8165d59ed95705ae3a
 - filename: bin/install-talisman.sh
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png

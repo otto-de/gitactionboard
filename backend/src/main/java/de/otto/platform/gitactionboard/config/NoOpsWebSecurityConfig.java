@@ -9,8 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @ConditionalOnProperty(
-    name = "spring.security.oauth2.enable",
-    havingValue = "false",
+    name = "spring.security.oauth2.client.registration.github.client-id",
+    havingValue = "-",
     matchIfMissing = true)
 public class NoOpsWebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override

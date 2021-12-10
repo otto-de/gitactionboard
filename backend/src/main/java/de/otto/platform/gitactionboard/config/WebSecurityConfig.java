@@ -5,7 +5,7 @@ import static org.springframework.security.web.header.writers.ClearSiteDataHeade
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,7 +16,7 @@ import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter
 @Configuration
 @EnableWebSecurity
 @Slf4j
-@ConditionalOnProperty(name = "spring.security.oauth2.enable", havingValue = "true")
+@ConditionalOnMissingBean(NoOpsWebSecurityConfig.class)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private final String actuatorBasePath;
   private final GithubAuthenticationSuccessHandler authenticationSuccessHandler;
