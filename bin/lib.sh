@@ -19,7 +19,7 @@ _ensure_jenv() {
 _ensure_nvm() {
   if ! type nvm &>/dev/null; then
     export NVM_DIR="$HOME/.nvm"
-    # shellcheck disable=SC1091
+    # shellcheck disable=SC1091 disable=SC1090
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   fi
 
