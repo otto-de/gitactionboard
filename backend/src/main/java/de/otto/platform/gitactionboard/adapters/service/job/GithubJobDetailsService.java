@@ -3,6 +3,7 @@ package de.otto.platform.gitactionboard.adapters.service.job;
 import static de.otto.platform.gitactionboard.adapters.service.job.RunStatus.COMPLETED;
 
 import com.github.benmanes.caffeine.cache.Cache;
+import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.domain.JobDetails;
@@ -19,26 +20,27 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class GithubJobDetailsService implements JobDetailsService {
-  private final RestTemplate restTemplate;
+  private final ApiService apiService;
   private final Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
 
   @Override
   @Async
-  public CompletableFuture<List<JobDetails>> fetchJobDetails(Workflow workflow) {
+  public CompletableFuture<List<JobDetails>> fetchJobDetails(
+      Workflow workflow, String accessToken) {
     return CompletableFuture.supplyAsync(
             () -> {
-              final List<WorkflowRunDetails> workflowsRunDetails = fetchWorkflowDetails(workflow);
+              final List<WorkflowRunDetails> workflowsRunDetails =
+                  fetchWorkflowDetails(workflow, accessToken);
               if (workflowsRunDetails.isEmpty()) return Collections.<JobDetails>emptyList();
 
               final WorkflowRunDetails currentWorkflowRun = workflowsRunDetails.get(0);
               final List<WorkflowsJobDetails> currentJobs =
-                  fetchWorkflowJobDetails(currentWorkflowRun, workflow);
+                  fetchWorkflowJobDetails(currentWorkflowRun, workflow, accessToken);
 
               final long runNumber = currentWorkflowRun.getRunNumber();
               if (workflowsRunDetails.size() == 1) {
@@ -49,7 +51,7 @@ public class GithubJobDetailsService implements JobDetailsService {
 
               final List<WorkflowsJobDetails> previousJobs =
                   getPreviousJobDetails(
-                      workflow, currentJobs, currentWorkflowRun, previousWorkflowRun);
+                      workflow, currentJobs, currentWorkflowRun, previousWorkflowRun, accessToken);
 
               return convertToJobDetails(runNumber, currentJobs, workflow, previousJobs);
             })
@@ -64,22 +66,24 @@ public class GithubJobDetailsService implements JobDetailsService {
       Workflow workflow,
       List<WorkflowsJobDetails> currentJobs,
       WorkflowRunDetails currentWorkflowRun,
-      WorkflowRunDetails previousWorkflowRun) {
+      WorkflowRunDetails previousWorkflowRun,
+      String accessToken) {
 
     if (COMPLETED.equals(currentWorkflowRun.getStatus())) {
       return currentJobs;
     }
-    return fetchPreviousJobs(workflow, currentJobs, previousWorkflowRun);
+    return fetchPreviousJobs(workflow, currentJobs, previousWorkflowRun, accessToken);
   }
 
   private List<WorkflowsJobDetails> fetchPreviousJobs(
       Workflow workflow,
       List<WorkflowsJobDetails> currentJobs,
-      WorkflowRunDetails previousWorkflowRun) {
+      WorkflowRunDetails previousWorkflowRun,
+      String accessToken) {
     log.info("Getting previous job details for {}", workflow);
 
     if (isFailureConclusion(previousWorkflowRun.getConclusion())) {
-      return fetchWorkflowJobDetails(previousWorkflowRun, workflow);
+      return fetchWorkflowJobDetails(previousWorkflowRun, workflow, accessToken);
     }
 
     return currentJobs.stream()
@@ -148,14 +152,15 @@ public class GithubJobDetailsService implements JobDetailsService {
         .orElse(defaultValue);
   }
 
-  private List<WorkflowRunDetails> fetchWorkflowDetails(Workflow workflow) {
+  private List<WorkflowRunDetails> fetchWorkflowDetails(Workflow workflow, String accessToken) {
     log.info("Fetching run details for {}", workflow);
 
     final WorkflowsRunDetailsResponse runDetailsResponse =
-        restTemplate.getForObject(
+        apiService.getForObject(
             String.format(
                 "/%s/actions/workflows/%s/runs?per_page=2",
                 workflow.getRepoName(), workflow.getId()),
+            accessToken,
             WorkflowsRunDetailsResponse.class);
 
     return Optional.ofNullable(runDetailsResponse)
@@ -164,14 +169,14 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private List<WorkflowsJobDetails> fetchWorkflowJobDetails(
-      WorkflowRunDetails workflowRunDetails, Workflow workflow) {
+      WorkflowRunDetails workflowRunDetails, Workflow workflow, String accessToken) {
     final String cacheKey = getCacheKey(workflow, workflowRunDetails);
     final List<WorkflowsJobDetails> cachedJobDetails =
         workflowJobDetailsCache.getIfPresent(cacheKey);
 
     if (shouldFetchJobDetails(cachedJobDetails)) {
       final List<WorkflowsJobDetails> jobDetails =
-          getWorkflowsJobDetails(workflowRunDetails, workflow);
+          getWorkflowsJobDetails(workflowRunDetails, workflow, accessToken);
       workflowJobDetailsCache.put(cacheKey, jobDetails);
       return jobDetails;
     }
@@ -201,7 +206,7 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private List<WorkflowsJobDetails> getWorkflowsJobDetails(
-      WorkflowRunDetails workflowRunDetails, Workflow workflow) {
+      WorkflowRunDetails workflowRunDetails, Workflow workflow, String accessToken) {
     log.info(
         "Fetching job details for {} with run id {} and run number {}",
         workflow,
@@ -209,9 +214,10 @@ public class GithubJobDetailsService implements JobDetailsService {
         workflowRunDetails.getRunNumber());
 
     final WorkflowsJobDetailsResponse jobDetailsResponse =
-        restTemplate.getForObject(
+        apiService.getForObject(
             String.format(
                 "/%s/actions/runs/%s/jobs", workflow.getRepoName(), workflowRunDetails.getId()),
+            accessToken,
             WorkflowsJobDetailsResponse.class);
 
     return Optional.ofNullable(jobDetailsResponse)

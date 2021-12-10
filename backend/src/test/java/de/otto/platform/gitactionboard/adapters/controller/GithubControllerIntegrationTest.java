@@ -26,6 +26,7 @@ import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.WireMockExtension;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import java.util.List;
+import javax.servlet.http.Cookie;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,6 +42,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 @DirtiesContext
 @IntegrationTest
@@ -59,6 +61,8 @@ class GithubControllerIntegrationTest {
   private static final String CCTRAY_XML_ENDPOINT = "/v1/cctray.xml";
   private static final String APPLICATION_XML_CONTENT_TYPE = "application/xml;charset=UTF-8";
   private static final String CCTRAY_ENDPOINT = "/v1/cctray";
+  private static final String CCTRAY_XML_FILE_NAME = "testData/cctray.xml";
+  private static final String CCTRAY_JSON_FILE_NAME = "testData/cctray.json";
 
   private void stubApiRequests() {
     stubFor(
@@ -141,7 +145,7 @@ class GithubControllerIntegrationTest {
     @Order(value = 0)
     @SneakyThrows
     void shouldFetchCctrayXml() {
-      final ResultMatcher resultMatcher = content().xml(readFile("testData/cctray.xml"));
+      final ResultMatcher resultMatcher = content().xml(readFile(CCTRAY_XML_FILE_NAME));
 
       invokeGetApiAndValidate(
           mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher);
@@ -162,7 +166,7 @@ class GithubControllerIntegrationTest {
     @Order(value = 1)
     @SneakyThrows
     void shouldFetchCctrayJsonWithoutCallingApis() {
-      final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
 
       invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
@@ -201,7 +205,7 @@ class GithubControllerIntegrationTest {
     @Order(value = 1)
     @SneakyThrows
     void shouldFetchCctrayXmlWithoutCallingApis() {
-      final ResultMatcher resultMatcher = content().xml(readFile("testData/cctray.xml"));
+      final ResultMatcher resultMatcher = content().xml(readFile(CCTRAY_XML_FILE_NAME));
 
       invokeGetApiAndValidate(
           mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher);
@@ -216,7 +220,7 @@ class GithubControllerIntegrationTest {
     @Order(value = 0)
     @SneakyThrows
     void shouldFetchCctrayJson() {
-      final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
 
       invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
@@ -256,7 +260,7 @@ class GithubControllerIntegrationTest {
           mockMvc,
           CCTRAY_XML_ENDPOINT,
           APPLICATION_XML_CONTENT_TYPE,
-          content().xml(readFile("testData/cctray.xml")));
+          content().xml(readFile(CCTRAY_XML_FILE_NAME)));
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern("");
@@ -272,12 +276,60 @@ class GithubControllerIntegrationTest {
     void shouldFetchCctrayJson() {
       stubApiRequests();
 
-      final ResultMatcher resultMatcher = content().json(readFile("testData/cctray.json"));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
 
       invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCctrayXmlUsingAccessTokenFromCookie() {
+      stubApiRequests();
+
+      final String dummyAccessToken = "dummy_access_token";
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CCTRAY_XML_ENDPOINT,
+          APPLICATION_XML_CONTENT_TYPE,
+          content().xml(readFile(CCTRAY_XML_FILE_NAME)),
+          new Cookie("access_token", dummyAccessToken));
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCctrayJsonUsingAccessTokenFromCookie() {
+      stubApiRequests();
+
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
+
+      final String dummyAccessToken = "dummy_access_token";
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CCTRAY_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          resultMatcher,
+          new Cookie("access_token", dummyAccessToken));
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
       verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
       verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
       verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
@@ -306,9 +358,15 @@ class GithubControllerIntegrationTest {
 
   @SneakyThrows
   private void invokeGetApiAndValidate(
-      MockMvc mockMvc, String endPoint, String expectedContentType, ResultMatcher resultMatcher) {
+      MockMvc mockMvc,
+      String endPoint,
+      String expectedContentType,
+      ResultMatcher resultMatcher,
+      Cookie... cookies) {
+    final MockHttpServletRequestBuilder requestBuilder =
+        cookies.length == 0 ? get(endPoint) : get(endPoint).cookie(cookies);
     mockMvc
-        .perform(get(endPoint))
+        .perform(requestBuilder)
         .andExpect(status().isOk())
         .andExpect(header().stringValues(ACCESS_CONTROL_ALLOW_ORIGIN, "*"))
         .andExpect(header().stringValues(CONTENT_TYPE, expectedContentType))

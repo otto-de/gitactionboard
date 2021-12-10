@@ -14,8 +14,10 @@ import de.otto.platform.gitactionboard.fixtures.JobDetailsFixture;
 import java.time.Instant;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.NullSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
@@ -34,8 +36,10 @@ class GithubControllerTest {
     githubController = new GithubController(pipelineService, cruiseControlService);
   }
 
-  @Test
-  void shouldFetchJobDataAsXml() {
+  @ParameterizedTest
+  @NullSource
+  @CsvSource(value = {"accessToken"})
+  void shouldFetchJobDataAsXml(String accessToken) {
     final String cctrayXml =
         "<Projects>\n"
             + "<Project name=\"hello-world :: hello-world-checks :: dependency-checks\" activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"206\" lastBuildTime=\"2020-09-18T06:14:54Z\" webUrl=\"https://github.com/johndoe/hello-world/runs/1132386127\"/>\n"
@@ -43,10 +47,10 @@ class GithubControllerTest {
 
     final List<JobDetails> jobs = List.of(JobDetailsFixture.getJobDetailsBuilder().build());
 
-    when(pipelineService.fetchJobs()).thenReturn(jobs);
+    when(pipelineService.fetchJobs(accessToken)).thenReturn(jobs);
     when(cruiseControlService.convertToXml(jobs)).thenReturn(cctrayXml);
 
-    final ResponseEntity<String> cctrayResponse = githubController.getCctrayXml();
+    final ResponseEntity<String> cctrayResponse = githubController.getCctrayXml(accessToken);
 
     assertThat(cctrayResponse.getStatusCode()).isEqualTo(OK);
     assertThat(cctrayResponse.getHeaders())
@@ -54,8 +58,10 @@ class GithubControllerTest {
     assertThat(cctrayResponse.getBody()).isEqualTo(cctrayXml);
   }
 
-  @Test
-  void shouldFetchJobDataAsJson() {
+  @ParameterizedTest
+  @NullSource
+  @CsvSource(value = {"accessToken"})
+  void shouldFetchJobDataAsJson(String accessToken) {
     final List<JobDetails> jobs = List.of(JobDetailsFixture.getJobDetailsBuilder().build());
     final List<Project> projects =
         List.of(
@@ -68,10 +74,10 @@ class GithubControllerTest {
                 .webUrl("https://github.com/johndoe/hello-world/runs/1132386127")
                 .build());
 
-    when(pipelineService.fetchJobs()).thenReturn(jobs);
+    when(pipelineService.fetchJobs(accessToken)).thenReturn(jobs);
     when(cruiseControlService.convertToJson(jobs)).thenReturn(projects);
 
-    final ResponseEntity<List<Project>> cctrayResponse = githubController.getCctray();
+    final ResponseEntity<List<Project>> cctrayResponse = githubController.getCctray(accessToken);
 
     assertThat(cctrayResponse.getStatusCode()).isEqualTo(OK);
     assertThat(cctrayResponse.getHeaders())

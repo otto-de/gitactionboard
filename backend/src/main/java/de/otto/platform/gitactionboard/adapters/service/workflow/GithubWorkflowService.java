@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.workflow;
 
+import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import de.otto.platform.gitactionboard.domain.Workflow;
 import de.otto.platform.gitactionboard.domain.service.WorkflowService;
@@ -12,22 +13,21 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class GithubWorkflowService implements WorkflowService {
-  private final RestTemplate restTemplate;
+  private final ApiService apiService;
 
   @Override
   @Async
-  public CompletableFuture<List<Workflow>> fetchWorkflows(String repoName) {
+  public CompletableFuture<List<Workflow>> fetchWorkflows(String repoName, String accessToken) {
     return CompletableFuture.supplyAsync(
             () -> {
               log.info("Fetching workflows for {} repository", repoName);
 
-              return getWorkflowIdentifiers(repoName).stream()
+              return getWorkflowIdentifiers(repoName, accessToken).stream()
                   .map(workflowIdentifier -> buildWorkflow(repoName, workflowIdentifier))
                   .collect(Collectors.toUnmodifiableList());
             })
@@ -38,10 +38,10 @@ public class GithubWorkflowService implements WorkflowService {
             });
   }
 
-  private List<WorkflowIdentifier> getWorkflowIdentifiers(String repoName) {
-    return Optional.ofNullable(
-            restTemplate.getForObject(
-                String.format("/%s/actions/workflows", repoName), WorkflowsResponse.class))
+  private List<WorkflowIdentifier> getWorkflowIdentifiers(String repoName, String accessToken) {
+    final String url = String.format("/%s/actions/workflows", repoName);
+
+    return Optional.ofNullable(apiService.getForObject(url, accessToken, WorkflowsResponse.class))
         .map(WorkflowsResponse::getWorkflows)
         .orElse(Collections.emptyList())
         .stream()

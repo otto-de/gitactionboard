@@ -4,7 +4,10 @@ jacoco {
     toolVersion = "0.8.7"
 }
 
-def excludes = []
+def excludes = [
+        "de/otto/platform/gitactionboard/config/WebSecurityConfig.class",
+        "de/otto/platform/gitactionboard/config/NoOpsWebSecurityConfig.class",
+]
 
 def jacocoExecutionDataFiles = fileTree(buildDir)
         .include("/jacoco/test.exec")

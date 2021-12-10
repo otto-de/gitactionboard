@@ -31,12 +31,12 @@ public class PipelineService {
   }
 
   @Cacheable(cacheNames = "jobDetails", sync = true)
-  public List<JobDetails> fetchJobs() {
+  public List<JobDetails> fetchJobs(String accessToken) {
     final List<Workflow> workflows =
         repoNames.stream()
             .parallel()
             .peek(repoName -> log.info("Fetching workflows for {} repo", repoName))
-            .map(workflowService::fetchWorkflows)
+            .map(repoName -> workflowService.fetchWorkflows(repoName, accessToken))
             .map(CompletableFuture::join)
             .flatMap(Collection::stream)
             .collect(Collectors.toList());
@@ -44,7 +44,7 @@ public class PipelineService {
     return workflows.stream()
         .parallel()
         .peek(workflow -> log.info("Fetching job details for {}", workflow))
-        .map(jobDetailsService::fetchJobDetails)
+        .map(workflow -> jobDetailsService.fetchJobDetails(workflow, accessToken))
         .map(CompletableFuture::join)
         .flatMap(Collection::stream)
         .collect(Collectors.toUnmodifiableList());

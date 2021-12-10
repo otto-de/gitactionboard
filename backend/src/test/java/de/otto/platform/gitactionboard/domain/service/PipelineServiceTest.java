@@ -51,6 +51,7 @@ class PipelineServiceTest {
           .lastBuildTime(Instant.parse("2020-09-18T06:11:42.000Z"))
           .workflowName(WorkflowsFixture.BUILD_AND_DEPLOYMENT_WORKFLOW_NAME)
           .build();
+  private static final String ACCESS_TOKEN = "accessToken";
 
   @Mock private JobDetailsService jobDetailsService;
   @Mock private WorkflowService workflowService;
@@ -68,20 +69,20 @@ class PipelineServiceTest {
     final Workflow checksWorkflow =
         getWorkflowBuilder().id(2057656).name(CHECKS_WORKFLOW_NAME).build();
 
-    when(workflowService.fetchWorkflows(REPO_NAME))
+    when(workflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN))
         .thenReturn(
             CompletableFuture.completedFuture(List.of(buildAndDeploymentWorkflow, checksWorkflow)));
 
-    when(jobDetailsService.fetchJobDetails(checksWorkflow))
+    when(jobDetailsService.fetchJobDetails(checksWorkflow, ACCESS_TOKEN))
         .thenReturn(
             CompletableFuture.completedFuture(
                 List.of(TALISMAN_CHECKS_JOB_DETAILS, DEPENDENCY_CHECKS_JOB_DETAILS)));
 
-    when(jobDetailsService.fetchJobDetails(buildAndDeploymentWorkflow))
+    when(jobDetailsService.fetchJobDetails(buildAndDeploymentWorkflow, ACCESS_TOKEN))
         .thenReturn(
             CompletableFuture.completedFuture(List.of(TEST_JOB_DETAILS, FORMAT_JOB_DETAILS)));
 
-    final List<JobDetails> jobDetails = pipelineService.fetchJobs();
+    final List<JobDetails> jobDetails = pipelineService.fetchJobs(ACCESS_TOKEN);
 
     assertThat(jobDetails)
         .hasSize(4)
@@ -91,9 +92,9 @@ class PipelineServiceTest {
             TEST_JOB_DETAILS,
             FORMAT_JOB_DETAILS);
 
-    verify(workflowService).fetchWorkflows(REPO_NAME);
-    verify(jobDetailsService).fetchJobDetails(buildAndDeploymentWorkflow);
-    verify(jobDetailsService).fetchJobDetails(checksWorkflow);
+    verify(workflowService).fetchWorkflows(REPO_NAME, ACCESS_TOKEN);
+    verify(jobDetailsService).fetchJobDetails(buildAndDeploymentWorkflow, ACCESS_TOKEN);
+    verify(jobDetailsService).fetchJobDetails(checksWorkflow, ACCESS_TOKEN);
   }
 
   @Test
@@ -101,17 +102,17 @@ class PipelineServiceTest {
     final Workflow workflow1 = getWorkflowBuilder().build();
     final Workflow workflow2 = getWorkflowBuilder().id(2151836).name("checks").build();
 
-    when(workflowService.fetchWorkflows(REPO_NAME))
+    when(workflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN))
         .thenReturn(CompletableFuture.completedFuture(List.of(workflow1, workflow2)));
 
-    when(jobDetailsService.fetchJobDetails(workflow1))
+    when(jobDetailsService.fetchJobDetails(workflow1, ACCESS_TOKEN))
         .thenReturn(CompletableFuture.completedFuture(Collections.emptyList()));
-    when(jobDetailsService.fetchJobDetails(workflow2))
+    when(jobDetailsService.fetchJobDetails(workflow2, ACCESS_TOKEN))
         .thenReturn(
             CompletableFuture.completedFuture(
                 List.of(TALISMAN_CHECKS_JOB_DETAILS, DEPENDENCY_CHECKS_JOB_DETAILS)));
 
-    final List<JobDetails> jobDetails = pipelineService.fetchJobs();
+    final List<JobDetails> jobDetails = pipelineService.fetchJobs(ACCESS_TOKEN);
 
     assertThat(jobDetails)
         .containsExactlyInAnyOrder(TALISMAN_CHECKS_JOB_DETAILS, DEPENDENCY_CHECKS_JOB_DETAILS);

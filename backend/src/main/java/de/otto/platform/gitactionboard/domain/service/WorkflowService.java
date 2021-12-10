@@ -6,5 +6,5 @@ import java.util.concurrent.CompletableFuture;
 
 @FunctionalInterface
 public interface WorkflowService {
-  CompletableFuture<List<Workflow>> fetchWorkflows(String repoName);
+  CompletableFuture<List<Workflow>> fetchWorkflows(String repoName, String accessToken);
 }

@@ -5,6 +5,8 @@ fileignoreconfig:
   checksum: 6b0dd6679a6b63c068877096040828c8a0307cbc3e6d2309d4138c42741c7c5e
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
+- filename: backend/src/main/resources/application.properties
+  checksum: a8e9a356bb11b97e2229340e5339a7e0105ecd51dc79bc8165d59ed95705ae3a
 - filename: bin/install-talisman.sh
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png
@@ -18,5 +20,5 @@ fileignoreconfig:
 - filename: frontend/src/components/Job.vue
   checksum: f50c9eeecc39b443e2411cee7e355ea4f8f1d3e579558f3d478dd97a45a2c346
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
-  checksum: b4c700cb2efed3d2f318e3ee16e7dbd2eafa4bcde584256b4ffaa66ddae63ac7
+  checksum: 04a9aaea483e1398231870d300a7d2be802e80d4b2db8e1e4568aa1165675ddb
 version: "1.0"
