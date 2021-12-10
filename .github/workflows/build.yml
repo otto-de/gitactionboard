@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v2
@@ -53,7 +53,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
 
   determaine_should_publish_image:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     outputs:
       PUBLISH_DOCKER_IMAGE: ${{ steps.determaine_should_publish_image.outputs.PUBLISH_DOCKER_IMAGE }}
     steps:
@@ -69,7 +69,7 @@ jobs:
           echo "::set-output name=PUBLISH_DOCKER_IMAGE::${PUBLISH_DOCKER_IMAGE}"
 
   docker:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     needs: [build, determaine_should_publish_image]
     if: ${{ needs.determaine_should_publish_image.outputs.PUBLISH_DOCKER_IMAGE == 'true' }}
     steps:

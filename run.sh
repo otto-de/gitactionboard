@@ -15,7 +15,7 @@ Usage: $0 command
 commands:
   check                                                Run checks (OWASP dependency check)
   format                                               Auto format source files
-  run-locally [auth token]                             Run local version of service
+  run-locally [auth token] [with frontend]             Run local version of service with/without frontend
   test                                                 Build and test the service
   docker-build                                         Build docker image
   talisman-verify                                      Verify no sensitive information is committed using talisman
@@ -29,7 +29,7 @@ shift || true
 case ${CMD} in
   check) _check ;;
   format) _format_sources ;;
-  run-locally) _run_locally "${1:-}" ;;
+  run-locally) _run_locally "${1:-}" "${2:-true}" ;;
   test) _test ;;
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;
