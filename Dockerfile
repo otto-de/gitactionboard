@@ -1,4 +1,4 @@
-FROM node:16.13.1-alpine3.14 as frontend_builder
+FROM node:16.13.0-alpine3.14 as frontend_builder
 COPY --chown=node:node ./frontend /home/node/frontend
 WORKDIR /home/node/frontend
 RUN npm install
