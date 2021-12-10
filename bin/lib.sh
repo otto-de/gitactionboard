@@ -64,6 +64,7 @@ _test() {
 
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
   _ensure_nvm
+  npm install
   npm run lint
   popd >/dev/null || exit
 
@@ -85,6 +86,7 @@ _format_sources() {
 
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
   _ensure_nvm
+  npm install
   npm run lint:fix
   popd >/dev/null || exit
 }
@@ -108,6 +110,7 @@ _run_locally() {
   if [ "${with_frontend}" ]; then
     pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
     _ensure_nvm
+    npm install
     npm run build
     echo "Copying dist to ../backend/src/main/resources/public"
     cp -r dist ../backend/src/main/resources/public

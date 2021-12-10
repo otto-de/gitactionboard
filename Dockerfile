@@ -1,8 +1,8 @@
 FROM node:16.13.0-alpine3.14 as frontend_builder
 COPY --chown=node:node ./frontend /home/node/frontend
 WORKDIR /home/node/frontend
-RUN npm install
-RUN npm run build
+RUN npm install \
+ && npm run build
 
 FROM gradle:7.2.0-jdk11-alpine as backend_builder
 COPY --chown=gradle:gradle ./backend /home/gradle/backend
