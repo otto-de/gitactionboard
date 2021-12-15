@@ -6,6 +6,7 @@ RUN npm install \
 
 FROM gradle:7.2.0-jdk11-alpine as backend_builder
 COPY --chown=gradle:gradle ./backend /home/gradle/backend
+COPY --chown=gradle:gradle ./.git /home/gradle/backend/.git
 WORKDIR /home/gradle/backend
 COPY --from=frontend_builder /home/node/frontend/dist src/main/resources/public
 RUN gradle --no-daemon bootJar
