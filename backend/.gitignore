@@ -118,3 +118,5 @@ gradle-app.setting
 
 # Crash log files
 crash.log
+
+src/main/resources/public
