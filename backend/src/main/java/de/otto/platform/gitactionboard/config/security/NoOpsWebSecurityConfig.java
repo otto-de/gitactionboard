@@ -1,8 +1,8 @@
-package de.otto.platform.gitactionboard.config;
+package de.otto.platform.gitactionboard.config.security;
 
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -10,10 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-@ConditionalOnProperty(
-    name = "spring.security.oauth2.client.registration.github.client-id",
-    havingValue = "-",
-    matchIfMissing = true)
+@Conditional(DisableAuthentication.class)
 @Slf4j
 public class NoOpsWebSecurityConfig extends WebSecurityConfigurerAdapter {
 

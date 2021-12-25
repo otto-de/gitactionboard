@@ -1,6 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.CruiseControlService;
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.Project;
@@ -17,8 +18,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +35,7 @@ public class GithubController {
   @Cacheable(cacheNames = "cctrayXml", sync = true)
   @GetMapping(value = "/cctray.xml", produces = MediaType.APPLICATION_XML_VALUE)
   public ResponseEntity<String> getCctrayXml(
-      @CookieValue(value = "access_token", required = false) String accessToken) {
+      @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
     return createResponseEntityBodyBuilder()
         .body(cruiseControlService.convertToXml(fetchJobs(accessToken)));
   }
@@ -56,7 +57,7 @@ public class GithubController {
   @Cacheable(cacheNames = "cctray", sync = true)
   @GetMapping(value = "/cctray", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<Project>> getCctray(
-      @CookieValue(value = "access_token", required = false) String accessToken) {
+      @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
     return createResponseEntityBodyBuilder()
         .body(cruiseControlService.convertToJson(fetchJobs(accessToken)));
   }

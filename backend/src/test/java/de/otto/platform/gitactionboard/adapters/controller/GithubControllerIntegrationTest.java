@@ -26,7 +26,7 @@ import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.WireMockExtension;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import java.util.List;
-import javax.servlet.http.Cookie;
+import java.util.Objects;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -301,7 +301,7 @@ class GithubControllerIntegrationTest {
           CCTRAY_XML_ENDPOINT,
           APPLICATION_XML_CONTENT_TYPE,
           content().xml(readFile(CCTRAY_XML_FILE_NAME)),
-          new Cookie("access_token", dummyAccessToken));
+          dummyAccessToken);
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
@@ -322,11 +322,7 @@ class GithubControllerIntegrationTest {
       final String dummyAccessToken = "dummy_access_token";
 
       invokeGetApiAndValidate(
-          mockMvc,
-          CCTRAY_ENDPOINT,
-          APPLICATION_JSON_VALUE,
-          resultMatcher,
-          new Cookie("access_token", dummyAccessToken));
+          mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher, dummyAccessToken);
 
       assertThat(WireMock.getAllServeEvents()).hasSize(5);
       final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
@@ -358,13 +354,21 @@ class GithubControllerIntegrationTest {
 
   @SneakyThrows
   private void invokeGetApiAndValidate(
+      MockMvc mockMvc, String endPoint, String expectedContentType, ResultMatcher resultMatcher) {
+    invokeGetApiAndValidate(mockMvc, endPoint, expectedContentType, resultMatcher, null);
+  }
+
+  @SneakyThrows
+  private void invokeGetApiAndValidate(
       MockMvc mockMvc,
       String endPoint,
       String expectedContentType,
       ResultMatcher resultMatcher,
-      Cookie... cookies) {
+      String accessToken) {
     final MockHttpServletRequestBuilder requestBuilder =
-        cookies.length == 0 ? get(endPoint) : get(endPoint).cookie(cookies);
+        Objects.isNull(accessToken)
+            ? get(endPoint)
+            : get(endPoint).header(AUTHORIZATION, accessToken);
     mockMvc
         .perform(requestBuilder)
         .andExpect(status().isOk())

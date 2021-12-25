@@ -1,4 +1,4 @@
-package de.otto.platform.gitactionboard.config;
+package de.otto.platform.gitactionboard.config.security;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.assertj.core.api.Assertions.assertThat;
