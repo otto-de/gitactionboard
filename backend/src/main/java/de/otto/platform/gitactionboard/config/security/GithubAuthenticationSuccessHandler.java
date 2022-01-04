@@ -2,7 +2,6 @@ package de.otto.platform.gitactionboard.config.security;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Optional;
@@ -11,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -24,6 +24,7 @@ import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 @Configuration
+@RequiredArgsConstructor
 @Lazy
 @Slf4j
 public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
@@ -40,11 +41,6 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   private static final int FIVE_MONTHS = 60 * 60 * 5 * 30;
 
   private final OAuth2AuthorizedClientService clientService;
-
-  @SuppressFBWarnings("EI_EXPOSE_REP2")
-  public GithubAuthenticationSuccessHandler(OAuth2AuthorizedClientService clientService) {
-    this.clientService = clientService;
-  }
 
   @Override
   public void onAuthenticationSuccess(

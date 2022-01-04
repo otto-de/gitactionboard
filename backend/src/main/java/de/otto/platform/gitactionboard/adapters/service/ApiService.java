@@ -25,7 +25,11 @@ public class ApiService {
 
   private RestTemplate getRestTemplate(String accessToken) {
     return restTemplateBuilder
-        .defaultHeader(AUTHORIZATION, Optional.ofNullable(accessToken).orElse(authToken))
+        .defaultHeader(
+            AUTHORIZATION,
+            Optional.ofNullable(accessToken)
+                .filter(token -> !token.startsWith("Basic"))
+                .orElse(authToken))
         .build();
   }
 
