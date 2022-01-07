@@ -15,13 +15,14 @@
 
 <script>
 
-const ONE_MINUTE = 60000;
+import {fetchCctrayJson} from "@/services/apiService";
+import Job from "@/components/Job";
 
+const ONE_MINUTE = 60000;
 let idleTimer;
 let renderPageTimer;
-let idleTime;
 
-import Job from "@/components/Job";
+let idleTime;
 
 export default {
   name: "Jobs",
@@ -49,7 +50,7 @@ export default {
       ONE_MINUTE
     }
   },
-  mounted: function(){
+  mounted() {
     if (!this.disableMaxIdleTime) {
       this.initiateIdleTimer();
     }
@@ -94,8 +95,7 @@ export default {
       idleTimer = setInterval(this.incrementIdleTime, ONE_MINUTE);
     },
     fetchData() {
-      return fetch("./v1/cctray")
-          .then((res) => res.json())
+      return fetchCctrayJson()
           .then(this.marshalData)
           .then((data) => this.jobs = data)
           .catch((reason) => {

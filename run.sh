@@ -20,6 +20,7 @@ commands:
   docker-build                                         Build docker image
   talisman-verify                                      Verify no sensitive information is committed using talisman
   bump-version <major|minor|patch>                     Release a new <major|minor|patch> version
+  copy-frontend                                        Build and copy the frontend code base to backend resources folder
 EOF
   exit 1
 }
@@ -34,5 +35,6 @@ case ${CMD} in
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;
   bump-version) _bump_version "${1}" ;;
+  copy-frontend) _copy_frontend ;;
   *) _usage ;;
 esac

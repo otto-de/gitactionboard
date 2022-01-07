@@ -1,19 +1,11 @@
 <template>
-  <JobStatusComponent />
+  <router-view />
 </template>
 
 <script>
-import JobStatusComponent from './components/Dashboard.vue'
 
 export default {
   name: 'App',
-  components: {
-    JobStatusComponent
-  }
+  components: {}
 }
 </script>
-
-<style>
-#app {
-}
-</style>

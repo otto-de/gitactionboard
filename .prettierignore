@@ -1,0 +1,6 @@
+backend/src/main/resources/public
+backend/build
+backend/out
+backend/.nvd-nist-cache
+frontend/node_modules
+frontend/dist

@@ -52,7 +52,7 @@ _license_report() {
 }
 
 _test() {
-  prettier --check "backend/src/**/*.{json,js,css,html}" "**/*.md"
+  prettier --check "**/*.{json,js,css,html}" "**/*.md"
 
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
@@ -74,7 +74,7 @@ _test() {
 }
 
 _format_sources() {
-  prettier --write "backend/src/**/*.{json,js,css,html}" "**/*.md"
+  prettier --write "**/*.{json,js,css,html}" "**/*.md"
 
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
@@ -88,6 +88,16 @@ _format_sources() {
   _ensure_nvm
   npm install
   npm run lint:fix
+  popd >/dev/null || exit
+}
+
+_copy_frontend(){
+  pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+  _ensure_nvm
+  npm install
+  npm run build
+  echo "Copying dist to ../backend/src/main/resources/public"
+  cp -r dist/ ../backend/src/main/resources/public
   popd >/dev/null || exit
 }
 
@@ -108,13 +118,7 @@ _run_locally() {
   trap _revert SIGTERM SIGINT ERR
 
   if [ "${with_frontend}" ]; then
-    pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
-    _ensure_nvm
-    npm install
-    npm run build
-    echo "Copying dist to ../backend/src/main/resources/public"
-    cp -r dist ../backend/src/main/resources/public
-    popd >/dev/null || exit
+    _copy_frontend
   fi
 
   pushd "${SCRIPT_DIR}/backend" >/dev/null || exit

@@ -67,7 +67,7 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
         .map(Optional::get)
         .forEach(response::addCookie);
 
-    super.onAuthenticationSuccess(request, response, authentication);
+    response.sendRedirect("/#/dashboard");
   }
 
   private Cookie createAccessTokenCookie(OAuth2AccessToken oAuth2AccessToken) {
