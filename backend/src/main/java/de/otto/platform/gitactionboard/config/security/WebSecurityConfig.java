@@ -1,6 +1,7 @@
 package de.otto.platform.gitactionboard.config.security;
 
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
+import static org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames.ACCESS_TOKEN;
 import static org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter.Directive.ALL;
 
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
@@ -9,9 +10,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -170,10 +175,7 @@ public class WebSecurityConfig {
           .failureUrl(LOGIN_PATH)
           .and()
           .requestMatcher(
-              request -> {
-                final String auth = request.getHeader(AUTHORIZATION);
-                return githubAuthDisabled || auth != null && auth.startsWith("Basic");
-              })
+              request -> githubAuthDisabled || getAuthToken(request).startsWith("Basic"))
           .authorizeRequests()
           .anyRequest()
           .authenticated()
@@ -182,7 +184,19 @@ public class WebSecurityConfig {
           .and()
           .logout()
           .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
-          .invalidateHttpSession(true);
+          .invalidateHttpSession(true)
+          .deleteCookies(ACCESS_TOKEN);
+    }
+
+    private String getAuthToken(HttpServletRequest request) {
+      return Optional.ofNullable(request.getHeader(AUTHORIZATION))
+          .orElseGet(
+              () ->
+                  Arrays.stream(request.getCookies())
+                      .filter(cookie -> ACCESS_TOKEN.equals(cookie.getName()))
+                      .findFirst()
+                      .map(Cookie::getValue)
+                      .orElse(""));
     }
   }
 
@@ -227,7 +241,8 @@ public class WebSecurityConfig {
           .and()
           .logout()
           .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
-          .invalidateHttpSession(true);
+          .invalidateHttpSession(true)
+          .deleteCookies(ACCESS_TOKEN);
     }
   }
 }

@@ -5,9 +5,6 @@ jacoco {
 }
 
 def excludes = [
-        "de/otto/platform/gitactionboard/config/WebSecurityConfig.class",
-        "de/otto/platform/gitactionboard/config/WebSecurityConfig\$*.class",
-        "de/otto/platform/gitactionboard/config/NoOpsWebSecurityConfig.class",
 ]
 
 def jacocoExecutionDataFiles = fileTree(buildDir)
@@ -38,7 +35,7 @@ jacocoTestCoverageVerification {
         rule {
             limit {
                 counter = 'INSTRUCTION'
-                minimum = 0.90
+                minimum = 0.89
             }
         }
         rule {
