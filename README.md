@@ -8,6 +8,9 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
   - [Pull docker image](#pull-docker-image)
   - [Run docker image](#run-docker-image)
     - [Configurations](#configurations)
+      - [Authentication](#authentication)
+        - [Basic Authentication](#basic-authentication)
+        - [Github OAuth2](#github-oauth2)
     - [UI Dashboard](#ui-dashboard)
       - [UI Dashboard Configurations](#ui-dashboard-configurations)
     - [API](#api)
@@ -39,15 +42,44 @@ docker run \
 
 #### Configurations
 
-| Environment variable name | Descriptions                                                                                     | Required |     Default value      |          Example value          |
-| :------------------------ | :----------------------------------------------------------------------------------------------- | :------: | :--------------------: | :-----------------------------: |
-| REPO_OWNER_NAME           | Repository owner name. Generally, its either organization name or username                       |   yes    |                        |             webpack             |
-| REPO_NAMES                | List of name of repositories you want to monitor                                                 |   yes    |                        | webpack-dev-server, webpack-cli |
-| GITHUB_ACCESS_TOKEN       | Access token to fetch data from github. This is required to fetch data from a private repository |    no    |                        |                                 |
-| DOMAIN_NAME               | Hostname of github                                                                               |    no    | https://api.github.com |                                 |
-| CACHE_EXPIRES_AFTER       | Duration (in seconds) to cache the fetched data                                                  |    no    |           60           |                                 |
+| Environment variable name         | Descriptions                                                                                                                    | Required |     Default value      |          Example value          |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :------: | :--------------------: | :-----------------------------: |
+| REPO_OWNER_NAME                   | Repository owner name. Generally, its either organization name or username                                                      |   yes    |                        |             webpack             |
+| REPO_NAMES                        | List of name of repositories you want to monitor                                                                                |   yes    |                        | webpack-dev-server, webpack-cli |
+| GITHUB_ACCESS_TOKEN               | Access token to fetch data from github. This is required to fetch data from a private repository when github oauth2 is disabled |    no    |                        |                                 |
+| DOMAIN_NAME                       | Hostname of github                                                                                                              |    no    | https://api.github.com |                                 |
+| CACHE_EXPIRES_AFTER               | Duration (in seconds) to cache the fetched data                                                                                 |    no    |           60           |                                 |
+| GITHUB_OAUTH2_CLIENT_ID           | Github oauth2 client ID                                                                                                         |    no    |                        |                                 |
+| GITHUB_OAUTH2_CLIENT_SECRET       | Gihub oauth2 client secret                                                                                                      |    no    |                        |                                 |
+| BASIC_AUTH_USER_DETAILS_FILE_PATH | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
 
 Note: To create a personal access token follow the instructions present [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and choose **repo** as a scope fot this token.
+
+##### Authentication
+
+From v2.0.0, gitactionboard has out of the box solution for authentication. Currently, there are following authentication mechanism available
+
+###### Basic Authentication
+
+Basic authentication is the simplest form of authentication. In this mechanism we make use of username and password to login.
+
+In gitactionboard, Basic Authentication can be easily setup using `BASIC_AUTH_USER_DETAILS_FILE_PATH` environment variable. This file contains
+username and password in `<username>:<encrypted password using bcrypt>` format. We can make use of **Apache htpasswd** to easily create this file.
+You can run the following command to create the file using CLI,
+
+```shell
+htpasswd -bnBC 10 <username> <password> >> <file location>
+```
+
+###### Github OAuth2
+
+In gitactionboard, Github OAuth2 login can be easily setup using `GITHUB_OAUTH2_CLIENT_ID` and `GITHUB_OAUTH2_CLIENT_SECRET` environment variable.
+To be able to have a valid client id and client secret from github, we need to create a Github OAuth app first. To create a gihub oauth app, please
+follow [this link](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app).
+
+**Note** you need to add _Authorization callback URL_ as `<homepage url>/login/oauth2/code/github`.
+
+:warning: In-case of Github OAuth2 is disabled, gitactionboard will make use of `GITHUB_ACCESS_TOKEN` to fetch data from github for private repositories.
 
 #### UI Dashboard
 
