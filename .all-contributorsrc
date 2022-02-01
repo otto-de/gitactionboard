@@ -1,0 +1,86 @@
+{
+  "projectName": "gitactionboard",
+  "projectOwner": "otto-de",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "sumanmaity1234",
+      "name": "Suman Maity",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48752670?v=4",
+      "profile": "https://github.com/sumanmaity1234",
+      "contributions": [
+        "code",
+        "maintenance",
+        "ideas",
+        "doc",
+        "security"
+      ]
+    },
+    {
+      "login": "umeshnebhani733",
+      "name": "umeshnebhani733",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61968894?v=4",
+      "profile": "https://github.com/umeshnebhani733",
+      "contributions": [
+        "code",
+        "maintenance",
+        "ideas",
+        "security"
+      ]
+    },
+    {
+      "login": "sankita15tw",
+      "name": "sankita15tw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49052731?v=4",
+      "profile": "https://github.com/sankita15tw",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "stdogr",
+      "name": "Stefan Greis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61870228?v=4",
+      "profile": "https://github.com/stdogr",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "shashikanthgadgay0804",
+      "name": "Shashi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48748047?v=4",
+      "profile": "https://github.com/shashikanthgadgay0804",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "jonasmetzger2000",
+      "name": "Jonas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29103796?v=4",
+      "profile": "https://github.com/jonasmetzger2000",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "BastianSperrhacke-Otto",
+      "name": "BastianSperrhacke-Otto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62638028?v=4",
+      "profile": "https://github.com/BastianSperrhacke-Otto",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

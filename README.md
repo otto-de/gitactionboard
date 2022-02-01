@@ -1,5 +1,11 @@
 # Gitaction Board
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 Gitaction Board - Ultimate Dashboard for GithubActions.
 
 # Table of contents
@@ -25,6 +31,7 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
   - [Build docker image](#build-docker-image)
   - [Generate Changelog](#generate-changelog)
   - [Release a new Docker image](#release-a-new-docker-image)
+- [Contributors](#contributors-)
 
 ## Usage
 
@@ -182,6 +189,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
 - [talisman](https://github.com/thoughtworks/talisman)
 - [Node.js v16.13.1](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
+- [all-contributors cli](https://allcontributors.org/docs/en/cli/overview) (only for maintainers)
 - [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
 
 ### Tests
@@ -302,3 +310,29 @@ git push origin "$(git describe --tags)"
 ```
 
 > **_NOTE:_** We are following [semantic versioning](https://semver.org/) strategy using [io.alcide:gradle-semantic-build-versioning](https://github.com/alcideio/gradle-semantic-build-versioning) plugin
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/sumanmaity1234"><img src="https://avatars.githubusercontent.com/u/48752670?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Suman Maity</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=sumanmaity1234" title="Code">💻</a> <a href="#maintenance-sumanmaity1234" title="Maintenance">🚧</a> <a href="#ideas-sumanmaity1234" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/otto-de/gitactionboard/commits?author=sumanmaity1234" title="Documentation">📖</a> <a href="#security-sumanmaity1234" title="Security">🛡️</a></td>
+    <td align="center"><a href="https://github.com/umeshnebhani733"><img src="https://avatars.githubusercontent.com/u/61968894?v=4?s=100" width="100px;" alt=""/><br /><sub><b>umeshnebhani733</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=umeshnebhani733" title="Code">💻</a> <a href="#maintenance-umeshnebhani733" title="Maintenance">🚧</a> <a href="#ideas-umeshnebhani733" title="Ideas, Planning, & Feedback">🤔</a> <a href="#security-umeshnebhani733" title="Security">🛡️</a></td>
+    <td align="center"><a href="https://github.com/sankita15tw"><img src="https://avatars.githubusercontent.com/u/49052731?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sankita15tw</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=sankita15tw" title="Code">💻</a> <a href="#design-sankita15tw" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/stdogr"><img src="https://avatars.githubusercontent.com/u/61870228?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stefan Greis</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=stdogr" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shashikanthgadgay0804"><img src="https://avatars.githubusercontent.com/u/48748047?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shashi</b></sub></a><br /><a href="#ideas-shashikanthgadgay0804" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/jonasmetzger2000"><img src="https://avatars.githubusercontent.com/u/29103796?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonas</b></sub></a><br /><a href="#ideas-jonasmetzger2000" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/BastianSperrhacke-Otto"><img src="https://avatars.githubusercontent.com/u/62638028?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BastianSperrhacke-Otto</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3ABastianSperrhacke-Otto" title="Bug reports">🐛</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

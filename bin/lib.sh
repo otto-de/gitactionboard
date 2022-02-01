@@ -150,6 +150,16 @@ _bump_version() {
   popd >/dev/null || exit
 }
 
+_add_contributor() {
+  local username="${1}"
+  local contributionType="${2}"
+  all-contributors add "${username}" "${contributionType}"
+}
+
+_generate_contributors_list() {
+  all-contributors generate
+}
+
 _generate_changelog() {
   conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -t v
 }

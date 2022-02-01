@@ -22,6 +22,8 @@ commands:
   bump-version <major|minor|patch>                     Release a new <major|minor|patch> version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
   generate-changelog                                   Generate changelog from last tag and write in README.md
+  add-contributor <username> <contribution type>       Add new contributor to contributors list
+  generate-contributors-list                           Generate contributors list from .all-contributorsrc file and update it in readme
 EOF
   exit 1
 }
@@ -38,5 +40,7 @@ case ${CMD} in
   bump-version) _bump_version "${1}" ;;
   copy-frontend) _copy_frontend ;;
   generate-changelog) _generate_changelog ;;
+  add-contributor) _add_contributor "${1}" "${2}" ;;
+  generate-contributors-list) _generate_contributors_list ;;
   *) _usage ;;
 esac
