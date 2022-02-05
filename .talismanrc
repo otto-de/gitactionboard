@@ -3,20 +3,12 @@ fileignoreconfig:
   checksum: 22fbbc7d3839fd65cdeb73d71c52006fadadfeb5d3cbdac7bae5d9795f20edf8
 - filename: .github/workflows/checks.yml
   checksum: 365a1d2aa78bafe126342b8e01dc9271b065121e5c655ce9a03820d986a960ea
-- filename: README.md
-  checksum: a18fba9d7e74102f24392ec6d0729d1c4bbb9dfa574b90befec3fefe1335dff0
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
-- filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/AuthenticationController.java
-  checksum: 51c5a4ce0402fe4550c90468b22a9007a643714573eba99d611a3d2ad3012f09
-- filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
-  checksum: 1859e730d5fece695c039288786cc93b09b28283a3f74a772ad1baf35dfedf43
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
   checksum: 04a9aaea483e1398231870d300a7d2be802e80d4b2db8e1e4568aa1165675ddb
 - filename: backend/src/main/resources/application.properties
   checksum: a8e9a356bb11b97e2229340e5339a7e0105ecd51dc79bc8165d59ed95705ae3a
-- filename: backend/src/test/resources/.htpasswd
-  checksum: 2e31e64b696f0f9267a4ebd694d90b27c6e0c4cefdd11349d199e185daab2d6c
 - filename: bin/install-talisman.sh
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png
@@ -24,13 +16,9 @@ fileignoreconfig:
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
 - filename: frontend/package-lock.json
-  checksum: eedeb8c035a62432956960efba8b8f85e11b71f95ed4471d88b3225ab1be26b5
+  checksum: eb5ad0f6f6440a9694d2f5753271d4200be89ec709fce1389b301a658b27f919
 - filename: frontend/src/components/Job.vue
   checksum: f50c9eeecc39b443e2411cee7e355ea4f8f1d3e579558f3d478dd97a45a2c346
 - filename: frontend/src/components/Jobs.vue
-  checksum: 79cec1549d2c83c6614e4f4421ae2bd67482b858cfb2de28d9cf8043f6393c47
-- filename: frontend/src/components/LoginPage.vue
-  checksum: 5e1ec2947148a62cacdedb5d8b93782329c8b3a42ed708a690d31f6e5ae6cec3
-- filename: frontend/src/images/happy.png
-  checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
+  checksum: c9c38b10e4eca52659618f21d7f382dc97ec853f3c0fd750ce021edfbe9db27b
 version: "1.0"
