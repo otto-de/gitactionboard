@@ -3,5 +3,6 @@
     <suppress>
         <cve>CVE-2021-22112</cve>
         <cve>CVE-2018-1258</cve>
+        <cve>CVE-2022-23181</cve>
     </suppress>
 </suppressions>
