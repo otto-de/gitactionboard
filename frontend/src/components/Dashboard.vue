@@ -1,45 +1,52 @@
 <template>
   <div id="container">
-    <Header />
     <Jobs
-      :show-healthy-builds="shouldShowHealthyBuilds()"
-      :disable-max-idle-time="shouldDisableIdleOptimization()"
-      :max-idle-time="getMaxIdleTime()"
+      v-if="currentPath === '/dashboard'"
+      :show-healthy-builds="showHealthyBuilds"
+      :disable-max-idle-time="disableIdleOptimization"
+      :max-idle-time="maxIdleTime"
     />
   </div>
 </template>
 
 <script>
 import Jobs from "@/components/Jobs";
-import Header from "@/components/Header";
-const HIDE_HEALTHY_PARAM = "hide-healthy";
-const MAX_IDLE_TIME_PARAM = "max-idle-time";
-const DISABLE_MAX_IDLE_TIME_PARAM = "disable-max-idle-time";
-const URL_SEARCH_PARAMS = new URLSearchParams(window.location.search);
+import router from "@/router";
+import preferences from "@/services/preferences";
 
 export default {
+  el: '#app',
   name: "Dashboard",
-  components: { Header, Jobs },
-  data() {
-    return {
-      URL_SEARCH_PARAMS,
-      HIDE_HEALTHY_PARAM,
-      MAX_IDLE_TIME_PARAM,
-      DISABLE_MAX_IDLE_TIME_PARAM
+  components: {Jobs},
+  computed: {
+    currentPath() {
+      return router.currentRoute.value.path;
+    },
+    showHealthyBuilds(){
+     return preferences.showHealthyBuilds;
+    },
+    disableIdleOptimization(){
+      return preferences.disableIdleOptimization;
+    },
+    maxIdleTime(){
+      return preferences.maxIdleTime;
     }
   },
-  methods: {
-    shouldShowHealthyBuilds() {
-      const hideHealthBuildConfig = URL_SEARCH_PARAMS.get(HIDE_HEALTHY_PARAM);
-      return !hideHealthBuildConfig || hideHealthBuildConfig === "false";
-    },
-    shouldDisableIdleOptimization() {
-      return URL_SEARCH_PARAMS.get(DISABLE_MAX_IDLE_TIME_PARAM) === "true";
-    },
-    getMaxIdleTime() {
-      const maxIdleTimeConfig = URL_SEARCH_PARAMS.get(MAX_IDLE_TIME_PARAM);
-      return maxIdleTimeConfig ? parseInt(maxIdleTimeConfig) : 5;
-    }
-  }
+  methods: {}
 }
 </script>
+
+<style scoped>
+
+div {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  height: 100%;
+  width: 95%;
+}
+
+</style>

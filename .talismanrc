@@ -24,9 +24,9 @@ fileignoreconfig:
 - filename: doc/sample2.png
   checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
 - filename: frontend/package-lock.json
-  checksum: b44a283b676fb906d2be18d32f3f10921ac9b039a1d14de337cc0237a3ce554d
+  checksum: eedeb8c035a62432956960efba8b8f85e11b71f95ed4471d88b3225ab1be26b5
 - filename: frontend/src/components/Job.vue
   checksum: f50c9eeecc39b443e2411cee7e355ea4f8f1d3e579558f3d478dd97a45a2c346
 - filename: frontend/src/components/Jobs.vue
-  checksum: 1f9f01bb20d2e5460511bfc08095184cce0b71da90fd14d24e9c802a09044222
+  checksum: 8daefd13dc2cc06702df8026aa8d047072d0a8eeb45d98e287dd4aa9579cecec
 version: "1.0"

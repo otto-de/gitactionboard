@@ -27,4 +27,10 @@ const fetchAccessToken = () => getCookie("access_token");
 
 const isAuthenticate = () => !!fetchAccessToken();
 
-module.exports = { fetchAccessToken, isAuthenticate, clearCookies };
+const getUsername = () => getCookie("username");
+
+const getName = () => getCookie("name");
+
+const getAvatarUrl = () => getCookie("avatar_url");
+
+module.exports = { fetchAccessToken, isAuthenticate, clearCookies, getUsername, getName, getAvatarUrl };
