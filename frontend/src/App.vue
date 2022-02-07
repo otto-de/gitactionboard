@@ -7,7 +7,7 @@
 
 <script>
 
-import SideMenu from "@/components/SideMenu";
+import SideMenu from "@/components/SideMenuBar";
 import router from "@/router";
 
 export default {

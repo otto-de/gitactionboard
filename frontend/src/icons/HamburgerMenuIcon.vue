@@ -1,6 +1,7 @@
 <template>
   <div
-    :class="{'menu-icon-container': true, 'toggle':isClicked}"
+    class="icon-container"
+    :class="{'opened':isClicked}"
     @click="openMenu"
   >
     <span />
@@ -11,7 +12,7 @@
 
 <script>
 export default {
-  name: "MenuIcon",
+  name: "HamburgerMenuIcon",
   props: {
     isClicked: Boolean
   },
@@ -26,7 +27,7 @@ export default {
 
 <style scoped>
 
-.menu-icon-container {
+.icon-container {
   height: 24px;
   width: 24px;
   margin-bottom: 40px;
@@ -34,11 +35,11 @@ export default {
   margin-left: 7px;
 }
 
-.menu-icon-container:hover {
+.icon-container:hover {
   cursor: pointer;
 }
 
-.menu-icon-container span {
+.icon-container span {
   height: 3px;
   width: 24px;
   display: inline-block;
@@ -49,28 +50,28 @@ export default {
   transition-duration: 500ms;
 }
 
-.menu-icon-container span:first-child {
+.icon-container span:first-child {
   top: 10px;
 }
 
-.menu-icon-container span:last-child {
+.icon-container span:last-child {
   bottom: 10px;
 }
 
-.menu-icon-container:not(.toggle) {
+.icon-container:not(.opened) {
   margin: 10px auto 40px;
 }
 
-.menu-icon-container.toggle span:first-child {
+.icon-container.opened span:first-child {
   transform: rotate(-45deg);
   top: 18.5px;
 }
 
-.menu-icon-container.toggle span:nth-child(2) {
+.icon-container.opened span:nth-child(2) {
   opacity:0;
 }
 
-.menu-icon-container.toggle span:last-child {
+.icon-container.opened span:last-child {
   transform: rotate(45deg);
   bottom: 17px;
 }

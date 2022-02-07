@@ -1,12 +1,12 @@
 <template>
   <svg
-      style="enable-background:new 0 0 24 24;"
-      viewBox="0 0 24 24"
-      xml:space="preserve"
-      fill="#FFF"
-      height="30"
-      width="30"
-      xmlns="http://www.w3.org/2000/svg"
+    style="enable-background:new 0 0 24 24;"
+    viewBox="0 0 24 24"
+    xml:space="preserve"
+    fill="#FFF"
+    height="30"
+    width="30"
+    xmlns="http://www.w3.org/2000/svg"
   ><g id="info" />
     <g id="icons"><path
       id="settings"

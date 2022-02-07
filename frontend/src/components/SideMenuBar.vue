@@ -1,19 +1,21 @@
 <template>
-  <div :class="{'side-menu': true, 'open':isClicked }">
+  <div :class="{'side-menu': true, 'open':isOpened }">
     <div>
-      <MenuIcon
-        :is-clicked="isClicked"
+      <HamburgerMenuIcon
+        :is-clicked="isOpened"
         @clicked="openMenu"
       />
       <MenuItems
-        :is-clicked="isClicked"
+        :is-clicked="isOpened"
+        :clickable="!activeMap.dashboard"
         menu-item-name="Dashboard"
         icon-name="dashboard"
         :is-active="activeMap.dashboard"
         @dashboard="redirectDashboardPage"
       />
       <MenuItems
-        :is-clicked="isClicked"
+        :is-clicked="isOpened"
+        :clickable="!activeMap.preferences"
         menu-item-name="Preferences"
         icon-name="settings"
         :is-active="activeMap.preferences"
@@ -22,12 +24,14 @@
     </div>
     <div>
       <MenuItems
-        :is-clicked="isClicked"
-        :menu-item-name="name"
+        :is-clicked="isOpened"
+        :clickable="false"
+        :menu-item-name="firstName"
         icon-name="profile"
       />
       <MenuItems
-        :is-clicked="isClicked"
+        v-if="isAuthenticate"
+        :is-clicked="isOpened"
         menu-item-name="Logout"
         icon-name="logout"
         :is-active="activeMap.logout"
@@ -38,46 +42,48 @@
 </template>
 
 <script>
-import MenuIcon from "@/components/MenuIcon";
+import HamburgerMenuIcon from "@/icons/HamburgerMenuIcon";
 import MenuItems from "@/components/MenuItems";
 import router from "@/router";
 import authenticationService from "@/services/authenticationService";
 
 export default {
-  name: "SideMenu",
-  components: {MenuItems, MenuIcon},
+  name: "SideMenuBar",
+  components: {MenuItems, HamburgerMenuIcon},
   data() {
     return {
-      isClicked: false,
-      activeMap: {
-        'dashboard': false,
-        'preferences': false,
-        'logout': false
-      }
+      isOpened: false,
     }
   },
   computed: {
-    currentPath() {
-      return router.currentRoute.value.path;
-    },
-    name(){
-      return authenticationService.getName();
-    }
-  },
-  watch: {
-    currentPath() {
+    activeMap(){
+      const defaultActiveMap = {
+        'dashboard': false,
+        'preferences': false,
+        'logout': false
+      };
       const currentPath = this.currentPath;
-      this.activeMap = Object.keys(this.activeMap)
+
+      return Object.keys(this.activeMap || defaultActiveMap)
           .reduce((previousValue, key) => {
             if (currentPath === `/${key}`)
               return {...previousValue, [key]: true}
             return {...previousValue, [key]: false}
-          }, {})
-    }
+          }, {});
+    },
+    currentPath() {
+      return router.currentRoute.value.path;
+    },
+    firstName(){
+      return authenticationService.getName().split(" ")[0];
+    },
+    isAuthenticate(){
+      return authenticationService.isAuthenticate();
+    },
   },
   methods: {
     openMenu() {
-      this.isClicked = !this.isClicked
+      this.isOpened = !this.isOpened
     },
     redirectProfilePage() {
       router.push("/preferences")

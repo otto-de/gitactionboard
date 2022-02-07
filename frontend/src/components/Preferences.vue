@@ -2,7 +2,7 @@
   <div id="container">
     <div class="preferences-container">
       <div class="preference-header">
-        <img :src="getAvatarData()" alt="avatar" class="avatar"/>
+        <ProfilePicture :small="false" />
         <div class="text">
           {{ name }}
         </div>
@@ -66,9 +66,11 @@
 <script>
 import preferences from "@/services/preferences";
 import authenticationService, { getAvatarUrl } from "@/services/authenticationService";
+import ProfilePicture from "@/components/ProfilePicture";
 
 export default {
   name: "Preferences",
+  components: {ProfilePicture},
   data() {
     return {
       showHealthyBuilds: preferences.showHealthyBuilds,
@@ -134,13 +136,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.avatar {
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  margin-top: 8%;
 }
 
 .text {
