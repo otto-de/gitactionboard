@@ -1,10 +1,12 @@
+import storageService from "@/services/storageService";
+
 class Preferences {
   __get__(configKey) {
-    return localStorage.getItem(configKey);
+    return storageService.getItem(configKey);
   }
 
   __set__(configKey, value) {
-    localStorage.setItem(configKey, value);
+    storageService.setItem(configKey, value);
   }
 
   get showHealthyBuilds() {

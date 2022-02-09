@@ -63,6 +63,7 @@
 <script>
 import { authenticate, fetchAvailableAuths } from "@/services/apiService";
 import {isAuthenticate} from "@/services/authenticationService";
+import storageService from "@/services/storageService";
 
 
 export default {
@@ -80,6 +81,7 @@ export default {
     fetchAvailableAuths()
         .then(availableAuths => {
           this.availableAuths = availableAuths;
+          storageService.setItem("availableAuths", JSON.stringify(availableAuths))
           this.mounted = true;
         })
         .then(() => {
@@ -101,7 +103,7 @@ export default {
       return this.availableAuths.includes("OAUTH2");
     },
 
-    redirectToDashboard: function () {
+    redirectToDashboard() {
       this.$router.push("dashboard")
     },
 
