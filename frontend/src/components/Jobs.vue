@@ -28,10 +28,6 @@ import Job from "@/components/Job";
 import Spinner from "@/components/Spinner";
 
 const ONE_MINUTE = 60000;
-let idleTimer;
-let renderPageTimer;
-
-let idleTime;
 
 export default {
   name: "Jobs",
@@ -55,9 +51,8 @@ export default {
       jobs: [],
       loading: true,
       idleTime: 0,
-      renderPageTimer,
-      idleTimer,
-      ONE_MINUTE
+      renderPageTimer: null,
+      idleTimer: null,
     }
   },
   mounted() {
@@ -66,7 +61,7 @@ export default {
     }
     this.renderPage().then(() => {
       this.loading = false;
-      renderPageTimer = setInterval(this.renderPage, 5000);
+      this.renderPageTimer = setInterval(this.renderPage, 5000);
     });
   },
   methods: {
@@ -91,19 +86,20 @@ export default {
       if (this.disableMaxIdleTime) {
         return this.fetchData();
       }
-      if (this.maxIdleTime >= idleTime) return this.fetchData();
-      clearInterval(renderPageTimer);
+      if (this.maxIdleTime >= this.idleTime) return this.fetchData();
+      clearInterval(this.renderPageTimer);
+      clearInterval(this.idleTimer);
       const message = "Stopped auto page re-rendering due to max idle timeout";
       console.warn(message);
       alert(message);
     },
     incrementIdleTime() {
-      idleTime++;
+      this.idleTime++;
     },
     resetTimer() {
-      clearInterval(idleTimer);
-      idleTime = 0;
-      idleTimer = setInterval(this.incrementIdleTime, ONE_MINUTE);
+      clearInterval(this.idleTimer);
+      this.idleTime = 0;
+      this.idleTimer = setInterval(this.incrementIdleTime, ONE_MINUTE);
     },
     fetchData() {
       return fetchCctrayJson()
