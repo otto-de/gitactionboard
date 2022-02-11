@@ -208,7 +208,7 @@ export default {
   width: 100%;
 }
 
-.save:hover {
+.save:not(.disabled):hover {
   cursor: pointer;
 }
 

@@ -1,6 +1,12 @@
 <template>
   <div class="main-container">
-    <div class="login-form">
+    <template v-if="loading">
+      <Spinner />
+    </template>
+    <div
+      v-if="!loading"
+      class="login-form"
+    >
       <div class="common-message-container">
         <h1 class="header">
           Gitaction Board
@@ -10,7 +16,7 @@
         </p>
       </div>
       <div
-        v-if="isBasicAuthEnabled()"
+        v-if="isBasicAuthEnabled"
         class="basic-auth-container"
       >
         <input
@@ -28,6 +34,8 @@
           placeholder="Password"
         >
         <button
+          :disabled="isLoginButtonDisabled"
+          :class="{'disabled': isLoginButtonDisabled}"
           type="button"
           class="login-button-container"
           @click="login()"
@@ -36,7 +44,7 @@
         </button>
       </div>
       <div
-        v-if="isBasicAuthEnabled() && isOauth2Enabled()"
+        v-if="isBasicAuthEnabled && isOauth2Enabled"
         class="button-separator"
       >
         <div class="button-separator-left" />
@@ -46,7 +54,7 @@
         <div class="button-separator-right" />
       </div>
       <div
-        v-if="isOauth2Enabled()"
+        v-if="isOauth2Enabled"
         class="oauth2-container"
       >
         <button
@@ -64,28 +72,42 @@
 import { authenticate, fetchAvailableAuths } from "@/services/apiService";
 import {isAuthenticate} from "@/services/authenticationService";
 import storageService from "@/services/storageService";
+import Spinner from "@/components/Spinner";
 
 
 export default {
   name: "LoginPage",
-  components: {},
+  components: {Spinner},
   data(){
       return {
         availableAuths: [],
         mounted: false,
+        loading: true,
         username: "",
         password: ""
       }
+  },
+  computed: {
+    isBasicAuthEnabled() {
+      return this.availableAuths.includes("BASIC_AUTH");
+    },
+    isOauth2Enabled() {
+      return this.availableAuths.includes("OAUTH2");
+    },
+    isLoginButtonDisabled(){
+      return this.username === "" || this.password === "";
+    }
   },
   mounted() {
     fetchAvailableAuths()
         .then(availableAuths => {
           this.availableAuths = availableAuths;
+          this.loading = false;
           storageService.setItem("availableAuths", JSON.stringify(availableAuths))
           this.mounted = true;
         })
         .then(() => {
-          if (isAuthenticate() || (!this.isBasicAuthEnabled() && !this.isOauth2Enabled())){
+          if (isAuthenticate() || (!this.isBasicAuthEnabled && !this.isOauth2Enabled)){
             this.redirectToDashboard();
           }
         })
@@ -95,14 +117,6 @@ export default {
         });
   },
   methods: {
-    isBasicAuthEnabled() {
-      return this.availableAuths.includes("BASIC_AUTH");
-    },
-
-    isOauth2Enabled() {
-      return this.availableAuths.includes("OAUTH2");
-    },
-
     redirectToDashboard() {
       this.$router.push("dashboard")
     },
@@ -181,6 +195,14 @@ export default {
   padding: 10px;
   color: #FFFFFF;
   background-color: #4f4d4d;
+}
+
+.login-button-container:not(.disabled):hover {
+  cursor: pointer;
+}
+
+.login-button-container.disabled {
+  /*background-color: #828683;*/
 }
 
 .button-separator {

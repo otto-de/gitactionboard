@@ -1,5 +1,13 @@
 <template>
-  <div id="jobs">
+  <template
+    v-if="loading"
+  >
+    <Spinner />
+  </template>
+  <div
+    v-if="!loading"
+    id="jobs"
+  >
     <template
       v-for="job in jobs"
       :key="job"
@@ -17,6 +25,7 @@
 
 import {fetchCctrayJson} from "@/services/apiService";
 import Job from "@/components/Job";
+import Spinner from "@/components/Spinner";
 
 const ONE_MINUTE = 60000;
 let idleTimer;
@@ -26,7 +35,7 @@ let idleTime;
 
 export default {
   name: "Jobs",
-  components: { Job },
+  components: {Spinner, Job },
   props: {
     showHealthyBuilds: {
       type: Boolean,
@@ -44,6 +53,7 @@ export default {
   data() {
     return {
       jobs: [],
+      loading: true,
       idleTime: 0,
       renderPageTimer,
       idleTimer,
@@ -55,6 +65,7 @@ export default {
       this.initiateIdleTimer();
     }
     this.renderPage().then(() => {
+      this.loading = false;
       renderPageTimer = setInterval(this.renderPage, 5000);
     });
   },
