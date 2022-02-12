@@ -45,7 +45,7 @@
 import HamburgerMenuIcon from "@/icons/HamburgerMenuIcon";
 import MenuItems from "@/components/MenuItems";
 import router from "@/router";
-import authenticationService from "@/services/authenticationService";
+import {clearCookies, getName, isAuthenticate} from "@/services/authenticationService";
 
 export default {
   name: "SideMenuBar",
@@ -75,10 +75,10 @@ export default {
       return router.currentRoute.value.path;
     },
     firstName(){
-      return authenticationService.getName().split(" ")[0];
+      return getName().split(" ")[0];
     },
     isAuthenticate(){
-      return authenticationService.isAuthenticate();
+      return isAuthenticate();
     },
   },
   methods: {
@@ -92,6 +92,7 @@ export default {
       router.push("/dashboard")
     },
     logout() {
+      clearCookies();
       window.location.href = '/logout'
     }
   }
