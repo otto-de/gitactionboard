@@ -64,6 +64,10 @@ export default {
       this.renderPageTimer = setInterval(this.renderPage, 5000);
     });
   },
+  beforeUnmount() {
+    clearInterval(this.renderPageTimer);
+    clearInterval(this.idleTimer);
+  },
   methods: {
     isIdleHealthyBuild(lastBuildStatus, activity) {
       return lastBuildStatus === "Success" && activity === "Sleeping"

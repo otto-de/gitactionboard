@@ -1,7 +1,6 @@
 <template>
   <div id="container">
     <Jobs
-      v-if="currentPath === '/dashboard'"
       :show-healthy-builds="showHealthyBuilds"
       :disable-max-idle-time="disableIdleOptimization"
       :max-idle-time="maxIdleTime"
