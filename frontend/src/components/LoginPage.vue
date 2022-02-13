@@ -33,12 +33,21 @@
           name="password"
           placeholder="Password"
         >
+        <div
+          v-if="error"
+          class="invalid-message-container"
+        >
+          <Invalid />
+          <p class="error">
+            Invalid username or password
+          </p>
+        </div>
         <button
           :disabled="isLoginButtonDisabled"
           :class="{'disabled': isLoginButtonDisabled}"
           type="button"
           class="login-button-container"
-          @click="login()"
+          @click="login"
         >
           Login
         </button>
@@ -69,20 +78,22 @@
 </template>
 
 <script>
-import { authenticate, fetchAvailableAuths } from "@/services/apiService";
+import {authenticate, fetchAvailableAuths} from "@/services/apiService";
 import {isAuthenticate} from "@/services/authenticationService";
 import storageService from "@/services/storageService";
 import Spinner from "@/components/Spinner";
+import {watch} from "vue";
+import Invalid from "@/icons/InvalidIcon";
 
 
 export default {
   name: "LoginPage",
-  components: {Spinner},
+  components: {Invalid, Spinner},
   data(){
       return {
         availableAuths: [],
-        mounted: false,
         loading: true,
+        error: false,
         username: "",
         password: ""
       }
@@ -99,12 +110,16 @@ export default {
     }
   },
   mounted() {
+    watch(() => [this.username, this.password], ([newUsername, newPassword], [oldUsername, oldPassword])=> {
+      if (this.error){
+        this.error = newUsername === oldUsername && newPassword === oldPassword;
+      }
+    })
     fetchAvailableAuths()
         .then(availableAuths => {
           this.availableAuths = availableAuths;
           this.loading = false;
           storageService.setItem("availableAuths", JSON.stringify(availableAuths))
-          this.mounted = true;
         })
         .then(() => {
           if (isAuthenticate() || (!this.isBasicAuthEnabled && !this.isOauth2Enabled)){
@@ -120,11 +135,13 @@ export default {
     redirectToDashboard() {
       this.$router.push("dashboard")
     },
-
     login() {
       authenticate(this.username, this.password)
-          .then(this.redirectToDashboard)
-      .catch(reason => console.error(reason))
+      .then(this.redirectToDashboard)
+      .catch(reason => {
+        this.error = true;
+        console.error(reason);
+      })
 
     }
   }
@@ -194,7 +211,7 @@ export default {
   margin: 35px 5px 100px;
   padding: 10px;
   color: #FFFFFF;
-  background-color: #4f4d4d;
+  background-color: #3a964a;
 }
 
 .login-button-container:not(.disabled):hover {
@@ -203,6 +220,7 @@ export default {
 
 .login-button-container.disabled {
   /*background-color: #828683;*/
+  background-color: #4f4d4d;
 }
 
 .button-separator {
@@ -242,6 +260,28 @@ export default {
   padding: 10px;
   color: #FFFFFF;
   background-color: rgb(45, 164, 78);
+}
+
+.github-button-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.invalid-message-container {
+  position: relative;
+  right: 69px;
+  top: 5px;
+}
+
+.error {
+  color: #ff6161;
+  font-size: 16px;
+  margin-top: 0;
+  margin-left: 8px;
+  /*margin: 0;*/
+  position: relative;
+  bottom: 23px;
+  left: 22px;
 }
 
 </style>

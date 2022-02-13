@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "Logout"
+  name: "LogoutIcon"
 }
 </script>
 

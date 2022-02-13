@@ -127,8 +127,6 @@ export default {
   grid-template-rows: repeat(auto-fit, minmax(90px, 115px));
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
   width: 100%;
 }
 

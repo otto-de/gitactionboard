@@ -1,5 +1,11 @@
 <template>
   <div id="container">
+    <div class="header">
+      <div class="header-title">
+        Gitaction Board
+      </div>
+      <div class="separator" />
+    </div>
     <Jobs
       :show-healthy-builds="showHealthyBuilds"
       :disable-max-idle-time="disableIdleOptimization"
@@ -46,6 +52,26 @@ div {
 #container {
   height: 100%;
   width: 95%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.header {
+  height: 6%;
+  margin-bottom: 35px;
+}
+
+.header-title {
+  font-family: Snell Roundhand, cursive;
+  color: #5b5454;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.separator {
+  height: 0;
+  border: 1px solid #5b5454;
 }
 
 </style>

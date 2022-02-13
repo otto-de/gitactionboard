@@ -17,7 +17,7 @@
 <script>
 
 export default {
-  name: "Settings"
+  name: "SettingsIcon"
 }
 </script>
 

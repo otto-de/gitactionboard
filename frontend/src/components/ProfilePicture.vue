@@ -1,27 +1,26 @@
 <template>
   <img
-    v-if="!!avatarUrl"
-    :src="avatarUrl"
+    :src="avatarUrl ? avatarUrl : avatar"
     :class="cssClass"
     alt="avatar"
   >
-  <AnonymousUser
-    v-if="!avatarUrl"
-    :class="cssClass"
-  />
 </template>
 
 <script>
-import AnonymousUser from "@/icons/AnonymousUser";
 import {getAvatarUrl} from "@/services/authenticationService";
+import avatar from '../images/avatar.jpg';
 
 export default {
   name: "ProfilePicture",
-  components: {AnonymousUser},
   props: {
     small: {
       type: Boolean,
       default: true
+    }
+  },
+  data() {
+    return {
+      avatar: avatar
     }
   },
   computed:{

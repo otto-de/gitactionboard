@@ -213,7 +213,7 @@ export default {
 }
 
 .save.disabled {
-  background-color: #828683;
+  background-color: #4f4d4d;
 }
 
 </style>

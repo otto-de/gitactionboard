@@ -8,8 +8,8 @@
       v-if="iconName==='profile'"
       :small="true"
     />
-    <Settings v-if="iconName==='settings'" />
-    <Logout v-if="iconName==='logout'" />
+    <SettingsIcon v-if="iconName==='settings'" />
+    <LogoutIcon v-if="iconName==='logout'" />
     <DashboardIcon v-if="iconName==='dashboard'" />
     <p
       v-if="isClicked"
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-import Settings from "@/icons/Settings";
-import Logout from "@/icons/Logout";
+import SettingsIcon from "@/icons/SettingsIcon";
+import LogoutIcon from "@/icons/LogoutIcon";
 import DashboardIcon from "@/icons/DashboardIcon";
 import { getAvatarUrl } from "@/services/authenticationService";
 import ProfilePicture from "@/components/ProfilePicture";
 export default {
   name: "MenuItems",
-  components: {ProfilePicture, DashboardIcon, Logout, Settings},
+  components: {ProfilePicture, DashboardIcon, LogoutIcon, SettingsIcon},
   props: {
     isClicked: Boolean,
     menuItemName: {

@@ -29,4 +29,6 @@ fileignoreconfig:
   checksum: f50c9eeecc39b443e2411cee7e355ea4f8f1d3e579558f3d478dd97a45a2c346
 - filename: frontend/src/components/Jobs.vue
   checksum: 8daefd13dc2cc06702df8026aa8d047072d0a8eeb45d98e287dd4aa9579cecec
+- filename: frontend/src/components/LoginPage.vue
+  checksum: 5e1ec2947148a62cacdedb5d8b93782329c8b3a42ed708a690d31f6e5ae6cec3
 version: "1.0"

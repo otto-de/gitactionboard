@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: "Home"
+  name: "DashboardIcon"
 }
 </script>
 
