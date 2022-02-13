@@ -15,10 +15,7 @@
       <Job :job="job" />
     </template>
   </div>
-  <div
-    v-if="jobs.length === 0"
-    id="all-passed-container"
-  />
+  <NoFailedBuild v-if="!loading && jobs.length === 0" />
 </template>
 
 <script>
@@ -26,12 +23,13 @@
 import {fetchCctrayJson} from "@/services/apiService";
 import Job from "@/components/Job";
 import Spinner from "@/components/Spinner";
+import NoFailedBuild from "@/components/NoFailedBuild";
 
 const ONE_MINUTE = 60000;
 
 export default {
   name: "Jobs",
-  components: {Spinner, Job },
+  components: {NoFailedBuild, Spinner, Job },
   props: {
     showHealthyBuilds: {
       type: Boolean,

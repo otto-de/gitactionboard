@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/AuthenticationController.java
   checksum: 51c5a4ce0402fe4550c90468b22a9007a643714573eba99d611a3d2ad3012f09
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
-  checksum: a34c899d5594d66729c93f0ee7a74bd995c5522790ca7110baeebe3e0565ffd3
+  checksum: 1859e730d5fece695c039288786cc93b09b28283a3f74a772ad1baf35dfedf43
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
   checksum: 04a9aaea483e1398231870d300a7d2be802e80d4b2db8e1e4568aa1165675ddb
 - filename: backend/src/main/resources/application.properties
@@ -28,7 +28,9 @@ fileignoreconfig:
 - filename: frontend/src/components/Job.vue
   checksum: f50c9eeecc39b443e2411cee7e355ea4f8f1d3e579558f3d478dd97a45a2c346
 - filename: frontend/src/components/Jobs.vue
-  checksum: 8daefd13dc2cc06702df8026aa8d047072d0a8eeb45d98e287dd4aa9579cecec
+  checksum: 79cec1549d2c83c6614e4f4421ae2bd67482b858cfb2de28d9cf8043f6393c47
 - filename: frontend/src/components/LoginPage.vue
   checksum: 5e1ec2947148a62cacdedb5d8b93782329c8b3a42ed708a690d31f6e5ae6cec3
+- filename: frontend/src/images/happy.png
+  checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
 version: "1.0"
