@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.config.security;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Optional;
@@ -10,8 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.Authentication;
@@ -24,9 +26,9 @@ import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 @Configuration
-@RequiredArgsConstructor
 @Lazy
 @Slf4j
+@SuppressFBWarnings("EI_EXPOSE_REP2")
 public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
   private static final String LOGIN = "login";
@@ -41,6 +43,15 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   private static final int FIVE_MONTHS = 60 * 60 * 5 * 30;
 
   private final OAuth2AuthorizedClientService clientService;
+  private final String contextPath;
+
+  @Autowired
+  public GithubAuthenticationSuccessHandler(
+      OAuth2AuthorizedClientService clientService,
+      @Qualifier("servletContextPath") String contextPath) {
+    this.clientService = clientService;
+    this.contextPath = contextPath;
+  }
 
   @Override
   public void onAuthenticationSuccess(
@@ -99,7 +110,7 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   private Cookie createCookie(String cookieName, String value, int maxAge) {
     final Cookie cookie = new Cookie(cookieName, URLEncoder.encode(value, UTF_8));
     cookie.setMaxAge(maxAge);
-    cookie.setPath("/");
+    cookie.setPath(contextPath);
     return cookie;
   }
 }

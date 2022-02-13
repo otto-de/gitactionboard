@@ -34,10 +34,13 @@ public class BasicAuthenticationController {
   private static final int ONE_DAY = 60 * 60 * 24;
 
   private final AuthenticationManager authenticationManager;
+  private final String contextPath;
 
   public BasicAuthenticationController(
-      @Qualifier("basicAuthenticationManager") AuthenticationManager authenticationManager) {
+      @Qualifier("basicAuthenticationManager") AuthenticationManager authenticationManager,
+      @Qualifier("servletContextPath") String contextPath) {
     this.authenticationManager = authenticationManager;
+    this.contextPath = contextPath;
   }
 
   @PostMapping(path = "/login/basic")
@@ -72,7 +75,7 @@ public class BasicAuthenticationController {
   private Cookie createCookie(String cookieName, String value, int maxAge) {
     final Cookie cookie = new Cookie(cookieName, URLEncoder.encode(value, UTF_8));
     cookie.setMaxAge(maxAge);
-    cookie.setPath("/");
+    cookie.setPath(contextPath);
     return cookie;
   }
 

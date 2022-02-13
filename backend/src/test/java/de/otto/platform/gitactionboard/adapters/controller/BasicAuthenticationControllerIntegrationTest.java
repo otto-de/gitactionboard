@@ -9,7 +9,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.config.CodecConfig;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.SneakyThrows;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,11 +23,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @IntegrationTest
 @DirtiesContext
-@AutoConfigureMockMvc
-@Import(CodecConfig.class)
-@SpringBootTest(
-    webEnvironment = RANDOM_PORT,
-    properties = {"BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd"})
 @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
 class BasicAuthenticationControllerIntegrationTest {
   private static final String NAME = "name";
@@ -33,14 +30,10 @@ class BasicAuthenticationControllerIntegrationTest {
   private static final String ACCESS_TOKEN = "access_token";
 
   private static final int ONE_DAY = 60 * 60 * 24;
-  public static final String ADMIN_USERNAME = "admin";
-  @Autowired private MockMvc mockMvc;
+  private static final String ADMIN_USERNAME = "admin";
 
-  @Autowired private ObjectMapper objectMapper;
-
-  @Test
-  @SneakyThrows
-  void shouldBeAbleToLoginUsingUsernameAndPassword() {
+  private static void validateSuccessApiCall(
+      String contextPath, MockMvc mockMvc, ObjectMapper objectMapper) throws Exception {
     mockMvc
         .perform(
             post("/login/basic")
@@ -55,12 +48,14 @@ class BasicAuthenticationControllerIntegrationTest {
         .andExpect(cookie().value(ACCESS_TOKEN, startsWith("Basic+")))
         .andExpect(cookie().maxAge(NAME, ONE_DAY))
         .andExpect(cookie().maxAge(USERNAME, ONE_DAY))
-        .andExpect(cookie().maxAge(ACCESS_TOKEN, ONE_DAY));
+        .andExpect(cookie().maxAge(ACCESS_TOKEN, ONE_DAY))
+        .andExpect(cookie().path(NAME, contextPath))
+        .andExpect(cookie().path(USERNAME, contextPath))
+        .andExpect(cookie().path(ACCESS_TOKEN, contextPath));
   }
 
-  @Test
-  @SneakyThrows
-  void shouldNoBeAbleToLoginUsingInvalidUsernameAndPassword() {
+  private static void validateUnauthorisedApiCall(MockMvc mockMvc, ObjectMapper objectMapper)
+      throws Exception {
     mockMvc
         .perform(
             post("/login/basic")
@@ -70,5 +65,58 @@ class BasicAuthenticationControllerIntegrationTest {
                             ADMIN_USERNAME, "wrong password")))
                 .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isUnauthorized());
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @Import(CodecConfig.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {"BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd"})
+  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
+  class WithDefaultContextPathTest {
+    @Autowired private MockMvc mockMvc;
+
+    @Autowired private ObjectMapper objectMapper;
+
+    @Test
+    @SneakyThrows
+    void shouldBeAbleToLoginUsingUsernameAndPassword() {
+      validateSuccessApiCall("/", mockMvc, objectMapper);
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldNoBeAbleToLoginUsingInvalidUsernameAndPassword() {
+      validateUnauthorisedApiCall(mockMvc, objectMapper);
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @Import(CodecConfig.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {
+        "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd",
+        "server.servlet.context-path=/test"
+      })
+  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
+  class WithCustomContextPathTest {
+    @Autowired private MockMvc mockMvc;
+
+    @Autowired private ObjectMapper objectMapper;
+
+    @Test
+    @SneakyThrows
+    void shouldBeAbleToLoginUsingUsernameAndPassword() {
+      validateSuccessApiCall("/test", mockMvc, objectMapper);
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldNoBeAbleToLoginUsingInvalidUsernameAndPassword() {
+      validateUnauthorisedApiCall(mockMvc, objectMapper);
+    }
   }
 }

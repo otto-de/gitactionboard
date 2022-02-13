@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -61,6 +62,12 @@ public class WebSecurityConfig {
     if (!"-".equals(githubClientId)) authenticationMechanisms.add(AuthenticationMechanism.OAUTH2);
 
     return authenticationMechanisms;
+  }
+
+  @Bean(name = "servletContextPath")
+  public String servletContextPath(ServletContext context) {
+    final String contextPath = context.getContextPath();
+    return StringUtils.hasText(contextPath) ? contextPath : "/";
   }
 
   @Configuration

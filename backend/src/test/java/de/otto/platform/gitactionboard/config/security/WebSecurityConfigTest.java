@@ -3,18 +3,23 @@ package de.otto.platform.gitactionboard.config.security;
 import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.BASIC_AUTH;
 import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.OAUTH2;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import java.util.stream.Stream;
+import javax.servlet.ServletContext;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -41,6 +46,41 @@ class WebSecurityConfigTest {
     assertThat(webSecurityConfig.availableAuths(basicAuthFilePath, githubClientId))
         .hasSameSizeAs(expectedAuths)
         .containsAll(expectedAuths);
+  }
+
+  @Nested
+  @ExtendWith(MockitoExtension.class)
+  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
+  class ServletContextPathTest {
+
+    @Mock private ServletContext servletContext;
+    private WebSecurityConfig webSecurityConfig;
+
+    @BeforeEach
+    void setUp() {
+      webSecurityConfig = new WebSecurityConfig();
+    }
+
+    @Test
+    void shouldGiveDefaultServletContextPathIfContextPathIsNotSet() {
+      when(servletContext.getContextPath()).thenReturn(null);
+
+      assertThat(webSecurityConfig.servletContextPath(servletContext)).isEqualTo("/");
+    }
+
+    @Test
+    void shouldGiveDefaultServletContextPathIfContextPathIsSetToEmpty() {
+      when(servletContext.getContextPath()).thenReturn("");
+
+      assertThat(webSecurityConfig.servletContextPath(servletContext)).isEqualTo("/");
+    }
+
+    @Test
+    void shouldGiveCorrectServletContextPathIfContextPathIsSetHasAValidPath() {
+      when(servletContext.getContextPath()).thenReturn("/local");
+
+      assertThat(webSecurityConfig.servletContextPath(servletContext)).isEqualTo("/local");
+    }
   }
 
   @Nested

@@ -54,7 +54,8 @@ class GithubAuthenticationSuccessHandlerTest {
     final String clientRegistrationId = "client_registration_id";
     final String principleName = "principle_name";
 
-    authenticationSuccessHandler = new GithubAuthenticationSuccessHandler(authorizedClientService);
+    authenticationSuccessHandler =
+        new GithubAuthenticationSuccessHandler(authorizedClientService, EXPECTED_COOKIE_PATH);
 
     when(authentication.getPrincipal()).thenReturn(defaultOAuth2User);
     when(authentication.getAuthorizedClientRegistrationId()).thenReturn(clientRegistrationId);

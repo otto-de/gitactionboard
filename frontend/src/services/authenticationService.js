@@ -1,24 +1,25 @@
+const getCookies = () =>
+  document.cookie.split(";").map((cookie) => cookie.trim());
+
 const getCookie = (name) => {
   const processedName = `${name}=`;
+  const cookies = getCookies();
 
-  const decodedCookie = decodeURIComponent(document.cookie);
-
-  const cookies = decodedCookie.split(";");
-
-  for (const item of cookies) {
-    const cookie = item.trim();
-
+  for (const cookie of cookies) {
     if (cookie.indexOf(processedName) === 0) {
-      return cookie.substring(processedName.length, cookie.length);
+      return decodeURIComponent(cookie).substring(
+        processedName.length,
+        cookie.length
+      );
     }
   }
 };
 
 const clearCookies = () => {
-  const cookies = document.cookie.split(";");
+  const cookies = getCookies();
   for (const item of cookies) {
     const indexOfEqual = item.indexOf("=");
-    const name = indexOfEqual > -1 ? item.substr(0, indexOfEqual) : item;
+    const name = indexOfEqual > -1 ? item.substring(0, indexOfEqual) : item;
     document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
   }
 };

@@ -93,7 +93,7 @@ export default {
     },
     logout() {
       clearCookies();
-      window.location.href = '/logout'
+      window.location.href = './logout'
     }
   }
 }
