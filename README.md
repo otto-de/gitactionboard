@@ -20,7 +20,11 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
   - [Formatting](#formatting)
   - [Security Checks](#security-checks)
   - [Run application locally](#run-application-locally)
+  - [Commits](#commits)
+    - [Types](#types)
   - [Build docker image](#build-docker-image)
+  - [Generate Changelog](#generate-changelog)
+  - [Release a new Docker image](#release-a-new-docker-image)
 
 ## Usage
 
@@ -178,6 +182,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
 - [talisman](https://github.com/thoughtworks/talisman)
 - [Node.js v16.13.1](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
+- [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
 
 ### Tests
 
@@ -242,6 +247,24 @@ This service can be run locally. To run it locally, run the following command:
 ./run.sh run-locally <github auth token>
 ```
 
+### Commits
+
+This repository follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Therefor whenever you are
+committing the changes make sure use proper **type**.
+
+#### Types
+
+- **feat** for a new feature for the user, not a new feature for build script. Such commit will trigger a release bumping a MINOR version.
+- **fix** for a bug fix for the user, not a fix to a build script. Such commit will trigger a release bumping a PATCH version.
+- **perf** for performance improvements. Such commit will trigger a release bumping a PATCH version.
+- **docs** for changes to the documentation.
+- **style** for formatting changes, missing semicolons, etc.
+- **refactor** for refactoring production code, e.g. renaming a variable.
+- **test** for adding missing tests, refactoring tests; no production code change.
+- **build** for updating build configuration, development tools or other changes irrelevant to the user.
+
+> **_NOTE:_** Add ! just after type to indicate breaking changes
+
 ### Build docker image
 
 To build docker image run:
@@ -250,11 +273,23 @@ To build docker image run:
 ./run.sh docker-build
 ```
 
+### Generate changelog
+
+- The changelog can be easily generate the changelog by running following command
+
+```shell
+./run.sh generate-changelog
+```
+
+- Once changelog is generated, verify the changelog by updating the correct version and push the changes to github
+
 ### Release a new Docker image
 
 A new docker image can be published to [docker hub](https://hub.docker.com/repository/docker/ottoopensource/gitactionboard) using CI/CD. To achieve the same we need to follow the following steps:
 
-- Once changes are pushed to github, create a new release version
+- Generate the changelog, if it's not done already. Steps can be found [here](#commits).
+
+- Create a new release version by running following command
 
 ```shell
 ./run.sh bump-version <major|minor|patch>

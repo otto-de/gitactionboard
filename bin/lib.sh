@@ -142,10 +142,14 @@ _talisman_verify() {
   fi
 }
 
-_bump_version(){
+_bump_version() {
   local bump_component="${1}"
   pushd "backend" >/dev/null || exit
     _ensure_jenv
     jenv exec ./gradlew tag -Prelease -PbumpComponent="${bump_component}" -Dmessage="$(git log -1 --format=%s)"
   popd >/dev/null || exit
+}
+
+_generate_changelog() {
+  conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -t v
 }

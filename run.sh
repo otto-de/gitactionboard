@@ -21,6 +21,7 @@ commands:
   talisman-verify                                      Verify no sensitive information is committed using talisman
   bump-version <major|minor|patch>                     Release a new <major|minor|patch> version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
+  generate-changelog                                   Generate changelog from last tag and write in README.md
 EOF
   exit 1
 }
@@ -36,5 +37,6 @@ case ${CMD} in
   talisman-verify) _talisman_verify ;;
   bump-version) _bump_version "${1}" ;;
   copy-frontend) _copy_frontend ;;
+  generate-changelog) _generate_changelog ;;
   *) _usage ;;
 esac

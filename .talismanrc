@@ -3,6 +3,8 @@ fileignoreconfig:
   checksum: 22fbbc7d3839fd65cdeb73d71c52006fadadfeb5d3cbdac7bae5d9795f20edf8
 - filename: .github/workflows/checks.yml
   checksum: 365a1d2aa78bafe126342b8e01dc9271b065121e5c655ce9a03820d986a960ea
+- filename: README.md
+  checksum: 0586e7293b399b41f03e0d1dd0ce0cf245c2b3063ccc67ed22c52603ec9f92e7
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
