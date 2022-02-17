@@ -4,7 +4,7 @@ fileignoreconfig:
 - filename: .github/workflows/checks.yml
   checksum: 365a1d2aa78bafe126342b8e01dc9271b065121e5c655ce9a03820d986a960ea
 - filename: README.md
-  checksum: fdcd1bc49718d48f91cc6aa02586a2ca3c8bd5ef8d4fd126d146cd58e0120d00
+  checksum: 7fa91f4f2ba2da1f9a28a318e2d9c48b38fc85cf20e036170215c8442ea6fe03
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
@@ -14,13 +14,13 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png
-  checksum: 47c2e47c03ac67b606cc987d409e2d6f22aea3c2ab3ae9adb95abad6d607b711
-- filename: doc/sample2.png
-  checksum: 4b7ffe6db1c4f23e3dfa9c52fa15699f5e3d8d13bc9b45d5f137c2706e3edd7d
+  checksum: cda89f07b46aae1ac69ba4cd25c7f271fb28e4a5f7c1ca23619ba17e31a2dd91
 - filename: frontend/package-lock.json
   checksum: eb5ad0f6f6440a9694d2f5753271d4200be89ec709fce1389b301a658b27f919
 - filename: frontend/src/components/Job.vue
-  checksum: f50c9eeecc39b443e2411cee7e355ea4f8f1d3e579558f3d478dd97a45a2c346
+  checksum: 5b36bc3d22cd3397d9d9a982d5f30ec8be4844902a65b9220b4d622fe36448fd
 - filename: frontend/src/components/Jobs.vue
   checksum: c9c38b10e4eca52659618f21d7f382dc97ec853f3c0fd750ce021edfbe9db27b
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
+  checksum: 728e367c7b7a80b9f78d8bfddb7a265c1a43f527f7fb016493043ad8680831bf
 version: "1.0"

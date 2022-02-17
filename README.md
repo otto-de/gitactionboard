@@ -100,13 +100,13 @@ follow [this link](https://docs.github.com/en/developers/apps/building-oauth-app
 
 ![UI dashboard sample 1](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample1.png)
 
-![UI dashboard sample 2](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample2.png)
-
-![UI dashboard sample 3](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample3.png)
+![preference sample 1](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/preference-sample1.png)
 
 ##### UI Dashboard Configurations
 
-You can use the following query params to configure UI dashboard
+From `v2.0.0` onwards, preference page can be used to manage UI dashboard configuration.
+
+Prior to `v2.0.0`, query params can be used to configure UI dashboard. Please find possible query params below,
 
 | Query param name      | Descriptions                                                                                              | Required | Default value | Example value |
 | :-------------------- | :-------------------------------------------------------------------------------------------------------- | :------: | :-----------: | :-----------: |
