@@ -153,9 +153,16 @@ _talisman_verify() {
 
 _bump_version() {
   local bump_component="${1}"
+
+  _revert() {
+    rm -rf "backend/.git"
+  }
+
   pushd "backend" >/dev/null || exit
     _ensure_jenv
+    trap _revert SIGTERM SIGINT ERR
     jenv exec ./gradlew tag -Prelease -PbumpComponent="${bump_component}" -Dmessage="$(git log -1 --format=%s)"
+    _revert
   popd >/dev/null || exit
 }
 
