@@ -18,6 +18,7 @@ commands:
   run-locally [auth token] [with frontend]             Run local version of service with/without frontend
   test                                                 Build and test the service
   docker-build                                         Build docker image
+  build-jar                                            Build executable boot jar file
   talisman-verify                                      Verify no sensitive information is committed using talisman
   bump-version <major|minor|patch>                     Release a new <major|minor|patch> version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
@@ -42,5 +43,6 @@ case ${CMD} in
   generate-changelog) _generate_changelog ;;
   add-contributor) _add_contributor "${1}" "${2}" ;;
   generate-contributors-list) _generate_contributors_list ;;
+  build-jar) _build_jar ;;
   *) _usage ;;
 esac

@@ -42,6 +42,14 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
       - name: Run all tests
         run: ./run.sh test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
@@ -52,31 +60,72 @@ jobs:
           name: ${{ env.SERVICE_NAME }}-build-reports
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
 
-  determaine_should_publish_image:
+  determaine_should_publish_new_version:
     runs-on: ubuntu-20.04
     outputs:
-      PUBLISH_DOCKER_IMAGE: ${{ steps.determaine_should_publish_image.outputs.PUBLISH_DOCKER_IMAGE }}
+      PUBLISH_NEW_VERSION: ${{ steps.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION }}
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v2
       - name: Determine should publish docker image
-        id: determaine_should_publish_image
+        id: determaine_should_publish_new_version
         run: |
-          PUBLISH_DOCKER_IMAGE=false
+          PUBLISH_NEW_VERSION=false
           if [[ $(git tag --points-at HEAD) != '' ]]; then
-            PUBLISH_DOCKER_IMAGE=true
+            PUBLISH_NEW_VERSION=true
           fi
-          echo "::set-output name=PUBLISH_DOCKER_IMAGE::${PUBLISH_DOCKER_IMAGE}"
+          echo "::set-output name=PUBLISH_NEW_VERSION::${PUBLISH_NEW_VERSION}"
+
+  determaine_current_tag_name:
+    runs-on: ubuntu-20.04
+    needs: [build, determaine_should_publish_new_version]
+    if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
+    outputs:
+      CURRENT_TAG: ${{ steps.find_current_tag_name.outputs.CURRENT_TAG }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v2
+      - name: Determine current tag
+        id: find_current_tag_name
+        run: |
+          CURRENT_TAG=$(git describe --tags --abbrev=0)
+          echo "::set-output name=CURRENT_TAG::${CURRENT_TAG}"
 
   docker:
     runs-on: ubuntu-20.04
-    needs: [build, determaine_should_publish_image]
-    if: ${{ needs.determaine_should_publish_image.outputs.PUBLISH_DOCKER_IMAGE == 'true' }}
+    needs: [build, determaine_current_tag_name]
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v2
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install jenv
+        run: |
+          git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+          echo "$HOME/.jenv/bin" >> $GITHUB_PATH
+      - name: Configure jenv
+        run: |
+          jenv init -
+          jenv add /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+      - name: Cache gradle wrapper and jars
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      - name: Build boot jar
+        id: build_jar
+        run: ./run.sh build-jar
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Docker meta
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
@@ -90,6 +139,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: create github release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: "needs.determaine_current_tag_name.outputs.CURRENT_TAG"
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2

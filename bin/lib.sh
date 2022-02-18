@@ -91,13 +91,21 @@ _format_sources() {
   popd >/dev/null || exit
 }
 
-_copy_frontend(){
+_copy_frontend() {
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
   _ensure_nvm
   npm install
   npm run build
   echo "Copying dist to ../backend/src/main/resources/public"
   cp -r dist/ ../backend/src/main/resources/public
+  popd >/dev/null || exit
+}
+
+_build_jar() {
+  _copy_frontend
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
+    _ensure_jenv
+    jenv exec ./gradlew clean bootJar
   popd >/dev/null || exit
 }
 
@@ -128,6 +136,7 @@ _run_locally() {
 }
 
 _docker_build() {
+  _build_jar
   docker build -t "${SERVICE_NAME}:${REVISION}" .
 }
 
