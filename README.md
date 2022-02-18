@@ -10,6 +10,7 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
 
 # Table of contents
 
+- [Changelog](#changelog)
 - [Usage](#usage)
   - [Pull docker image](#pull-docker-image)
   - [Run docker image](#run-docker-image)
@@ -32,6 +33,10 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
   - [Generate Changelog](#generate-changelog)
   - [Release a new Docker image](#release-a-new-docker-image)
 - [Contributors](#contributors-)
+
+## Changelog
+
+Changelog can be found [here](https://github.com/otto-de/gitactionboard/blob/main/CHANGELOG.md)
 
 ## Usage
 
