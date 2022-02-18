@@ -177,5 +177,5 @@ _generate_contributors_list() {
 }
 
 _generate_changelog() {
-  conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -t v
+  conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -t v -a
 }
