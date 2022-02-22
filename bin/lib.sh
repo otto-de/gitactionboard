@@ -178,4 +178,6 @@ _generate_contributors_list() {
 
 _generate_changelog() {
   conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -t v -a
+
+  prettier --write "CHANGELOG.md"
 }
