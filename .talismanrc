@@ -20,7 +20,7 @@ fileignoreconfig:
 - filename: doc/sample1.png
   checksum: cda89f07b46aae1ac69ba4cd25c7f271fb28e4a5f7c1ca23619ba17e31a2dd91
 - filename: frontend/package-lock.json
-  checksum: 5b36bc3d22cd3397d9d9a982d5f30ec8be4844902a65b9220b4d622fe36448fd
+  checksum: 441c9b843ecc2adbb9a98e08267f38e850a1ad03ae7fbb965040c05638268665
 - filename: frontend/src/components/Job.vue
   checksum: 5b36bc3d22cd3397d9d9a982d5f30ec8be4844902a65b9220b4d622fe36448fd
 - filename: frontend/src/components/Jobs.vue
