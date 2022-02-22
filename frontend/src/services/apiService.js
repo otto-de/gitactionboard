@@ -12,6 +12,17 @@ const validate = (res) => {
   return res.ok ? Promise.resolve(res) : Promise.reject(res);
 };
 
+const isNullOrUndefined = (value) => value === null || value === undefined;
+
+const marshalHeaders = (headers = {}) =>
+  Object.keys(headers).reduce(
+    (accumulator, key) =>
+      isNullOrUndefined(headers[key])
+        ? accumulator
+        : { ...accumulator, [key]: headers[key] },
+    {}
+  );
+
 const fetchAvailableAuths = () =>
   fetch("./available-auths", {
     headers: new Headers({
@@ -21,16 +32,17 @@ const fetchAvailableAuths = () =>
     .then(validate)
     .then((response) => response.json());
 
-const fetchCctrayJson = () => {
-  return fetch("./v1/cctray", {
-    headers: new Headers({
-      Authorization: fetchAccessToken(),
-      Accept: "application/json",
-    }),
+const fetchCctrayJson = () =>
+  fetch("./v1/cctray", {
+    headers: new Headers(
+      marshalHeaders({
+        Authorization: fetchAccessToken(),
+        Accept: "application/json",
+      })
+    ),
   })
     .then(validate)
     .then((res) => res.json());
-};
 
 const authenticate = (username, password) => {
   return fetch("./login/basic", {

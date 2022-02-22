@@ -25,4 +25,6 @@ fileignoreconfig:
   checksum: 5b36bc3d22cd3397d9d9a982d5f30ec8be4844902a65b9220b4d622fe36448fd
 - filename: frontend/src/components/Jobs.vue
   checksum: c9c38b10e4eca52659618f21d7f382dc97ec853f3c0fd750ce021edfbe9db27b
+- filename: frontend/src/services/apiService.js
+  checksum: 47b32c7241cf8e40c258ed745405a165d7fa949e7938b35c03c0675cac9e74ab
 version: "1.0"
