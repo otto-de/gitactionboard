@@ -95,6 +95,8 @@ follow [this link](https://docs.github.com/en/developers/apps/building-oauth-app
 
 **Note** you need to add _Authorization callback URL_ as `<homepage url>/login/oauth2/code/github`.
 
+:warning: In-case the gitactionboard server is running behind a proxy, you need to set the above _Authorization callback URL_ to `SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GITHUB_REDIRECT-URI` environment variable.
+
 :warning: In-case of Github OAuth2 is disabled, gitactionboard will make use of `GITHUB_ACCESS_TOKEN` to fetch data from github for private repositories.
 
 #### UI Dashboard
