@@ -28,3 +28,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - Clear interval timer when user moves away from dashboard page ([2dea455](https://github.com/otto-de/gitactionboard/commit/2dea455a0db46305a7bf0ab5aab89495713f03e9))
+
+## [v2.0.1](https://github.com/otto-de/gitactionboard/compare/v2.0.0...v2.0.1) (2022-02-22)
+
+### Bug Fixes
+
+- Filter out headers with undefined value ([4800400](https://github.com/otto-de/gitactionboard/commit/4800400e284094744a9a0c124b1aa568b19fe5c4))
+- Use correct title for dashboard ([abb3957](https://github.com/otto-de/gitactionboard/commit/abb3957ea389f9783cec8839684c70156a66b79a))
