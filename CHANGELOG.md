@@ -41,3 +41,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - Update dependency to fix CVE-2020-36518 ([3926e50](https://github.com/otto-de/gitactionboard/commit/3926e505b027b0bc5677b84ae1cab54bbdbe8bc0))
+
+## [v2.0.3](https://github.com/otto-de/gitactionboard/compare/v2.0.2...v2.0.3) (2022-03-31)
+
+### Bug Fixes
+
+- Intermittent solution to prevent RCE with Spring Core ([52c17b5](https://github.com/otto-de/gitactionboard/commit/52c17b5220769b721058967ee723140067d9f708))
+- Update dependency to fix CVE-2022-23181 ([5140721](https://github.com/otto-de/gitactionboard/commit/514072123190105fab84cbbbd30dc5b04a182744))

@@ -4,7 +4,7 @@ fileignoreconfig:
 - filename: .github/workflows/checks.yml
   checksum: 227f71ffdfc8cd417b7792878e11c7a18027f06cb238211352d07402d87fca19
 - filename: CHANGELOG.md
-  checksum: 132aeb87ebe8c327e266e3ef3194366b630c8bd9a8973f8259b6e1cf3a926377
+  checksum: b4c93620b81831e2bfc22b034bfe3eae85aa216435e633a98ff248a5982f61d5
 - filename: README.md
   checksum: 93ac394e1c802cf2ad9d5ca6d88dcf82e4f103a0a84e1d55bdea9f88b574e1ee
 - filename: backend/gradle/config/checkstyle.xml
