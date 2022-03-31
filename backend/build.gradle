@@ -20,7 +20,8 @@ lombok {
 }
 
 ext {
-    jacksonDataBindVersion = "2.13.1"
+    jacksonDataBindVersion = "2.13.2.2"
+    jacksonCoreVersion = "2.13.2"
     javaUuidGeneratorVersion = "4.0.1"
     logstashVersion = "7.0.1"
     caffeineVersion = "3.0.5"
@@ -41,7 +42,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
-    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonDataBindVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonCoreVersion}"
     implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDataBindVersion}"
     implementation "com.fasterxml.uuid:java-uuid-generator:${javaUuidGeneratorVersion}"
     implementation "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
