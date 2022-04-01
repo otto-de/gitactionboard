@@ -48,3 +48,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - Intermittent solution to prevent RCE with Spring Core ([52c17b5](https://github.com/otto-de/gitactionboard/commit/52c17b5220769b721058967ee723140067d9f708))
 - Update dependency to fix CVE-2022-23181 ([5140721](https://github.com/otto-de/gitactionboard/commit/514072123190105fab84cbbbd30dc5b04a182744))
+
+## [v2.0.4](https://github.com/otto-de/gitactionboard/compare/v2.0.3...v2.0.4) (2022-04-01)
+
+### Bug Fixes
+
+- Update spring boot version to fix CVE-222-22965 ([359147d](https://github.com/otto-de/gitactionboard/commit/359147dcbe97a83727ee3f9ccf16eb9b901f8434))
