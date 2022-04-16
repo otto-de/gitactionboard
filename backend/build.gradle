@@ -3,11 +3,11 @@ plugins {
     id "idea"
     id "org.springframework.boot" version "2.6.6"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
-    id "io.freefair.lombok" version "6.4.1"
+    id "io.freefair.lombok" version "6.4.2"
     id "com.github.spotbugs" version "5.0.6"
     id "com.github.sherter.google-java-format" version "0.9"
     id "com.github.ben-manes.versions" version "0.42.0"
-    id "org.owasp.dependencycheck" version "7.0.3"
+    id "org.owasp.dependencycheck" version "7.0.4.1"
 }
 
 googleJavaFormat {
@@ -23,7 +23,7 @@ ext {
     jacksonDataBindVersion = "2.13.2.2"
     jacksonCoreVersion = "2.13.2"
     javaUuidGeneratorVersion = "4.0.1"
-    logstashVersion = "7.0.1"
+    logstashVersion = "7.1.1"
     caffeineVersion = "3.0.6"
     wiremockVersion = "2.27.2"
     archUnitVersion = "0.23.1"
