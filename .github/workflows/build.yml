@@ -128,12 +128,13 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Docker meta
         id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
+        uses: docker/metadata-action@v3
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.SERVICE_NAME }}
-          tag-semver: |
-            {{major}}.{{minor}}.{{patch}}
-            {{major}}.{{minor}}
+          tags: |
+            type=semver,pattern={{major}}.{{minor}}.{{patch}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
@@ -151,6 +152,7 @@ jobs:
         with:
           context: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
           push: true
       - name: Update docker hub description
         uses: peter-evans/dockerhub-description@v2

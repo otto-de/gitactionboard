@@ -1,6 +1,6 @@
 fileignoreconfig:
 - filename: .github/workflows/build.yml
-  checksum: ad0c6c98e29a213915a6dd1ecc9e778d0c115389598682699d8b9922b99a0b3d
+  checksum: cbc7191c3d74222e6104ba7d44ba50966fdd88fa8b9153f11c0d09cf0a428f70
 - filename: .github/workflows/checks.yml
   checksum: 227f71ffdfc8cd417b7792878e11c7a18027f06cb238211352d07402d87fca19
 - filename: CHANGELOG.md
