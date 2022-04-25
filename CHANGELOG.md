@@ -54,3 +54,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - Update spring boot version to fix CVE-222-22965 ([359147d](https://github.com/otto-de/gitactionboard/commit/359147dcbe97a83727ee3f9ccf16eb9b901f8434))
+
+## [v2.0.5](https://github.com/otto-de/gitactionboard/compare/v2.0.4...v2.0.5) (2022-04-25)
+
+### Bug Fixes
+
+- Update spring dependencies to fix CVE-2022-22968 ([0aeb21f](https://github.com/otto-de/gitactionboard/commit/0aeb21f9c0e99ea6308d9493c3f2b4a39d930f4c))
