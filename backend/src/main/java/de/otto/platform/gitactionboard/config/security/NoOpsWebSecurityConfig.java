@@ -17,7 +17,8 @@ public class NoOpsWebSecurityConfig extends WebSecurityConfigurerAdapter {
   @PostConstruct
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private void logInfo() {
-    log.info("Disabled Github authentication as value is missing for GITHUB_OAUTH2_CLIENT_ID");
+    log.info(
+        "Disabled authentication mechanism as value is missing for GITHUB_OAUTH2_CLIENT_ID and BASIC_AUTH_USER_DETAILS_FILE_PATH property");
   }
 
   @Override
