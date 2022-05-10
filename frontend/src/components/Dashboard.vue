@@ -54,6 +54,8 @@ div {
   width: 95%;
   padding-left: 30px;
   padding-right: 30px;
+  overflow: scroll;
+  padding-bottom: 1px;
 }
 
 .header {

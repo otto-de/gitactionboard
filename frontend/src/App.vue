@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="git-action-board">
     <SideMenu v-if="renderMenu" />
     <router-view />
   </div>
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 
-#app {
+#git-action-board {
   display: flex;
   flex-direction: row;
   height: 100vh;
