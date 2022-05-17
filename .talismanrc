@@ -4,9 +4,9 @@ fileignoreconfig:
 - filename: .github/workflows/checks.yml
   checksum: 227f71ffdfc8cd417b7792878e11c7a18027f06cb238211352d07402d87fca19
 - filename: CHANGELOG.md
-  checksum: e519a3d8a94e10e1d1651a2e9fd009db3b5deded3a80ac8c7cab618d0cfec97c
+  checksum: 9662e472a62346127e5f3a25cf199cf2fbca16fdae7e8a8c05f391d01c98a394
 - filename: README.md
-  checksum: 93ac394e1c802cf2ad9d5ca6d88dcf82e4f103a0a84e1d55bdea9f88b574e1ee
+  checksum: c04576d7f5eab0613fe56f2b2e030011d66794a056fc0f84595da453de5a3ffa
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java

@@ -60,3 +60,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - Update spring dependencies to fix CVE-2022-22968 ([0aeb21f](https://github.com/otto-de/gitactionboard/commit/0aeb21f9c0e99ea6308d9493c3f2b4a39d930f4c))
+
+## [v2.0.6](https://github.com/otto-de/gitactionboard/compare/v2.0.5...v2.0.6) (2022-05-17)
+
+### Bug Fixes
+
+- Log correct information when authentication is disabled ([e492ce0](https://github.com/otto-de/gitactionboard/commit/e492ce0f7bd9b34141129fe012eeea6e0d750abb))
+- Make page scrollable so that side bar is always accessible ([d5cf429](https://github.com/otto-de/gitactionboard/commit/d5cf4298bf3b10c5200d2fb230f1895e263f5faa))
+- Move to amazoncorretto docker base image from openjdk to fix security vulnerabilities ([d1f7cf5](https://github.com/otto-de/gitactionboard/commit/d1f7cf5e133d514f6b64453a485851a26e4109d5))
+- Update npm dependencies to fix security vulnerabilities ([534ce21](https://github.com/otto-de/gitactionboard/commit/534ce210555f3ad4b86dd5da0107e32aba8791dd))
