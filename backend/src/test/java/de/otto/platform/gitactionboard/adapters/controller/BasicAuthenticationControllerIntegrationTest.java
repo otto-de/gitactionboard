@@ -32,14 +32,13 @@ class BasicAuthenticationControllerIntegrationTest {
   private static final int ONE_DAY = 60 * 60 * 24;
   private static final String ADMIN_USERNAME = "admin";
 
+  @SneakyThrows
   private static void validateSuccessApiCall(
-      String contextPath, MockMvc mockMvc, ObjectMapper objectMapper) throws Exception {
+      String contextPath, MockMvc mockMvc, ObjectMapper objectMapper) {
     mockMvc
         .perform(
             post("/login/basic")
-                .content(
-                    objectMapper.writeValueAsString(
-                        new BasicAuthenticationController.AuthRequest(ADMIN_USERNAME, "password")))
+                .content(getPostRequestBody(objectMapper, "password"))
                 .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(cookie().value(NAME, ADMIN_USERNAME))
@@ -54,15 +53,18 @@ class BasicAuthenticationControllerIntegrationTest {
         .andExpect(cookie().path(ACCESS_TOKEN, contextPath));
   }
 
-  private static void validateUnauthorisedApiCall(MockMvc mockMvc, ObjectMapper objectMapper)
-      throws Exception {
+  @SneakyThrows
+  private static String getPostRequestBody(ObjectMapper objectMapper, String password) {
+    return objectMapper.writeValueAsString(
+        new BasicAuthenticationController.AuthRequest(ADMIN_USERNAME, password));
+  }
+
+  @SneakyThrows
+  private static void validateUnauthorisedApiCall(MockMvc mockMvc, ObjectMapper objectMapper) {
     mockMvc
         .perform(
             post("/login/basic")
-                .content(
-                    objectMapper.writeValueAsString(
-                        new BasicAuthenticationController.AuthRequest(
-                            ADMIN_USERNAME, "wrong password")))
+                .content(getPostRequestBody(objectMapper, "wrong password"))
                 .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isUnauthorized());
   }

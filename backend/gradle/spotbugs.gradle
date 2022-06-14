@@ -1,20 +1,21 @@
 spotbugs {
-    toolVersion = '4.6.0'
+    toolVersion = '4.7.0'
     ignoreFailures = false
     showProgress = true
     effort = 'max'
+    excludeFilter = file("${projectDir}/gradle/config/spotbugsExclude.xml")
 }
 
 spotbugsMain {
     reports {
-        xml.enabled = false
-        html.enabled = true
+        xml.required = false
+        html.required = true
     }
 }
 
 spotbugsTest {
     reports {
-        xml.enabled = false
-        html.enabled = true
+        xml.required = false
+        html.required = true
     }
 }

@@ -4,10 +4,10 @@ plugins {
     id "org.springframework.boot" version "2.7.0"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "io.freefair.lombok" version "6.4.3"
-    id "com.github.spotbugs" version "5.0.6"
+    id "com.github.spotbugs" version "5.0.8"
     id "com.github.sherter.google-java-format" version "0.9"
     id "com.github.ben-manes.versions" version "0.42.0"
-    id "org.owasp.dependencycheck" version "7.1.0.1"
+    id "org.owasp.dependencycheck" version "7.1.1"
 }
 
 googleJavaFormat {
@@ -21,8 +21,8 @@ lombok {
 
 ext {
     javaUuidGeneratorVersion = "4.0.1"
-    logstashVersion = "7.1.1"
-    caffeineVersion = "3.0.6"
+    logstashVersion = "7.2"
+    caffeineVersion = "3.1.1"
     wiremockVersion = "2.27.2"
     archUnitVersion = "0.23.1"
 }
