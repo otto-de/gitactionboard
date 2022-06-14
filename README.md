@@ -271,6 +271,7 @@ committing the changes make sure use proper **type**.
 
 - **feat** for a new feature for the user, not a new feature for build script. Such commit will trigger a release bumping a MINOR version.
 - **fix** for a bug fix for the user, not a fix to a build script. Such commit will trigger a release bumping a PATCH version.
+- **chore** for Update something without impacting the user (ex: bump a dependency in package.json).
 - **perf** for performance improvements. Such commit will trigger a release bumping a PATCH version.
 - **docs** for changes to the documentation.
 - **style** for formatting changes, missing semicolons, etc.
