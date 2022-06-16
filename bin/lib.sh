@@ -81,7 +81,7 @@ _format_sources() {
 
   pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
-  "${SCRIPT_DIR}/backend/gradlew" goJF
+  "${SCRIPT_DIR}/backend/gradlew" spotlessJavaApply
   popd >/dev/null || exit
 
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
