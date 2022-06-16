@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 08e1ba20d12cd7ae7893ed3c743c51ca9cfb9c0fd2f676ee9dfa58bb40211629
 - filename: README.md
-  checksum: 6648c9af9da39ff25472d6ec292807f163c06e6042624b9ae390cf13b89854aa
+  checksum: d702d4f7b2bff7619e3122244beb90239c4c72d59b2bb62138d012bd8c281d0f
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java

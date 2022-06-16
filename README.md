@@ -188,7 +188,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
 ### Prerequisites
 
 - [jEnv](https://www.jenv.be/)
-- Java 11
+- Java 17
 - [Docker](https://www.docker.com/)
 - [Hadolint](https://github.com/hadolint/hadolint)
 - [ShellCheck](https://www.shellcheck.net/)
