@@ -39,7 +39,7 @@ jobs:
       - name: Configure jenv
         run: |
           jenv init -
-          jenv add /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+          jenv add ${JAVA_HOME_17_X64}
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Get Date
         id: get-date

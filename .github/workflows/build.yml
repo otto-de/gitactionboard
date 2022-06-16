@@ -106,7 +106,7 @@ jobs:
       - name: Configure jenv
         run: |
           jenv init -
-          jenv add /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+          jenv add ${JAVA_HOME_17_X64}
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v2
         with:

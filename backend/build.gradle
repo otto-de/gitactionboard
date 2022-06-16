@@ -52,8 +52,11 @@ dependencies {
 }
 
 group = "de.otto.platform"
-sourceCompatibility = 11
-targetCompatibility = 11
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 tag {
     message fromMandatorySystemProperty('message')
