@@ -18,7 +18,6 @@ import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,14 +27,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
 import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
 import org.springframework.util.StringUtils;
@@ -70,41 +70,36 @@ public class WebSecurityConfig {
     return StringUtils.hasText(contextPath) ? contextPath : "/";
   }
 
-  @Configuration
+  @Bean
   @Order(1)
   @ConditionalOnMissingBean(NoOpsWebSecurityConfig.class)
-  public static class WhiteListSecurityConfig extends WebSecurityConfigurerAdapter {
-    private final String actuatorBasePath;
+  public SecurityFilterChain permitAllFilterChain(
+      @Value("${management.endpoints.web.base-path:/actuator}") String actuatorBasePath,
+      HttpSecurity http)
+      throws Exception {
+    final String healthEndPoint = String.format("%s/health", actuatorBasePath);
 
-    public WhiteListSecurityConfig(
-        @Value("${management.endpoints.web.base-path:/actuator}") String actuatorBasePath) {
-      this.actuatorBasePath = actuatorBasePath;
-    }
+    final String[] whitelistUrls = {
+      healthEndPoint,
+      "/available-auths",
+      "/",
+      "/index.html",
+      "/css/**",
+      "/js/**",
+      "/img/**",
+      "/favicon.ico",
+      "/login/basic"
+    };
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-      final String healthEndPoint = String.format("%s/health", actuatorBasePath);
+    getDefaultSettings(http)
+        .requestMatchers()
+        .antMatchers(whitelistUrls)
+        .and()
+        .authorizeRequests()
+        .antMatchers(whitelistUrls)
+        .permitAll();
 
-      final String[] whitelistUrls = {
-        healthEndPoint,
-        "/available-auths",
-        "/",
-        "/index.html",
-        "/css/**",
-        "/js/**",
-        "/img/**",
-        "/favicon.ico",
-        "/login/basic"
-      };
-
-      getDefaultSettings(http)
-          .requestMatchers()
-          .antMatchers(whitelistUrls)
-          .and()
-          .authorizeRequests()
-          .antMatchers(whitelistUrls)
-          .permitAll();
-    }
+    return http.build();
   }
 
   @Slf4j
@@ -113,15 +108,8 @@ public class WebSecurityConfig {
   @ConditionalOnExpression(
       "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}')")
   @ConditionalOnMissingBean(NoOpsWebSecurityConfig.class)
-  public static class BasicAuthSecurityConfig extends WebSecurityConfigurerAdapter {
+  public static class BasicAuthSecurityConfig {
     private static final String CREDENTIAL_SEPARATOR = ":";
-
-    private final boolean githubAuthDisabled;
-
-    public BasicAuthSecurityConfig(
-        @Value("${GITHUB_OAUTH2_CLIENT_ID:}") String githubAuthClientId) {
-      this.githubAuthDisabled = githubAuthClientId.isBlank();
-    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -149,9 +137,9 @@ public class WebSecurityConfig {
     }
 
     @Bean("basicAuthenticationManager")
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-      return super.authenticationManagerBean();
+    public AuthenticationManager authenticationManager(
+        AuthenticationConfiguration authenticationConfiguration) throws Exception {
+      return authenticationConfiguration.getAuthenticationManager();
     }
 
     @Bean
@@ -167,8 +155,12 @@ public class WebSecurityConfig {
           "Enabled Basic authentication as value is present for BASIC_AUTH_USER_DETAILS_FILE_PATH");
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain basicAuthSecurityFilterChain(
+        @Value("${GITHUB_OAUTH2_CLIENT_ID:}") String githubAuthClientId, HttpSecurity http)
+        throws Exception {
+      final boolean githubAuthDisabled = githubAuthClientId.isBlank();
+
       http.cors()
           .disable()
           .csrf()
@@ -194,6 +186,8 @@ public class WebSecurityConfig {
           .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
           .invalidateHttpSession(true)
           .deleteCookies(ACCESS_TOKEN);
+
+      return http.build();
     }
 
     private String getAuthToken(HttpServletRequest request) {
@@ -211,12 +205,10 @@ public class WebSecurityConfig {
   @Slf4j
   @Order(3)
   @Configuration
-  @RequiredArgsConstructor
   @ConditionalOnExpression(
       "T(org.springframework.util.StringUtils).hasText('${GITHUB_OAUTH2_CLIENT_ID:}')")
   @ConditionalOnMissingBean(NoOpsWebSecurityConfig.class)
-  public static class GithubOauthSecurityConfig extends WebSecurityConfigurerAdapter {
-    private final GithubAuthenticationSuccessHandler authenticationSuccessHandler;
+  public static class GithubOauthSecurityConfig {
 
     @PostConstruct
     @SuppressWarnings("PMD.UnusedPrivateMethod")
@@ -224,8 +216,10 @@ public class WebSecurityConfig {
       log.info("Enabled Github authentication as value is present for GITHUB_OAUTH2_CLIENT_ID");
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain githubOauthSecurityFilterChain(
+        GithubAuthenticationSuccessHandler authenticationSuccessHandler, HttpSecurity http)
+        throws Exception {
       http.cors()
           .disable()
           .csrf()
@@ -251,6 +245,8 @@ public class WebSecurityConfig {
           .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
           .invalidateHttpSession(true)
           .deleteCookies(ACCESS_TOKEN);
+
+      return http.build();
     }
   }
 }

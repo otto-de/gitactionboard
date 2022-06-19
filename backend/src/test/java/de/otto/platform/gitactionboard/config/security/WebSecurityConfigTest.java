@@ -91,7 +91,7 @@ class WebSecurityConfigTest {
 
     @BeforeEach
     void setUp() {
-      securityConfig = new WebSecurityConfig.BasicAuthSecurityConfig("");
+      securityConfig = new WebSecurityConfig.BasicAuthSecurityConfig();
     }
 
     @Test
