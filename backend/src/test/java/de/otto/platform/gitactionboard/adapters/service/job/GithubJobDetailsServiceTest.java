@@ -30,7 +30,6 @@ import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeAll;
@@ -96,7 +95,7 @@ class GithubJobDetailsServiceTest {
     final List<RunConclusion> runConclusions =
         Arrays.stream(RunConclusion.values())
             .filter(conclusion -> !conclusion.equals(SUCCESS) && !conclusion.equals(SKIPPED))
-            .collect(Collectors.toUnmodifiableList());
+            .toList();
 
     return Stream.of(QUEUED, IN_PROGRESS)
         .flatMap(

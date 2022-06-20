@@ -41,9 +41,10 @@ class GithubControllerTest {
   @CsvSource(value = {"accessToken"})
   void shouldFetchJobDataAsXml(String accessToken) {
     final String cctrayXml =
-        "<Projects>\n"
-            + "<Project name=\"hello-world :: hello-world-checks :: dependency-checks\" activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"206\" lastBuildTime=\"2020-09-18T06:14:54Z\" webUrl=\"https://github.com/johndoe/hello-world/runs/1132386127\"/>\n"
-            + "</Projects>";
+        """
+            <Projects>
+            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127"/>
+            </Projects>""";
 
     final List<JobDetails> jobs = List.of(JobDetailsFixture.getJobDetailsBuilder().build());
 

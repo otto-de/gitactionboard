@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -29,7 +28,7 @@ public class GithubWorkflowService implements WorkflowService {
 
               return getWorkflowIdentifiers(repoName, accessToken).stream()
                   .map(workflowIdentifier -> buildWorkflow(repoName, workflowIdentifier))
-                  .collect(Collectors.toUnmodifiableList());
+                  .toList();
             })
         .exceptionally(
             throwable -> {
@@ -46,7 +45,7 @@ public class GithubWorkflowService implements WorkflowService {
         .orElse(Collections.emptyList())
         .stream()
         .filter(WorkflowIdentifier::isActive)
-        .collect(Collectors.toUnmodifiableList());
+        .toList();
   }
 
   private Workflow buildWorkflow(String repoName, WorkflowIdentifier workflowIdentifier) {

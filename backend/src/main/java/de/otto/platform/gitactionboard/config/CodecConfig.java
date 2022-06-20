@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
+import java.io.Serial;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -31,7 +32,7 @@ public class CodecConfig {
   }
 
   static class IsoWithMillisInstantSerializer extends InstantSerializer {
-    private static final long serialVersionUID = 1L;
+    @Serial private static final long serialVersionUID = 1L;
 
     private static final DateTimeFormatter ISO_WITH_MILLIS =
         new DateTimeFormatterBuilder().appendInstant(3).toFormatter();

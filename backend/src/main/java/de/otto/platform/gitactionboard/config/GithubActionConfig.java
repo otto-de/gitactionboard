@@ -4,7 +4,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import java.util.Base64;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,6 +41,6 @@ public class GithubActionConfig {
     if (repoNames.isEmpty())
       throw new IllegalArgumentException(
           "REPO_NAMES environment variable is either empty or its not set");
-    return repoNames.stream().collect(Collectors.toUnmodifiableList());
+    return repoNames.stream().toList();
   }
 }

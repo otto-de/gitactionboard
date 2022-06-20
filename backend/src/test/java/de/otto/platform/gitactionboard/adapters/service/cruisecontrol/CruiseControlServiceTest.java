@@ -30,10 +30,11 @@ class CruiseControlServiceTest {
   @Test
   void shouldConvertJobDetailsToCcTrayFormat() {
     final String expectedCctrayXml =
-        "<Projects>\n"
-            + "<Project name=\"hello-world :: hello-world-checks :: dependency-checks\" activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"206\" lastBuildTime=\"2020-09-18T06:14:54Z\" webUrl=\"https://github.com/johndoe/hello-world/runs/1132386127\"/>\n"
-            + "<Project name=\"hello-world :: hello-world-checks :: talisman-checks\" activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"206\" lastBuildTime=\"2020-09-18T06:11:41Z\" webUrl=\"https://github.com/johndoe/hello-world/runs/1132386046\"/>\n"
-            + "</Projects>";
+        """
+            <Projects>
+            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127"/>
+            <Project name="hello-world :: hello-world-checks :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046"/>
+            </Projects>""";
 
     final String ccTrayXml =
         cruiseControlService.convertToXml(

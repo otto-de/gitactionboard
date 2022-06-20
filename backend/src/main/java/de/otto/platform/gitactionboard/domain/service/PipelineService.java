@@ -6,7 +6,6 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
@@ -39,7 +38,7 @@ public class PipelineService {
             .map(repoName -> workflowService.fetchWorkflows(repoName, accessToken))
             .map(CompletableFuture::join)
             .flatMap(Collection::stream)
-            .collect(Collectors.toList());
+            .toList();
 
     return workflows.stream()
         .parallel()
@@ -47,6 +46,6 @@ public class PipelineService {
         .map(workflow -> jobDetailsService.fetchJobDetails(workflow, accessToken))
         .map(CompletableFuture::join)
         .flatMap(Collection::stream)
-        .collect(Collectors.toUnmodifiableList());
+        .toList();
   }
 }

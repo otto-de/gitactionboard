@@ -35,27 +35,20 @@ public class Project {
   }
 
   private static String fromStatus(Status lastBuildStatus) {
-    switch (lastBuildStatus) {
-      case FAILURE:
-        return "Failure";
-      case SUCCESS:
-        return "Success";
-      case UNKNOWN:
-        return "Unknown";
-      default:
-        return "Exception";
-    }
+    return switch (lastBuildStatus) {
+      case FAILURE -> "Failure";
+      case SUCCESS -> "Success";
+      case UNKNOWN -> "Unknown";
+      default -> "Exception";
+    };
   }
 
   private static String fromActivity(Activity activity) {
-    switch (activity) {
-      case BUILDING:
-        return "Building";
-      case SLEEPING:
-        return "Sleeping";
-      default:
-        return "CheckingModifications";
-    }
+    return switch (activity) {
+      case BUILDING -> "Building";
+      case SLEEPING -> "Sleeping";
+      default -> "CheckingModifications";
+    };
   }
 
   private static String getName(JobDetails job) {

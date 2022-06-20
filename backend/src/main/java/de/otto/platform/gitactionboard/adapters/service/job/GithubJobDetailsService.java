@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -95,7 +94,7 @@ public class GithubJobDetailsService implements JobDetailsService {
                     .completedAt(previousWorkflowRun.getUpdatedAt())
                     .startedAt(previousWorkflowRun.getCreatedAt())
                     .build())
-        .collect(Collectors.toUnmodifiableList());
+        .toList();
   }
 
   private boolean isFailureConclusion(RunConclusion conclusion) {
@@ -121,7 +120,7 @@ public class GithubJobDetailsService implements JobDetailsService {
                   findJob(previousJobs, currentJob.getName(), currentJob);
               return createJobDetails(runNumber, workflow, currentJob, previousJob);
             })
-        .collect(Collectors.toUnmodifiableList());
+        .toList();
   }
 
   private JobDetails createJobDetails(

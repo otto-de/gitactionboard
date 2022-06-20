@@ -30,18 +30,11 @@ public enum RunConclusion {
     if (Objects.isNull(conclusion)) {
       return Status.UNKNOWN;
     }
-    switch (conclusion) {
-      case SUCCESS:
-      case SKIPPED:
-        return Status.SUCCESS;
-      case FAILURE:
-      case CANCELLED:
-      case TIMED_OUT:
-        return Status.FAILURE;
-      case ACTION_REQUIRED:
-        return Status.EXCEPTION;
-      default:
-        return Status.UNKNOWN;
-    }
+    return switch (conclusion) {
+      case SUCCESS, SKIPPED -> Status.SUCCESS;
+      case FAILURE, CANCELLED, TIMED_OUT -> Status.FAILURE;
+      case ACTION_REQUIRED -> Status.EXCEPTION;
+      default -> Status.UNKNOWN;
+    };
   }
 }
