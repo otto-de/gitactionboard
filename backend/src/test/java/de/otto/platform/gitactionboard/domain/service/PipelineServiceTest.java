@@ -55,12 +55,15 @@ class PipelineServiceTest {
 
   @Mock private JobDetailsService jobDetailsService;
   @Mock private WorkflowService workflowService;
+  @Mock private NotificationsService notificationsService;
 
   private PipelineService pipelineService;
 
   @BeforeEach
   void setUp() {
-    pipelineService = new PipelineService(workflowService, jobDetailsService, List.of(REPO_NAME));
+    pipelineService =
+        new PipelineService(
+            workflowService, jobDetailsService, notificationsService, List.of(REPO_NAME));
   }
 
   @Test
@@ -92,6 +95,7 @@ class PipelineServiceTest {
             TEST_JOB_DETAILS,
             FORMAT_JOB_DETAILS);
 
+    verify(notificationsService).sendNotifications(jobDetails);
     verify(workflowService).fetchWorkflows(REPO_NAME, ACCESS_TOKEN);
     verify(jobDetailsService).fetchJobDetails(buildAndDeploymentWorkflow, ACCESS_TOKEN);
     verify(jobDetailsService).fetchJobDetails(checksWorkflow, ACCESS_TOKEN);
@@ -116,5 +120,6 @@ class PipelineServiceTest {
 
     assertThat(jobDetails)
         .containsExactlyInAnyOrder(TALISMAN_CHECKS_JOB_DETAILS, DEPENDENCY_CHECKS_JOB_DETAILS);
+    verify(notificationsService).sendNotifications(jobDetails);
   }
 }

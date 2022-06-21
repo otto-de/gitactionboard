@@ -5,6 +5,7 @@ jacoco {
 }
 
 def excludes = [
+        "de/otto/platform/gitactionboard/adapters/service/notifications/NoOpsNotificationsConnector.class"
 ]
 
 def jacocoExecutionDataFiles = fileTree(buildDir)

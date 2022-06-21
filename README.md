@@ -58,16 +58,17 @@ docker run \
 
 #### Configurations
 
-| Environment variable name         | Descriptions                                                                                                                    | Required |     Default value      |          Example value          |
-| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :------: | :--------------------: | :-----------------------------: |
-| REPO_OWNER_NAME                   | Repository owner name. Generally, its either organization name or username                                                      |   yes    |                        |             webpack             |
-| REPO_NAMES                        | List of name of repositories you want to monitor                                                                                |   yes    |                        | webpack-dev-server, webpack-cli |
-| GITHUB_ACCESS_TOKEN               | Access token to fetch data from github. This is required to fetch data from a private repository when github oauth2 is disabled |    no    |                        |                                 |
-| DOMAIN_NAME                       | Hostname of github                                                                                                              |    no    | https://api.github.com |                                 |
-| CACHE_EXPIRES_AFTER               | Duration (in seconds) to cache the fetched data                                                                                 |    no    |           60           |                                 |
-| GITHUB_OAUTH2_CLIENT_ID           | Github oauth2 client ID                                                                                                         |    no    |                        |                                 |
-| GITHUB_OAUTH2_CLIENT_SECRET       | Gihub oauth2 client secret                                                                                                      |    no    |                        |                                 |
-| BASIC_AUTH_USER_DETAILS_FILE_PATH | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
+| Environment variable name           | Descriptions                                                                                                                    | Required |     Default value      |          Example value          |
+| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :------: | :--------------------: | :-----------------------------: |
+| REPO_OWNER_NAME                     | Repository owner name. Generally, its either organization name or username                                                      |   yes    |                        |             webpack             |
+| REPO_NAMES                          | List of name of repositories you want to monitor                                                                                |   yes    |                        | webpack-dev-server, webpack-cli |
+| GITHUB_ACCESS_TOKEN                 | Access token to fetch data from github. This is required to fetch data from a private repository when github oauth2 is disabled |    no    |                        |                                 |
+| DOMAIN_NAME                         | Hostname of github                                                                                                              |    no    | https://api.github.com |                                 |
+| CACHE_EXPIRES_AFTER                 | Duration (in seconds) to cache the fetched data                                                                                 |    no    |           60           |                                 |
+| GITHUB_OAUTH2_CLIENT_ID             | Github oauth2 client ID                                                                                                         |    no    |                        |                                 |
+| GITHUB_OAUTH2_CLIENT_SECRET         | Gihub oauth2 client secret                                                                                                      |    no    |                        |                                 |
+| BASIC_AUTH_USER_DETAILS_FILE_PATH   | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
+| MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL | Web hook url to send build failure notifications on Microsoft Teams (available from v2.1.0)                                     |    no    |                        |                                 |
 
 Note: To create a personal access token follow the instructions present [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and choose **repo** as a scope fot this token.
 

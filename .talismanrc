@@ -6,13 +6,13 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 08e1ba20d12cd7ae7893ed3c743c51ca9cfb9c0fd2f676ee9dfa58bb40211629
 - filename: README.md
-  checksum: d702d4f7b2bff7619e3122244beb90239c4c72d59b2bb62138d012bd8c281d0f
+  checksum: 6074d8bfedf6c227bc476570c79ccceaef8357e4da2aec8aa7ccd8525acbe0e3
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: 728e367c7b7a80b9f78d8bfddb7a265c1a43f527f7fb016493043ad8680831bf
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
-  checksum: 04a9aaea483e1398231870d300a7d2be802e80d4b2db8e1e4568aa1165675ddb
+  checksum: 7e5a43a8be6beb6da7f81ecbed79e7945b6ba05c1091502598564886f9fac2d8
 - filename: backend/src/main/resources/application.properties
   checksum: a8e9a356bb11b97e2229340e5339a7e0105ecd51dc79bc8165d59ed95705ae3a
 - filename: bin/install-talisman.sh

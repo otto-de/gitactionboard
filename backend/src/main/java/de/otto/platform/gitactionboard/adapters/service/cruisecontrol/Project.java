@@ -25,7 +25,7 @@ public class Project {
 
   public static Project fromJobDetails(JobDetails job) {
     return Project.builder()
-        .name(getName(job))
+        .name(job.getFormattedName())
         .activity(fromActivity(job.getActivity()))
         .lastBuildStatus(fromStatus(job.getLastBuildStatus()))
         .lastBuildLabel(String.valueOf(job.getRunNumber()))
@@ -49,9 +49,5 @@ public class Project {
       case SLEEPING -> "Sleeping";
       default -> "CheckingModifications";
     };
-  }
-
-  private static String getName(JobDetails job) {
-    return String.join(" :: ", job.getRepoName(), job.getWorkflowName(), job.getName());
   }
 }

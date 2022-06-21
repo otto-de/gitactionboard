@@ -2,6 +2,6 @@
 <FindBugsFilter>
     <Match>
         <Package name="~de\.otto\.platform\.gitactionboard.*" />
-        <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_THROWABLE,THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION" />
+        <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_THROWABLE,THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION, THROWS_METHOD_THROWS_RUNTIMEEXCEPTION" />
     </Match>
 </FindBugsFilter>

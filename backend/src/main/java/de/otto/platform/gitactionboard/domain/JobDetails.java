@@ -25,4 +25,8 @@ public class JobDetails {
   @NonNull String repoName;
 
   @NonNull String workflowName;
+
+  public String getFormattedName() {
+    return String.join(" :: ", repoName, workflowName, name);
+  }
 }
