@@ -70,7 +70,10 @@ docker run \
 | BASIC_AUTH_USER_DETAILS_FILE_PATH   | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
 | MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL | Web hook url to send build failure notifications on Microsoft Teams (available from v2.1.0)                                     |    no    |                        |                                 |
 
-Note: To create a personal access token follow the instructions present [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and choose **repo** as a scope fot this token.
+##### Notes
+
+- To create a personal access token follow the instructions present [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and choose **repo** as a scope fot this token.
+- To create incoming webhook connection for MS Teams channel follow the instructions present [here](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook#create-an-incoming-webhook-1).
 
 ##### Authentication
 
