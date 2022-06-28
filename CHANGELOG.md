@@ -75,3 +75,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - Update spring dependency to fix CVE-2022-22970, CVE-2022-22978 and CVE-2022-29885 ([c632e04](https://github.com/otto-de/gitactionboard/commit/c632e0415ddb2dc9f968c6e1204feb9fa1ae48e3))
+
+## [v2.1.0](https://github.com/otto-de/gitactionboard/compare/v2.0.7...v2.1.0) (2022-06-28)
+
+### Features
+
+- Send notification on MS Teams in case of build failure ([2f3e004](https://github.com/otto-de/gitactionboard/commit/2f3e0046cdf7df6ee19a802cf8ced2e5c607447a))
