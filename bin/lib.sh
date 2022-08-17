@@ -70,7 +70,7 @@ _test() {
 
   while IFS= read -r -d '' file; do
     hadolint "${file}"
-  done < <(find . -name "*Dockerfile*" -print0)
+  done < <(find . -maxdepth 2 -name "*Dockerfile*" -print0)
 }
 
 _format_sources() {
@@ -132,6 +132,13 @@ _run_locally() {
   pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
   _ensure_jenv
   SPRING_PROFILES_ACTIVE=local GITHUB_ACCESS_TOKEN="${1}" jenv exec ./gradlew clean bootRun
+  popd >/dev/null || exit
+}
+
+_run_frontend_locally() {
+  pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+    _ensure_nvm
+     npm run serve-with-mock-data
   popd >/dev/null || exit
 }
 

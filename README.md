@@ -234,7 +234,7 @@ a prerequisite for running integration tests will be working unit tests.
 
 This project uses the following tools to follow specific style guide
 
-- [google-java-format-gradle-plugin](https://github.com/sherter/google-java-format-gradle-plugin) for **Java** files
+- [spotless](https://github.com/diffplug/spotless) for **Java** files
 - [Prettier](https://prettier.io/) for **json**, **js**, **css**, **html** and **md** files
 - [Hadolint](https://github.com/hadolint/hadolint) for **Dockerfile**
 - [ShellCheck](https://www.shellcheck.net/) for **sh** files
@@ -260,10 +260,32 @@ To run OWASP dependency check:
 
 ### Run application locally
 
-This service can be run locally. To run it locally, run the following command:
+This service can be run locally.
+
+#### Run backend with frontend
+
+To run the application with complete backend and frontend locally, run the following command:
 
 ```shell script
 ./run.sh run-locally <github auth token>
+```
+
+#### Run only backend
+
+To run the only backend application, run the following command:
+
+```shell script
+./run.sh run-locally <github auth token> false
+```
+
+#### Run only frontend with mock data
+
+This application make uses of [mockoon](https://mockoon.com/) to start mock api server needed for local frontend development.
+
+To run the only frontend application with mock api data, run the following command:
+
+```shell script
+./run.sh run-frontend-locally
 ```
 
 ### Commits

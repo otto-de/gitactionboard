@@ -16,6 +16,7 @@ commands:
   check                                                Run checks (OWASP dependency check)
   format                                               Auto format source files
   run-locally [auth token] [with frontend]             Run local version of service with/without frontend
+  run-frontend-locally                                 Run local version of frontend service with mock data
   test                                                 Build and test the service
   docker-build                                         Build docker image
   build-jar                                            Build executable boot jar file
@@ -35,6 +36,7 @@ case ${CMD} in
   check) _check ;;
   format) _format_sources ;;
   run-locally) _run_locally "${1:-}" "${2:-true}" ;;
+  run-frontend-locally) _run_frontend_locally ;;
   test) _test ;;
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;

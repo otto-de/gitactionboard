@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 8bc1fe8d63fd68bf0bac7667a485c9bde641d05f68264829778cb222d5a5adbf
 - filename: README.md
-  checksum: 4f0ca0ae353ceb8bc81715fa795310eb3f5372feeb585b5eab574eb87c966a4f
+  checksum: d7133851bfb3471f7785598423ecf95c28cc0a0bcf42e4d602f9438a4049de00
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
@@ -19,8 +19,10 @@ fileignoreconfig:
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
 - filename: doc/sample1.png
   checksum: cda89f07b46aae1ac69ba4cd25c7f271fb28e4a5f7c1ca23619ba17e31a2dd91
+- filename: frontend/mock-data/data.json
+  checksum: 2e1ba5ba2a6e5fff350b0770f54c9c916e55db726e62aa929e04455d947a3f5a
 - filename: frontend/package-lock.json
-  checksum: 262bc7bb0325de67a53218545d384f19f6d134470f02dffd1fcf7c8c56506afb
+  checksum: 2fc6fd2d031b15ab16d4be69a4aca51e908921bb59700cbc62e804102dfb9a4b
 - filename: frontend/src/components/Job.vue
   checksum: 5b36bc3d22cd3397d9d9a982d5f30ec8be4844902a65b9220b4d622fe36448fd
 - filename: frontend/src/components/Jobs.vue
