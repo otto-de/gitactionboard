@@ -20,7 +20,7 @@ fileignoreconfig:
 - filename: doc/sample1.png
   checksum: cda89f07b46aae1ac69ba4cd25c7f271fb28e4a5f7c1ca23619ba17e31a2dd91
 - filename: frontend/mock-data/data.json
-  checksum: 2e1ba5ba2a6e5fff350b0770f54c9c916e55db726e62aa929e04455d947a3f5a
+  checksum: cec86018b1b45589c07fde13c4adfeb8c2bef10f3b2828c9ab25cb86313a3109
 - filename: frontend/package-lock.json
   checksum: 2fc6fd2d031b15ab16d4be69a4aca51e908921bb59700cbc62e804102dfb9a4b
 - filename: frontend/src/components/Job.vue
@@ -28,5 +28,7 @@ fileignoreconfig:
 - filename: frontend/src/components/Jobs.vue
   checksum: c9c38b10e4eca52659618f21d7f382dc97ec853f3c0fd750ce021edfbe9db27b
 - filename: frontend/src/services/apiService.js
-  checksum: 47b32c7241cf8e40c258ed745405a165d7fa949e7938b35c03c0675cac9e74ab
+  checksum: dbe2edd0943174d274e1eb8c33e830f76755e8b3449a9fa74254d4c8bea04a4d
+- filename: frontend/src/components/LoginPage.vue
+  checksum: 00ac4b26998a74e6f08fab6edda25c002fd4cf9dda3538e4873f171c73ddb3c6
 version: "1.0"

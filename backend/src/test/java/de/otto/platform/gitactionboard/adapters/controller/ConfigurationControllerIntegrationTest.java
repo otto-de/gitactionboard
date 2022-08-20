@@ -1,9 +1,10 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import de.otto.platform.gitactionboard.IntegrationTest;
@@ -14,13 +15,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @IntegrationTest
 @DirtiesContext
-@ActiveProfiles("beta")
 @AutoConfigureMockMvc
 @SpringBootTest(
     webEnvironment = RANDOM_PORT,
@@ -28,7 +27,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
       "GITHUB_OAUTH2_CLIENT_ID=",
       "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd"
     })
-class AuthenticationControllerIntegrationTest {
+class ConfigurationControllerIntegrationTest {
   @Autowired private MockMvc mockMvc;
 
   @Test
@@ -36,9 +35,11 @@ class AuthenticationControllerIntegrationTest {
   @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
   void shouldGiveListOfAvailableAuths() {
     mockMvc
-        .perform(MockMvcRequestBuilders.get("/available-auths"))
+        .perform(MockMvcRequestBuilders.get("/config"))
         .andExpect(status().isOk())
         .andExpect(header().stringValues(CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
-        .andExpect(content().json("[\"BASIC_AUTH\"]"));
+        .andExpect(jsonPath("$.availableAuths").isArray())
+        .andExpect(jsonPath("$.availableAuths", hasSize(1)))
+        .andExpect(jsonPath("$.availableAuths[0]").value("BASIC_AUTH"));
   }
 }

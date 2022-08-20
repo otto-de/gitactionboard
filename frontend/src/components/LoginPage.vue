@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import {authenticate, fetchAvailableAuths} from "@/services/apiService";
+import {authenticate, fetchConfig} from "@/services/apiService";
 import {isAuthenticate} from "@/services/authenticationService";
 import storageService from "@/services/storageService";
 import Spinner from "@/components/Spinner";
@@ -115,8 +115,8 @@ export default {
         this.error = newUsername === oldUsername && newPassword === oldPassword;
       }
     })
-    fetchAvailableAuths()
-        .then(availableAuths => {
+    fetchConfig()
+        .then(({availableAuths}) => {
           this.availableAuths = availableAuths;
           this.loading = false;
           storageService.setItem("availableAuths", JSON.stringify(availableAuths))

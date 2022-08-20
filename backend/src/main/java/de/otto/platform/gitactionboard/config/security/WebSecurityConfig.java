@@ -81,7 +81,7 @@ public class WebSecurityConfig {
 
     final String[] whitelistUrls = {
       healthEndPoint,
-      "/available-auths",
+      "/config",
       "/",
       "/index.html",
       "/css/**",

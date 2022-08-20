@@ -23,8 +23,8 @@ const marshalHeaders = (headers = {}) =>
     {}
   );
 
-const fetchAvailableAuths = () =>
-  fetch("./available-auths", {
+const fetchConfig = () =>
+  fetch("./config", {
     headers: new Headers({
       Accept: "application/json",
     }),
@@ -52,4 +52,4 @@ const authenticate = (username, password) => {
   }).then(validate);
 };
 
-module.exports = { fetchAvailableAuths, fetchCctrayJson, authenticate };
+module.exports = { fetchConfig, fetchCctrayJson, authenticate };

@@ -75,11 +75,11 @@
       "uuid": "e516b503-72d5-4b22-909c-ad4835c1f0e9",
       "documentation": "",
       "method": "get",
-      "endpoint": "available-auths",
+      "endpoint": "config",
       "responses": [
         {
           "uuid": "30cd0af0-5709-4ce8-9616-5cdb0267bf88",
-          "body": "[]",
+          "body": "{\n  \"availableAuths\": []\n}",
           "latency": 100,
           "statusCode": 200,
           "label": "",
