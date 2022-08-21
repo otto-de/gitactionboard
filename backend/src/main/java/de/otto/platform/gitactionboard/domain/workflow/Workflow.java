@@ -1,4 +1,4 @@
-package de.otto.platform.gitactionboard.domain;
+package de.otto.platform.gitactionboard.domain.workflow;
 
 import lombok.Builder;
 import lombok.NonNull;

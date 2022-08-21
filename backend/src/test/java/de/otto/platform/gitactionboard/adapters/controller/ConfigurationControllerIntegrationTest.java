@@ -25,7 +25,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
     webEnvironment = RANDOM_PORT,
     properties = {
       "GITHUB_OAUTH2_CLIENT_ID=",
-      "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd"
+      "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd",
+      "ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING="
     })
 class ConfigurationControllerIntegrationTest {
   @Autowired private MockMvc mockMvc;
@@ -33,13 +34,14 @@ class ConfigurationControllerIntegrationTest {
   @Test
   @SneakyThrows
   @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
-  void shouldGiveListOfAvailableAuths() {
+  void shouldGiveAvailableConfig() {
     mockMvc
         .perform(MockMvcRequestBuilders.get("/config"))
         .andExpect(status().isOk())
         .andExpect(header().stringValues(CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
         .andExpect(jsonPath("$.availableAuths").isArray())
         .andExpect(jsonPath("$.availableAuths", hasSize(1)))
-        .andExpect(jsonPath("$.availableAuths[0]").value("BASIC_AUTH"));
+        .andExpect(jsonPath("$.availableAuths[0]").value("BASIC_AUTH"))
+        .andExpect(jsonPath("$.githubSecretsScanMonitoringEnabled").value("false"));
   }
 }

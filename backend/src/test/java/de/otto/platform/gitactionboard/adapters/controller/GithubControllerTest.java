@@ -8,8 +8,8 @@ import static org.springframework.http.HttpStatus.OK;
 
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.CruiseControlService;
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.Project;
-import de.otto.platform.gitactionboard.domain.JobDetails;
 import de.otto.platform.gitactionboard.domain.service.PipelineService;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.fixtures.JobDetailsFixture;
 import java.time.Instant;
 import java.util.List;

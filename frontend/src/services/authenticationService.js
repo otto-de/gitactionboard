@@ -15,7 +15,7 @@ const getCookie = (name) => {
   }
 };
 
-const clearCookies = () => {
+export const clearCookies = () => {
   const cookies = getCookies();
   for (const item of cookies) {
     const indexOfEqual = item.indexOf("=");
@@ -24,21 +24,10 @@ const clearCookies = () => {
   }
 };
 
-const fetchAccessToken = () => getCookie("access_token");
+export const fetchAccessToken = () => getCookie("access_token");
 
-const isAuthenticate = () => !!fetchAccessToken();
+export const isAuthenticate = () => !!fetchAccessToken();
 
-const getUsername = () => getCookie("username");
+export const getName = () => getCookie("name") || "Guest";
 
-const getName = () => getCookie("name") || "Guest";
-
-const getAvatarUrl = () => getCookie("avatar_url") || "";
-
-module.exports = {
-  fetchAccessToken,
-  isAuthenticate,
-  clearCookies,
-  getUsername,
-  getName,
-  getAvatarUrl,
-};
+export const getAvatarUrl = () => getCookie("avatar_url") || "";

@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.otto.platform.gitactionboard.domain.Activity;
+import de.otto.platform.gitactionboard.domain.workflow.Activity;
 
 public enum RunStatus {
   @JsonProperty("queued")

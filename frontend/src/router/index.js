@@ -1,12 +1,14 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Dashboard from "@/components/Dashboard";
+// import Dashboard from "@/components/Dashboard";
 import LoginPage from "@/components/LoginPage";
 import Preferences from "@/components/Preferences";
-import storageService from "@/services/storageService";
 import { isAuthenticate } from "@/services/authenticationService";
+import SecretsDashboard from "@/components/SecretsDashboard";
+import { getAvailableAuths } from "@/services/utils";
+import WorkflowDashboard from "@/components/WorkflowDashboard";
 
 const isAuthenticationRequired = () => {
-  const availableAuths = JSON.parse(storageService.getItem("availableAuths"));
+  const availableAuths = getAvailableAuths();
 
   return (
     availableAuths === null || (availableAuths.length > 0 && !isAuthenticate())
@@ -34,7 +36,7 @@ const routes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    component: Dashboard,
+    component: WorkflowDashboard,
     beforeEnter(to, from, next) {
       validateAuthentication(next);
     },
@@ -43,6 +45,14 @@ const routes = [
     path: "/preferences",
     name: "Preferences",
     component: Preferences,
+    beforeEnter(to, from, next) {
+      validateAuthentication(next);
+    },
+  },
+  {
+    path: "/secrets",
+    name: "Secrets",
+    component: SecretsDashboard,
     beforeEnter(to, from, next) {
       validateAuthentication(next);
     },

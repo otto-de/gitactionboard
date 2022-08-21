@@ -11,7 +11,7 @@
 import happy from '../images/happy.png';
 
 export default {
-  name: "NoFailedBuild",
+  name: "Happy",
   data() {
     return {
       happyImage: happy

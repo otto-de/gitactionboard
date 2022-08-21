@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.domain.service;
 
-import de.otto.platform.gitactionboard.domain.JobDetails;
-import de.otto.platform.gitactionboard.domain.Workflow;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 

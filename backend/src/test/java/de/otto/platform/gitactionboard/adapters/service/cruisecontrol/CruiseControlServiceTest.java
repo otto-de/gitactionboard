@@ -3,7 +3,7 @@ package de.otto.platform.gitactionboard.adapters.service.cruisecontrol;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import de.otto.platform.gitactionboard.domain.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import java.time.Instant;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

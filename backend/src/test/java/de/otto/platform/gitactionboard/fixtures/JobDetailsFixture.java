@@ -1,15 +1,15 @@
 package de.otto.platform.gitactionboard.fixtures;
 
-import static de.otto.platform.gitactionboard.domain.Activity.SLEEPING;
+import static de.otto.platform.gitactionboard.domain.workflow.Activity.SLEEPING;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 
 import de.otto.platform.gitactionboard.adapters.service.job.RunConclusion;
 import de.otto.platform.gitactionboard.adapters.service.job.RunStatus;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
-import de.otto.platform.gitactionboard.domain.Activity;
-import de.otto.platform.gitactionboard.domain.JobDetails;
-import de.otto.platform.gitactionboard.domain.Status;
-import de.otto.platform.gitactionboard.domain.Workflow;
+import de.otto.platform.gitactionboard.domain.workflow.Activity;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.Status;
+import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import java.time.Instant;
 
 public class JobDetailsFixture {

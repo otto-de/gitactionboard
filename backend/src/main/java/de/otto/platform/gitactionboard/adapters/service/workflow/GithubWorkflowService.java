@@ -2,8 +2,8 @@ package de.otto.platform.gitactionboard.adapters.service.workflow;
 
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
-import de.otto.platform.gitactionboard.domain.Workflow;
 import de.otto.platform.gitactionboard.domain.service.WorkflowService;
+import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;

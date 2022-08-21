@@ -9,7 +9,7 @@ import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import de.otto.platform.gitactionboard.config.CodecConfig;
-import de.otto.platform.gitactionboard.domain.Workflow;
+import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import java.util.List;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;

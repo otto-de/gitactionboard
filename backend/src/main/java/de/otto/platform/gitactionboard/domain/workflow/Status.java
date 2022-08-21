@@ -1,4 +1,4 @@
-package de.otto.platform.gitactionboard.domain;
+package de.otto.platform.gitactionboard.domain.workflow;
 
 public enum Status {
   EXCEPTION,

@@ -9,6 +9,7 @@
       :small="true"
     />
     <SettingsIcon v-if="iconName==='settings'" />
+    <SecretsIcon v-if="iconName==='secrets'" />
     <LogoutIcon v-if="iconName==='logout'" />
     <DashboardIcon v-if="iconName==='dashboard'" />
     <p
@@ -26,9 +27,10 @@ import LogoutIcon from "@/icons/LogoutIcon";
 import DashboardIcon from "@/icons/DashboardIcon";
 import { getAvatarUrl } from "@/services/authenticationService";
 import ProfilePicture from "@/components/ProfilePicture";
+import SecretsIcon from "@/icons/SecretsIcon";
 export default {
   name: "MenuItems",
-  components: {ProfilePicture, DashboardIcon, LogoutIcon, SettingsIcon},
+  components: {SecretsIcon, ProfilePicture, DashboardIcon, LogoutIcon, SettingsIcon},
   props: {
     isClicked: Boolean,
     menuItemName: {

@@ -14,12 +14,21 @@
         @dashboard="redirectDashboardPage"
       />
       <MenuItems
+        v-if="githubSecretsScanMonitoringEnabled"
+        :is-clicked="isOpened"
+        :clickable="!activeMap.secrets"
+        menu-item-name="Secrets"
+        icon-name="secrets"
+        :is-active="activeMap.secrets"
+        @secrets="redirectToSecretsPage"
+      />
+      <MenuItems
         :is-clicked="isOpened"
         :clickable="!activeMap.preferences"
         menu-item-name="Preferences"
         icon-name="settings"
         :is-active="activeMap.preferences"
-        @settings="redirectProfilePage"
+        @settings="redirectToPreferencesPage"
       />
     </div>
     <div>
@@ -46,6 +55,7 @@ import HamburgerMenuIcon from "@/icons/HamburgerMenuIcon";
 import MenuItems from "@/components/MenuItems";
 import router from "@/router";
 import {clearCookies, getName, isAuthenticate} from "@/services/authenticationService";
+import { getGithubSecretsScanMonitoringEnabled } from "@/services/utils";
 
 export default {
   name: "SideMenuBar",
@@ -60,6 +70,7 @@ export default {
       const defaultActiveMap = {
         'dashboard': false,
         'preferences': false,
+        'secrets': false,
         'logout': false
       };
       const currentPath = this.currentPath;
@@ -70,6 +81,9 @@ export default {
               return {...previousValue, [key]: true}
             return {...previousValue, [key]: false}
           }, {});
+    },
+    githubSecretsScanMonitoringEnabled(){
+      return getGithubSecretsScanMonitoringEnabled()
     },
     currentPath() {
       return router.currentRoute.value.path;
@@ -85,8 +99,11 @@ export default {
     openMenu() {
       this.isOpened = !this.isOpened
     },
-    redirectProfilePage() {
+    redirectToPreferencesPage() {
       router.push("/preferences")
+    },
+    redirectToSecretsPage() {
+      router.push("/secrets")
     },
     redirectDashboardPage() {
       router.push("/dashboard")

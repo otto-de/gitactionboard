@@ -23,33 +23,31 @@ const marshalHeaders = (headers = {}) =>
     {}
   );
 
-const fetchConfig = () =>
-  fetch("./config", {
-    headers: new Headers({
-      Accept: "application/json",
-    }),
-  })
-    .then(validate)
-    .then((response) => response.json());
-
-const fetchCctrayJson = () =>
-  fetch("./v1/cctray", {
+const fetchJsonContent = (url, authToken) => {
+  return fetch(url, {
     headers: new Headers(
       marshalHeaders({
-        Authorization: fetchAccessToken(),
+        Authorization: authToken,
         Accept: "application/json",
       })
     ),
   })
     .then(validate)
     .then((res) => res.json());
+};
 
-const authenticate = (username, password) => {
+export const fetchConfig = () => fetchJsonContent("./config");
+
+export const fetchCctrayJson = () =>
+  fetchJsonContent("./v1/cctray", fetchAccessToken());
+
+export const fetchSecretAlerts = () =>
+  fetchJsonContent("./v1/alerts/secrets", fetchAccessToken());
+
+export const authenticate = (username, password) => {
   return fetch("./login/basic", {
     method: "POST",
     headers: new Headers({ "Content-Type": "application/json" }),
     body: JSON.stringify({ username, password }),
   }).then(validate);
 };
-
-module.exports = { fetchConfig, fetchCctrayJson, authenticate };

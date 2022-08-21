@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.fixtures;
 
-import de.otto.platform.gitactionboard.domain.Workflow;
+import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 
 public class WorkflowsFixture {
   public static final String REPO_NAME = "hello-world";

@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import de.otto.platform.gitactionboard.domain.JobDetails;
-import de.otto.platform.gitactionboard.domain.Workflow;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import de.otto.platform.gitactionboard.fixtures.WorkflowsFixture;
 import java.time.Instant;
 import java.util.Collections;

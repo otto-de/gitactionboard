@@ -1,20 +1,17 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
+import static de.otto.platform.gitactionboard.adapters.controller.Utils.createResponseEntityBodyBuilder;
+import static de.otto.platform.gitactionboard.adapters.controller.Utils.decodeUrlEncodedText;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.CruiseControlService;
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.Project;
-import de.otto.platform.gitactionboard.domain.JobDetails;
 import de.otto.platform.gitactionboard.domain.service.PipelineService;
-import java.net.URLDecoder;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import java.util.List;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -40,20 +37,6 @@ public class GithubController {
         .body(cruiseControlService.convertToXml(fetchJobs(accessToken)));
   }
 
-  private ResponseEntity.BodyBuilder createResponseEntityBodyBuilder() {
-    final HttpHeaders responseHeaders = new HttpHeaders();
-    responseHeaders.setAccessControlAllowOrigin("*");
-
-    return ResponseEntity.ok().headers(responseHeaders);
-  }
-
-  @SneakyThrows
-  private String decode(String urlEncodedValue) {
-    return Optional.ofNullable(urlEncodedValue)
-        .map(value -> URLDecoder.decode(value, UTF_8))
-        .orElse(null);
-  }
-
   @Cacheable(cacheNames = "cctray", sync = true)
   @GetMapping(value = "/cctray", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<Project>> getCctray(
@@ -63,6 +46,6 @@ public class GithubController {
   }
 
   private List<JobDetails> fetchJobs(String accessToken) {
-    return pipelineService.fetchJobs(decode(accessToken));
+    return pipelineService.fetchJobs(decodeUrlEncodedText(accessToken));
   }
 }

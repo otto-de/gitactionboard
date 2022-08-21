@@ -79,8 +79,33 @@
       "responses": [
         {
           "uuid": "30cd0af0-5709-4ce8-9616-5cdb0267bf88",
-          "body": "{\n  \"availableAuths\": []\n}",
+          "body": "{\n  \"availableAuths\": [],\n  \"githubSecretsScanMonitoringEnabled\": true\n}",
           "latency": 100,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "8a33d02d-3df6-4492-861e-ffdff334d504",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/alerts/secrets",
+      "responses": [
+        {
+          "uuid": "1a45050a-0b71-4905-a596-90f3db87ce3f",
+          "body": "[\n  {\n    \"id\": \"hello-world::Amazon AWS Secret Access Key::3\",\n    \"name\": \"hello-world :: Amazon AWS Secret Access Key\",\n    \"url\": \"https://github.com/johndoe/hello-world/security/secret-scanning/3\",\n    \"createdAt\": \"2022-07-26T11:12:02.000Z\"\n  },\n  {\n    \"id\": \"hello-world::Amazon AWS Access Key ID::2\",\n    \"name\": \"hello-world :: Amazon AWS Access Key ID\",\n    \"url\": \"https://github.com/johndoe/hello-world/security/secret-scanning/2\",\n    \"createdAt\": \"2022-07-26T09:39:07.000Z\"\n  },\n  {\n    \"id\": \"hello-world::Amazon AWS Secret Access Key::1\",\n    \"name\": \"hello-world :: Amazon AWS Secret Access Key\",\n    \"url\": \"https://github.com/johndoe/hello-world/security/secret-scanning/1\",\n    \"createdAt\": \"2022-07-26T09:39:07.000Z\"\n  }\n]\n",
+          "latency": 500,
           "statusCode": 200,
           "label": "",
           "headers": [],

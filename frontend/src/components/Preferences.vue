@@ -65,7 +65,7 @@
 
 <script>
 import preferences from "@/services/preferences";
-import authenticationService, { getAvatarUrl } from "@/services/authenticationService";
+import { getAvatarUrl, getName } from "@/services/authenticationService";
 import ProfilePicture from "@/components/ProfilePicture";
 
 export default {
@@ -92,7 +92,7 @@ export default {
       return !(this.isDirty && this.isValid);
     },
     name() {
-      return authenticationService.getName();
+      return getName();
     }
   },
   watch: {

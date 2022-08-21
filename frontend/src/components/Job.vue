@@ -1,16 +1,16 @@
 <template>
   <div
-    :id="job.name"
-    :key="job.name"
-    :class="[getBuildAndActivityStatus(job)]"
+    :id="content.name"
+    :key="content.name"
+    :class="[getBuildAndActivityStatus(content)]"
   >
     <div class="job_name">
       <a
-        :id="job.name + '_url'"
-        :href="job.webUrl"
+        :id="content.name + '_url'"
+        :href="content.webUrl"
         target="_blank"
       >
-        {{ job.name }}
+        {{ content.name }}
       </a>
     </div>
   </div>
@@ -20,7 +20,7 @@
 export default {
   name: "Job",
   props: {
-    job: {
+    content: {
       type: Object,
       required: true
     }

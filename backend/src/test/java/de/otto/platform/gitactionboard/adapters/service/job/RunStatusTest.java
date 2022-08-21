@@ -1,8 +1,8 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
 import static de.otto.platform.gitactionboard.adapters.service.job.RunStatus.COMPLETED;
-import static de.otto.platform.gitactionboard.domain.Activity.BUILDING;
-import static de.otto.platform.gitactionboard.domain.Activity.SLEEPING;
+import static de.otto.platform.gitactionboard.domain.workflow.Activity.BUILDING;
+import static de.otto.platform.gitactionboard.domain.workflow.Activity.SLEEPING;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;

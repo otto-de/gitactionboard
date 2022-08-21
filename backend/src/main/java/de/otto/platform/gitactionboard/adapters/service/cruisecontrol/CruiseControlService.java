@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.cruisecontrol;
 
-import de.otto.platform.gitactionboard.domain.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

@@ -12,11 +12,11 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
-import de.otto.platform.gitactionboard.domain.Activity;
-import de.otto.platform.gitactionboard.domain.JobDetails;
 import de.otto.platform.gitactionboard.domain.Notification;
-import de.otto.platform.gitactionboard.domain.Status;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
+import de.otto.platform.gitactionboard.domain.workflow.Activity;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.Status;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

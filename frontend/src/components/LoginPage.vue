@@ -80,10 +80,10 @@
 <script>
 import {authenticate, fetchConfig} from "@/services/apiService";
 import {isAuthenticate} from "@/services/authenticationService";
-import storageService from "@/services/storageService";
 import Spinner from "@/components/Spinner";
 import {watch} from "vue";
 import Invalid from "@/icons/InvalidIcon";
+import {setAvailableAuths, setGithubSecretsScanMonitoringEnabled} from "@/services/utils";
 
 
 export default {
@@ -116,10 +116,11 @@ export default {
       }
     })
     fetchConfig()
-        .then(({availableAuths}) => {
+        .then(({availableAuths, githubSecretsScanMonitoringEnabled}) => {
           this.availableAuths = availableAuths;
           this.loading = false;
-          storageService.setItem("availableAuths", JSON.stringify(availableAuths))
+          setAvailableAuths(availableAuths)
+          setGithubSecretsScanMonitoringEnabled(githubSecretsScanMonitoringEnabled);
         })
         .then(() => {
           if (isAuthenticate() || (!this.isBasicAuthEnabled && !this.isOauth2Enabled)){

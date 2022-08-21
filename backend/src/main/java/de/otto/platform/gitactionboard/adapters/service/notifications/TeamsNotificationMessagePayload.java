@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.otto.platform.gitactionboard.domain.JobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import java.util.List;
 import lombok.Builder;
 import lombok.Value;

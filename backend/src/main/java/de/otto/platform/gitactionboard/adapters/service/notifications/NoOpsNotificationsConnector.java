@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
-import de.otto.platform.gitactionboard.domain.JobDetails;
 import de.otto.platform.gitactionboard.domain.service.NotificationConnector;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Profile;

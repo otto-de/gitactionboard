@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
-import de.otto.platform.gitactionboard.domain.JobDetails;
 import de.otto.platform.gitactionboard.domain.service.NotificationConnector;
+import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

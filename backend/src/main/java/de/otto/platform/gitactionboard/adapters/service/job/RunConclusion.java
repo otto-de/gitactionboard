@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.otto.platform.gitactionboard.domain.Status;
+import de.otto.platform.gitactionboard.domain.workflow.Status;
 import java.util.Objects;
 
 public enum RunConclusion {

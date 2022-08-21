@@ -58,17 +58,18 @@ docker run \
 
 #### Configurations
 
-| Environment variable name           | Descriptions                                                                                                                    | Required |     Default value      |          Example value          |
-| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :------: | :--------------------: | :-----------------------------: |
-| REPO_OWNER_NAME                     | Repository owner name. Generally, its either organization name or username                                                      |   yes    |                        |             webpack             |
-| REPO_NAMES                          | List of name of repositories you want to monitor                                                                                |   yes    |                        | webpack-dev-server, webpack-cli |
-| GITHUB_ACCESS_TOKEN                 | Access token to fetch data from github. This is required to fetch data from a private repository when github oauth2 is disabled |    no    |                        |                                 |
-| DOMAIN_NAME                         | Hostname of github                                                                                                              |    no    | https://api.github.com |                                 |
-| CACHE_EXPIRES_AFTER                 | Duration (in seconds) to cache the fetched data                                                                                 |    no    |           60           |                                 |
-| GITHUB_OAUTH2_CLIENT_ID             | Github oauth2 client ID                                                                                                         |    no    |                        |                                 |
-| GITHUB_OAUTH2_CLIENT_SECRET         | Gihub oauth2 client secret                                                                                                      |    no    |                        |                                 |
-| BASIC_AUTH_USER_DETAILS_FILE_PATH   | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
-| MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL | Web hook url to send build failure notifications on Microsoft Teams (available from v2.1.0)                                     |    no    |                        |                                 |
+| Environment variable name                    | Descriptions                                                                                                                    | Required |     Default value      |          Example value          |
+| :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :------: | :--------------------: | :-----------------------------: |
+| REPO_OWNER_NAME                              | Repository owner name. Generally, its either organization name or username                                                      |   yes    |                        |             webpack             |
+| REPO_NAMES                                   | List of name of repositories you want to monitor                                                                                |   yes    |                        | webpack-dev-server, webpack-cli |
+| GITHUB_ACCESS_TOKEN                          | Access token to fetch data from github. This is required to fetch data from a private repository when github oauth2 is disabled |    no    |                        |                                 |
+| DOMAIN_NAME                                  | Hostname of github                                                                                                              |    no    | https://api.github.com |                                 |
+| CACHE_EXPIRES_AFTER                          | Duration (in seconds) to cache the fetched data                                                                                 |    no    |           60           |                                 |
+| GITHUB_OAUTH2_CLIENT_ID                      | Github oauth2 client ID                                                                                                         |    no    |                        |                                 |
+| GITHUB_OAUTH2_CLIENT_SECRET                  | Gihub oauth2 client secret                                                                                                      |    no    |                        |                                 |
+| BASIC_AUTH_USER_DETAILS_FILE_PATH            | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
+| MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL          | Web hook url to send build failure notifications on Microsoft Teams (available from v2.1.0)                                     |    no    |                        |                                 |
+| ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING | Display Github secret scan alerts on dashboard (available from v3.0.0)                                                          |    no    |         false          |              true               |
 
 ##### Notes
 
@@ -127,9 +128,9 @@ Prior to `v2.0.0`, query params can be used to configure UI dashboard. Please fi
 
 #### API
 
-Once server is up, you can access the following endpoints to get the CCtray data.
+Once server is up, you can access the following endpoints
 
-##### Data in XML format
+##### Workflows Data in CCtray XML format
 
 Access `http://localhost:<host machine port>/v1/cctray.xml` to get data in **XML** format
 
@@ -144,7 +145,7 @@ Access `http://localhost:<host machine port>/v1/cctray.xml` to get data in **XML
 </Projects>
 ```
 
-##### Data in JSON format
+##### Workflows Data in CCtray JSON format
 
 Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** format
 
@@ -183,6 +184,38 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "lastBuildLabel": "206",
     "lastBuildTime": "2020-09-18T06:14:54.000Z",
     "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127"
+  }
+]
+```
+
+##### Secrets Scan Alerts Data in JSON format
+
+Access `http://localhost:<host machine port>/v1/alerts/secrets` to get security scan alerts data in **JSON** format
+
+###### Sample response
+
+```json
+[
+  {
+    "id": "hello-world::Amazon AWS Secret Access Key::3",
+    "name": "hello-world :: Amazon AWS Secret Access Key",
+    "url": "https://github.com/johndoe/hello-world/security/secret-scanning/3",
+    "createdAt": "2022-07-26T11:12:02.000Z",
+    "source": "SECRET_SCAN"
+  },
+  {
+    "id": "hello-world::Amazon AWS Access Key ID::2",
+    "name": "hello-world :: Amazon AWS Access Key ID",
+    "url": "https://github.com/johndoe/hello-world/security/secret-scanning/2",
+    "createdAt": "2022-07-26T09:39:07.000Z",
+    "source": "SECRET_SCAN"
+  },
+  {
+    "id": "hello-world::Amazon AWS Secret Access Key::1",
+    "name": "hello-world :: Amazon AWS Secret Access Key",
+    "url": "https://github.com/johndoe/hello-world/security/secret-scanning/1",
+    "createdAt": "2022-07-26T09:39:07.000Z",
+    "source": "SECRET_SCAN"
   }
 ]
 ```
