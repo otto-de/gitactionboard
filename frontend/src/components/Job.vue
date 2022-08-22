@@ -13,15 +13,31 @@
         {{ content.name }}
       </a>
     </div>
+    <button
+      class="hide_button"
+      @click="toggleVisibility(job.name)"
+    >
+      <HideIcon v-if="!hidden" />
+      <ShowIcon v-if="hidden" />
+    </button>
   </div>
 </template>
 
 <script>
+import preferences from "@/services/preferences";
+import HideIcon from "@/icons/HideIcon";
+import ShowIcon from "@/icons/ShowIcon";
+
 export default {
   name: "Job",
+  components: {HideIcon, ShowIcon},
   props: {
     content: {
       type: Object,
+      required: true
+    },
+    hidden: {
+      type: Boolean,
       required: true
     }
   },
@@ -41,6 +57,9 @@ export default {
         default:
           return 'failure';
       }
+    },
+    toggleVisibility(jobName) {
+      preferences.toggleVisibility(jobName);
     }
   }
 }
@@ -52,10 +71,10 @@ export default {
   color: white;
   font-weight: bold;
   font-size: 14px;
-  height: 100%;
   overflow: auto;
   display: inline-grid;
   align-items: center;
+  flex-grow: 1;
 }
 a {
   text-decoration: none;
@@ -68,6 +87,8 @@ a {
   height: 90px;
   border: 2px solid #000000;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .success {
@@ -104,6 +125,19 @@ a {
       #6d6a6a 30px,
       #000000 50px
   );
+}
+
+.hide_button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+.hide_button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
 }
 
 </style>
