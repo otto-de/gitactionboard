@@ -36,7 +36,7 @@ class Preferences {
   }
 
   toggleVisibility(jobName) {
-    let hiddenJobs = JSON.parse(this.__get__("hidden-jobs") || "[]");
+    const hiddenJobs = this.getHiddenJobs();
     const indexOfThisJobInList = hiddenJobs.indexOf(jobName);
     if (indexOfThisJobInList !== -1) {
       hiddenJobs.splice(indexOfThisJobInList, 1);
@@ -47,8 +47,11 @@ class Preferences {
   }
 
   isJobHidden(jobName) {
-    const hiddenJobs = JSON.parse(this.__get__("hidden-jobs") || "[]");
-    return hiddenJobs.indexOf(jobName) !== -1;
+    return this.getHiddenJobs().indexOf(jobName) !== -1;
+  }
+
+  getHiddenJobs() {
+    return JSON.parse(this.__get__("hidden-jobs") || "[]");
   }
 }
 

@@ -6,7 +6,7 @@
   </template>
   <div
     v-if="!loading"
-    id="jobs"
+    class="jobs"
   >
     <template
       v-for="job in jobs"
@@ -15,7 +15,7 @@
       <Job :job="job" />
     </template>
   </div>
-  <NoFailedBuild v-if="!loading && jobs.length === 0" />
+  <NoFailedBuild v-if="showNoJobsPlaceholder" />
 </template>
 
 <script>
@@ -24,6 +24,7 @@ import {fetchCctrayJson} from "@/services/apiService";
 import Job from "@/components/Job";
 import Spinner from "@/components/Spinner";
 import NoFailedBuild from "@/components/NoFailedBuild";
+import preferences from "@/services/preferences";
 
 const ONE_MINUTE = 60000;
 
@@ -51,6 +52,7 @@ export default {
       idleTime: 0,
       renderPageTimer: null,
       idleTimer: null,
+      showHiddenJobs: false
     }
   },
   mounted() {
@@ -111,6 +113,20 @@ export default {
             console.error(reason);
             return Promise.reject(reason);
           });
+    },
+    toggleHiddenJobs() {
+      this.showHiddenJobs = !this.showHiddenJobs
+    }
+  },
+  computed: {
+    showNoJobsPlaceholder() {
+      return !this.loading && this.jobs.length === 0
+    },
+    visibleJobs() {
+      return this.jobs.filter(j => !preferences.isJobHidden(j.name))
+    },
+    hiddenJobs() {
+      return this.jobs.filter(j => preferences.isJobHidden(j.name))
     }
   }
 }
@@ -118,7 +134,7 @@ export default {
 
 <style scoped>
 
-#jobs {
+.jobs {
   font-family: "OpenSans", sans-serif;
   display: grid;
   align-items: center;
@@ -126,13 +142,13 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
   width: 100%;
-  margin-bottom: 3em;
 }
 
 .hidden_jobs {
+  margin-top: 3em;
+  margin-bottom: 1em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 1em;
 }
 
 </style>
