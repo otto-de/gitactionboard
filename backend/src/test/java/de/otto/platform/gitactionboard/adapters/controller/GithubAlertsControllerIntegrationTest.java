@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.adapters.controller;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.postRequestedFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.verify;
@@ -34,6 +35,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
@@ -59,6 +61,7 @@ class GithubAlertsControllerIntegrationTest {
                     .withStatus(SC_OK)
                     .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
                     .withBody(readFile(SECRETS_SCAN_ALERTS_JSON))));
+    stubFor(WireMock.post("/webhook/notifications").willReturn(aResponse().withStatus(SC_OK)));
   }
 
   @BeforeEach
@@ -104,6 +107,9 @@ class GithubAlertsControllerIntegrationTest {
 
     @Autowired private MockMvc mockMvc;
 
+    @Value("${wiremock.webhook.url}")
+    private String notificationWebHookUrl;
+
     @Test
     @SneakyThrows
     void shouldFetchSecurityAlerts() {
@@ -115,11 +121,12 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           content().json(readFile(SECURITY_SCAN_ALERTS_JSON)));
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(1);
+      assertThat(WireMock.getAllServeEvents()).hasSize(4);
       final EqualToPattern valuePattern = new EqualToPattern("");
       verify(
           getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
               .withHeader(AUTHORIZATION, valuePattern));
+      verify(3, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
     }
 
     @Test
@@ -168,6 +175,9 @@ class GithubAlertsControllerIntegrationTest {
   class WithCacheSecurityScanAlerts {
     @Autowired private MockMvc mockMvc;
 
+    @Value("${wiremock.webhook.url}")
+    private String notificationWebHookUrl;
+
     @BeforeEach
     void setUp() {
       stubSecretsScanApiRequests();
@@ -181,11 +191,12 @@ class GithubAlertsControllerIntegrationTest {
       invokeGetApiAndValidate(
           mockMvc, SECURITY_SCAN_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(1);
+      assertThat(WireMock.getAllServeEvents()).hasSize(4);
       final EqualToPattern valuePattern = new EqualToPattern("");
       verify(
           getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
               .withHeader(AUTHORIZATION, valuePattern));
+      verify(3, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
 
       WireMock.resetAllRequests();
 

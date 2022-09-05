@@ -1,8 +1,8 @@
 package de.otto.platform.gitactionboard.adapters.service.scan.secrets;
 
-import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.REPO_NAME;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.getSecretsScanDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.getSecretsScanDetailsResponseBuilder;
+import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.times;

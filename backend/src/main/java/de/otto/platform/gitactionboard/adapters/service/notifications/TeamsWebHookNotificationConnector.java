@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
+import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.NotificationConnector;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -33,12 +34,20 @@ public class TeamsWebHookNotificationConnector implements NotificationConnector 
   public void notify(JobDetails jobDetails) {
     log.info("Sending notification for {}", jobDetails);
 
+    notify(TeamsNotificationMessagePayload.from(jobDetails));
+  }
+
+  private void notify(TeamsNotificationMessagePayload messagePayload) {
     final ResponseEntity<String> responseEntity =
-        restTemplate.postForEntity(
-            webHookUrl, TeamsNotificationMessagePayload.from(jobDetails), String.class);
+        restTemplate.postForEntity(webHookUrl, messagePayload, String.class);
 
     if (!responseEntity.getStatusCode().is2xxSuccessful())
       throw new RuntimeException(responseEntity.getBody());
+  }
+
+  @Override
+  public void notify(SecretsScanDetails secretsScanDetails) {
+    notify(TeamsNotificationMessagePayload.from(secretsScanDetails));
   }
 
   @Override

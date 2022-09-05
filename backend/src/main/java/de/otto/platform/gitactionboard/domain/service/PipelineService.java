@@ -38,7 +38,7 @@ public class PipelineService {
 
     final List<JobDetails> jobDetails = fetchJobs(accessToken, workflows);
 
-    notificationsService.sendNotifications(jobDetails);
+    notificationsService.sendNotificationsForWorkflowJobs(jobDetails);
 
     return jobDetails;
   }

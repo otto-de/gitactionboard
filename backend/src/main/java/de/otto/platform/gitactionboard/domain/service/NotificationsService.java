@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.domain.service;
 
 import de.otto.platform.gitactionboard.domain.Notification;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
+import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Activity;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Status;
@@ -20,11 +21,25 @@ public class NotificationsService {
   private final List<NotificationConnector> notificationConnectors;
   private final NotificationRepository notificationRepository;
 
-  public void sendNotifications(List<JobDetails> jobs) {
+  public void sendNotificationsForWorkflowJobs(List<JobDetails> jobs) {
     final CompletableFuture<?>[] completableFutures =
         getNotificationConnectorAndJobsCombinations(jobs)
             .parallel()
-            .map(entry -> sendNotifications(entry.getValue(), entry.getKey()))
+            .map(entry -> sendNotifications((JobDetails) entry.getValue(), entry.getKey()))
+            .toArray(CompletableFuture[]::new);
+
+    try {
+      CompletableFuture.allOf(completableFutures).get();
+    } catch (Exception exception) {
+      log.warn("Unable to send notifications", exception);
+    }
+  }
+
+  public void sendNotificationsForSecretScanAlerts(List<SecretsScanDetails> secretsScanAlerts) {
+    final CompletableFuture<?>[] completableFutures =
+        getNotificationConnectorAndJobsCombinations(secretsScanAlerts)
+            .parallel()
+            .map(entry -> sendNotifications((SecretsScanDetails) entry.getValue(), entry.getKey()))
             .toArray(CompletableFuture[]::new);
 
     try {
@@ -52,8 +67,26 @@ public class NotificationsService {
         });
   }
 
-  private Stream<AbstractMap.SimpleImmutableEntry<NotificationConnector, JobDetails>>
-      getNotificationConnectorAndJobsCombinations(List<JobDetails> jobs) {
+  private CompletableFuture<Void> sendNotifications(
+      SecretsScanDetails secretsScanDetails, NotificationConnector notificationConnector) {
+    return CompletableFuture.runAsync(
+        () -> {
+          if (notificationRepository.findStatusByIdAndType(
+              secretsScanDetails.getFormattedName(), notificationConnector.getType())) return;
+
+          final Notification notification =
+              Notification.builder()
+                  .id(secretsScanDetails.getFormattedName())
+                  .status(sendNotification(secretsScanDetails, notificationConnector))
+                  .connectorType(notificationConnector.getType())
+                  .build();
+
+          notificationRepository.createOrUpdate(notification);
+        });
+  }
+
+  private Stream<AbstractMap.SimpleImmutableEntry<NotificationConnector, ?>>
+      getNotificationConnectorAndJobsCombinations(List<?> jobs) {
     return jobs.stream()
         .flatMap(
             jobDetails ->
@@ -62,6 +95,22 @@ public class NotificationsService {
                         notificationConnector ->
                             new AbstractMap.SimpleImmutableEntry<>(
                                 notificationConnector, jobDetails)));
+  }
+
+  private Boolean sendNotification(
+      SecretsScanDetails secretsScanDetails, NotificationConnector notificationConnector) {
+    try {
+      notificationConnector.notify(secretsScanDetails);
+      return true;
+    } catch (Exception exception) {
+      log.warn(
+          "Unable to send notification to {} for secret scan alert with name {}",
+          notificationConnector.getType(),
+          secretsScanDetails.getName(),
+          exception);
+
+      return false;
+    }
   }
 
   private Boolean sendNotification(

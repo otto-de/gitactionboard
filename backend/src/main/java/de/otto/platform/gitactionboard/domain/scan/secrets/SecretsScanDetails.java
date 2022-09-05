@@ -17,4 +17,8 @@ public class SecretsScanDetails {
   @NonNull Instant createdAt;
 
   @NonNull String repoName;
+
+  public String getFormattedName() {
+    return String.format("%s::%s::%d", repoName, name, id);
+  }
 }

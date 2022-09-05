@@ -5,9 +5,9 @@ import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static org.springframework.http.HttpStatus.OK;
 
-import de.otto.platform.gitactionboard.domain.scan.SecurityScanAlert;
+import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.SecretsScanService;
-import de.otto.platform.gitactionboard.fixtures.SecurityScanAlertFixtures;
+import de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,17 +32,30 @@ class GithubAlertsControllerTest {
   @NullSource
   @CsvSource(value = {"accessToken"})
   void shouldFetchSecurityScanAlertsAsJson(String accessToken) {
-    final List<SecurityScanAlert> alerts =
-        List.of(SecurityScanAlertFixtures.getSecurityScanAlertBuilder().build());
+    final SecretsScanDetails scanDetails =
+        SecretsScanDetailsFixtures.getSecretsScanDetailsBuilder().build();
+    final List<SecretsScanDetails> secretsScanDetails = List.of(scanDetails);
 
-    when(secretsScanService.fetchSecurityScanAlerts(accessToken)).thenReturn(alerts);
+    when(secretsScanService.fetchExposedSecrets(accessToken)).thenReturn(secretsScanDetails);
 
-    final ResponseEntity<List<SecurityScanAlert>> securityScanAlertsResponse =
-        githubAlertsController.getSecurityScanAlerts(accessToken);
+    final ResponseEntity<List<SecretsScanAlert>> securityScanAlertsResponse =
+        githubAlertsController.getSecretsScanAlerts(accessToken);
 
     assertThat(securityScanAlertsResponse.getStatusCode()).isEqualTo(OK);
     assertThat(securityScanAlertsResponse.getHeaders())
         .containsEntry(ACCESS_CONTROL_ALLOW_ORIGIN, List.of("*"));
-    assertThat(securityScanAlertsResponse.getBody()).isEqualTo(alerts);
+    assertThat(securityScanAlertsResponse.getBody())
+        .hasSameSizeAs(secretsScanDetails)
+        .allSatisfy(
+            secretsScanAlert -> {
+              assertThat(secretsScanAlert.getId())
+                  .isEqualTo(
+                      "%s::%s::%d",
+                      scanDetails.getRepoName(), scanDetails.getName(), scanDetails.getId());
+              assertThat(secretsScanAlert.getUrl()).isEqualTo(scanDetails.getUrl());
+              assertThat(secretsScanAlert.getName())
+                  .isEqualTo("%s :: %s", scanDetails.getRepoName(), scanDetails.getName());
+              assertThat(secretsScanAlert.getCreatedAt()).isEqualTo(scanDetails.getCreatedAt());
+            });
   }
 }

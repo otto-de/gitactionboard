@@ -1,10 +1,8 @@
 package de.otto.platform.gitactionboard.domain.service;
 
-import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.REPO_NAME;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.SECRETS_SCAN_DETAILS_ID;
-import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.SECRETS_SCAN_DETAILS_NAME;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.getSecretsScanDetailsBuilder;
-import static de.otto.platform.gitactionboard.fixtures.SecurityScanAlertFixtures.getSecurityScanAlertBuilder;
+import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 import static org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames.ACCESS_TOKEN;
@@ -20,12 +18,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class SecretsScanServiceTest {
 
   @Mock private SecretsScanDetailsService secretsScanDetailsService;
+  @Mock private NotificationsService notificationsService;
 
   @Test
   void shouldFetchSecretsScanAlerts() {
     final String repoName2 = "dummy";
     final SecretsScanService secretsScanService =
-        new SecretsScanService(secretsScanDetailsService, List.of(REPO_NAME, repoName2));
+        new SecretsScanService(
+            secretsScanDetailsService, notificationsService, List.of(REPO_NAME, repoName2));
 
     when(secretsScanDetailsService.fetchSecretsScanDetails(REPO_NAME, ACCESS_TOKEN))
         .thenReturn(
@@ -36,16 +36,10 @@ class SecretsScanServiceTest {
             CompletableFuture.completedFuture(
                 List.of(getSecretsScanDetailsBuilder().repoName(repoName2).build())));
 
-    assertThat(secretsScanService.fetchSecurityScanAlerts(ACCESS_TOKEN))
+    assertThat(secretsScanService.fetchExposedSecrets(ACCESS_TOKEN))
         .hasSize(2)
         .containsExactlyInAnyOrder(
-            getSecurityScanAlertBuilder().build(),
-            getSecurityScanAlertBuilder()
-                .name(String.format("%s :: %s", repoName2, SECRETS_SCAN_DETAILS_NAME))
-                .id(
-                    String.format(
-                        "%s::%s::%d",
-                        repoName2, SECRETS_SCAN_DETAILS_NAME, SECRETS_SCAN_DETAILS_ID))
-                .build());
+            getSecretsScanDetailsBuilder().build(),
+            getSecretsScanDetailsBuilder().repoName(repoName2).id(SECRETS_SCAN_DETAILS_ID).build());
   }
 }

@@ -95,7 +95,7 @@ class PipelineServiceTest {
             TEST_JOB_DETAILS,
             FORMAT_JOB_DETAILS);
 
-    verify(notificationsService).sendNotifications(jobDetails);
+    verify(notificationsService).sendNotificationsForWorkflowJobs(jobDetails);
     verify(workflowService).fetchWorkflows(REPO_NAME, ACCESS_TOKEN);
     verify(jobDetailsService).fetchJobDetails(buildAndDeploymentWorkflow, ACCESS_TOKEN);
     verify(jobDetailsService).fetchJobDetails(checksWorkflow, ACCESS_TOKEN);
@@ -120,6 +120,6 @@ class PipelineServiceTest {
 
     assertThat(jobDetails)
         .containsExactlyInAnyOrder(TALISMAN_CHECKS_JOB_DETAILS, DEPENDENCY_CHECKS_JOB_DETAILS);
-    verify(notificationsService).sendNotifications(jobDetails);
+    verify(notificationsService).sendNotificationsForWorkflowJobs(jobDetails);
   }
 }

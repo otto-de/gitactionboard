@@ -4,9 +4,9 @@ import static de.otto.platform.gitactionboard.adapters.controller.Utils.createRe
 import static de.otto.platform.gitactionboard.adapters.controller.Utils.decodeUrlEncodedText;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
-import de.otto.platform.gitactionboard.domain.scan.SecurityScanAlert;
 import de.otto.platform.gitactionboard.domain.service.SecretsScanService;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -33,9 +33,13 @@ public class GithubAlertsController {
 
   @Cacheable(cacheNames = "securityScanAlerts", sync = true)
   @GetMapping(value = "/secrets", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<List<SecurityScanAlert>> getSecurityScanAlerts(
+  public ResponseEntity<List<SecretsScanAlert>> getSecretsScanAlerts(
       @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
-    return createResponseEntityBodyBuilder()
-        .body(secretsScanService.fetchSecurityScanAlerts(decodeUrlEncodedText(accessToken)));
+    final List<SecretsScanAlert> secretsScanAlerts =
+        secretsScanService.fetchExposedSecrets(decodeUrlEncodedText(accessToken)).stream()
+            .map(SecretsScanAlert::from)
+            .collect(Collectors.toList());
+
+    return createResponseEntityBodyBuilder().body(secretsScanAlerts);
   }
 }

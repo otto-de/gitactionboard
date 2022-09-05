@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
+import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.NotificationConnector;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,11 @@ public class NoOpsNotificationsConnector implements NotificationConnector {
   @Override
   public void notify(JobDetails jobDetails) {
     log.info("Sent notification for {}", jobDetails);
+  }
+
+  @Override
+  public void notify(SecretsScanDetails secretsScanDetails) {
+    log.info("Sent notification for {}", secretsScanDetails);
   }
 
   @Override
