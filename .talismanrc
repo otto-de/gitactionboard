@@ -7,6 +7,8 @@ fileignoreconfig:
   checksum: 8bc1fe8d63fd68bf0bac7667a485c9bde641d05f68264829778cb222d5a5adbf
 - filename: README.md
   checksum: d7133851bfb3471f7785598423ecf95c28cc0a0bcf42e4d602f9438a4049de00
+- filename: backend/build.gradle
+  checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
@@ -27,8 +29,8 @@ fileignoreconfig:
   checksum: 5b36bc3d22cd3397d9d9a982d5f30ec8be4844902a65b9220b4d622fe36448fd
 - filename: frontend/src/components/Jobs.vue
   checksum: c9c38b10e4eca52659618f21d7f382dc97ec853f3c0fd750ce021edfbe9db27b
-- filename: frontend/src/services/apiService.js
-  checksum: dbe2edd0943174d274e1eb8c33e830f76755e8b3449a9fa74254d4c8bea04a4d
 - filename: frontend/src/components/LoginPage.vue
   checksum: 00ac4b26998a74e6f08fab6edda25c002fd4cf9dda3538e4873f171c73ddb3c6
+- filename: frontend/src/services/apiService.js
+  checksum: dbe2edd0943174d274e1eb8c33e830f76755e8b3449a9fa74254d4c8bea04a4d
 version: "1.0"
