@@ -188,3 +188,12 @@ _generate_changelog() {
 
   prettier --write "CHANGELOG.md"
 }
+
+_generate_changelog_url() {
+  local tag="${1}"
+  local date
+
+  date=$(grep "## \[${tag}\]" CHANGELOG.md | sed -n "s/.*${tag}) //p" | sed s/\)// | sed s/\(//)
+
+  echo "https://github.com/otto-de/gitactionboard/blob/main/CHANGELOG.md#${tag//./}-${date}"
+}

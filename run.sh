@@ -23,7 +23,8 @@ commands:
   talisman-verify                                      Verify no sensitive information is committed using talisman
   bump-version <major|minor|patch>                     Release a new <major|minor|patch> version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
-  generate-changelog                                   Generate changelog from last tag and write in README.md
+  generate-changelog                                   Generate changelog from last tag and write in CHANGELOG.md
+  generate-changelog-url [tag]                         Generate changelog url for given tag
   add-contributor <username> <contribution type>       Add new contributor to contributors list
   generate-contributors-list                           Generate contributors list from .all-contributorsrc file and update it in readme
 EOF
@@ -45,6 +46,7 @@ case ${CMD} in
   generate-changelog) _generate_changelog ;;
   add-contributor) _add_contributor "${1}" "${2}" ;;
   generate-contributors-list) _generate_contributors_list ;;
+  generate-changelog-url) _generate_changelog_url "${1}" ;;
   build-jar) _build_jar ;;
   *) _usage ;;
 esac

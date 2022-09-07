@@ -139,12 +139,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Create change log url
+        id: create_change_log_url
+        run: |
+          echo "::set-output name=CHANGE_LOG_URL::$(./run.sh generate-changelog-url ${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }})"
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: create github release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: "${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }}"
+          body: "Changelog can be found [here](${{ steps.create_change_log_url.outputs.CHANGE_LOG_URL }})."
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
