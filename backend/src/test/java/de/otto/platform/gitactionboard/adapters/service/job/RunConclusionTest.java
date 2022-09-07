@@ -3,12 +3,14 @@ package de.otto.platform.gitactionboard.adapters.service.job;
 import static de.otto.platform.gitactionboard.adapters.service.job.RunConclusion.ACTION_REQUIRED;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.domain.workflow.Status;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
+@Parallel
 class RunConclusionTest {
   @ParameterizedTest(name = "should give SUCCESS status for {0} conclusion")
   @EnumSource(

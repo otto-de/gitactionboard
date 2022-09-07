@@ -18,6 +18,7 @@ import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.benmanes.caffeine.cache.Cache;
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
@@ -45,6 +46,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class GithubJobDetailsServiceTest {
   private static final String WORKFLOW_NAME = "hello-world-checks";
   private static final JobDetails JOB_DETAILS_1132386127 = getJobDetailsBuilder().build();

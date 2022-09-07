@@ -9,6 +9,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class GithubSecretsScanDetailsServiceTest {
   @Mock private ApiService apiService;
 

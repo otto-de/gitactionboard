@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static org.springframework.http.HttpStatus.OK;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.CruiseControlService;
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.Project;
 import de.otto.platform.gitactionboard.domain.service.PipelineService;
@@ -23,6 +24,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class GithubControllerTest {
 
   @Mock private PipelineService pipelineService;

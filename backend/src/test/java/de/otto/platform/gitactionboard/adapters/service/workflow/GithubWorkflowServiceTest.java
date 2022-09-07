@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
@@ -21,6 +22,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class GithubWorkflowServiceTest {
 
   private static final String ACCESS_TOKEN = "accessToken";

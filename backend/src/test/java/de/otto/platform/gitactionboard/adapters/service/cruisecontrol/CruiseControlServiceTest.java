@@ -3,12 +3,14 @@ package de.otto.platform.gitactionboard.adapters.service.cruisecontrol;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import java.time.Instant;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+@Sequential
 class CruiseControlServiceTest {
   private static final JobDetails JOB_DETAILS_DEPENDENCY_CHECKS = getJobDetailsBuilder().build();
 

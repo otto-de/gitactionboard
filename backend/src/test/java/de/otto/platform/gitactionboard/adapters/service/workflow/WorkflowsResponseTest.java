@@ -2,12 +2,14 @@ package de.otto.platform.gitactionboard.adapters.service.workflow;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+@Parallel
 class WorkflowsResponseTest {
 
   @Nested

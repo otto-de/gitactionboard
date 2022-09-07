@@ -19,6 +19,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.WireMockExtension;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import lombok.SneakyThrows;
@@ -31,7 +32,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @ExtendWith(WireMockExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class TeamsWebHookNotificationConnectorTest {
+@IntegrationTest
+class TeamsWebHookNotificationConnectorIntegrationTest {
 
   @Autowired private TeamsWebHookNotificationConnector teamsWebHookNotificationConnector;
 

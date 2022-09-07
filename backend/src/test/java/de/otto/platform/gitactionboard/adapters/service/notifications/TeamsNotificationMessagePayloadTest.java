@@ -4,12 +4,14 @@ import static de.otto.platform.gitactionboard.fixtures.TeamsNotificationsMessage
 import static de.otto.platform.gitactionboard.fixtures.TeamsNotificationsMessagePayloadFixture.getTeamsNotificationPayloadBuilderForSecret;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.fixtures.JobDetailsFixture;
 import de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures;
 import org.junit.jupiter.api.Test;
 
+@Parallel
 class TeamsNotificationMessagePayloadTest {
 
   @Test

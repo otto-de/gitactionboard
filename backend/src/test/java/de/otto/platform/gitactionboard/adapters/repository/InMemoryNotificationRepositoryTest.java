@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.adapters.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.Notification;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+@Sequential
 class InMemoryNotificationRepositoryTest {
 
   private static final String CONNECTOR_TYPE = "TEST";

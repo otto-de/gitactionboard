@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import de.otto.platform.gitactionboard.IntegrationTest;
+import de.otto.platform.gitactionboard.Parallel;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
       "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd",
       "ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING="
     })
+@Parallel
 class ConfigurationControllerIntegrationTest {
   @Autowired private MockMvc mockMvc;
 

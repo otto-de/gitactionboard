@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.IntegrationTest;
+import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.SneakyThrows;
@@ -24,6 +25,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @IntegrationTest
 @DirtiesContext
 @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+@Parallel
 class BasicAuthenticationControllerIntegrationTest {
   private static final String NAME = "name";
   private static final String USERNAME = "username";

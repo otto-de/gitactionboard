@@ -4,6 +4,7 @@ import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.BAS
 import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.OAUTH2;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
 import java.util.List;
 import java.util.stream.Stream;
@@ -11,6 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+@Parallel
 class ConfigurationControllerTest {
 
   private static final String FALSE_TEXT_VALUE = "false";

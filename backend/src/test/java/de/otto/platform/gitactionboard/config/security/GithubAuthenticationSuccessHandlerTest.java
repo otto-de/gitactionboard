@@ -6,6 +6,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import de.otto.platform.gitactionboard.Sequential;
 import java.net.URLEncoder;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,7 @@ import org.springframework.security.oauth2.core.OAuth2RefreshToken;
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class GithubAuthenticationSuccessHandlerTest {
   private static final String EXPECTED_COOKIE_PATH = "/";
   @Mock private OAuth2AuthorizedClientService authorizedClientService;

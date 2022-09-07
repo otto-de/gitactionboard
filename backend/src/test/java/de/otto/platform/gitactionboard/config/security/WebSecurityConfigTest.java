@@ -5,6 +5,7 @@ import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.OAU
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
@@ -25,6 +26,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+@Sequential
 class WebSecurityConfigTest {
   public static Stream<Arguments> getConfig() {
     return Stream.of(

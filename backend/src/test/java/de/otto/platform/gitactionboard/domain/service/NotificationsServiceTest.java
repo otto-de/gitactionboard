@@ -13,6 +13,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.Notification;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
@@ -34,6 +35,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 @SuppressFBWarnings("RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT")
+@Sequential
 class NotificationsServiceTest {
   @Mock private NotificationRepository notificationRepository;
   @Mock private NotificationConnector notificationConnector1;

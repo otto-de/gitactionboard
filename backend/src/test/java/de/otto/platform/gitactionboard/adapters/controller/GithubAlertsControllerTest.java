@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static org.springframework.http.HttpStatus.OK;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.SecretsScanService;
 import de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures;
@@ -19,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class GithubAlertsControllerTest {
   @Mock private SecretsScanService secretsScanService;
   private GithubAlertsController githubAlertsController;

@@ -7,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import de.otto.platform.gitactionboard.fixtures.WorkflowsFixture;
@@ -21,6 +22,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
+@Sequential
 class PipelineServiceTest {
   private static final String CHECKS_WORKFLOW_NAME = "hello-world-checks";
 
