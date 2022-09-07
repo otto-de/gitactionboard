@@ -7,7 +7,7 @@
     "start-mock-api-server": "mockoon-cli start -D --data mock-data/data.json",
     "serve-with-mock-data": "concurrently --kill-others \"npm run start-mock-api-server\" \"npm run serve\" ",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint --no-fix",
+    "lint": "vue-cli-service lint --no-fix --max-warnings 0",
     "lint:fix": "vue-cli-service lint"
   },
   "dependencies": {
