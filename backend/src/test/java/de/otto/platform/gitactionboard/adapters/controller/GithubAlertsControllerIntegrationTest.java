@@ -23,6 +23,7 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.matching.EqualToPattern;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.WireMockExtension;
+import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 import lombok.SneakyThrows;
@@ -38,6 +39,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -178,9 +180,22 @@ class GithubAlertsControllerIntegrationTest {
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
 
+    @Autowired private CacheManager cacheManager;
+
+    @Autowired private NotificationRepository notificationRepository;
+
     @BeforeEach
     void setUp() {
       stubSecretsScanApiRequests();
+    }
+
+    @AfterEach
+    void tearDown() {
+      notificationRepository.deleteAll();
+      cacheManager.getCacheNames().stream()
+          .map(cacheManager::getCache)
+          .filter(Objects::nonNull)
+          .forEach(org.springframework.cache.Cache::clear);
     }
 
     @Test
@@ -202,6 +217,38 @@ class GithubAlertsControllerIntegrationTest {
 
       invokeGetApiAndValidate(
           mockMvc, SECURITY_SCAN_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldShareCacheWithOtherUsersWhileFetchingSecurityScanAlerts() {
+      final ResultMatcher resultMatcher = content().json(readFile(SECURITY_SCAN_ALERTS_JSON));
+
+      final String dummyToken1 = "dummyToken1";
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          SECURITY_SCAN_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          resultMatcher,
+          dummyToken1);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(4);
+      final EqualToPattern valuePattern = new EqualToPattern(dummyToken1);
+      verify(
+          getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
+              .withHeader(AUTHORIZATION, valuePattern));
+      verify(3, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+
+      WireMock.resetAllRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          SECURITY_SCAN_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          resultMatcher,
+          "dummyToken2");
       assertThat(WireMock.getAllServeEvents()).isEmpty();
     }
   }

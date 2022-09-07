@@ -23,6 +23,7 @@ import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.WireMockExtension;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import java.util.List;
+import java.util.Objects;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,6 +33,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -117,10 +119,12 @@ class GithubControllerIntegrationTest {
         "spring.cache.cache-names=cctray,cctrayXml,jobDetails",
         "spring.cache.type=caffeine"
       })
-  class WithCacheCctrayXml {
+  class WithCache {
     @Autowired private MockMvc mockMvc;
 
     @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+
+    @Autowired private CacheManager cacheManager;
 
     @BeforeEach
     void setUp() {
@@ -130,6 +134,10 @@ class GithubControllerIntegrationTest {
     @AfterEach
     void tearDown() {
       workflowJobDetailsCache.invalidateAll();
+      cacheManager.getCacheNames().stream()
+          .map(cacheManager::getCache)
+          .filter(Objects::nonNull)
+          .forEach(org.springframework.cache.Cache::clear);
     }
 
     @Test
@@ -155,30 +163,30 @@ class GithubControllerIntegrationTest {
 
       assertThat(WireMock.getAllServeEvents()).isEmpty();
     }
-  }
 
-  @Nested
-  @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
-  @SpringBootTest(
-      webEnvironment = RANDOM_PORT,
-      properties = {
-        "spring.cache.cache-names=cctray,cctrayXml,jobDetails",
-        "spring.cache.type=caffeine"
-      })
-  class WithCacheCctrayJson {
-    @Autowired private MockMvc mockMvc;
+    @Test
+    @SneakyThrows
+    void shouldShareCacheWithOtherUsersWhileFetchingCctrayXml() {
+      final ResultMatcher resultMatcher = content().xml(readFile(CCTRAY_XML_FILE_NAME));
+      final String dummyToken1 = "dummyToken1";
 
-    @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+      invokeGetApiAndValidate(
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher, dummyToken1);
 
-    @BeforeEach
-    void setUp() {
-      stubWorkflowApiRequests();
-    }
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+      final EqualToPattern valuePattern = new EqualToPattern(dummyToken1);
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
 
-    @AfterEach
-    void tearDown() {
-      workflowJobDetailsCache.invalidateAll();
+      WireMock.resetAllRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, resultMatcher, "dummyToken2");
+
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
     }
 
     @Test
@@ -203,13 +211,38 @@ class GithubControllerIntegrationTest {
 
       assertThat(WireMock.getAllServeEvents()).isEmpty();
     }
+
+    @Test
+    void shouldShareCacheWithOtherUsersWhileFetchingCctrayJson() {
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
+
+      final String dummyToken1 = "dummyToken1";
+      invokeGetApiAndValidate(
+          mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher, dummyToken1);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(5);
+
+      final EqualToPattern valuePattern = new EqualToPattern(dummyToken1);
+      verify(getRequestedFor(urlEqualTo(WORKFLOWS_URL)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUNS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(RUN_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_1)).withHeader(AUTHORIZATION, valuePattern));
+      verify(getRequestedFor(urlEqualTo(JOBS_URL_2)).withHeader(AUTHORIZATION, valuePattern));
+
+      WireMock.resetAllRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher, "dummyToken2");
+
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
+    }
   }
 
   @Nested
   @AutoConfigureMockMvc
   @ExtendWith(WireMockExtension.class)
   @SpringBootTest(webEnvironment = RANDOM_PORT)
-  class WithoutCacheForWorkflows {
+  class WithoutCache {
 
     @Autowired private MockMvc mockMvc;
 

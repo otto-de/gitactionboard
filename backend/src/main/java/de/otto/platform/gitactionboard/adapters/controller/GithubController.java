@@ -29,7 +29,7 @@ public class GithubController {
   private final PipelineService pipelineService;
   private final CruiseControlService cruiseControlService;
 
-  @Cacheable(cacheNames = "cctrayXml", sync = true)
+  @Cacheable(cacheNames = "cctrayXml", sync = true, keyGenerator = "sharedCacheKeyGenerator")
   @GetMapping(value = "/cctray.xml", produces = MediaType.APPLICATION_XML_VALUE)
   public ResponseEntity<String> getCctrayXml(
       @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
@@ -37,7 +37,7 @@ public class GithubController {
         .body(cruiseControlService.convertToXml(fetchJobs(accessToken)));
   }
 
-  @Cacheable(cacheNames = "cctray", sync = true)
+  @Cacheable(cacheNames = "cctray", sync = true, keyGenerator = "sharedCacheKeyGenerator")
   @GetMapping(value = "/cctray", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<Project>> getCctray(
       @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {

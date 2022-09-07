@@ -21,6 +21,11 @@ public class InMemoryNotificationRepository implements NotificationRepository {
     store.put(createId(notification.getId(), notification.getConnectorType()), notification);
   }
 
+  @Override
+  public void deleteAll() {
+    store.clear();
+  }
+
   private String createId(String id, String connectorType) {
     return String.format("%s_%s", id, connectorType);
   }

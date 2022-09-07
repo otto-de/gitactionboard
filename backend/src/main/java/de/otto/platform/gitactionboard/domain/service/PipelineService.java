@@ -32,7 +32,7 @@ public class PipelineService {
     this.repoNames = repoNames;
   }
 
-  @Cacheable(cacheNames = "jobDetails", sync = true)
+  @Cacheable(cacheNames = "jobDetails", sync = true, keyGenerator = "sharedCacheKeyGenerator")
   public List<JobDetails> fetchJobs(String accessToken) {
     final List<Workflow> workflows = fetchWorkflows(accessToken);
 

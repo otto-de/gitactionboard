@@ -31,7 +31,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class GithubAlertsController {
   private final SecretsScanService secretsScanService;
 
-  @Cacheable(cacheNames = "securityScanAlerts", sync = true)
+  @Cacheable(
+      cacheNames = "securityScanAlerts",
+      sync = true,
+      keyGenerator = "sharedCacheKeyGenerator")
   @GetMapping(value = "/secrets", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<SecretsScanAlert>> getSecretsScanAlerts(
       @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
