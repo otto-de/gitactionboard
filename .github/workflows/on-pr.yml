@@ -58,6 +58,9 @@ jobs:
     runs-on: ubuntu-20.04
     needs: verification
     if: ${{ github.actor == 'dependabot[bot]' }}
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Dependabot metadata
         id: metadata
