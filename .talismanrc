@@ -79,4 +79,6 @@ fileignoreconfig:
   checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
 - filename: frontend/src/services/apiService.js
   checksum: 5755b00d472d429aa922e96ffa37347a895d589a3dfc434c87d15559d9cf74a3
+allowed_patterns:
+- org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
 version: "1.0"
