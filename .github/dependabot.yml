@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "../backend/"
+    schedule:
+      interval: "daily"
+      time: "04:30"
+    labels:
+      - "java"
+    open-pull-requests-limit: 20
+
+  - package-ecosystem: "npm"
+    directory: "../frontend/"
+    schedule:
+      interval: "daily"
+      time: "04:30"
+    labels:
+      - "javascript"
+    open-pull-requests-limit: 20
