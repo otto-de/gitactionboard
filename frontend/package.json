@@ -13,7 +13,7 @@
   "dependencies": {
     "core-js": "^3.24.0",
     "vue": "^3.2.39",
-    "vue-router": "^4.1.3"
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@mockoon/cli": "^2.1.0",
