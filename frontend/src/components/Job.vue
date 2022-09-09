@@ -15,7 +15,7 @@
     </div>
     <button
       class="hide_button"
-      @click="toggleVisibility(job.name)"
+      @click="$emit('toggleVisibility', content.name)"
     >
       <HideIcon v-if="!hidden" />
       <ShowIcon v-if="hidden" />
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import preferences from "@/services/preferences";
 import HideIcon from "@/icons/HideIcon";
 import ShowIcon from "@/icons/ShowIcon";
 
@@ -41,6 +40,7 @@ export default {
       required: true
     }
   },
+  emits: ['toggleVisibility'],
   methods: {
     getBuildAndActivityStatus(job) {
       const lastBuildStatusIndicator = this.getBuildStatus(job.lastBuildStatus);
@@ -57,9 +57,6 @@ export default {
         default:
           return 'failure';
       }
-    },
-    toggleVisibility(jobName) {
-      preferences.toggleVisibility(jobName);
     }
   }
 }

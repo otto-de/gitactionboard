@@ -11,6 +11,7 @@
       :max-idle-time="maxIdleTime"
       content-displayer="Job"
       :fetch-contents="fetchContents"
+      :hide-by-key="'name'"
     />
   </div>
 </template>

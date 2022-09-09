@@ -35,23 +35,12 @@ class Preferences {
     this.__set__("max-idle-time", value);
   }
 
-  toggleVisibility(jobName) {
-    const hiddenJobs = this.getHiddenJobs();
-    const indexOfThisJobInList = hiddenJobs.indexOf(jobName);
-    if (indexOfThisJobInList !== -1) {
-      hiddenJobs.splice(indexOfThisJobInList, 1);
-    } else {
-      hiddenJobs.push(jobName);
-    }
-    this.__set__("hidden-jobs", JSON.stringify(hiddenJobs));
-  }
-
-  isJobHidden(jobName) {
-    return this.getHiddenJobs().indexOf(jobName) !== -1;
-  }
-
-  getHiddenJobs() {
+  get hiddenJobs() {
     return JSON.parse(this.__get__("hidden-jobs") || "[]");
+  }
+
+  set hiddenJobs(value) {
+    this.__set__("hidden-jobs", JSON.stringify(value));
   }
 }
 
