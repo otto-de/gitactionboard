@@ -70,6 +70,7 @@ docker run \
 | BASIC_AUTH_USER_DETAILS_FILE_PATH            | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
 | MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL          | Web hook url to send build failure notifications on Microsoft Teams (available from v2.1.0)                                     |    no    |                        |                                 |
 | ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING | Display Github secret scan alerts on dashboard (available from v3.0.0)                                                          |    no    |         false          |              true               |
+| ENABLE_GITHUB_CODE_SCAN_ALERTS_MONITORING    | Display code stanard violations on dashboard (available from v3.0.0)                                                            |    no    |         false          |              true               |
 
 ##### Notes
 
@@ -200,22 +201,42 @@ Access `http://localhost:<host machine port>/v1/alerts/secrets` to get security 
     "id": "hello-world::Amazon AWS Secret Access Key::3",
     "name": "hello-world :: Amazon AWS Secret Access Key",
     "url": "https://github.com/johndoe/hello-world/security/secret-scanning/3",
-    "createdAt": "2022-07-26T11:12:02.000Z",
-    "source": "SECRET_SCAN"
+    "createdAt": "2022-07-26T11:12:02.000Z"
   },
   {
     "id": "hello-world::Amazon AWS Access Key ID::2",
     "name": "hello-world :: Amazon AWS Access Key ID",
     "url": "https://github.com/johndoe/hello-world/security/secret-scanning/2",
-    "createdAt": "2022-07-26T09:39:07.000Z",
-    "source": "SECRET_SCAN"
+    "createdAt": "2022-07-26T09:39:07.000Z"
   },
   {
     "id": "hello-world::Amazon AWS Secret Access Key::1",
     "name": "hello-world :: Amazon AWS Secret Access Key",
     "url": "https://github.com/johndoe/hello-world/security/secret-scanning/1",
-    "createdAt": "2022-07-26T09:39:07.000Z",
-    "source": "SECRET_SCAN"
+    "createdAt": "2022-07-26T09:39:07.000Z"
+  }
+]
+```
+
+##### Code Scan Alerts Data in JSON format
+
+Access `http://localhost:<host machine port>/v1/alerts/code-standard-violations` to get code standard violation alerts data in **JSON** format
+
+###### Sample response
+
+```json
+[
+  {
+    "id": "hello-world::Arbitrary file write during zip extraction::4",
+    "name": "hello-world :: api-session-spec.ts:917-917 :: Arbitrary file write during zip extraction",
+    "url": "https://github.com/johndoe/hello-world/code-scanning/4",
+    "createdAt": "2020-02-13T12:29:18.000Z"
+  },
+  {
+    "id": "hello-world::Redundant else condition::3",
+    "name": "hello-world :: api-session-spec.ts:918-918 :: Redundant else condition",
+    "url": "https://github.com/johndoe/hello-world/code-scanning/3",
+    "createdAt": "2020-02-12T12:29:18.000Z"
   }
 ]
 ```

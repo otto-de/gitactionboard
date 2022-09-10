@@ -1,0 +1,14 @@
+[
+  {
+    "id": "hello-world::Arbitrary file write during zip extraction::4",
+    "name": "hello-world :: api-session-spec.ts:917-917 :: Arbitrary file write during zip extraction",
+    "url": "https://github.com/johndoe/hello-world/code-scanning/4",
+    "createdAt": "2020-02-13T12:29:18.000Z"
+  },
+  {
+    "id": "hello-world::Redundant else condition::3",
+    "name": "hello-world :: api-session-spec.ts:918-918 :: Redundant else condition",
+    "url": "https://github.com/johndoe/hello-world/code-scanning/3",
+    "createdAt": "2020-02-12T12:29:18.000Z"
+  }
+]

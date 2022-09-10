@@ -15,36 +15,36 @@ import org.junit.jupiter.params.provider.MethodSource;
 @Parallel
 class ConfigurationControllerTest {
 
-  private static final String FALSE_TEXT_VALUE = "false";
-
   public static Stream<Arguments> getArguments() {
     return Stream.of(
-        Arguments.of(List.of(BASIC_AUTH), FALSE_TEXT_VALUE, List.of(BASIC_AUTH), false),
-        Arguments.of(List.of(OAUTH2), FALSE_TEXT_VALUE, List.of(OAUTH2), false),
+        Arguments.of(List.of(BASIC_AUTH), false, false, List.of(BASIC_AUTH), false, false),
+        Arguments.of(List.of(OAUTH2), false, false, List.of(OAUTH2), false, false),
         Arguments.of(
-            List.of(BASIC_AUTH, OAUTH2), FALSE_TEXT_VALUE, List.of(BASIC_AUTH, OAUTH2), false),
-        Arguments.of(List.of(), FALSE_TEXT_VALUE, List.of(), false),
-        Arguments.of(List.of(), "true", List.of(), true),
-        Arguments.of(List.of(), "", List.of(), false),
-        Arguments.of(List.of(), "null", List.of(), false));
+            List.of(BASIC_AUTH, OAUTH2), false, false, List.of(BASIC_AUTH, OAUTH2), false, false),
+        Arguments.of(List.of(), true, false, List.of(), true, false),
+        Arguments.of(List.of(), false, true, List.of(), false, true));
   }
 
   @ParameterizedTest
   @MethodSource("getArguments")
   void shouldGiveValidConfig(
       List<AuthenticationMechanism> authenticationMechanisms,
-      String githubSecretsScanMonitoringEnabled,
+      Boolean secretsScanEnabled,
+      Boolean codeScanEnabled,
       List<AuthenticationMechanism> expectedAuthenticationMechanisms,
-      boolean expectedGithubSecretsScanMonitoringEnabled) {
+      boolean expectedSecretsScanEnabled,
+      boolean expectedCodeScanEnabled) {
 
     final ConfigurationController controller =
-        new ConfigurationController(authenticationMechanisms, githubSecretsScanMonitoringEnabled);
+        new ConfigurationController(authenticationMechanisms, secretsScanEnabled, codeScanEnabled);
     assertThat(controller.getAvailableConfig())
         .satisfies(
             config -> {
               assertThat(config.getAvailableAuths()).isEqualTo(expectedAuthenticationMechanisms);
               assertThat(config.getGithubSecretsScanMonitoringEnabled())
-                  .isEqualTo(expectedGithubSecretsScanMonitoringEnabled);
+                  .isEqualTo(expectedSecretsScanEnabled);
+              assertThat(config.getGithubCodeScanMonitoringEnabled())
+                  .isEqualTo(expectedCodeScanEnabled);
             });
   }
 }

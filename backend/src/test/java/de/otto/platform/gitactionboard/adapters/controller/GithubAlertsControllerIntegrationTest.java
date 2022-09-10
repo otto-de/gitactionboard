@@ -47,13 +47,21 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 
 @DirtiesContext
 @IntegrationTest
+@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class GithubAlertsControllerIntegrationTest {
   private static final String API_BASE_PATH = "/repos/johndoe/hello-world";
   private static final String SECURITY_SCAN_ALERTS_ENDPOINT = "/v1/alerts/secrets";
+  private static final String CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT =
+      "/v1/alerts/code-standard-violations";
   private static final String SECRETS_SCAN_ALERTS_URL =
       String.format("%s/secret-scanning/alerts?state=open&page=1&per_page=100", API_BASE_PATH);
+  private static final String CODE_SCAN_ALERTS_URL =
+      String.format("%s/code-scanning/alerts?state=open&page=1&per_page=100", API_BASE_PATH);
   private static final String SECRETS_SCAN_ALERTS_JSON = "testData/secretsScanAlerts.json";
   private static final String SECURITY_SCAN_ALERTS_JSON = "testData/securityScanAlerts.json";
+  private static final String GITHUB_CODE_SCAN_ALERTS_JSON = "testData/githubCodeScanAlerts.json";
+  private static final String CODE_STANDARD_VIOLATIONS_JSON =
+      "testData/codeStandardViolations.json";
 
   private void stubSecretsScanApiRequests() {
     stubFor(
@@ -63,6 +71,17 @@ class GithubAlertsControllerIntegrationTest {
                     .withStatus(SC_OK)
                     .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
                     .withBody(readFile(SECRETS_SCAN_ALERTS_JSON))));
+    stubFor(WireMock.post("/webhook/notifications").willReturn(aResponse().withStatus(SC_OK)));
+  }
+
+  private void stubCodeScanApiRequests() {
+    stubFor(
+        WireMock.get(CODE_SCAN_ALERTS_URL)
+            .willReturn(
+                aResponse()
+                    .withStatus(SC_OK)
+                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
+                    .withBody(readFile(GITHUB_CODE_SCAN_ALERTS_JSON))));
     stubFor(WireMock.post("/webhook/notifications").willReturn(aResponse().withStatus(SC_OK)));
   }
 
@@ -104,13 +123,44 @@ class GithubAlertsControllerIntegrationTest {
   @Nested
   @AutoConfigureMockMvc
   @ExtendWith(WireMockExtension.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {"ENABLE_GITHUB_CODE_SCAN_ALERTS_MONITORING=false"})
+  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
+  class DisableCodeStandardViolationAlerts {
+
+    @Autowired private MockMvc mockMvc;
+
+    @ParameterizedTest
+    @NullSource
+    @CsvSource(value = {"accessToken"})
+    @SneakyThrows
+    void shouldReturnNotFoundWhileFetchingCodeStandardViolationAlerts(String accessToken) {
+      final MockHttpServletRequestBuilder requestBuilder =
+          Objects.isNull(accessToken)
+              ? get(CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT)
+              : get(CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT).header(AUTHORIZATION, accessToken);
+
+      mockMvc.perform(requestBuilder).andExpect(status().isNotFound());
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @ExtendWith(WireMockExtension.class)
   @SpringBootTest(webEnvironment = RANDOM_PORT)
   class WithoutCacheForSecurityAlerts {
 
     @Autowired private MockMvc mockMvc;
+    @Autowired private NotificationRepository notificationRepository;
 
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
+
+    @AfterEach
+    void tearDown() {
+      notificationRepository.deleteAll();
+    }
 
     @Test
     @SneakyThrows
@@ -146,7 +196,7 @@ class GithubAlertsControllerIntegrationTest {
           dummyAccessToken);
 
       final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
-      assertThat(WireMock.getAllServeEvents()).hasSize(1);
+      assertThat(WireMock.getAllServeEvents()).hasSize(4);
       verify(
           getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
               .withHeader(AUTHORIZATION, valuePattern));
@@ -246,6 +296,174 @@ class GithubAlertsControllerIntegrationTest {
       invokeGetApiAndValidate(
           mockMvc,
           SECURITY_SCAN_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          resultMatcher,
+          "dummyToken2");
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @ExtendWith(WireMockExtension.class)
+  @SpringBootTest(webEnvironment = RANDOM_PORT)
+  class WithoutCacheForCodeScanAlerts {
+
+    @Autowired private MockMvc mockMvc;
+    @Autowired private NotificationRepository notificationRepository;
+
+    @Value("${wiremock.webhook.url}")
+    private String notificationWebHookUrl;
+
+    @AfterEach
+    void tearDown() {
+      notificationRepository.deleteAll();
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCodeStandardViolationAlerts() {
+      stubCodeScanApiRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON)));
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(3);
+      final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(
+          1,
+          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
+              .withHeader(AUTHORIZATION, valuePattern));
+      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCodeStandardViolationAlertsUsingAccessTokenFromCookie() {
+      stubCodeScanApiRequests();
+
+      final String dummyAccessToken = "dummy_access_token";
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON)),
+          dummyAccessToken);
+
+      final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
+      assertThat(WireMock.getAllServeEvents()).hasSize(3);
+      verify(
+          1,
+          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
+              .withHeader(AUTHORIZATION, valuePattern));
+      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+    }
+
+    @Test
+    @SneakyThrows
+    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+    void shouldNotThrowErrorIfCodeScanApiCallFails() {
+      stubFor(
+          WireMock.get(CODE_SCAN_ALERTS_URL)
+              .willReturn(
+                  aResponse()
+                      .withStatus(SC_NOT_FOUND)
+                      .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)));
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          content().json("[]"));
+
+      verify(1, getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL)));
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @ExtendWith(WireMockExtension.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {"spring.cache.cache-names=codeScanAlerts", "spring.cache.type=caffeine"})
+  class WithCacheCodeScanAlerts {
+    @Autowired private MockMvc mockMvc;
+
+    @Value("${wiremock.webhook.url}")
+    private String notificationWebHookUrl;
+
+    @Autowired private CacheManager cacheManager;
+
+    @Autowired private NotificationRepository notificationRepository;
+
+    @BeforeEach
+    void setUp() {
+      stubCodeScanApiRequests();
+    }
+
+    @AfterEach
+    void tearDown() {
+      notificationRepository.deleteAll();
+      cacheManager.getCacheNames().stream()
+          .map(cacheManager::getCache)
+          .filter(Objects::nonNull)
+          .forEach(org.springframework.cache.Cache::clear);
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldFetchCodeStandardViolationAlerts() {
+      final ResultMatcher resultMatcher = content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON));
+
+      invokeGetApiAndValidate(
+          mockMvc, CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(3);
+      final EqualToPattern valuePattern = new EqualToPattern("");
+      verify(
+          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
+              .withHeader(AUTHORIZATION, valuePattern));
+      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+      verify(1, getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL)));
+
+      WireMock.resetAllRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc, CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
+      assertThat(WireMock.getAllServeEvents()).isEmpty();
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldShareCacheWithOtherUsersWhileFetchingCodeStandardViolationAlerts() {
+      final ResultMatcher resultMatcher = content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON));
+
+      final String dummyToken1 = "dummyToken1";
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT,
+          APPLICATION_JSON_VALUE,
+          resultMatcher,
+          dummyToken1);
+
+      assertThat(WireMock.getAllServeEvents()).hasSize(3);
+      final EqualToPattern valuePattern = new EqualToPattern(dummyToken1);
+      verify(
+          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
+              .withHeader(AUTHORIZATION, valuePattern));
+      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+      verify(1, getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL)));
+
+      WireMock.resetAllRequests();
+
+      invokeGetApiAndValidate(
+          mockMvc,
+          CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT,
           APPLICATION_JSON_VALUE,
           resultMatcher,
           "dummyToken2");

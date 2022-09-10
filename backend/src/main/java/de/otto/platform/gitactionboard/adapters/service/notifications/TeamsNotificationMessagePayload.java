@@ -1,6 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardViolationDetails;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import java.util.List;
@@ -67,17 +68,34 @@ public class TeamsNotificationMessagePayload {
     return buildMessagePayload(summary, jobDetails.getUrl(), buildFacts(jobDetails));
   }
 
+  public static TeamsNotificationMessagePayload from(
+      CodeStandardViolationDetails codeStandardViolationDetails) {
+    final String summary = getSummary(codeStandardViolationDetails);
+    return buildMessagePayload(
+        summary, codeStandardViolationDetails.getUrl(), buildFacts(codeStandardViolationDetails));
+  }
+
   private static List<Fact> buildFacts(SecretsScanDetails secretsScanDetails) {
     return List.of(
-        Fact.builder().name("Repository:").value(secretsScanDetails.getRepoName()).build(),
-        Fact.builder().name("Secret Type:").value(secretsScanDetails.getName()).build());
+        buildFact("Repository:", secretsScanDetails.getRepoName()),
+        buildFact("Secret Type:", secretsScanDetails.getName()));
+  }
+
+  private static List<Fact> buildFacts(CodeStandardViolationDetails codeStandardViolationDetails) {
+    return List.of(
+        buildFact("Repository:", codeStandardViolationDetails.getRepoName()),
+        buildFact("Violation Type:", codeStandardViolationDetails.getName()));
   }
 
   private static List<Fact> buildFacts(JobDetails jobDetails) {
     return List.of(
-        Fact.builder().name("Repository:").value(jobDetails.getRepoName()).build(),
-        Fact.builder().name("Workflow Name:").value(jobDetails.getWorkflowName()).build(),
-        Fact.builder().name("Job Name:").value(jobDetails.getName()).build());
+        buildFact("Repository:", jobDetails.getRepoName()),
+        buildFact("Workflow Name:", jobDetails.getWorkflowName()),
+        buildFact("Job Name:", jobDetails.getName()));
+  }
+
+  private static Fact buildFact(String name, String value) {
+    return Fact.builder().name(name).value(value).build();
   }
 
   private static TeamsNotificationMessagePayload buildMessagePayload(
@@ -101,12 +119,19 @@ public class TeamsNotificationMessagePayload {
 
   private static String getSummary(SecretsScanDetails secretsScanDetails) {
     return String.format(
-        "[%s] Secret found: %s", secretsScanDetails.getRepoName(), secretsScanDetails.getName());
+        "[%s] Exposed secret found: %s",
+        secretsScanDetails.getRepoName(), secretsScanDetails.getName());
   }
 
   private static String getSummary(JobDetails jobDetails) {
     return String.format(
         "[%s] Run failed: %s::%s",
         jobDetails.getRepoName(), jobDetails.getWorkflowName(), jobDetails.getName());
+  }
+
+  private static String getSummary(CodeStandardViolationDetails codeStandardViolationDetails) {
+    return String.format(
+        "[%s] Code standard violation found: %s",
+        codeStandardViolationDetails.getRepoName(), codeStandardViolationDetails.getName());
   }
 }

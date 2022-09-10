@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,22 +15,25 @@ import org.springframework.web.bind.annotation.RestController;
 @SuppressFBWarnings("EI_EXPOSE_REP2")
 public class ConfigurationController {
   private final List<AuthenticationMechanism> authenticationMechanisms;
-  private final Boolean githubSecretsScanMonitoringEnabled;
+  private final Boolean secretsScanEnabled;
+  private final Boolean codeScanEnabled;
 
   @Autowired
   public ConfigurationController(
       List<AuthenticationMechanism> authenticationMechanisms,
-      @Value("${ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING:false}")
-          String githubSecretsScanMonitoringEnabled) {
+      @Qualifier("enableSecretsScanMonitoring") Boolean secretsScanEnabled,
+      @Qualifier("enableCodeScanMonitoring") Boolean codeScanEnabled) {
     this.authenticationMechanisms = authenticationMechanisms;
-    this.githubSecretsScanMonitoringEnabled = Boolean.valueOf(githubSecretsScanMonitoringEnabled);
+    this.secretsScanEnabled = secretsScanEnabled;
+    this.codeScanEnabled = codeScanEnabled;
   }
 
   @GetMapping(path = "/config")
   public Config getAvailableConfig() {
     return Config.builder()
         .availableAuths(List.copyOf(authenticationMechanisms))
-        .githubSecretsScanMonitoringEnabled(githubSecretsScanMonitoringEnabled)
+        .githubSecretsScanMonitoringEnabled(secretsScanEnabled)
+        .githubCodeScanMonitoringEnabled(codeScanEnabled)
         .build();
   }
 
@@ -39,5 +42,6 @@ public class ConfigurationController {
   public static class Config {
     List<AuthenticationMechanism> availableAuths;
     Boolean githubSecretsScanMonitoringEnabled;
+    Boolean githubCodeScanMonitoringEnabled;
   }
 }

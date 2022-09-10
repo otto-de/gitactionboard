@@ -6,6 +6,8 @@ import static de.otto.platform.gitactionboard.adapters.service.notifications.Tea
 import static de.otto.platform.gitactionboard.adapters.service.notifications.TeamsNotificationMessagePayload.Target;
 import static de.otto.platform.gitactionboard.adapters.service.notifications.TeamsNotificationMessagePayload.TeamsNotificationMessagePayloadBuilder;
 import static de.otto.platform.gitactionboard.adapters.service.notifications.TeamsNotificationMessagePayload.builder;
+import static de.otto.platform.gitactionboard.fixtures.CodeStandardViolationFixture.CODE_STANDARD_VIOLATION_NAME;
+import static de.otto.platform.gitactionboard.fixtures.CodeStandardViolationFixture.CODE_STANDARD_VIOLATION_URL;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.JOB_NAME;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.JOB_URL;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.WORKFLOW_NAME;
@@ -20,12 +22,24 @@ public class TeamsNotificationsMessagePayloadFixture {
 
   public static TeamsNotificationMessagePayloadBuilder
       getTeamsNotificationPayloadBuilderForSecret() {
-    final String summary = "[%s] Secret found: %s".formatted(REPO_NAME, SECRETS_SCAN_DETAILS_NAME);
+    final String summary =
+        "[%s] Exposed secret found: %s".formatted(REPO_NAME, SECRETS_SCAN_DETAILS_NAME);
     final List<Fact> facts =
         List.of(
             Fact.builder().name("Repository:").value(REPO_NAME).build(),
             Fact.builder().name("Secret Type:").value(SECRETS_SCAN_DETAILS_NAME).build());
     return getTeamsNotificationMessagePayloadBuilder(summary, facts, SECRETS_SCAN_DETAILS_URL);
+  }
+
+  public static TeamsNotificationMessagePayloadBuilder
+      getTeamsNotificationPayloadBuilderForCodeStandardViolation() {
+    final String summary =
+        "[%s] Code standard violation found: %s".formatted(REPO_NAME, CODE_STANDARD_VIOLATION_NAME);
+    final List<Fact> facts =
+        List.of(
+            Fact.builder().name("Repository:").value(REPO_NAME).build(),
+            Fact.builder().name("Violation Type:").value(CODE_STANDARD_VIOLATION_NAME).build());
+    return getTeamsNotificationMessagePayloadBuilder(summary, facts, CODE_STANDARD_VIOLATION_URL);
   }
 
   public static TeamsNotificationMessagePayloadBuilder getTeamsNotificationPayloadBuilderForJob() {

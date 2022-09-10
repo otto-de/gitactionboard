@@ -16,9 +16,9 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: 728e367c7b7a80b9f78d8bfddb7a265c1a43f527f7fb016493043ad8680831bf
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
-  checksum: fc49eb7c4f334aa2fb04d4b348abb2a4703ebbc4dfe5af181d1994c512c2b0be
+  checksum: da405260c3c35d3b7cc549da2081befdf166a8152d808d875f3e312aac77760d
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsController.java
-  checksum: 1ffad3e5f4b6e332f6a77bb11212f156afdeb6cb07349ad977827502048f9466
+  checksum: dc7999781a251f7e5bc2b7e51c7ee80e217287aa835b74c3a0f668b987debca8
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubController.java
   checksum: c32406ebbcbeb0dcab970022b3b32eab2596c988b8fda7ab6ae9400ff3aaf779
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
@@ -26,7 +26,9 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayload.java
   checksum: 2f599a9a976cb12392a3dd607c307a28a23e35cf145fa7845f5b78010b026948
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsService.java
-  checksum: 3be9d45712964d1c84ecacb8c5f3d597d5bcc56330cec411a4cbab37227e81a9
+  checksum: ced647777c1305f75ae86f19de56893c1221dbb216609a47ffa4771d107065ad
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/config/FeaturesConfig.java
+  checksum: d6ab1ae1e59159c93cd9daeafea594901eb07df95a014d4b4ec3fe47a155330e
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/NotificationsService.java
   checksum: 6ea45baa4f3dfa331503a91f8dabc6d13b692d8deeef44fa7fa583c16a66edb5
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/PipelineService.java
@@ -41,16 +43,22 @@ fileignoreconfig:
   checksum: f503b825cb26fc3272c272011e721f16f095b7ed6f0d1515efbb2e29799f263d
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerTest.java
   checksum: e99bee4caebdc953d4fbac4655813167d3f87679247074e0683503639ddeef07
+- filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayloadTest.java
+  checksum: efdf67477b04bf07df791fcdad4735da5d76502c6e28a4fbf9cef5267ed75a87
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsServiceTest.java
   checksum: b529c189fc3ccd499a2cef6e7c11245ff2367731f8fd452f452ef19c0be14833
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/domain/scan/SecretsScanAlertTest.java
   checksum: 6929cc77857ab2df420afdf25c0dbdb105c70fd7c7d035472c78df5aae14ff2c
+- filename: backend/src/test/java/de/otto/platform/gitactionboard/domain/service/SecretsScanServiceTest.java
+  checksum: 46294abaf91cdba7d13fe2a48b950b323fa8b8ea72013a0aeba2cea3bc357d99
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/SecretsScanDetailsFixtures.java
   checksum: 5fc33e775aa2694b4400c9a1c787a824b04decd058d3e1c299c3ca2852333657
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/TeamsNotificationsMessagePayloadFixture.java
-  checksum: 90fdf5b14d5c43363a9b58d32cfc7090a26a80bd8633425ce0945119e2e1f202
+  checksum: 03c114ed197443db6a5917da996dcc0d6ad08ed78e1dcc9bd09103bceba1d84f
 - filename: backend/src/test/resources/.htpasswd
   checksum: 2e31e64b696f0f9267a4ebd694d90b27c6e0c4cefdd11349d199e185daab2d6c
+- filename: backend/src/test/resources/testData/githubCodeScanAlerts.json
+  checksum: 141bdf28e0d791a61b1ae0ba5ed976effa18b5b4a2d11813f32ce65b44a194a1
 - filename: backend/src/test/resources/testData/secretsScanAlerts.json
   checksum: 20a8516a61fb4fe163d17f0bcee078b5371c8f267be0cd07370e77355e0cc623
 - filename: backend/src/test/resources/testData/securityScanAlerts.json

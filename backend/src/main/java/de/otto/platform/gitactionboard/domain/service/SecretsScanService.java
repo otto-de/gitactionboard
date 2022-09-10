@@ -1,6 +1,7 @@
 package de.otto.platform.gitactionboard.domain.service;
 
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
+import de.otto.platform.gitactionboard.domain.service.notifications.NotificationsService;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Collection;
 import java.util.List;

@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.domain.service;
 
+import de.otto.platform.gitactionboard.domain.service.notifications.NotificationsService;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
