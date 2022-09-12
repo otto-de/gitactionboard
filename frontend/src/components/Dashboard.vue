@@ -6,7 +6,7 @@
   <template v-if="!loading">
     <div class="content-container">
       <template
-        v-for="content in visibleContent"
+        v-for="content in visibleContents"
         :key="content"
       >
         <component
@@ -18,11 +18,11 @@
       </template>
     </div>
     <div
-      v-if="hiddenContent.length > 0"
+      v-if="hiddenContents.length > 0"
       class="hidden-elements"
     >
       <hr>
-      {{ hiddenContent.length }} hidden jobs
+      {{ hiddenContents.length }} hidden {{ nameOfItems }}
       <button @click="toggleHiddenElements()">
         {{ showHiddenElements ? 'hide' : 'show' }}
       </button>
@@ -31,7 +31,7 @@
         class="content-container"
       >
         <template
-          v-for="content in hiddenContent"
+          v-for="content in hiddenContents"
           :key="content"
         >
           <component
@@ -80,6 +80,11 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    nameOfItems: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data() {
@@ -94,10 +99,10 @@ export default {
     }
   },
   computed: {
-    visibleContent() {
+    visibleContents() {
       return this.contents.filter(this.isVisible)
     },
-    hiddenContent() {
+    hiddenContents() {
       return this.contents.filter(this.isHidden)
     }
   },

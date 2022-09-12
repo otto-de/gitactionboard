@@ -17,19 +17,17 @@
       class="hide_button"
       @click="$emit('toggleVisibility', content.name)"
     >
-      <HideIcon v-if="!hidden" />
-      <ShowIcon v-if="hidden" />
+      <HideOrShowIcon :display-hide-button="!hidden" />
     </button>
   </div>
 </template>
 
 <script>
-import HideIcon from "@/icons/HideIcon";
-import ShowIcon from "@/icons/ShowIcon";
+import HideOrShowIcon from "@/icons/HideOrShowIcon";
 
 export default {
   name: "Job",
-  components: {HideIcon, ShowIcon},
+  components: {HideOrShowIcon},
   props: {
     content: {
       type: Object,
@@ -129,12 +127,6 @@ a {
   border: none;
   cursor: pointer;
   text-align: right;
-}
-
-.hide_button svg {
-  width: 20px;
-  height: 20px;
-  fill: white;
 }
 
 </style>
