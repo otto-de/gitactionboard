@@ -44,6 +44,9 @@ export const fetchCctrayJson = () =>
 export const fetchSecretAlerts = () =>
   fetchJsonContent("./v1/alerts/secrets", fetchAccessToken());
 
+export const fetchCodeStandardViolations = () =>
+  fetchJsonContent("./v1/alerts/code-standard-violations", fetchAccessToken());
+
 export const authenticate = (username, password) => {
   return fetch("./login/basic", {
     method: "POST",

@@ -13,9 +13,22 @@ export const setGithubSecretsScanMonitoringEnabled = (
   );
 };
 
+export const setGithubCodeScanMonitoringEnabled = (
+  githubSecretsScanMonitoringEnabled
+) => {
+  storageService.setItem(
+    "githubCodeScanMonitoringEnabled",
+    JSON.stringify(githubSecretsScanMonitoringEnabled)
+  );
+};
+
 export const getAvailableAuths = () =>
   JSON.parse(storageService.getItem("availableAuths"));
 
 export const getGithubSecretsScanMonitoringEnabled = () =>
   JSON.parse(storageService.getItem("githubSecretsScanMonitoringEnabled")) ||
+  false;
+
+export const getGithubCodeScanMonitoringEnabled = () =>
+  JSON.parse(storageService.getItem("githubCodeScanMonitoringEnabled")) ||
   false;
