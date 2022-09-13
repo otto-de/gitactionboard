@@ -114,7 +114,7 @@ export default {
       this.loading = false;
       this.renderPageTimer = setInterval(this.renderPage, 5000);
     });
-    this.hiddenElements = preferences.hiddenJobs
+    this.hiddenElements = preferences.hiddenElements[this.nameOfItems] || []
   },
   beforeUnmount() {
     clearInterval(this.renderPageTimer);
@@ -163,7 +163,7 @@ export default {
       } else {
         this.hiddenElements.push(key);
       }
-      preferences.hiddenJobs = this.hiddenElements
+      preferences.hiddenElements = {...preferences.hiddenElements, [this.nameOfItems]: this.hiddenElements}
     },
     isVisible(content) {
       return !this.isHidden(content)

@@ -35,12 +35,12 @@ class Preferences {
     this.__set__("max-idle-time", value);
   }
 
-  get hiddenJobs() {
-    return JSON.parse(this.__get__("hidden-jobs") || "[]");
+  get hiddenElements() {
+    return JSON.parse(this.__get__("hidden-elements") || "{}");
   }
 
-  set hiddenJobs(value) {
-    this.__set__("hidden-jobs", JSON.stringify(value));
+  set hiddenElements(value) {
+    this.__set__("hidden-elements", JSON.stringify(value));
   }
 }
 
