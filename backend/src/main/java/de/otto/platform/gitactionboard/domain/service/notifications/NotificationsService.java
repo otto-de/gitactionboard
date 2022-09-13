@@ -1,4 +1,4 @@
-package de.otto.platform.gitactionboard.domain.service;
+package de.otto.platform.gitactionboard.domain.service.notifications;
 
 import de.otto.platform.gitactionboard.domain.Notification;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;

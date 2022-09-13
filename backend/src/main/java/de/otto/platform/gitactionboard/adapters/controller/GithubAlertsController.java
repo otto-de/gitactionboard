@@ -4,12 +4,13 @@ import static de.otto.platform.gitactionboard.adapters.controller.Utils.createRe
 import static de.otto.platform.gitactionboard.adapters.controller.Utils.decodeUrlEncodedText;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
+import de.otto.platform.gitactionboard.domain.service.CodeStandardViolationsScanService;
 import de.otto.platform.gitactionboard.domain.service.SecretsScanService;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,15 +22,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/v1/alerts")
-@ConditionalOnProperty(
-    value = "ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING",
-    havingValue = "true",
-    matchIfMissing = false)
 public class GithubAlertsController {
   private final SecretsScanService secretsScanService;
+  private final CodeStandardViolationsScanService codeStandardViolationsScanService;
+  private final Boolean enableSecretsScanMonitoring;
+  private final Boolean enableCodeScanMonitoring;
+
+  @Autowired
+  public GithubAlertsController(
+      SecretsScanService secretsScanService,
+      CodeStandardViolationsScanService codeStandardViolationsScanService,
+      @Qualifier("enableSecretsScanMonitoring") Boolean secretsScanEnabled,
+      @Qualifier("enableCodeScanMonitoring") Boolean codeScanEnabled) {
+    this.secretsScanService = secretsScanService;
+    this.codeStandardViolationsScanService = codeStandardViolationsScanService;
+    this.enableSecretsScanMonitoring = secretsScanEnabled;
+    this.enableCodeScanMonitoring = codeScanEnabled;
+  }
 
   @Cacheable(
       cacheNames = "securityScanAlerts",
@@ -38,11 +49,30 @@ public class GithubAlertsController {
   @GetMapping(value = "/secrets", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<SecretsScanAlert>> getSecretsScanAlerts(
       @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
+
+    if (!enableSecretsScanMonitoring) return ResponseEntity.notFound().build();
+
     final List<SecretsScanAlert> secretsScanAlerts =
         secretsScanService.fetchExposedSecrets(decodeUrlEncodedText(accessToken)).stream()
             .map(SecretsScanAlert::from)
             .collect(Collectors.toList());
 
     return createResponseEntityBodyBuilder().body(secretsScanAlerts);
+  }
+
+  @Cacheable(cacheNames = "codeScanAlerts", sync = true, keyGenerator = "sharedCacheKeyGenerator")
+  @GetMapping(value = "/code-standard-violations", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<List<CodeStandardViolationAlert>> getCodeStandardViolationAlerts(
+      @RequestHeader(value = AUTHORIZATION, required = false) String accessToken) {
+    if (!enableCodeScanMonitoring) return ResponseEntity.notFound().build();
+
+    final List<CodeStandardViolationAlert> codeStandardViolationAlerts =
+        codeStandardViolationsScanService
+            .fetchCodeViolations(decodeUrlEncodedText(accessToken))
+            .stream()
+            .map(CodeStandardViolationAlert::from)
+            .collect(Collectors.toList());
+
+    return createResponseEntityBodyBuilder().body(codeStandardViolationAlerts);
   }
 }

@@ -79,7 +79,7 @@
       "responses": [
         {
           "uuid": "30cd0af0-5709-4ce8-9616-5cdb0267bf88",
-          "body": "{\n  \"availableAuths\": [],\n  \"githubSecretsScanMonitoringEnabled\": true\n}",
+          "body": "{\n  \"availableAuths\": [],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true\n}",
           "latency": 100,
           "statusCode": 200,
           "label": "",
@@ -108,7 +108,42 @@
           "latency": 500,
           "statusCode": 200,
           "label": "",
-          "headers": [],
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "2d89f277-487e-4ecf-bcaa-8ebc728b993c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/alerts/code-standard-violations",
+      "responses": [
+        {
+          "uuid": "27e30cd7-782b-49c0-9de9-21335e8084f4",
+          "body": "[\n  {\n    \"id\": \"hello-world::Arbitrary file write during zip extraction::4\",\n    \"name\": \"hello-world :: api-session-spec.ts:917-917 :: Arbitrary file write during zip extraction\",\n    \"url\": \"https://github.com/johndoe/hello-world/code-scanning/4\",\n    \"createdAt\": \"2020-02-13T12:29:18.000Z\"\n  },\n  {\n    \"id\": \"hello-world::Redundant else condition::3\",\n    \"name\": \"hello-world :: api-session-spec.ts:918-918 :: Redundant else condition\",\n    \"url\": \"https://github.com/johndoe/hello-world/code-scanning/3\",\n    \"createdAt\": \"2020-02-12T12:29:18.000Z\"\n  }\n]",
+          "latency": 500,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
           "filePath": "",
           "sendFileAsBody": false,
           "rules": [],

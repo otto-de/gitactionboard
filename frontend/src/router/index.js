@@ -6,6 +6,7 @@ import { isAuthenticate } from "@/services/authenticationService";
 import SecretsDashboard from "@/components/SecretsDashboard";
 import { getAvailableAuths } from "@/services/utils";
 import WorkflowDashboard from "@/components/WorkflowDashboard";
+import CodeStandardViolationsDashboard from "@/components/CodeStandardViolationsDashboard";
 
 const isAuthenticationRequired = () => {
   const availableAuths = getAvailableAuths();
@@ -53,6 +54,14 @@ const routes = [
     path: "/secrets",
     name: "Secrets",
     component: SecretsDashboard,
+    beforeEnter(to, from, next) {
+      validateAuthentication(next);
+    },
+  },
+  {
+    path: "/code-standard-violations",
+    name: "Code Standard Violations",
+    component: CodeStandardViolationsDashboard,
     beforeEnter(to, from, next) {
       validateAuthentication(next);
     },

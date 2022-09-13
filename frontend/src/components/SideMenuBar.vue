@@ -17,10 +17,19 @@
         v-if="githubSecretsScanMonitoringEnabled"
         :is-clicked="isOpened"
         :clickable="!activeMap.secrets"
-        menu-item-name="Secrets"
+        menu-item-name="Exposed Secrets"
         icon-name="secrets"
         :is-active="activeMap.secrets"
         @secrets="redirectToSecretsPage"
+      />
+      <MenuItems
+        v-if="isGithubCodeScanMonitoringEnabled"
+        :is-clicked="isOpened"
+        :clickable="!activeMap['code-standard-violations']"
+        menu-item-name="Standard Violations"
+        icon-name="codeStandardViolations"
+        :is-active="activeMap['code-standard-violations']"
+        @code-standard-violations="redirectToCodeStandardViolationsPage"
       />
       <MenuItems
         :is-clicked="isOpened"
@@ -55,7 +64,7 @@ import HamburgerMenuIcon from "@/icons/HamburgerMenuIcon";
 import MenuItems from "@/components/MenuItems";
 import router from "@/router";
 import {clearCookies, getName, isAuthenticate} from "@/services/authenticationService";
-import { getGithubSecretsScanMonitoringEnabled } from "@/services/utils";
+import {getGithubCodeScanMonitoringEnabled, getGithubSecretsScanMonitoringEnabled} from "@/services/utils";
 
 export default {
   name: "SideMenuBar",
@@ -71,7 +80,8 @@ export default {
         'dashboard': false,
         'preferences': false,
         'secrets': false,
-        'logout': false
+        'logout': false,
+        'code-standard-violations': false,
       };
       const currentPath = this.currentPath;
 
@@ -84,6 +94,9 @@ export default {
     },
     githubSecretsScanMonitoringEnabled(){
       return getGithubSecretsScanMonitoringEnabled()
+    },
+    isGithubCodeScanMonitoringEnabled(){
+      return getGithubCodeScanMonitoringEnabled();
     },
     currentPath() {
       return router.currentRoute.value.path;
@@ -104,6 +117,9 @@ export default {
     },
     redirectToSecretsPage() {
       router.push("/secrets")
+    },
+    redirectToCodeStandardViolationsPage() {
+      router.push("/code-standard-violations")
     },
     redirectDashboardPage() {
       router.push("/dashboard")

@@ -10,6 +10,7 @@
     />
     <SettingsIcon v-if="iconName==='settings'" />
     <SecretsIcon v-if="iconName==='secrets'" />
+    <CodeStandardViolationsIcon v-if="iconName==='codeStandardViolations'" />
     <LogoutIcon v-if="iconName==='logout'" />
     <DashboardIcon v-if="iconName==='dashboard'" />
     <p
@@ -28,9 +29,10 @@ import DashboardIcon from "@/icons/DashboardIcon";
 import { getAvatarUrl } from "@/services/authenticationService";
 import ProfilePicture from "@/components/ProfilePicture";
 import SecretsIcon from "@/icons/SecretsIcon";
+import CodeStandardViolationsIcon from "@/icons/CodeStandardViolationsIcon";
 export default {
   name: "MenuItems",
-  components: {SecretsIcon, ProfilePicture, DashboardIcon, LogoutIcon, SettingsIcon},
+  components: {CodeStandardViolationsIcon, SecretsIcon, ProfilePicture, DashboardIcon, LogoutIcon, SettingsIcon},
   props: {
     isClicked: Boolean,
     menuItemName: {

@@ -17,22 +17,29 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
     - [Configurations](#configurations)
       - [Authentication](#authentication)
         - [Basic Authentication](#basic-authentication)
-        - [Github OAuth2](#github-oauth2)
+        - [GitHub OAuth2](#github-oauth2)
     - [UI Dashboard](#ui-dashboard)
       - [UI Dashboard Configurations](#ui-dashboard-configurations)
     - [API](#api)
+      - [Workflows Data in CCtray XML format](#workflows-data-in-cctray-xml-format)
+      - [Workflows Data in CCtray JSON format](#workflows-data-in-cctray-json-format)
+      - [Secrets Scan Alerts Data in JSON format](#secrets-scan-alerts-data-in-json-format)
+      - [Code Scan Alerts Data in JSON format](#code-scan-alerts-data-in-json-format)
 - [Developers Guide](#developers-guide)
   - [Prerequisites](#prerequisites)
   - [Tests](#tests)
   - [Formatting](#formatting)
   - [Security Checks](#security-checks)
   - [Run application locally](#run-application-locally)
+    - [Run backend with frontend](#run-backend-with-frontend)
+    - [Run only backend](#run-only-backend)
+    - [Run only frontend with mock data](#run-only-frontend-with-mock-data)
   - [Commits](#commits)
     - [Types](#types)
   - [Build docker image](#build-docker-image)
-  - [Generate Changelog](#generate-changelog)
+  - [Generate changelog](#generate-changelog)
   - [Release a new Docker image](#release-a-new-docker-image)
-- [Contributors](#contributors-)
+- [Contributors ✨](#contributors-)
 
 ## Changelog
 
@@ -65,13 +72,14 @@ docker run \
 | GITHUB_ACCESS_TOKEN                          | Access token to fetch data from github. This is required to fetch data from a private repository when github oauth2 is disabled |    no    |                        |                                 |
 | DOMAIN_NAME                                  | Hostname of github                                                                                                              |    no    | https://api.github.com |                                 |
 | CACHE_EXPIRES_AFTER                          | Duration (in seconds) to cache the fetched data                                                                                 |    no    |           60           |                                 |
-| GITHUB_OAUTH2_CLIENT_ID                      | Github oauth2 client ID                                                                                                         |    no    |                        |                                 |
+| GITHUB_OAUTH2_CLIENT_ID                      | GitHub oauth2 client ID                                                                                                         |    no    |                        |                                 |
 | GITHUB_OAUTH2_CLIENT_SECRET                  | Gihub oauth2 client secret                                                                                                      |    no    |                        |                                 |
 | BASIC_AUTH_USER_DETAILS_FILE_PATH            | File location for basic auth user details                                                                                       |    no    |                        |         /src/.htpasswd          |
 | MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL          | Web hook url to send build failure notifications on Microsoft Teams (available from v2.1.0)                                     |    no    |                        |                                 |
-| ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING | Display Github secret scan alerts on dashboard (available from v3.0.0)                                                          |    no    |         false          |              true               |
+| ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING | Display GitHub secret scan alerts on dashboard (available from v3.0.0)                                                          |    no    |         false          |              true               |
+| ENABLE_GITHUB_CODE_SCAN_ALERTS_MONITORING    | Display code stanard violations on dashboard (available from v3.0.0)                                                            |    no    |         false          |              true               |
 
-##### Notes
+###### Notes
 
 - To create a personal access token follow the instructions present [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and choose **repo** as a scope fot this token.
 - To create incoming webhook connection for MS Teams channel follow the instructions present [here](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook#create-an-incoming-webhook-1).
@@ -92,17 +100,17 @@ You can run the following command to create the file using CLI,
 htpasswd -bnBC 10 <username> <password> >> <file location>
 ```
 
-###### Github OAuth2
+###### GitHub OAuth2
 
-In gitactionboard, Github OAuth2 login can be easily setup using `GITHUB_OAUTH2_CLIENT_ID` and `GITHUB_OAUTH2_CLIENT_SECRET` environment variable.
-To be able to have a valid client id and client secret from github, we need to create a Github OAuth app first. To create a gihub oauth app, please
+In gitactionboard, GitHub OAuth2 login can be easily setup using `GITHUB_OAUTH2_CLIENT_ID` and `GITHUB_OAUTH2_CLIENT_SECRET` environment variable.
+To be able to have a valid client id and client secret from GitHub, we need to create a GitHub OAuth app first. To create a GitHub oauth app, please
 follow [this link](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app).
 
 **Note** you need to add _Authorization callback URL_ as `<homepage url>/login/oauth2/code/github`.
 
 :warning: In-case the gitactionboard server is running behind a proxy, you need to set the above _Authorization callback URL_ to `SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GITHUB_REDIRECT-URI` environment variable.
 
-:warning: In-case of Github OAuth2 is disabled, gitactionboard will make use of `GITHUB_ACCESS_TOKEN` to fetch data from github for private repositories.
+:warning: In-case of GitHub OAuth2 is disabled, gitactionboard will make use of `GITHUB_ACCESS_TOKEN` to fetch data from GitHub for private repositories.
 
 #### UI Dashboard
 
@@ -200,22 +208,42 @@ Access `http://localhost:<host machine port>/v1/alerts/secrets` to get security 
     "id": "hello-world::Amazon AWS Secret Access Key::3",
     "name": "hello-world :: Amazon AWS Secret Access Key",
     "url": "https://github.com/johndoe/hello-world/security/secret-scanning/3",
-    "createdAt": "2022-07-26T11:12:02.000Z",
-    "source": "SECRET_SCAN"
+    "createdAt": "2022-07-26T11:12:02.000Z"
   },
   {
     "id": "hello-world::Amazon AWS Access Key ID::2",
     "name": "hello-world :: Amazon AWS Access Key ID",
     "url": "https://github.com/johndoe/hello-world/security/secret-scanning/2",
-    "createdAt": "2022-07-26T09:39:07.000Z",
-    "source": "SECRET_SCAN"
+    "createdAt": "2022-07-26T09:39:07.000Z"
   },
   {
     "id": "hello-world::Amazon AWS Secret Access Key::1",
     "name": "hello-world :: Amazon AWS Secret Access Key",
     "url": "https://github.com/johndoe/hello-world/security/secret-scanning/1",
-    "createdAt": "2022-07-26T09:39:07.000Z",
-    "source": "SECRET_SCAN"
+    "createdAt": "2022-07-26T09:39:07.000Z"
+  }
+]
+```
+
+##### Code Scan Alerts Data in JSON format
+
+Access `http://localhost:<host machine port>/v1/alerts/code-standard-violations` to get code standard violation alerts data in **JSON** format
+
+###### Sample response
+
+```json
+[
+  {
+    "id": "hello-world::Arbitrary file write during zip extraction::4",
+    "name": "hello-world :: api-session-spec.ts:917-917 :: Arbitrary file write during zip extraction",
+    "url": "https://github.com/johndoe/hello-world/code-scanning/4",
+    "createdAt": "2020-02-13T12:29:18.000Z"
+  },
+  {
+    "id": "hello-world::Redundant else condition::3",
+    "name": "hello-world :: api-session-spec.ts:918-918 :: Redundant else condition",
+    "url": "https://github.com/johndoe/hello-world/code-scanning/3",
+    "createdAt": "2020-02-12T12:29:18.000Z"
   }
 ]
 ```
@@ -356,7 +384,7 @@ To build docker image run:
 ./run.sh generate-changelog
 ```
 
-- Once changelog is generated, verify the changelog by updating the correct version and push the changes to github
+- Once changelog is generated, verify the changelog by updating the correct version and push the changes to GitHub
 
 ### Release a new Docker image
 
@@ -370,7 +398,7 @@ A new docker image can be published to [docker hub](https://hub.docker.com/repos
 ./run.sh bump-version <major|minor|patch>
 ```
 
-- Push the newly created **tag** to github
+- Push the newly created **tag** to GitHub
 
 ```shell
 git push origin "$(git describe --tags)"

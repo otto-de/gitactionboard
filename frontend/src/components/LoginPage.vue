@@ -83,7 +83,11 @@ import {isAuthenticate} from "@/services/authenticationService";
 import Spinner from "@/components/Spinner";
 import {watch} from "vue";
 import Invalid from "@/icons/InvalidIcon";
-import {setAvailableAuths, setGithubSecretsScanMonitoringEnabled} from "@/services/utils";
+import {
+  setAvailableAuths,
+  setGithubCodeScanMonitoringEnabled,
+  setGithubSecretsScanMonitoringEnabled
+} from "@/services/utils";
 
 
 export default {
@@ -116,11 +120,12 @@ export default {
       }
     })
     fetchConfig()
-        .then(({availableAuths, githubSecretsScanMonitoringEnabled}) => {
+        .then(({availableAuths, githubSecretsScanMonitoringEnabled, githubCodeScanMonitoringEnabled}) => {
           this.availableAuths = availableAuths;
           this.loading = false;
           setAvailableAuths(availableAuths)
           setGithubSecretsScanMonitoringEnabled(githubSecretsScanMonitoringEnabled);
+          setGithubCodeScanMonitoringEnabled(githubCodeScanMonitoringEnabled);
         })
         .then(() => {
           if (isAuthenticate() || (!this.isBasicAuthEnabled && !this.isOauth2Enabled)){

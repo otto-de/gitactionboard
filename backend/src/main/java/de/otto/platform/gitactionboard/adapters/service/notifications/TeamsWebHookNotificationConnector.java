@@ -1,7 +1,8 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
+import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardViolationDetails;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
-import de.otto.platform.gitactionboard.domain.service.NotificationConnector;
+import de.otto.platform.gitactionboard.domain.service.notifications.NotificationConnector;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
@@ -48,6 +49,11 @@ public class TeamsWebHookNotificationConnector implements NotificationConnector 
   @Override
   public void notify(SecretsScanDetails secretsScanDetails) {
     notify(TeamsNotificationMessagePayload.from(secretsScanDetails));
+  }
+
+  @Override
+  public void notify(CodeStandardViolationDetails codeStandardViolationDetails) {
+    notify(TeamsNotificationMessagePayload.from(codeStandardViolationDetails));
   }
 
   @Override

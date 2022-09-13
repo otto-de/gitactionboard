@@ -1,4 +1,4 @@
-package de.otto.platform.gitactionboard.domain.service;
+package de.otto.platform.gitactionboard.domain.service.notifications;
 
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
