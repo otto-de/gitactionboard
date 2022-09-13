@@ -27,7 +27,7 @@ ext {
     caffeineVersion = "3.1.1"
     wiremockVersion = "2.27.2"
     archUnitVersion = "0.23.1"
-    snakeyamlVersion = "1.31"
+    snakeyamlVersion = "1.32"
 }
 
 repositories {
