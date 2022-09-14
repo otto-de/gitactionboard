@@ -50,8 +50,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-
+      - name: Cache pitest history
+        uses: pat-s/always-upload-cache@v2.1.5
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
+          key: pitestHistory-${{ hashFiles('**/*.gradle*') }}
       - name: Run all tests
         run: ./run.sh test
+      - name: Run Mutation test for backend
+        run: ./run.sh pitest
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload build report to artifacts
         uses: actions/upload-artifact@v2

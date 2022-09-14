@@ -287,6 +287,12 @@ To run all the verifications:
 ./run.sh test
 ```
 
+To run the [mutation tests](https://pitest.org/) for backend:
+
+```shell script
+./run.sh pitest
+```
+
 Test sets are runs in order, with unit tests first, followed by integration tests.
 Should there be a failure in the unit tests the task execution stops there, e.g.
 a prerequisite for running integration tests will be working unit tests.
