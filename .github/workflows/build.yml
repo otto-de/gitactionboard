@@ -57,6 +57,7 @@ jobs:
           key: pitestHistory-${{ hashFiles('**/*.gradle*') }}
       - name: Run all tests
         run: ./run.sh test
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Run Mutation test for backend
         run: ./run.sh pitest
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
