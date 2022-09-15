@@ -16,6 +16,7 @@
     <button
       class="hide_button"
       @click="$emit('toggleVisibility', content.name)"
+      :title="hidden ? 'Show' : 'Hide'"
     >
       <HideOrShowIcon :display-hide-button="!hidden" />
     </button>
