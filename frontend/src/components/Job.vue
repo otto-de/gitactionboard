@@ -15,8 +15,8 @@
     </div>
     <button
       class="hide_button"
-      @click="$emit('toggleVisibility', content.name)"
       :title="hidden ? 'Show' : 'Hide'"
+      @click="$emit('toggleVisibility', content.name)"
     >
       <HideOrShowIcon :display-hide-button="!hidden" />
     </button>
