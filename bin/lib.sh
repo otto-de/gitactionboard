@@ -73,6 +73,19 @@ _test() {
   done < <(find . -maxdepth 2 -name "*Dockerfile*" -print0)
 }
 
+_pitest() {
+  local use_history="${1:-true}"
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
+    _ensure_jenv
+    if [[ "$use_history" == true ]]; then
+      jenv exec ./gradlew pitest
+    else
+      rm -rf pitestHistory
+      jenv exec ./gradlew clean pitest
+    fi
+  popd >/dev/null || exit
+}
+
 _format_sources() {
   prettier --write "**/*.{json,js,css,html}" "**/*.md"
 

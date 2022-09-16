@@ -18,6 +18,7 @@ commands:
   run-locally [auth token] [with frontend]             Run local version of service with/without frontend
   run-frontend-locally                                 Run local version of frontend service with mock data
   test                                                 Build and test the service
+  pitest [use history]                                 Run mutation tests
   docker-build                                         Build docker image
   build-jar                                            Build executable boot jar file
   talisman-verify                                      Verify no sensitive information is committed using talisman
@@ -39,6 +40,7 @@ case ${CMD} in
   run-locally) _run_locally "${1:-}" "${2:-true}" ;;
   run-frontend-locally) _run_frontend_locally ;;
   test) _test ;;
+  pitest) _pitest "$@";;
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;
   bump-version) _bump_version "${1}" ;;

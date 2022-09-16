@@ -1,0 +1,15 @@
+pitest {
+  threads = 2
+  coverageThreshold = 75
+  mutationThreshold = 67
+  historyInputLocation = 'pitestHistory/pitestHistory'
+  historyOutputLocation = 'pitestHistory/pitestHistory'
+  useClasspathFile = true
+  timestampedReports = false
+  excludedTestClasses = ['de.otto.platform.gitactionboard.**.*IntegrationTest']
+  withHistory = true
+  mutators = ["DEFAULTS"]
+  outputFormats = ['HTML']
+  timeoutFactor = 4.0
+  jvmArgs= ["-Djunit.jupiter.execution.parallel.enabled=false"]
+}

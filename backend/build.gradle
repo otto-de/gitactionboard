@@ -6,8 +6,9 @@ plugins {
     id "io.freefair.lombok" version "6.4.3"
     id "com.github.spotbugs" version "5.0.8"
     id "com.github.ben-manes.versions" version "0.42.0"
-    id "org.owasp.dependencycheck" version "7.1.1"
+    id "org.owasp.dependencycheck" version "7.2.0"
     id "com.diffplug.spotless" version "6.11.0"
+    id "info.solidsoft.pitest" version "1.9.0"
 }
 
 spotless {
@@ -28,6 +29,7 @@ ext {
     wiremockVersion = "2.27.2"
     archUnitVersion = "0.23.1"
     snakeyamlVersion = "1.32"
+    jUnit5PitestVersion = "1.0.0"
 }
 
 repositories {
@@ -55,6 +57,7 @@ dependencies {
     }
     testImplementation "com.github.tomakehurst:wiremock:${wiremockVersion}"
     testImplementation "com.tngtech.archunit:archunit-junit5:${archUnitVersion}"
+    testImplementation "org.pitest:pitest-junit5-plugin:${jUnit5PitestVersion}"
 }
 
 group = "de.otto.platform"
@@ -91,3 +94,4 @@ apply from: "${rootDir}/gradle/dependencycheck.gradle"
 apply from: "${rootDir}/gradle/checkstyle.gradle"
 apply from: "${rootDir}/gradle/pmd.gradle"
 apply from: "${rootDir}/gradle/jacoco.gradle"
+apply from: "${rootDir}/gradle/pitest.gradle"
