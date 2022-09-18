@@ -9,9 +9,9 @@
         :is-clicked="isOpened"
         :clickable="!activeMap['workflow-jobs']"
         menu-item-name="Workflow Jobs"
-        icon-name="dashboard"
+        icon-name="workflowJobs"
         :is-active="activeMap['workflow-jobs']"
-        @dashboard="redirectToWorkflowJobsPage"
+        @workflow-jobs="redirectToWorkflowJobsPage"
       />
       <MenuItems
         v-if="githubSecretsScanMonitoringEnabled"

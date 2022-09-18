@@ -12,7 +12,7 @@
     <SecretsIcon v-if="iconName==='secrets'" />
     <CodeStandardViolationsIcon v-if="iconName==='codeStandardViolations'" />
     <LogoutIcon v-if="iconName==='logout'" />
-    <DashboardIcon v-if="iconName==='dashboard'" />
+    <WorkflowJobsIcon v-if="iconName==='workflowJobs'" />
     <p
       v-if="isClicked"
       class="menu-item-name"
@@ -25,14 +25,16 @@
 <script>
 import SettingsIcon from "@/icons/SettingsIcon";
 import LogoutIcon from "@/icons/LogoutIcon";
-import DashboardIcon from "@/icons/DashboardIcon";
 import { getAvatarUrl } from "@/services/authenticationService";
 import ProfilePicture from "@/components/ProfilePicture";
 import SecretsIcon from "@/icons/SecretsIcon";
 import CodeStandardViolationsIcon from "@/icons/CodeStandardViolationsIcon";
+import WorkflowJobsIcon from "@/icons/WorkflowJobsIcon";
 export default {
   name: "MenuItems",
-  components: {CodeStandardViolationsIcon, SecretsIcon, ProfilePicture, DashboardIcon, LogoutIcon, SettingsIcon},
+  components: {
+    WorkflowJobsIcon,
+    CodeStandardViolationsIcon, SecretsIcon, ProfilePicture, LogoutIcon, SettingsIcon},
   props: {
     isClicked: Boolean,
     menuItemName: {
