@@ -44,7 +44,7 @@ import org.springframework.util.StringUtils;
 public class WebSecurityConfig {
 
   public static final String LOGIN_PATH = "/#/login";
-  public static final String DASHBOARD_PATH = "/#/dashboard";
+  public static final String DASHBOARD_PATH = "/#/workflow-jobs";
 
   private static HttpSecurity getDefaultSettings(HttpSecurity http) throws Exception {
     return http.cors().disable().csrf().disable().formLogin().disable();

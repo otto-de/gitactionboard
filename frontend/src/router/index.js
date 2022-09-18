@@ -35,8 +35,8 @@ const routes = [
     component: LoginPage,
   },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/workflow-jobs",
+    name: "Workflow Jobs",
     component: WorkflowDashboard,
     beforeEnter(to, from, next) {
       validateAuthentication(next);

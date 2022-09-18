@@ -139,7 +139,7 @@ export default {
   },
   methods: {
     redirectToDashboard() {
-      this.$router.push("dashboard")
+      this.$router.push("workflow-jobs")
     },
     login() {
       authenticate(this.username, this.password)

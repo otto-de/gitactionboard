@@ -7,11 +7,11 @@
       />
       <MenuItems
         :is-clicked="isOpened"
-        :clickable="!activeMap.dashboard"
-        menu-item-name="Dashboard"
+        :clickable="!activeMap['workflow-jobs']"
+        menu-item-name="Workflow Jobs"
         icon-name="dashboard"
-        :is-active="activeMap.dashboard"
-        @dashboard="redirectDashboardPage"
+        :is-active="activeMap['workflow-jobs']"
+        @dashboard="redirectToWorkflowJobsPage"
       />
       <MenuItems
         v-if="githubSecretsScanMonitoringEnabled"
@@ -77,7 +77,7 @@ export default {
   computed: {
     activeMap(){
       const defaultActiveMap = {
-        'dashboard': false,
+        'workflow-jobs': false,
         'preferences': false,
         'secrets': false,
         'logout': false,
@@ -121,8 +121,8 @@ export default {
     redirectToCodeStandardViolationsPage() {
       router.push("/code-standard-violations")
     },
-    redirectDashboardPage() {
-      router.push("/dashboard")
+    redirectToWorkflowJobsPage() {
+      router.push("/workflow-jobs")
     },
     logout() {
       clearCookies();
