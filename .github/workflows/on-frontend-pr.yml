@@ -1,7 +1,10 @@
-name: On PR
+name: On Frontend PR
 on:
   pull_request:
     types: [ opened, reopened ]
+    paths:
+      - 'frontend/**'
+      - '.talismanrc'
 
 env:
   SERVICE_NAME: gitactionboard
@@ -16,26 +19,11 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install prettier using npm
         run: sudo npm install --global prettier
-      - name: Install jenv
-        run: |
-          git clone https://github.com/gcuisinier/jenv.git ~/.jenv
-          echo "$HOME/.jenv/bin" >> $GITHUB_PATH
-      - name: Configure jenv
-        run: |
-          jenv init -
-          jenv add ${JAVA_HOME_17_X64}
       - name: Install Hadolint and add to PATH
         run: |
           sh bin/install-hadolint.sh
           echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-      - name: Cache gradle wrapper and jars
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
       - name: Cache node modules
         uses: actions/cache@v2
         with:
@@ -44,15 +32,27 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-
-      - name: Run all tests
-        run: ./run.sh test
+      - name: Run tests
+        run: ./run.sh frontend-test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-      - name: Upload build report to artifacts
-        uses: actions/upload-artifact@v2
-        if: always()
+
+  talisman-checks:
+    runs-on: ubuntu-20.04
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v2
         with:
-          name: ${{ env.SERVICE_NAME }}-build-reports
-          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
+          fetch-depth: 5
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install talisman and add to PATH
+        run: |
+          sh bin/install-talisman.sh
+          echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Talisman Verify
+        run: ./run.sh talisman-verify
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
   dependabot:
     runs-on: ubuntu-20.04

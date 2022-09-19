@@ -269,7 +269,7 @@ Access `http://localhost:<host machine port>/v1/alerts/code-standard-violations`
 Tests are separated into unit and integration test sets. To denote an integration test it needs to be annotated
 as `@IntegrationTest`.
 
-To run only unit tests:
+To run only backend unit tests:
 
 ```shell script
 ./gradlew test
@@ -285,6 +285,18 @@ To run all the verifications:
 
 ```shell script
 ./run.sh test
+```
+
+To run all backend verifications:
+
+```shell script
+./run.sh backend-test
+```
+
+To run all frontend verifications:
+
+```shell script
+./run.sh frontend-test
 ```
 
 To run the [mutation tests](https://pitest.org/) for backend:
