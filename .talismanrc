@@ -72,9 +72,11 @@ fileignoreconfig:
 - filename: frontend/package-lock.json
   checksum: b6e47b1f670280a0cfaf88c2e071d91189c50f8dcf347a7a959d171d495cc974
 - filename: frontend/src/components/Dashboard.vue
-  checksum: 40c9f96a9236c30e696620ff29c0a84ddb1cbaa2465bf7b160da91a81fca4a69
+  checksum: 60d2ac0df9fa368028a2e25db63d6caa7f3cadfbc34173a0a52a98316fa845ae
 - filename: frontend/src/components/Job.vue
-  checksum: b9037d2e924a84cf310856bc05af81530e883f1e591ca8a63ad7de52af737359
+  checksum: 924b25d0545a33958b032b919979effa9fddfff00103082fa80bea7bd33f1423
+- filename: frontend/src/components/WorkflowDashboard.vue
+  checksum: 3ecc17a356c6708c610a61eea93c723f2fcd20ff1681d649cac905e7540ac1ad
 - filename: frontend/src/components/LoginPage.vue
   checksum: 11356cdc85de0d66c042cdc728f31df5498e18fdd263200c5fe3319ac6046422
 - filename: frontend/src/components/MenuItems.vue

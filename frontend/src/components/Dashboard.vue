@@ -1,24 +1,49 @@
 <template>
-  <template
-    v-if="loading"
-  >
+  <template v-if="loading">
     <Spinner />
   </template>
 
-  <div
-    v-if="!loading"
-    id="content-container"
-  >
-    <template
-      v-for="content in contents"
-      :key="content"
+  <template v-if="!loading">
+    <div class="content-container">
+      <template
+        v-for="content in visibleContents"
+        :key="content"
+      >
+        <component
+          :is="contentDisplayer"
+          :content="content"
+          :hidden="isHidden(content)"
+          @toggle-visibility="toggleVisibility"
+        />
+      </template>
+    </div>
+    <div
+      v-if="hiddenContents.length > 0"
+      class="hidden-elements"
     >
-      <component
-        :is="contentDisplayer"
-        :content="content"
-      />
-    </template>
-  </div>
+      <hr>
+      {{ hiddenContents.length }} hidden {{ nameOfItems }}
+      <button @click="toggleHiddenElements()">
+        {{ showHiddenElements ? 'hide' : 'show' }}
+      </button>
+      <div
+        v-if="showHiddenElements"
+        class="content-container"
+      >
+        <template
+          v-for="content in hiddenContents"
+          :key="content"
+        >
+          <component
+            :is="contentDisplayer"
+            :content="content"
+            :hidden="isHidden(content)"
+            @toggle-visibility="toggleVisibility"
+          />
+        </template>
+      </div>
+    </div>
+  </template>
   <NoFailures v-if="!loading && contents.length === 0" />
 </template>
 
@@ -27,12 +52,13 @@ import NoFailures from "@/components/Happy";
 import Spinner from "@/components/Spinner";
 import Job from "@/components/Job";
 import Secret from "@/components/Secret";
+import preferences from "@/services/preferences";
 
 const ONE_MINUTE = 60000;
 
 export default {
   name: "Dashboard",
-  components: {NoFailures, Spinner, Job, Secret },
+  components: {NoFailures, Spinner, Job, Secret},
   props: {
     disableMaxIdleTime: {
       type: Boolean,
@@ -49,15 +75,35 @@ export default {
     contentDisplayer: {
       type: String,
       required: true
+    },
+    hideByKey: {
+      type: String,
+      required: false,
+      default: null
+    },
+    nameOfItems: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data() {
     return {
       contents: [],
+      hiddenElements: [],
       loading: true,
       idleTime: 0,
       renderPageTimer: null,
       idleTimer: null,
+      showHiddenElements: false
+    }
+  },
+  computed: {
+    visibleContents() {
+      return this.contents.filter(this.isVisible)
+    },
+    hiddenContents() {
+      return this.contents.filter(this.isHidden)
     }
   },
   mounted() {
@@ -68,6 +114,7 @@ export default {
       this.loading = false;
       this.renderPageTimer = setInterval(this.renderPage, 5000);
     });
+    this.hiddenElements = preferences.hiddenElements[this.nameOfItems] || []
   },
   beforeUnmount() {
     clearInterval(this.renderPageTimer);
@@ -108,13 +155,31 @@ export default {
             console.error(reason);
             return Promise.reject(reason);
           });
+    },
+    toggleVisibility(key) {
+      const indexIfThisKeyIsHidden = this.hiddenElements.indexOf(key);
+      if (indexIfThisKeyIsHidden !== -1) {
+        this.hiddenElements.splice(indexIfThisKeyIsHidden, 1);
+      } else {
+        this.hiddenElements.push(key);
+      }
+      preferences.hiddenElements = {...preferences.hiddenElements, [this.nameOfItems]: this.hiddenElements}
+    },
+    isVisible(content) {
+      return !this.isHidden(content)
+    },
+    isHidden(content) {
+      return this.hideByKey && this.hiddenElements.indexOf(content[this.hideByKey]) !== -1
+    },
+    toggleHiddenElements() {
+      this.showHiddenElements = !this.showHiddenElements
     }
   }
 }
 </script>
 
 <style scoped>
-#content-container {
+.content-container {
   font-family: "OpenSans", sans-serif;
   display: grid;
   align-items: center;
@@ -122,5 +187,11 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
   width: 100%;
+}
+.hidden-elements {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  color: #333;
 }
 </style>

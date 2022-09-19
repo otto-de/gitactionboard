@@ -34,6 +34,14 @@ class Preferences {
   set maxIdleTime(value) {
     this.__set__("max-idle-time", value);
   }
+
+  get hiddenElements() {
+    return JSON.parse(this.__get__("hidden-elements") || "{}");
+  }
+
+  set hiddenElements(value) {
+    this.__set__("hidden-elements", JSON.stringify(value));
+  }
 }
 
 export default new Preferences();
