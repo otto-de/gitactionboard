@@ -70,7 +70,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: c7e2ee00fa85618fe867d3faf5a7209176a83a5ee08b2ad93d6c7847e806b772
 - filename: frontend/package-lock.json
-  checksum: 59fbd226ad82391ad92f0114c83edef97c29345c034fef8b677e6a2b84ac3e59
+  checksum: b6e47b1f670280a0cfaf88c2e071d91189c50f8dcf347a7a959d171d495cc974
 - filename: frontend/src/components/Dashboard.vue
   checksum: 40c9f96a9236c30e696620ff29c0a84ddb1cbaa2465bf7b160da91a81fca4a69
 - filename: frontend/src/components/Job.vue
