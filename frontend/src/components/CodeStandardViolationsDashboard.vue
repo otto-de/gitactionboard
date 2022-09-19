@@ -7,7 +7,7 @@
     <Dashboard
       :disable-max-idle-time="disableIdleOptimization"
       :max-idle-time="maxIdleTime"
-      content-displayer="Secret"
+      content-displayer="GridCell"
       :fetch-contents="fetchContents"
     />
   </div>

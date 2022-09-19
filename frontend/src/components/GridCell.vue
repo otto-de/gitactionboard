@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "Secret",
+  name: "GridCell",
   props: {
     content: {
       type: Object,

@@ -51,14 +51,14 @@
 import NoFailures from "@/components/Happy";
 import Spinner from "@/components/Spinner";
 import Job from "@/components/Job";
-import Secret from "@/components/Secret";
+import GridCell from "@/components/GridCell";
 import preferences from "@/services/preferences";
 
 const ONE_MINUTE = 60000;
 
 export default {
   name: "Dashboard",
-  components: {NoFailures, Spinner, Job, Secret},
+  components: {NoFailures, Spinner, Job, GridCell },
   props: {
     disableMaxIdleTime: {
       type: Boolean,
