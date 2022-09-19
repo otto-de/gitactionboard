@@ -68,7 +68,7 @@ export default {
   display: flex;
   padding-bottom: 7px;
   padding-top: 7px;
-  height: 30px;
+  height: fit-content;
 }
 
 .menu-item:not(.open) > svg {
@@ -80,29 +80,30 @@ export default {
   margin-left: 7px;
 }
 
+.menu-item.open > img {
+  margin-left: 7px;
+}
+
 .menu-item.open {
   width: 245px;
 }
 
 .menu-item.clickable:hover {
   cursor: pointer;
+  background-color: #4f4d4d;
 }
 
 .menu-item.clickable.open:hover {
   width: 245px;
-  height: 30px;
-  background-color: #4f4d4d;
 }
 
 .menu-item.open.active {
   background-color: #5F8D77;
-  height: 30px;
   width: 245.2px;
 }
 
 .menu-item.active {
   background-color: #5F8D77;
-  height: 30px;
   width: 52px;
 }
 

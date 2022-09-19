@@ -72,23 +72,23 @@ fileignoreconfig:
 - filename: frontend/package-lock.json
   checksum: b6e47b1f670280a0cfaf88c2e071d91189c50f8dcf347a7a959d171d495cc974
 - filename: frontend/src/components/Dashboard.vue
-  checksum: 60d2ac0df9fa368028a2e25db63d6caa7f3cadfbc34173a0a52a98316fa845ae
+  checksum: 246410a3efeb1bb78ed625e528049e32ad457bbcfe984872f3c2ca077cc124cb
 - filename: frontend/src/components/Job.vue
-  checksum: 924b25d0545a33958b032b919979effa9fddfff00103082fa80bea7bd33f1423
+  checksum: f832b36ae7fcd573baca28feebfbf2612159ade7ced5973777008598a367906f
 - filename: frontend/src/components/WorkflowDashboard.vue
-  checksum: 3ecc17a356c6708c610a61eea93c723f2fcd20ff1681d649cac905e7540ac1ad
+  checksum: 53d3b2e62e828c260020a827c32477486600bd6f8ef9f502ab8d41779460478b
 - filename: frontend/src/components/LoginPage.vue
-  checksum: 11356cdc85de0d66c042cdc728f31df5498e18fdd263200c5fe3319ac6046422
+  checksum: 13ce108d43748c8f169db434fcc66fe2c91e0a841559208065e3f2e58b1f163f
 - filename: frontend/src/components/MenuItems.vue
-  checksum: cb7daae0bcde3f0814a5f6eb0f98e797228f0c7ea41fcc28a30582918a944020
-- filename: frontend/src/components/Secret.vue
-  checksum: c8c2edd4e0b0b78d20eec92fd11fa52be91a875d6acf928d867f9e02c4b0db5d
+  checksum: 656944fdc9c9ced2e6c8bad53f4a3c740e798cd98a4388ad2534a7400944081b
 - filename: frontend/src/components/SideMenuBar.vue
-  checksum: 0146f9e46e4a82ab8f9d7f304f09dce49d95af502a2085750396667bead67ca8
+  checksum: a6231379a22e0299bbbf0c2a527597791d7f018d5157b944ec6792d0cdf34b6f
 - filename: frontend/src/images/happy.png
   checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
 - filename: frontend/src/services/apiService.js
   checksum: 25aaef0a2fb86e81b3ae99681940527fcd96c9d47ecba98ddb60ad129cc9f800
+- filename: frontend/src/components/GridCell.vue
+  checksum: 2bd6b97f208548fb7bcd46e1d412c5569c090fd911ad07de8f7480e716258f66
 allowed_patterns:
 - org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
 version: "1.0"

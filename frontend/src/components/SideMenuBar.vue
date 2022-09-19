@@ -26,7 +26,7 @@
         v-if="isGithubCodeScanMonitoringEnabled"
         :is-clicked="isOpened"
         :clickable="!activeMap['code-standard-violations']"
-        menu-item-name="Standard Violations"
+        menu-item-name="Code Standard Violations"
         icon-name="codeStandardViolations"
         :is-active="activeMap['code-standard-violations']"
         @code-standard-violations="redirectToCodeStandardViolationsPage"
