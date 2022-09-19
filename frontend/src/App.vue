@@ -24,7 +24,6 @@ export default {
 </script>
 
 <style scoped>
-
 #git-action-board {
   display: flex;
   flex-direction: row;

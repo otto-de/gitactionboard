@@ -116,7 +116,6 @@ export default {
 </script>
 
 <style scoped>
-
 #container {
   display: flex;
   flex-direction: row;
@@ -130,7 +129,7 @@ export default {
 }
 
 .preference-header {
-  background-color: #5F8D77;
+  background-color: #5f8d77;
   width: 100%;
   height: 30%;
   display: flex;
@@ -142,7 +141,9 @@ export default {
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 25px;
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
   font-family: "Apple Chancery";
+  /* stylelint-enable font-family-no-missing-generic-family-keyword */
 }
 
 .preferences-data {
@@ -154,7 +155,9 @@ export default {
 
 .header {
   font-size: 35px;
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
   font-family: "Apple Chancery";
+  /* stylelint-enable font-family-no-missing-generic-family-keyword */
   color: black;
   width: fit-content;
   margin-left: auto;
@@ -173,7 +176,9 @@ export default {
   flex-direction: column;
   align-items: center;
   font-size: 25px;
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
   font-family: "Al Bayan";
+  /* stylelint-enable font-family-no-missing-generic-family-keyword */
   color: #4f4d4d;
 }
 
@@ -184,7 +189,6 @@ export default {
 }
 
 .preferences-input {
-  /*margin-left: 8px;*/
   font-size: 20px;
   height: 23px;
   width: 45px;
@@ -200,9 +204,11 @@ export default {
 
 .save {
   font-size: 25px;
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
   font-family: "Al Bayan";
+  /* stylelint-enable font-family-no-missing-generic-family-keyword */
   background-color: #3a964a;
-  color: #FFFFFF;
+  color: #fff;
   border-radius: 5px;
   margin-top: 25px;
   width: 100%;

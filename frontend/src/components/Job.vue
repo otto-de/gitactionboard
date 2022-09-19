@@ -4,7 +4,7 @@
     :key="content.name"
     :class="[getBuildAndActivityStatus(content)]"
   >
-    <div class="job_name">
+    <div class="job-name">
       <a
         :id="content.name + '_url'"
         :href="content.webUrl"
@@ -15,7 +15,7 @@
     </div>
     <div class="buttons">
       <button
-        class="hide_button"
+        class="hide-button"
         :title="hidden ? 'Show' : 'Hide'"
         @click="$emit('toggleVisibility', content.name)"
       >
@@ -64,8 +64,7 @@ export default {
 </script>
 
 <style scoped>
-
-.job_name {
+.job-name {
   color: white;
   font-weight: bold;
   font-size: 14px;
@@ -74,6 +73,7 @@ export default {
   align-items: center;
   flex-grow: 1;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -83,7 +83,7 @@ a {
   box-shadow: 5px 5px 10px #777;
   border-radius: 6px;
   height: 90px;
-  border: 2px solid #000000;
+  border: 2px solid #000;
   padding: 5px;
   display: flex;
   flex-direction: column;
@@ -102,27 +102,30 @@ a {
 }
 
 .job.building.success {
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       135deg,
       #3a964a 30px,
-      #000000 50px
-  );
+      #000 50px
+    );
 }
 
 .job.building.failure {
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       135deg,
       #e23d2c 30px,
-      #000000 50px
-  );
+      #000 50px
+    );
 }
 
 .job.building.unknown {
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       135deg,
       #6d6a6a 30px,
-      #000000 50px
-  );
+      #000 50px
+    );
 }
 
 .buttons {
@@ -130,7 +133,7 @@ a {
   flex-direction: row-reverse;
 }
 
-.hide_button {
+.hide-button {
   background: none;
   border: none;
   cursor: pointer;

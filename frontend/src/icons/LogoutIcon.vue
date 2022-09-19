@@ -8,7 +8,7 @@
     width="30"
     fill="#FFF"
     viewBox="0 0 32 32"
-    style="enable-background:new 0 0 32 32;"
+    style="enable-background: new 0 0 32 32;"
     xml:space="preserve"
   >
     <path

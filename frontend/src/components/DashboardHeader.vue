@@ -23,7 +23,6 @@ export default {
 </script>
 
 <style scoped>
-
 .header {
   height: 6%;
   color: #5b5454;
@@ -32,7 +31,7 @@ export default {
 .header-title {
   font-size: 50px;
   text-align: center;
-  font-family: Snell Roundhand, cursive;
+  font-family: "Snell Roundhand", cursive;
   font-weight: bold;
 }
 
@@ -42,7 +41,7 @@ export default {
   margin-top: -2%;
   font-size: 20px;
   font-weight: bold;
-  font-family: "American Typewriter",serif;
+  font-family: "American Typewriter", serif;
 }
 
 .separator {

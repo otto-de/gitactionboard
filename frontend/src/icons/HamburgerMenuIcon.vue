@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style scoped>
-
 .icon-container {
   height: 24px;
   width: 24px;
@@ -46,7 +45,7 @@ export default {
   background-color: #fff;
   position: relative;
   border-radius: 5px;
-  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
   transition-duration: 500ms;
 }
 
@@ -68,7 +67,7 @@ export default {
 }
 
 .icon-container.opened span:nth-child(2) {
-  opacity:0;
+  opacity: 0;
 }
 
 .icon-container.opened span:last-child {

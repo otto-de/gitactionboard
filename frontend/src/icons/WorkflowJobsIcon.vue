@@ -1,6 +1,6 @@
 <template>
   <svg
-    style="enable-background:new 0 0 256 256;"
+    style="enable-background: new 0 0 256 256;"
     viewBox="0 0 24 24"
     xml:space="preserve"
     fill="#FFF"

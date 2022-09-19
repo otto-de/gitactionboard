@@ -2,9 +2,9 @@
   <div
     :id="content.id"
     :key="content.id"
-    class="secret failure"
+    class="grid-cell failure"
   >
-    <div class="secret_name">
+    <div class="grid-cell-name">
       <a
         :id="content.id + '_url'"
         :href="content.url"
@@ -29,8 +29,7 @@ export default {
 </script>
 
 <style scoped>
-
-.secret_name {
+.grid-cell-name {
   color: white;
   font-weight: bold;
   font-size: 14px;
@@ -45,11 +44,11 @@ a {
   color: inherit;
 }
 
-.secret {
+.grid-cell {
   box-shadow: 5px 5px 10px #777;
   border-radius: 6px;
   height: 90px;
-  border: 2px solid #000000;
+  border: 2px solid #000;
   padding: 5px;
 }
 

@@ -70,25 +70,25 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: c7e2ee00fa85618fe867d3faf5a7209176a83a5ee08b2ad93d6c7847e806b772
 - filename: frontend/package-lock.json
-  checksum: b6e47b1f670280a0cfaf88c2e071d91189c50f8dcf347a7a959d171d495cc974
+  checksum: 05c035dede3ed45f00e29814086cf273de2de1b73fa545073df06e842c71a436
 - filename: frontend/src/components/Dashboard.vue
-  checksum: 246410a3efeb1bb78ed625e528049e32ad457bbcfe984872f3c2ca077cc124cb
+  checksum: a58cc910d2286d541e936d1cc60147976cd9a232bf64da2ed0824cc641c1a3b4
+- filename: frontend/src/components/GridCell.vue
+  checksum: af92828dfd17ed0905a624375d587eafc39078e2e4776580b1c3838edf9e424a
 - filename: frontend/src/components/Job.vue
-  checksum: f832b36ae7fcd573baca28feebfbf2612159ade7ced5973777008598a367906f
-- filename: frontend/src/components/WorkflowDashboard.vue
-  checksum: 53d3b2e62e828c260020a827c32477486600bd6f8ef9f502ab8d41779460478b
+  checksum: b1854395de53178d6edf7e04f49f814ece2ee7a5112da3778c88c2b3739b3f7c
 - filename: frontend/src/components/LoginPage.vue
-  checksum: 13ce108d43748c8f169db434fcc66fe2c91e0a841559208065e3f2e58b1f163f
+  checksum: 015db097eee8b69dcef1c70ae52bf194011080b1ce89f8c16f02d8baf2461495
 - filename: frontend/src/components/MenuItems.vue
-  checksum: 656944fdc9c9ced2e6c8bad53f4a3c740e798cd98a4388ad2534a7400944081b
+  checksum: e3d4e0e371fd89ccc78328648864fee3eb02862c26ff34ddbaa2c04df3041cf5
 - filename: frontend/src/components/SideMenuBar.vue
-  checksum: a6231379a22e0299bbbf0c2a527597791d7f018d5157b944ec6792d0cdf34b6f
+  checksum: 7163c918480863f97e93a6b0b9a01f76a9d6ee7d9e7cffb1fb6230f073b46949
+- filename: frontend/src/components/WorkflowDashboard.vue
+  checksum: 396a4aa24b00800147825d50986371c6af9cc1a8ed02a5a8d2bd8264e6355eb7
 - filename: frontend/src/images/happy.png
   checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
 - filename: frontend/src/services/apiService.js
   checksum: 25aaef0a2fb86e81b3ae99681940527fcd96c9d47ecba98ddb60ad129cc9f800
-- filename: frontend/src/components/GridCell.vue
-  checksum: 2bd6b97f208548fb7bcd46e1d412c5569c090fd911ad07de8f7480e716258f66
 allowed_patterns:
 - org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
 version: "1.0"

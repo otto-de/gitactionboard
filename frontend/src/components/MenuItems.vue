@@ -63,7 +63,6 @@ export default {
 </script>
 
 <style scoped>
-
 .menu-item {
   display: flex;
   padding-bottom: 7px;
@@ -98,19 +97,19 @@ export default {
 }
 
 .menu-item.open.active {
-  background-color: #5F8D77;
+  background-color: #5f8d77;
   width: 245.2px;
 }
 
 .menu-item.active {
-  background-color: #5F8D77;
+  background-color: #5f8d77;
   width: 52px;
 }
 
 .menu-item p {
-  color: #FFFFFF;
+  color: #fff;
   font-size: 17px;
-  font-family: "OpenSans", sans-serif;
+  font-family: OpenSans, sans-serif;
 }
 
 .menu-item-name {

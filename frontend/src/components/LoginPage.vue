@@ -155,25 +155,26 @@ export default {
 </script>
 
 <style scoped>
-
 .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: radial-gradient(#5F8D77, #282A27);
+  background-image: radial-gradient(#5f8d77, #282a27);
 }
 
 .login-form {
-  box-shadow: 7px 5px 5px #2C5F2D;
+  box-shadow: 7px 5px 5px #2c5f2d;
   border-radius: 10px;
   height: fit-content;
   width: 30%;
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 
-.common-message-container, .basic-auth-container, .oauth2-container {
+.common-message-container,
+.basic-auth-container,
+.oauth2-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -181,7 +182,7 @@ export default {
 }
 
 .header {
-  font-family: "American Typewriter",serif;
+  font-family: "American Typewriter", serif;
   margin-top: 110px;
   color: #5b5454;
   font-size: 40px;
@@ -192,7 +193,7 @@ export default {
   font-size: 25px;
   color: #5b5454;
   font-weight: bold;
-  font-family: Snell Roundhand, cursive;
+  font-family: "Snell Roundhand", cursive;
 }
 
 .input-container {
@@ -216,7 +217,7 @@ export default {
   font-weight: bold;
   margin: 35px 5px 100px;
   padding: 10px;
-  color: #FFFFFF;
+  color: #fff;
   background-color: #3a964a;
 }
 
@@ -225,7 +226,7 @@ export default {
 }
 
 .login-button-container.disabled {
-  /*background-color: #828683;*/
+  /* background-color: #828683; */
   background-color: #4f4d4d;
 }
 
@@ -264,8 +265,8 @@ export default {
   font-weight: bold;
   margin: 25px 5px 100px;
   padding: 10px;
-  color: #FFFFFF;
-  background-color: rgb(45, 164, 78);
+  color: #fff;
+  background-color: rgb(45 164 78);
 }
 
 .github-button-container a {
@@ -284,7 +285,8 @@ export default {
   font-size: 16px;
   margin-top: 0;
   margin-left: 8px;
-  /*margin: 0;*/
+
+  /* margin: 0; */
   position: relative;
   bottom: 23px;
   left: 22px;

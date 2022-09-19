@@ -19,7 +19,7 @@ export default {
   margin: -76px 0 0 -76px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #5F8D77;
+  border-top: 16px solid #5f8d77;
   animation: spin 2s linear infinite;
 }
 

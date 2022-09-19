@@ -135,7 +135,6 @@ export default {
 </script>
 
 <style scoped>
-
 .side-menu {
   display: flex;
   flex-direction: column;

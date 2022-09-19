@@ -180,7 +180,7 @@ export default {
 
 <style scoped>
 .content-container {
-  font-family: "OpenSans", sans-serif;
+  font-family: OpenSans, sans-serif;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(auto-fit, minmax(90px, 115px));
@@ -188,6 +188,7 @@ export default {
   grid-gap: 10px;
   width: 100%;
 }
+
 .hidden-elements {
   margin-top: 3em;
   margin-bottom: 1em;

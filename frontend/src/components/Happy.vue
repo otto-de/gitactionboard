@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style scoped>
-
 .container {
   height: 70%;
   display: flex;
