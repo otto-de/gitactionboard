@@ -13,13 +13,15 @@
         {{ content.name }}
       </a>
     </div>
-    <button
-      class="hide_button"
-      :title="hidden ? 'Show' : 'Hide'"
-      @click="$emit('toggleVisibility', content.name)"
-    >
-      <HideOrShowIcon :display-hide-button="!hidden" />
-    </button>
+    <div class="buttons">
+      <button
+        class="hide_button"
+        :title="hidden ? 'Show' : 'Hide'"
+        @click="$emit('toggleVisibility', content.name)"
+      >
+        <HideOrShowIcon :display-hide-button="!hidden" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -123,11 +125,15 @@ a {
   );
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .hide_button {
   background: none;
   border: none;
   cursor: pointer;
-  text-align: right;
 }
 
 </style>
