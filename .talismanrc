@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 8bc1fe8d63fd68bf0bac7667a485c9bde641d05f68264829778cb222d5a5adbf
 - filename: README.md
-  checksum: 153f30e72b9bde593c54082db0fc3731bc83cfe7121dccfc30bb4bdb8aa82482
+  checksum: d45e7813fef8612d969485afc2eac0ba73c0a5aed78b15409de029eb924a5228
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -70,7 +70,7 @@ fileignoreconfig:
 - filename: doc/sample1.png
   checksum: cda89f07b46aae1ac69ba4cd25c7f271fb28e4a5f7c1ca23619ba17e31a2dd91
 - filename: frontend/mock-data/data.json
-  checksum: c7e2ee00fa85618fe867d3faf5a7209176a83a5ee08b2ad93d6c7847e806b772
+  checksum: 557e09ec6203f2d8944f545658991520c8274792f378b85a3c7af681a937225c
 - filename: frontend/package-lock.json
   checksum: 05c035dede3ed45f00e29814086cf273de2de1b73fa545073df06e842c71a436
 - filename: frontend/src/components/Dashboard.vue
