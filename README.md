@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -440,6 +440,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/shashikanthgadgay0804"><img src="https://avatars.githubusercontent.com/u/48748047?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shashi</b></sub></a><br /><a href="#ideas-shashikanthgadgay0804" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/jonasmetzger2000"><img src="https://avatars.githubusercontent.com/u/29103796?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonas</b></sub></a><br /><a href="#ideas-jonasmetzger2000" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/BastianSperrhacke-Otto"><img src="https://avatars.githubusercontent.com/u/62638028?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BastianSperrhacke-Otto</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3ABastianSperrhacke-Otto" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/sweiler"><img src="https://avatars.githubusercontent.com/u/9385626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Simon Weiler</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=sweiler" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/apps/dependabot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dependabot[bot]</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=dependabot[bot]" title="Code">💻</a></td>
   </tr>
 </table>
 
