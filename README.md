@@ -259,7 +259,7 @@ Access `http://localhost:<host machine port>/v1/alerts/code-standard-violations`
 - [ShellCheck](https://www.shellcheck.net/)
 - [Prettier](https://prettier.io/)
 - [talisman](https://github.com/thoughtworks/talisman)
-- [Node.js v16.13.1](https://nodejs.org)
+- [Node.js v16.17.0](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [all-contributors cli](https://allcontributors.org/docs/en/cli/overview) (only for maintainers)
 - [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
