@@ -136,7 +136,7 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Docker meta
         id: docker_meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.SERVICE_NAME }}
           tags: |
