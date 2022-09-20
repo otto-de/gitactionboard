@@ -27,7 +27,7 @@ npm run lint
 ### Fix lint issues
 
 ```
-npm run lint:lint
+npm run lint:fix
 ```
 
 ### Customize configuration
