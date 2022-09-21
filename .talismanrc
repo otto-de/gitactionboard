@@ -93,4 +93,9 @@ fileignoreconfig:
   checksum: 25aaef0a2fb86e81b3ae99681940527fcd96c9d47ecba98ddb60ad129cc9f800
 allowed_patterns:
 - org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
+- key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
+- key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\spitestHistory-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- password:\s\$\{\{\ssecrets\.DOCKER_HUB_PASSWORD\s\}\}
 version: "1.0"

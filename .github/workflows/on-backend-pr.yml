@@ -33,7 +33,7 @@ jobs:
           echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
@@ -43,7 +43,7 @@ jobs:
         run: ./run.sh backend-test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload build report to artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports

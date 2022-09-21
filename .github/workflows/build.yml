@@ -36,14 +36,14 @@ jobs:
           echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -62,7 +62,7 @@ jobs:
         run: ./run.sh pitest
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload build report to artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports
@@ -116,14 +116,14 @@ jobs:
           jenv init -
           jenv add ${JAVA_HOME_17_X64}
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -136,14 +136,14 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Docker meta
         id: docker_meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.SERVICE_NAME }}
           tags: |
             type=semver,pattern={{major}}.{{minor}}.{{patch}}
             type=semver,pattern={{major}}.{{minor}}
       - name: Login to DockerHub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
@@ -161,14 +161,14 @@ jobs:
           body: "Changelog can be found [here](${{ steps.create_change_log_url.outputs.CHANGE_LOG_URL }})."
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           push: true
       - name: Update docker hub description
-        uses: peter-evans/dockerhub-description@v2
+        uses: peter-evans/dockerhub-description@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}

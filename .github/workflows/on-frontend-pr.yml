@@ -25,7 +25,7 @@ jobs:
           echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
