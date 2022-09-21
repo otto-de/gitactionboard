@@ -7,7 +7,7 @@
       content-displayer="Job"
       :fetch-contents="fetchContents"
       :hide-by-key="'name'"
-      :name-of-items="'jobs'"
+      :name-of-items="'job(s)'"
     />
   </div>
 </template>

@@ -74,7 +74,7 @@ fileignoreconfig:
 - filename: frontend/package-lock.json
   checksum: 05c035dede3ed45f00e29814086cf273de2de1b73fa545073df06e842c71a436
 - filename: frontend/src/components/Dashboard.vue
-  checksum: a58cc910d2286d541e936d1cc60147976cd9a232bf64da2ed0824cc641c1a3b4
+  checksum: 5f925bb829d14b566d43ea302b8ab49f38649797ccf6c8d02c3d66ef45c7bf86
 - filename: frontend/src/components/GridCell.vue
   checksum: af92828dfd17ed0905a624375d587eafc39078e2e4776580b1c3838edf9e424a
 - filename: frontend/src/components/Job.vue
@@ -86,7 +86,7 @@ fileignoreconfig:
 - filename: frontend/src/components/SideMenuBar.vue
   checksum: 7163c918480863f97e93a6b0b9a01f76a9d6ee7d9e7cffb1fb6230f073b46949
 - filename: frontend/src/components/WorkflowDashboard.vue
-  checksum: 396a4aa24b00800147825d50986371c6af9cc1a8ed02a5a8d2bd8264e6355eb7
+  checksum: e3d8c94aa52790d595a45ccf3fe757ecedc1fd047216b878f65b895488690d0a
 - filename: frontend/src/images/happy.png
   checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
 - filename: frontend/src/services/apiService.js

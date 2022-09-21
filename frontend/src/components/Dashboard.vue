@@ -22,9 +22,12 @@
       class="hidden-elements"
     >
       <hr>
-      {{ hiddenContents.length }} hidden {{ nameOfItems }}
-      <button @click="toggleHiddenElements()">
-        {{ showHiddenElements ? 'hide' : 'show' }}
+      <span>{{ hiddenContents.length }} hidden {{ nameOfItems }}</span>
+      <button
+        class="hidden-buttons"
+        @click="toggleHiddenElements()"
+      >
+        {{ showHiddenElements ? 'Hide' : 'Show' }}
       </button>
       <div
         v-if="showHiddenElements"
@@ -195,4 +198,21 @@ export default {
   font-weight: bold;
   color: #333;
 }
+
+.hidden-buttons {
+  border-radius: 12px;
+  color: #fff;
+  background-color: #3a964a;
+  font-size: 15px;
+  margin-left: 5px;
+
+  /* padding: 3px 8px; */
+  width: 60px;
+  height: 30px;
+}
+
+.hidden-buttons:hover {
+  cursor: pointer;
+}
+
 </style>
