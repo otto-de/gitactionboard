@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 8bc1fe8d63fd68bf0bac7667a485c9bde641d05f68264829778cb222d5a5adbf
 - filename: README.md
-  checksum: d45e7813fef8612d969485afc2eac0ba73c0a5aed78b15409de029eb924a5228
+  checksum: 06c6b797681811175c967b4874a006b040b5dee48361109235beaef1dc8a0832
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -67,8 +67,14 @@ fileignoreconfig:
   checksum: ce87091b9e60b4172b60c0e6845eb70022027a5e1b2ff1d0ce838682f24d0100
 - filename: bin/install-talisman.sh
   checksum: 94703e38e7c00dbac423eaf0a25709dd83d8cd1274fb7d31628f4aabc60e287b
+- filename: doc/sample2.png
+  checksum: 85b0a3f011aa35389c450d6cb2639f9d663d880b124873eba992323b8304b881
+- filename: doc/preference-sample1.png
+  checksum: 524cabe3c00adb712d76ef433eaa3a7cc9454ba6a182cb180a7d3987757d74ef
 - filename: doc/sample1.png
-  checksum: cda89f07b46aae1ac69ba4cd25c7f271fb28e4a5f7c1ca23619ba17e31a2dd91
+  checksum: e6d3c1baf8962b73f4d73493653d8991159e783423feb77e330e5cdca64c5920
+- filename: doc/login-sample1.png
+  checksum: 96f2c392fb67d9fcfbcbec1184fc18d3dbf93ff62db9b96783304ca2a8a809c0
 - filename: frontend/mock-data/data.json
   checksum: 557e09ec6203f2d8944f545658991520c8274792f378b85a3c7af681a937225c
 - filename: frontend/package-lock.json

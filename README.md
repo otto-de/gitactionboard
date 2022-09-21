@@ -118,9 +118,9 @@ follow [this link](https://docs.github.com/en/developers/apps/building-oauth-app
 
 - `http://localhost:<host machine port>`
 
-![UI dashboard sample 1](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample1.png)
-
-![preference sample 1](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/preference-sample1.png)
+<img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample1.png" alt="sample1" width="49%">
+<img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample3.png" alt="sample3" width="49%"> <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample2.png" alt="sample2" width="49%">
+<img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/login-sample1.png" alt="login-sample1" width="49%"> <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/preference-sample1.png" alt="preference-sample1" width="49%">
 
 ##### UI Dashboard Configurations
 
