@@ -81,3 +81,33 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 - Send notification on MS Teams in case of build failure ([2f3e004](https://github.com/otto-de/gitactionboard/commit/2f3e0046cdf7df6ee19a802cf8ced2e5c607447a))
+
+## [v3.0.0](https://github.com/otto-de/gitactionboard/compare/v2.1.0...v3.0.0) (2022-09-21)
+
+### ⚠ BREAKING CHANGES
+
+- Rename /available-auths to /config endpoint for future use case
+- Use /workflow-jobs as default dashboard path instead of /dashboard
+
+### Features
+
+- Add button to hide single workflow jobs ([#10](https://github.com/otto-de/gitactionboard/issues/10)) ([d5471db](https://github.com/otto-de/gitactionboard/commit/d5471db798db2c008d04e2b3aca775f3e32bf371))
+- Display code standard violations on dashboard ([19e279d](https://github.com/otto-de/gitactionboard/commit/19e279d41d9f381875e92e93aad9d4e7d5bb8ad9))
+- Display page title on the top of dashboard ([939c0ac](https://github.com/otto-de/gitactionboard/commit/939c0aca3990de0f1ac8b3d3f571e10f292a739f))
+- Display secrets scan alerts on dashboard ([34e339d](https://github.com/otto-de/gitactionboard/commit/34e339d7ebda231f81de5c4f6c08080c700c4316))
+- Send notification for code standard violations ([032f12a](https://github.com/otto-de/gitactionboard/commit/032f12af437b6874e4aca0fa40a6dce0fbea414a))
+- Send notifications for exposed secrets ([20896e8](https://github.com/otto-de/gitactionboard/commit/20896e8008f99e7087afeb32c3655a5c1119380d))
+
+### Bug Fixes
+
+- Fix alignment issue with menu items ([bbb48a3](https://github.com/otto-de/gitactionboard/commit/bbb48a3d0d19b581b8b354654e0a60e7e8cd82b0))
+- Update snakeyaml version to fix CVE-2022-25857 ([c803bfb](https://github.com/otto-de/gitactionboard/commit/c803bfb244ec6d55a720ea6060237d5aefdfd9c8))
+
+### Performance Improvements
+
+- Share sever cache acorss users ([293c043](https://github.com/otto-de/gitactionboard/commit/293c04337096922e5ec154f73e7c2631a4379bd8))
+
+### Code Refactoring
+
+- Rename /available-auths to /config endpoint for future use case ([96552fc](https://github.com/otto-de/gitactionboard/commit/96552fc09d385d4c0a304a43cc90b63fc0a91109))
+- Use /workflow-jobs as default dashboard path instead of /dashboard ([d290650](https://github.com/otto-de/gitactionboard/commit/d290650eef9d116d041ab943e07a67e90e147191))
