@@ -50,7 +50,7 @@ jobs:
         uses: actions/cache@v3
         id: nvd-nist-cache
         with:
-          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/.nvd-nist-cache
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/.nvd-nist-cache
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-nvd-nist-cache-${{ hashFiles('**/*.gradle*') }}
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v3
@@ -67,4 +67,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dependency-check-report.html
-          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/build/reports/dependency-check-report.html
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/dependency-check-report.html
