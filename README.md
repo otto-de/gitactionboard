@@ -59,8 +59,15 @@ docker pull ottoopensource/gitactionboard:<docker tag>
 docker run \
   -p <host machine port>:8080 \
   -e REPO_OWNER_NAME=<organization/username> \
-  -e REPO_NAMES=<repo names> \
+  -e REPO_NAMES=<repo names as comma separated value> \
   -it ottoopensource/gitactionboard:<docker tag>
+
+# example:
+#docker run \
+#--env REPO_OWNER_NAME=webpack \
+#--env REPO_NAMES=webpack-cli,webpack-dev-server \
+#-p 8080:8080 \
+#-it ottoopensource/gitactionboard:latest
 ```
 
 #### Configurations

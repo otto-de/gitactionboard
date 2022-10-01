@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 599739c4e30260553f2a270f6bea082d516dd7cd338a6a50099590f391fb4699
 - filename: README.md
-  checksum: 83a5379d82fd6a65b284c17173577c827a9b5191d471e989095323e07acdef0f
+  checksum: 7e1e938736e86ee7ec91cc52d506102292d3843435f1ae7129d118df0f237608
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
