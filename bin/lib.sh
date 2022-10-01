@@ -203,7 +203,8 @@ _generate_contributors_list() {
 }
 
 _generate_changelog() {
-  conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -t v -a
+
+  { head -n 5 CHANGELOG.md; conventional-changelog -p conventionalcommits -t v; tail -n +5 CHANGELOG.md; } > tempCHANGELOG.md && mv tempCHANGELOG.md CHANGELOG.md
 
   prettier --write "CHANGELOG.md"
 }
