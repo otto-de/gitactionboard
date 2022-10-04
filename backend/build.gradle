@@ -27,7 +27,7 @@ ext {
     logstashVersion = "7.2"
     caffeineVersion = "3.1.1"
     wiremockVersion = "2.27.2"
-    archUnitVersion = "0.23.1"
+    archUnitVersion = "1.0.0"
     snakeyamlVersion = "1.33"
     jUnit5PitestVersion = "1.1.0"
 }
