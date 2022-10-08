@@ -3,9 +3,9 @@ tagPrefix = 'v'
 tagPattern = ~/^v/
 
 autobump {
-    majorPattern = null
-    minorPattern = null
-    patchPattern = null
+    majorPattern = ~/(?m)^.*!\s*:.*/
+    minorPattern = ~/(?m)^feat\s*:.*/
+    patchPattern = ~/(?m)^(fix|perf)\s*:.*/
     newPreReleasePattern = null
     promoteToReleasePattern = null
 }

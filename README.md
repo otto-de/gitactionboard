@@ -422,7 +422,7 @@ A new docker image can be published to [docker hub](https://hub.docker.com/repos
 - Create a new release version by running following command
 
 ```shell
-./run.sh bump-version <major|minor|patch>
+./run.sh bump-version
 ```
 
 - Push the newly created **tag** to GitHub
