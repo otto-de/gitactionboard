@@ -25,6 +25,7 @@ commands:
   build-jar                                            Build executable boot jar file
   talisman-verify                                      Verify no sensitive information is committed using talisman
   bump-version                                         Release a new version
+  unpublished-version                                  Get current (unpublished) version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
   generate-changelog                                   Generate changelog from last tag and write in CHANGELOG.md
   generate-changelog-url [tag]                         Generate changelog url for given tag
@@ -48,6 +49,7 @@ case ${CMD} in
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;
   bump-version) _bump_version ;;
+  unpublished-version) _unpublished_version ;;
   copy-frontend) _copy_frontend ;;
   generate-changelog) _generate_changelog ;;
   add-contributor) _add_contributor "${1}" "${2}" ;;

@@ -190,6 +190,13 @@ _bump_version() {
   popd >/dev/null || exit
 }
 
+_unpublished_version(){
+  pushd "backend" >/dev/null || exit
+    _ensure_jenv
+    jenv exec ./gradlew -q -Prelease printVersion
+  popd >/dev/null || exit
+}
+
 _add_contributor() {
   local username="${1}"
   local contributionType="${2}"
@@ -201,8 +208,13 @@ _generate_contributors_list() {
 }
 
 _generate_changelog() {
+  local unpublished_version
+  unpublished_version=$(_unpublished_version)
 
-  { head -n 5 CHANGELOG.md; conventional-changelog -p conventionalcommits -t v; tail -n +5 CHANGELOG.md; } > tempCHANGELOG.md && mv tempCHANGELOG.md CHANGELOG.md
+  { head -n 5 CHANGELOG.md; conventional-changelog -p conventionalcommits -t v; tail -n +5 CHANGELOG.md; } > tempCHANGELOG.md
+  { head -n 5 tempCHANGELOG.md; sed -n '6p' tempCHANGELOG.md | sed -e "s/\[\]/\[v${unpublished_version}\]/" | sed -e "s/v)/v${unpublished_version})/"; tail -n +7 tempCHANGELOG.md; } > CHANGELOG.md
+
+  rm tempCHANGELOG.md
 
   prettier --write "CHANGELOG.md"
 }

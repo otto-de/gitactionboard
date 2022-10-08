@@ -411,7 +411,7 @@ To build docker image run:
 ./run.sh generate-changelog
 ```
 
-- Once changelog is generated, verify the changelog by updating the correct version and push the changes to GitHub
+- Once changelog is generated, verify the changelog and push the changes to GitHub
 
 ### Release a new Docker image
 
