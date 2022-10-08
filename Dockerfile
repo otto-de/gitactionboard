@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.3-alpine3.15
+FROM amazoncorretto:17-alpine
 EXPOSE 8080
 COPY ./backend/build/libs/gitactionboard.jar /app/
 WORKDIR /app
