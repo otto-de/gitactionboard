@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.1](https://github.com/otto-de/gitactionboard/compare/v3.0.0...v3.0.1) (2022-10-08)
+
+### Bug Fixes
+
+- Update docker base image to fix CVE-2022-2097 and CVE-2022-37434 ([3b839b0](https://github.com/otto-de/gitactionboard/commit/3b839b0cb0834b8ccc9444b37e70952763bbd9ca))
+- Update jackson version to fix CVE-2022-42003 ([67e5d04](https://github.com/otto-de/gitactionboard/commit/67e5d0426e7e1eb7bcb14c6c94df301f34622014))
+
 ## [v3.0.0](https://github.com/otto-de/gitactionboard/compare/v2.1.0...v3.0.0) (2022-09-21)
 
 ### ⚠ BREAKING CHANGES

@@ -8,7 +8,7 @@ fileignoreconfig:
 - filename: .github/workflows/on-frontend-pr.yml
   checksum: 83c7aeebccb853d357cc19011cada015f020d92ab34798a88d4e4a0426087c5b
 - filename: CHANGELOG.md
-  checksum: 2fb23d4352f6f7724a561d098e239307de033928dfab31a3b3ffe10457963416
+  checksum: 010bb6512b1ee3e7287428c7de309b0d5fa9132c86ef0ba8683099eddf02b17a
 - filename: README.md
   checksum: deb52a0a18e057c1e40090bf95eac99bf29b271e7d2376c80226597e589f2f74
 - filename: backend/build.gradle
