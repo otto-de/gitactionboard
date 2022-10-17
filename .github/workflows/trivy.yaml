@@ -1,0 +1,76 @@
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Dockerfile'
+      - '.github/workflows/trivy.yaml'
+  pull_request:
+    types: [ opened, reopened, review_requested, edited, ready_for_review ]
+    paths:
+      - 'Dockerfile'
+      - '.github/workflows/trivy.yaml'
+  schedule:
+    - cron: '0 6 * * 1-5'
+
+env:
+  SERVICE_NAME: gitactionboard
+
+jobs:
+  trivy-checks:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Cache boot jar
+        id: boot-jar
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar
+          key: ${{ runner.os }}-bootjar-${{ hashFiles('**/*.gradle*') }}
+      - name: Install jenv
+        if: steps.boot-jar.outputs.cache-hit != 'true'
+        run: |
+          git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+          echo "$HOME/.jenv/bin" >> $GITHUB_PATH
+      - name: Configure jenv
+        if: steps.boot-jar.outputs.cache-hit != 'true'
+        run: |
+          jenv init -
+          jenv add ${JAVA_HOME_17_X64}
+      - name: Cache gradle wrapper and jars
+        if: steps.boot-jar.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      - name: Cache node modules
+        if: steps.boot-jar.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      - name: Build boot jar
+        if: steps.boot-jar.outputs.cache-hit != 'true'
+        id: build_jar
+        run: ./run.sh build-jar
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Build docker image
+        run: docker build -t "${{ env.SERVICE_NAME }}:trivy-scan" .
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'docker.io/library/${{ env.SERVICE_NAME }}:trivy-scan'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'MEDIUM,HIGH,CRITICAL'
+          security-checks: 'vuln'

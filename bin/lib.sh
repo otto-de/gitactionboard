@@ -177,6 +177,11 @@ _talisman_verify() {
   fi
 }
 
+_trivy_verify() {
+  _docker_build
+  trivy image "docker.io/library/${SERVICE_NAME}:${REVISION}" --severity HIGH,CRITICAL,MEDIUM --security-checks vuln --ignore-unfixed
+}
+
 _bump_version() {
   _revert() {
     rm -rf "backend/.git"

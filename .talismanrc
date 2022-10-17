@@ -7,10 +7,12 @@ fileignoreconfig:
   checksum: 4e9003e590fcdc0571b4c13f1ccb2b0d43dd684029e20fe94cc5a5a6dfd9d10c
 - filename: .github/workflows/on-frontend-pr.yml
   checksum: 83c7aeebccb853d357cc19011cada015f020d92ab34798a88d4e4a0426087c5b
+- filename: .github/workflows/trivy.yaml
+  checksum: 3833b75198bb6d060518f6ec3f5a92fb8c1f7fa61f5ddbd527385c4d40cd6ae0
 - filename: CHANGELOG.md
   checksum: 010bb6512b1ee3e7287428c7de309b0d5fa9132c86ef0ba8683099eddf02b17a
 - filename: README.md
-  checksum: 60d3b3572e6d45187b8458c1acd049c7a16fa8f509bad962888d2ad7e927ff58
+  checksum: b6b95358eeec903d1dd6592ceae5dd1f93ddce3aefa75e5ebdfe7b5179c976a8
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -78,7 +80,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 557e09ec6203f2d8944f545658991520c8274792f378b85a3c7af681a937225c
 - filename: frontend/package-lock.json
-  checksum: ae0bb934693d8c01472aee544a5c0d171f764e19e816ccc48650d244aa55ee02
+  checksum: 9bf32c5391482468060f8c089f26c41ad1d3c262dfbbf8cbc3507a11bfffa809
 - filename: frontend/src/components/Dashboard.vue
   checksum: 5f925bb829d14b566d43ea302b8ab49f38649797ccf6c8d02c3d66ef45c7bf86
 - filename: frontend/src/components/GridCell.vue

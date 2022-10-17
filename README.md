@@ -268,6 +268,7 @@ Access `http://localhost:<host machine port>/v1/alerts/code-standard-violations`
 - [ShellCheck](https://www.shellcheck.net/)
 - [Prettier](https://prettier.io/)
 - [talisman](https://github.com/thoughtworks/talisman)
+- [Trivy](https://github.com/aquasecurity/trivy)
 - [Node.js v16.17.0](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [all-contributors cli](https://allcontributors.org/docs/en/cli/overview) (only for maintainers)
@@ -338,12 +339,19 @@ To run format:
 This project uses the following tools to find security vulnerabilities
 
 - [org.owasp.dependencycheck](https://plugins.gradle.org/plugin/org.owasp.dependencycheck) to find vulnerable dependencies
-- [talisman](https://github.com/thoughtworks/talisman) to validate the outgoing changeset for things that look suspicious - such as authorization tokens and private keys.
+- [talisman](https://github.com/thoughtworks/talisman) to validate the outgoing changeset for things that look suspicious - such as authorization tokens and private keys
+- [Trivy](https://github.com/aquasecurity/trivy) to find vulnerabilities in Docker image
 
 To run OWASP dependency check:
 
 ```shell script
 ./run.sh check
+```
+
+To run Trivy check:
+
+```shell
+./run.sh trivy-verify
 ```
 
 ### Run application locally

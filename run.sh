@@ -24,6 +24,7 @@ commands:
   docker-build                                         Build docker image
   build-jar                                            Build executable boot jar file
   talisman-verify                                      Verify no sensitive information is committed using talisman
+  trivy-verify                                         Verify there is no vulnerability in docker image
   bump-version                                         Release a new version
   unpublished-version                                  Get current (unpublished) version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
@@ -48,6 +49,7 @@ case ${CMD} in
   frontend-test) _test "frontend";;
   docker-build) _docker_build ;;
   talisman-verify) _talisman_verify ;;
+  trivy-verify) _trivy_verify ;;
   bump-version) _bump_version ;;
   unpublished-version) _unpublished_version ;;
   copy-frontend) _copy_frontend ;;
