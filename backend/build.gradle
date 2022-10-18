@@ -3,7 +3,7 @@ plugins {
     id "idea"
     id "org.springframework.boot" version "2.7.4"
     id "io.spring.dependency-management" version "1.0.14.RELEASE"
-    id "io.freefair.lombok" version "6.4.3"
+    id "io.freefair.lombok" version "6.5.1"
     id "com.github.spotbugs" version "5.0.12"
     id "com.github.ben-manes.versions" version "0.43.0"
     id "org.owasp.dependencycheck" version "7.2.1"
@@ -13,13 +13,8 @@ plugins {
 
 spotless {
     java {
-        googleJavaFormat("1.15.0")
+        googleJavaFormat()
     }
-}
-
-lombok {
-    version = "1.18.24"
-    config["lombok.anyConstructor.addConstructorProperties"] = "true"
 }
 
 ext {

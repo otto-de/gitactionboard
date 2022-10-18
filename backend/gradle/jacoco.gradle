@@ -1,9 +1,5 @@
 apply plugin: 'jacoco'
 
-jacoco {
-    toolVersion = "0.8.7"
-}
-
 def excludes = [
         "de/otto/platform/gitactionboard/adapters/service/notifications/NoOpsNotificationsConnector.class"
 ]
