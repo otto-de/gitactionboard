@@ -9,6 +9,8 @@ updates:
       - "java"
       - "dependencies"
       - "dependabot"
+    commit-message:
+      prefix: "chore"
     open-pull-requests-limit: 20
 
   - package-ecosystem: "npm"
@@ -20,6 +22,8 @@ updates:
       - "javascript"
       - "dependencies"
       - "dependabot"
+    commit-message:
+      prefix: "chore"
     open-pull-requests-limit: 20
 
   - package-ecosystem: "github-actions"
@@ -46,4 +50,6 @@ updates:
       - "dependabot"
     reviewers:
       - "sumanmaity1234"
+    commit-message:
+      prefix: "chore"
     open-pull-requests-limit: 20
