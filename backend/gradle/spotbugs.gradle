@@ -1,5 +1,4 @@
 spotbugs {
-    toolVersion = '4.7.3'
     ignoreFailures = false
     showProgress = true
     effort = 'max'
