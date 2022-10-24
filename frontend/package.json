@@ -11,7 +11,7 @@
     "lint:fix": "vue-cli-service lint && stylelint '**/*.vue' --fix"
   },
   "dependencies": {
-    "core-js": "^3.25.5",
+    "core-js": "^3.26.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.3"
   },
