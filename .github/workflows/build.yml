@@ -82,7 +82,7 @@ jobs:
           if [[ $(git tag --points-at HEAD) != '' ]]; then
             PUBLISH_NEW_VERSION=true
           fi
-          echo "PUBLISH_NEW_VERSION::${PUBLISH_NEW_VERSION}" >> $GITHUB_OUTPUT
+          echo "PUBLISH_NEW_VERSION=${PUBLISH_NEW_VERSION}" >> $GITHUB_OUTPUT
 
   determaine_current_tag_name:
     runs-on: ubuntu-20.04
@@ -97,7 +97,7 @@ jobs:
         id: find_current_tag_name
         run: |
           CURRENT_TAG=$(git describe --tags --abbrev=0)
-          echo "CURRENT_TAG::${CURRENT_TAG}" >> $GITHUB_OUTPUT
+          echo "CURRENT_TAG=${CURRENT_TAG}" >> $GITHUB_OUTPUT
 
   docker:
     runs-on: ubuntu-20.04
@@ -150,7 +150,7 @@ jobs:
       - name: Create change log url
         id: create_change_log_url
         run: |
-          echo "CHANGE_LOG_URL::$(./run.sh generate-changelog-url ${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }})" >> $GITHUB_OUTPUT
+          echo "CHANGE_LOG_URL=$(./run.sh generate-changelog-url ${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }})" >> $GITHUB_OUTPUT
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: create github release
         uses: ncipollo/release-action@v1
