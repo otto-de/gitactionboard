@@ -11,6 +11,7 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
 # Table of contents
 
 - [Changelog](#changelog)
+- [Features](#features)
 - [Usage](#usage)
   - [Pull docker image](#pull-docker-image)
   - [Run docker image](#run-docker-image)
@@ -30,6 +31,20 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
 ## Changelog
 
 Changelog can be found [here](https://github.com/otto-de/gitactionboard/blob/main/CHANGELOG.md)
+
+## Features
+
+- Monitor workflow run status across multiple public and private repositories
+- Monitor secret scan alerts across multiple repositories
+- Monitor code scan alerts across multiple repositories
+- Show/hide specific workflow step status on UI
+- Send alerts to [MS Teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software) in case of failures
+- Get workflow run details across multiple repositories in [CCTray](https://cctray.org/v1/) XML and JSON format
+- Get secret scan alerts across multiple repositories in JSON format
+- Get code scanning alerts across multiple repositories in JSON format
+- Hide all healthy builds from build monitor
+- In-built basic auth and GitHub OAuth2 login mechanism
+- Cache GitHub API response for configured time to avoid rate limit issue
 
 ## Usage
 
