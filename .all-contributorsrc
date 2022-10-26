@@ -98,6 +98,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "baztian",
+      "name": "baztian",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2461869?v=4",
+      "profile": "https://github.com/baztian",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "gtogbes",
+      "name": "Ogbeide Godstime Osemenkhian",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70475985?v=4",
+      "profile": "https://blog.ogbes.me/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7

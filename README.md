@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -278,6 +278,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/sweiler"><img src="https://avatars.githubusercontent.com/u/9385626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Simon Weiler</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=sweiler" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/apps/dependabot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dependabot[bot]</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=dependabot[bot]" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/baztian"><img src="https://avatars.githubusercontent.com/u/2461869?v=4?s=100" width="100px;" alt=""/><br /><sub><b>baztian</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Abaztian" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://blog.ogbes.me/"><img src="https://avatars.githubusercontent.com/u/70475985?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ogbeide Godstime Osemenkhian</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Agtogbes" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
