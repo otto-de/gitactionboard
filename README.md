@@ -2,9 +2,14 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[all-contributors-badge]: https://img.shields.io/badge/all_contributors-11-orange.svg "Number of contributors"
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![All Contributors][all-contributors-badge]](#contributors-)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
+[![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
+![Release Date](https://img.shields.io/github/release-date/otto-de/gitactionboard)
 
 Gitaction Board - Ultimate Dashboard for GithubActions.
 
@@ -37,7 +42,7 @@ Changelog can be found [here](https://github.com/otto-de/gitactionboard/blob/mai
 - Monitor workflow run status across multiple public and private repositories
 - Monitor secret scan alerts across multiple repositories
 - Monitor code scan alerts across multiple repositories
-- Show/hide specific workflow step status on UI
+- Show/hide specific workflow job status from UI
 - Send alerts to [MS Teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software) in case of failures
 - Get workflow run details across multiple repositories in [CCTray](https://cctray.org/v1/) XML and JSON format
 - Get secret scan alerts across multiple repositories in JSON format
