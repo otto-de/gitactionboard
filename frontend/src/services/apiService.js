@@ -1,7 +1,4 @@
-const {
-  fetchAccessToken,
-  clearCookies,
-} = require("@/services/authenticationService");
+import {clearCookies, fetchAccessToken} from "@/services/authenticationService";
 
 const validate = (res) => {
   if (!res.ok && res.redirected) {
