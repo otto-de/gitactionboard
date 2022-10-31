@@ -80,25 +80,25 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 557e09ec6203f2d8944f545658991520c8274792f378b85a3c7af681a937225c
 - filename: frontend/package-lock.json
-  checksum: 5d7159ba56f9820d028125f51f50c5e9b0a54beb94f985d59c8fff33d2c3bd0e
+  checksum: b122539482a219414483219fe3d5cff365d210a2fb69269255df50a56404e3c1
 - filename: frontend/src/components/Dashboard.vue
-  checksum: 5f925bb829d14b566d43ea302b8ab49f38649797ccf6c8d02c3d66ef45c7bf86
+  checksum: 0152b0f9f2900ea672ca0faa15f5fc59d00b2c803e2a6d641f12e90343505bdc
 - filename: frontend/src/components/GridCell.vue
-  checksum: af92828dfd17ed0905a624375d587eafc39078e2e4776580b1c3838edf9e424a
+  checksum: 96158591224f88d356eb8701d5f0f92676335613cc0b5e978e8104c2654745e3
 - filename: frontend/src/components/Job.vue
-  checksum: b1854395de53178d6edf7e04f49f814ece2ee7a5112da3778c88c2b3739b3f7c
+  checksum: 3d50eef43682f575320807b3e14c80ca543e7b99eea4aa98913289fb2bfa084a
 - filename: frontend/src/components/LoginPage.vue
-  checksum: 015db097eee8b69dcef1c70ae52bf194011080b1ce89f8c16f02d8baf2461495
+  checksum: 7ac6c85cc06728b2f5c4eabe74db24734fa25ea46ac70e1d0b416bbdfb66658a
 - filename: frontend/src/components/MenuItems.vue
-  checksum: e3d4e0e371fd89ccc78328648864fee3eb02862c26ff34ddbaa2c04df3041cf5
+  checksum: b994b2c2da457dedde8e83e4c01158c8bb644fa93744a6349aa9cd0eb2e4f760
 - filename: frontend/src/components/SideMenuBar.vue
-  checksum: 7163c918480863f97e93a6b0b9a01f76a9d6ee7d9e7cffb1fb6230f073b46949
+  checksum: 6e440646cedff1b77d7156322c108db9fa10af54536c48a64dcd54c9b77b0874
 - filename: frontend/src/components/WorkflowDashboard.vue
-  checksum: e3d8c94aa52790d595a45ccf3fe757ecedc1fd047216b878f65b895488690d0a
+  checksum: 0727054a6d096c56b134a29499abd45d17de368fc56d37be9c54fe01ced17ea5
 - filename: frontend/src/images/happy.png
   checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
 - filename: frontend/src/services/apiService.js
-  checksum: 25aaef0a2fb86e81b3ae99681940527fcd96c9d47ecba98ddb60ad129cc9f800
+  checksum: 20d9dbb2edbc882f9b61ea25e5219260d42fc93c69bef13f264eb7d29fff02b0
 allowed_patterns:
 - org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}

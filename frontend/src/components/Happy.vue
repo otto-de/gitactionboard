@@ -11,14 +11,14 @@
 import happy from '../images/happy.png';
 
 export default {
-  name: "Happy",
+  name: 'Happy',
   data() {
     return {
       happyImage: happy
-    }
+    };
   }
 
-}
+};
 </script>
 
 <style scoped>

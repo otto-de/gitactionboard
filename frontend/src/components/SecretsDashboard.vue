@@ -14,36 +14,36 @@
 </template>
 
 <script>
-import router from "@/router";
-import preferences from "@/services/preferences";
-import {getGithubSecretsScanMonitoringEnabled} from "@/services/utils";
-import {fetchSecretAlerts} from "@/services/apiService";
-import Dashboard from "@/components/Dashboard";
-import DashboardHeader from "@/components/DashboardHeader";
+import router from '@/router';
+import preferences from '@/services/preferences';
+import { getGithubSecretsScanMonitoringEnabled } from '@/services/utils';
+import { fetchSecretAlerts } from '@/services/apiService';
+import Dashboard from '@/components/Dashboard';
+import DashboardHeader from '@/components/DashboardHeader';
 
 export default {
-  name: "SecretsDashboard",
-  components: {DashboardHeader, Dashboard},
+  name: 'SecretsDashboard',
+  components: { DashboardHeader, Dashboard },
   computed: {
     currentPath() {
       return router.currentRoute.value.path;
     },
-    disableIdleOptimization(){
+    disableIdleOptimization() {
       return preferences.disableIdleOptimization;
     },
-    maxIdleTime(){
+    maxIdleTime() {
       return preferences.maxIdleTime;
     },
-    isGithubSecretsScanMonitoringEnabled(){
+    isGithubSecretsScanMonitoringEnabled() {
       return getGithubSecretsScanMonitoringEnabled();
     }
   },
   methods: {
     fetchContents() {
       return fetchSecretAlerts();
-    },
+    }
   }
-}
+};
 </script>
 
 <style scoped>

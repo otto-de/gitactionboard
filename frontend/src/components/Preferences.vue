@@ -64,26 +64,26 @@
 </template>
 
 <script>
-import preferences from "@/services/preferences";
-import { getAvatarUrl, getName } from "@/services/authenticationService";
-import ProfilePicture from "@/components/ProfilePicture";
+import preferences from '@/services/preferences';
+import { getAvatarUrl, getName } from '@/services/authenticationService';
+import ProfilePicture from '@/components/ProfilePicture';
 
 export default {
-  name: "Preferences",
-  components: {ProfilePicture},
+  name: 'Preferences',
+  components: { ProfilePicture },
   data() {
     return {
       showHealthyBuilds: preferences.showHealthyBuilds,
       maxIdleTime: preferences.maxIdleTime,
       disableIdleOptimization: preferences.disableIdleOptimization,
       saved: true
-    }
+    };
   },
   computed: {
     isDirty() {
       return !(this.saved && this.showHealthyBuilds === preferences.showHealthyBuilds &&
           this.maxIdleTime === preferences.maxIdleTime &&
-          this.disableIdleOptimization === preferences.disableIdleOptimization)
+          this.disableIdleOptimization === preferences.disableIdleOptimization);
     },
     isValid() {
       return this.maxIdleTime >= 0 && !isNaN(this.maxIdleTime);
@@ -97,7 +97,7 @@ export default {
   },
   watch: {
     isDirty() {
-      this.saved = !this.isDirty
+      this.saved = !this.isDirty;
     }
   },
   methods: {
@@ -109,10 +109,10 @@ export default {
       this.saved = true;
     },
     getAvatarData() {
-      return getAvatarUrl()
+      return getAvatarUrl();
     }
   }
-}
+};
 </script>
 
 <style scoped>

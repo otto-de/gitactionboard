@@ -20,6 +20,7 @@
     "@mockoon/cli": "^2.2.1",
     "concurrently": "^7.5.0",
     "eslint": "^8.26.0",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-vue": "^9.6.0",
     "postcss-html": "^1.5.0",
     "stylelint": "^14.14.0",
@@ -37,7 +38,8 @@
       "plugin:vue/vue3-essential",
       "plugin:vue/vue3-strongly-recommended",
       "plugin:vue/vue3-recommended",
-      "eslint:recommended"
+      "eslint:recommended",
+      "standard"
     ],
     "parserOptions": {
       "ecmaVersion": "latest",
@@ -47,7 +49,23 @@
       "vue"
     ],
     "rules": {
-      "vue/multi-word-component-names": "off"
+      "vue/multi-word-component-names": "off",
+      "semi": [
+        "error",
+        "always"
+      ],
+      "max-len": [
+        "error",
+        120
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ]
     }
   },
   "stylelint": {

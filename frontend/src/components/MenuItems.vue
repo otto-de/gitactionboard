@@ -23,18 +23,23 @@
 </template>
 
 <script>
-import SettingsIcon from "@/icons/SettingsIcon";
-import LogoutIcon from "@/icons/LogoutIcon";
-import { getAvatarUrl } from "@/services/authenticationService";
-import ProfilePicture from "@/components/ProfilePicture";
-import SecretsIcon from "@/icons/SecretsIcon";
-import CodeStandardViolationsIcon from "@/icons/CodeStandardViolationsIcon";
-import WorkflowJobsIcon from "@/icons/WorkflowJobsIcon";
+import SettingsIcon from '@/icons/SettingsIcon';
+import LogoutIcon from '@/icons/LogoutIcon';
+import { getAvatarUrl } from '@/services/authenticationService';
+import ProfilePicture from '@/components/ProfilePicture';
+import SecretsIcon from '@/icons/SecretsIcon';
+import CodeStandardViolationsIcon from '@/icons/CodeStandardViolationsIcon';
+import WorkflowJobsIcon from '@/icons/WorkflowJobsIcon';
 export default {
-  name: "MenuItems",
+  name: 'MenuItems',
   components: {
     WorkflowJobsIcon,
-    CodeStandardViolationsIcon, SecretsIcon, ProfilePicture, LogoutIcon, SettingsIcon},
+    CodeStandardViolationsIcon,
+    SecretsIcon,
+    ProfilePicture,
+    LogoutIcon,
+    SettingsIcon
+  },
   props: {
     isClicked: Boolean,
     menuItemName: {
@@ -56,10 +61,10 @@ export default {
       this.$emit(this.iconName);
     },
     getAvatarData() {
-      return getAvatarUrl()
+      return getAvatarUrl();
     }
   }
-}
+};
 </script>
 
 <style scoped>

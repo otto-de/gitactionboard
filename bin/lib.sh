@@ -52,7 +52,7 @@ _license_report() {
 }
 
 _test() {
-  prettier --check "**/*.{json,js,css,html}" "**/*.md"
+  prettier --check "**/*.{json,css,html}" "**/*.md"
 
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh
@@ -93,7 +93,7 @@ _pitest() {
 }
 
 _format_sources() {
-  prettier --write "**/*.{json,js,css,html}" "**/*.md"
+  prettier --write "**/*.{json,css,html}" "**/*.md"
 
   # shellcheck disable=SC2035
   shellcheck -x **/*.sh

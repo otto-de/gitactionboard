@@ -14,36 +14,36 @@
 </template>
 
 <script>
-import router from "@/router";
-import preferences from "@/services/preferences";
-import {getGithubCodeScanMonitoringEnabled} from "@/services/utils";
-import {fetchCodeStandardViolations} from "@/services/apiService";
-import Dashboard from "@/components/Dashboard";
-import DashboardHeader from "@/components/DashboardHeader";
+import router from '@/router';
+import preferences from '@/services/preferences';
+import { getGithubCodeScanMonitoringEnabled } from '@/services/utils';
+import { fetchCodeStandardViolations } from '@/services/apiService';
+import Dashboard from '@/components/Dashboard';
+import DashboardHeader from '@/components/DashboardHeader';
 
 export default {
-  name: "CodeStandardViolationsDashboard",
-  components: {DashboardHeader, Dashboard},
+  name: 'CodeStandardViolationsDashboard',
+  components: { DashboardHeader, Dashboard },
   computed: {
     currentPath() {
       return router.currentRoute.value.path;
     },
-    disableIdleOptimization(){
+    disableIdleOptimization() {
       return preferences.disableIdleOptimization;
     },
-    maxIdleTime(){
+    maxIdleTime() {
       return preferences.maxIdleTime;
     },
-    isGithubCodeScanMonitoringEnabled(){
+    isGithubCodeScanMonitoringEnabled() {
       return getGithubCodeScanMonitoringEnabled();
     }
   },
   methods: {
     fetchContents() {
       return fetchCodeStandardViolations();
-    },
+    }
   }
-}
+};
 </script>
 
 <style scoped>

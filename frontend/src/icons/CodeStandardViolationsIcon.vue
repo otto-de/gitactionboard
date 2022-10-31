@@ -38,8 +38,8 @@
 <script>
 
 export default {
-  name: "CodeStandardViolationsIcon"
-}
+  name: 'CodeStandardViolationsIcon'
+};
 </script>
 
 <style scoped>

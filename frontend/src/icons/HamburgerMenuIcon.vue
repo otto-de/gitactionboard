@@ -12,17 +12,17 @@
 
 <script>
 export default {
-  name: "HamburgerMenuIcon",
+  name: 'HamburgerMenuIcon',
   props: {
     isClicked: Boolean
   },
   emits: ['clicked'],
   methods: {
     openMenu() {
-      this.$emit('clicked')
+      this.$emit('clicked');
     }
   }
-}
+};
 </script>
 
 <style scoped>

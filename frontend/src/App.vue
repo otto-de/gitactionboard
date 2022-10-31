@@ -7,20 +7,20 @@
 
 <script>
 
-import SideMenu from "@/components/SideMenuBar";
-import router from "@/router";
+import SideMenu from '@/components/SideMenuBar';
+import router from '@/router';
 
 export default {
   name: 'App',
   components: { SideMenu },
   computed: {
-    renderMenu(){
-      const routerPath = router.currentRoute.value.path
+    renderMenu() {
+      const routerPath = router.currentRoute.value.path;
 
-      return !(routerPath === '/login' || routerPath === '/')
+      return !(routerPath === '/login' || routerPath === '/');
     }
   }
-}
+};
 </script>
 
 <style scoped>

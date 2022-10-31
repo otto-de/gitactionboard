@@ -60,77 +60,75 @@
 </template>
 
 <script>
-import HamburgerMenuIcon from "@/icons/HamburgerMenuIcon";
-import MenuItems from "@/components/MenuItems";
-import router from "@/router";
-import {clearCookies, getName, isAuthenticate} from "@/services/authenticationService";
-import {getGithubCodeScanMonitoringEnabled, getGithubSecretsScanMonitoringEnabled} from "@/services/utils";
+import HamburgerMenuIcon from '@/icons/HamburgerMenuIcon';
+import MenuItems from '@/components/MenuItems';
+import router from '@/router';
+import { clearCookies, getName, isAuthenticate } from '@/services/authenticationService';
+import { getGithubCodeScanMonitoringEnabled, getGithubSecretsScanMonitoringEnabled } from '@/services/utils';
 
 export default {
-  name: "SideMenuBar",
-  components: {MenuItems, HamburgerMenuIcon},
+  name: 'SideMenuBar',
+  components: { MenuItems, HamburgerMenuIcon },
   data() {
     return {
-      isOpened: false,
-    }
+      isOpened: false
+    };
   },
   computed: {
-    activeMap(){
+    activeMap() {
       const defaultActiveMap = {
         'workflow-jobs': false,
-        'preferences': false,
-        'secrets': false,
-        'logout': false,
-        'code-standard-violations': false,
+        preferences: false,
+        secrets: false,
+        logout: false,
+        'code-standard-violations': false
       };
       const currentPath = this.currentPath;
 
       return Object.keys(this.activeMap || defaultActiveMap)
-          .reduce((previousValue, key) => {
-            if (currentPath === `/${key}`)
-              return {...previousValue, [key]: true}
-            return {...previousValue, [key]: false}
-          }, {});
+        .reduce((previousValue, key) => {
+          if (currentPath === `/${key}`) { return { ...previousValue, [key]: true }; }
+          return { ...previousValue, [key]: false };
+        }, {});
     },
-    githubSecretsScanMonitoringEnabled(){
-      return getGithubSecretsScanMonitoringEnabled()
+    githubSecretsScanMonitoringEnabled() {
+      return getGithubSecretsScanMonitoringEnabled();
     },
-    isGithubCodeScanMonitoringEnabled(){
+    isGithubCodeScanMonitoringEnabled() {
       return getGithubCodeScanMonitoringEnabled();
     },
     currentPath() {
       return router.currentRoute.value.path;
     },
-    firstName(){
-      return getName().split(" ")[0];
+    firstName() {
+      return getName().split(' ')[0];
     },
-    isAuthenticate(){
+    isAuthenticate() {
       return isAuthenticate();
-    },
+    }
   },
   methods: {
     openMenu() {
-      this.isOpened = !this.isOpened
+      this.isOpened = !this.isOpened;
     },
     redirectToPreferencesPage() {
-      router.push("/preferences")
+      router.push('/preferences');
     },
     redirectToSecretsPage() {
-      router.push("/secrets")
+      router.push('/secrets');
     },
     redirectToCodeStandardViolationsPage() {
-      router.push("/code-standard-violations")
+      router.push('/code-standard-violations');
     },
     redirectToWorkflowJobsPage() {
-      router.push("/workflow-jobs")
+      router.push('/workflow-jobs');
     },
     logout() {
       clearCookies();
-      window.location.href = './logout'
+      window.location.href = './logout';
     }
   }
-}
-
+};
 
 </script>
 

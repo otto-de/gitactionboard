@@ -18,14 +18,14 @@
 
 <script>
 export default {
-  name: "GridCell",
+  name: 'GridCell',
   props: {
     content: {
       type: Object,
       required: true
     }
-  },
-}
+  }
+};
 </script>
 
 <style scoped>

@@ -13,45 +13,45 @@
 </template>
 
 <script>
-import router from "@/router";
-import preferences from "@/services/preferences";
-import Dashboard from "@/components/Dashboard";
-import {fetchCctrayJson} from "@/services/apiService";
-import DashboardHeader from "@/components/DashboardHeader";
+import router from '@/router';
+import preferences from '@/services/preferences';
+import Dashboard from '@/components/Dashboard';
+import { fetchCctrayJson } from '@/services/apiService';
+import DashboardHeader from '@/components/DashboardHeader';
 
 export default {
   el: '#app',
-  name: "WorkflowDashboard",
-  components: {DashboardHeader, Dashboard},
+  name: 'WorkflowDashboard',
+  components: { DashboardHeader, Dashboard },
   computed: {
     currentPath() {
       return router.currentRoute.value.path;
     },
-    showHealthyBuilds(){
-     return preferences.showHealthyBuilds;
+    showHealthyBuilds() {
+      return preferences.showHealthyBuilds;
     },
-    disableIdleOptimization(){
+    disableIdleOptimization() {
       return preferences.disableIdleOptimization;
     },
-    maxIdleTime(){
+    maxIdleTime() {
       return preferences.maxIdleTime;
     }
   },
   methods: {
     fetchContents() {
-      return fetchCctrayJson().then(this.marshalData)
+      return fetchCctrayJson().then(this.marshalData);
     },
     isIdleHealthyBuild(lastBuildStatus, activity) {
-      return lastBuildStatus === "Success" && activity === "Sleeping"
+      return lastBuildStatus === 'Success' && activity === 'Sleeping';
     },
     marshalData(data) {
-      return data.filter(({lastBuildStatus, activity}) => {
-            return this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity);
-          }
+      return data.filter(({ lastBuildStatus, activity }) => {
+        return this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity);
+      }
       );
-    },
+    }
   }
-}
+};
 </script>
 
 <style scoped>

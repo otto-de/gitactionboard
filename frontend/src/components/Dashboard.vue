@@ -51,17 +51,17 @@
 </template>
 
 <script>
-import NoFailures from "@/components/Happy";
-import Spinner from "@/components/Spinner";
-import Job from "@/components/Job";
-import GridCell from "@/components/GridCell";
-import preferences from "@/services/preferences";
+import NoFailures from '@/components/Happy';
+import Spinner from '@/components/Spinner';
+import Job from '@/components/Job';
+import GridCell from '@/components/GridCell';
+import preferences from '@/services/preferences';
 
 const ONE_MINUTE = 60000;
 
 export default {
-  name: "Dashboard",
-  components: {NoFailures, Spinner, Job, GridCell },
+  name: 'Dashboard',
+  components: { NoFailures, Spinner, Job, GridCell },
   props: {
     disableMaxIdleTime: {
       type: Boolean,
@@ -99,14 +99,14 @@ export default {
       renderPageTimer: null,
       idleTimer: null,
       showHiddenElements: false
-    }
+    };
   },
   computed: {
     visibleContents() {
-      return this.contents.filter(this.isVisible)
+      return this.contents.filter(this.isVisible);
     },
     hiddenContents() {
-      return this.contents.filter(this.isHidden)
+      return this.contents.filter(this.isHidden);
     }
   },
   mounted() {
@@ -117,7 +117,7 @@ export default {
       this.loading = false;
       this.renderPageTimer = setInterval(this.renderPage, 5000);
     });
-    this.hiddenElements = preferences.hiddenElements[this.nameOfItems] || []
+    this.hiddenElements = preferences.hiddenElements[this.nameOfItems] || [];
   },
   beforeUnmount() {
     clearInterval(this.renderPageTimer);
@@ -139,7 +139,7 @@ export default {
       if (this.maxIdleTime >= this.idleTime) return this.fetchData();
       clearInterval(this.renderPageTimer);
       clearInterval(this.idleTimer);
-      const message = "Stopped auto page re-rendering due to max idle timeout";
+      const message = 'Stopped auto page re-rendering due to max idle timeout';
       console.warn(message);
       alert(message);
     },
@@ -153,11 +153,13 @@ export default {
     },
     fetchData() {
       return this.fetchContents()
-          .then((contents) => this.contents = contents)
-          .catch((reason) => {
-            console.error(reason);
-            return Promise.reject(reason);
-          });
+        .then(contents => {
+          this.contents = contents;
+        })
+        .catch((reason) => {
+          console.error(reason);
+          return Promise.reject(reason);
+        });
     },
     toggleVisibility(key) {
       const indexIfThisKeyIsHidden = this.hiddenElements.indexOf(key);
@@ -166,19 +168,19 @@ export default {
       } else {
         this.hiddenElements.push(key);
       }
-      preferences.hiddenElements = {...preferences.hiddenElements, [this.nameOfItems]: this.hiddenElements}
+      preferences.hiddenElements = { ...preferences.hiddenElements, [this.nameOfItems]: this.hiddenElements };
     },
     isVisible(content) {
-      return !this.isHidden(content)
+      return !this.isHidden(content);
     },
     isHidden(content) {
-      return this.hideByKey && this.hiddenElements.indexOf(content[this.hideByKey]) !== -1
+      return this.hideByKey && this.hiddenElements.indexOf(content[this.hideByKey]) !== -1;
     },
     toggleHiddenElements() {
-      this.showHiddenElements = !this.showHiddenElements
+      this.showHiddenElements = !this.showHiddenElements;
     }
   }
-}
+};
 </script>
 
 <style scoped>

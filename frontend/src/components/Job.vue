@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import HideOrShowIcon from "@/icons/HideOrShowIcon";
+import HideOrShowIcon from '@/icons/HideOrShowIcon';
 
 export default {
-  name: "Job",
-  components: {HideOrShowIcon},
+  name: 'Job',
+  components: { HideOrShowIcon },
   props: {
     content: {
       type: Object,
@@ -45,9 +45,9 @@ export default {
   methods: {
     getBuildAndActivityStatus(job) {
       const lastBuildStatusIndicator = this.getBuildStatus(job.lastBuildStatus);
-      return job.activity === "Building" ?
-          `job ${lastBuildStatusIndicator} building` :
-          `job ${lastBuildStatusIndicator}`;
+      return job.activity === 'Building'
+        ? `job ${lastBuildStatusIndicator} building`
+        : `job ${lastBuildStatusIndicator}`;
     },
     getBuildStatus(status) {
       switch (status) {
@@ -60,7 +60,7 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>

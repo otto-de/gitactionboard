@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import {getAvatarUrl} from "@/services/authenticationService";
+import { getAvatarUrl } from '@/services/authenticationService';
 import avatar from '../images/avatar.jpg';
 
 export default {
-  name: "ProfilePicture",
+  name: 'ProfilePicture',
   props: {
     small: {
       type: Boolean,
@@ -20,18 +20,18 @@ export default {
   },
   data() {
     return {
-      avatar: avatar
-    }
+      avatar
+    };
   },
-  computed:{
-    avatarUrl(){
+  computed: {
+    avatarUrl() {
       return getAvatarUrl();
     },
-    cssClass(){
-      return this.small ? "avatar" : "profile-avatar";
+    cssClass() {
+      return this.small ? 'avatar' : 'profile-avatar';
     }
   }
-}
+};
 </script>
 
 <style scoped>

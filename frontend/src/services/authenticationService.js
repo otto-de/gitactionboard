@@ -1,5 +1,5 @@
 const getCookies = () =>
-  document.cookie.split(";").map((cookie) => cookie.trim());
+  document.cookie.split(';').map((cookie) => cookie.trim());
 
 const getCookie = (name) => {
   const processedName = `${name}=`;
@@ -18,16 +18,16 @@ const getCookie = (name) => {
 export const clearCookies = () => {
   const cookies = getCookies();
   for (const item of cookies) {
-    const indexOfEqual = item.indexOf("=");
+    const indexOfEqual = item.indexOf('=');
     const name = indexOfEqual > -1 ? item.substring(0, indexOfEqual) : item;
-    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
   }
 };
 
-export const fetchAccessToken = () => getCookie("access_token");
+export const fetchAccessToken = () => getCookie('access_token');
 
 export const isAuthenticate = () => !!fetchAccessToken();
 
-export const getName = () => getCookie("name") || "Guest";
+export const getName = () => getCookie('name') || 'Guest';
 
-export const getAvatarUrl = () => getCookie("avatar_url") || "";
+export const getAvatarUrl = () => getCookie('avatar_url') || '';

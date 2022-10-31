@@ -78,80 +78,78 @@
 </template>
 
 <script>
-import {authenticate, fetchConfig} from "@/services/apiService";
-import {isAuthenticate} from "@/services/authenticationService";
-import Spinner from "@/components/Spinner";
-import {watch} from "vue";
-import Invalid from "@/icons/InvalidIcon";
+import { authenticate, fetchConfig } from '@/services/apiService';
+import { isAuthenticate } from '@/services/authenticationService';
+import Spinner from '@/components/Spinner';
+import { watch } from 'vue';
+import Invalid from '@/icons/InvalidIcon';
 import {
   setAvailableAuths,
   setGithubCodeScanMonitoringEnabled,
   setGithubSecretsScanMonitoringEnabled
-} from "@/services/utils";
-
+} from '@/services/utils';
 
 export default {
-  name: "LoginPage",
-  components: {Invalid, Spinner},
-  data(){
-      return {
-        availableAuths: [],
-        loading: true,
-        error: false,
-        username: "",
-        password: ""
-      }
+  name: 'LoginPage',
+  components: { Invalid, Spinner },
+  data() {
+    return {
+      availableAuths: [],
+      loading: true,
+      error: false,
+      username: '',
+      password: ''
+    };
   },
   computed: {
     isBasicAuthEnabled() {
-      return this.availableAuths.includes("BASIC_AUTH");
+      return this.availableAuths.includes('BASIC_AUTH');
     },
     isOauth2Enabled() {
-      return this.availableAuths.includes("OAUTH2");
+      return this.availableAuths.includes('OAUTH2');
     },
-    isLoginButtonDisabled(){
-      return this.username === "" || this.password === "";
+    isLoginButtonDisabled() {
+      return this.username === '' || this.password === '';
     }
   },
   mounted() {
-    watch(() => [this.username, this.password], ([newUsername, newPassword], [oldUsername, oldPassword])=> {
-      if (this.error){
+    watch(() => [this.username, this.password], ([newUsername, newPassword], [oldUsername, oldPassword]) => {
+      if (this.error) {
         this.error = newUsername === oldUsername && newPassword === oldPassword;
       }
-    })
+    });
     fetchConfig()
-        .then(({availableAuths, githubSecretsScanMonitoringEnabled, githubCodeScanMonitoringEnabled}) => {
-          this.availableAuths = availableAuths;
-          this.loading = false;
-          setAvailableAuths(availableAuths)
-          setGithubSecretsScanMonitoringEnabled(githubSecretsScanMonitoringEnabled);
-          setGithubCodeScanMonitoringEnabled(githubCodeScanMonitoringEnabled);
-        })
-        .then(() => {
-          if (isAuthenticate() || (!this.isBasicAuthEnabled && !this.isOauth2Enabled)){
-            this.redirectToDashboard();
-          }
-        })
-        .catch((reason) => {
-          console.error(reason);
-          return Promise.reject(reason);
-        });
+      .then(({ availableAuths, githubSecretsScanMonitoringEnabled, githubCodeScanMonitoringEnabled }) => {
+        this.availableAuths = availableAuths;
+        this.loading = false;
+        setAvailableAuths(availableAuths);
+        setGithubSecretsScanMonitoringEnabled(githubSecretsScanMonitoringEnabled);
+        setGithubCodeScanMonitoringEnabled(githubCodeScanMonitoringEnabled);
+      })
+      .then(() => {
+        if (isAuthenticate() || (!this.isBasicAuthEnabled && !this.isOauth2Enabled)) {
+          this.redirectToDashboard();
+        }
+      })
+      .catch((reason) => {
+        console.error(reason);
+        return Promise.reject(reason);
+      });
   },
   methods: {
     redirectToDashboard() {
-      this.$router.push("workflow-jobs")
+      this.$router.push('workflow-jobs');
     },
     login() {
       authenticate(this.username, this.password)
-      .then(this.redirectToDashboard)
-      .catch(reason => {
-        this.error = true;
-        console.error(reason);
-      })
-
+        .then(this.redirectToDashboard)
+        .catch(reason => {
+          this.error = true;
+          console.error(reason);
+        });
     }
   }
-}
+};
 </script>
 
 <style scoped>

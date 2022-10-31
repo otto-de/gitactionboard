@@ -12,14 +12,14 @@
 
 <script>
 export default {
-  name: "DashboardHeader",
+  name: 'DashboardHeader',
   props: {
     subHeader: {
       type: String,
       required: true
     }
   }
-}
+};
 </script>
 
 <style scoped>
