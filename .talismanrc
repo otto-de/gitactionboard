@@ -77,10 +77,12 @@ fileignoreconfig:
   checksum: e6d3c1baf8962b73f4d73493653d8991159e783423feb77e330e5cdca64c5920
 - filename: doc/sample2.png
   checksum: 85b0a3f011aa35389c450d6cb2639f9d663d880b124873eba992323b8304b881
+- filename: frontend/__tests__/icons/Icons.test.js
+  checksum: c12874bd2191bab9a104fe2cd79a2f0a0b98b4c675cbb5d277199b1dac3fd0c7
 - filename: frontend/mock-data/data.json
   checksum: 557e09ec6203f2d8944f545658991520c8274792f378b85a3c7af681a937225c
 - filename: frontend/package-lock.json
-  checksum: b122539482a219414483219fe3d5cff365d210a2fb69269255df50a56404e3c1
+  checksum: 99d35017f42b66618d82c1e6ceb129f5d54e8a60308891345414f3a7d62b98e2
 - filename: frontend/src/components/Dashboard.vue
   checksum: 0152b0f9f2900ea672ca0faa15f5fc59d00b2c803e2a6d641f12e90343505bdc
 - filename: frontend/src/components/GridCell.vue

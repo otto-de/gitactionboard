@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`GridCell > should render grid cell 1`] = `
+<div class="grid-cell failure" id="1234">
+  <div class="grid-cell-name">
+    <a href="https://test.com" id="1234_url" target="_blank">test name</a>
+  </div>
+</div>
+`;

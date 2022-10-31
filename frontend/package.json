@@ -7,6 +7,8 @@
     "start-mock-api-server": "mockoon-cli start -D --data mock-data/data.json",
     "serve-with-mock-data": "concurrently --kill-others \"npm run start-mock-api-server\" \"npm run serve\" ",
     "build": "vite build",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
     "lint": "eslint --ext .js,.vue --no-fix --max-warnings 0 . && stylelint '**/*.vue'",
     "lint:fix": "eslint --ext .js,.vue --fix . && stylelint '**/*.vue' --fix"
   },
@@ -18,14 +20,19 @@
   },
   "devDependencies": {
     "@mockoon/cli": "^2.2.1",
+    "@vitest/coverage-c8": "^0.24.3",
+    "@vue/test-utils": "^2.2.1",
     "concurrently": "^7.5.0",
     "eslint": "^8.26.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-vue": "^9.6.0",
+    "jest-serializer-vue-tjw": "^3.19.0",
+    "jsdom": "^20.0.2",
     "postcss-html": "^1.5.0",
     "stylelint": "^14.14.0",
     "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint-config-standard": "^29.0.0",
+    "vitest": "^0.24.3"
   },
   "eslintConfig": {
     "root": true,

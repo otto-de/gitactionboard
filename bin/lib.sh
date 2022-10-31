@@ -71,6 +71,7 @@ _test() {
       _ensure_nvm
       npm install
       npm run lint
+      npm test
       popd >/dev/null || exit
   fi
 

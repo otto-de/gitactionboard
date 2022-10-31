@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Happy > should render happy image 1`] = `
+<div class="container">
+  <img alt="no-failures" src="/src/images/happy.png">
+</div>
+`;

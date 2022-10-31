@@ -22,5 +22,13 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  test: {
+    environment: 'jsdom',
+    coverage: {
+      reporter: ['text', 'html'],
+      all: true
+    },
+    setupFiles: '__tests__/vitest.setup.js'
   }
 });
