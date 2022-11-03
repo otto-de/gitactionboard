@@ -29,6 +29,7 @@ ext {
 
 ext['jackson.version'] = "2.14.0-rc1";
 ext['snakeyaml.version'] = "1.33";
+ext['spring-security.version'] = "5.7.5";
 
 repositories {
     mavenCentral()
