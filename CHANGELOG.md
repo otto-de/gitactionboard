@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.2](https://github.com/otto-de/gitactionboard/compare/v3.0.1...v3.0.2) (2022-11-03)
+
+### Bug Fixes
+
+- Update spring security version to fix CVE-2022-31690, CVE-2022-31692 ([29177d0](https://github.com/otto-de/gitactionboard/commit/29177d059ebc2b989fe01e608e31a770fc0daa71))
+
 ## [v3.0.1](https://github.com/otto-de/gitactionboard/compare/v3.0.0...v3.0.1) (2022-10-08)
 
 ### Bug Fixes
