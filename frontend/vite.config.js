@@ -21,7 +21,9 @@ export default defineConfig({
         target: 'http://localhost:8080',
         changeOrigin: true
       }
-    }
+    },
+    port: 8081,
+    strictPort: true
   },
   test: {
     environment: 'jsdom',
