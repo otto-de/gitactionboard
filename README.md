@@ -8,7 +8,8 @@
 
 [![All Contributors][all-contributors-badge]](#contributors-)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
-[![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
+[![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard?sort=semver)](https://hub.docker.com/r/ottoopensource/gitactionboard)
+![Docker Image Size](https://img.shields.io/docker/image-size/ottoopensource/gitactionboard?label=docker%20image%20size&sort=semver)
 ![Release Date](https://img.shields.io/github/release-date/otto-de/gitactionboard)
 
 Gitaction Board - Ultimate Dashboard for GithubActions.
