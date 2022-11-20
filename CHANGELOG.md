@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.3](https://github.com/otto-de/gitactionboard/compare/v3.0.2...v3.0.3) (2022-11-20)
+
+### Performance Improvements
+
+- Use custom build JRE to reduce the docker image size ([c404c21](https://github.com/otto-de/gitactionboard/commit/c404c2161e17bbbc49864a164cfe992775499aa0))
+
 ## [v3.0.2](https://github.com/otto-de/gitactionboard/compare/v3.0.1...v3.0.2) (2022-11-03)
 
 ### Bug Fixes
