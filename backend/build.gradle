@@ -6,7 +6,7 @@ plugins {
     id "io.freefair.lombok" version "6.5.1"
     id "com.github.spotbugs" version "5.0.13"
     id "com.github.ben-manes.versions" version "0.44.0"
-    id "org.owasp.dependencycheck" version "7.3.0"
+    id "org.owasp.dependencycheck" version "7.3.2"
     id "com.diffplug.spotless" version "6.11.0"
     id "info.solidsoft.pitest" version "1.9.0"
 }
