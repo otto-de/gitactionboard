@@ -188,7 +188,7 @@ To send in a pull request
 
 ### Your PR is merged!
 
-Congratulations :tada::tada: The GitHub team thanks you :sparkles:.
+Congratulations :tada::tada: The GitactionBoard team thanks you :sparkles:.
 
 Once your PR is merged, your contributions will be publicly visible on the [Readme](/README.md).
 
