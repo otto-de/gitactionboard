@@ -2,14 +2,15 @@ package de.otto.platform.gitactionboard.adapters.controller;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import java.net.URLEncoder;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,7 @@ public class BasicAuthenticationController {
   private final AuthenticationManager authenticationManager;
   private final String contextPath;
 
+  @Autowired
   public BasicAuthenticationController(
       @Qualifier("basicAuthenticationManager") AuthenticationManager authenticationManager,
       @Qualifier("servletContextPath") String contextPath) {
@@ -68,7 +70,7 @@ public class BasicAuthenticationController {
 
   private String createAccessToken(String username, String password) {
     final byte[] encodedAuth =
-        Base64.encodeBase64(String.format("%s:%s", username, password).getBytes(UTF_8));
+        Base64.encodeBase64(String.format("%s:%s", username, password).getBytes(UTF_8), false);
     return String.format("Basic %s", new String(encodedAuth, UTF_8));
   }
 

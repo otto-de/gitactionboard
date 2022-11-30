@@ -1,7 +1,7 @@
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "2.7.5"
+    id "org.springframework.boot" version "3.0.0"
     id "io.spring.dependency-management" version "1.1.0"
     id "io.freefair.lombok" version "6.5.1"
     id "com.github.spotbugs" version "5.0.13"
@@ -26,10 +26,6 @@ ext {
     snakeyamlVersion = "1.33"
     jUnit5PitestVersion = "1.1.0"
 }
-
-ext['jackson.version'] = "2.14.0-rc1";
-ext['snakeyaml.version'] = "1.33";
-ext['spring-security.version'] = "5.7.5";
 
 repositories {
     mavenCentral()

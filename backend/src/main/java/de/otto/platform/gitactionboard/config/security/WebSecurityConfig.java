@@ -5,6 +5,10 @@ import static org.springframework.security.oauth2.core.endpoint.OAuth2ParameterN
 import static org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter.Directive.ALL;
 
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,10 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import javax.annotation.PostConstruct;
-import javax.servlet.ServletContext;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,6 +41,7 @@ import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter
 import org.springframework.util.StringUtils;
 
 @EnableWebSecurity
+@Configuration
 public class WebSecurityConfig {
 
   public static final String LOGIN_PATH = "/#/login";
@@ -92,11 +93,9 @@ public class WebSecurityConfig {
     };
 
     getDefaultSettings(http)
-        .requestMatchers()
-        .antMatchers(whitelistUrls)
-        .and()
-        .authorizeRequests()
-        .antMatchers(whitelistUrls)
+        .securityMatcher(whitelistUrls)
+        .authorizeHttpRequests()
+        .requestMatchers(whitelistUrls)
         .permitAll();
 
     return http.build();
@@ -174,9 +173,9 @@ public class WebSecurityConfig {
           .defaultSuccessUrl(DASHBOARD_PATH, true)
           .failureUrl(LOGIN_PATH)
           .and()
-          .requestMatcher(
+          .securityMatcher(
               request -> githubAuthDisabled || getAuthToken(request).startsWith("Basic"))
-          .authorizeRequests()
+          .authorizeHttpRequests()
           .anyRequest()
           .authenticated()
           .and()
@@ -228,11 +227,11 @@ public class WebSecurityConfig {
           .disable()
           .httpBasic()
           .disable()
-          .authorizeRequests()
-          .antMatchers("/login/oauth2/**", "/oauth2/**")
+          .authorizeHttpRequests()
+          .requestMatchers("/login/oauth2/**", "/oauth2/**")
           .permitAll()
           .and()
-          .authorizeRequests()
+          .authorizeHttpRequests()
           .anyRequest()
           .authenticated()
           .and()

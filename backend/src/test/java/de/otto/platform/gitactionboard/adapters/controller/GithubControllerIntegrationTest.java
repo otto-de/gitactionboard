@@ -5,7 +5,7 @@ import static de.otto.platform.gitactionboard.TestUtil.mockGetRequest;
 import static de.otto.platform.gitactionboard.TestUtil.mockGetRequestWithPageQueryParam;
 import static de.otto.platform.gitactionboard.TestUtil.readFile;
 import static de.otto.platform.gitactionboard.TestUtil.verifyRequest;
-import static javax.servlet.http.HttpServletResponse.SC_NOT_FOUND;
+import static jakarta.servlet.http.HttpServletResponse.SC_NOT_FOUND;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
 import static org.mockserver.verify.VerificationTimes.exactly;

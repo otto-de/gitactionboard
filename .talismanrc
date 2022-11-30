@@ -18,7 +18,7 @@ fileignoreconfig:
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
-  checksum: 728e367c7b7a80b9f78d8bfddb7a265c1a43f527f7fb016493043ad8680831bf
+  checksum: ed527426ddfdba4b79483a3bb02fabd2262aaa7b70a059dec4dc0f64daa61669
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
   checksum: da405260c3c35d3b7cc549da2081befdf166a8152d808d875f3e312aac77760d
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsController.java
@@ -44,7 +44,7 @@ fileignoreconfig:
 - filename: backend/src/main/resources/application.properties
   checksum: 72d13e7ea7551b8e36c3219b3b7848ec0ac2405de0f79d84046346757a8851d9
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java
-  checksum: 001126acc8a662b1329ebdb03e89e0329426d3921e59e5dec07dca5e320bc9e3
+  checksum: 06b2dc87e138ae1e99c9d59a05905a784203f630139c4c4f32c350ad178c83de
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerTest.java
   checksum: 33e53ff37b331079464e8b796ec53584fb8a9aa7c219eb219735243cab86c982
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayloadTest.java
