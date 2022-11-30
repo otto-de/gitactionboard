@@ -1,38 +1,35 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
-import static com.github.tomakehurst.wiremock.client.WireMock.equalToJson;
-import static com.github.tomakehurst.wiremock.client.WireMock.post;
-import static com.github.tomakehurst.wiremock.client.WireMock.postRequestedFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
-import static com.github.tomakehurst.wiremock.client.WireMock.verify;
+import static de.otto.platform.gitactionboard.TestUtil.mockRequest;
 import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.NotificationMessagePayloadFixture.getNotificationMessagePayloadBuilder;
-import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.mockserver.model.HttpRequest.request;
+import static org.mockserver.verify.VerificationTimes.once;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.IntegrationTest;
-import de.otto.platform.gitactionboard.WireMockExtension;
 import de.otto.platform.gitactionboard.config.CodecConfig;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockserver.client.MockServerClient;
+import org.mockserver.springtest.MockServerTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@ExtendWith(WireMockExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @IntegrationTest
+@MockServerTest
+@SuppressFBWarnings("NP_UNWRITTEN_FIELD")
 class TeamsWebHookNotificationConnectorIntegrationTest {
 
   @Autowired private TeamsWebHookNotificationConnector teamsWebHookNotificationConnector;
@@ -41,6 +38,9 @@ class TeamsWebHookNotificationConnectorIntegrationTest {
   private String webHookUrl;
 
   private ObjectMapper objectMapper;
+
+  @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
+  private MockServerClient mockServerClient;
 
   @BeforeEach
   void setUp() {
@@ -55,24 +55,19 @@ class TeamsWebHookNotificationConnectorIntegrationTest {
   @Test
   @SneakyThrows
   void shouldSendNotificationToGivenWebHookUrl() {
-    stubFor(
-        post(webHookUrl)
-            .willReturn(
-                aResponse()
-                    .withStatus(SC_OK)
-                    .withHeader(CONTENT_TYPE, TEXT_PLAIN_VALUE)
-                    .withBody("1")));
+    mockRequest(
+        mockServerClient,
+        request().withMethod("POST").withPath(webHookUrl),
+        SC_OK,
+        "1",
+        TEXT_PLAIN_VALUE);
 
     teamsWebHookNotificationConnector.notify(getJobDetailsBuilder().build());
 
     final TeamsNotificationMessagePayload expectedNotificationMessagePayload =
         getNotificationMessagePayloadBuilder().build();
 
-    verify(
-        1,
-        postRequestedFor(urlEqualTo(webHookUrl))
-            .withHeader(CONTENT_TYPE, equalTo(APPLICATION_JSON_VALUE))
-            .withRequestBody(equalToJson(getValueAsString(expectedNotificationMessagePayload))));
+    verifyMockServerRequest(expectedNotificationMessagePayload);
   }
 
   @SneakyThrows
@@ -82,13 +77,12 @@ class TeamsWebHookNotificationConnectorIntegrationTest {
 
   @Test
   void shouldReturnFalseIfUnableToSendNotificationForJob() {
-    stubFor(
-        post(webHookUrl)
-            .willReturn(
-                aResponse()
-                    .withStatus(SC_BAD_REQUEST)
-                    .withHeader(CONTENT_TYPE, TEXT_PLAIN_VALUE)
-                    .withBody("Bad Request")));
+    mockRequest(
+        mockServerClient,
+        request().withMethod("POST").withPath(webHookUrl),
+        SC_BAD_REQUEST,
+        "Bad Request",
+        TEXT_PLAIN_VALUE);
 
     assertThatExceptionOfType(RuntimeException.class)
         .isThrownBy(() -> teamsWebHookNotificationConnector.notify(getJobDetailsBuilder().build()))
@@ -96,10 +90,18 @@ class TeamsWebHookNotificationConnectorIntegrationTest {
 
     final TeamsNotificationMessagePayload expectedNotificationMessagePayload =
         getNotificationMessagePayloadBuilder().build();
-    verify(
-        1,
-        postRequestedFor(urlEqualTo(webHookUrl))
-            .withHeader(CONTENT_TYPE, equalTo(APPLICATION_JSON_VALUE))
-            .withRequestBody(equalToJson(getValueAsString(expectedNotificationMessagePayload))));
+
+    verifyMockServerRequest(expectedNotificationMessagePayload);
+  }
+
+  private void verifyMockServerRequest(
+      TeamsNotificationMessagePayload expectedNotificationMessagePayload) {
+    mockServerClient.verify(
+        request()
+            .withMethod("POST")
+            .withBody(getValueAsString(expectedNotificationMessagePayload))
+            .withPath(webHookUrl)
+            .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE),
+        once());
   }
 }

@@ -1,28 +1,25 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.postRequestedFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
-import static com.github.tomakehurst.wiremock.client.WireMock.verify;
 import static de.otto.platform.gitactionboard.TestUtil.invokeGetApiAndValidate;
+import static de.otto.platform.gitactionboard.TestUtil.mockGetRequestWithPageQueryParam;
+import static de.otto.platform.gitactionboard.TestUtil.mockRequest;
 import static de.otto.platform.gitactionboard.TestUtil.readFile;
-import static org.apache.http.HttpStatus.SC_NOT_FOUND;
-import static org.apache.http.HttpStatus.SC_OK;
-import static org.assertj.core.api.Assertions.assertThat;
+import static de.otto.platform.gitactionboard.TestUtil.verifyRequest;
+import static de.otto.platform.gitactionboard.TestUtil.verifyRequestWithPageQueryParams;
+import static javax.servlet.http.HttpServletResponse.SC_NOT_FOUND;
+import static javax.servlet.http.HttpServletResponse.SC_OK;
+import static org.mockserver.model.HttpRequest.request;
+import static org.mockserver.model.HttpResponse.response;
+import static org.mockserver.verify.VerificationTimes.exactly;
+import static org.mockserver.verify.VerificationTimes.once;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
-import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.matching.EqualToPattern;
 import de.otto.platform.gitactionboard.IntegrationTest;
-import de.otto.platform.gitactionboard.WireMockExtension;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
@@ -31,10 +28,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullSource;
+import org.mockserver.client.MockServerClient;
+import org.mockserver.model.Parameter;
+import org.mockserver.springtest.MockServerTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -48,56 +47,51 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 @DirtiesContext
 @IntegrationTest
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
+@SuppressFBWarnings("NP_UNWRITTEN_FIELD")
 class GithubAlertsControllerIntegrationTest {
   private static final String API_BASE_PATH = "/repos/johndoe/hello-world";
   private static final String SECURITY_SCAN_ALERTS_ENDPOINT = "/v1/alerts/secrets";
   private static final String CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT =
       "/v1/alerts/code-standard-violations";
   private static final String SECRETS_SCAN_ALERTS_URL =
-      String.format("%s/secret-scanning/alerts?state=open&page=1&per_page=100", API_BASE_PATH);
+      "%s/secret-scanning/alerts".formatted(API_BASE_PATH);
   private static final String CODE_SCAN_ALERTS_URL =
-      String.format("%s/code-scanning/alerts?state=open&page=1&per_page=100", API_BASE_PATH);
+      "%s/code-scanning/alerts".formatted(API_BASE_PATH);
   private static final String SECRETS_SCAN_ALERTS_JSON = "testData/secretsScanAlerts.json";
   private static final String SECURITY_SCAN_ALERTS_JSON = "testData/securityScanAlerts.json";
   private static final String GITHUB_CODE_SCAN_ALERTS_JSON = "testData/githubCodeScanAlerts.json";
   private static final String CODE_STANDARD_VIOLATIONS_JSON =
       "testData/codeStandardViolations.json";
 
-  private void stubSecretsScanApiRequests() {
-    stubFor(
-        WireMock.get(SECRETS_SCAN_ALERTS_URL)
-            .willReturn(
-                aResponse()
-                    .withStatus(SC_OK)
-                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
-                    .withBody(readFile(SECRETS_SCAN_ALERTS_JSON))));
-    stubFor(WireMock.post("/webhook/notifications").willReturn(aResponse().withStatus(SC_OK)));
+  private void stubSecretsScanApiRequests(MockServerClient mockServerClient) {
+    mockGetRequestWithPageQueryParam(
+        mockServerClient,
+        SECRETS_SCAN_ALERTS_URL,
+        readFile(SECRETS_SCAN_ALERTS_JSON),
+        "state",
+        "page",
+        "per_page");
+    mockServerClient
+        .when(request().withMethod("POST").withPath("/webhook/notifications"))
+        .respond(response().withStatusCode(SC_OK));
   }
 
-  private void stubCodeScanApiRequests() {
-    stubFor(
-        WireMock.get(CODE_SCAN_ALERTS_URL)
-            .willReturn(
-                aResponse()
-                    .withStatus(SC_OK)
-                    .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)
-                    .withBody(readFile(GITHUB_CODE_SCAN_ALERTS_JSON))));
-    stubFor(WireMock.post("/webhook/notifications").willReturn(aResponse().withStatus(SC_OK)));
-  }
+  private void stubCodeScanApiRequests(MockServerClient mockServerClient) {
+    mockGetRequestWithPageQueryParam(
+        mockServerClient,
+        CODE_SCAN_ALERTS_URL,
+        readFile(GITHUB_CODE_SCAN_ALERTS_JSON),
+        "state",
+        "page",
+        "per_page");
 
-  @BeforeEach
-  void setUp() {
-    WireMock.reset();
-  }
-
-  @AfterEach
-  void tearDown() {
-    WireMock.reset();
+    mockServerClient
+        .when(request().withMethod("POST").withPath("/webhook/notifications"))
+        .respond(response().withStatusCode(SC_OK));
   }
 
   @Nested
   @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING=false"})
@@ -122,7 +116,6 @@ class GithubAlertsControllerIntegrationTest {
 
   @Nested
   @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"ENABLE_GITHUB_CODE_SCAN_ALERTS_MONITORING=false"})
@@ -147,9 +140,11 @@ class GithubAlertsControllerIntegrationTest {
 
   @Nested
   @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
+  @MockServerTest
   @SpringBootTest(webEnvironment = RANDOM_PORT)
   class WithoutCacheForSecurityAlerts {
+    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
+    private MockServerClient mockServerClient;
 
     @Autowired private MockMvc mockMvc;
     @Autowired private NotificationRepository notificationRepository;
@@ -165,7 +160,7 @@ class GithubAlertsControllerIntegrationTest {
     @Test
     @SneakyThrows
     void shouldFetchSecurityAlerts() {
-      stubSecretsScanApiRequests();
+      stubSecretsScanApiRequests(mockServerClient);
 
       invokeGetApiAndValidate(
           mockMvc,
@@ -173,18 +168,22 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           content().json(readFile(SECURITY_SCAN_ALERTS_JSON)));
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(4);
-      final EqualToPattern valuePattern = new EqualToPattern("");
-      verify(
-          getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(3, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+      mockServerClient.verify(request(), exactly(4));
+
+      verifyRequestWithPageQueryParams(
+          mockServerClient,
+          SECRETS_SCAN_ALERTS_URL,
+          "",
+          Parameter.param("state", "open"),
+          Parameter.param("page", "1"),
+          Parameter.param("per_page", "100"));
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
     }
 
     @Test
     @SneakyThrows
     void shouldFetchSecurityAlertsUsingAccessTokenFromCookie() {
-      stubSecretsScanApiRequests();
+      stubSecretsScanApiRequests(mockServerClient);
 
       final String dummyAccessToken = "dummy_access_token";
 
@@ -195,23 +194,29 @@ class GithubAlertsControllerIntegrationTest {
           content().json(readFile(SECURITY_SCAN_ALERTS_JSON)),
           dummyAccessToken);
 
-      final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
-      assertThat(WireMock.getAllServeEvents()).hasSize(4);
-      verify(
-          getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
+      mockServerClient.verify(request(), exactly(4));
+
+      verifyRequestWithPageQueryParams(
+          mockServerClient,
+          SECRETS_SCAN_ALERTS_URL,
+          "",
+          Parameter.param("state", "open"),
+          Parameter.param("page", "1"),
+          Parameter.param("per_page", "100"));
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
     }
 
     @Test
     @SneakyThrows
     @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
     void shouldNotThrowErrorIfWorkflowsApiCallFails() {
-      stubFor(
-          WireMock.get(SECRETS_SCAN_ALERTS_URL)
-              .willReturn(
-                  aResponse()
-                      .withStatus(SC_NOT_FOUND)
-                      .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)));
+
+      mockRequest(
+          mockServerClient,
+          request().withMethod("GET").withPath(SECRETS_SCAN_ALERTS_URL),
+          SC_NOT_FOUND,
+          "Not found",
+          APPLICATION_JSON_VALUE);
 
       invokeGetApiAndValidate(
           mockMvc, SECURITY_SCAN_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, content().json("[]"));
@@ -220,11 +225,14 @@ class GithubAlertsControllerIntegrationTest {
 
   @Nested
   @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
+  @MockServerTest
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"spring.cache.cache-names=securityScanAlerts", "spring.cache.type=caffeine"})
   class WithCacheSecurityScanAlerts {
+    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
+    private MockServerClient mockServerClient;
+
     @Autowired private MockMvc mockMvc;
 
     @Value("${wiremock.webhook.url}")
@@ -236,7 +244,7 @@ class GithubAlertsControllerIntegrationTest {
 
     @BeforeEach
     void setUp() {
-      stubSecretsScanApiRequests();
+      stubSecretsScanApiRequests(mockServerClient);
     }
 
     @AfterEach
@@ -246,6 +254,7 @@ class GithubAlertsControllerIntegrationTest {
           .map(cacheManager::getCache)
           .filter(Objects::nonNull)
           .forEach(org.springframework.cache.Cache::clear);
+      mockServerClient.reset();
     }
 
     @Test
@@ -256,18 +265,14 @@ class GithubAlertsControllerIntegrationTest {
       invokeGetApiAndValidate(
           mockMvc, SECURITY_SCAN_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(4);
-      final EqualToPattern valuePattern = new EqualToPattern("");
-      verify(
-          getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(3, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
-
-      WireMock.resetAllRequests();
+      mockServerClient.verify(request(), exactly(4));
+      verifyRequest(mockServerClient, SECRETS_SCAN_ALERTS_URL, "");
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
+      mockServerClient.reset();
 
       invokeGetApiAndValidate(
           mockMvc, SECURITY_SCAN_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
-      assertThat(WireMock.getAllServeEvents()).isEmpty();
+      mockServerClient.verifyZeroInteractions();
     }
 
     @Test
@@ -284,14 +289,11 @@ class GithubAlertsControllerIntegrationTest {
           resultMatcher,
           dummyToken1);
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(4);
-      final EqualToPattern valuePattern = new EqualToPattern(dummyToken1);
-      verify(
-          getRequestedFor(urlEqualTo(SECRETS_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(3, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+      mockServerClient.verify(request(), exactly(4));
+      verifyRequest(mockServerClient, SECRETS_SCAN_ALERTS_URL, dummyToken1);
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
 
-      WireMock.resetAllRequests();
+      mockServerClient.reset();
 
       invokeGetApiAndValidate(
           mockMvc,
@@ -299,18 +301,21 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           resultMatcher,
           "dummyToken2");
-      assertThat(WireMock.getAllServeEvents()).isEmpty();
+      mockServerClient.verifyZeroInteractions();
     }
   }
 
   @Nested
   @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
+  @MockServerTest
   @SpringBootTest(webEnvironment = RANDOM_PORT)
   class WithoutCacheForCodeScanAlerts {
 
     @Autowired private MockMvc mockMvc;
     @Autowired private NotificationRepository notificationRepository;
+
+    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
+    private MockServerClient mockServerClient;
 
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
@@ -323,7 +328,7 @@ class GithubAlertsControllerIntegrationTest {
     @Test
     @SneakyThrows
     void shouldFetchCodeStandardViolationAlerts() {
-      stubCodeScanApiRequests();
+      stubCodeScanApiRequests(mockServerClient);
 
       invokeGetApiAndValidate(
           mockMvc,
@@ -331,19 +336,15 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON)));
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(3);
-      final EqualToPattern valuePattern = new EqualToPattern("");
-      verify(
-          1,
-          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+      mockServerClient.verify(request(), exactly(3));
+      verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, "");
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
     }
 
     @Test
     @SneakyThrows
     void shouldFetchCodeStandardViolationAlertsUsingAccessTokenFromCookie() {
-      stubCodeScanApiRequests();
+      stubCodeScanApiRequests(mockServerClient);
 
       final String dummyAccessToken = "dummy_access_token";
 
@@ -354,25 +355,22 @@ class GithubAlertsControllerIntegrationTest {
           content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON)),
           dummyAccessToken);
 
-      final EqualToPattern valuePattern = new EqualToPattern(dummyAccessToken);
-      assertThat(WireMock.getAllServeEvents()).hasSize(3);
-      verify(
-          1,
-          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
+      mockServerClient.verify(request(), exactly(3));
+      verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, dummyAccessToken);
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
     }
 
     @Test
     @SneakyThrows
     @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
     void shouldNotThrowErrorIfCodeScanApiCallFails() {
-      stubFor(
-          WireMock.get(CODE_SCAN_ALERTS_URL)
-              .willReturn(
-                  aResponse()
-                      .withStatus(SC_NOT_FOUND)
-                      .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE)));
+
+      mockRequest(
+          mockServerClient,
+          request().withMethod("GET").withPath(CODE_SCAN_ALERTS_URL),
+          SC_NOT_FOUND,
+          "Not found",
+          APPLICATION_JSON_VALUE);
 
       invokeGetApiAndValidate(
           mockMvc,
@@ -380,17 +378,20 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           content().json("[]"));
 
-      verify(1, getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL)));
+      mockServerClient.verify(request().withPath(CODE_SCAN_ALERTS_URL), once());
     }
   }
 
   @Nested
   @AutoConfigureMockMvc
-  @ExtendWith(WireMockExtension.class)
+  @MockServerTest
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"spring.cache.cache-names=codeScanAlerts", "spring.cache.type=caffeine"})
   class WithCacheCodeScanAlerts {
+    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
+    private MockServerClient mockServerClient;
+
     @Autowired private MockMvc mockMvc;
 
     @Value("${wiremock.webhook.url}")
@@ -402,7 +403,7 @@ class GithubAlertsControllerIntegrationTest {
 
     @BeforeEach
     void setUp() {
-      stubCodeScanApiRequests();
+      stubCodeScanApiRequests(mockServerClient);
     }
 
     @AfterEach
@@ -412,6 +413,7 @@ class GithubAlertsControllerIntegrationTest {
           .map(cacheManager::getCache)
           .filter(Objects::nonNull)
           .forEach(org.springframework.cache.Cache::clear);
+      mockServerClient.reset();
     }
 
     @Test
@@ -422,19 +424,14 @@ class GithubAlertsControllerIntegrationTest {
       invokeGetApiAndValidate(
           mockMvc, CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(3);
-      final EqualToPattern valuePattern = new EqualToPattern("");
-      verify(
-          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
-      verify(1, getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL)));
-
-      WireMock.resetAllRequests();
+      mockServerClient.verify(request(), exactly(3));
+      verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, "");
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
+      mockServerClient.reset();
 
       invokeGetApiAndValidate(
           mockMvc, CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
-      assertThat(WireMock.getAllServeEvents()).isEmpty();
+      mockServerClient.verifyZeroInteractions();
     }
 
     @Test
@@ -451,15 +448,10 @@ class GithubAlertsControllerIntegrationTest {
           resultMatcher,
           dummyToken1);
 
-      assertThat(WireMock.getAllServeEvents()).hasSize(3);
-      final EqualToPattern valuePattern = new EqualToPattern(dummyToken1);
-      verify(
-          getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL))
-              .withHeader(AUTHORIZATION, valuePattern));
-      verify(2, postRequestedFor(urlEqualTo(notificationWebHookUrl)));
-      verify(1, getRequestedFor(urlEqualTo(CODE_SCAN_ALERTS_URL)));
-
-      WireMock.resetAllRequests();
+      mockServerClient.verify(request(), exactly(3));
+      verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, dummyToken1);
+      verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
+      mockServerClient.reset();
 
       invokeGetApiAndValidate(
           mockMvc,
@@ -467,7 +459,7 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           resultMatcher,
           "dummyToken2");
-      assertThat(WireMock.getAllServeEvents()).isEmpty();
+      mockServerClient.verifyZeroInteractions();
     }
   }
 }
