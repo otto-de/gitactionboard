@@ -81,16 +81,7 @@ public class WebSecurityConfig {
     final String healthEndPoint = String.format("%s/health", actuatorBasePath);
 
     final String[] whitelistUrls = {
-      healthEndPoint,
-      "/config",
-      "/",
-      "/index.html",
-      "/css/**",
-      "/js/**",
-      "/img/**",
-      "/assets/**",
-      "/favicon.ico",
-      "/login/basic"
+      healthEndPoint, "/config", "/", "/index.html", "/assets/**", "/favicon.ico", "/login/basic"
     };
 
     getDefaultSettings(http)
