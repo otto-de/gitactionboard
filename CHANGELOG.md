@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.4](https://github.com/otto-de/gitactionboard/compare/v3.0.3...v3.0.4) (2022-12-01)
+
+### Bug Fixes
+
+- Allow everyone to access resources from /assets ([64c1e3f](https://github.com/otto-de/gitactionboard/commit/64c1e3f680e56335da8d4dc828fa0d5166a4d48a))
+
 ## [v3.0.3](https://github.com/otto-de/gitactionboard/compare/v3.0.2...v3.0.3) (2022-11-20)
 
 ### Performance Improvements
