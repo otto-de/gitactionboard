@@ -88,6 +88,7 @@ public class WebSecurityConfig {
       "/css/**",
       "/js/**",
       "/img/**",
+      "/assets/**",
       "/favicon.ico",
       "/login/basic"
     };
