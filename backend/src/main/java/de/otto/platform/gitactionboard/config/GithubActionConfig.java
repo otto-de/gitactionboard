@@ -28,12 +28,17 @@ public class GithubActionConfig {
     return domainName;
   }
 
-  @Bean(name = "ownerName")
-  public String ownerName(@Value("${REPO_OWNER_NAME}") String ownerName) {
-    if (ownerName.isBlank())
+  @Bean(name = "basicAuthUserDetails")
+  public String basicAuthUserDetails(
+          @Value("${BASIC_AUTH_USER_DETAILS:}") String content,
+          @Value("${BASIC_AUTH_USER_DETAILS_FILE_PATH:}") String filePath
+  ) {
+    if (!content.isBlank() && !filePath.isBlank()) {
       throw new IllegalArgumentException(
-          "REPO_NAMES environment variable is either empty or its not set");
-    return ownerName;
+              "You must not use BASIC_AUTH_USER_DETAILS and BASIC_AUTH_USER_DETAILS_FILE_PATH at the same time!");
+    }
+
+    return content.isBlank() ? filePath : content;
   }
 
   @Bean(name = "repoNames")
@@ -42,5 +47,13 @@ public class GithubActionConfig {
       throw new IllegalArgumentException(
           "REPO_NAMES environment variable is either empty or its not set");
     return repoNames.stream().toList();
+  }
+
+  @Bean(name = "ownerName")
+  public String ownerName(@Value("${REPO_OWNER_NAME}") String ownerName) {
+    if (ownerName.isBlank())
+      throw new IllegalArgumentException(
+              "REPO_NAMES environment variable is either empty or its not set");
+    return ownerName;
   }
 }

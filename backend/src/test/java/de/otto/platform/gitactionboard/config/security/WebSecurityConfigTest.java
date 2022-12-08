@@ -30,22 +30,26 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 class WebSecurityConfigTest {
   public static Stream<Arguments> getConfig() {
     return Stream.of(
-        Arguments.of("basic_details", "random-client-id", List.of(OAUTH2, BASIC_AUTH)),
-        Arguments.of(null, "random-client-id", List.of(OAUTH2)),
-        Arguments.of("basic_details", "-", List.of(BASIC_AUTH)),
-        Arguments.of("", "-", List.of()),
-        Arguments.of("     ", "-", List.of()),
-        Arguments.of(null, "-", List.of()));
+        Arguments.of("basic_details", null, "random-client-id", List.of(OAUTH2, BASIC_AUTH)),
+        Arguments.of(null, null, "random-client-id", List.of(OAUTH2)),
+        Arguments.of("basic_details", null, "-", List.of(BASIC_AUTH)),
+        Arguments.of(null, "basic_content", "-", List.of(BASIC_AUTH)),
+        Arguments.of("", null, "-", List.of()),
+        Arguments.of("     ", null, "-", List.of()),
+        Arguments.of(null, null, "-", List.of()));
   }
 
   @ParameterizedTest
   @MethodSource("getConfig")
   void shouldGiveAvailableAuths(
       String basicAuthFilePath,
+      String basicAuthFileContent,
       String githubClientId,
       List<AuthenticationMechanism> expectedAuths) {
     final WebSecurityConfig webSecurityConfig = new WebSecurityConfig();
-    assertThat(webSecurityConfig.availableAuths(basicAuthFilePath, githubClientId))
+    assertThat(
+            webSecurityConfig.availableAuths(
+                basicAuthFilePath, basicAuthFileContent, githubClientId))
         .hasSameSizeAs(expectedAuths)
         .containsAll(expectedAuths);
   }

@@ -27,6 +27,8 @@ import org.springframework.test.web.servlet.MockMvc;
 @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
 @Parallel
 class BasicAuthenticationControllerIntegrationTest {
+  private static final String SIC_INNER_SHOULD_BE_STATIC = "SIC_INNER_SHOULD_BE_STATIC";
+
   private static final String NAME = "name";
   private static final String USERNAME = "username";
   private static final String ACCESS_TOKEN = "access_token";
@@ -77,8 +79,8 @@ class BasicAuthenticationControllerIntegrationTest {
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd"})
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
-  class WithDefaultContextPathTest {
+  @SuppressFBWarnings(SIC_INNER_SHOULD_BE_STATIC)
+  class FileWithDefaultContextPathTest {
     @Autowired private MockMvc mockMvc;
 
     @Autowired private ObjectMapper objectMapper;
@@ -105,8 +107,63 @@ class BasicAuthenticationControllerIntegrationTest {
         "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd",
         "server.servlet.context-path=/test"
       })
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
-  class WithCustomContextPathTest {
+  @SuppressFBWarnings(SIC_INNER_SHOULD_BE_STATIC)
+  class FileWithCustomContextPathTest {
+    @Autowired private MockMvc mockMvc;
+
+    @Autowired private ObjectMapper objectMapper;
+
+    @Test
+    @SneakyThrows
+    void shouldBeAbleToLoginUsingUsernameAndPassword() {
+      validateSuccessApiCall("/test", mockMvc, objectMapper);
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldNoBeAbleToLoginUsingInvalidUsernameAndPassword() {
+      validateUnauthorisedApiCall(mockMvc, objectMapper);
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @Import(CodecConfig.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {
+        "BASIC_AUTH_USER_DETAILS=admin:$2y$10$H6G8NiURbpbU.EXUsd4SSuTNjcHQgNuQG83d6j5GB26hDVNpjSumq"
+      })
+  @SuppressFBWarnings(SIC_INNER_SHOULD_BE_STATIC)
+  class ContentWithDefaultContextPathTest {
+    @Autowired private MockMvc mockMvc;
+
+    @Autowired private ObjectMapper objectMapper;
+
+    @Test
+    @SneakyThrows
+    void shouldBeAbleToLoginUsingUsernameAndPassword() {
+      validateSuccessApiCall("/", mockMvc, objectMapper);
+    }
+
+    @Test
+    @SneakyThrows
+    void shouldNoBeAbleToLoginUsingInvalidUsernameAndPassword() {
+      validateUnauthorisedApiCall(mockMvc, objectMapper);
+    }
+  }
+
+  @Nested
+  @AutoConfigureMockMvc
+  @Import(CodecConfig.class)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {
+        "BASIC_AUTH_USER_DETAILS=admin:$2y$10$H6G8NiURbpbU.EXUsd4SSuTNjcHQgNuQG83d6j5GB26hDVNpjSumq",
+        "server.servlet.context-path=/test"
+      })
+  @SuppressFBWarnings(SIC_INNER_SHOULD_BE_STATIC)
+  class ContentWithCustomContextPathTest {
     @Autowired private MockMvc mockMvc;
 
     @Autowired private ObjectMapper objectMapper;

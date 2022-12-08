@@ -12,13 +12,13 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 4894e5a343894b1e8f47b022126d5bbb1456a2032126a2caa179db6f0d73eb45
 - filename: README.md
-  checksum: 540dfbced06805b2876ae6b76dbfe5379aae485ca3fbe851028d28a585cc036f
+  checksum: 4e32ce0ad627690eb74198afa80d4132a6a608bda0fc2951c1ea8f5db436721a
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
-  checksum: ed527426ddfdba4b79483a3bb02fabd2262aaa7b70a059dec4dc0f64daa61669
+  checksum: 28d6705f38e1a889d282a784820928bdcc1e0918ac6a96620260073676e9f9b4
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
   checksum: da405260c3c35d3b7cc549da2081befdf166a8152d808d875f3e312aac77760d
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsController.java
@@ -43,6 +43,8 @@ fileignoreconfig:
   checksum: 9cf91ba9c8e5f94bda99c63e11bd0ea826b6c9703b6fc3fc1ee69ca7d45671c5
 - filename: backend/src/main/resources/application.properties
   checksum: 72d13e7ea7551b8e36c3219b3b7848ec0ac2405de0f79d84046346757a8851d9
+- filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationControllerIntegrationTest.java
+  checksum: aeebb56ee15ef191b0d10cea0b7a46de9ffd5c960f5818c96c65e931b5a64b93
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java
   checksum: 06b2dc87e138ae1e99c9d59a05905a784203f630139c4c4f32c350ad178c83de
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerTest.java
@@ -82,7 +84,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 557e09ec6203f2d8944f545658991520c8274792f378b85a3c7af681a937225c
 - filename: frontend/package-lock.json
-  checksum: a0e0a62bd0363cd1c009479a1475d0f95fc987c3d1afa47db69e889a36e4bc87
+  checksum: c77f534814752fedb30f6812b07c120144ae1f42d62b195fffa5ca76d5512ad6
 - filename: frontend/src/components/Dashboard.vue
   checksum: 0152b0f9f2900ea672ca0faa15f5fc59d00b2c803e2a6d641f12e90343505bdc
 - filename: frontend/src/components/GridCell.vue

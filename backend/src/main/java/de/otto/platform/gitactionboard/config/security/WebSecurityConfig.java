@@ -54,11 +54,13 @@ public class WebSecurityConfig {
   @Bean
   public List<AuthenticationMechanism> availableAuths(
       @Value("${BASIC_AUTH_USER_DETAILS_FILE_PATH:}") String basicAuthDetailsFilePath,
+      @Value("${BASIC_AUTH_USER_DETAILS:}") String basicAuthDetailsContent,
       @Value("${spring.security.oauth2.client.registration.github.client-id:-}")
           String githubClientId) {
     final ArrayList<AuthenticationMechanism> authenticationMechanisms = new ArrayList<>();
 
-    if (StringUtils.hasText(basicAuthDetailsFilePath))
+    if (StringUtils.hasText(basicAuthDetailsFilePath)
+        || StringUtils.hasText(basicAuthDetailsContent))
       authenticationMechanisms.add(AuthenticationMechanism.BASIC_AUTH);
     if (!"-".equals(githubClientId)) authenticationMechanisms.add(AuthenticationMechanism.OAUTH2);
 
@@ -97,7 +99,7 @@ public class WebSecurityConfig {
   @Order(2)
   @Configuration
   @ConditionalOnExpression(
-      "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}')")
+      "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}') or T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS:}')")
   @ConditionalOnMissingBean(NoOpsWebSecurityConfig.class)
   public static class BasicAuthSecurityConfig {
     private static final String CREDENTIAL_SEPARATOR = ":";
@@ -108,10 +110,33 @@ public class WebSecurityConfig {
     }
 
     @Bean(name = "basicAuthUsers")
+    @ConditionalOnExpression(
+        "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}')")
     public List<UserDetails> getBasicAuthUsers(
         @Value("${BASIC_AUTH_USER_DETAILS_FILE_PATH}") String basicAuthFilePath)
         throws IOException {
       return Files.readAllLines(Path.of(basicAuthFilePath)).stream()
+          .filter(line -> !line.isBlank())
+          .map(
+              line -> {
+                final String[] credentials = line.split(CREDENTIAL_SEPARATOR);
+                return new AbstractMap.SimpleImmutableEntry<>(credentials[0], credentials[1]);
+              })
+          .map(
+              authDetails ->
+                  User.withUsername(authDetails.getKey())
+                      .password(authDetails.getValue())
+                      .authorities("ROLE_USER")
+                      .build())
+          .collect(Collectors.toList());
+    }
+
+    @Bean(name = "basicAuthUsers")
+    @ConditionalOnExpression(
+        "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS:}')")
+    public List<UserDetails> getBasicAuthUsersFromContent(
+        @Value("${BASIC_AUTH_USER_DETAILS}") String basicAuthFileContent) throws IOException {
+      return Arrays.stream(basicAuthFileContent.split(System.lineSeparator()))
           .filter(line -> !line.isBlank())
           .map(
               line -> {

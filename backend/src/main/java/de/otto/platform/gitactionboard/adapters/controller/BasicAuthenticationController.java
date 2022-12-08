@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @ConditionalOnExpression(
-    "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}')")
+    "T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}') or T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS:}')")
 public class BasicAuthenticationController {
   private static final String NAME = "name";
   private static final String USERNAME = "username";

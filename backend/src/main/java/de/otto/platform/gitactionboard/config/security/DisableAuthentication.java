@@ -16,6 +16,6 @@ public class DisableAuthentication extends AllNestedConditions {
   static class GithubAuthConfigMissing {}
 
   @ConditionalOnExpression(
-      "!T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}')")
+      "!T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS_FILE_PATH:}') and !T(org.springframework.util.StringUtils).hasText('${BASIC_AUTH_USER_DETAILS:}')")
   static class BasicAuthConfigMissing {}
 }
