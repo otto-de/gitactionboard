@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@mockoon/cli": "^2.2.1",
-    "@vitest/coverage-c8": "^0.25.3",
-    "@vue/test-utils": "^2.2.4",
+    "@vitest/coverage-c8": "^0.25.7",
+    "@vue/test-utils": "^2.2.6",
     "concurrently": "^7.6.0",
     "eslint": "^8.29.0",
     "eslint-config-standard": "^17.0.0",
@@ -32,7 +32,7 @@
     "stylelint": "^14.16.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard": "^29.0.0",
-    "vitest": "^0.25.3"
+    "vitest": "^0.25.7"
   },
   "eslintConfig": {
     "root": true,
