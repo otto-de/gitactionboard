@@ -17,6 +17,7 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
 # Table of contents
 
 - [Changelog](#changelog)
+- [Contributing](#contributing)
 - [Features](#features)
 - [Usage](#usage)
   - [Pull docker image](#pull-docker-image)
@@ -36,7 +37,11 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
 
 ## Changelog
 
-Changelog can be found [here](https://github.com/otto-de/gitactionboard/blob/main/CHANGELOG.md)
+Changelog can be found [here](https://github.com/otto-de/gitactionboard/blob/main/CHANGELOG.md).
+
+## Contributing
+
+To contribute to GitactionBoard, have a look at our [contributing guidelines](https://github.com/otto-de/gitactionboard/blob/main/CONTRIBUTING.md).
 
 ## Features
 
