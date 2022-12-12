@@ -1,0 +1,28 @@
+##### Labeler ####################################
+labelPRBasedOnFilePath:
+  javascript:
+    - frontend/*
+  java:
+    - backend/*
+labelerFlags:
+  labelOnPRUpdates: true
+
+##### Greetings #####################################
+firstPRWelcomeComment: >
+  Thanks for opening this pull request! Please check out our [contributing guidelines](https://github.com/otto-de/gitactionboard/blob/main/CONTRIBUTING.md)!
+
+firstPRMergeComment: >
+  Awesome work, congrats on your first merged pull request!
+
+firstIssueWelcomeComment: >
+  Thanks for opening your first issue here! Be sure to follow the issue template!
+
+###### Title Validator #################################################################################################
+# Verifies if commit/PR titles match the regexp specified
+verifyTitles:
+  titleRegexp: ^(feat|fix|chore|perf|docs|style|refactor|test|build):.*$
+  alwaysUsePrTitle: true
+  validateEitherPrOrSingleCommitTitle: true
+  statusTitle: "Title Validator"
+  successMessage: "Title validation successful!"
+  failureMessage: "Wrong ${type} title: ${title} should match ${regex}. Please check out our [contributing guidelines](https://github.com/otto-de/gitactionboard/blob/main/CONTRIBUTING.md)!"
