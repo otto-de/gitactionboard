@@ -3,10 +3,6 @@ fileignoreconfig:
   checksum: 5d60138edf428b8b1bf147cea770ac3241c08d44ae51089665a7004e6ba3e291
 - filename: .github/workflows/checks.yml
   checksum: 75f3d0a921e1c03e421b63dc3bd0d1708eb5e7cd0d13589cd285331fe758c8bb
-- filename: .github/workflows/on-backend-pr.yml
-  checksum: 4e9003e590fcdc0571b4c13f1ccb2b0d43dd684029e20fe94cc5a5a6dfd9d10c
-- filename: .github/workflows/on-frontend-pr.yml
-  checksum: 83c7aeebccb853d357cc19011cada015f020d92ab34798a88d4e4a0426087c5b
 - filename: .github/workflows/trivy.yaml
   checksum: ed64301cb278aefe35b64572c3e5114188c428ee6e9a1a47a5479ecbd5609d7e
 - filename: CHANGELOG.md

@@ -1,16 +1,42 @@
-name: On Backend PR
+name: On Pull Request
+
 on:
   pull_request:
     types: [ opened, reopened ]
     paths:
       - 'backend/**'
+      - 'frontend/**'
       - '.talismanrc'
 
 env:
   SERVICE_NAME: gitactionboard
 
 jobs:
-  verification:
+  determine-changes:
+    runs-on: ubuntu-20.04
+    outputs:
+      HAS_BACKEND_CHANGES: ${{ steps.changes.outputs.backend }}
+      HAS_FRONTEND_CHANGES: ${{ steps.changes.outputs.frontend }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+          fetch-depth: 5
+      - name: Determine new changes
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+            frontend:
+              - 'frontend/**'
+          working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+
+  backend-verification:
+    needs: [ determine-changes ]
+    if: ${{ needs.determine-changes.outputs.HAS_BACKEND_CHANGES == 'true' }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout local repository
@@ -49,6 +75,34 @@ jobs:
           name: ${{ env.SERVICE_NAME }}-build-reports
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
 
+  frontend-verification:
+    needs: [ determine-changes ]
+    if: ${{ needs.determine-changes.outputs.HAS_FRONTEND_CHANGES == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install prettier using npm
+        run: sudo npm install --global prettier
+      - name: Install Hadolint and add to PATH
+        run: |
+          sh bin/install-hadolint.sh
+          echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      - name: Run tests
+        run: ./run.sh frontend-test
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+
   talisman-checks:
     runs-on: ubuntu-20.04
     if: ${{ github.actor != 'dependabot[bot]' }}
@@ -69,8 +123,8 @@ jobs:
 
   dependabot:
     runs-on: ubuntu-20.04
-    needs: verification
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    needs: [ backend-verification, frontend-verification ]
+    if: ${{ always() && github.actor == 'dependabot[bot]' && contains(needs.*.result, 'success') && !(contains(needs.*.result, 'failure')) }}
     permissions:
       contents: write
       pull-requests: write
