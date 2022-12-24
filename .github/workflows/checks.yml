@@ -3,6 +3,8 @@ name: checks
 on:
   push:
     branches: [ main ]
+  pull_request:
+    types: [ opened, reopened ]
   schedule:
     - cron: '0 6 * * 1-5'
 env:
@@ -11,6 +13,7 @@ env:
 jobs:
   talisman-checks:
     runs-on: ubuntu-20.04
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v3
@@ -25,7 +28,9 @@ jobs:
       - name: Talisman Verify
         run: ./run.sh talisman-verify
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+
   dependency-checks:
+    if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout local repository

@@ -6,7 +6,6 @@ on:
     paths:
       - 'backend/**'
       - 'frontend/**'
-      - '.talismanrc'
 
 env:
   SERVICE_NAME: gitactionboard
@@ -101,24 +100,6 @@ jobs:
             ${{ runner.os }}-
       - name: Run tests
         run: ./run.sh frontend-test
-        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-
-  talisman-checks:
-    runs-on: ubuntu-20.04
-    if: ${{ github.actor != 'dependabot[bot]' }}
-    steps:
-      - name: Checkout local repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 5
-          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
-      - name: Install talisman and add to PATH
-        run: |
-          sh bin/install-talisman.sh
-          echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
-        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-      - name: Talisman Verify
-        run: ./run.sh talisman-verify
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
   dependabot:
