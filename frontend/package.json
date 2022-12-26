@@ -13,8 +13,8 @@
     "lint:fix": "eslint --ext .js,.vue --fix . && stylelint '**/*.vue' --fix"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^3.2.0",
-    "vite": "^3.2.5",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
