@@ -38,7 +38,7 @@ public class CodecConfig {
         new DateTimeFormatterBuilder().appendInstant(3).toFormatter();
 
     IsoWithMillisInstantSerializer() {
-      super(InstantSerializer.INSTANCE, false, ISO_WITH_MILLIS);
+      super(InstantSerializer.INSTANCE, false, false, ISO_WITH_MILLIS);
     }
   }
 }

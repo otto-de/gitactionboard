@@ -7,7 +7,7 @@ checkstyle {
   toolVersion = 10.3
 }
 
-tasks.withType(Checkstyle) {
+tasks.withType(Checkstyle).configureEach {
   group = 'Checkstyle'
   reports {
     xml.enabled(true)
