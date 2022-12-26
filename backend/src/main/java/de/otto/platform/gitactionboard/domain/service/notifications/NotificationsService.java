@@ -28,11 +28,7 @@ public class NotificationsService {
             .map(entry -> sendNotifications((JobDetails) entry.getValue(), entry.getKey()))
             .toArray(CompletableFuture[]::new);
 
-    try {
-      CompletableFuture.allOf(completableFutures).get();
-    } catch (Exception exception) {
-      log.warn("Unable to send notifications", exception);
-    }
+    sendNotifications(completableFutures);
   }
 
   public void sendNotificationsForSecretScanAlerts(List<SecretsScanDetails> secretsScanAlerts) {
@@ -42,6 +38,10 @@ public class NotificationsService {
             .map(entry -> sendNotifications((SecretsScanDetails) entry.getValue(), entry.getKey()))
             .toArray(CompletableFuture[]::new);
 
+    sendNotifications(completableFutures);
+  }
+
+  private void sendNotifications(CompletableFuture<?>... completableFutures) {
     try {
       CompletableFuture.allOf(completableFutures).get();
     } catch (Exception exception) {

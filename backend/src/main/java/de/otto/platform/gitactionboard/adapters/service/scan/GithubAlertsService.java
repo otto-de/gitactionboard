@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -60,8 +59,7 @@ public abstract class GithubAlertsService<T, U> {
             .toList();
 
     final List<T> allResponses =
-        Stream.concat(responseAccumulator.stream(), currentResponse.stream())
-            .collect(Collectors.toList());
+        Stream.concat(responseAccumulator.stream(), currentResponse.stream()).toList();
 
     if (currentResponse.size() == perPage) {
       return fetchAllCodeAlerts(repoName, accessToken, allResponses, perPage, pageNumber + 1);

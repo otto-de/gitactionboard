@@ -17,7 +17,7 @@ public class CruiseControlService {
   }
 
   public List<Project> convertToJson(List<JobDetails> jobs) {
-    return getProjectStream(jobs).collect(Collectors.toList());
+    return getProjectStream(jobs).toList();
   }
 
   private Stream<Project> getProjectStream(List<JobDetails> jobs) {

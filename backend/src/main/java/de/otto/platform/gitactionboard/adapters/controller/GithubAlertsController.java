@@ -7,7 +7,6 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import de.otto.platform.gitactionboard.domain.service.CodeStandardViolationsScanService;
 import de.otto.platform.gitactionboard.domain.service.SecretsScanService;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,8 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GithubAlertsController {
   private final SecretsScanService secretsScanService;
   private final CodeStandardViolationsScanService codeStandardViolationsScanService;
-  private final Boolean enableSecretsScanMonitoring;
-  private final Boolean enableCodeScanMonitoring;
+  private final boolean enableSecretsScanMonitoring;
+  private final boolean enableCodeScanMonitoring;
 
   @Autowired
   public GithubAlertsController(
@@ -55,7 +54,7 @@ public class GithubAlertsController {
     final List<SecretsScanAlert> secretsScanAlerts =
         secretsScanService.fetchExposedSecrets(decodeUrlEncodedText(accessToken)).stream()
             .map(SecretsScanAlert::from)
-            .collect(Collectors.toList());
+            .toList();
 
     return createResponseEntityBodyBuilder().body(secretsScanAlerts);
   }
@@ -71,7 +70,7 @@ public class GithubAlertsController {
             .fetchCodeViolations(decodeUrlEncodedText(accessToken))
             .stream()
             .map(CodeStandardViolationAlert::from)
-            .collect(Collectors.toList());
+            .toList();
 
     return createResponseEntityBodyBuilder().body(codeStandardViolationAlerts);
   }

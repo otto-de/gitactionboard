@@ -275,10 +275,7 @@ class GithubControllerIntegrationTest {
                   .withHeader(CONTENT_TYPE, APPLICATION_JSON_VALUE));
 
       invokeGetApiAndValidate(
-          mockMvc,
-          CCTRAY_XML_ENDPOINT,
-          APPLICATION_XML_CONTENT_TYPE,
-          content().xml("<Projects></Projects>"));
+          mockMvc, CCTRAY_XML_ENDPOINT, APPLICATION_XML_CONTENT_TYPE, content().xml("<Projects/>"));
 
       mockServerClient.verify(request(), once());
     }

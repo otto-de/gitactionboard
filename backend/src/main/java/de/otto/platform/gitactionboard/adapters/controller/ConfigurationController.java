@@ -4,6 +4,7 @@ import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import lombok.Builder;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,7 +38,7 @@ public class ConfigurationController {
         .build();
   }
 
-  @lombok.Value
+  @Value
   @Builder
   public static class Config {
     List<AuthenticationMechanism> availableAuths;
