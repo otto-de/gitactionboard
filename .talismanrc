@@ -4,7 +4,7 @@ fileignoreconfig:
 - filename: .github/workflows/checks.yml
   checksum: 75f3d0a921e1c03e421b63dc3bd0d1708eb5e7cd0d13589cd285331fe758c8bb
 - filename: .github/workflows/trivy.yaml
-  checksum: ed64301cb278aefe35b64572c3e5114188c428ee6e9a1a47a5479ecbd5609d7e
+  checksum: 26bacc66c011640e4402fe1f68b222dd3b737ca4b6a8289ae546c60c5bae8fc1
 - filename: CHANGELOG.md
   checksum: 4894e5a343894b1e8f47b022126d5bbb1456a2032126a2caa179db6f0d73eb45
 - filename: README.md

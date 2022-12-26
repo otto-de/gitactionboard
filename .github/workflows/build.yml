@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v3
@@ -69,7 +69,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
 
   determaine_should_publish_new_version:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       PUBLISH_NEW_VERSION: ${{ steps.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION }}
     steps:
@@ -85,7 +85,7 @@ jobs:
           echo "PUBLISH_NEW_VERSION=${PUBLISH_NEW_VERSION}" >> $GITHUB_OUTPUT
 
   determaine_current_tag_name:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [build, determaine_should_publish_new_version]
     if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
     outputs:
@@ -100,7 +100,7 @@ jobs:
           echo "CURRENT_TAG=${CURRENT_TAG}" >> $GITHUB_OUTPUT
 
   docker:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [build, determaine_current_tag_name]
     steps:
       - name: Checkout local repository
