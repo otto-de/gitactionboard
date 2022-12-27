@@ -64,7 +64,7 @@ fileignoreconfig:
 - filename: backend/src/test/resources/testData/securityScanAlerts.json
   checksum: ce87091b9e60b4172b60c0e6845eb70022027a5e1b2ff1d0ce838682f24d0100
 - filename: bin/install-talisman.sh
-  checksum: 207acff2f5fa483c249670c15d14592ea8b8c7bf5738deb0d9faf9ef82f9d92b
+  checksum: 530742e00d1784f76332bc36293aa426495ecbfa85c5cf8d90668778cd259e4d
 - filename: doc/login-sample1.png
   checksum: 96f2c392fb67d9fcfbcbec1184fc18d3dbf93ff62db9b96783304ca2a8a809c0
 - filename: doc/preference-sample1.png
