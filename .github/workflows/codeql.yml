@@ -1,0 +1,76 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/codeql.yml'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/codeql.yml'
+
+jobs:
+  determine-changes:
+    runs-on: ubuntu-22.04
+    outputs:
+      LANGUAGES: ${{ steps.changes.outputs.changes }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 5
+      - name: Determine new changes
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            java:
+              - 'backend/**'
+              - '.github/workflows/codeql.yml'
+            javascript:
+              - 'frontend/**'
+              - '.github/workflows/codeql.yml'
+
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-22.04
+    needs: determine-changes
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ${{ fromJSON(needs.determine-changes.outputs.LANGUAGES) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Cache gradle wrapper and jars
+        if: ${{ matrix.language == 'java' }}
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      - uses: actions/setup-java@v3
+        if: ${{ matrix.language == 'java' }}
+        with:
+          distribution: 'corretto'
+          java-version: 17
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:${{matrix.language}}"
