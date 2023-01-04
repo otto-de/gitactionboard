@@ -24,7 +24,7 @@ ext {
     mockServerVersion = "5.14.0"
     archUnitVersion = "1.0.1"
     snakeyamlVersion = "1.33"
-    jUnit5PitestVersion = "1.1.0"
+    jUnit5PitestVersion = "1.1.1"
 }
 
 repositories {
