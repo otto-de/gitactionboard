@@ -4,14 +4,14 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'backend/**'
-      - 'frontend/**'
+      - 'backend/src/**'
+      - 'frontend/**.js'
       - '.github/workflows/codeql.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'backend/**'
-      - 'frontend/**'
+      - 'backend/src/**'
+      - 'frontend/**.js'
       - '.github/workflows/codeql.yml'
 
 jobs:
