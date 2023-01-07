@@ -3,7 +3,6 @@ apply plugin: 'pmd'
 pmd {
     ruleSets = []
     ruleSetFiles = files("${projectDir}/gradle/config/pmd.xml")
-    toolVersion = '6.41.0'
     consoleOutput = false
 }
 

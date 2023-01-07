@@ -4,7 +4,6 @@ checkstyle {
   ignoreFailures = false
   maxWarnings = 0
   configFile file("${projectDir}/gradle/config/checkstyle.xml")
-  toolVersion = 10.3
 }
 
 tasks.withType(Checkstyle).configureEach {
