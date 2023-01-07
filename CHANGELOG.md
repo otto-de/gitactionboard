@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.5](https://github.com/otto-de/gitactionboard/compare/v3.0.4...v3.0.5) (2023-01-07)
+
+### Bug Fixes
+
+- Upgrade libssl3 and libcrypto3 to fix CVE-2022-3996 ([a211f90](https://github.com/otto-de/gitactionboard/commit/a211f90f2191a5f6ee93bc6c3b8cd7aca5997cae))
+
 ## [v3.0.4](https://github.com/otto-de/gitactionboard/compare/v3.0.3...v3.0.4) (2022-12-01)
 
 ### Bug Fixes
