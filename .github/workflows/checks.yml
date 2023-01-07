@@ -30,7 +30,7 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
   dependency-checks:
-    if: ${{ github.event_name != 'pull_request' }}
+    if: ${{ github.event_name != 'pull_request' || github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout local repository
