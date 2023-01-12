@@ -21,7 +21,7 @@ ext {
     javaUuidGeneratorVersion = "4.1.0"
     logstashVersion = "7.2"
     caffeineVersion = "3.1.2"
-    mockServerVersion = "5.14.0"
+    mockServerVersion = "5.15.0"
     archUnitVersion = "1.0.1"
     snakeyamlVersion = "1.33"
     jUnit5PitestVersion = "1.1.1"
