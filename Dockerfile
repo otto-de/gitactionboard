@@ -33,8 +33,6 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 COPY --from=corretto-jdk /jre $JAVA_HOME
 
-RUN apk upgrade libssl3 libcrypto3
-
 EXPOSE 8080
 COPY ./backend/build/libs/gitactionboard.jar /app/
 WORKDIR /app
