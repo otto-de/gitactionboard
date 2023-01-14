@@ -132,6 +132,8 @@ _build_jar() {
 _run_locally() {
   local with_frontend="${2}"
 
+  #!/bin/sh
+  # shellcheck disable=SC2317
   _revert() {
     if [ "${with_frontend}" ]; then
       pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
