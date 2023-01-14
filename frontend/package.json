@@ -19,7 +19,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@mockoon/cli": "^2.2.1",
+    "@mockoon/cli": "^2.3.0",
     "@vitest/coverage-c8": "^0.27.1",
     "@vue/test-utils": "^2.2.7",
     "concurrently": "^7.6.0",
@@ -27,12 +27,12 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-vue": "^9.9.0",
     "jest-serializer-vue-tjw": "^3.19.0",
-    "jsdom": "^20.0.3",
+    "jsdom": "^21.0.0",
     "postcss-html": "^1.5.0",
     "stylelint": "^14.16.1",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard": "^29.0.0",
-    "vitest": "^0.27.0"
+    "vitest": "^0.27.1"
   },
   "eslintConfig": {
     "root": true,
