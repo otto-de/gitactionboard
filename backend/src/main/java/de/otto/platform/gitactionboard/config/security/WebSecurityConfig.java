@@ -46,10 +46,6 @@ public class WebSecurityConfig {
   public static final String LOGIN_PATH = "/#/login";
   public static final String DASHBOARD_PATH = "/#/workflow-jobs";
 
-  private static HttpSecurity getDefaultSettings(HttpSecurity http) throws Exception {
-    return http.cors().disable().csrf().disable().formLogin().disable();
-  }
-
   @Bean
   public List<AuthenticationMechanism> availableAuths(
       @Value("${BASIC_AUTH_USER_DETAILS_FILE_PATH:}") String basicAuthDetailsFilePath,
@@ -83,7 +79,12 @@ public class WebSecurityConfig {
       healthEndPoint, "/config", "/", "/index.html", "/assets/**", "/favicon.ico", "/login/basic"
     };
 
-    getDefaultSettings(http)
+    http.cors()
+        .disable()
+        .csrf()
+        .disable()
+        .formLogin()
+        .disable()
         .securityMatcher(whitelistUrls)
         .authorizeHttpRequests()
         .requestMatchers(whitelistUrls)
@@ -153,8 +154,6 @@ public class WebSecurityConfig {
 
       http.cors()
           .disable()
-          .csrf()
-          .disable()
           .formLogin()
           .usernameParameter("username")
           .passwordParameter("password")
@@ -211,8 +210,6 @@ public class WebSecurityConfig {
         GithubAuthenticationSuccessHandler authenticationSuccessHandler, HttpSecurity http)
         throws Exception {
       http.cors()
-          .disable()
-          .csrf()
           .disable()
           .formLogin()
           .disable()

@@ -23,15 +23,7 @@ public class NoOpsWebSecurityConfig {
 
   @Bean
   public SecurityFilterChain permitAll(HttpSecurity http) throws Exception {
-    http.cors()
-        .disable()
-        .csrf()
-        .disable()
-        .formLogin()
-        .disable()
-        .authorizeHttpRequests()
-        .anyRequest()
-        .permitAll();
+    http.cors().disable().formLogin().disable().authorizeHttpRequests().anyRequest().permitAll();
 
     return http.build();
   }
