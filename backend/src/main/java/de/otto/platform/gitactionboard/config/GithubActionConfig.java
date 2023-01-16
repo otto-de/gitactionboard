@@ -32,7 +32,7 @@ public class GithubActionConfig {
   public String ownerName(@Value("${REPO_OWNER_NAME}") String ownerName) {
     if (ownerName.isBlank())
       throw new IllegalArgumentException(
-          "REPO_NAMES environment variable is either empty or its not set");
+          "REPO_OWNER_NAME environment variable is either empty or its not set");
     return ownerName;
   }
 
