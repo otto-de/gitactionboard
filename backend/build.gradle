@@ -7,7 +7,7 @@ plugins {
     id "com.github.spotbugs" version "5.0.13"
     id "com.github.ben-manes.versions" version "0.45.0"
     id "org.owasp.dependencycheck" version "8.0.2"
-    id "com.diffplug.spotless" version "6.14.1"
+    id "com.diffplug.spotless" version "6.15.0"
     id "info.solidsoft.pitest" version "1.9.11"
 }
 
