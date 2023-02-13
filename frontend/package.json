@@ -23,7 +23,7 @@
     "@vitest/coverage-c8": "^0.28.4",
     "@vue/test-utils": "^2.2.10",
     "concurrently": "^7.6.0",
-    "eslint": "^8.33.0",
+    "eslint": "^8.34.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-vue": "^9.9.0",
     "jest-serializer-vue-tjw": "^3.19.0",
