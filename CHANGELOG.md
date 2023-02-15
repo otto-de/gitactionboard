@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.6](https://github.com/otto-de/gitactionboard/compare/v3.0.5...v3.0.6) (2023-02-15)
+
+### Bug Fixes
+
+- Enable CSRF protection for APIs ([204df4e](https://github.com/otto-de/gitactionboard/commit/204df4e66286af23a585f371c504feae245ba4e5))
+- Fix cve related to libcrypto3 and libssl3 ([2eb1a47](https://github.com/otto-de/gitactionboard/commit/2eb1a47215f8305a49089b6c229dcce9bf4dee1c))
+- Provide correct error message when REPO_OWNER_NAME config is missing ([94515a9](https://github.com/otto-de/gitactionboard/commit/94515a9074d49e4ef280cf4cbde31de4b75e5784))
+
 ## [v3.0.5](https://github.com/otto-de/gitactionboard/compare/v3.0.4...v3.0.5) (2023-01-07)
 
 ### Bug Fixes
