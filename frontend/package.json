@@ -19,7 +19,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@mockoon/cli": "^2.3.0",
+    "@mockoon/cli": "^2.4.0",
     "@vitest/coverage-c8": "^0.29.2",
     "@vue/test-utils": "^2.3.0",
     "concurrently": "^7.6.0",
