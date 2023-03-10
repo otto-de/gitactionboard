@@ -94,4 +94,3 @@ jobs:
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-[BACKEND] Implement and fix tests along the line · otto-de/gitactionboard@8d1056f
