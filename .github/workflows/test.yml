@@ -1,0 +1,97 @@
+name: Testing
+on:
+  pull_request:
+    types: [ opened, reopened ]
+    paths:
+      - 'backend/**'
+      - '.talismanrc'
+
+env:
+  SERVICE_NAME: gitactionboard
+
+jobs:
+  verification:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install prettier using npm
+        run: echo ${{ secrets.DOCKER_HUB_USERNAME }}; echo ${{ env.SERVICE_NAME }}; sudo npm install --global prettier
+      - name: Install jenv
+        run: |
+          git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+          echo "$HOME/.jenv/bin" >> $GITHUB_PATH
+      - name: Configure jenv
+        run: |
+          jenv init -
+          jenv add ${JAVA_HOME_17_X64}
+      - name: Install Hadolint and add to PATH
+        run: |
+          sh bin/install-hadolint.sh
+          echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Cache gradle wrapper and jars
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+      - name: Run tests
+        run: ./run.sh backend-test
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Upload build report to artifacts
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: ${{ env.SERVICE_NAME }}-build-reports
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
+
+  talisman-checks:
+    runs-on: ubuntu-20.04
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 5
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install talisman and add to PATH
+        run: |
+          sh bin/install-talisman.sh
+          echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Talisman Verify
+        run: ./run.sh talisman-verify
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+
+  dependabot:
+    runs-on: ubuntu-20.04
+    needs: verification
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.3.5
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Enable auto-merge for Dependabot PRs
+        if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'}}
+        run: gh pr merge --auto --rebase "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Add reviewers and label for Major update
+        if: ${{steps.metadata.outputs.update-type == 'version-update:semver-major'}}
+        run: |
+          gh pr edit "$PR_URL" --add-label "major-update"
+          gh pr edit "$PR_URL" --add-reviewer "sumanmaity1234"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+[BACKEND] Implement and fix tests along the line · otto-de/gitactionboard@8d1056f
