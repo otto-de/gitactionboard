@@ -32,7 +32,7 @@
     "stylelint": "^15.2.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard": "^30.0.1",
-    "vitest": "^0.29.2"
+    "vitest": "^0.29.3"
   },
   "eslintConfig": {
     "root": true,
