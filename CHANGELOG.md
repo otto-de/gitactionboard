@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.0.7](https://github.com/otto-de/gitactionboard/compare/v3.0.6...v3.0.7) (2023-03-24)
+
+### Bug Fixes
+
+- Fix CVE-2023-1370, CVE-2023-20860
+
 ## [v3.0.6](https://github.com/otto-de/gitactionboard/compare/v3.0.5...v3.0.6) (2023-02-15)
 
 ### Bug Fixes

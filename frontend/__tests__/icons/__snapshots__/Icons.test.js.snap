@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Icons > HamburgerMenuIcon > should render hamburger menu icon in closed state 1`] = `
 <div class="icon-container">
