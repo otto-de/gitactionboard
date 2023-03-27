@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine as corretto-deps
+FROM amazoncorretto:20-alpine as corretto-deps
 
 COPY ./backend/build/libs/gitactionboard.jar /app/
 
@@ -12,7 +12,7 @@ RUN unzip /app/gitactionboard.jar -d temp &&  \
       --module-path="./temp/BOOT-INF/lib/*" \
       /app/gitactionboard.jar > /modules.txt
 
-FROM amazoncorretto:17-alpine as corretto-jdk
+FROM amazoncorretto:20-alpine as corretto-jdk
 
 COPY --from=corretto-deps /modules.txt /modules.txt
 
