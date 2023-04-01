@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.1.0](https://github.com/otto-de/gitactionboard/compare/v3.0.7...v3.1.0) (2023-04-01)
+
+### Features
+
+- ([#162](https://github.com/otto-de/gitactionboard/issues/162)) Display gitactionboard version on dashboard ([ad8df47](https://github.com/otto-de/gitactionboard/commit/ad8df47715e951c61f2f61215754775cd1f38d06))
+- Add support to periodic scan for enabled features ([3694887](https://github.com/otto-de/gitactionboard/commit/36948878be0b3fc3afc40b8ebbc9612e63de05cc))
+
+### Bug Fixes
+
+- Fix CVE-2022-1471 related to snakeyaml ([1a68791](https://github.com/otto-de/gitactionboard/commit/1a687912c15593ebd6fc8e4d1c741b6fc6f131b5))
+- Fix CVE-2023-0464 related to libcrypto3 and libssl3 ([03bb494](https://github.com/otto-de/gitactionboard/commit/03bb494f251d1201a01eedc9380b44fa737e817b))
+
 ## [v3.0.7](https://github.com/otto-de/gitactionboard/compare/v3.0.6...v3.0.7) (2023-03-24)
 
 ### Bug Fixes
