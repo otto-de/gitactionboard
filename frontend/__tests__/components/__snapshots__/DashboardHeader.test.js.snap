@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DashboardHeader > should render dashboard header for Code Standard Violations 1`] = `
+<div class="header">
+  <div class="header-title">
+    <span>Gitaction Board</span>
+    <span class="version">(v3.1.0)</span>
+  </div>
+  <div id="sub-header">Code Standard Violations</div>
+</div>
+<div class="separator"></div>
+`;
+
+exports[`DashboardHeader > should render dashboard header for Exposed Secrets 1`] = `
+<div class="header">
+  <div class="header-title">
+    <span>Gitaction Board</span>
+    <span class="version">(v3.1.0)</span>
+  </div>
+  <div id="sub-header">Exposed Secrets</div>
+</div>
+<div class="separator"></div>
+`;
+
+exports[`DashboardHeader > should render dashboard header for Workflow Jobs 1`] = `
+<div class="header">
+  <div class="header-title">
+    <span>Gitaction Board</span>
+    <span class="version">(v3.1.0)</span>
+  </div>
+  <div id="sub-header">Workflow Jobs</div>
+</div>
+<div class="separator"></div>
+`;

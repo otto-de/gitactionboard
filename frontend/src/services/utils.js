@@ -4,6 +4,10 @@ export const setAvailableAuths = (availableAuths) => {
   storageService.setItem('availableAuths', JSON.stringify(availableAuths));
 };
 
+export const setVersion = (version) => {
+  storageService.setItem('version', version);
+};
+
 export const setGithubSecretsScanMonitoringEnabled = (
   githubSecretsScanMonitoringEnabled
 ) => {
@@ -32,3 +36,5 @@ export const getGithubSecretsScanMonitoringEnabled = () =>
 export const getGithubCodeScanMonitoringEnabled = () =>
   JSON.parse(storageService.getItem('githubCodeScanMonitoringEnabled')) ||
   false;
+
+export const getVersion = () => storageService.getItem('version');

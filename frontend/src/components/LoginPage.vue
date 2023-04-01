@@ -86,7 +86,8 @@ import Invalid from '@/icons/InvalidIcon';
 import {
   setAvailableAuths,
   setGithubCodeScanMonitoringEnabled,
-  setGithubSecretsScanMonitoringEnabled
+  setGithubSecretsScanMonitoringEnabled,
+  setVersion
 } from '@/services/utils';
 
 export default {
@@ -119,9 +120,10 @@ export default {
       }
     });
     fetchConfig()
-      .then(({ availableAuths, githubSecretsScanMonitoringEnabled, githubCodeScanMonitoringEnabled }) => {
+      .then(({ availableAuths, githubSecretsScanMonitoringEnabled, githubCodeScanMonitoringEnabled, version }) => {
         this.availableAuths = availableAuths;
         this.loading = false;
+        setVersion(version);
         setAvailableAuths(availableAuths);
         setGithubSecretsScanMonitoringEnabled(githubSecretsScanMonitoringEnabled);
         setGithubCodeScanMonitoringEnabled(githubCodeScanMonitoringEnabled);

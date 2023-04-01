@@ -16,13 +16,38 @@ import org.junit.jupiter.params.provider.MethodSource;
 class ConfigurationControllerTest {
 
   public static Stream<Arguments> getArguments() {
+    final String projectVersion = "3.1.0";
     return Stream.of(
-        Arguments.of(List.of(BASIC_AUTH), false, false, List.of(BASIC_AUTH), false, false),
-        Arguments.of(List.of(OAUTH2), false, false, List.of(OAUTH2), false, false),
         Arguments.of(
-            List.of(BASIC_AUTH, OAUTH2), false, false, List.of(BASIC_AUTH, OAUTH2), false, false),
-        Arguments.of(List.of(), true, false, List.of(), true, false),
-        Arguments.of(List.of(), false, true, List.of(), false, true));
+            List.of(BASIC_AUTH),
+            false,
+            false,
+            projectVersion,
+            List.of(BASIC_AUTH),
+            false,
+            false,
+            projectVersion),
+        Arguments.of(
+            List.of(OAUTH2),
+            false,
+            false,
+            projectVersion,
+            List.of(OAUTH2),
+            false,
+            false,
+            projectVersion),
+        Arguments.of(
+            List.of(BASIC_AUTH, OAUTH2),
+            false,
+            false,
+            projectVersion,
+            List.of(BASIC_AUTH, OAUTH2),
+            false,
+            false,
+            projectVersion),
+        Arguments.of(
+            List.of(), true, false, projectVersion, List.of(), true, false, projectVersion),
+        Arguments.of(List.of(), false, true, "unknown", List.of(), false, true, "unknown"));
   }
 
   @ParameterizedTest
@@ -31,12 +56,15 @@ class ConfigurationControllerTest {
       List<AuthenticationMechanism> authenticationMechanisms,
       Boolean secretsScanEnabled,
       Boolean codeScanEnabled,
+      String projectVersion,
       List<AuthenticationMechanism> expectedAuthenticationMechanisms,
       boolean expectedSecretsScanEnabled,
-      boolean expectedCodeScanEnabled) {
+      boolean expectedCodeScanEnabled,
+      String expectedProjectVersion) {
 
     final ConfigurationController controller =
-        new ConfigurationController(authenticationMechanisms, secretsScanEnabled, codeScanEnabled);
+        new ConfigurationController(
+            authenticationMechanisms, secretsScanEnabled, codeScanEnabled, projectVersion);
     assertThat(controller.getAvailableConfig())
         .satisfies(
             config -> {
@@ -45,6 +73,7 @@ class ConfigurationControllerTest {
                   .isEqualTo(expectedSecretsScanEnabled);
               assertThat(config.getGithubCodeScanMonitoringEnabled())
                   .isEqualTo(expectedCodeScanEnabled);
+              assertThat(config.getVersion()).isEqualTo(expectedProjectVersion);
             });
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-title">
-      Gitaction Board
+      <span>Gitaction Board</span> <span class="version">(v{{ version }})</span>
     </div>
     <div id="sub-header">
       {{ subHeader }}
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { getVersion } from '@/services/utils';
+
 export default {
   name: 'DashboardHeader',
   props: {
@@ -18,6 +20,11 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      version: getVersion()
+    };
   }
 };
 </script>
@@ -33,6 +40,11 @@ export default {
   text-align: center;
   font-family: "Snell Roundhand", cursive;
   font-weight: bold;
+}
+
+.version {
+    font-size: 15px;
+    font-family: "American Typewriter", serif;
 }
 
 #sub-header {
