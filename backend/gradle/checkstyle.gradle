@@ -1,15 +1,15 @@
 apply plugin: 'checkstyle'
 
 checkstyle {
-  ignoreFailures = false
-  maxWarnings = 0
-  configFile file("${projectDir}/gradle/config/checkstyle.xml")
+    ignoreFailures = false
+    maxWarnings = 0
+    configFile file("${projectDir}/gradle/config/checkstyle.xml")
 }
 
 tasks.withType(Checkstyle).configureEach {
-  group = 'Checkstyle'
-  reports {
-    xml.enabled(true)
-    html.enabled(true)
-  }
+    group = 'Checkstyle'
+    reports {
+        html.required = true
+        xml.required = true
+    }
 }
