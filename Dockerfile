@@ -27,7 +27,7 @@ RUN apk add --no-cache binutils && \
          --compress=2 \
          --output /jre
 
-FROM alpine:3.17.2
+FROM alpine:3.17.3
 ENV JAVA_HOME=/jre
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
