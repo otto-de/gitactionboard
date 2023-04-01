@@ -228,7 +228,10 @@ class GithubAlertsControllerIntegrationTest {
   @MockServerTest
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
-      properties = {"spring.cache.cache-names=securityScanAlerts", "spring.cache.type=caffeine"})
+      properties = {
+        "spring.cache.cache-names=securityScanAlerts,exposedSecrets",
+        "spring.cache.type=caffeine"
+      })
   class WithCacheSecurityScanAlerts {
     @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
@@ -387,7 +390,10 @@ class GithubAlertsControllerIntegrationTest {
   @MockServerTest
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
-      properties = {"spring.cache.cache-names=codeScanAlerts", "spring.cache.type=caffeine"})
+      properties = {
+        "spring.cache.cache-names=codeScanAlerts,codeStandardViolations",
+        "spring.cache.type=caffeine"
+      })
   class WithCacheCodeScanAlerts {
     @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;

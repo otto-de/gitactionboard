@@ -9,6 +9,7 @@ import java.util.concurrent.CompletableFuture;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -30,6 +31,10 @@ public class CodeStandardViolationsScanService {
     this.repoNames = repoNames;
   }
 
+  @Cacheable(
+      cacheNames = "codeStandardViolations",
+      sync = true,
+      keyGenerator = "sharedCacheKeyGenerator")
   public List<CodeStandardViolationDetails> fetchCodeViolations(String accessToken) {
     final List<CodeStandardViolationDetails> codeViolations =
         repoNames.stream()
