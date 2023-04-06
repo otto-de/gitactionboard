@@ -1,15 +1,18 @@
 <template>
-  <div id="container">
+  <v-container
+    id="workflows-dashboard"
+    fluid
+  >
     <DashboardHeader sub-header="Workflow Jobs" />
     <Dashboard
-      :disable-max-idle-time="disableIdleOptimization"
+      :enable-max-idle-time-optimization="enableMaxIdleTimeOptimization"
       :max-idle-time="maxIdleTime"
       content-displayer="Job"
       :fetch-contents="fetchContents"
       :hide-by-key="'name'"
       :name-of-items="'job(s)'"
     />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -30,8 +33,8 @@ export default {
     showHealthyBuilds() {
       return preferences.showHealthyBuilds;
     },
-    disableIdleOptimization() {
-      return preferences.disableIdleOptimization;
+    enableMaxIdleTimeOptimization() {
+      return preferences.enableMaxIdleTimeOptimization;
     },
     maxIdleTime() {
       return preferences.maxIdleTime;
@@ -55,13 +58,5 @@ export default {
 </script>
 
 <style scoped>
-#container {
-  height: 100%;
-  width: 95%;
-  padding-left: 30px;
-  padding-right: 30px;
-  overflow: scroll;
-  padding-bottom: 1px;
-}
 
 </style>

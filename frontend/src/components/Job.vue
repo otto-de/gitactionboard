@@ -1,36 +1,42 @@
 <template>
-  <div
+  <v-card
     :id="content.name"
     :key="content.name"
-    :class="[getBuildAndActivityStatus(content)]"
+    height="90px"
+    :class="`${getBuildAndActivityStatus(content)}`"
   >
-    <div class="job-name">
-      <a
-        :id="content.name + '_url'"
-        :href="content.webUrl"
-        target="_blank"
-      >
-        {{ content.name }}
-      </a>
-    </div>
-    <div class="buttons">
-      <button
-        class="hide-button"
-        :title="hidden ? 'Show' : 'Hide'"
-        @click="$emit('toggleVisibility', content.name)"
-      >
-        <HideOrShowIcon :display-hide-button="!hidden" />
-      </button>
-    </div>
-  </div>
+    <v-card-text class="job-name pa-0 ma-0">
+      <v-tooltip text="Open on GitHub">
+        <template #activator="{ props }">
+          <a
+            :id="content.name + '_url'"
+            :href="content.webUrl"
+            target="_blank"
+            v-bind="props"
+          >
+            {{ content.name }}
+          </a>
+        </template>
+      </v-tooltip>
+    </v-card-text>
+    <v-tooltip :text="`${hidden? 'Show element':'Hide element'}`">
+      <template #activator="{ props }">
+        <v-icon
+          v-bind="props"
+          class="align-self-end"
+          :icon="hidden? `mdi-eye`: `mdi-eye-off`"
+          size="small"
+          @click="$emit('toggleVisibility', content.name)"
+        />
+      </template>
+    </v-tooltip>
+  </v-card>
 </template>
 
 <script>
-import HideOrShowIcon from '@/icons/HideOrShowIcon';
 
 export default {
   name: 'Job',
-  components: { HideOrShowIcon },
   props: {
     content: {
       type: Object,
@@ -80,9 +86,7 @@ a {
 }
 
 .job {
-  box-shadow: 5px 5px 10px #777;
   border-radius: 6px;
-  height: 90px;
   border: 2px solid #000;
   padding: 5px;
   display: flex;
@@ -127,16 +131,4 @@ a {
       #000 50px
     );
 }
-
-.buttons {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.hide-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
 </style>

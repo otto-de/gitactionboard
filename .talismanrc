@@ -93,36 +93,28 @@ fileignoreconfig:
   checksum: 3e742113cc1cc2c04a6520aa21a68a7165a1847d9994dda411628c429df0dfb8
 - filename: doc/sample3.png
   checksum: 368c6cc373cac008695834853b0b926c6672987036ef36964a588c1089376a88
+- filename: frontend/src/components/GridCell.vue
+  checksum: 9412d638b9b92cfb9d7151b9b7bd56db2e5129fc7645edbeab9b2af4969d1081
+- filename: frontend/src/components/Job.vue
+  checksum: ca6ceb542e9742ef87c2a0051c72c8f2936ee4f47ac8c78cedf3481200a3c119
+- filename: frontend/src/components/LoginPage.vue
+  checksum: a81dce4fda51774bcfc792ffef5cf77d2cc71bbb3032855a9de09b93a90d63f9
+- filename: frontend/src/services/preferences.js
+  checksum: 47a364a256bad4b291e9e92ca1022fba97dea9556895e592993038c2cb949b15
+- filename: frontend/src/components/WorkflowDashboard.vue
+  checksum: af1edfd7effc4a7d4ab8e89f60372c1096fe3831c37f86274851cf994792facf
 - filename: frontend/__tests__/components/DashboardHeader.test.js
-  checksum: b3aa749c19af54ddbf0cbedc29906e0eaef511d998008f6b32526c94cbe6026e
-- filename: frontend/__tests__/icons/Icons.test.js
-  checksum: c12874bd2191bab9a104fe2cd79a2f0a0b98b4c675cbb5d277199b1dac3fd0c7
+  checksum: d54261241c0a39a39db0df8947728d154eb25b633320769412ecf03eb25eadce
+- filename: frontend/src/components/Dashboard.vue
+  checksum: 601bdb12eb4e84421c85b7c0e4e0c479214a206b8d5257a3d1025e8f0a0d4898
+- filename: frontend/src/services/storageService.js
+  checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
+- filename: frontend/src/services/apiService.js
+  checksum: 20d9dbb2edbc882f9b61ea25e5219260d42fc93c69bef13f264eb7d29fff02b0
 - filename: frontend/mock-data/data.json
   checksum: 4a35990685c58b02dd7d8ca3a838a9828321f3dbec45dbb0de47ee0d345f86a7
 - filename: frontend/package-lock.json
-  checksum: 0b6e0141f91a38e42bdb8242d351c554bf8cbc9efcfe296124e37555936b7999
-- filename: frontend/src/components/Dashboard.vue
-  checksum: 0152b0f9f2900ea672ca0faa15f5fc59d00b2c803e2a6d641f12e90343505bdc
-- filename: frontend/src/components/GridCell.vue
-  checksum: 96158591224f88d356eb8701d5f0f92676335613cc0b5e978e8104c2654745e3
-- filename: frontend/src/components/Job.vue
-  checksum: 3d50eef43682f575320807b3e14c80ca543e7b99eea4aa98913289fb2bfa084a
-- filename: frontend/src/components/LoginPage.vue
-  checksum: 6689175543446adf1747095eb64c253014226962ad28d7714ec6d88eead50e73
-- filename: frontend/src/components/MenuItems.vue
-  checksum: b994b2c2da457dedde8e83e4c01158c8bb644fa93744a6349aa9cd0eb2e4f760
-- filename: frontend/src/components/SideMenuBar.vue
-  checksum: 6e440646cedff1b77d7156322c108db9fa10af54536c48a64dcd54c9b77b0874
-- filename: frontend/src/components/WorkflowDashboard.vue
-  checksum: 0727054a6d096c56b134a29499abd45d17de368fc56d37be9c54fe01ced17ea5
-- filename: frontend/src/images/happy.png
-  checksum: 79870ff6d4fda4065c060f1656116ee61d40daa5b30f066b1e2efa190fffc83c
-- filename: frontend/src/services/apiService.js
-  checksum: 20d9dbb2edbc882f9b61ea25e5219260d42fc93c69bef13f264eb7d29fff02b0
-- filename: frontend/src/services/preferences.js
-  checksum: d73f0176d67bd6d349ffe8b373d87618dfbe2baddc2ca0e85abc312724451169
-- filename: frontend/src/services/storageService.js
-  checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
+  checksum: d7d365c1cbcefe8a25bdc6dcdf9778b78f4329a586cdde18018cc38c80476fce
 allowed_patterns:
 - org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}

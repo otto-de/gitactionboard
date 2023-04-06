@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<DividerWithText /> > should render with default thickness 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-row align-center my-3">
+      <div class="v-col v-col-5">
+        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px;">
+      </div>
+      <div class="v-col text-center font-weight-bold"> OR </div>
+      <div class="v-col v-col-5">
+        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px;">
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DividerWithText /> > should render with given thickness 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-row align-center my-3">
+      <div class="v-col v-col-5">
+        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 2px;">
+      </div>
+      <div class="v-col text-center font-weight-bold"> OR </div>
+      <div class="v-col v-col-5">
+        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 2px;">
+      </div>
+    </div>
+  </div>
+</div>
+`;

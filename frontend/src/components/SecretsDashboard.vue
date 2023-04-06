@@ -1,16 +1,17 @@
 <template>
-  <div
+  <v-container
     v-if="isGithubSecretsScanMonitoringEnabled"
-    id="container"
+    id="secrets-dashboard"
+    fluid
   >
     <DashboardHeader sub-header="Exposed Secrets" />
     <Dashboard
-      :disable-max-idle-time="disableIdleOptimization"
+      :enable-max-idle-time-optimization="enableMaxIdleTimeOptimization"
       :max-idle-time="maxIdleTime"
       content-displayer="GridCell"
       :fetch-contents="fetchContents"
     />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -28,8 +29,8 @@ export default {
     currentPath() {
       return router.currentRoute.value.path;
     },
-    disableIdleOptimization() {
-      return preferences.disableIdleOptimization;
+    enableMaxIdleTimeOptimization() {
+      return preferences.enableMaxIdleTimeOptimization;
     },
     maxIdleTime() {
       return preferences.maxIdleTime;
@@ -47,13 +48,5 @@ export default {
 </script>
 
 <style scoped>
-#container {
-  height: 100%;
-  width: 95%;
-  padding-left: 30px;
-  padding-right: 30px;
-  overflow: scroll;
-  padding-bottom: 1px;
-}
 
 </style>

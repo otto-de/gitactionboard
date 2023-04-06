@@ -1,7 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Happy > should render happy image 1`] = `
-<div class="container">
-  <img alt="no-failures" src="/src/images/happy.png">
-</div>
-`;

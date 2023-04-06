@@ -1,34 +1,109 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DashboardHeader > should render dashboard header for Code Standard Violations 1`] = `
-<div class="header">
-  <div class="header-title">
-    <span>Gitaction Board</span>
-    <span class="version">(v3.1.0)</span>
+exports[`<DashboardHeader /> > should render dashboard header for Code Standard Violations 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+      <!---->
+      <div class="v-toolbar__content" style="height: 64px;">
+        <!---->
+        <!---->
+        <div class="v-row v-row--no-gutters">
+          <div class="v-col v-col-10">
+            <div class="v-toolbar-title v-app-bar-title header-title text-center font-weight-bold pl-10">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                <span>Gitaction Board</span>
+                <span class="version">(v3.1.0)</span>
+              </div>
+            </div>
+          </div>
+          <div class="v-col v-col-2 d-inline-flex">
+            <div class="v-toolbar-title v-app-bar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3" id="sub-header">
+              <div class="v-toolbar-title__placeholder">
+                <!---->Code Standard Violations
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+        <!---->
+      </transition-stub>
+    </header>
   </div>
-  <div id="sub-header">Code Standard Violations</div>
 </div>
-<div class="separator"></div>
 `;
 
-exports[`DashboardHeader > should render dashboard header for Exposed Secrets 1`] = `
-<div class="header">
-  <div class="header-title">
-    <span>Gitaction Board</span>
-    <span class="version">(v3.1.0)</span>
+exports[`<DashboardHeader /> > should render dashboard header for Exposed Secrets 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+      <!---->
+      <div class="v-toolbar__content" style="height: 64px;">
+        <!---->
+        <!---->
+        <div class="v-row v-row--no-gutters">
+          <div class="v-col v-col-10">
+            <div class="v-toolbar-title v-app-bar-title header-title text-center font-weight-bold pl-10">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                <span>Gitaction Board</span>
+                <span class="version">(v3.1.0)</span>
+              </div>
+            </div>
+          </div>
+          <div class="v-col v-col-2 d-inline-flex">
+            <div class="v-toolbar-title v-app-bar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3" id="sub-header">
+              <div class="v-toolbar-title__placeholder">
+                <!---->Exposed Secrets
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+        <!---->
+      </transition-stub>
+    </header>
   </div>
-  <div id="sub-header">Exposed Secrets</div>
 </div>
-<div class="separator"></div>
 `;
 
-exports[`DashboardHeader > should render dashboard header for Workflow Jobs 1`] = `
-<div class="header">
-  <div class="header-title">
-    <span>Gitaction Board</span>
-    <span class="version">(v3.1.0)</span>
+exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+      <!---->
+      <div class="v-toolbar__content" style="height: 64px;">
+        <!---->
+        <!---->
+        <div class="v-row v-row--no-gutters">
+          <div class="v-col v-col-10">
+            <div class="v-toolbar-title v-app-bar-title header-title text-center font-weight-bold pl-10">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                <span>Gitaction Board</span>
+                <span class="version">(v3.1.0)</span>
+              </div>
+            </div>
+          </div>
+          <div class="v-col v-col-2 d-inline-flex">
+            <div class="v-toolbar-title v-app-bar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3" id="sub-header">
+              <div class="v-toolbar-title__placeholder">
+                <!---->Workflow Jobs
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+        <!---->
+      </transition-stub>
+    </header>
   </div>
-  <div id="sub-header">Workflow Jobs</div>
 </div>
-<div class="separator"></div>
 `;

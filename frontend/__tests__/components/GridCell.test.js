@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { shallowMount } from '@vue/test-utils';
 import GridCell from '@/components/GridCell';
+import { mount } from '../test-utils';
 
-describe('GridCell', () => {
+describe('<GridCell />', () => {
   it('should render grid cell', () => {
-    const wrapper = shallowMount(GridCell, {
+    const wrapper = mount(GridCell, {
       props: {
         content: {
           id: '1234',

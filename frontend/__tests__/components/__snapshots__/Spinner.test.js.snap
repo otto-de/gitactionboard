@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Spinner /> > should render spinner 1`] = `
+<div aria-valuemax="100" aria-valuemin="0" class="v-progress-circular v-progress-circular--indeterminate v-theme--light" role="progressbar" style="width: 128px; height: 128px; color: rgb(95, 141, 119); caret-color: #5f8d77;">
+  <svg style="transform: rotate(calc(-90deg + 0deg));" viewBox="0 0 44.13793103448276 44.13793103448276" xmlns="http://www.w3.org/2000/svg">
+    <circle class="v-progress-circular__underlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="0" stroke-width="4.137931034482759" />
+    <circle class="v-progress-circular__overlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="125.66370614359172px" stroke-width="4.137931034482759" />
+  </svg>
+  <!---->
+</div>
+`;

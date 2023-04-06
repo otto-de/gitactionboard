@@ -32,4 +32,8 @@ npm run lint:fix
 
 ### Customize configuration
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference](https://vitejs.dev/config/).
+
+### Icons
+
+See [Material Design Icons](https://pictogrammers.com/library/mdi/)

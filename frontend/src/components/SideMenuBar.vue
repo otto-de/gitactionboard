@@ -1,95 +1,86 @@
 <template>
-  <div :class="{'side-menu': true, 'open':isOpened }">
-    <div>
-      <HamburgerMenuIcon
-        :is-clicked="isOpened"
-        @clicked="openMenu"
+  <v-navigation-drawer
+    permanent
+    :rail="rail"
+  >
+    <v-list nav>
+      <v-list-item
+        :prepend-icon="rail ? `mdi-menu`:`mdi-menu-open`"
+        @click="toggleSideBar"
       />
-      <MenuItems
-        :is-clicked="isOpened"
-        :clickable="!activeMap['workflow-jobs']"
-        menu-item-name="Workflow Jobs"
-        icon-name="workflowJobs"
-        :is-active="activeMap['workflow-jobs']"
-        @workflow-jobs="redirectToWorkflowJobsPage"
+      <v-list-item
+        :active="currentPath === '/workflow-jobs'"
+        active-class="active"
+        prepend-icon="mdi-sitemap"
+        title="Workflow Jobs"
+        value="workflowJobs"
+        href="#/workflow-jobs"
       />
-      <MenuItems
+      <v-list-item
         v-if="githubSecretsScanMonitoringEnabled"
-        :is-clicked="isOpened"
-        :clickable="!activeMap.secrets"
-        menu-item-name="Exposed Secrets"
-        icon-name="secrets"
-        :is-active="activeMap.secrets"
-        @secrets="redirectToSecretsPage"
+        :active="currentPath === '/secrets'"
+        active-class="active"
+        prepend-icon="mdi-shield-lock-outline"
+        title="Exposed Secrets"
+        value="secrets"
+        href="#/secrets"
       />
-      <MenuItems
+      <v-list-item
         v-if="isGithubCodeScanMonitoringEnabled"
-        :is-clicked="isOpened"
-        :clickable="!activeMap['code-standard-violations']"
-        menu-item-name="Code Standard Violations"
-        icon-name="codeStandardViolations"
-        :is-active="activeMap['code-standard-violations']"
-        @code-standard-violations="redirectToCodeStandardViolationsPage"
+        :active="currentPath === '/code-standard-violations'"
+        active-class="active"
+        prepend-icon="mdi-code-braces-box"
+        title="Code Standard Violations"
+        value="codeStandardViolations"
+        href="#/code-standard-violations"
       />
-      <MenuItems
-        :is-clicked="isOpened"
-        :clickable="!activeMap.preferences"
-        menu-item-name="Preferences"
-        icon-name="settings"
-        :is-active="activeMap.preferences"
-        @settings="redirectToPreferencesPage"
+      <v-list-item
+        :active="currentPath === '/preferences'"
+        prepend-icon="mdi-cog-outline"
+        active-class="active"
+        title="Preferences"
+        value="preferences"
+        href="#/preferences"
       />
-    </div>
-    <div>
-      <MenuItems
-        :is-clicked="isOpened"
-        :clickable="false"
-        :menu-item-name="firstName"
-        icon-name="profile"
-      />
-      <MenuItems
-        v-if="isAuthenticate"
-        :is-clicked="isOpened"
-        menu-item-name="Logout"
-        icon-name="logout"
-        :is-active="activeMap.logout"
-        @logout="logout"
-      />
-    </div>
-  </div>
+    </v-list>
+    <template #append>
+      <v-list nav>
+        <v-list-item
+          v-if="avatarUrl"
+          :prepend-avatar="avatarUrl"
+          :title="firstName"
+        />
+        <v-list-item
+          v-if="!avatarUrl"
+          prepend-icon="mdi-account-circle"
+          :title="firstName"
+        />
+        <v-list-item
+          v-if="isAuthenticate"
+          prepend-icon="mdi-logout"
+          title="Logout"
+          @click="logout"
+        />
+      </v-list>
+    </template>
+  </v-navigation-drawer>
 </template>
 
 <script>
-import HamburgerMenuIcon from '@/icons/HamburgerMenuIcon';
-import MenuItems from '@/components/MenuItems';
-import router from '@/router';
-import { clearCookies, getName, isAuthenticate } from '@/services/authenticationService';
+import { clearCookies, getAvatarUrl, getName, isAuthenticate } from '@/services/authenticationService';
 import { getGithubCodeScanMonitoringEnabled, getGithubSecretsScanMonitoringEnabled } from '@/services/utils';
+import router from '@/router';
 
 export default {
   name: 'SideMenuBar',
-  components: { MenuItems, HamburgerMenuIcon },
   data() {
     return {
-      isOpened: false
+      rail: true
     };
   },
   computed: {
-    activeMap() {
-      const defaultActiveMap = {
-        'workflow-jobs': false,
-        preferences: false,
-        secrets: false,
-        logout: false,
-        'code-standard-violations': false
-      };
-      const currentPath = this.currentPath;
-
-      return Object.keys(this.activeMap || defaultActiveMap)
-        .reduce((previousValue, key) => {
-          if (currentPath === `/${key}`) { return { ...previousValue, [key]: true }; }
-          return { ...previousValue, [key]: false };
-        }, {});
+    currentPath() {
+      return router.currentRoute.value.path;
     },
     githubSecretsScanMonitoringEnabled() {
       return getGithubSecretsScanMonitoringEnabled();
@@ -97,8 +88,8 @@ export default {
     isGithubCodeScanMonitoringEnabled() {
       return getGithubCodeScanMonitoringEnabled();
     },
-    currentPath() {
-      return router.currentRoute.value.path;
+    avatarUrl() {
+      return getAvatarUrl();
     },
     firstName() {
       return getName().split(' ')[0];
@@ -108,20 +99,8 @@ export default {
     }
   },
   methods: {
-    openMenu() {
-      this.isOpened = !this.isOpened;
-    },
-    redirectToPreferencesPage() {
-      router.push('/preferences');
-    },
-    redirectToSecretsPage() {
-      router.push('/secrets');
-    },
-    redirectToCodeStandardViolationsPage() {
-      router.push('/code-standard-violations');
-    },
-    redirectToWorkflowJobsPage() {
-      router.push('/workflow-jobs');
+    toggleSideBar() {
+      this.rail = !this.rail;
     },
     logout() {
       clearCookies();
@@ -129,24 +108,11 @@ export default {
     }
   }
 };
-
 </script>
 
 <style scoped>
-.side-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 3%;
-  background-color: black;
-  transition: width 0.1s ease-in-out 100ms;
-}
-
-.side-menu.open {
-  width: 15%;
-  align-items: flex-start;
+.active {
+    background-color: #5f8d77;
 }
 
 </style>

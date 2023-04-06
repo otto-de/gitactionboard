@@ -1,19 +1,25 @@
 <template>
-  <div
+  <v-card
     :id="content.id"
     :key="content.id"
+    height="90px"
     class="grid-cell failure"
   >
-    <div class="grid-cell-name">
-      <a
-        :id="content.id + '_url'"
-        :href="content.url"
-        target="_blank"
-      >
-        {{ content.name }}
-      </a>
-    </div>
-  </div>
+    <v-card-text class="grid-cell-name pa-0 ma-0">
+      <v-tooltip text="Open on GitHub">
+        <template #activator="{ props }">
+          <a
+            :id="content.id + '_url'"
+            :href="content.url"
+            target="_blank"
+            v-bind="props"
+          >
+            {{ content.name }}
+          </a>
+        </template>
+      </v-tooltip>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -45,9 +51,7 @@ a {
 }
 
 .grid-cell {
-  box-shadow: 5px 5px 10px #777;
   border-radius: 6px;
-  height: 90px;
   border: 2px solid #000;
   padding: 5px;
 }

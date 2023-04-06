@@ -18,12 +18,20 @@ class Preferences {
     this.__set__('show-healthy-builds', value);
   }
 
-  get disableIdleOptimization() {
+  disableIdleOptimization() {
     return this.__get__('disable-max-idle-time') === 'true';
   }
 
-  set disableIdleOptimization(value) {
-    this.__set__('disable-max-idle-time', value);
+  get enableMaxIdleTimeOptimization() {
+    const enableIdleTimeRestrictionConfig = this.__get__('enable-max-idle-time-optimization');
+    if (enableIdleTimeRestrictionConfig === undefined || enableIdleTimeRestrictionConfig === null) {
+      return !this.disableIdleOptimization();
+    }
+    return enableIdleTimeRestrictionConfig === 'true';
+  }
+
+  set enableMaxIdleTimeOptimization(value) {
+    this.__set__('enable-max-idle-time-optimization', value);
   }
 
   get maxIdleTime() {
