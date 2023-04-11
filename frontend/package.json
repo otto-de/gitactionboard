@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@mockoon/cli": "^2.4.0",
-    "@vitest/coverage-c8": "^0.29.8",
+    "@vitest/coverage-c8": "^0.30.0",
     "@vue/test-utils": "^2.3.2",
     "concurrently": "^8.0.1",
     "eslint": "^8.38.0",
