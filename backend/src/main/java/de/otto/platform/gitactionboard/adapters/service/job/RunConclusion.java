@@ -11,6 +11,9 @@ public enum RunConclusion {
   @JsonProperty("failure")
   FAILURE,
 
+  @JsonProperty("startup_failure")
+  STARTUP_FAILURE,
+
   @JsonProperty("neutral")
   NEUTRAL,
 
@@ -32,7 +35,7 @@ public enum RunConclusion {
     }
     return switch (conclusion) {
       case SUCCESS, SKIPPED -> Status.SUCCESS;
-      case FAILURE, CANCELLED, TIMED_OUT -> Status.FAILURE;
+      case FAILURE, STARTUP_FAILURE, CANCELLED, TIMED_OUT -> Status.FAILURE;
       case ACTION_REQUIRED -> Status.EXCEPTION;
       default -> Status.UNKNOWN;
     };

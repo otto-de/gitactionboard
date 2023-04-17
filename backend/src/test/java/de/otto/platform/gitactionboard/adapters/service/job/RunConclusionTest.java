@@ -23,7 +23,7 @@ class RunConclusionTest {
   @ParameterizedTest(name = "should give FAILURE status for {0} conclusion")
   @EnumSource(
       value = RunConclusion.class,
-      names = {"TIMED_OUT", "CANCELLED", "FAILURE"})
+      names = {"TIMED_OUT", "CANCELLED", "FAILURE", "STARTUP_FAILURE"})
   void shouldGiveFailureStatus(RunConclusion conclusion) {
     assertThat(RunConclusion.getStatus(conclusion)).isEqualTo(Status.FAILURE);
   }
