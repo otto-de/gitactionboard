@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: .github/workflows/trivy.yaml
   checksum: 26bacc66c011640e4402fe1f68b222dd3b737ca4b6a8289ae546c60c5bae8fc1
 - filename: CHANGELOG.md
-  checksum: e9ec8b91bcb872b9fea94ff02a6aaef836ca5b197bcc55eb9e05ea7a843ce3be
+  checksum: 9deaec364f2c3563217a01e95de467d18e60c2d9c79020f54f04d26ef773943f
 - filename: README.md
   checksum: 2af99a33f66f2933ec384364c0c2d1d84e5a4493529be6749a220c2fe6277f03
 - filename: backend/build.gradle

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.1.1](https://github.com/otto-de/gitactionboard/compare/v3.1.0...v3.1.1) (2023-04-17)
+
+### Bug Fixes
+
+- Add startup failure state to run conclusion ([8b8ac04](https://github.com/otto-de/gitactionboard/commit/8b8ac046faa0b9df12e2954eea76de7679e84328)), closes [#271](https://github.com/otto-de/gitactionboard/issues/271)
+
 ## [v3.1.0](https://github.com/otto-de/gitactionboard/compare/v3.0.7...v3.1.0) (2023-04-01)
 
 ### Features
