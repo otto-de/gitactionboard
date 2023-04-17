@@ -1,12 +1,6 @@
 # Gitaction Board
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[all-contributors-badge]: https://img.shields.io/badge/all_contributors-12-orange.svg "Number of contributors"
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![All Contributors][all-contributors-badge]](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 [![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard?sort=semver)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 ![Docker Image Size](https://img.shields.io/docker/image-size/ottoopensource/gitactionboard?label=docker%20image%20size&sort=semver)
@@ -294,6 +288,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/baztian"><img src="https://avatars.githubusercontent.com/u/2461869?v=4?s=100" width="100px;" alt="baztian"/><br /><sub><b>baztian</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Abaztian" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://blog.ogbes.me/"><img src="https://avatars.githubusercontent.com/u/70475985?v=4?s=100" width="100px;" alt="Ogbeide Godstime Osemenkhian"/><br /><sub><b>Ogbeide Godstime Osemenkhian</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Agtogbes" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/svenfinke"><img src="https://avatars.githubusercontent.com/u/564499?v=4?s=100" width="100px;" alt="Sven Finke"/><br /><sub><b>Sven Finke</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=svenfinke" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/valentin-krasontovitsch"><img src="https://avatars.githubusercontent.com/u/15932677?v=4?s=100" width="100px;" alt="Valentin Krasontovitsch"/><br /><sub><b>Valentin Krasontovitsch</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=valentin-krasontovitsch" title="Code">💻</a> <a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Avalentin-krasontovitsch" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>

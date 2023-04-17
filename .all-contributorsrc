@@ -125,6 +125,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "valentin-krasontovitsch",
+      "name": "Valentin Krasontovitsch",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15932677?v=4",
+      "profile": "https://github.com/valentin-krasontovitsch",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7

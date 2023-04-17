@@ -8,7 +8,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: e9ec8b91bcb872b9fea94ff02a6aaef836ca5b197bcc55eb9e05ea7a843ce3be
 - filename: README.md
-  checksum: 48a85d9043103a821be33c98952dbb5c499fd27e49ade0a2d19b4524ac9926e4
+  checksum: 2af99a33f66f2933ec384364c0c2d1d84e5a4493529be6749a220c2fe6277f03
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -100,7 +100,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 4a35990685c58b02dd7d8ca3a838a9828321f3dbec45dbb0de47ee0d345f86a7
 - filename: frontend/package-lock.json
-  checksum: 6b37875d40c632cfe1b7410ece66767dc15676fcdbd5a4cd1ea92c4c1d2e1ff6
+  checksum: 0b6e0141f91a38e42bdb8242d351c554bf8cbc9efcfe296124e37555936b7999
 - filename: frontend/src/components/Dashboard.vue
   checksum: 0152b0f9f2900ea672ca0faa15f5fc59d00b2c803e2a6d641f12e90343505bdc
 - filename: frontend/src/components/GridCell.vue
