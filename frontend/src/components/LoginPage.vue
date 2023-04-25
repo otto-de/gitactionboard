@@ -180,16 +180,12 @@ export default {
 
 .header {
   font-family: "American Typewriter", serif;
-
-  /* color: #5b5454; */
   font-size: 40px;
 }
 
 .welcome-message {
   margin-bottom: 30px;
   font-size: 25px;
-
-  /* color: #5b5454; */
   font-weight: bold;
   font-family: "Snell Roundhand", cursive;
 }

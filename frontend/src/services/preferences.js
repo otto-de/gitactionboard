@@ -9,6 +9,10 @@ class Preferences {
     storageService.setItem(configKey, value);
   }
 
+  __getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
   get showHealthyBuilds() {
     const showHealthBuildConfig = this.__get__('show-healthy-builds');
     return !(showHealthBuildConfig && showHealthBuildConfig === 'false');
@@ -49,6 +53,14 @@ class Preferences {
 
   set hiddenElements(value) {
     this.__set__('hidden-elements', JSON.stringify(value));
+  }
+
+  get theme() {
+    return this.__get__('theme') || this.__getSystemTheme();
+  }
+
+  set theme(value) {
+    this.__set__('theme', value);
   }
 }
 

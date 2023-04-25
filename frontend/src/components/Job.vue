@@ -87,7 +87,7 @@ a {
 
 .job {
   border-radius: 6px;
-  border: 2px solid #000;
+  border: 2px solid;
   padding: 5px;
   display: flex;
   flex-direction: column;

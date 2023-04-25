@@ -39,6 +39,16 @@
             @update:model-value="modelValueUpdated"
           />
         </v-card-item>
+        <v-card-item class="pt-0 pb-0">
+          <v-btn
+            :icon="themeIcon"
+            flat
+            @click="onThemeUpdate"
+          />
+          <v-label class="ps-2">
+            {{ theme === 'light' ? 'Light' : 'Dark' }} Theme
+          </v-label>
+        </v-card-item>
         <v-divider class="mt-4 mb-2" />
         <v-card-actions>
           <v-spacer />
@@ -60,15 +70,18 @@
 <script>
 import preferences from '@/services/preferences';
 import DashboardHeader from '@/components/DashboardHeader.vue';
+import { useTheme } from 'vuetify';
 
 export default {
   name: 'Preferences',
   components: { DashboardHeader },
   data() {
+    const themeInstance = useTheme();
     return {
       showHealthyBuilds: preferences.showHealthyBuilds,
       maxIdleTime: preferences.maxIdleTime,
       enableMaxIdleTimeOptimization: preferences.enableMaxIdleTimeOptimization,
+      themeInstance,
       isDirty: false
     };
   },
@@ -78,18 +91,30 @@ export default {
     },
     isDisabled() {
       return !(this.isValid && this.isDirty);
+    },
+    themeIcon() {
+      return this.theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night';
+    },
+    theme() {
+      return this.themeInstance.global.name;
     }
   },
   methods: {
+    onThemeUpdate() {
+      this.themeInstance.global.name = this.theme === 'light' ? 'dark' : 'light';
+      this.modelValueUpdated();
+    },
     savePreferences() {
       preferences.enableMaxIdleTimeOptimization = this.enableMaxIdleTimeOptimization;
       preferences.showHealthyBuilds = this.showHealthyBuilds;
       preferences.maxIdleTime = this.maxIdleTime;
+      preferences.theme = this.themeInstance.global.name;
 
       this.isDirty = false;
     },
     modelValueUpdated() {
-      this.isDirty = !(this.showHealthyBuilds === preferences.showHealthyBuilds &&
+      this.isDirty = !(this.themeInstance.global.name === preferences.theme &&
+          this.showHealthyBuilds === preferences.showHealthyBuilds &&
             this.maxIdleTime === preferences.maxIdleTime &&
             this.enableMaxIdleTimeOptimization === preferences.enableMaxIdleTimeOptimization);
     }

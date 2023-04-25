@@ -17,10 +17,19 @@
 
 import SideMenuBar from '@/components/SideMenuBar';
 import router from '@/router';
+import preferences from '@/services/preferences';
+import { useTheme } from 'vuetify';
 
 export default {
   name: 'App',
   components: { SideMenuBar },
+  data() {
+    const themeInstance = useTheme();
+    themeInstance.global.name.value = preferences.theme;
+    return {
+      theme: themeInstance
+    };
+  },
   computed: {
     renderMenu() {
       const routerPath = router.currentRoute.value.path;
