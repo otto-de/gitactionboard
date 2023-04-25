@@ -8,7 +8,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 9deaec364f2c3563217a01e95de467d18e60c2d9c79020f54f04d26ef773943f
 - filename: README.md
-  checksum: 2af99a33f66f2933ec384364c0c2d1d84e5a4493529be6749a220c2fe6277f03
+  checksum: 08021872feb3cf43639725a1b585e7ce2ecea8e0a6db91ad7d89c86492cd84e7
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -116,7 +116,6 @@ fileignoreconfig:
 - filename: frontend/package-lock.json
   checksum: d7d365c1cbcefe8a25bdc6dcdf9778b78f4329a586cdde18018cc38c80476fce
 allowed_patterns:
-- org\.yaml:snakeyaml:\$\{snakeyamlVersion\}
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
