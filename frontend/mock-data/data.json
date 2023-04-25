@@ -79,7 +79,7 @@
       "responses": [
         {
           "uuid": "30cd0af0-5709-4ce8-9616-5cdb0267bf88",
-          "body": "{\n  \"availableAuths\": [],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true,\n  \"version\": \"3.1.0\"\n}",
+          "body": "{\n  \"availableAuths\": [\"BASIC_AUTH\", \"OAUTH2\"],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true,\n  \"version\": \"3.1.0\"\n}",
           "latency": 100,
           "statusCode": 200,
           "label": "",
@@ -142,6 +142,165 @@
             {
               "key": "Access-Control-Allow-Origin",
               "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "7ca77669-4ef2-471f-865d-f93f27f8427f",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "login/basic",
+      "responses": [
+        {
+          "uuid": "88472bef-8e9e-4268-a1a6-e00f54bea33b",
+          "body": "{}",
+          "latency": 500,
+          "statusCode": 200,
+          "label": "Use \"admin\" as username and \"password\" for password to be able login using basic auth",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "username=admin; Max-Age=86400; Path=/"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "name=admin; Max-Age=86400; Path=/"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "access_token=Basic+YWRtaW46cGFzc3dvcmQ%3D; Max-Age=86400; Path=/"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "username",
+              "value": "admin",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "password",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "cb790b32-330d-45b5-986b-282fa75ae0a9",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "username",
+              "value": "admin",
+              "invert": true,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "password",
+              "invert": true,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "e36dff74-05cc-4f7b-a35d-c540bc31843f",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "oauth2/authorization/github",
+      "responses": [
+        {
+          "uuid": "8865b7b7-4878-4be9-9136-9dad9131806d",
+          "body": "{}",
+          "latency": 100,
+          "statusCode": 302,
+          "label": "Mock github oauth2 login",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "username=admin; Max-Age=86400; Path=/"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "name=admin; Max-Age=86400; Path=/"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "access_token=token+12131121; Max-Age=86400; Path=/"
+            },
+            {
+              "key": "Location",
+              "value": "/#/workflow-jobs"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9c6dcdd5-24ad-4ceb-989f-92ef3d2e9867",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "logout",
+      "responses": [
+        {
+          "uuid": "1a578a35-283c-436f-b8d5-b3d8047bede9",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 302,
+          "label": "",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Location",
+              "value": "/"
             }
           ],
           "filePath": "",

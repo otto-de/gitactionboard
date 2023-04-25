@@ -25,13 +25,14 @@ export default defineConfig({
   base: './',
   server: {
     proxy: {
-      '^/v1|^/config|^/login': {
+      '^/v1|^/config|^/login|^/oauth2|^/logout': {
         target: 'http://localhost:8080',
         changeOrigin: true
       }
     },
     port: 8081,
-    strictPort: true
+    strictPort: true,
+    open: true
   },
   test: {
     environment: 'jsdom',
