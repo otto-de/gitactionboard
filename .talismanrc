@@ -46,7 +46,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanService.java
   checksum: aa1fa524d64e94ccf01700e9a3d49fa4b590e6aa33705b49aed2c1cf95aa4ef1
 - filename: backend/src/main/resources/application.properties
-  checksum: d41da28cd56d42f1b5080aa68d2a9c185f453af728b1c2d0e98d46adef6fc35e
+  checksum: 22f2f1eb29022657998e7aab741b28b7d172a36d063733ff2f4c7731a358c8a8
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java
   checksum: 0b94970267dcee93a6d21b2389840221badf8c2940208ef6fac5d6f4e8647e61
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java
@@ -98,7 +98,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 54d46fc6d1dae50a3f45145271ea8ac66e44fd6512e5cf7211073d4d3693c189
 - filename: frontend/package-lock.json
-  checksum: d7d365c1cbcefe8a25bdc6dcdf9778b78f4329a586cdde18018cc38c80476fce
+  checksum: 13733f91bcc41ed2836a4f3bced2be504b2f3150da52b48bc5381e7a29e52abb
 - filename: frontend/src/components/Dashboard.vue
   checksum: 01f4826750f6e9561a2011f6350e9344cc5f29e52487e78fbac5352122cf9b5a
 - filename: frontend/src/components/GridCell.vue
