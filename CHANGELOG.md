@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.2.0](https://github.com/otto-de/gitactionboard/compare/v3.1.1...v3.2.0) (2023-04-27)
+
+### Features
+
+- Introduce long-awaited dark theme ([ae0fbc1](https://github.com/otto-de/gitactionboard/commit/ae0fbc19e035630843e6a2b2a5afc0f13c09e8cb))
+
+### Bug Fixes
+
+- Explicitly upgrade libssl3 and libcrypto3 to fix CVE-2023-1255 ([53b5b77](https://github.com/otto-de/gitactionboard/commit/53b5b7731bd1fd835260f67423ed5f6bcac40607))
+
+### Performance Improvements
+
+- Enable response compression for fast page load ([da8a7e9](https://github.com/otto-de/gitactionboard/commit/da8a7e945012660b2b494bf3923a107d43c208db))
+
 ## [v3.1.1](https://github.com/otto-de/gitactionboard/compare/v3.1.0...v3.1.1) (2023-04-17)
 
 ### Bug Fixes
