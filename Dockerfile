@@ -31,6 +31,8 @@ FROM alpine:3.17.3
 ENV JAVA_HOME=/jre
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
+RUN apk upgrade libssl3 libcrypto3
+
 COPY --from=corretto-jdk /jre $JAVA_HOME
 
 EXPOSE 8080
