@@ -106,7 +106,7 @@ fileignoreconfig:
 - filename: frontend/src/components/Job.vue
   checksum: adbdd51deb133e69e45e1af18e24f8d01cb156719581f48f23be027957975ec5
 - filename: frontend/src/components/LoginPage.vue
-  checksum: a81dce4fda51774bcfc792ffef5cf77d2cc71bbb3032855a9de09b93a90d63f9
+  checksum: 0f816ef8af01e8158e95034431e8f78f88be13b37697ece167b10f35b7dee864
 - filename: frontend/src/components/WorkflowDashboard.vue
   checksum: af1edfd7effc4a7d4ab8e89f60372c1096fe3831c37f86274851cf994792facf
 - filename: frontend/src/services/apiService.js

@@ -40,6 +40,7 @@
             :readonly="loggingIn"
             :rules="[required]"
             clearable
+            type="password"
             label="Password"
             hide-details
             placeholder="Enter your password"
