@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [v3.2.1](https://github.com/otto-de/gitactionboard/compare/v3.2.0...v3.2.1) (2023-04-29)
+
+### Bug Fixes
+
+- Hide password on login page for basic authentication ([5a30dbc](https://github.com/otto-de/gitactionboard/commit/5a30dbce0e084d54d01780c8f5fdad31afdc50e3))
+
 ## [v3.2.0](https://github.com/otto-de/gitactionboard/compare/v3.1.1...v3.2.0) (2023-04-27)
 
 ### Features
