@@ -50,6 +50,7 @@ To contribute to GitactionBoard, have a look at our [contributing guidelines](ht
 - Hide all healthy builds from build monitor
 - In-built basic auth and GitHub OAuth2 login mechanism
 - Cache GitHub API response for configured time to avoid rate limit issue
+- Supports Dark and Light theme
 
 ## Usage
 
@@ -132,11 +133,13 @@ follow [this link](https://docs.github.com/en/developers/apps/building-oauth-app
 
 - `http://localhost:<host machine port>`
 
-![UI dashboard sample 1](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample1.png)
-![UI dashboard sample 2](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample2.png)
-![UI dashboard sample 3](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/sample3.png)
-![UI login_sample](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/login-sample1.png)
-![preference sample](https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/preference-sample1.png)
+|                                                      Dark Theme                                                       |                                                      Light Theme                                                       |
+| :-------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|          <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/login.png">           |          <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/login.png">           |
+|         <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/workflow.png">         |         <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/workflow.png">         |
+| <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/code-standard-violations.png"> | <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/code-standard-violations.png"> |
+|     <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/exposed-secrets.png">      |     <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/exposed-secrets.png">      |
+|       <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/preferences.png">        |       <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/preferences.png">        |
 
 ##### UI Dashboard Configurations
 

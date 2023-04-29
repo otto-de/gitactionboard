@@ -8,7 +8,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 6bda5aff281c6ce873f81885f733f937f1676a296c74adf7f0306020af542743
 - filename: README.md
-  checksum: b14fc88d89b1d7ee6651dbcee37d4e0fb94f801c12cc5463e58cc570d8827d2c
+  checksum: bfc436a616ae14cc96c8a7d4bf8ea0701ef05c313f2a20f181ef7a8445ee4317
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -85,18 +85,10 @@ fileignoreconfig:
   checksum: cc4dba78359c923b57cfce895c5bf9d899076fb3cd5da0845a6bef2f6a5cec50
 - filename: bin/lib.sh
   checksum: 03d6f9c11020cbb0aab52ba5ed04b0eb58e92bd010799d8e05514e634194c9d0
-- filename: doc/login-sample1.png
-  checksum: 96f2c392fb67d9fcfbcbec1184fc18d3dbf93ff62db9b96783304ca2a8a809c0
-- filename: doc/preference-sample1.png
-  checksum: 524cabe3c00adb712d76ef433eaa3a7cc9454ba6a182cb180a7d3987757d74ef
-- filename: doc/sample1.png
-  checksum: 3e742113cc1cc2c04a6520aa21a68a7165a1847d9994dda411628c429df0dfb8
-- filename: doc/sample3.png
-  checksum: 368c6cc373cac008695834853b0b926c6672987036ef36964a588c1089376a88
 - filename: frontend/__tests__/components/DashboardHeader.test.js
   checksum: d54261241c0a39a39db0df8947728d154eb25b633320769412ecf03eb25eadce
 - filename: frontend/mock-data/data.json
-  checksum: 54d46fc6d1dae50a3f45145271ea8ac66e44fd6512e5cf7211073d4d3693c189
+  checksum: a75c78fdb7e0e6d50de62515392d44fd691e595c184d7575e3d7dc40445ffbd2
 - filename: frontend/package-lock.json
   checksum: 6ba8aeefdb7e34e5c09ab002958e6eacf3fc886e11fdcdddd2e815b3cb8135ad
 - filename: frontend/src/components/Dashboard.vue
@@ -115,6 +107,12 @@ fileignoreconfig:
   checksum: 47a364a256bad4b291e9e92ca1022fba97dea9556895e592993038c2cb949b15
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
+- filename: doc/light-theme/preferences.png
+  checksum: 6ce3dccfee60d58e6f39476d21de1e529dd997ace8ccf7481167d281d0a6e91c
+- filename: doc/dark-theme/workflow.png
+  checksum: f2eb4873eb3984f71c1029e5bcec6a9333cb734825b54c36854f7ccf72ddd41c
+- filename: doc/dark-theme/login.png
+  checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
