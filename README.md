@@ -10,6 +10,7 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
 
 # Table of contents
 
+- [Demo](#demo)
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [Features](#features)
@@ -28,6 +29,12 @@ Gitaction Board - Ultimate Dashboard for GithubActions.
       - [Secrets Scan Alerts Data in JSON format](#secrets-scan-alerts-data-in-json-format)
       - [Code Scan Alerts Data in JSON format](#code-scan-alerts-data-in-json-format)
 - [Contributors ✨](#contributors-)
+
+## Demo
+
+Check [this link](https://otto-de.github.io/gitactionboard/) to try out **GitactionBoard** online with mock data.
+
+:warning: Due to technical reason authentication is disabled on the demo website.
 
 ## Changelog
 
