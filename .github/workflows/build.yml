@@ -177,7 +177,7 @@ jobs:
 
   deploy_to_github_pages:
     runs-on: ubuntu-22.04
-    needs: [build]
+    needs: [docker]
     permissions:
       contents: read
       pages: write
