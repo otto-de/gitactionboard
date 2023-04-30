@@ -174,3 +174,41 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           repository: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.SERVICE_NAME }}
           readme-filepath: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/README.md
+
+  deploy_to_github_pages:
+    runs-on: ubuntu-22.04
+    needs: [build]
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        with:
+          enablement: true
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      - name: Build frontend
+        run: ./run.sh frontend-build-for-github-pages
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/frontend/dist"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

@@ -23,7 +23,7 @@ export default defineConfig({
     },
     extensions: ['.vue', '.js']
   },
-  base: './',
+  base: process.env.BASE_PATH || './',
   server: {
     proxy: {
       '^/v1|^/config|^/login|^/oauth2|^/logout': {

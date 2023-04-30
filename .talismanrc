@@ -84,7 +84,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: cc4dba78359c923b57cfce895c5bf9d899076fb3cd5da0845a6bef2f6a5cec50
 - filename: bin/lib.sh
-  checksum: 03d6f9c11020cbb0aab52ba5ed04b0eb58e92bd010799d8e05514e634194c9d0
+  checksum: 0f043b2d32313a840b3d550b77c31f60e124a43aebead1210cbee51aa1107a4b
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png
@@ -104,11 +104,11 @@ fileignoreconfig:
 - filename: frontend/src/components/Job.vue
   checksum: adbdd51deb133e69e45e1af18e24f8d01cb156719581f48f23be027957975ec5
 - filename: frontend/src/components/LoginPage.vue
-  checksum: 0f816ef8af01e8158e95034431e8f78f88be13b37697ece167b10f35b7dee864
+  checksum: 865da95a3fda8bc4523e905c0272e397df217a14082fee0d9db14eb839b3b6bc
 - filename: frontend/src/components/WorkflowDashboard.vue
   checksum: af1edfd7effc4a7d4ab8e89f60372c1096fe3831c37f86274851cf994792facf
 - filename: frontend/src/services/apiService.js
-  checksum: 20d9dbb2edbc882f9b61ea25e5219260d42fc93c69bef13f264eb7d29fff02b0
+  checksum: e53a512673b08d7d43e19f8bdaf2f81f11e4600885cc622f61b876676fb4939b
 - filename: frontend/src/services/preferences.js
   checksum: 47a364a256bad4b291e9e92ca1022fba97dea9556895e592993038c2cb949b15
 - filename: frontend/src/services/storageService.js

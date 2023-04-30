@@ -235,3 +235,23 @@ _generate_changelog_url() {
 
   echo "https://github.com/otto-de/gitactionboard/blob/main/CHANGELOG.md#${tag//./}-${date}"
 }
+
+_frontend_build_for_github_pages(){
+  pushd "frontend" >/dev/null || exit
+    _ensure_nvm
+    npm install
+    VITE_PROXY_TARGET="https://otto-de.github.io/gitactionboard/apis" BASE_PATH="/gitactionboard" npm run build
+    for route in $(jq -r '.routes[] | select(.method == "get") | @base64' mock-data/data.json); do
+      local endpoint
+      local content
+      endpoint=$(echo "${route}" | base64 --decode | jq -r ".endpoint")
+      content=$(echo "${route}" | base64 --decode | jq -r ".responses[0].body")
+      mkdir -p "$(dirname dist/apis/"${endpoint}")"
+      if [[ ${endpoint} == "config" ]]; then
+        echo "${content}" | jq -r '.availableAuths = []' > "dist/apis/${endpoint}"
+      else
+        echo "${content}" > "dist/apis/${endpoint}"
+      fi
+    done
+  popd >/dev/null || exit
+}

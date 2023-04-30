@@ -80,7 +80,7 @@
           size="large"
           type="submit"
           variant="elevated"
-          href="./oauth2/authorization/github"
+          :href="getOauth2LoginUrl()"
           append-icon="mdi-github"
         >
           Login with Github
@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import { authenticate, fetchConfig } from '@/services/apiService';
+import { authenticate, fetchConfig, preparePath } from '@/services/apiService';
 import { isAuthenticate } from '@/services/authenticationService';
 import Spinner from '@/components/Spinner';
 import { watch } from 'vue';
@@ -169,6 +169,9 @@ export default {
           this.loggingIn = false;
           console.error(reason);
         });
+    },
+    getOauth2LoginUrl() {
+      return preparePath('/oauth2/authorization/github');
     }
   }
 };
