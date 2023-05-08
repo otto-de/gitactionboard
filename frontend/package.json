@@ -28,7 +28,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-vue": "^9.11.1",
     "jest-serializer-vue-tjw": "^3.19.0",
-    "jsdom": "^21.1.2",
+    "jsdom": "^22.0.0",
     "postcss-html": "^1.5.0",
     "stylelint": "^15.6.1",
     "stylelint-config-recommended-vue": "^1.4.0",
