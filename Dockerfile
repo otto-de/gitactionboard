@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine as corretto-deps
+FROM amazoncorretto:17-alpine AS corretto-deps
 
 COPY ./backend/build/libs/gitactionboard.jar /app/
 
@@ -12,7 +12,7 @@ RUN unzip /app/gitactionboard.jar -d temp &&  \
       --module-path="./temp/BOOT-INF/lib/*" \
       /app/gitactionboard.jar > /modules.txt
 
-FROM amazoncorretto:17-alpine as corretto-jdk
+FROM amazoncorretto:17-alpine AS corretto-jdk
 
 COPY --from=corretto-deps /modules.txt /modules.txt
 
@@ -27,11 +27,9 @@ RUN apk add --no-cache binutils && \
          --compress=2 \
          --output /jre
 
-FROM alpine:3.17.3
+FROM alpine:3.18.0
 ENV JAVA_HOME=/jre
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
-
-RUN apk upgrade libssl3 libcrypto3
 
 COPY --from=corretto-jdk /jre $JAVA_HOME
 
