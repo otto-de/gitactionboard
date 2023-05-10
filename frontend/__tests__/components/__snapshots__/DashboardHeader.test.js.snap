@@ -3,7 +3,7 @@
 exports[`<DashboardHeader /> > should render dashboard header for Code Standard Violations 1`] = `
 <div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
   <div class="v-application__wrap">
-    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
       <!---->
       <div class="v-toolbar__content" style="height: 64px;">
         <!---->
@@ -39,7 +39,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
 exports[`<DashboardHeader /> > should render dashboard header for Exposed Secrets 1`] = `
 <div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
   <div class="v-application__wrap">
-    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
       <!---->
       <div class="v-toolbar__content" style="height: 64px;">
         <!---->
@@ -75,7 +75,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
 exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 1`] = `
 <div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
   <div class="v-application__wrap">
-    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+    <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
       <!---->
       <div class="v-toolbar__content" style="height: 64px;">
         <!---->
