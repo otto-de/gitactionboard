@@ -157,7 +157,7 @@ class GithubControllerIntegrationTest {
     @Test
     @SneakyThrows
     void shouldFetchCctrayJson() {
-      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME), true);
 
       invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
@@ -171,7 +171,7 @@ class GithubControllerIntegrationTest {
 
     @Test
     void shouldShareCacheWithOtherUsersWhileFetchingCctrayJson() {
-      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME), true);
 
       final String dummyToken1 = "dummyToken1";
       invokeGetApiAndValidate(
@@ -224,7 +224,7 @@ class GithubControllerIntegrationTest {
     void shouldFetchCctrayJson() {
       stubWorkflowApiRequests(mockServerClient);
 
-      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME), true);
 
       invokeGetApiAndValidate(mockMvc, CCTRAY_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
@@ -253,7 +253,7 @@ class GithubControllerIntegrationTest {
     void shouldFetchCctrayJsonUsingAccessTokenFromCookie() {
       stubWorkflowApiRequests(mockServerClient);
 
-      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME));
+      final ResultMatcher resultMatcher = content().json(readFile(CCTRAY_JSON_FILE_NAME), true);
 
       final String dummyAccessToken = "dummy_access_token";
 

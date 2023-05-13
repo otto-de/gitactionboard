@@ -1,5 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
+import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.TRIGGERED_EVENT;
+import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -11,7 +13,6 @@ import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.CruiseCont
 import de.otto.platform.gitactionboard.adapters.service.cruisecontrol.Project;
 import de.otto.platform.gitactionboard.domain.service.PipelineService;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
-import de.otto.platform.gitactionboard.fixtures.JobDetailsFixture;
 import java.time.Instant;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,10 +46,10 @@ class GithubControllerTest {
     final String cctrayXml =
         """
             <Projects>
-            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127"/>
+            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
             </Projects>""";
 
-    final List<JobDetails> jobs = List.of(JobDetailsFixture.getJobDetailsBuilder().build());
+    final List<JobDetails> jobs = List.of(getJobDetailsBuilder().build());
 
     when(pipelineService.fetchJobs(accessToken)).thenReturn(jobs);
     when(cruiseControlService.convertToXml(jobs)).thenReturn(cctrayXml);
@@ -65,7 +66,7 @@ class GithubControllerTest {
   @NullSource
   @CsvSource(value = {"accessToken"})
   void shouldFetchJobDataAsJson(String accessToken) {
-    final List<JobDetails> jobs = List.of(JobDetailsFixture.getJobDetailsBuilder().build());
+    final List<JobDetails> jobs = List.of(getJobDetailsBuilder().build());
     final List<Project> projects =
         List.of(
             Project.builder()
@@ -75,6 +76,7 @@ class GithubControllerTest {
                 .lastBuildLabel("206")
                 .lastBuildStatus("Success")
                 .webUrl("https://github.com/johndoe/hello-world/runs/1132386127")
+                .triggeredEvent(TRIGGERED_EVENT)
                 .build());
 
     when(pipelineService.fetchJobs(accessToken)).thenReturn(jobs);

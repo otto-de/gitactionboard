@@ -20,6 +20,7 @@ class CruiseControlServiceTest {
           .name("talisman-checks")
           .url("https://github.com/johndoe/hello-world/runs/1132386046")
           .lastBuildTime(Instant.parse("2020-09-18T06:11:41.000Z"))
+          .triggeredEvent("pull_request")
           .build();
 
   private CruiseControlService cruiseControlService;
@@ -34,8 +35,8 @@ class CruiseControlServiceTest {
     final String expectedCctrayXml =
         """
             <Projects>
-            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127"/>
-            <Project name="hello-world :: hello-world-checks :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046"/>
+            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
+            <Project name="hello-world :: hello-world-checks :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="pull_request"/>
             </Projects>""";
 
     final String ccTrayXml =

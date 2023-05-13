@@ -23,6 +23,8 @@ public class Project {
 
   @NonNull String webUrl;
 
+  @NonNull String triggeredEvent;
+
   public static Project fromJobDetails(JobDetails job) {
     return Project.builder()
         .name(job.getFormattedName())
@@ -31,6 +33,7 @@ public class Project {
         .lastBuildLabel(String.valueOf(job.getRunNumber()))
         .lastBuildTime(job.getLastBuildTime())
         .webUrl(job.getUrl())
+        .triggeredEvent(job.getTriggeredEvent())
         .build();
   }
 

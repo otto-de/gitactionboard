@@ -12,6 +12,7 @@ public class JobDetailsFixture {
   public static final String WORKFLOW_NAME = "hello-world-checks";
   public static final String JOB_URL = "https://github.com/johndoe/hello-world/runs/1132386127";
   public static final String JOB_NAME = "dependency-checks";
+  public static final String TRIGGERED_EVENT = "push";
 
   public static JobDetails.JobDetailsBuilder getJobDetailsBuilder() {
     return JobDetails.builder()
@@ -22,6 +23,7 @@ public class JobDetailsFixture {
         .activity(SLEEPING)
         .lastBuildStatus(Status.SUCCESS)
         .lastBuildTime(Instant.parse("2020-09-18T06:14:54.000Z"))
+        .triggeredEvent(TRIGGERED_EVENT)
         .repoName(REPO_NAME)
         .workflowName(WORKFLOW_NAME);
   }

@@ -172,10 +172,10 @@ Access `http://localhost:<host machine port>/v1/cctray.xml` to get data in **XML
 
 ```xml
 <Projects>
-    <Project name="hello-world :: hello-world-build-and-deployment :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046"/>
-    <Project name="hello-world :: hello-world-build-and-deployment :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127"/>
-    <Project name="hello-world :: hello-world-checks :: format" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046"/>
-    <Project name="hello-world :: hello-world-checks :: test" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127"/>
+    <Project name="hello-world :: hello-world-build-and-deployment :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="push"/>
+    <Project name="hello-world :: hello-world-build-and-deployment :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="schedule"/>
+    <Project name="hello-world :: hello-world-checks :: format" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="pull_request"/>
+    <Project name="hello-world :: hello-world-checks :: test" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
 </Projects>
 ```
 
@@ -193,7 +193,8 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
     "lastBuildTime": "2020-09-18T06:11:41.000Z",
-    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386046"
+    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386046",
+    "triggeredEvent": "push"
   },
   {
     "name": "hello-world :: hello-world-build-and-deployment :: dependency-checks",
@@ -201,7 +202,8 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
     "lastBuildTime": "2020-09-18T06:14:54.000Z",
-    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127"
+    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127",
+    "triggeredEvent": "schedule"
   },
   {
     "name": "hello-world :: hello-world-checks :: format",
@@ -209,7 +211,8 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
     "lastBuildTime": "2020-09-18T06:11:41.000Z",
-    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386046"
+    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386046",
+    "triggeredEvent": "pull_request"
   },
   {
     "name": "hello-world :: hello-world-checks :: test",
@@ -217,7 +220,8 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
     "lastBuildTime": "2020-09-18T06:14:54.000Z",
-    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127"
+    "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127",
+    "triggeredEvent": "push"
   }
 ]
 ```

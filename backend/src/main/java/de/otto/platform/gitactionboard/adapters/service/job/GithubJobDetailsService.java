@@ -42,8 +42,9 @@ public class GithubJobDetailsService implements JobDetailsService {
                   fetchWorkflowJobDetails(currentWorkflowRun, workflow, accessToken);
 
               final long runNumber = currentWorkflowRun.getRunNumber();
+              final String triggeredEvent = currentWorkflowRun.getTriggeredEvent();
               if (workflowsRunDetails.size() == 1) {
-                return convertToJobDetails(runNumber, currentJobs, workflow);
+                return convertToJobDetails(runNumber, currentJobs, workflow, triggeredEvent);
               }
 
               final WorkflowRunDetails previousWorkflowRun = workflowsRunDetails.get(1);
@@ -52,7 +53,8 @@ public class GithubJobDetailsService implements JobDetailsService {
                   getPreviousJobDetails(
                       workflow, currentJobs, currentWorkflowRun, previousWorkflowRun, accessToken);
 
-              return convertToJobDetails(runNumber, currentJobs, workflow, previousJobs);
+              return convertToJobDetails(
+                  runNumber, currentJobs, workflow, previousJobs, triggeredEvent);
             })
         .exceptionally(
             throwable -> {
@@ -102,15 +104,19 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private List<JobDetails> convertToJobDetails(
-      long runNumber, List<WorkflowsJobDetails> currentJobs, Workflow workflow) {
-    return convertToJobDetails(runNumber, currentJobs, workflow, currentJobs);
+      long runNumber,
+      List<WorkflowsJobDetails> currentJobs,
+      Workflow workflow,
+      String triggeredEvent) {
+    return convertToJobDetails(runNumber, currentJobs, workflow, currentJobs, triggeredEvent);
   }
 
   private List<JobDetails> convertToJobDetails(
       long runNumber,
       List<WorkflowsJobDetails> currentJobs,
       Workflow workflow,
-      List<WorkflowsJobDetails> previousJobs) {
+      List<WorkflowsJobDetails> previousJobs,
+      String triggeredEvent) {
     log.info("Creating job details for {} for run number {}", workflow, runNumber);
 
     return currentJobs.stream()
@@ -118,7 +124,7 @@ public class GithubJobDetailsService implements JobDetailsService {
             currentJob -> {
               final WorkflowsJobDetails previousJob =
                   findJob(previousJobs, currentJob.getName(), currentJob);
-              return createJobDetails(runNumber, workflow, currentJob, previousJob);
+              return createJobDetails(runNumber, workflow, currentJob, previousJob, triggeredEvent);
             })
         .toList();
   }
@@ -127,7 +133,8 @@ public class GithubJobDetailsService implements JobDetailsService {
       long runNumber,
       Workflow workflow,
       WorkflowsJobDetails currentJob,
-      WorkflowsJobDetails previousJob) {
+      WorkflowsJobDetails previousJob,
+      String triggeredEvent) {
     return JobDetails.builder()
         .id(currentJob.getId())
         .runNumber(runNumber)
@@ -139,6 +146,7 @@ public class GithubJobDetailsService implements JobDetailsService {
         .activity(RunStatus.getActivity(currentJob.getStatus()))
         .lastBuildTime(
             Optional.ofNullable(previousJob.getCompletedAt()).orElse(previousJob.getStartedAt()))
+        .triggeredEvent(triggeredEvent)
         .build();
   }
 

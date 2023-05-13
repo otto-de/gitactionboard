@@ -8,7 +8,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: README.md
-  checksum: b6dab44fd744bc0d9b8563313b910472c9397a9cae51d8d326a10cc501d2dcf1
+  checksum: bf0c4406fad1ac12e2129b2bbe2dfea9199b5d01998c2f85268046467b8ed053
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -40,7 +40,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/NotificationsService.java
   checksum: 6a5ce5991f2eff2b911684233c2926432aadad937074cfa3c8f22c0aaaff488b
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/PipelineService.java
-  checksum: d3e1a0095c3c47f3f18435ab662f3b93f948073baf9ac7bd41a68bd63dff30d4
+  checksum: a146cfc47bfd6e5c19abc67c70bd0887a2c59b9566d04fea92a6914c6c1e11d4
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanDetailsService.java
   checksum: 6a9bdc8f95ac77877aee525f1e8faa52c0dec6e254dd0c4d7f0416c61062a731
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanService.java
@@ -94,7 +94,7 @@ fileignoreconfig:
 - filename: frontend/__tests__/components/DashboardHeader.test.js
   checksum: d54261241c0a39a39db0df8947728d154eb25b633320769412ecf03eb25eadce
 - filename: frontend/mock-data/data.json
-  checksum: a75c78fdb7e0e6d50de62515392d44fd691e595c184d7575e3d7dc40445ffbd2
+  checksum: 01f60905a94efb5b3eceddefee9f15bd88d7d978933b517cde0ce8a93e4d5c4a
 - filename: frontend/package-lock.json
   checksum: 23ab62bf358dd5cc7cca4521d920ee10437bc246c9195c34c6b78fe9904e4d55
 - filename: frontend/src/components/Dashboard.vue

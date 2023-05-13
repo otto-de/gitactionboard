@@ -49,7 +49,8 @@ import org.springframework.web.client.HttpClientErrorException;
 @Sequential
 class GithubJobDetailsServiceTest {
   private static final String WORKFLOW_NAME = "hello-world-checks";
-  private static final JobDetails JOB_DETAILS_1132386127 = getJobDetailsBuilder().build();
+  private static final JobDetails JOB_DETAILS_1132386127 =
+      getJobDetailsBuilder().triggeredEvent("schedule").build();
 
   private static final JobDetails JOB_DETAILS_1132386046 =
       getJobDetailsBuilder()
@@ -57,6 +58,7 @@ class GithubJobDetailsServiceTest {
           .name("talisman-checks")
           .url("https://github.com/johndoe/hello-world/runs/1132386046")
           .lastBuildTime(Instant.parse("2020-09-18T06:11:41.000Z"))
+          .triggeredEvent("schedule")
           .build();
 
   private static final ObjectMapper objectMapper = CodecConfig.OBJECT_MAPPER_BUILDER.build();

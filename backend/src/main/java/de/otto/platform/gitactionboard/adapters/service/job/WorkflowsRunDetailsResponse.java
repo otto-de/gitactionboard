@@ -37,5 +37,9 @@ public class WorkflowsRunDetailsResponse {
     @NonNull
     @JsonProperty("html_url")
     String url;
+
+    @NonNull
+    @JsonProperty("event")
+    String triggeredEvent;
   }
 }
