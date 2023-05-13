@@ -47,8 +47,11 @@ public class PipelineService {
   private List<JobDetails> fetchJobs(String accessToken, List<Workflow> workflows) {
     return workflows.stream()
         .parallel()
-        .peek(workflow -> log.info("Fetching job details for {}", workflow))
-        .map(workflow -> jobDetailsService.fetchJobDetails(workflow, accessToken))
+        .map(
+            workflow -> {
+              log.info("Fetching job details for {}", workflow);
+              return jobDetailsService.fetchJobDetails(workflow, accessToken);
+            })
         .map(CompletableFuture::join)
         .flatMap(Collection::stream)
         .toList();
@@ -57,8 +60,11 @@ public class PipelineService {
   private List<Workflow> fetchWorkflows(String accessToken) {
     return repoNames.stream()
         .parallel()
-        .peek(repoName -> log.info("Fetching workflows for {} repo", repoName))
-        .map(repoName -> workflowService.fetchWorkflows(repoName, accessToken))
+        .map(
+            repoName -> {
+              log.info("Fetching workflows for {} repo", repoName);
+              return workflowService.fetchWorkflows(repoName, accessToken);
+            })
         .map(CompletableFuture::join)
         .flatMap(Collection::stream)
         .toList();
