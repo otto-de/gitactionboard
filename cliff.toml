@@ -55,6 +55,7 @@ commit_parsers = [
   { message = "^chore\\(release\\): prepare for", skip = true },
   { message = "^chore.*\\/backend", skip = true },
   { message = "^chore.*\\/frontend", skip = true },
+  { message = "^chore.*talisman.*warnings", skip = true },
   { message = "^chore", group = "<!-- 8 -->⚙️ Miscellaneous Tasks" },
   { message = "^build", group = "<!-- 9 -->👷 Build" },
 ]
