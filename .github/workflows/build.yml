@@ -99,9 +99,33 @@ jobs:
           CURRENT_TAG=$(git describe --tags --abbrev=0)
           echo "CURRENT_TAG=${CURRENT_TAG}" >> $GITHUB_OUTPUT
 
+  update_changelog:
+    runs-on: ubuntu-22.04
+    needs: [build, determaine_should_publish_new_version]
+    if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install git-cliff and prettier using npm
+        run: sudo npm install --global git-cliff prettier
+      - name: Generate changelog
+        run: ./run.sh generate-changelog
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Commit and push updated changelog
+        run: |
+          git add .
+          if ! (git diff --staged --quiet --exit-code); then
+              git config user.name "GitHub Actions"
+              git commit -m 'docs: Update changelog'
+              git push origin main
+          fi
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+
   docker:
     runs-on: ubuntu-22.04
-    needs: [build, determaine_current_tag_name]
+    needs: [build, determaine_current_tag_name, update_changelog]
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v3

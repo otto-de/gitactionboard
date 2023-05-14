@@ -26,7 +26,6 @@ commands:
   talisman-verify                                      Verify no sensitive information is committed using talisman
   trivy-verify                                         Verify there is no vulnerability in docker image
   bump-version                                         Release a new version
-  unpublished-version                                  Get current (unpublished) version
   copy-frontend                                        Build and copy the frontend code base to backend resources folder
   frontend-build-for-github-pages                      Build frontend for GitHub pages
   generate-changelog                                   Generate changelog from last tag and write in CHANGELOG.md
@@ -53,7 +52,6 @@ case ${CMD} in
   talisman-verify) _talisman_verify ;;
   trivy-verify) _trivy_verify ;;
   bump-version) _bump_version ;;
-  unpublished-version) _unpublished_version ;;
   copy-frontend) _copy_frontend ;;
   generate-changelog) _generate_changelog ;;
   add-contributor) _add_contributor "${1}" "${2}" ;;

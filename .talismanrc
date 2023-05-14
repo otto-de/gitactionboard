@@ -84,7 +84,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: cc4dba78359c923b57cfce895c5bf9d899076fb3cd5da0845a6bef2f6a5cec50
 - filename: bin/lib.sh
-  checksum: 0f043b2d32313a840b3d550b77c31f60e124a43aebead1210cbee51aa1107a4b
+  checksum: 1e05d6eaf1608f946e89080cdceae2cf6715551c1d1621f393cf96f158baea6e
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png

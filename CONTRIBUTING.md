@@ -37,7 +37,6 @@ If you are not sure how to begin contributing to GitactionBoard, have a look at 
 - [Node.js v18.12.1](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [all-contributors cli](https://allcontributors.org/docs/en/cli/overview) (only for maintainers)
-- [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
 
 ### Tests
 
@@ -202,13 +201,9 @@ Once your PR is merged, your contributions will be publicly visible on the [Read
 ./run.sh generate-changelog
 ```
 
-- Once changelog is generated, verify the changelog and push the changes to GitHub
-
 ### Release a new Docker image
 
 A new docker image can be published to [docker hub](https://hub.docker.com/repository/docker/ottoopensource/gitactionboard) using CI/CD. To achieve the same we need to follow the following steps:
-
-- Generate the changelog, if it's not done already. Steps can be found [here](#generate-changelog).
 
 - Create a new release version by running following command
 
