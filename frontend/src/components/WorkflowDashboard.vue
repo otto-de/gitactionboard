@@ -38,6 +38,9 @@ export default {
     },
     maxIdleTime() {
       return preferences.maxIdleTime;
+    },
+    hasPreferredTriggeredEvents() {
+      return preferences.showBuildsDueToTriggeredEvents.length > 0;
     }
   },
   methods: {
@@ -48,10 +51,12 @@ export default {
       return lastBuildStatus === 'Success' && activity === 'Sleeping';
     },
     marshalData(data) {
-      return data.filter(({ lastBuildStatus, activity }) => {
-        return this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity);
-      }
-      );
+      return data
+        .filter(({ lastBuildStatus, activity }) =>
+          this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity))
+        .filter(({ triggeredEvent }) =>
+          !this.hasPreferredTriggeredEvents ||
+            preferences.showBuildsDueToTriggeredEvents.indexOf(triggeredEvent) !== -1);
     }
   }
 };

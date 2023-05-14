@@ -62,6 +62,14 @@ class Preferences {
   set theme(value) {
     this.__set__('theme', value);
   }
+
+  get showBuildsDueToTriggeredEvents() {
+    return JSON.parse(this.__get__('show-builds-due-to-triggered-events') || '[]');
+  }
+
+  set showBuildsDueToTriggeredEvents(events) {
+    this.__set__('show-builds-due-to-triggered-events', JSON.stringify(events));
+  }
 }
 
 export default new Preferences();

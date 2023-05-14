@@ -106,11 +106,11 @@ fileignoreconfig:
 - filename: frontend/src/components/LoginPage.vue
   checksum: 865da95a3fda8bc4523e905c0272e397df217a14082fee0d9db14eb839b3b6bc
 - filename: frontend/src/components/WorkflowDashboard.vue
-  checksum: af1edfd7effc4a7d4ab8e89f60372c1096fe3831c37f86274851cf994792facf
+  checksum: 29de553931ddefe3aa93eb28d247f1773215148efd45aeb67a20e8047a08345f
 - filename: frontend/src/services/apiService.js
   checksum: e53a512673b08d7d43e19f8bdaf2f81f11e4600885cc622f61b876676fb4939b
 - filename: frontend/src/services/preferences.js
-  checksum: 47a364a256bad4b291e9e92ca1022fba97dea9556895e592993038c2cb949b15
+  checksum: 4e47359b7c85b9976c4763fb0b0524cd80920865359bc002062fcd70dd554881
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 allowed_patterns:

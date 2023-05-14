@@ -49,6 +49,21 @@
             {{ theme === 'light' ? 'Light' : 'Dark' }} Theme
           </v-label>
         </v-card-item>
+        <v-card-item class="pt-0 pb-0">
+          <v-autocomplete
+            v-model="showBuildsDueToTriggeredEvents"
+            chips
+            closable-chips
+            label="Show Builds Due To"
+            multiple
+            variant="solo"
+            hide-selected
+            clearable
+            hide-no-data
+            :items="getAllPossibleTriggeredEvents"
+            @update:model-value="modelValueUpdated"
+          />
+        </v-card-item>
         <v-divider class="mt-4 mb-2" />
         <v-card-actions>
           <v-spacer />
@@ -71,6 +86,7 @@
 import preferences from '@/services/preferences';
 import DashboardHeader from '@/components/DashboardHeader.vue';
 import { useTheme } from 'vuetify';
+import { getAllPossibleTriggeredEvents, getShowBuildsDueToTriggeredEvents } from '@/services/utils';
 
 export default {
   name: 'Preferences',
@@ -82,7 +98,8 @@ export default {
       maxIdleTime: preferences.maxIdleTime,
       enableMaxIdleTimeOptimization: preferences.enableMaxIdleTimeOptimization,
       themeInstance,
-      isDirty: false
+      isDirty: false,
+      showBuildsDueToTriggeredEvents: getShowBuildsDueToTriggeredEvents()
     };
   },
   computed: {
@@ -97,6 +114,9 @@ export default {
     },
     theme() {
       return this.themeInstance.global.name;
+    },
+    getAllPossibleTriggeredEvents() {
+      return getAllPossibleTriggeredEvents();
     }
   },
   methods: {
@@ -109,6 +129,7 @@ export default {
       preferences.showHealthyBuilds = this.showHealthyBuilds;
       preferences.maxIdleTime = this.maxIdleTime;
       preferences.theme = this.themeInstance.global.name;
+      preferences.showBuildsDueToTriggeredEvents = this.showBuildsDueToTriggeredEvents;
 
       this.isDirty = false;
     },
@@ -116,7 +137,18 @@ export default {
       this.isDirty = !(this.themeInstance.global.name === preferences.theme &&
           this.showHealthyBuilds === preferences.showHealthyBuilds &&
             this.maxIdleTime === preferences.maxIdleTime &&
-            this.enableMaxIdleTimeOptimization === preferences.enableMaxIdleTimeOptimization);
+            this.enableMaxIdleTimeOptimization === preferences.enableMaxIdleTimeOptimization &&
+          this.hasSameShowBuildsDueToTriggeredEvents());
+    },
+    hasSameShowBuildsDueToTriggeredEvents() {
+      const newPreferredTriggeredEvents = Object.keys(this.showBuildsDueToTriggeredEvents);
+      const preferredTriggeredEvents = preferences.showBuildsDueToTriggeredEvents;
+
+      if (preferredTriggeredEvents.length === 0 &&
+          newPreferredTriggeredEvents.length === getAllPossibleTriggeredEvents().length) { return true; }
+
+      return preferredTriggeredEvents.length === newPreferredTriggeredEvents.length &&
+        preferredTriggeredEvents.every((val, index) => val === newPreferredTriggeredEvents[index]);
     }
   }
 };
