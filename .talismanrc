@@ -94,11 +94,11 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 01f60905a94efb5b3eceddefee9f15bd88d7d978933b517cde0ce8a93e4d5c4a
 - filename: frontend/package-lock.json
-  checksum: 9541222e28cf842f16b6967093ba2ce4cfca1b4c606bcc79683e52698ed3934a
+  checksum: c2ba9dd6389dce60e3ea6b914ffb053105a5f0a893511ebdcfadefee462a33eb
 - filename: frontend/src/components/Dashboard.vue
   checksum: 01f4826750f6e9561a2011f6350e9344cc5f29e52487e78fbac5352122cf9b5a
 - filename: frontend/src/components/GridCell.vue
-  checksum: 8eeb5b9ee89d207ffdd459416f6a4d127feb4ee8576195874c4b6512b5b25014
+  checksum: d8feb1f280a2f8e07dd8ce33ac7648c0e12fac8e91bbc7f27fc5d89d8fe7f7c2
 - filename: frontend/src/components/Job.vue
   checksum: 9e2de0706e69c81dce66767e5632556b03a549aab0dc7ef6791daa5f427c461d
 - filename: frontend/src/components/LoginPage.vue

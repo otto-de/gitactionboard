@@ -19,10 +19,25 @@
         </template>
       </v-tooltip>
     </v-card-text>
+    <div class="d-flex">
+      <v-btn
+        disabled
+        prepend-icon="mdi-clock-time-four-outline"
+        size="small"
+        variant="text"
+        density="compact"
+        flat
+        class="relative-time pl-1 align-self-center"
+      >
+        {{ relativeTime }}
+      </v-btn>
+    </div>
   </v-card>
 </template>
 
 <script>
+import { getRelativeTime } from '@/services/utils';
+
 export default {
   name: 'GridCell',
   props: {
@@ -30,30 +45,42 @@ export default {
       type: Object,
       required: true
     }
+  },
+  computed: {
+    relativeTime() {
+      return getRelativeTime(this.content.createdAt);
+    }
   }
 };
 </script>
 
 <style scoped>
+.relative-time{
+    text-transform: none !important;
+    opacity: 1;
+}
+
 .grid-cell-name {
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  height: 100%;
-  overflow: auto;
-  display: inline-grid;
-  align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    overflow: auto;
+    display: inline-grid;
+    align-items: center;
+    flex-grow: 1;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .grid-cell {
-  border-radius: 6px;
-  border: 2px solid;
-  padding: 5px;
+    border-radius: 6px;
+    border: 2px solid;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .failure {
