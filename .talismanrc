@@ -94,13 +94,13 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 01f60905a94efb5b3eceddefee9f15bd88d7d978933b517cde0ce8a93e4d5c4a
 - filename: frontend/package-lock.json
-  checksum: 23ab62bf358dd5cc7cca4521d920ee10437bc246c9195c34c6b78fe9904e4d55
+  checksum: 9541222e28cf842f16b6967093ba2ce4cfca1b4c606bcc79683e52698ed3934a
 - filename: frontend/src/components/Dashboard.vue
   checksum: 01f4826750f6e9561a2011f6350e9344cc5f29e52487e78fbac5352122cf9b5a
 - filename: frontend/src/components/GridCell.vue
   checksum: 8eeb5b9ee89d207ffdd459416f6a4d127feb4ee8576195874c4b6512b5b25014
 - filename: frontend/src/components/Job.vue
-  checksum: adbdd51deb133e69e45e1af18e24f8d01cb156719581f48f23be027957975ec5
+  checksum: 9e2de0706e69c81dce66767e5632556b03a549aab0dc7ef6791daa5f427c461d
 - filename: frontend/src/components/LoginPage.vue
   checksum: 865da95a3fda8bc4523e905c0272e397df217a14082fee0d9db14eb839b3b6bc
 - filename: frontend/src/components/WorkflowDashboard.vue
@@ -108,7 +108,7 @@ fileignoreconfig:
 - filename: frontend/src/services/apiService.js
   checksum: e53a512673b08d7d43e19f8bdaf2f81f11e4600885cc622f61b876676fb4939b
 - filename: frontend/src/services/preferences.js
-  checksum: 4e47359b7c85b9976c4763fb0b0524cd80920865359bc002062fcd70dd554881
+  checksum: 1d0c3adc258ca6e90111cb36caa79a521a4feeb7f7a51d97a9f9bc2177b21b09
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java

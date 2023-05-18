@@ -17,6 +17,7 @@ const ALL_POSSIBLE_EVENTS = {
   issues: 'Issues',
   label: 'Label',
   member: 'Member',
+  merge_group: 'Merge Group',
   milestone: 'Milestone',
   page_build: 'Page build',
   project: 'Project',
@@ -35,7 +36,8 @@ const ALL_POSSIBLE_EVENTS = {
   workflow_call: 'Workflow call',
   workflow_dispatch: 'Workflow dispatch',
   workflow_run: 'Workflow run',
-  repository_dispatch: 'Repository dispatch'
+  repository_dispatch: 'Repository dispatch',
+  schedule: 'Schedule'
 };
 
 const SECOND = 1000;
