@@ -1,7 +1,7 @@
 import storageService from '@/services/storageService';
 import preferences from '@/services/preferences';
 
-const allPossibleEvents = {
+const ALL_POSSIBLE_EVENTS = {
   branch_protection_rule: 'Branch protection rule',
   check_run: 'Check run',
   check_suite: 'Check suite',
@@ -37,6 +37,29 @@ const allPossibleEvents = {
   workflow_run: 'Workflow run',
   repository_dispatch: 'Repository dispatch'
 };
+
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const HOUR = 60 * MINUTE;
+const DAY = 24 * HOUR;
+const WEEK = 7 * DAY;
+const MONTH = 30 * DAY;
+const YEAR = 12 * MONTH;
+
+const RELATIVE_FORMAT_INFO = [
+  { cutoffs: MINUTE, unit: 'seconds', amount: SECOND },
+  { cutoffs: HOUR, unit: 'minutes', amount: MINUTE },
+  { cutoffs: DAY, unit: 'hours', amount: HOUR },
+  { cutoffs: WEEK, unit: 'days', amount: DAY },
+  { cutoffs: MONTH, unit: 'weeks', amount: WEEK },
+  { cutoffs: YEAR, unit: 'months', amount: MONTH },
+  { cutoffs: Number.POSITIVE_INFINITY, unit: 'years', amount: YEAR }
+];
+
+const RELATIVE_TIME_FORMAT = new Intl.RelativeTimeFormat('en', {
+  numeric: 'auto',
+  style: 'long'
+});
 
 export const setAvailableAuths = (availableAuths) => {
   storageService.setItem('availableAuths', JSON.stringify(availableAuths));
@@ -79,14 +102,24 @@ export const getVersion = () => storageService.getItem('version');
 
 const buildTriggeredEvents = (keys) => {
   return keys.map(key => ({
-    title: allPossibleEvents[key],
+    title: ALL_POSSIBLE_EVENTS[key],
     value: key
   }));
 };
 
-export const getAllPossibleTriggeredEvents = () => buildTriggeredEvents(Object.keys(allPossibleEvents));
+export const getAllPossibleTriggeredEvents = () => buildTriggeredEvents(Object.keys(ALL_POSSIBLE_EVENTS));
 
 export const getShowBuildsDueToTriggeredEvents = () =>
   preferences.showBuildsDueToTriggeredEvents.length === 0
     ? getAllPossibleTriggeredEvents()
     : buildTriggeredEvents(preferences.showBuildsDueToTriggeredEvents);
+
+export const getRelativeTime = timestamp => {
+  const timeDifference = new Date(timestamp) - new Date();
+
+  const { amount, unit } =
+      RELATIVE_FORMAT_INFO.find(({ cutoffs }) => cutoffs > Math.abs(timeDifference)) ||
+      RELATIVE_FORMAT_INFO[0];
+
+  return RELATIVE_TIME_FORMAT.format(Math.round(timeDifference / amount), unit);
+};
