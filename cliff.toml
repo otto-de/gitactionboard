@@ -40,6 +40,7 @@ split_commits = false
 commit_preprocessors = [
    { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](https://github.com/otto-de/gitactionboard/issues/${2}))"}, # replace issue numbers
    { pattern = '\sgithub\s', replace = " GitHub "},
+   { pattern = '(CVE-[0-9]+-[0-9]+)', replace = "[${1}](https://nvd.nist.gov/vuln/detail/${1})"},
 ]
 
 commit_parsers = [
