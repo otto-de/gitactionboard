@@ -103,6 +103,8 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [build, determaine_should_publish_new_version]
     if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
+    permissions:
+      contents: write
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v3
