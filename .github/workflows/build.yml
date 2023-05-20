@@ -109,6 +109,8 @@ jobs:
       - name: Checkout local repository
         uses: actions/checkout@v3
         with:
+          ref: 'main'
+          fetch-depth: 0
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install git-cliff and prettier using npm
         run: sudo npm install --global git-cliff prettier
