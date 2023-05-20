@@ -61,7 +61,6 @@ export default {
 }
 
 .grid-cell-name {
-    color: white;
     font-weight: bold;
     font-size: 14px;
     overflow: auto;
@@ -76,8 +75,9 @@ a {
 }
 
 .grid-cell {
+    color: white;
     border-radius: 6px;
-    border: 2px solid;
+    border: 2px solid  rgb(var(--v-border-color));
     padding: 5px;
     display: flex;
     flex-direction: column;
