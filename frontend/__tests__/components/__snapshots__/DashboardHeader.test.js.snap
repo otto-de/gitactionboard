@@ -21,7 +21,8 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
           <div class="v-col v-col-2 d-inline-flex">
             <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
               <div class="v-toolbar-title__placeholder">
-                <!---->Code Standard Violations
+                <!---->
+                Code Standard Violations
               </div>
             </div>
           </div>
@@ -57,7 +58,8 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
           <div class="v-col v-col-2 d-inline-flex">
             <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
               <div class="v-toolbar-title__placeholder">
-                <!---->Exposed Secrets
+                <!---->
+                Exposed Secrets
               </div>
             </div>
           </div>
@@ -93,7 +95,8 @@ exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 
           <div class="v-col v-col-2 d-inline-flex">
             <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
               <div class="v-toolbar-title__placeholder">
-                <!---->Workflow Jobs
+                <!---->
+                Workflow Jobs
               </div>
             </div>
           </div>
