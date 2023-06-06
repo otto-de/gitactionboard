@@ -8,7 +8,7 @@
     <Dashboard
       :enable-max-idle-time-optimization="enableMaxIdleTimeOptimization"
       :max-idle-time="maxIdleTime"
-      content-displayer="GridCell"
+      content-displayer="FailureGridCell"
       :fetch-contents="fetchContents"
     />
   </v-container>

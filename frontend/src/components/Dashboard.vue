@@ -82,7 +82,7 @@
 import NoFailures from '@/components/NoFailures';
 import Spinner from '@/components/Spinner';
 import Job from '@/components/Job';
-import GridCell from '@/components/GridCell';
+import FailureGridCell from '@/components/FailureGridCell.vue';
 import preferences from '@/services/preferences';
 import MaxIdleTimeoutOverlay from '@/components/MaxIdleTimeoutOverlay';
 
@@ -90,7 +90,7 @@ const ONE_MINUTE = 60000;
 
 export default {
   name: 'Dashboard',
-  components: { MaxIdleTimeoutOverlay, NoFailures, Spinner, Job, GridCell },
+  components: { MaxIdleTimeoutOverlay, NoFailures, Spinner, Job, FailureGridCell },
   props: {
     enableMaxIdleTimeOptimization: {
       type: Boolean,
@@ -145,7 +145,7 @@ export default {
     }
     this.renderPage().then(() => {
       this.loading = false;
-      this.renderPageTimer = setInterval(this.renderPage, 5000);
+      this.renderPageTimer = setInterval(this.renderPage, 500000);
     });
     this.hiddenElements = preferences.hiddenElements[this.nameOfItems] || [];
   },

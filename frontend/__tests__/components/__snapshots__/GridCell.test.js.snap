@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<GridCell /> > should render grid cell 1`] = `
-<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="1234" style="height: 90px;">
+exports[`<GridCell /> > Toggle Visibility > should display toggle visibility icon with hide icon when hidden passed as false 1`] = `
+<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell" id="webpack-cli :: webpack-cli :: Lint Commit Messages" style="height: 90px;">
   <!---->
   <div class="v-card__loader">
     <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
@@ -19,21 +19,122 @@ exports[`<GridCell /> > should render grid cell 1`] = `
   <!---->
   <!---->
   <div class="v-card-text grid-cell-name pa-0 ma-0">
-    <a aria-describedby="v-tooltip-0" href="https://test.com" id="1234_url" target="_blank">test name</a>
+    <a aria-describedby="v-tooltip-0" href="https://github.com/webpack/webpack-cli/runs/7858502725" id="webpack-cli :: webpack-cli :: Lint Commit Messages_url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
     <!--teleport start-->
     <!--teleport end-->
   </div>
   <div class="d-flex">
-    <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
-      <span class="v-btn__overlay"></span>
-      <span class="v-btn__underlay"></span>
-      <span class="v-btn__prepend">
-        <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
-      </span>
-      <span class="v-btn__content" data-no-activator>10 months ago</span>
+    <!--v-if-->
+    <div class="flex-grow-1"></div>
+    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button"></i>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <!---->
+  <!---->
+  <span class="v-card__underlay"></span>
+</div>
+`;
+
+exports[`<GridCell /> > Toggle Visibility > should display toggle visibility icon with hide icon when hidden passed as true 1`] = `
+<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell" id="webpack-cli :: webpack-cli :: Lint Commit Messages" style="height: 90px;">
+  <!---->
+  <div class="v-card__loader">
+    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
       <!---->
+      <div class="v-progress-linear__background" style="width: 100%;"></div>
+      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+        <div class="v-progress-linear__indeterminate">
+          <div class="v-progress-linear__indeterminate long"></div>
+          <div class="v-progress-linear__indeterminate short"></div>
+        </div>
+      </transition-stub>
       <!---->
-    </button>
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <div class="v-card-text grid-cell-name pa-0 ma-0">
+    <a aria-describedby="v-tooltip-0" href="https://github.com/webpack/webpack-cli/runs/7858502725" id="webpack-cli :: webpack-cli :: Lint Commit Messages_url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <div class="d-flex">
+    <!--v-if-->
+    <div class="flex-grow-1"></div>
+    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button"></i>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <!---->
+  <!---->
+  <span class="v-card__underlay"></span>
+</div>
+`;
+
+exports[`<GridCell /> > Toggle Visibility > should display toggle visibility icon with hide icon when hidden passed as undefined 1`] = `
+<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell" id="webpack-cli :: webpack-cli :: Lint Commit Messages" style="height: 90px;">
+  <!---->
+  <div class="v-card__loader">
+    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+      <!---->
+      <div class="v-progress-linear__background" style="width: 100%;"></div>
+      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+        <div class="v-progress-linear__indeterminate">
+          <div class="v-progress-linear__indeterminate long"></div>
+          <div class="v-progress-linear__indeterminate short"></div>
+        </div>
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <div class="v-card-text grid-cell-name pa-0 ma-0">
+    <a aria-describedby="v-tooltip-0" href="https://github.com/webpack/webpack-cli/runs/7858502725" id="webpack-cli :: webpack-cli :: Lint Commit Messages_url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <div class="d-flex">
+    <!--v-if-->
+    <div class="flex-grow-1"></div>
+    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button"></i>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <!---->
+  <!---->
+  <span class="v-card__underlay"></span>
+</div>
+`;
+
+exports[`<GridCell /> > should render grid cell 1`] = `
+<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell" id="webpack-cli :: webpack-cli :: Lint Commit Messages" style="height: 90px;">
+  <!---->
+  <div class="v-card__loader">
+    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+      <!---->
+      <div class="v-progress-linear__background" style="width: 100%;"></div>
+      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+        <div class="v-progress-linear__indeterminate">
+          <div class="v-progress-linear__indeterminate long"></div>
+          <div class="v-progress-linear__indeterminate short"></div>
+        </div>
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <div class="v-card-text grid-cell-name pa-0 ma-0">
+    <a aria-describedby="v-tooltip-0" href="https://github.com/webpack/webpack-cli/runs/7858502725" id="webpack-cli :: webpack-cli :: Lint Commit Messages_url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <div class="d-flex">
+    <!--v-if-->
+    <div class="flex-grow-1"></div>
+    <!--v-if-->
   </div>
   <!---->
   <!---->

@@ -1,30 +1,41 @@
-import { describe, it, expect, vi } from 'vitest';
-import GridCell from '@/components/GridCell';
+import { describe, it, expect } from 'vitest';
 import { mount } from '../test-utils';
-import { getRelativeTime } from '@/services/utils';
+import GridCell from '@/components/GridCell.vue';
 
 describe('<GridCell />', () => {
-  vi.mock('@/services/utils', () => {
-    return {
-      getRelativeTime: vi.fn().mockReturnValue('10 months ago')
-    };
-  });
+  const defaultProps = {
+    name: 'webpack-cli :: webpack-cli :: Lint Commit Messages',
+    url: 'https://github.com/webpack/webpack-cli/runs/7858502725',
+    lastExecutedTime: '2022-08-16T03:45:02.000Z'
+  };
 
   it('should render grid cell', () => {
-    const createdAt = new Date('2022-08-15T02:20:34Z');
     const wrapper = mount(GridCell, {
-      props: {
-        content: {
-          id: '1234',
-          name: 'test name',
-          url: 'https://test.com',
-          createdAt
-        }
-      }
+      props: { ...defaultProps }
     });
-
     expect(wrapper.html()).toMatchSnapshot();
-    expect(getRelativeTime).toHaveBeenCalledOnce();
-    expect(getRelativeTime).toHaveBeenCalledWith(createdAt);
+  });
+
+  describe('Toggle Visibility', () => {
+    it.each([
+      [undefined],
+      [false],
+      [true]
+    ])('should display toggle visibility icon with hide icon when hidden passed as %s', async (hidden) => {
+      const wrapper = mount(GridCell, {
+        props: { ...defaultProps, displayToggleVisibility: true, hidden }
+      });
+
+      expect(wrapper.html()).toMatchSnapshot();
+
+      const toggleVisibilityTooltip = wrapper.find('[aria-describedby="v-tooltip-1"]');
+      expect(toggleVisibilityTooltip.exists()).toBeTruthy();
+
+      await toggleVisibilityTooltip.trigger('click');
+
+      const emitted = wrapper.emitted();
+      expect(emitted).toHaveProperty('toggleVisibility');
+      expect(emitted.toggleVisibility).toEqual([[defaultProps.name]]);
+    });
   });
 });
