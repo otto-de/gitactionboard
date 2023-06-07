@@ -40,6 +40,7 @@ export default defineConfig({
     deps: {
       inline: ['vuetify']
     },
+    include: ['**/?(*.){test,spec}.?([cm])[jt]s?(x)'],
     coverage: {
       reporter: ['text', 'html'],
       all: true
