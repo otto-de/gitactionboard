@@ -104,7 +104,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 1f0a398163546719f700e02036c0014a1acc9f49f2b01006a2d6f3e01d85d0ff
 - filename: frontend/package-lock.json
-  checksum: 5d09d927b5a02fe92f3eb777d876925e793e39b4fc0b75695dffd2149fe0bf37
+  checksum: 7673830cd5784e293255040b6042efdfcf28faee36768b38b656431885794673
 - filename: frontend/src/components/Dashboard.vue
   checksum: be4bbfa00cdb32dedfec8cc26f319b1a35c64987a6cb5538dc28f7cf11920199
 - filename: frontend/src/components/GridCell.vue
@@ -118,7 +118,7 @@ fileignoreconfig:
 - filename: frontend/src/services/apiService.js
   checksum: e53a512673b08d7d43e19f8bdaf2f81f11e4600885cc622f61b876676fb4939b
 - filename: frontend/src/services/preferences.js
-  checksum: 1d0c3adc258ca6e90111cb36caa79a521a4feeb7f7a51d97a9f9bc2177b21b09
+  checksum: 4e47359b7c85b9976c4763fb0b0524cd80920865359bc002062fcd70dd554881
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 allowed_patterns:

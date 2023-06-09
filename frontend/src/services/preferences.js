@@ -68,7 +68,7 @@ class Preferences {
   }
 
   set showBuildsDueToTriggeredEvents(events) {
-    this.__set__('show-builds-due-to-triggered-events', JSON.stringify(events.map(({ value }) => value)));
+    this.__set__('show-builds-due-to-triggered-events', JSON.stringify(events));
   }
 }
 
