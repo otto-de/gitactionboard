@@ -92,7 +92,7 @@ fileignoreconfig:
 - filename: doc/dark-theme/workflow.png
   checksum: 68c27440c6cdbd553e92e01c3bd1997bcbc0fb6a7bd40feed277915722ab1a86
 - filename: doc/light-theme/code-standard-violations.png
-  checksum: 1a6120e3889d17a966d02461960858ec77cfe9ba37458533c688514b00260fa1
+  checksum: d84b4b67e509f3bdb2e2d4a0855026b8a3a3605654801c04724562917fec43fe
 - filename: doc/light-theme/preferences.png
   checksum: 6ce3dccfee60d58e6f39476d21de1e529dd997ace8ccf7481167d281d0a6e91c
 - filename: doc/light-theme/workflow.png
@@ -102,7 +102,7 @@ fileignoreconfig:
 - filename: frontend/__tests__/components/GridCell.test.js
   checksum: da612be8c8f89b10ad0c64830040b8cb51cc0aac237616c311994d0371d8c8c6
 - filename: frontend/mock-data/data.json
-  checksum: 1f0a398163546719f700e02036c0014a1acc9f49f2b01006a2d6f3e01d85d0ff
+  checksum: 4baf61952ab3261089ae57c7a91f920e4cb8c67425d99861b7cbff6a1eaec60e
 - filename: frontend/package-lock.json
   checksum: 7673830cd5784e293255040b6042efdfcf28faee36768b38b656431885794673
 - filename: frontend/src/components/Dashboard.vue

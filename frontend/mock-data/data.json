@@ -79,7 +79,7 @@
       "responses": [
         {
           "uuid": "30cd0af0-5709-4ce8-9616-5cdb0267bf88",
-          "body": "{\n  \"availableAuths\": [\"BASIC_AUTH\", \"OAUTH2\"],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true,\n  \"version\": \"3.3.0\"\n}",
+          "body": "{\n  \"availableAuths\": [\"BASIC_AUTH\", \"OAUTH2\"],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true,\n  \"version\": \"3.3.1\"\n}",
           "latency": 100,
           "statusCode": 200,
           "label": "",
