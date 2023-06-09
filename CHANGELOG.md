@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.1](https://github.com/otto-de/gitactionboard/compare/v3.3.0...v3.3.1) (2023-06-09)
+
+### 🐛 Bug Fixes
+
+- ([#344](https://github.com/otto-de/gitactionboard/issues/344)) Build filter on preference page ([6dcf5a2](https://github.com/otto-de/gitactionboard/commit/6dcf5a23a441cdbf4910b21e61cc0d295e9a67eb))
+
+### 🛡️ Security
+
+- Explicitly upgrade libssl3 and libcrypto3 for fix [CVE-2023-2650](https://nvd.nist.gov/vuln/detail/CVE-2023-2650) ([1d2ddbd](https://github.com/otto-de/gitactionboard/commit/1d2ddbdadc3b7272f38b3eab1ab0c7d3bf18f31f))
+
+### 🚜 Refactor
+
+- Generalise grid cell ([cbf7105](https://github.com/otto-de/gitactionboard/commit/cbf710581729108890e976d12ed5c92cd0dc5c6c))
+
+### 🎨 Styling
+
+- Display relative time hint and hide icon in white color for light theme ([003de60](https://github.com/otto-de/gitactionboard/commit/003de60f6e8cb0a8294c687275a41a6e1295110d))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump dependabot/fetch-metadata from 1.4.0 to 1.5.1 ([aac47a3](https://github.com/otto-de/gitactionboard/commit/aac47a3fd295492372e0d40467c3a03244e23be2))
+
+### 📚 Documentation
+
+- Update changelog ([0af1ac1](https://github.com/otto-de/gitactionboard/commit/0af1ac1bd671c142bc27e78ebca55a89adaaa60c))
+
+- Update sample screenshots ([f0b99e9](https://github.com/otto-de/gitactionboard/commit/f0b99e911e0e730448d390d57e181893b77f6939))
+
+- Update sample screenshots ([05b57fa](https://github.com/otto-de/gitactionboard/commit/05b57fa67afff12bfe5bdfd04a696d8fd14b9249))
+
+- Add @pbonner-1 to contributors list ([a3bbcb6](https://github.com/otto-de/gitactionboard/commit/a3bbcb6fdcfb7676dfe6dcb67e78c81695574dcd))
+
 ## [v3.3.0](https://github.com/otto-de/gitactionboard/compare/v3.2.1...v3.3.0) (2023-05-20)
 
 ### ⛰️ Features
