@@ -145,6 +145,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "pbonner-1",
+      "name": "Phillip Bonner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71049471?v=4",
+      "profile": "https://github.com/pbonner-1",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
