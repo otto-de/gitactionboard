@@ -145,7 +145,7 @@ export default {
     }
     this.renderPage().then(() => {
       this.loading = false;
-      this.renderPageTimer = setInterval(this.renderPage, 500000);
+      this.renderPageTimer = setInterval(this.renderPage, 5000);
     });
     this.hiddenElements = preferences.hiddenElements[this.nameOfItems] || [];
   },

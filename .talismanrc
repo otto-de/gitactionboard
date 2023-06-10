@@ -110,7 +110,7 @@ fileignoreconfig:
 - filename: frontend/package-lock.json
   checksum: cc9ecd26b4d1c931bf613668436137d99e879fe79610001974fd7653c6635cbd
 - filename: frontend/src/components/Dashboard.vue
-  checksum: be4bbfa00cdb32dedfec8cc26f319b1a35c64987a6cb5538dc28f7cf11920199
+  checksum: fb1b63747787a19f2324469951110237b05ebd7165946fcf31aced3452db829d
 - filename: frontend/src/components/GridCell.vue
   checksum: d8feb1f280a2f8e07dd8ce33ac7648c0e12fac8e91bbc7f27fc5d89d8fe7f7c2
 - filename: frontend/src/components/Job.vue
