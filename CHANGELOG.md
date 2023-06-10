@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.2](https://github.com/otto-de/gitactionboard/compare/v3.3.1...v3.3.2) (2023-06-10)
+
+### 🐛 Bug Fixes
+
+- Build filter on preference page while updating other configs ([ff7f352](https://github.com/otto-de/gitactionboard/commit/ff7f352bdc53fa292ad00de5e3aa77c40860cd7e))
+
+- Fix typo for automatic page refresh interval ([d2ccca4](https://github.com/otto-de/gitactionboard/commit/d2ccca4e2ac9216b1d80a8e917144c70571a61ee))
+
+### 🧪 Testing
+
+- ([#9](https://github.com/otto-de/gitactionboard/issues/9)) Add missing tests for LoginPage, Job, NoFailures and MaxIdleTimeoutOverlay component ([66cba1f](https://github.com/otto-de/gitactionboard/commit/66cba1f309ac2f660fb6005b97cf862907a32377))
+
+### 👷 Build
+
+- Generate changelog url correctly ([f12fdfa](https://github.com/otto-de/gitactionboard/commit/f12fdfa3eb70723f7a91c75a056a91090e312da5))
+
+### 📚 Documentation
+
+- Update changelog ([367d53d](https://github.com/otto-de/gitactionboard/commit/367d53d89bda88e7a88966a1a00f5450e46b6a35))
+
 ## [v3.3.1](https://github.com/otto-de/gitactionboard/compare/v3.3.0...v3.3.1) (2023-06-09)
 
 ### 🐛 Bug Fixes
