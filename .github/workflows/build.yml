@@ -86,7 +86,7 @@ jobs:
 
   determaine_current_tag_name:
     runs-on: ubuntu-22.04
-    needs: [build, determaine_should_publish_new_version]
+    needs: [ build, determaine_should_publish_new_version ]
     if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
     outputs:
       CURRENT_TAG: ${{ steps.find_current_tag_name.outputs.CURRENT_TAG }}
@@ -101,8 +101,10 @@ jobs:
 
   update_changelog:
     runs-on: ubuntu-22.04
-    needs: [build, determaine_should_publish_new_version]
+    needs: [ build, determaine_should_publish_new_version, determaine_current_tag_name ]
     if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
+    outputs:
+      CHANGE_LOG_URL: ${{ steps.create_change_log_url.outputs.CHANGE_LOG_URL }}
     permissions:
       contents: write
     steps:
@@ -126,10 +128,15 @@ jobs:
               git push origin main
           fi
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Create change log url
+        id: create_change_log_url
+        run: |
+          echo "CHANGE_LOG_URL=$(./run.sh generate-changelog-url ${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }})" >> $GITHUB_OUTPUT
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
   docker:
     runs-on: ubuntu-22.04
-    needs: [build, determaine_current_tag_name, update_changelog]
+    needs: [ build, determaine_current_tag_name, update_changelog ]
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v3
@@ -175,18 +182,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      - name: Create change log url
-        id: create_change_log_url
-        run: |
-          echo "CHANGE_LOG_URL=$(./run.sh generate-changelog-url ${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }})" >> $GITHUB_OUTPUT
-        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: create github release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: "${{ needs.determaine_current_tag_name.outputs.CURRENT_TAG }}"
-          body: "Changelog can be found [here](${{ steps.create_change_log_url.outputs.CHANGE_LOG_URL }})."
+          body: "Changelog can be found [here](${{ needs.update_changelog.outputs.CHANGE_LOG_URL }})."
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v4
@@ -205,7 +207,7 @@ jobs:
 
   deploy_to_github_pages:
     runs-on: ubuntu-22.04
-    needs: [docker]
+    needs: [ docker ]
     permissions:
       contents: read
       pages: write
