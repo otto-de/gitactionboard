@@ -113,8 +113,8 @@ export const getAllPossibleTriggeredEvents = () => buildTriggeredEvents(Object.k
 
 export const getShowBuildsDueToTriggeredEvents = () =>
   preferences.showBuildsDueToTriggeredEvents.length === 0
-    ? getAllPossibleTriggeredEvents()
-    : buildTriggeredEvents(preferences.showBuildsDueToTriggeredEvents);
+    ? Object.keys(ALL_POSSIBLE_EVENTS)
+    : preferences.showBuildsDueToTriggeredEvents;
 
 export const getRelativeTime = timestamp => {
   const timeDifference = new Date(timestamp) - new Date();
