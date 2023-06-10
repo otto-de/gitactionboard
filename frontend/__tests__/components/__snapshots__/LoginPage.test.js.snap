@@ -1,0 +1,432 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<LoginPage /> > should redirect to dashboard page if authentication is not configured 1`] = `
+<div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
+  <!--v-if-->
+  <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
+    <!---->
+    <div class="v-card__loader">
+      <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+        <!---->
+        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+          <div class="v-progress-linear__indeterminate">
+            <div class="v-progress-linear__indeterminate long"></div>
+            <div class="v-progress-linear__indeterminate short"></div>
+          </div>
+        </transition-stub>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <div class="v-card-title header text-center"> Gitaction Board </div>
+    <div class="v-card-subtitle welcome-message text-center mb-10 mt-1"> Welcome to Gitaction Board </div>
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!---->
+    <!---->
+    <span class="v-card__underlay"></span>
+  </div>
+</div>
+`;
+
+exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BASIC_AUTH' ] 1`] = `
+<div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
+  <!--v-if-->
+  <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
+    <!---->
+    <div class="v-card__loader">
+      <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+        <!---->
+        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+          <div class="v-progress-linear__indeterminate">
+            <div class="v-progress-linear__indeterminate long"></div>
+            <div class="v-progress-linear__indeterminate short"></div>
+          </div>
+        </transition-stub>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <div class="v-card-title header text-center"> Gitaction Board </div>
+    <div class="v-card-subtitle welcome-message text-center mb-10 mt-1"> Welcome to Gitaction Board </div>
+    <div class="v-card-item">
+      <!---->
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <form class="v-form" novalidate test-id="basic-auth-login-form">
+          <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field mb-2">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator>
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-0">
+                    <!---->
+                    Username
+                  </label>
+                  <label class="v-label v-field-label" for="input-0">
+                    <!---->
+                    Username
+                  </label>
+                  <!---->
+                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
+                  <!---->
+                </div>
+                <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
+                  <div class="v-field__clearable" style="display: none;">
+                    <i aria-hidden="false" aria-label="Clear Username" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                  </div>
+                </transition-stub>
+                <div class="v-field__append-inner">
+                  <!---->
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <!---->
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!---->
+          </div>
+          <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator>
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-2">
+                    <!---->
+                    Password
+                  </label>
+                  <label class="v-label v-field-label" for="input-2">
+                    <!---->
+                    Password
+                  </label>
+                  <!---->
+                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
+                  <!---->
+                </div>
+                <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
+                  <div class="v-field__clearable" style="display: none;">
+                    <i aria-hidden="false" aria-label="Clear Password" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                  </div>
+                </transition-stub>
+                <div class="v-field__append-inner">
+                  <!---->
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <!---->
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!---->
+          </div>
+          <!---->
+          <button class="v-btn v-btn--block v-btn--disabled v-theme--light bg-success v-btn--density-default v-btn--size-large v-btn--variant-elevated mt-4" disabled test-id="basic-auth-login-button" type="submit">
+            <span class="v-btn__overlay"></span>
+            <span class="v-btn__underlay"></span>
+            <!---->
+            <span class="v-btn__content" data-no-activator> Login </span>
+            <span class="v-btn__append">
+              <i aria-hidden="true" class="mdi-login mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+            </span>
+            <!---->
+          </button>
+        </form>
+      </div>
+      <!---->
+    </div>
+    <!--v-if-->
+    <!--v-if-->
+    <!---->
+    <!---->
+    <span class="v-card__underlay"></span>
+  </div>
+</div>
+`;
+
+exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BASIC_AUTH', 'OAUTH2' ] 1`] = `
+<div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
+  <!--v-if-->
+  <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
+    <!---->
+    <div class="v-card__loader">
+      <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+        <!---->
+        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+          <div class="v-progress-linear__indeterminate">
+            <div class="v-progress-linear__indeterminate long"></div>
+            <div class="v-progress-linear__indeterminate short"></div>
+          </div>
+        </transition-stub>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <div class="v-card-title header text-center"> Gitaction Board </div>
+    <div class="v-card-subtitle welcome-message text-center mb-10 mt-1"> Welcome to Gitaction Board </div>
+    <div class="v-card-item">
+      <!---->
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <form class="v-form" novalidate test-id="basic-auth-login-form">
+          <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field mb-2">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator>
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-0">
+                    <!---->
+                    Username
+                  </label>
+                  <label class="v-label v-field-label" for="input-0">
+                    <!---->
+                    Username
+                  </label>
+                  <!---->
+                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
+                  <!---->
+                </div>
+                <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
+                  <div class="v-field__clearable" style="display: none;">
+                    <i aria-hidden="false" aria-label="Clear Username" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                  </div>
+                </transition-stub>
+                <div class="v-field__append-inner">
+                  <!---->
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <!---->
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!---->
+          </div>
+          <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator>
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-2">
+                    <!---->
+                    Password
+                  </label>
+                  <label class="v-label v-field-label" for="input-2">
+                    <!---->
+                    Password
+                  </label>
+                  <!---->
+                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
+                  <!---->
+                </div>
+                <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
+                  <div class="v-field__clearable" style="display: none;">
+                    <i aria-hidden="false" aria-label="Clear Password" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                  </div>
+                </transition-stub>
+                <div class="v-field__append-inner">
+                  <!---->
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <!---->
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!---->
+          </div>
+          <!---->
+          <button class="v-btn v-btn--block v-btn--disabled v-theme--light bg-success v-btn--density-default v-btn--size-large v-btn--variant-elevated mt-4" disabled test-id="basic-auth-login-button" type="submit">
+            <span class="v-btn__overlay"></span>
+            <span class="v-btn__underlay"></span>
+            <!---->
+            <span class="v-btn__content" data-no-activator> Login </span>
+            <span class="v-btn__append">
+              <i aria-hidden="true" class="mdi-login mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+            </span>
+            <!---->
+          </button>
+        </form>
+      </div>
+      <!---->
+    </div>
+    <div class="v-card-item">
+      <!---->
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <div class="v-row align-center my-3">
+          <div class="v-col v-col-5">
+            <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px;">
+          </div>
+          <div class="v-col text-center font-weight-bold"> OR </div>
+          <div class="v-col v-col-5">
+            <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px;">
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+    <div class="v-card-item">
+      <!---->
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <button class="v-btn v-btn--block v-btn--elevated v-theme--light bg-success v-btn--density-default v-btn--size-large v-btn--variant-elevated" type="submit">
+          <span class="v-btn__overlay"></span>
+          <span class="v-btn__underlay"></span>
+          <!---->
+          <span class="v-btn__content" data-no-activator> Login with Github </span>
+          <span class="v-btn__append">
+            <i aria-hidden="true" class="mdi-github mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+          </span>
+          <!---->
+        </button>
+      </div>
+      <!---->
+    </div>
+    <!---->
+    <!---->
+    <span class="v-card__underlay"></span>
+  </div>
+</div>
+`;
+
+exports[`<LoginPage /> > should render login page only with auth mechanism [ 'OAUTH2' ] 1`] = `
+<div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
+  <!--v-if-->
+  <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
+    <!---->
+    <div class="v-card__loader">
+      <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+        <!---->
+        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+          <div class="v-progress-linear__indeterminate">
+            <div class="v-progress-linear__indeterminate long"></div>
+            <div class="v-progress-linear__indeterminate short"></div>
+          </div>
+        </transition-stub>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <div class="v-card-title header text-center"> Gitaction Board </div>
+    <div class="v-card-subtitle welcome-message text-center mb-10 mt-1"> Welcome to Gitaction Board </div>
+    <!--v-if-->
+    <!--v-if-->
+    <div class="v-card-item">
+      <!---->
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <button class="v-btn v-btn--block v-btn--elevated v-theme--light bg-success v-btn--density-default v-btn--size-large v-btn--variant-elevated" type="submit">
+          <span class="v-btn__overlay"></span>
+          <span class="v-btn__underlay"></span>
+          <!---->
+          <span class="v-btn__content" data-no-activator> Login with Github </span>
+          <span class="v-btn__append">
+            <i aria-hidden="true" class="mdi-github mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+          </span>
+          <!---->
+        </button>
+      </div>
+      <!---->
+    </div>
+    <!---->
+    <!---->
+    <span class="v-card__underlay"></span>
+  </div>
+</div>
+`;
+
+exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
+<div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
+  <div aria-valuemax="100" aria-valuemin="0" class="v-progress-circular v-progress-circular--indeterminate v-theme--light" role="progressbar" style="width: 128px; height: 128px; color: rgb(95, 141, 119); caret-color: #5f8d77;">
+    <svg style="transform: rotate(calc(-90deg + 0deg));" viewBox="0 0 44.13793103448276 44.13793103448276" xmlns="http://www.w3.org/2000/svg">
+      <circle class="v-progress-circular__underlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="0" stroke-width="4.137931034482759" />
+      <circle class="v-progress-circular__overlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="125.66370614359172px" stroke-width="4.137931034482759" />
+    </svg>
+    <!---->
+  </div>
+  <!--v-if-->
+</div>
+`;

@@ -43,7 +43,12 @@ export default defineConfig({
     include: ['**/?(*.){test,spec}.?([cm])[jt]s?(x)'],
     coverage: {
       reporter: ['text', 'html'],
-      all: true
+      all: true,
+      statements: 49.12,
+      branches: 84.74,
+      functions: 26.82,
+      lines: 49.12,
+      thresholdAutoUpdate: true
     },
     setupFiles: '__tests__/vitest.setup.js'
   }

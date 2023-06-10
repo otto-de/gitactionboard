@@ -22,6 +22,7 @@
       <v-card-item v-if="isBasicAuthEnabled">
         <v-form
           v-model="validForm"
+          test-id="basic-auth-login-form"
           @submit.prevent="login"
         >
           <v-text-field
@@ -33,6 +34,7 @@
             label="Username"
             hide-details
             placeholder="Enter your username"
+            test-id="username"
           />
 
           <v-text-field
@@ -44,6 +46,7 @@
             label="Password"
             hide-details
             placeholder="Enter your password"
+            test-id="password"
           />
           <v-alert
             v-model="error"
@@ -52,6 +55,7 @@
             type="error"
             text="Invalid username or password"
             density="compact"
+            test-id="basic-auth-alert"
           />
 
           <v-btn
@@ -64,6 +68,7 @@
             type="submit"
             variant="elevated"
             append-icon="mdi-login"
+            test-id="basic-auth-login-button"
           >
             Login
           </v-btn>
@@ -123,9 +128,6 @@ export default {
     },
     isOauth2Enabled() {
       return this.availableAuths.includes('OAUTH2');
-    },
-    isLoginButtonDisabled() {
-      return this.username === '' || this.password === '';
     }
   },
   mounted() {

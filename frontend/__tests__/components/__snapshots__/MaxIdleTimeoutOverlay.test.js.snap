@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
+<!--teleport start-->
+<div aria-modal="true" class="v-overlay v-overlay--active v-theme--light v-locale--is-ltr v-dialog" role="dialog" style="z-index: 2400;">
+  <transition-stub appear="true" css="true" name="fade-transition" persisted="false">
+    <div class="v-overlay__scrim"></div>
+  </transition-stub>
+  <transition-stub appear="true" css="true" name="dialog-transition" persisted="true">
+    <div class="v-overlay__content" style="width: auto;">
+      <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated pa-3 rounded-lg">
+        <!---->
+        <div class="v-card__loader">
+          <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+            <!---->
+            <div class="v-progress-linear__background" style="width: 100%;"></div>
+            <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+              <div class="v-progress-linear__indeterminate">
+                <div class="v-progress-linear__indeterminate long"></div>
+                <div class="v-progress-linear__indeterminate short"></div>
+              </div>
+            </transition-stub>
+            <!---->
+          </div>
+        </div>
+        <!---->
+        <!---->
+        <div class="v-alert v-theme--light bg-warning v-alert--density-default v-alert--variant-flat" role="alert">
+          <!---->
+          <span class="v-alert__underlay"></span>
+          <!---->
+          <div class="v-alert__prepend">
+            <i aria-hidden="true" class="mdi-alert-circle mdi v-icon notranslate v-theme--light" density="default" style="font-size: 28px; height: 28px; width: 28px;"></i>
+          </div>
+          <div class="v-alert__content">
+            <div class="v-alert-title">Stopped automatic page refreshment due to maximum idle timeout</div>
+            <!---->
+            <!---->
+          </div>
+          <!---->
+          <!---->
+        </div>
+        <div class="v-card-actions pt-10">
+          <div class="flex-grow-1"></div>
+          <button class="v-btn v-theme--light v-btn--density-default elevation-3 v-btn--size-default v-btn--variant-text" test-id="reload-button" type="button">
+            <span class="v-btn__overlay"></span>
+            <span class="v-btn__underlay"></span>
+            <span class="v-btn__prepend">
+              <i aria-hidden="true" class="mdi-refresh mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+            </span>
+            <span class="v-btn__content" data-no-activator> Reload Page </span>
+            <!---->
+            <!---->
+          </button>
+          <div class="flex-grow-1"></div>
+        </div>
+        <!---->
+        <!---->
+        <span class="v-card__underlay"></span>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+<!--teleport end-->
+`;

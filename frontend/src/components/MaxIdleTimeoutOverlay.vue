@@ -3,6 +3,7 @@
     v-model="displayOverlay"
     persistent
     width="auto"
+    attach
   >
     <v-card class="pa-3 rounded-lg">
       <v-alert
@@ -15,6 +16,7 @@
         <v-btn
           elevation="3"
           prepend-icon="mdi-refresh"
+          test-id="reload-button"
           @click="reloadPage"
         >
           Reload Page
