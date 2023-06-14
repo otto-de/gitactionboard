@@ -40,7 +40,7 @@
       >
         <template #activator="{ props }">
           <v-icon
-              :test-id="`${rootId}-change-visibility-icon`"
+            :test-id="`${rootId}-change-visibility-icon`"
             v-bind="props"
             :icon="hidden? `mdi-eye`: `mdi-eye-off`"
             size="small"

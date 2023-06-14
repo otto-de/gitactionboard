@@ -209,7 +209,8 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
     vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
-    vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ 'job(s)': [jobDetails1.name, jobDetails2.name] });
+    vi.spyOn(preferences, 'hiddenElements', 'get')
+      .mockReturnValueOnce({ 'job(s)': [jobDetails1.name, jobDetails2.name] });
 
     fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
 

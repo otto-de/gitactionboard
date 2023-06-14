@@ -43,7 +43,7 @@
               v-bind="props"
             >
               <v-icon
-                  :test-id="`${contentDisplayer.toLowerCase()}-hidden-contents-tool-bar-icon`"
+                :test-id="`${contentDisplayer.toLowerCase()}-hidden-contents-tool-bar-icon`"
                 :icon="`mdi-${showHiddenElements? 'eye-off': 'eye'}`"
                 @click="toggleHiddenElements"
               />
