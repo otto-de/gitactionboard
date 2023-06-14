@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :id="name"
+    :id="rootId"
     :key="name"
     height="90px"
     :class="`grid-cell ${appendClassNames}`"
@@ -9,7 +9,7 @@
       <v-tooltip text="Open on GitHub">
         <template #activator="{ props }">
           <a
-            :id="name + '_url'"
+            :id="urlId"
             :href="url"
             target="_blank"
             v-bind="props"
@@ -40,6 +40,7 @@
       >
         <template #activator="{ props }">
           <v-icon
+              :test-id="`${rootId}-change-visibility-icon`"
             v-bind="props"
             :icon="hidden? `mdi-eye`: `mdi-eye-off`"
             size="small"
@@ -90,6 +91,12 @@ export default {
   computed: {
     relativeTime() {
       return getRelativeTime(this.lastExecutedTime);
+    },
+    rootId() {
+      return this.name.replaceAll(/[\\:\s]/g, '-');
+    },
+    urlId() {
+      return `${this.rootId}-url`;
     }
   }
 };

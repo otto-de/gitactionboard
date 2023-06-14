@@ -33,7 +33,7 @@
       v-if="hiddenContents.length > 0"
       fluid
     >
-      <v-toolbar>
+      <v-toolbar :test-id="`${contentDisplayer.toLowerCase()}-hidden-contents-tool-bar`">
         <v-toolbar-title>{{ hiddenContents.length }} hidden {{ nameOfItems }}</v-toolbar-title>
         <v-spacer />
         <v-tooltip :text="`${showHiddenElements? 'Collapse hidden elements':'Show hidden elements'}`">
@@ -43,6 +43,7 @@
               v-bind="props"
             >
               <v-icon
+                  :test-id="`${contentDisplayer.toLowerCase()}-hidden-contents-tool-bar-icon`"
                 :icon="`mdi-${showHiddenElements? 'eye-off': 'eye'}`"
                 @click="toggleHiddenElements"
               />

@@ -1,0 +1,1066 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<WorkflowDashboard /> > No contents > should show no contents when there is no job available 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr fill-height justify-center fill-height content-container">
+        <svg height="500" viewBox="0 0 1946 1705.2141" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+          <!--  eslint-disable max-len no-tabs -->
+          <g>
+            <path class="svg-path-stroke" d="M906.4456,89.3981
+		c201.0077-104.258,412.7543,30.0585,470.6719,190.6148c62.9608,174.5369-6.3352,332.0576-128.3406,459.4916
+		c-11.0138,11.5037-20.114,24.7964-26.3235,39.462c-51.7435,122.2065,135.5568,193.6363,172.2593,153.5354
+		C1502.2,815.062,1628.5012,632.4684,1733.4204,659.7761c107.0376,27.8591,161.2894,92.3749,153.9581,148.093
+		c-4.9791,60.7704-53.0498,97.573-112.9026,49.8531c-34.9395-27.8568-69.7539-60.9485-96.7737-27.8591
+		c-101.1725,123.8996-182.5503,252.198-304.9836,272.7257c-64.0801,10.3138-121.0568-4.3906-174.3345-32.1241
+		c-8.6268-4.4907-17.7826,4.8591-13.0525,13.3572c131.5625,236.3662,130.3396,421.9041-60.4122,534.8932
+		c-142.228,71.847-177.4183-79.9116-115.8351-115.8352c157.1691-91.682,113.0027-201.364-6.4799-403.3151
+		c-3.6139-6.1083-12.9305-3.7119-13.1823,3.381c-11.9108,335.5741-171.0087,535.8892-387.9601,549.4934
+		c-86.8468,5.4458-107.7707-123.1665-45.4543-156.8906c182.3632-98.6907,287.382-88.7098,270.8848-463.161
+		c-0.5987-13.5891-15.3946-21.7315-27.1987-14.9725c-93.001,53.2518-193.4701,84.9271-303.8031,88.1064
+		c-108.1587,8.3197-169.4785,50.342-150.2924,150.2924c16.8621,61.5833,120.2339,112.9026,65.2489,186.9491
+		c-43.988,42.033-105.2579,53.9321-149.5593,0c-118.0345-143.6942-123.8996-286.6553,16.1289-436.9477
+		c78.7263-84.4969,367.763-53.7574,431.2761-121.1733c7.2851-7.7328-0.3257-20.1495-10.628-17.5549
+		c-179.1239,45.1121-247.9651-40.1187-350.2672-85.6107c-56.3414-25.054-102.4397,4.2863-108.5038,49.8531
+		c1.1373,101.3867-57.2051,162.8012-131.9641,95.3074C27.2325,854.3234,53.3225,741.3641,123.4588,670.04
+		c101.3829-103.0997,213.4241-69.8337,353.3705,11.7302c119.5008,69.6477,274.192,34.4573,262.4619-54.2519
+		C720.3464,484.2487,746.1564,172.5364,906.4456,89.3981z" fill="none" stroke-width="29.3253" />
+            <g>
+              <path class="svg-path-fill" d="M987.0703,495.0731c-12.9601,0-24.8177-8.6587-28.3159-21.7764c-13.6818-51.3122-27.6844-56.2193-27.8176-56.2365
+			c-7.6492-1.0109-28.9201,20.3173-40.5629,40.7262c-8.0229,14.067-25.9346,18.9698-40.0016,10.9426
+			c-14.0684-8.0244-18.9684-25.9346-10.9426-40.0016c7.3314-12.8542,46.5583-76.6354,99.0461-69.831
+			c52.2802,6.7758,70.8491,76.4063,76.949,99.2881c4.1726,15.6493-5.129,31.7181-20.7797,35.8906
+			C992.1163,494.7509,989.5732,495.0731,987.0703,495.0731z" />
+            </g>
+            <g>
+              <path class="svg-path-fill" d="M1224.5941,595.7501c-15.244,0-28.1168-11.7932-29.2194-27.2376c-4.2471-59.4468-17.8931-68.6196-18.0305-68.6855
+			c-6.2632-1.104-26.9141,13.2938-41.2445,31.141c-10.1293,12.6065-28.5721,14.6641-41.1958,4.5735
+			c-12.6294-10.0949-14.7314-28.4791-4.668-41.1342c8.8405-11.113,55.4288-65.7802,104.5316-50.5776
+			c51.6429,15.9901,57.2617,94.6544,59.1089,120.5046c1.1542,16.1547-11.0055,30.1859-27.1603,31.34
+			C1226.0031,595.7243,1225.2958,595.7501,1224.5941,595.7501z" />
+            </g>
+            <g>
+              <path class="svg-path-fill" d="M1021.602,724.4637c-19.1589,0-37.1808-3.627-53.9684-10.8868c-49.0426-21.2122-67.4712-65.0098-69.4114-69.9341
+			c-9.7383-31.1539,37.1822-57.5467,54.5698-21.4957l-0.1088-0.2706c0.0759,0.1833,7.8297,18.3699,26.0993,31.0966
+			c23.6894,16.5013,55.3917,17.0296,94.2277,1.5536c15.0493-5.9911,32.1033,1.3445,38.0972,16.391
+			c5.9939,15.045-1.3431,32.1018-16.3895,38.0957C1068.869,719.3103,1044.4323,724.4637,1021.602,724.4637z" />
+            </g>
+          </g><!--  eslint-enable max-len no-tabs -->
+        </svg>
+      </div>
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on show 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <!--v-if-->
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="job-hidden-contents-tool-bar">
+          <!---->
+          <div class="v-toolbar__content" style="height: 64px;">
+            <!---->
+            <!---->
+            <div class="v-toolbar-title">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                1 hidden job(s)
+              </div>
+            </div>
+            <div class="flex-grow-1"></div>
+            <button aria-describedby="v-tooltip-3" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+              <span class="v-btn__overlay"></span>
+              <span class="v-btn__underlay"></span>
+              <!---->
+              <span class="v-btn__content" data-no-activator>
+                <i aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+              </span>
+              <!---->
+              <!---->
+            </button>
+            <!--teleport start-->
+            <!--teleport end-->
+            <!---->
+          </div>
+          <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+            <!---->
+          </transition-stub>
+        </header>
+        <div class="v-container v-container--fluid v-locale--is-ltr px-0">
+          <div class="v-row v-row--dense grid-cells">
+            <div class="v-col">
+              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+                <!---->
+                <div class="v-card__loader">
+                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <!---->
+                <div class="v-card-text grid-cell-name pa-0 ma-0">
+                  <a aria-describedby="v-tooltip-5" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
+                  <!--teleport start-->
+                  <!--teleport end-->
+                </div>
+                <div class="d-flex">
+                  <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
+                    <span class="v-btn__overlay"></span>
+                    <span class="v-btn__underlay"></span>
+                    <span class="v-btn__prepend">
+                      <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+                    </span>
+                    <span class="v-btn__content" data-no-activator></span>
+                    <!---->
+                    <!---->
+                  </button>
+                  <div class="flex-grow-1"></div>
+                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                  <!--teleport start-->
+                  <!--teleport end-->
+                </div>
+                <!---->
+                <!---->
+                <span class="v-card__underlay"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should hide job details depends previous config 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <!--v-if-->
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="job-hidden-contents-tool-bar">
+          <!---->
+          <div class="v-toolbar__content" style="height: 64px;">
+            <!---->
+            <!---->
+            <div class="v-toolbar-title">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                1 hidden job(s)
+              </div>
+            </div>
+            <div class="flex-grow-1"></div>
+            <button aria-describedby="v-tooltip-3" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+              <span class="v-btn__overlay"></span>
+              <span class="v-btn__underlay"></span>
+              <!---->
+              <span class="v-btn__content" data-no-activator>
+                <i aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+              </span>
+              <!---->
+              <!---->
+            </button>
+            <!--teleport start-->
+            <!--teleport end-->
+            <!---->
+          </div>
+          <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+            <!---->
+          </transition-stub>
+        </header>
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should hide job details when user clicks on hide icon 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__prepend">
+                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+                  </span>
+                  <span class="v-btn__content" data-no-activator></span>
+                  <!---->
+                  <!---->
+                </button>
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-4" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <!--v-if-->
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should hide job details when user clicks on hide icon 2`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-4" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <!--v-if-->
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="job-hidden-contents-tool-bar">
+          <!---->
+          <div class="v-toolbar__content" style="height: 64px;">
+            <!---->
+            <!---->
+            <div class="v-toolbar-title">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                1 hidden job(s)
+              </div>
+            </div>
+            <div class="flex-grow-1"></div>
+            <button aria-describedby="v-tooltip-6" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+              <span class="v-btn__overlay"></span>
+              <span class="v-btn__underlay"></span>
+              <!---->
+              <span class="v-btn__content" data-no-activator>
+                <i aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+              </span>
+              <!---->
+              <!---->
+            </button>
+            <!--teleport start-->
+            <!--teleport end-->
+            <!---->
+          </div>
+          <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+            <!---->
+          </transition-stub>
+        </header>
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidden jobs available 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-8" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__prepend">
+                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+                  </span>
+                  <span class="v-btn__content" data-no-activator></span>
+                  <!---->
+                  <!---->
+                </button>
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="job-hidden-contents-tool-bar">
+          <!---->
+          <div class="v-toolbar__content" style="height: 64px;">
+            <!---->
+            <!---->
+            <div class="v-toolbar-title">
+              <div class="v-toolbar-title__placeholder">
+                <!---->
+                1 hidden job(s)
+              </div>
+            </div>
+            <div class="flex-grow-1"></div>
+            <button aria-describedby="v-tooltip-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+              <span class="v-btn__overlay"></span>
+              <span class="v-btn__underlay"></span>
+              <!---->
+              <span class="v-btn__content" data-no-activator>
+                <i aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+              </span>
+              <!---->
+              <!---->
+            </button>
+            <!--teleport start-->
+            <!--teleport end-->
+            <!---->
+          </div>
+          <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+            <!---->
+          </transition-stub>
+        </header>
+        <div class="v-container v-container--fluid v-locale--is-ltr px-0">
+          <div class="v-row v-row--dense grid-cells">
+            <div class="v-col">
+              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+                <!---->
+                <div class="v-card__loader">
+                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <!---->
+                <div class="v-card-text grid-cell-name pa-0 ma-0">
+                  <a aria-describedby="v-tooltip-6" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                  <!--teleport start-->
+                  <!--teleport end-->
+                </div>
+                <div class="d-flex">
+                  <!--v-if-->
+                  <div class="flex-grow-1"></div>
+                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                  <!--teleport start-->
+                  <!--teleport end-->
+                </div>
+                <!---->
+                <!---->
+                <span class="v-card__underlay"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when user clicks on hide icon 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-8" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__prepend">
+                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+                  </span>
+                  <span class="v-btn__content" data-no-activator></span>
+                  <!---->
+                  <!---->
+                </button>
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <!--v-if-->
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <!--v-if-->
+      <div class="v-container v-container--fluid v-locale--is-ltr">
+        <div class="v-row v-row--dense grid-cells">
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__prepend">
+                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+                  </span>
+                  <span class="v-btn__content" data-no-activator></span>
+                  <!---->
+                  <!---->
+                </button>
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+          <div class="v-col">
+            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <!---->
+              <div class="v-card__loader">
+                <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-card-text grid-cell-name pa-0 ma-0">
+                <a aria-describedby="v-tooltip-4" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <div class="d-flex">
+                <!--v-if-->
+                <div class="flex-grow-1"></div>
+                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <!--teleport start-->
+                <!--teleport end-->
+              </div>
+              <!---->
+              <!---->
+              <span class="v-card__underlay"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WorkflowDashboard /> > should render spinner while fetching data 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+  <div class="v-application__wrap">
+    <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
+      <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
+        <!---->
+        <div class="v-toolbar__content" style="height: 64px;">
+          <!---->
+          <!---->
+          <div class="v-row v-row--no-gutters">
+            <div class="v-col v-col-10">
+              <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  <span>Gitaction Board</span>
+                  <span class="version">(v3.3.0)</span>
+                </div>
+              </div>
+            </div>
+            <div class="v-col v-col-2 d-inline-flex">
+              <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+                <div class="v-toolbar-title__placeholder">
+                  <!---->
+                  Workflow Jobs
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+          <!---->
+        </transition-stub>
+      </header>
+      <div class="v-container v-locale--is-ltr justify-center fill-height spinner-container" id="spinner-container">
+        <div aria-valuemax="100" aria-valuemin="0" class="v-progress-circular v-progress-circular--indeterminate v-theme--light" role="progressbar" style="width: 128px; height: 128px; color: rgb(95, 141, 119); caret-color: #5f8d77;">
+          <svg style="transform: rotate(calc(-90deg + 0deg));" viewBox="0 0 44.13793103448276 44.13793103448276" xmlns="http://www.w3.org/2000/svg">
+            <circle class="v-progress-circular__underlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="0" stroke-width="4.137931034482759" />
+            <circle class="v-progress-circular__overlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="125.66370614359172px" stroke-width="4.137931034482759" />
+          </svg>
+          <!---->
+        </div>
+      </div>
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;

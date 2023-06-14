@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<FailureGridCell /> > should render grid cell 1`] = `
-<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="test name" style="height: 90px;">
+<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="test-name" style="height: 90px;">
   <!---->
   <div class="v-card__loader">
     <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
@@ -19,7 +19,7 @@ exports[`<FailureGridCell /> > should render grid cell 1`] = `
   <!---->
   <!---->
   <div class="v-card-text grid-cell-name pa-0 ma-0">
-    <a aria-describedby="v-tooltip-0" href="https://test.com" id="test name_url" target="_blank">test name</a>
+    <a aria-describedby="v-tooltip-0" href="https://test.com" id="test-name-url" target="_blank">test name</a>
     <!--teleport start-->
     <!--teleport end-->
   </div>

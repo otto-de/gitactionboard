@@ -44,10 +44,10 @@ export default defineConfig({
     coverage: {
       reporter: ['text', 'html'],
       all: true,
-      statements: 49.12,
-      branches: 84.74,
-      functions: 26.82,
-      lines: 49.12,
+      statements: 80.58,
+      branches: 94.64,
+      functions: 43.65,
+      lines: 80.58,
       thresholdAutoUpdate: true
     },
     setupFiles: '__tests__/vitest.setup.js'
