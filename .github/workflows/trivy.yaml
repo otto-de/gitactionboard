@@ -75,4 +75,4 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'MEDIUM,HIGH,CRITICAL'
-          security-checks: 'vuln'
+          scanners: 'vuln'
