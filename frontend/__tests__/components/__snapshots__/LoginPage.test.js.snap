@@ -89,7 +89,9 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Username
                   </label>
                   <!---->
-                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
+                  <div class="v-field__input" data-no-activator>
+                    <input aria-describedby="input-0-messages" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
+                  </div>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -139,7 +141,9 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Password
                   </label>
                   <!---->
-                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
+                  <div class="v-field__input" data-no-activator>
+                    <input aria-describedby="input-2-messages" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
+                  </div>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -241,7 +245,9 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Username
                   </label>
                   <!---->
-                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
+                  <div class="v-field__input" data-no-activator>
+                    <input aria-describedby="input-0-messages" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
+                  </div>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -291,7 +297,9 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Password
                   </label>
                   <!---->
-                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
+                  <div class="v-field__input" data-no-activator>
+                    <input aria-describedby="input-2-messages" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
+                  </div>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
