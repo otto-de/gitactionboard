@@ -17,9 +17,11 @@ public class WorkflowsRunDetailsResponse {
   @Value
   @Builder(toBuilder = true)
   public static class WorkflowRunDetails {
+    public static final String COMPLETED = "completed";
+
     long id;
 
-    @NonNull RunStatus status;
+    @NonNull String status;
 
     RunConclusion conclusion;
 

@@ -103,14 +103,16 @@ class GithubJobDetailsServiceTest {
 
     return Stream.of(QUEUED, IN_PROGRESS)
         .flatMap(
-            status -> runConclusions.stream().map(conclusion -> Arguments.of(status, conclusion)));
+            status ->
+                runConclusions.stream().map(conclusion -> Arguments.of(status.name(), conclusion)));
   }
 
   private static Stream<Arguments> getSuccessPermutationArguments() {
     return Stream.of(QUEUED, IN_PROGRESS)
         .flatMap(
             status ->
-                Stream.of(SUCCESS, SKIPPED).map(conclusion -> Arguments.of(status, conclusion)));
+                Stream.of(SUCCESS, SKIPPED)
+                    .map(conclusion -> Arguments.of(status.name(), conclusion)));
   }
 
   @BeforeEach
@@ -190,13 +192,13 @@ class GithubJobDetailsServiceTest {
   void shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsSuccessAndPreviousBuildIsFailed() {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
-            .status(COMPLETED)
+            .status(WorkflowRunDetails.COMPLETED)
             .conclusion(SUCCESS)
             .build();
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(COMPLETED)
+            .status(WorkflowRunDetails.COMPLETED)
             .conclusion(FAILURE)
             .build();
 
@@ -266,7 +268,7 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void
       shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsNotCompletedAndLastBuildStatusIsNotFailure(
-          RunStatus latestRunStatus, RunConclusion previousConclusion) {
+          String latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
             .status(latestRunStatus)
@@ -343,7 +345,7 @@ class GithubJobDetailsServiceTest {
   @MethodSource(value = "getPermutationOfWorkflowRunStatusAndPreviousConclusion")
   @SneakyThrows
   void shouldFetchJobDetailsForGivenWorkflowWhenLatestAndPreviousBothBuildsAreNotSuccessOrSkipped(
-      RunStatus latestRunStatus, RunConclusion previousConclusion) {
+      String latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
             .status(latestRunStatus)
@@ -352,7 +354,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(COMPLETED)
+            .status(WorkflowRunDetails.COMPLETED)
             .conclusion(previousConclusion)
             .build();
 
@@ -456,7 +458,7 @@ class GithubJobDetailsServiceTest {
   void shouldFetchJobDetailsWhenLatestBuildIsRunningAndItHasANewJobAddedAndLastJobIsSuccess() {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
-            .status(IN_PROGRESS)
+            .status("in_progress")
             .conclusion(null)
             .build();
 
@@ -530,7 +532,7 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void
       shouldFetchJobDetailsWhenLatestBuildIsRunningAndItHasANewJobAddedAndLastJobIsFailureConclusion(
-          RunStatus latestRunStatus, RunConclusion previousConclusion) {
+          String latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
             .status(latestRunStatus)
@@ -539,7 +541,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(COMPLETED)
+            .status(WorkflowRunDetails.COMPLETED)
             .conclusion(previousConclusion)
             .build();
 
@@ -675,13 +677,13 @@ class GithubJobDetailsServiceTest {
   void shouldNotFetchJobDetailsForGivenWorkflowWhenTheDetailsIsPresentInCacheWithCompletedStatus() {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
-            .status(COMPLETED)
+            .status(WorkflowRunDetails.COMPLETED)
             .conclusion(SUCCESS)
             .build();
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(COMPLETED)
+            .status(WorkflowRunDetails.COMPLETED)
             .conclusion(FAILURE)
             .build();
 

@@ -28,7 +28,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanScheduler.java
   checksum: 5a3e3aa35f695587a15c0528a0adc84f5d11a4bc59c2212de66ee136814535e0
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
-  checksum: a23c83af2c089741e34638d39f2031cefcf5769aaec5b1f8f0f2ff31b6b73249
+  checksum: f1987ab3bd116d07c32ba0271d2f2a2104fe46184ec5c6e207a05e1c6f403342
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayload.java
   checksum: d4bafd4580b23f4a8e830c749df73f85ad5fa9952d4c8ffadd9e38cf0cda4580
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsService.java
@@ -56,7 +56,7 @@ fileignoreconfig:
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanSchedulerTest.java
   checksum: 7f39196e1a6cfd1926146f7a1712ac3b6d9adbffde1b5de93a7845c3c5c17e59
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java
-  checksum: 55b1069a7de8cc62efa94c2a74d4486abce8fa28806e6e1ae3b74c5f2e6e3de9
+  checksum: 7a5828f97162e20214c6251d22e1d0045be24226ec6863292fb7829ad94575e5
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayloadTest.java
   checksum: efdf67477b04bf07df791fcdad4735da5d76502c6e28a4fbf9cef5267ed75a87
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsServiceTest.java
@@ -108,7 +108,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 4baf61952ab3261089ae57c7a91f920e4cb8c67425d99861b7cbff6a1eaec60e
 - filename: frontend/package-lock.json
-  checksum: e71f0cc27ee372ee27ac308527b72ce61b8069056d8fa2514db88718fcc0e87b
+  checksum: 27875505fe73e802d71d52da0cac676e6b27d6fe537a54d80fc6ebaae87e2a0a
 - filename: frontend/src/components/Dashboard.vue
   checksum: 55c522358eb8c8cdd66b948f52d837d7f092c9416df3a2b01284a805c1900b0e
 - filename: frontend/src/components/GridCell.vue

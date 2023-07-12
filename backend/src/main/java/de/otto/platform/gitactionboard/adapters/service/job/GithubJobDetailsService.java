@@ -70,7 +70,7 @@ public class GithubJobDetailsService implements JobDetailsService {
       WorkflowRunDetails previousWorkflowRun,
       String accessToken) {
 
-    if (COMPLETED.equals(currentWorkflowRun.getStatus())) {
+    if (WorkflowRunDetails.COMPLETED.equals(currentWorkflowRun.getStatus())) {
       return currentJobs;
     }
     return fetchPreviousJobs(workflow, currentJobs, previousWorkflowRun, accessToken);
