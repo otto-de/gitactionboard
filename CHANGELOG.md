@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.3](https://github.com/otto-de/gitactionboard/compare/v3.3.2...v3.3.3) (2023-07-12)
+
+### 🐛 Bug Fixes
+
+- ([#380](https://github.com/otto-de/gitactionboard/issues/380)) Consume status for /{workflowId}/runs api as string instead of Enum ([3bc1442](https://github.com/otto-de/gitactionboard/commit/3bc1442b38b2a78d9b98b3f04ce2c1b223c5229a))
+
+### 🛡️ Security
+
+- Rename security-checks paramter to scanners for trivy ([3864199](https://github.com/otto-de/gitactionboard/commit/3864199f57153122e4aab362f04bdaa0a789ff19))
+
+- Suppress [CVE-2023-2976](https://nvd.nist.gov/vuln/detail/CVE-2023-2976) and [CVE-2023-35116](https://nvd.nist.gov/vuln/detail/CVE-2023-35116) ([ed38c7e](https://github.com/otto-de/gitactionboard/commit/ed38c7e4fa6336bb9505c4a9591898544c39f93f))
+
+- Temporarily omit dev and optional frontend dependencies from checks as fix is not available for [CVE-2022-25883](https://nvd.nist.gov/vuln/detail/CVE-2022-25883) and [CVE-2023-26115](https://nvd.nist.gov/vuln/detail/CVE-2023-26115) ([c49332e](https://github.com/otto-de/gitactionboard/commit/c49332ed23854ff33290755a79ef7d54ae2be56c))
+
+### 🧪 Testing
+
+- ([#9](https://github.com/otto-de/gitactionboard/issues/9)) Add tests for workflow dashboard ([64bde1a](https://github.com/otto-de/gitactionboard/commit/64bde1a5106da0309f9ec16ad4be2c0c3dee67e5))
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix formatting issue ([d489df2](https://github.com/otto-de/gitactionboard/commit/d489df2e469c3ea79196c4a3ce9bbd411914b62c))
+
+- Bump alpine from 3.18.0 to 3.18.2 ([97b553d](https://github.com/otto-de/gitactionboard/commit/97b553db77b36fc3bb0ee1aae879459bb0540d85))
+
+- Update frontend dependencies ([f45599d](https://github.com/otto-de/gitactionboard/commit/f45599df1618828ee22c818f56263e3b0e932697))
+
+- Fix formatting for index.html ([ca446d5](https://github.com/otto-de/gitactionboard/commit/ca446d5c089a4b1457ebe83e7e289ec716c2a757))
+
+### 📚 Documentation
+
+- Update changelog ([6156577](https://github.com/otto-de/gitactionboard/commit/6156577861cb5ce385ad280112dba4eb5d466787))
+
+- Add @bennetelli to contributors list for bug reports ([894c117](https://github.com/otto-de/gitactionboard/commit/894c117829f2c2f1b9771f046e43c57d90a223c5))
+
 ## [v3.3.2](https://github.com/otto-de/gitactionboard/compare/v3.3.1...v3.3.2) (2023-06-10)
 
 ### 🐛 Bug Fixes
