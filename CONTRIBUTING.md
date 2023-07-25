@@ -165,7 +165,8 @@ committing the changes make sure to use proper **type**.
 - **test** for adding missing tests, refactoring tests; no production code change.
 - **build** for updating build configuration, development tools or other changes irrelevant to the user.
 
-> **_NOTE:_** Add ! just after type to indicate breaking changes
+> [!NOTE]\
+> Add **!** just after type to indicate breaking changes
 
 ### Build docker image
 
@@ -217,4 +218,5 @@ A new docker image can be published to [docker hub](https://hub.docker.com/repos
 git push origin "$(git describe --tags)"
 ```
 
-> **_NOTE:_** We are following [semantic versioning](https://semver.org/) strategy using [io.alcide:gradle-semantic-build-versioning](https://github.com/alcideio/gradle-semantic-build-versioning) plugin
+> [!NOTE]\
+> We are following [semantic versioning](https://semver.org/) strategy using [io.alcide:gradle-semantic-build-versioning](https://github.com/alcideio/gradle-semantic-build-versioning) plugin
