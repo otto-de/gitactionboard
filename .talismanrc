@@ -86,7 +86,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: cc4dba78359c923b57cfce895c5bf9d899076fb3cd5da0845a6bef2f6a5cec50
 - filename: bin/lib.sh
-  checksum: 3a4082f65d3d4d7721fd60a99c12c621942d0f3243f7b942ba64b0c9f2cb182d
+  checksum: 1e05d6eaf1608f946e89080cdceae2cf6715551c1d1621f393cf96f158baea6e
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png
@@ -108,7 +108,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 4baf61952ab3261089ae57c7a91f920e4cb8c67425d99861b7cbff6a1eaec60e
 - filename: frontend/package-lock.json
-  checksum: 27875505fe73e802d71d52da0cac676e6b27d6fe537a54d80fc6ebaae87e2a0a
+  checksum: 5addc773a57b4324fd8b80957fa3348a2207f2ff219fb22d4f01c8c3701eee00
 - filename: frontend/src/components/Dashboard.vue
   checksum: 55c522358eb8c8cdd66b948f52d837d7f092c9416df3a2b01284a805c1900b0e
 - filename: frontend/src/components/GridCell.vue
