@@ -3,6 +3,5 @@
     <suppress>
         <cve>CVE-2022-42920</cve>
         <cve>CVE-2023-2976</cve>
-        <cve>CVE-2023-35116</cve>
     </suppress>
 </suppressions>
