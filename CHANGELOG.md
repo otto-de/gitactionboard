@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.4](https://github.com/otto-de/gitactionboard/compare/v3.3.3...v3.3.4) (2023-07-25)
+
+### 🛡️ Security
+
+- Remove [CVE-2023-35116](https://nvd.nist.gov/vuln/detail/CVE-2023-35116) from suppression list ([d1955ca](https://github.com/otto-de/gitactionboard/commit/d1955cac59adc50e661214ae58cdf1b386611206))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump actions/upload-pages-artifact from 1 to 2 ([8e48c93](https://github.com/otto-de/gitactionboard/commit/8e48c9390cba7048ade261bd142e947ecf8b1798))
+
+- Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 ([dd15953](https://github.com/otto-de/gitactionboard/commit/dd159531ec9512888e79e92b128808db17ec75a2))
+
+### 📚 Documentation
+
+- Update changelog ([c4f2f61](https://github.com/otto-de/gitactionboard/commit/c4f2f61eaa24626ff5568ace0bca1e12818fcf47))
+
+- Restructure Readme ([113621c](https://github.com/otto-de/gitactionboard/commit/113621c27e4556e7d1651a8a533503b7201fd479))
+
 ## [v3.3.3](https://github.com/otto-de/gitactionboard/compare/v3.3.2...v3.3.3) (2023-07-12)
 
 ### 🐛 Bug Fixes
