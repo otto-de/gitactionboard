@@ -26,6 +26,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
+@SuppressWarnings("PMD.TestClassWithoutTestCases")
 public class TestUtil {
 
   @SneakyThrows
