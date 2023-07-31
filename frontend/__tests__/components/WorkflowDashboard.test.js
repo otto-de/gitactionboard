@@ -230,6 +230,17 @@ describe('<WorkflowDashboard />', () => {
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
   });
 
+  it('should render only job name', async () => {
+    vi.spyOn(preferences, 'showOnlyJobName', 'get').mockReturnValueOnce(true);
+
+    fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
+    const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
+
+    await flushPromises();
+
+    expect(workflowDashboardWrapper.findComponent(Job).find('a').text()).toBe('Cancel Previous Runs');
+  });
+
   it.each([
     ['branch_protection_rule', [{ ...jobDetails1, triggeredEvent: 'branch_protection_rule' }, jobDetails2]],
     ['check_run', [{ ...jobDetails1, triggeredEvent: 'check_run' }, jobDetails2]],
