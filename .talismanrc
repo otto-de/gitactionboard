@@ -52,7 +52,7 @@ fileignoreconfig:
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java
   checksum: 0b94970267dcee93a6d21b2389840221badf8c2940208ef6fac5d6f4e8647e61
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java
-  checksum: 1524a533933ed7068a77baa6fff66002817f39f74fc074bcd733a5f2478f83fe
+  checksum: 463e14930e8b747c69b163851f0fafbbe612113c8286c8da61c1fea0448c2f5f
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerTest.java
   checksum: 33e53ff37b331079464e8b796ec53584fb8a9aa7c219eb219735243cab86c982
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanSchedulerTest.java
@@ -127,6 +127,8 @@ fileignoreconfig:
   checksum: 4e47359b7c85b9976c4763fb0b0524cd80920865359bc002062fcd70dd554881
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
+- filename: backend/gradle/wrapper/gradle-wrapper.properties
+  checksum: 06d18c46332fae87de4fcda0907221910a09751e53f11ade594c5ddf35fb5799
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}

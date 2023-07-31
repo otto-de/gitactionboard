@@ -104,6 +104,7 @@ class GithubAlertsControllerIntegrationTest {
     @NullSource
     @CsvSource(value = {"accessToken"})
     @SneakyThrows
+    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
     void shouldReturnNotFoundWhileFetchingSecurityAlerts(String accessToken) {
       final MockHttpServletRequestBuilder requestBuilder =
           Objects.isNull(accessToken)
@@ -128,6 +129,7 @@ class GithubAlertsControllerIntegrationTest {
     @NullSource
     @CsvSource(value = {"accessToken"})
     @SneakyThrows
+    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
     void shouldReturnNotFoundWhileFetchingCodeStandardViolationAlerts(String accessToken) {
       final MockHttpServletRequestBuilder requestBuilder =
           Objects.isNull(accessToken)
