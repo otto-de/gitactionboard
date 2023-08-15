@@ -17,6 +17,8 @@ fileignoreconfig:
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/gradle/test.gradle
   checksum: 335aafca613cd07460f7d71ae96664d7f0092d1d0afb612e284c8986f039fbca
+- filename: backend/gradle/wrapper/gradle-wrapper.properties
+  checksum: 06d18c46332fae87de4fcda0907221910a09751e53f11ade594c5ddf35fb5799
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: ed527426ddfdba4b79483a3bb02fabd2262aaa7b70a059dec4dc0f64daa61669
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
@@ -110,7 +112,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 4baf61952ab3261089ae57c7a91f920e4cb8c67425d99861b7cbff6a1eaec60e
 - filename: frontend/package-lock.json
-  checksum: aca74b6bdefca769baf3773c3e25c5acd3bb4b2e9ca4a6de4cf89f95df5604e9
+  checksum: bb0f6c7a221208064c7891e7265d931a8660b7a78acbddd9b6e0a526d13ce8ba
 - filename: frontend/src/components/Dashboard.vue
   checksum: 55c522358eb8c8cdd66b948f52d837d7f092c9416df3a2b01284a805c1900b0e
 - filename: frontend/src/components/GridCell.vue
@@ -127,8 +129,6 @@ fileignoreconfig:
   checksum: 4e47359b7c85b9976c4763fb0b0524cd80920865359bc002062fcd70dd554881
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
-- filename: backend/gradle/wrapper/gradle-wrapper.properties
-  checksum: 06d18c46332fae87de4fcda0907221910a09751e53f11ade594c5ddf35fb5799
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}

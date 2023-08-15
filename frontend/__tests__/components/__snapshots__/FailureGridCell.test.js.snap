@@ -34,7 +34,7 @@ exports[`<FailureGridCell /> > should render grid cell 1`] = `
       <!---->
       <!---->
     </button>
-    <div class="flex-grow-1"></div>
+    <div class="v-spacer"></div>
     <!--v-if-->
   </div>
   <!---->

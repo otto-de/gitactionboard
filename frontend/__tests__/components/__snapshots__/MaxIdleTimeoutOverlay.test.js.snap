@@ -41,7 +41,7 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
           <!---->
         </div>
         <div class="v-card-actions pt-10">
-          <div class="flex-grow-1"></div>
+          <div class="v-spacer"></div>
           <button class="v-btn v-theme--light v-btn--density-default elevation-3 v-btn--size-default v-btn--variant-text" test-id="reload-button" type="button">
             <span class="v-btn__overlay"></span>
             <span class="v-btn__underlay"></span>
@@ -52,7 +52,7 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
             <!---->
             <!---->
           </button>
-          <div class="flex-grow-1"></div>
+          <div class="v-spacer"></div>
         </div>
         <!---->
         <!---->
