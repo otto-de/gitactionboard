@@ -19,7 +19,7 @@
     "vuetify": "^3.3.12"
   },
   "devDependencies": {
-    "@mockoon/cli": "^4.0.0",
+    "@mockoon/cli": "^4.1.0",
     "@vitejs/plugin-vue": "^4.3.3",
     "@vitest/coverage-v8": "^0.34.3",
     "@vue/test-utils": "^2.4.1",
