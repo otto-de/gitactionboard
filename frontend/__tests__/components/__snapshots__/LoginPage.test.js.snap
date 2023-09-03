@@ -63,7 +63,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
           <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field mb-2">
             <!---->
             <div class="v-input__control">
-              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr">
                 <div class="v-field__overlay"></div>
                 <div class="v-field__loader">
                   <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
@@ -89,9 +89,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Username
                   </label>
                   <!---->
-                  <div class="v-field__input" data-no-activator>
-                    <input aria-describedby="input-0-messages" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
-                  </div>
+                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -115,7 +113,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
           <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field">
             <!---->
             <div class="v-input__control">
-              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr">
                 <div class="v-field__overlay"></div>
                 <div class="v-field__loader">
                   <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
@@ -141,9 +139,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Password
                   </label>
                   <!---->
-                  <div class="v-field__input" data-no-activator>
-                    <input aria-describedby="input-2-messages" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
-                  </div>
+                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -219,7 +215,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
           <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field mb-2">
             <!---->
             <div class="v-input__control">
-              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr">
                 <div class="v-field__overlay"></div>
                 <div class="v-field__loader">
                   <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
@@ -245,9 +241,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Username
                   </label>
                   <!---->
-                  <div class="v-field__input" data-no-activator>
-                    <input aria-describedby="input-0-messages" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
-                  </div>
+                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text">
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -271,7 +265,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
           <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field">
             <!---->
             <div class="v-input__control">
-              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr" role="textbox">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr">
                 <div class="v-field__overlay"></div>
                 <div class="v-field__loader">
                   <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);">
@@ -297,9 +291,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                     Password
                   </label>
                   <!---->
-                  <div class="v-field__input" data-no-activator>
-                    <input aria-describedby="input-2-messages" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
-                  </div>
+                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password">
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
