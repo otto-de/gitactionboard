@@ -26,9 +26,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -79,18 +81,12 @@ public class WebSecurityConfig {
       healthEndPoint, "/config", "/", "/index.html", "/assets/**", "/favicon.ico", "/login/basic"
     };
 
-    http.cors()
-        .disable()
-        .csrf()
-        .disable()
-        .formLogin()
-        .disable()
+    return http.cors(AbstractHttpConfigurer::disable)
+        .csrf(AbstractHttpConfigurer::disable)
+        .formLogin(AbstractHttpConfigurer::disable)
         .securityMatcher(whitelistUrls)
-        .authorizeHttpRequests()
-        .requestMatchers(whitelistUrls)
-        .permitAll();
-
-    return http.build();
+        .authorizeHttpRequests(registry -> registry.requestMatchers(whitelistUrls).permitAll())
+        .build();
   }
 
   @Slf4j
@@ -152,31 +148,29 @@ public class WebSecurityConfig {
         throws Exception {
       final boolean githubAuthDisabled = githubAuthClientId.isBlank();
 
-      http.cors()
-          .disable()
-          .formLogin()
-          .usernameParameter("username")
-          .passwordParameter("password")
-          .loginPage(LOGIN_PATH)
-          .loginProcessingUrl("/login/basic")
-          .failureForwardUrl(LOGIN_PATH)
-          .defaultSuccessUrl(DASHBOARD_PATH, true)
-          .failureUrl(LOGIN_PATH)
-          .and()
+      return http.cors(AbstractHttpConfigurer::disable)
+          .formLogin(
+              httpSecurityFormLoginConfigurer ->
+                  httpSecurityFormLoginConfigurer
+                      .usernameParameter("username")
+                      .passwordParameter("password")
+                      .loginPage(LOGIN_PATH)
+                      .loginProcessingUrl("/login/basic")
+                      .failureForwardUrl(LOGIN_PATH)
+                      .defaultSuccessUrl(DASHBOARD_PATH, true)
+                      .failureUrl(LOGIN_PATH))
           .securityMatcher(
               request -> githubAuthDisabled || getAuthToken(request).startsWith("Basic"))
-          .authorizeHttpRequests()
-          .anyRequest()
-          .authenticated()
-          .and()
-          .httpBasic()
-          .and()
-          .logout()
-          .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
-          .invalidateHttpSession(true)
-          .deleteCookies(ACCESS_TOKEN);
-
-      return http.build();
+          .authorizeHttpRequests(registry -> registry.anyRequest().authenticated())
+          .httpBasic(Customizer.withDefaults())
+          .logout(
+              httpSecurityLogoutConfigurer ->
+                  httpSecurityLogoutConfigurer
+                      .addLogoutHandler(
+                          new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
+                      .invalidateHttpSession(true)
+                      .deleteCookies(ACCESS_TOKEN))
+          .build();
     }
 
     private String getAuthToken(HttpServletRequest request) {
@@ -209,31 +203,26 @@ public class WebSecurityConfig {
     public SecurityFilterChain githubOauthSecurityFilterChain(
         GithubAuthenticationSuccessHandler authenticationSuccessHandler, HttpSecurity http)
         throws Exception {
-      http.cors()
-          .disable()
-          .formLogin()
-          .disable()
-          .httpBasic()
-          .disable()
-          .authorizeHttpRequests()
-          .requestMatchers("/login/oauth2/**", "/oauth2/**")
-          .permitAll()
-          .and()
-          .authorizeHttpRequests()
-          .anyRequest()
-          .authenticated()
-          .and()
-          .oauth2Login()
-          .loginPage(LOGIN_PATH)
-          .failureUrl(LOGIN_PATH)
-          .successHandler(authenticationSuccessHandler)
-          .and()
-          .logout()
-          .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
-          .invalidateHttpSession(true)
-          .deleteCookies(ACCESS_TOKEN);
-
-      return http.build();
+      return http.cors(AbstractHttpConfigurer::disable)
+          .formLogin(AbstractHttpConfigurer::disable)
+          .httpBasic(AbstractHttpConfigurer::disable)
+          .authorizeHttpRequests(
+              registry -> registry.requestMatchers("/login/oauth2/**", "/oauth2/**").permitAll())
+          .authorizeHttpRequests(registry -> registry.anyRequest().authenticated())
+          .oauth2Login(
+              httpSecurityOAuth2LoginConfigurer ->
+                  httpSecurityOAuth2LoginConfigurer
+                      .loginPage(LOGIN_PATH)
+                      .failureUrl(LOGIN_PATH)
+                      .successHandler(authenticationSuccessHandler))
+          .logout(
+              httpSecurityLogoutConfigurer ->
+                  httpSecurityLogoutConfigurer
+                      .addLogoutHandler(
+                          new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ALL)))
+                      .invalidateHttpSession(true)
+                      .deleteCookies(ACCESS_TOKEN))
+          .build();
     }
   }
 }
