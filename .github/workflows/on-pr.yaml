@@ -18,7 +18,7 @@ jobs:
       HAS_FRONTEND_CHANGES: ${{ steps.changes.outputs.frontend }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           fetch-depth: 5
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install prettier using npm
@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install prettier using npm
