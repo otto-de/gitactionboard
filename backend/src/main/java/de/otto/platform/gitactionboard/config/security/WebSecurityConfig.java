@@ -206,6 +206,7 @@ public class WebSecurityConfig {
       return http.cors(AbstractHttpConfigurer::disable)
           .formLogin(AbstractHttpConfigurer::disable)
           .httpBasic(AbstractHttpConfigurer::disable)
+          .csrf(AbstractHttpConfigurer::disable)
           .authorizeHttpRequests(
               registry -> registry.requestMatchers("/login/oauth2/**", "/oauth2/**").permitAll())
           .authorizeHttpRequests(registry -> registry.anyRequest().authenticated())
