@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.5](https://github.com/otto-de/gitactionboard/compare/v3.3.4...v3.3.5) (2023-09-17)
+
+### 🐛 Bug Fixes
+
+- Fix GitHub Oauth2 logout process ([6fd71e7](https://github.com/otto-de/gitactionboard/commit/6fd71e7f65cb392f42eeb4639867c2ff2a65c6ea))
+
+### 🛡️ Security
+
+- Remove usage of deprecated methods from Spring security ([0314ca3](https://github.com/otto-de/gitactionboard/commit/0314ca3b1c383b5d266e2dd9d9ea65408efda3fc))
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix PMD warnings ([aa55296](https://github.com/otto-de/gitactionboard/commit/aa55296531afb8a423f2e65fbb16e33235ec9d73))
+
+- Bump alpine from 3.18.2 to 3.18.3 ([e2654ac](https://github.com/otto-de/gitactionboard/commit/e2654acbe91d4f53488919c579c1945dd63c11ce))
+
+- Bump actions/checkout from 3 to 4 ([4cc7d0e](https://github.com/otto-de/gitactionboard/commit/4cc7d0e234e47d400a4ec70d70eaf53de261f788))
+
+### 👷 Build
+
+- Add workflow to update gradle wrapper ([f8c1697](https://github.com/otto-de/gitactionboard/commit/f8c16970006a08cd58dbe3da41e2b35df7088917))
+
+- Remove explicit delomboking for java code ([db28ce2](https://github.com/otto-de/gitactionboard/commit/db28ce288fbb7927db24736746d521694036b776))
+
+### 📚 Documentation
+
+- Update changelog ([f9ad74b](https://github.com/otto-de/gitactionboard/commit/f9ad74b294400950fec56e7c8eeece6f9fd75b3d))
+
 ## [v3.3.4](https://github.com/otto-de/gitactionboard/compare/v3.3.3...v3.3.4) (2023-07-25)
 
 ### 🛡️ Security
