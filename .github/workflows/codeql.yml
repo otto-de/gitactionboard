@@ -57,9 +57,6 @@ jobs:
           distribution: 'corretto'
           java-version: 17
           cache: 'gradle'
-      - name: Delombok backend code
-        if: ${{ matrix.language == 'java' }}
-        uses: zbazztian/delombok@main
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
