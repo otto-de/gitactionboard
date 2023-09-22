@@ -36,7 +36,7 @@
     "stylelint-config-standard": "^34.0.0",
     "vite": "^4.4.9",
     "vite-plugin-vuetify": "^1.0.2",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   },
   "eslintConfig": {
     "root": true,
