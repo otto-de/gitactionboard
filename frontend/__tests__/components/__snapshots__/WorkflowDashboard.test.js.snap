@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<WorkflowDashboard /> > No contents > should show no contents when there is no job available 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none; left: 0px; width: calc(100% - 0px - 0px);">
@@ -89,7 +89,7 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
 `;
 
 exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on show 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -250,7 +250,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
 `;
 
 exports[`<WorkflowDashboard /> > should hide job details depends previous config 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -364,7 +364,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
 `;
 
 exports[`<WorkflowDashboard /> > should hide job details when user clicks on hide icon 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -490,7 +490,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
 `;
 
 exports[`<WorkflowDashboard /> > should hide job details when user clicks on hide icon 2`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -604,7 +604,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
 `;
 
 exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidden jobs available 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -765,7 +765,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
 `;
 
 exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when user clicks on hide icon 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -891,7 +891,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
 `;
 
 exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; left: 0px; width: calc(100% - 0px - 0px);">
@@ -1017,7 +1017,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`
 `;
 
 exports[`<WorkflowDashboard /> > should render spinner while fetching data 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index: 1000;">
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
     <div class="v-container v-container--fluid v-locale--is-ltr" id="workflows-dashboard">
       <header class="v-toolbar v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0%); position: fixed; transition: none;">
