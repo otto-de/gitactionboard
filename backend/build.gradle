@@ -8,7 +8,7 @@ plugins {
     id "com.github.ben-manes.versions" version "0.48.0"
     id "org.owasp.dependencycheck" version "8.4.0"
     id "com.diffplug.spotless" version "6.22.0"
-    id "info.solidsoft.pitest" version "1.9.11"
+    id "info.solidsoft.pitest" version "1.15.0"
 }
 
 spotless {
