@@ -40,7 +40,7 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
   private static final int ONE_DAY = 60 * 60 * 24;
   private static final int SEVEN_HOURS = 60 * 60 * 7;
-  private static final int FIVE_MONTHS = 60 * 60 * 5 * 30;
+  private static final int FIVE_MONTHS = 60 * 60 * 24 * 30 * 5;
 
   private final OAuth2AuthorizedClientService clientService;
   private final String contextPath;
