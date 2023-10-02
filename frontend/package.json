@@ -21,7 +21,7 @@
   "devDependencies": {
     "@mockoon/cli": "^4.1.0",
     "@vitejs/plugin-vue": "^4.3.4",
-    "@vitest/coverage-v8": "^0.34.5",
+    "@vitest/coverage-v8": "^0.34.6",
     "@vue/test-utils": "^2.4.1",
     "concurrently": "^8.2.1",
     "eslint": "^8.50.0",
