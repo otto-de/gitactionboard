@@ -88,7 +88,7 @@ fileignoreconfig:
 - filename: backend/src/test/resources/testData/securityScanAlerts.json
   checksum: ce87091b9e60b4172b60c0e6845eb70022027a5e1b2ff1d0ce838682f24d0100
 - filename: bin/install-talisman.sh
-  checksum: cc4dba78359c923b57cfce895c5bf9d899076fb3cd5da0845a6bef2f6a5cec50
+  checksum: 636c29faa1a28f65f300e2de2fc4466d6f800f312afff3a17ece63c7e1d47099
 - filename: bin/lib.sh
   checksum: 1e05d6eaf1608f946e89080cdceae2cf6715551c1d1621f393cf96f158baea6e
 - filename: doc/dark-theme/login.png
@@ -111,8 +111,6 @@ fileignoreconfig:
   checksum: 0983be59f610a6ece0e4f7e5868a2406bd6f20226e0443dcd119494a2e19f9bc
 - filename: frontend/mock-data/data.json
   checksum: 4baf61952ab3261089ae57c7a91f920e4cb8c67425d99861b7cbff6a1eaec60e
-- filename: frontend/package-lock.json
-  checksum: 36420624bcf1b22e049fa4d4515b770bfa99416bd7838203e41f36f394002886
 - filename: frontend/src/components/Dashboard.vue
   checksum: 55c522358eb8c8cdd66b948f52d837d7f092c9416df3a2b01284a805c1900b0e
 - filename: frontend/src/components/GridCell.vue
@@ -137,4 +135,6 @@ allowed_patterns:
 - password:\s\$\{\{\ssecrets\.DOCKER_HUB_PASSWORD\s\}\}
 - \(\[.*\]\(https:\/\/github\.com\/otto-de\/gitactionboard\/commit\/.*\)\)
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)
+- sha512-.*
+- \".*-.*\":\s\"\^\d\.\d\.\d\"
 version: "1.0"

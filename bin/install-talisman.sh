@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-TALISMAN_VERSION="1.30.0"
-TALISMAN_SHA256="4b416431264bfe079f12faf71426ae7fbdd36b5c499c9b80b274b61d75f82059"
+TALISMAN_VERSION="1.31.0"
+TALISMAN_SHA256="0bb3527fb8d6d9e776f6e19b24c9b92ce45998fec8bc75d3140dcbda27bb2874"
 
 _main(){
  curl -fsSL -o ./talisman "https://github.com/thoughtworks/talisman/releases/download/v${TALISMAN_VERSION}/talisman_linux_amd64" &&
