@@ -3,8 +3,6 @@ fileignoreconfig:
   checksum: 5d60138edf428b8b1bf147cea770ac3241c08d44ae51089665a7004e6ba3e291
 - filename: .github/workflows/checks.yml
   checksum: 75f3d0a921e1c03e421b63dc3bd0d1708eb5e7cd0d13589cd285331fe758c8bb
-- filename: .github/workflows/trivy.yaml
-  checksum: afa93088ced13a178770c327684b3343fdf9e3c4ab3b89c7cf4e6a06b13ed53d
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: README.md
@@ -131,6 +129,7 @@ allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\s\$\{\{\srunner\.os\s\}\}-bootjar-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\spitestHistory-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - password:\s\$\{\{\ssecrets\.DOCKER_HUB_PASSWORD\s\}\}
 - \(\[.*\]\(https:\/\/github\.com\/otto-de\/gitactionboard\/commit\/.*\)\)

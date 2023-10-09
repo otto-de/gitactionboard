@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - 'CHANGELOG.md'
   pull_request:
-    types: [ opened, reopened, review_requested, edited, ready_for_review ]
+    types: [ opened, reopened, review_requested, edited, ready_for_review, synchronize ]
   schedule:
     - cron: '0 6 * * 1-5'
 env:
