@@ -17,8 +17,6 @@ fileignoreconfig:
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/gradle/test.gradle
   checksum: 335aafca613cd07460f7d71ae96664d7f0092d1d0afb612e284c8986f039fbca
-- filename: backend/gradle/wrapper/gradle-wrapper.properties
-  checksum: 06d18c46332fae87de4fcda0907221910a09751e53f11ade594c5ddf35fb5799
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: ed527426ddfdba4b79483a3bb02fabd2262aaa7b70a059dec4dc0f64daa61669
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
@@ -137,4 +135,5 @@ allowed_patterns:
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)
 - sha512-.*
 - \".*-.*\":\s\"\^\d\.\d\.\d\"
+- distributionSha256Sum=.*
 version: "1.0"
