@@ -155,6 +155,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "kvashchuka",
+      "name": "Anna Kvashchuk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12686827?v=4",
+      "profile": "https://github.com/kvashchuka",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

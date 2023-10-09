@@ -1,6 +1,6 @@
 # Gitaction Board
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 [![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard?sort=semver)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 ![Docker Image Size](https://img.shields.io/docker/image-size/ottoopensource/gitactionboard?label=docker%20image%20size&sort=semver)
@@ -79,6 +79,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/pbonner-1"><img src="https://avatars.githubusercontent.com/u/71049471?v=4?s=100" width="100px;" alt="Phillip Bonner"/><br /><sub><b>Phillip Bonner</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Apbonner-1" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kvashchuka"><img src="https://avatars.githubusercontent.com/u/12686827?v=4?s=100" width="100px;" alt="Anna Kvashchuk"/><br /><sub><b>Anna Kvashchuk</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Akvashchuka" title="Bug reports">🐛</a> <a href="https://github.com/otto-de/gitactionboard/commits?author=kvashchuka" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
