@@ -1,6 +1,6 @@
 # Gitaction Board
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/github/all-contributors/otto-de/gitactionboard?color=ee8449&style=flat-square)](#contributors-)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ottoopensource/gitactionboard)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 [![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard?sort=semver)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 ![Docker Image Size](https://img.shields.io/docker/image-size/ottoopensource/gitactionboard?label=docker%20image%20size&sort=semver)
