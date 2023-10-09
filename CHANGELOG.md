@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file.
 
 - Update changelog ([7f82e37](https://github.com/otto-de/gitactionboard/commit/7f82e37ae4e3bf9d474ebead8789cd1c45a9dbdb))
 
-- Add @kvashchuka to contributors list ([35ec0f1](https://github.com/otto-de/gitactionboard/commit/35ec0f1f23443e0be17205f694d79f335b0fad40))
+- Add [@kvashchuka](https://github.com/kvashchuka) to contributors list ([35ec0f1](https://github.com/otto-de/gitactionboard/commit/35ec0f1f23443e0be17205f694d79f335b0fad40))
 
 - Fix all-contributors badge link ([31cef16](https://github.com/otto-de/gitactionboard/commit/31cef1604f91bbef5cfe7042e70585a9a897eae0))
 
@@ -116,7 +116,7 @@ All notable changes to this project will be documented in this file.
 
 - Update changelog ([6156577](https://github.com/otto-de/gitactionboard/commit/6156577861cb5ce385ad280112dba4eb5d466787))
 
-- Add @bennetelli to contributors list for bug reports ([894c117](https://github.com/otto-de/gitactionboard/commit/894c117829f2c2f1b9771f046e43c57d90a223c5))
+- Add [@bennetelli](https://github.com/bennetelli) to contributors list for bug reports ([894c117](https://github.com/otto-de/gitactionboard/commit/894c117829f2c2f1b9771f046e43c57d90a223c5))
 
 ## [v3.3.2](https://github.com/otto-de/gitactionboard/compare/v3.3.1...v3.3.2) (2023-06-10)
 
@@ -168,7 +168,7 @@ All notable changes to this project will be documented in this file.
 
 - Update sample screenshots ([05b57fa](https://github.com/otto-de/gitactionboard/commit/05b57fa67afff12bfe5bdfd04a696d8fd14b9249))
 
-- Add @pbonner-1 to contributors list ([a3bbcb6](https://github.com/otto-de/gitactionboard/commit/a3bbcb6fdcfb7676dfe6dcb67e78c81695574dcd))
+- Add [@pbonner-1](https://github.com/pbonner-1) to contributors list ([a3bbcb6](https://github.com/otto-de/gitactionboard/commit/a3bbcb6fdcfb7676dfe6dcb67e78c81695574dcd))
 
 ## [v3.3.0](https://github.com/otto-de/gitactionboard/compare/v3.2.1...v3.3.0) (2023-05-20)
 
@@ -216,7 +216,7 @@ All notable changes to this project will be documented in this file.
 
 - Add demo link on Readme ([a89d77a](https://github.com/otto-de/gitactionboard/commit/a89d77aaf040f4f90669ee38696864bf35c73b8d))
 
-- Add @bennetelli to contributors list for ideas ([a36fc32](https://github.com/otto-de/gitactionboard/commit/a36fc32418b0f6dfcd06603527ffb207e9e6d034))
+- Add [@bennetelli](https://github.com/bennetelli) to contributors list for ideas ([a36fc32](https://github.com/otto-de/gitactionboard/commit/a36fc32418b0f6dfcd06603527ffb207e9e6d034))
 
 ## [v3.2.1](https://github.com/otto-de/gitactionboard/compare/v3.2.0...v3.2.1) (2023-04-29)
 
@@ -266,7 +266,7 @@ All notable changes to this project will be documented in this file.
 
 ### 📚 Documentation
 
-- Add @svenfinke for ideas ([f459c20](https://github.com/otto-de/gitactionboard/commit/f459c20af182f9e8343d94466401a4633210c1ce))
+- Add [@svenfinke](https://github.com/svenfinke) for ideas ([f459c20](https://github.com/otto-de/gitactionboard/commit/f459c20af182f9e8343d94466401a4633210c1ce))
 
 - Update changelog for v3.2.0 ([8bffbc1](https://github.com/otto-de/gitactionboard/commit/8bffbc152b55b686a24ed0b534c2195baac16e68))
 
@@ -278,7 +278,7 @@ All notable changes to this project will be documented in this file.
 
 ### 📚 Documentation
 
-- Add @valentin-krasontovitsch to contributors list ([44e9772](https://github.com/otto-de/gitactionboard/commit/44e9772b876ce7493c19ec2f058e5a1e6c2df8c6))
+- Add [@valentin-krasontovitsch](https://github.com/valentin-krasontovitsch) to contributors list ([44e9772](https://github.com/otto-de/gitactionboard/commit/44e9772b876ce7493c19ec2f058e5a1e6c2df8c6))
 
 - Update changelog for v3.1.1 ([b5269ad](https://github.com/otto-de/gitactionboard/commit/b5269ad02304f730367d1780262994e9d5c8466f))
 
@@ -448,7 +448,7 @@ All notable changes to this project will be documented in this file.
 
 - Fix typo ([698134d](https://github.com/otto-de/gitactionboard/commit/698134d92d141e3d3916acd4b2a9b288999c523a))
 
-- Add @svenfinke to contributors list ([f1a634a](https://github.com/otto-de/gitactionboard/commit/f1a634a1065c009ba2a12d6e02f0d3e271191652))
+- Add [@svenfinke](https://github.com/svenfinke) to contributors list ([f1a634a](https://github.com/otto-de/gitactionboard/commit/f1a634a1065c009ba2a12d6e02f0d3e271191652))
 
 - Update changelog for v3.0.4 ([b05a932](https://github.com/otto-de/gitactionboard/commit/b05a9322565e61423a47c4ebb1f57feb8fa8ee40))
 
@@ -538,7 +538,7 @@ All notable changes to this project will be documented in this file.
 
 - Add available features on Readme ([c99f136](https://github.com/otto-de/gitactionboard/commit/c99f1367f8b9bdf78ebe1a2355268dacd6e434de))
 
-- Add @gtogbes and @baztian to contributors list ([8dd8dcc](https://github.com/otto-de/gitactionboard/commit/8dd8dcca8b80bc1fe13f79c5f1aab201fd90baac))
+- Add [@gtogbes](https://github.com/gtogbes) and [@baztian](https://github.com/baztian) to contributors list ([8dd8dcc](https://github.com/otto-de/gitactionboard/commit/8dd8dcca8b80bc1fe13f79c5f1aab201fd90baac))
 
 - Add different shields badges on Readme ([d57d352](https://github.com/otto-de/gitactionboard/commit/d57d3529039b1c32f6e429a58dcc3aabdf59ccee))
 

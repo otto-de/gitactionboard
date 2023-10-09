@@ -39,6 +39,7 @@ filter_unconventional = true
 split_commits = false
 commit_preprocessors = [
    { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](https://github.com/otto-de/gitactionboard/issues/${2}))"}, # replace issue numbers
+   { pattern = '@((\w|-)+)\s', replace = "[@${1}](https://github.com/${1}) "}, # replace github username
    { pattern = '\sgithub\s', replace = " GitHub "},
    { pattern = '(CVE-[0-9]+-[0-9]+)', replace = "[${1}](https://nvd.nist.gov/vuln/detail/${1})"},
 ]
