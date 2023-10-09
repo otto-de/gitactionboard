@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.time.Duration;
 import java.util.Optional;
 import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
@@ -38,9 +39,9 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   private static final String ACCESS_TOKEN = "access_token";
   private static final String REFRESH_TOKEN = "refresh_token";
 
-  private static final int ONE_DAY = 60 * 60 * 24;
-  private static final int SEVEN_HOURS = 60 * 60 * 7;
-  private static final int FIVE_MONTHS = 60 * 60 * 24 * 30 * 5;
+  private static final int ONE_DAY = Math.toIntExact(Duration.ofDays(1).toSeconds());
+  private static final int SEVEN_HOURS = Math.toIntExact(Duration.ofHours(7).toSeconds());
+  private static final int FIVE_MONTHS = Math.toIntExact(Duration.ofDays(150).toSeconds());
 
   private final OAuth2AuthorizedClientService clientService;
   private final String contextPath;
