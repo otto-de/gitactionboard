@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.6](https://github.com/otto-de/gitactionboard/compare/v3.3.5...v3.3.6) (2023-10-09)
+
+### 🐛 Bug Fixes
+
+- Fix five months is seconds calculation ([b8269c2](https://github.com/otto-de/gitactionboard/commit/b8269c29b8b523a5eb559c7c02fd08429ae38f88))
+
+### 🛡️ Security
+
+- Update npm dependencies to fix security vulnerabilities ([6430114](https://github.com/otto-de/gitactionboard/commit/64301141888131d6a379e59473cfae915c178957))
+
+### 🚜 Refactor
+
+- Refactor cookie expire time calculation with the help of java.time.Duration class ([e21e8ea](https://github.com/otto-de/gitactionboard/commit/e21e8ea886e5dcecbfdf228b64e55c99bda88d44))
+
+### ⚙️ Miscellaneous Tasks
+
+- Patch management for GitHub action and vuetify ([9e61a01](https://github.com/otto-de/gitactionboard/commit/9e61a019b6f3d68a54ca64a4baf3b3a21f2383e8))
+
+- Bump alpine from 3.18.3 to 3.18.4 ([ce08f38](https://github.com/otto-de/gitactionboard/commit/ce08f38ba2fc44a2253b0af7f979fd09a33781db))
+
+- Update talisman to v1.31.0 ([211eecf](https://github.com/otto-de/gitactionboard/commit/211eecf39d4a558ac13bd3d897f4c0eda4788d9f))
+
+### 👷 Build
+
+- Run Pull Request workflow for synchronize event ([426b4fe](https://github.com/otto-de/gitactionboard/commit/426b4fe03eda67d29b4f4db5795b24b4d3609048))
+
+- Run trivy and checks workflow for pull request synchronize event ([71ae756](https://github.com/otto-de/gitactionboard/commit/71ae75688efee6f808ddfe5efc5359055fa02482))
+
+### 📚 Documentation
+
+- Update changelog ([7f82e37](https://github.com/otto-de/gitactionboard/commit/7f82e37ae4e3bf9d474ebead8789cd1c45a9dbdb))
+
+- Add @kvashchuka to contributors list ([35ec0f1](https://github.com/otto-de/gitactionboard/commit/35ec0f1f23443e0be17205f694d79f335b0fad40))
+
+- Fix all-contributors badge link ([31cef16](https://github.com/otto-de/gitactionboard/commit/31cef1604f91bbef5cfe7042e70585a9a897eae0))
+
 ## [v3.3.5](https://github.com/otto-de/gitactionboard/compare/v3.3.4...v3.3.5) (2023-09-17)
 
 ### 🐛 Bug Fixes
