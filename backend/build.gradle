@@ -23,7 +23,7 @@ ext {
     caffeineVersion = "3.1.8"
     mockServerVersion = "5.15.0"
     archUnitVersion = "1.1.0"
-    jUnit5PitestVersion = "1.2.0"
+    jUnit5PitestVersion = "1.2.1"
 }
 
 ext['snakeyaml.version'] = "2.0";
