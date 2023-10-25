@@ -20,7 +20,8 @@ class RunStatusTest {
   @ParameterizedTest(name = "should give BUILDING activity for {0} status")
   @EnumSource(
       value = RunStatus.class,
-      names = {"IN_PROGRESS", "QUEUED"})
+      names = {"COMPLETED"},
+      mode = EnumSource.Mode.EXCLUDE)
   void shouldGiveBuildingActivity(RunStatus status) {
     assertThat(RunStatus.getActivity(status)).isEqualTo(BUILDING);
   }

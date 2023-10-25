@@ -134,5 +134,6 @@ allowed_patterns:
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)
 - sha512-.*
 - \".*-.*\":\s\"\^\d\.\d\.\d\"
+- \".*\":\s\"\^\d\.\d\.\d\"
 - distributionSha256Sum=.*
 version: "1.0"

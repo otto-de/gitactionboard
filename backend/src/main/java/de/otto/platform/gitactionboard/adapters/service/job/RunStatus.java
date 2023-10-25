@@ -11,7 +11,10 @@ public enum RunStatus {
   IN_PROGRESS,
 
   @JsonProperty("completed")
-  COMPLETED;
+  COMPLETED,
+
+  @JsonProperty("waiting")
+  WAITING;
 
   public static Activity getActivity(RunStatus runStatus) {
     return RunStatus.COMPLETED.equals(runStatus) ? Activity.SLEEPING : Activity.BUILDING;
