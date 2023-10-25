@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.7](https://github.com/otto-de/gitactionboard/compare/v3.3.6...v3.3.7) (2023-10-25)
+
+### 🐛 Bug Fixes
+
+- ([#484](https://github.com/otto-de/gitactionboard/issues/484)) Add missing waiting run status ([abfb062](https://github.com/otto-de/gitactionboard/commit/abfb062a14441561bfd1ff276191f770fb467755))
+
+### 🛡️ Security
+
+- Suppress [CVE-2023-45960](https://nvd.nist.gov/vuln/detail/CVE-2023-45960) and remove [CVE-2023-2976](https://nvd.nist.gov/vuln/detail/CVE-2023-2976) from supression list ([787ed14](https://github.com/otto-de/gitactionboard/commit/787ed14578558fd80f77f581b9fd778eaea23f1f))
+
+### 📚 Documentation
+
+- Update changelog ([e9dd35a](https://github.com/otto-de/gitactionboard/commit/e9dd35aaecb084ce01e8a6e18a209f7a4dfa90d8))
+
+- Link GitHub username on changelog ([3ce1f1c](https://github.com/otto-de/gitactionboard/commit/3ce1f1cbcadc5646ff35469097f4bffa0aa1b7b8))
+
+- Add [@globaltopmedia](https://github.com/globaltopmedia) to contributors list for bug reports ([6c7988b](https://github.com/otto-de/gitactionboard/commit/6c7988b20f1619280eb90a0d704e79b22940f237))
+
 ## [v3.3.6](https://github.com/otto-de/gitactionboard/compare/v3.3.5...v3.3.6) (2023-10-09)
 
 ### 🐛 Bug Fixes
