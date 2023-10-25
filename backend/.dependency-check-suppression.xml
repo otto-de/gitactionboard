@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd">
     <suppress>
-        <cve>CVE-2022-42920</cve>
         <cve>CVE-2023-2976</cve>
+        <cve>CVE-2023-45960</cve>
     </suppress>
 </suppressions>
