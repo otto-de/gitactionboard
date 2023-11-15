@@ -16,7 +16,7 @@
     "@mdi/font": "^7.3.67",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
-    "vuetify": "^3.3.23"
+    "vuetify": "^3.4.1"
   },
   "devDependencies": {
     "@mockoon/cli": "^5.1.0",
