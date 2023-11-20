@@ -27,7 +27,7 @@ If you are not sure how to begin contributing to GitactionBoard, have a look at 
 ### Prerequisites
 
 - [jEnv](https://www.jenv.be/)
-- Java 17
+- Java 21
 - [Docker](https://www.docker.com/)
 - [Hadolint](https://github.com/hadolint/hadolint)
 - [ShellCheck](https://www.shellcheck.net/)
