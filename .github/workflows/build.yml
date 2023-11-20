@@ -29,7 +29,7 @@ jobs:
       - name: Configure jenv
         run: |
           jenv init -
-          jenv add ${JAVA_HOME_17_X64}
+          jenv add ${JAVA_HOME_21_X64}
       - name: Install Hadolint and add to PATH
         run: |
           sh bin/install-hadolint.sh
@@ -149,7 +149,7 @@ jobs:
       - name: Configure jenv
         run: |
           jenv init -
-          jenv add ${JAVA_HOME_17_X64}
+          jenv add ${JAVA_HOME_21_X64}
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v3
         with:

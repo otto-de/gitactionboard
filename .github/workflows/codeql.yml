@@ -55,7 +55,7 @@ jobs:
         if: ${{ matrix.language == 'java' }}
         with:
           distribution: 'corretto'
-          java-version: 17
+          java-version: 21
           cache: 'gradle'
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
