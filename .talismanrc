@@ -13,6 +13,8 @@ fileignoreconfig:
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/gradle/test.gradle
   checksum: 335aafca613cd07460f7d71ae96664d7f0092d1d0afb612e284c8986f039fbca
+- filename: backend/mock-data/data.json
+  checksum: 7320eac99d93a3beb2f42e7e743a126bb6c08c9241ca528f60778ae6e7545369
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: ed527426ddfdba4b79483a3bb02fabd2262aaa7b70a059dec4dc0f64daa61669
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
@@ -84,7 +86,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: 636c29faa1a28f65f300e2de2fc4466d6f800f312afff3a17ece63c7e1d47099
 - filename: bin/lib.sh
-  checksum: 1e05d6eaf1608f946e89080cdceae2cf6715551c1d1621f393cf96f158baea6e
+  checksum: a36ff1cbf24e7a81135105d8a5ebd1285fdea8fab33561e4d7787e725b4fc2ba
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png

@@ -42,6 +42,7 @@ case ${CMD} in
   check) _check ;;
   format) _format_sources ;;
   run-locally) _run_locally "${1:-}" "${2:-true}" ;;
+  run-locally-with-mock-data) _run_locally_with_mock_data "${1:-}" "${2:-true}" ;;
   run-frontend-locally) _run_frontend_locally ;;
   test) _test ;;
   pitest) _pitest "$@";;
