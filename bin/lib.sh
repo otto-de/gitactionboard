@@ -157,6 +157,38 @@ _run_locally() {
   popd >/dev/null || exit
 }
 
+_run_locally_with_mock_data() {
+  local with_frontend="${2}"
+
+  #!/bin/sh
+  # shellcheck disable=SC2317
+  _revert() {
+    if [ "${with_frontend}" ]; then
+      pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+      echo "Removing backend/src/main/resources/public"
+      rm -rf "${SCRIPT_DIR}/backend/src/main/resources/public"
+      popd >/dev/null || exit
+    fi
+
+    exit 0
+  }
+
+  trap _revert SIGTERM SIGINT ERR
+
+  if [ "${with_frontend}" ]; then
+    _copy_frontend
+  fi
+
+  nvm use "$(cat "${SCRIPT_DIR}/frontend/.nvmrc")"
+  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
+  _ensure_jenv
+  node "${SCRIPT_DIR}/frontend/node_modules/concurrently/dist/bin/concurrently.js" \
+    --kill-others \
+    "node ${SCRIPT_DIR}/frontend/node_modules/@mockoon/cli/bin/run start -D --data mock-data/data.json" \
+    "DOMAIN_NAME=http://localhost:8000 REPO_NAMES=hello-world REPO_OWNER_NAME=johndoe jenv exec ./gradlew clean bootRun"
+  popd >/dev/null || exit
+}
+
 _run_frontend_locally() {
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
     _ensure_nvm
