@@ -19,7 +19,7 @@ exports[`<FailureGridCell /> > should render grid cell 1`] = `
   <!---->
   <!---->
   <div class="v-card-text grid-cell-name pa-0 ma-0">
-    <a aria-describedby="v-tooltip-0" href="https://test.com" id="test-name-url" target="_blank">test name</a>
+    <a aria-describedby="v-tooltip-0" href="https://test.com" id="test-name-url" target="_blank" targetref="[object Object]">test name</a>
     <!--teleport start-->
     <!--teleport end-->
   </div>
