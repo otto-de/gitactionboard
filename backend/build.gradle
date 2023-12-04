@@ -22,7 +22,7 @@ ext {
     logstashVersion = "7.4"
     caffeineVersion = "3.1.8"
     mockServerVersion = "5.15.0"
-    archUnitVersion = "1.2.0"
+    archUnitVersion = "1.2.1"
     jUnit5PitestVersion = "1.2.1"
 }
 
