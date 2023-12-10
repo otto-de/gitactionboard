@@ -58,7 +58,11 @@ jobs:
         id: nvd-nist-cache
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/.nvd-nist-cache
-          key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-nvd-nist-cache-${{ hashFiles('**/*.gradle*') }}
+          key: ${{ runner.os }}-nvd-nist-cache-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-nvd-nist-cache-${{ steps.get-date.outputs.date }}
+            ${{ runner.os }}-nvd-nist-cache
+            ${{ runner.os }}-${{ steps.get-date.outputs.date }}-nvd-nist-cache
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v3
         with:
