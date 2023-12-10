@@ -2,7 +2,7 @@ fileignoreconfig:
 - filename: .github/workflows/build.yml
   checksum: 5d60138edf428b8b1bf147cea770ac3241c08d44ae51089665a7004e6ba3e291
 - filename: .github/workflows/checks.yml
-  checksum: 75f3d0a921e1c03e421b63dc3bd0d1708eb5e7cd0d13589cd285331fe758c8bb
+  checksum: f764f9a35d9dc57b31c323875f5fa69b4d61eb08cabef52facd1eeccfabd0511
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: USAGE.md

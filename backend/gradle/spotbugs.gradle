@@ -1,7 +1,6 @@
 spotbugs {
     ignoreFailures = false
     showProgress = true
-    effort = 'max'
     excludeFilter = file("${projectDir}/gradle/config/spotbugsExclude.xml")
 }
 
