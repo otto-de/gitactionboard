@@ -62,7 +62,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nvd-nist-cache-${{ steps.get-date.outputs.date }}
             ${{ runner.os }}-nvd-nist-cache
-            ${{ runner.os }}-${{ steps.get-date.outputs.date }}-nvd-nist-cache
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v3
         with:
