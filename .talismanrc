@@ -46,7 +46,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanService.java
   checksum: aa1fa524d64e94ccf01700e9a3d49fa4b590e6aa33705b49aed2c1cf95aa4ef1
 - filename: backend/src/main/resources/application.properties
-  checksum: 22f2f1eb29022657998e7aab741b28b7d172a36d063733ff2f4c7731a358c8a8
+  checksum: 3d6252a689e4d92dbac04f259304822aabce7d6ff7cb0446e2528336cb143bae
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java
   checksum: 0b94970267dcee93a6d21b2389840221badf8c2940208ef6fac5d6f4e8647e61
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java
