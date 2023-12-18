@@ -4,7 +4,7 @@ plugins {
     id "org.springframework.boot" version "3.2.0"
     id "io.spring.dependency-management" version "1.1.4"
     id "io.freefair.lombok" version "8.4"
-    id "com.github.spotbugs" version "6.0.3"
+    id "com.github.spotbugs" version "6.0.4"
     id "com.github.ben-manes.versions" version "0.50.0"
     id "org.owasp.dependencycheck" version "9.0.6"
     id "com.diffplug.spotless" version "6.23.3"
