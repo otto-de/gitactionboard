@@ -68,7 +68,7 @@ jobs:
         run: ./run.sh backend-test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload build report to artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports
