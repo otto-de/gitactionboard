@@ -124,7 +124,7 @@ fileignoreconfig:
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 allowed_patterns:
-- key:\s\$\{\{\srunner\.os\s\}\}-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-nvd-nist-cache-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\s\$\{\{\srunner\.os\s\}\}-nvd-nist-cache-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-bootjar-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
