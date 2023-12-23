@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.0](https://github.com/otto-de/gitactionboard/compare/v3.3.7...v4.0.0) (2023-12-22)
+
+### ⚠ BREAKING CHANGES
+
+- Upgrade to Java 21 ([2dd7a45](https://github.com/otto-de/gitactionboard/commit/2dd7a45e289744369976c40b52e4ae1f0393b479))
+
+- Upgrade node version to v20 ([8cf5b98](https://github.com/otto-de/gitactionboard/commit/8cf5b98d01ff7a0487225f39ca12cff4498e7f11))
+
+### 🛡️ Security
+
+- Update logback version to fix [CVE-2023-6378](https://nvd.nist.gov/vuln/detail/CVE-2023-6378) ([bb33755](https://github.com/otto-de/gitactionboard/commit/bb33755a879d53295bf54d715cbe62dd0f6c1ba1))
+
+### ⚡ Performance
+
+- Enable java virtual threads to improve performance ([19ac181](https://github.com/otto-de/gitactionboard/commit/19ac1815693c8515d0090fcdcc5c2b5ca071f4ce))
+
+### ⚙️ Miscellaneous Tasks
+
+- Add mock backend data to run backend server locally ([7d59cb7](https://github.com/otto-de/gitactionboard/commit/7d59cb736ae9509d8af5ad592e9b64a76f6c0211))
+
+- Update Gradle Wrapper from 8.4 to 8.5. ([#529](https://github.com/otto-de/gitactionboard/issues/529)) ([c2d2b82](https://github.com/otto-de/gitactionboard/commit/c2d2b820de8393645df0cef9861c19cdb1dd7303))
+
+- Bump actions/setup-java from 3 to 4 ([#532](https://github.com/otto-de/gitactionboard/issues/532)) ([794e014](https://github.com/otto-de/gitactionboard/commit/794e014b12ef17d1c38d07a5909e49ef34eff76a))
+
+- Bump alpine from 3.18.4 to 3.19.0 ([#554](https://github.com/otto-de/gitactionboard/issues/554)) ([08a80d8](https://github.com/otto-de/gitactionboard/commit/08a80d80fa49f7893014c6f00c7406ee689a7110))
+
+- Remove unnecessary nvd nist cache restore key ([8fdd8f2](https://github.com/otto-de/gitactionboard/commit/8fdd8f29087d6958445f3d28a4f1ce1a6019cc5d))
+
+- Bump actions/deploy-pages from 2 to 3 ([#556](https://github.com/otto-de/gitactionboard/issues/556)) ([fa90750](https://github.com/otto-de/gitactionboard/commit/fa9075014e821e7831712932e390bbad7c1072f8))
+
+- Bump actions/configure-pages from 3 to 4 ([#555](https://github.com/otto-de/gitactionboard/issues/555)) ([1b2cae1](https://github.com/otto-de/gitactionboard/commit/1b2cae174ee3e419a9986ce829039730187baddf))
+
+- Bump github/codeql-action from 2 to 3 ([bc28f6f](https://github.com/otto-de/gitactionboard/commit/bc28f6f507393aff7f6787d4438841ff94b3febc))
+
+- Bump actions/upload-artifact from 3 to 4 ([b72cd99](https://github.com/otto-de/gitactionboard/commit/b72cd992715df029fe60caabd20ab0625d85b0a5))
+
+- Update allowed paterns in .talismanrc ([980ad1f](https://github.com/otto-de/gitactionboard/commit/980ad1f8e546a1c60b15f6535a2f7830027f98e0))
+
+### 📚 Documentation
+
+- Update changelog ([e2605b7](https://github.com/otto-de/gitactionboard/commit/e2605b72536c80fdd17a19fc05f968ffc6e4376f))
+
 ## [v3.3.7](https://github.com/otto-de/gitactionboard/compare/v3.3.6...v3.3.7) (2023-10-25)
 
 ### 🐛 Bug Fixes
