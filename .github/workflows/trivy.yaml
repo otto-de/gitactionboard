@@ -41,6 +41,11 @@ jobs:
         run: |
           jenv init -
           jenv add ${JAVA_HOME_21_X64}
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+        shell: bash
       - name: Cache gradle wrapper and jars
         if: steps.boot-jar.outputs.cache-hit != 'true'
         uses: actions/cache@v3
@@ -48,14 +53,18 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          key: ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-gradle-
       - name: Cache node modules
         if: steps.boot-jar.outputs.cache-hit != 'true'
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-node-
             ${{ runner.os }}-
       - name: Build boot jar

@@ -68,7 +68,10 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          key: ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-gradle-
       - name: Dependency Check
         run: ./run.sh check
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/

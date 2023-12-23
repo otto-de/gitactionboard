@@ -125,10 +125,10 @@ fileignoreconfig:
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-nvd-nist-cache-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
-- key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
-- key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
+- key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-bootjar-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
-- key:\spitestHistory-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\spitestHistory-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - password:\s\$\{\{\ssecrets\.DOCKER_HUB_PASSWORD\s\}\}
 - \(\[.*\]\(https:\/\/github\.com\/otto-de\/gitactionboard\/commit\/.*\)\)
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)

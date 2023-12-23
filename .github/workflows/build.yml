@@ -35,26 +35,38 @@ jobs:
           sh bin/install-hadolint.sh
           echo "$GITHUB_WORKSPACE/$SERVICE_NAME" >> $GITHUB_PATH
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+        shell: bash
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          key: ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-gradle-
       - name: Cache node modules
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-node-
             ${{ runner.os }}-
       - name: Cache pitest history
         uses: pat-s/always-upload-cache@v3.0.11
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
-          key: pitestHistory-${{ hashFiles('**/*.gradle*') }}
+          key: pitestHistory-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            pitestHistory-${{ steps.get-date.outputs.date }}-
+            pitestHistory-
       - name: Run all tests
         run: ./run.sh test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
@@ -150,19 +162,28 @@ jobs:
         run: |
           jenv init -
           jenv add ${JAVA_HOME_21_X64}
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+        shell: bash
       - name: Cache gradle wrapper and jars
         uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          key: ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-gradle-
       - name: Cache node modules
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-node-
             ${{ runner.os }}-
       - name: Build boot jar
@@ -224,12 +245,18 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           enablement: true
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+        shell: bash
       - name: Cache node modules
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-node-
             ${{ runner.os }}-
       - name: Build frontend
