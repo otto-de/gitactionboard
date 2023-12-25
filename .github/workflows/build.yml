@@ -236,7 +236,7 @@ jobs:
         run: ./run.sh frontend-build-for-github-pages
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/frontend/dist"
       - name: Deploy to GitHub Pages
