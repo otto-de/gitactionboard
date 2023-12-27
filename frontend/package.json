@@ -13,7 +13,7 @@
     "lint:fix": "eslint --ext .js,.vue --fix . && stylelint '**/*.vue' --fix"
   },
   "dependencies": {
-    "@mdi/font": "^7.3.67",
+    "@mdi/font": "^7.4.47",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
     "vuetify": "^3.4.8"
