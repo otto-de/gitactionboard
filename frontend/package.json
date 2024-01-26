@@ -22,7 +22,7 @@
     "@mockoon/cli": "^6.1.0",
     "@vitejs/plugin-vue": "^4.6.2",
     "@vitest/coverage-v8": "^0.34.6",
-    "@vue/test-utils": "^2.4.3",
+    "@vue/test-utils": "^2.4.4",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
