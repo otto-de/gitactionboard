@@ -27,7 +27,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Cache boot jar
         id: boot-jar
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar
           key: ${{ runner.os }}-bootjar-${{ hashFiles('**/*.gradle*') }}
@@ -48,7 +48,7 @@ jobs:
         shell: bash
       - name: Cache gradle wrapper and jars
         if: steps.boot-jar.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
@@ -59,7 +59,7 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Cache node modules
         if: steps.boot-jar.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
