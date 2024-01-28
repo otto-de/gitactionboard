@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.1](https://github.com/otto-de/gitactionboard/compare/v4.0.0...v4.0.1) (2024-01-28)
+
+### 🐛 Bug Fixes
+
+- Read correct application version from manifest file ([7e37eea](https://github.com/otto-de/gitactionboard/commit/7e37eeaada629106022674d25ce386b510a5f13a))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump frontend dependencies to latest version ([b4823a3](https://github.com/otto-de/gitactionboard/commit/b4823a338f509eec08373f381cb8a9464affde3d))
+
+- Update version on mock data ([88cfb12](https://github.com/otto-de/gitactionboard/commit/88cfb1211fed7acf2d4f139e1d81436c87772c35))
+
+### 👷 Build
+
+- Add explicit cache restore keys for GitHub action ([f61a75c](https://github.com/otto-de/gitactionboard/commit/f61a75cf5b2151cd7238191cd8719ee90eff87d7))
+
+### 📚 Documentation
+
+- Update changelog ([9626a0f](https://github.com/otto-de/gitactionboard/commit/9626a0f6bcf23e7804ec41084bdb7dd4f3d80d88))
+
 ## [v4.0.0](https://github.com/otto-de/gitactionboard/compare/v3.3.7...v4.0.0) (2023-12-22)
 
 ### ⚠ BREAKING CHANGES
