@@ -184,7 +184,7 @@ _run_locally_with_mock_data() {
   _ensure_jenv
   node "${SCRIPT_DIR}/frontend/node_modules/concurrently/dist/bin/concurrently.js" \
     --kill-others \
-    "node ${SCRIPT_DIR}/frontend/node_modules/@mockoon/cli/bin/run start -D --data mock-data/data.json" \
+    "node ${SCRIPT_DIR}/frontend/node_modules/@mockoon/cli/bin/run start --data mock-data/data.json" \
     "DOMAIN_NAME=http://localhost:8000 REPO_NAMES=hello-world REPO_OWNER_NAME=johndoe jenv exec ./gradlew clean bootRun"
   popd >/dev/null || exit
 }

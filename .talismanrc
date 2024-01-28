@@ -86,7 +86,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: 636c29faa1a28f65f300e2de2fc4466d6f800f312afff3a17ece63c7e1d47099
 - filename: bin/lib.sh
-  checksum: a36ff1cbf24e7a81135105d8a5ebd1285fdea8fab33561e4d7787e725b4fc2ba
+  checksum: 13419b1a08c61840dcc687f8b602a2ddd25556926068f9bbc63d739e3274c08f
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png
@@ -136,5 +136,6 @@ allowed_patterns:
 - \".*-.*\":\s\"\^\d\.\d\.\d\"
 - \".*\":\s\"\^\d\.\d\.\d\"
 - distributionSha256Sum=.*
+- minipass.*
 - Thanks\sgoes\sto\sthese\swonderful\speople\s\(\[emoji\skey\]\(https:\/\/allcontributors\.org\/docs\/en\/emoji-key\)\)
 version: "1.0"
