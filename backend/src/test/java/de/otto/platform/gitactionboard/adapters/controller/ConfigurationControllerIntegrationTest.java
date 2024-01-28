@@ -44,6 +44,7 @@ class ConfigurationControllerIntegrationTest {
         .andExpect(jsonPath("$.availableAuths").isArray())
         .andExpect(jsonPath("$.availableAuths", hasSize(1)))
         .andExpect(jsonPath("$.availableAuths[0]").value("BASIC_AUTH"))
-        .andExpect(jsonPath("$.githubSecretsScanMonitoringEnabled").value("false"));
+        .andExpect(jsonPath("$.githubSecretsScanMonitoringEnabled").value("false"))
+        .andExpect(jsonPath("$.version").exists());
   }
 }
