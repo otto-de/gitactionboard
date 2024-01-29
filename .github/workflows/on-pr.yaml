@@ -23,7 +23,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           fetch-depth: 5
       - name: Determine new changes
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
