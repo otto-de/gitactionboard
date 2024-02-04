@@ -91,7 +91,7 @@ class GithubJobDetailsServiceTest {
             TestUtil.readFile("testData/jobsDetails260614021.json"),
             WorkflowsJobDetailsResponse.class);
 
-    RUN_ID_1 = BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).getId();
+    RUN_ID_1 = BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().getId();
   }
 
   private static Stream<Arguments> getPermutationOfWorkflowRunStatusAndPreviousConclusion() {
@@ -124,7 +124,7 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldReturnEmptyListAsJobDetailsIfWorkflowNeverRan() {
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(
@@ -139,15 +139,16 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldFetchJobDetailsWhenWorkflowRanOnlyOnce() {
     final String runDetailUri =
-        String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId());
+        RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId());
     when(apiService.getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class))
         .thenReturn(
             WorkflowsRunDetailsResponse.builder()
-                .workflowRuns(List.of(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0)))
+                .workflowRuns(
+                    List.of(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst()))
                 .build());
 
     final String jobDetailsUri =
-        String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), RUN_ID_1);
+        JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), RUN_ID_1);
     when(apiService.getForObject(jobDetailsUri, ACCESS_TOKEN, WorkflowsJobDetailsResponse.class))
         .thenReturn(BASE_JOB_DETAILS_RESPONSE);
 
@@ -167,13 +168,13 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsSuccess() {
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE);
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), RUN_ID_1),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), RUN_ID_1),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(BASE_JOB_DETAILS_RESPONSE);
@@ -191,7 +192,7 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsSuccessAndPreviousBuildIsFailed() {
     final WorkflowRunDetails latestWorkflowRunDetails =
-        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(WorkflowRunDetails.COMPLETED)
             .conclusion(SUCCESS)
             .build();
@@ -208,7 +209,7 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
@@ -217,7 +218,7 @@ class GithubJobDetailsServiceTest {
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(COMPLETED)
                         .conclusion(SUCCESS)
                         .build(),
@@ -228,11 +229,11 @@ class GithubJobDetailsServiceTest {
             .build();
 
     final WorkflowRunDetails workflowRunDetails =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(0);
+        workflowsRunDetailsResponse.getWorkflowRuns().getFirst();
     final long currentRunId = workflowRunDetails.getId();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
@@ -270,7 +271,7 @@ class GithubJobDetailsServiceTest {
       shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsNotCompletedAndLastBuildStatusIsNotFailure(
           String latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
-        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(latestRunStatus)
             .conclusion(null)
             .build();
@@ -285,20 +286,20 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
     final WorkflowRunDetails workflowRunDetails =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(0);
+        workflowsRunDetailsResponse.getWorkflowRuns().getFirst();
     final long runId = workflowRunDetails.getId();
 
     final WorkflowsJobDetailsResponse workflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(QUEUED)
                         .conclusion(null)
                         .completedAt(null)
@@ -311,7 +312,7 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), runId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), runId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(workflowsJobDetailsResponse);
@@ -347,7 +348,7 @@ class GithubJobDetailsServiceTest {
   void shouldFetchJobDetailsForGivenWorkflowWhenLatestAndPreviousBothBuildsAreNotSuccessOrSkipped(
       String latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
-        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(latestRunStatus)
             .conclusion(null)
             .build();
@@ -364,7 +365,7 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
@@ -373,7 +374,7 @@ class GithubJobDetailsServiceTest {
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(QUEUED)
                         .conclusion(null)
                         .completedAt(null)
@@ -385,12 +386,12 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getId();
     final Instant currentRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
+        workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getUpdatedAt();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
@@ -400,7 +401,7 @@ class GithubJobDetailsServiceTest {
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(COMPLETED)
                         .startedAt(Instant.parse("2020-09-17T06:11:04Z"))
                         .completedAt(jobCompletedAt)
@@ -419,7 +420,7 @@ class GithubJobDetailsServiceTest {
         workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), previousRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), previousRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(previousWorkflowsJobDetailsResponse);
@@ -457,7 +458,7 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldFetchJobDetailsWhenLatestBuildIsRunningAndItHasANewJobAddedAndLastJobIsSuccess() {
     final WorkflowRunDetails latestWorkflowRunDetails =
-        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status("in_progress")
             .conclusion(null)
             .build();
@@ -471,7 +472,7 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
@@ -480,7 +481,7 @@ class GithubJobDetailsServiceTest {
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(QUEUED)
                         .conclusion(null)
                         .completedAt(null)
@@ -492,12 +493,12 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getId();
     final Instant currentRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
+        workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getUpdatedAt();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
@@ -534,7 +535,7 @@ class GithubJobDetailsServiceTest {
       shouldFetchJobDetailsWhenLatestBuildIsRunningAndItHasANewJobAddedAndLastJobIsFailureConclusion(
           String latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
-        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(latestRunStatus)
             .conclusion(null)
             .build();
@@ -551,7 +552,7 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
@@ -560,7 +561,7 @@ class GithubJobDetailsServiceTest {
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(QUEUED)
                         .conclusion(null)
                         .completedAt(null)
@@ -572,12 +573,12 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(0).getId();
+    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getId();
     final Instant currentRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(0).getUpdatedAt();
+        workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getUpdatedAt();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
@@ -588,7 +589,7 @@ class GithubJobDetailsServiceTest {
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
-                    BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+                    BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(COMPLETED)
                         .startedAt(Instant.parse("2020-09-17T06:11:04Z"))
                         .completedAt(completedAt)
@@ -601,7 +602,7 @@ class GithubJobDetailsServiceTest {
         workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
 
     when(apiService.getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), previousRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), previousRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(previousWorkflowsJobDetailsResponse);
@@ -637,14 +638,14 @@ class GithubJobDetailsServiceTest {
   }
 
   private String createCacheKey(long runId, String repoName, long workflowId, Instant updatedAt) {
-    return String.format("%s_%d_%d_%s", repoName, workflowId, runId, updatedAt.getEpochSecond());
+    return "%s_%d_%d_%s".formatted(repoName, workflowId, runId, updatedAt.getEpochSecond());
   }
 
   @Test
   @SneakyThrows
   void shouldNotThrowErrorIfTheFetchWorkflowsRunsCallFails() {
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
@@ -655,16 +656,15 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldNotThrowErrorIfTheFetchJobDetailsRunsCallFails() {
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE);
 
     when(apiService.getForObject(
-            String.format(
-                JOB_DETAILS_URL_TEMPLATE,
+            JOB_DETAILS_URL_TEMPLATE.formatted(
                 workflow.getRepoName(),
-                BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).getId()),
+                BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
@@ -676,7 +676,7 @@ class GithubJobDetailsServiceTest {
   @SneakyThrows
   void shouldNotFetchJobDetailsForGivenWorkflowWhenTheDetailsIsPresentInCacheWithCompletedStatus() {
     final WorkflowRunDetails latestWorkflowRunDetails =
-        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(0).toBuilder()
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(WorkflowRunDetails.COMPLETED)
             .conclusion(SUCCESS)
             .build();
@@ -693,13 +693,13 @@ class GithubJobDetailsServiceTest {
             .build();
 
     when(apiService.getForObject(
-            String.format(RUN_DETAILS_URL_TEMPLATE, workflow.getRepoName(), workflow.getId()),
+            RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
     final WorkflowRunDetails workflowRunDetails =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(0);
+        workflowsRunDetailsResponse.getWorkflowRuns().getFirst();
     final long currentRunId = workflowRunDetails.getId();
     final String cacheKey =
         createCacheKey(
@@ -710,7 +710,7 @@ class GithubJobDetailsServiceTest {
 
     final List<WorkflowsJobDetails> workflowsJobDetails =
         List.of(
-            BASE_JOB_DETAILS_RESPONSE.getJobs().get(0).toBuilder()
+            BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                 .status(COMPLETED)
                 .conclusion(SUCCESS)
                 .build());
@@ -733,7 +733,7 @@ class GithubJobDetailsServiceTest {
     verify(mockWorkflowJobDetailsCache, never()).put(cacheKey, workflowsJobDetails);
     verify(apiService, never())
         .getForObject(
-            String.format(JOB_DETAILS_URL_TEMPLATE, workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class);
   }

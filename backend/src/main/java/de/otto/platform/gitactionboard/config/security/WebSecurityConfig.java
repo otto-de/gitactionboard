@@ -76,7 +76,7 @@ public class WebSecurityConfig {
       @Value("${management.endpoints.web.base-path:/actuator}") String actuatorBasePath,
       HttpSecurity http)
       throws Exception {
-    final String healthEndPoint = String.format("%s/health", actuatorBasePath);
+    final String healthEndPoint = "%s/health".formatted(actuatorBasePath);
 
     final String[] whitelistUrls = {
       healthEndPoint, "/config", "/", "/index.html", "/assets/**", "/favicon.ico", "/login/basic"

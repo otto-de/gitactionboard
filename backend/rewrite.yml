@@ -1,0 +1,18 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: de.otto.platform.gitactionboard.Rewrite
+displayName: Rewrite code
+description: This recipe is a composite recipe for Gitaction Board
+
+recipeList:
+  - org.openrewrite.java.migrate.JavaVersion21
+  - org.openrewrite.java.migrate.lang.StringFormatted
+  - org.openrewrite.java.migrate.lang.ThreadStopUnsupported
+  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes
+  - org.openrewrite.java.migrate.util.SequencedCollection
+  - org.openrewrite.java.migrate.util.UseLocaleOf
+  - org.openrewrite.java.migrate.util.SequencedCollection
+  - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
+  - org.openrewrite.java.migrate.lang.JavaLangAPIs
+  - org.openrewrite.java.migrate.util.JavaUtilAPIs
+  - org.openrewrite.java.migrate.guava.NoGuava

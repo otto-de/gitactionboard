@@ -19,7 +19,7 @@ public class ApiService {
       @Qualifier("ownerName") String ownerName,
       @Qualifier("authToken") String authToken) {
     this.restTemplateBuilder =
-        restTemplateBuilder.rootUri(String.format("%s/repos/%s", baseUri, ownerName));
+        restTemplateBuilder.rootUri("%s/repos/%s".formatted(baseUri, ownerName));
     this.authToken = authToken;
   }
 

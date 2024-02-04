@@ -54,12 +54,11 @@ public class CodeStandardViolationFixture {
       getCodeStandardViolationAlertBuilder() {
     return CodeStandardViolationAlert.builder()
         .id(
-            String.format(
-                "%s::%s::%d", REPO_NAME, CODE_STANDARD_VIOLATION_NAME, CODE_STANDARD_VIOLATION_ID))
+            "%s::%s::%d"
+                .formatted(REPO_NAME, CODE_STANDARD_VIOLATION_NAME, CODE_STANDARD_VIOLATION_ID))
         .url(CODE_STANDARD_VIOLATION_URL)
         .name(
-            String.format(
-                "%s :: %s :: %s", REPO_NAME, VIOLATION_LOCATION, CODE_STANDARD_VIOLATION_NAME))
+            "%s :: %s :: %s".formatted(REPO_NAME, VIOLATION_LOCATION, CODE_STANDARD_VIOLATION_NAME))
         .createdAt(CODE_STANDARD_VIOLATION_CREATED_AT);
   }
 }

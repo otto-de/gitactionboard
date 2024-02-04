@@ -44,15 +44,15 @@ import org.springframework.test.web.servlet.ResultMatcher;
 class GithubControllerIntegrationTest {
   private static final String API_BASE_PATH = "/repos/johndoe/hello-world";
 
-  private static final String WORKFLOWS_URL = String.format("%s/actions/workflows", API_BASE_PATH);
+  private static final String WORKFLOWS_URL = "%s/actions/workflows".formatted(API_BASE_PATH);
   private static final String RUNS_URL_1 =
-      String.format("%s/actions/workflows/2151835/runs", API_BASE_PATH);
+      "%s/actions/workflows/2151835/runs".formatted(API_BASE_PATH);
   private static final String RUN_URL_2 =
-      String.format("%s/actions/workflows/2057656/runs", API_BASE_PATH);
+      "%s/actions/workflows/2057656/runs".formatted(API_BASE_PATH);
   private static final String JOBS_URL_1 =
-      String.format("%s/actions/runs/%s/jobs", API_BASE_PATH, 260614021);
+      "%s/actions/runs/%s/jobs".formatted(API_BASE_PATH, 260614021);
   private static final String JOBS_URL_2 =
-      String.format("%s/actions/runs/%s/jobs", API_BASE_PATH, 260614024);
+      "%s/actions/runs/%s/jobs".formatted(API_BASE_PATH, 260614024);
   private static final String CCTRAY_XML_ENDPOINT = "/v1/cctray.xml";
   private static final String APPLICATION_XML_CONTENT_TYPE = "application/xml;charset=UTF-8";
   private static final String CCTRAY_ENDPOINT = "/v1/cctray";

@@ -37,7 +37,7 @@ public class GithubJobDetailsService implements JobDetailsService {
                   fetchWorkflowDetails(workflow, accessToken);
               if (workflowsRunDetails.isEmpty()) return Collections.<JobDetails>emptyList();
 
-              final WorkflowRunDetails currentWorkflowRun = workflowsRunDetails.get(0);
+              final WorkflowRunDetails currentWorkflowRun = workflowsRunDetails.getFirst();
               final List<WorkflowsJobDetails> currentJobs =
                   fetchWorkflowJobDetails(currentWorkflowRun, workflow, accessToken);
 

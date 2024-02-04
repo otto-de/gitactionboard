@@ -48,9 +48,8 @@ public abstract class GithubAlertsService<T, U> {
 
     final T[] runDetailsResponse =
         apiService.getForObject(
-            String.format(
-                "/%s/%s-scanning/alerts?state=open&page=%d&per_page=%d",
-                repoName, alertsType, pageNumber, perPage),
+            "/%s/%s-scanning/alerts?state=open&page=%d&per_page=%d"
+                .formatted(repoName, alertsType, pageNumber, perPage),
             accessToken,
             getResponseType());
 

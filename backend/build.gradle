@@ -9,6 +9,7 @@ plugins {
     id "org.owasp.dependencycheck" version "9.0.10"
     id "com.diffplug.spotless" version "6.25.0"
     id "info.solidsoft.pitest" version "1.15.0"
+    id "org.openrewrite.rewrite" version "6.11.2"
 }
 
 spotless {
@@ -88,3 +89,4 @@ apply from: "${rootDir}/gradle/checkstyle.gradle"
 apply from: "${rootDir}/gradle/pmd.gradle"
 apply from: "${rootDir}/gradle/jacoco.gradle"
 apply from: "${rootDir}/gradle/pitest.gradle"
+apply from: "${rootDir}/gradle/rewrite.gradle"

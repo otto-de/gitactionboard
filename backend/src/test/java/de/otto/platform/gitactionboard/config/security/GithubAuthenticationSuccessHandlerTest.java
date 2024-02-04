@@ -132,7 +132,7 @@ class GithubAuthenticationSuccessHandlerTest {
               assertThat(cookie.getValue())
                   .isEqualTo(
                       URLEncoder.encode(
-                          String.format("token %s", expectedAccessTokenAttributeValue), UTF_8));
+                          "token %s".formatted(expectedAccessTokenAttributeValue), UTF_8));
             });
 
     assertThat(findCookie(cookieArgumentCaptor, REFRESH_TOKEN))

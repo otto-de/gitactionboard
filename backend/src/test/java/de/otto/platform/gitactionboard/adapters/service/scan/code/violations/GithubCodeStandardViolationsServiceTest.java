@@ -45,7 +45,7 @@ class GithubCodeStandardViolationsServiceTest {
   void shouldFetchCodeStandardViolationAlertsForGivenRepo() {
     final String url2 = "https://github.com/johndoe/hello-world/code-scanning/alerts/2";
     when(apiService.getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class))
         .thenReturn(
@@ -65,7 +65,7 @@ class GithubCodeStandardViolationsServiceTest {
 
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class);
   }
@@ -80,7 +80,7 @@ class GithubCodeStandardViolationsServiceTest {
         new GithubCodeStandardViolationsService(apiService, perPage);
 
     when(apiService.getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 1, perPage),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class))
         .thenReturn(
@@ -90,7 +90,7 @@ class GithubCodeStandardViolationsServiceTest {
             });
 
     when(apiService.getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 2, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 2, perPage),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class))
         .thenReturn(
@@ -110,12 +110,12 @@ class GithubCodeStandardViolationsServiceTest {
 
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 1, perPage),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class);
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 2, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 2, perPage),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class);
   }
@@ -126,7 +126,7 @@ class GithubCodeStandardViolationsServiceTest {
     doThrow(new RuntimeException("Boom"))
         .when(apiService)
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class);
 
@@ -137,7 +137,7 @@ class GithubCodeStandardViolationsServiceTest {
 
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             CodeStandardViolationResponse[].class);
   }

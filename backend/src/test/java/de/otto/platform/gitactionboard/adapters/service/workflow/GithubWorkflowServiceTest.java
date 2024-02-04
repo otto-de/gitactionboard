@@ -44,9 +44,7 @@ class GithubWorkflowServiceTest {
             TestUtil.readFile("testData/workflows.json"), WorkflowsResponse.class);
 
     when(apiService.getForObject(
-            String.format("/%s/actions/workflows", REPO_NAME),
-            ACCESS_TOKEN,
-            WorkflowsResponse.class))
+            "/%s/actions/workflows".formatted(REPO_NAME), ACCESS_TOKEN, WorkflowsResponse.class))
         .thenReturn(workflowsResponse);
 
     final List<Workflow> workflows =
@@ -56,11 +54,11 @@ class GithubWorkflowServiceTest {
 
     assertThat(workflows).hasSize(2);
 
-    assertThat(workflows.get(0))
+    assertThat(workflows.getFirst())
         .isEqualTo(
             Workflow.builder()
-                .id(workflowsFromResponse.get(0).getId())
-                .name(workflowsFromResponse.get(0).getName())
+                .id(workflowsFromResponse.getFirst().getId())
+                .name(workflowsFromResponse.getFirst().getName())
                 .repoName(REPO_NAME)
                 .build());
 
@@ -86,9 +84,7 @@ class GithubWorkflowServiceTest {
   @SneakyThrows
   void shouldReturnEmptyListIfAnyExceptionOccurs() {
     when(apiService.getForObject(
-            String.format("/%s/actions/workflows", REPO_NAME),
-            ACCESS_TOKEN,
-            WorkflowsResponse.class))
+            "/%s/actions/workflows".formatted(REPO_NAME), ACCESS_TOKEN, WorkflowsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
 
     final List<Workflow> workflows =

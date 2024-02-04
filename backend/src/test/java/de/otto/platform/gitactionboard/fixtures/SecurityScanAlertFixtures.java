@@ -12,11 +12,9 @@ public class SecurityScanAlertFixtures {
 
   public static SecretsScanAlert.SecretsScanAlertBuilder getSecretsScanAlertBuilder() {
     return SecretsScanAlert.builder()
-        .id(
-            String.format(
-                "%s::%s::%d", REPO_NAME, SECRETS_SCAN_DETAILS_NAME, SECRETS_SCAN_DETAILS_ID))
+        .id("%s::%s::%d".formatted(REPO_NAME, SECRETS_SCAN_DETAILS_NAME, SECRETS_SCAN_DETAILS_ID))
         .url(SECRETS_SCAN_DETAILS_URL)
-        .name(String.format("%s :: %s", REPO_NAME, SECRETS_SCAN_DETAILS_NAME))
+        .name("%s :: %s".formatted(REPO_NAME, SECRETS_SCAN_DETAILS_NAME))
         .createdAt(SECRETS_SCAN_DETAILS_CREATED_AT);
   }
 }

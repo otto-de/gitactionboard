@@ -16,8 +16,7 @@ public class NotificationMessagePayloadFixture {
 
   public static TeamsNotificationMessagePayload.TeamsNotificationMessagePayloadBuilder
       getNotificationMessagePayloadBuilder() {
-    final String summary =
-        String.format("[%s] Run failed: %s::%s", REPO_NAME, WORKFLOW_NAME, JOB_NAME);
+    final String summary = "[%s] Run failed: %s::%s".formatted(REPO_NAME, WORKFLOW_NAME, JOB_NAME);
 
     return TeamsNotificationMessagePayload.builder()
         .type("MessageCard")

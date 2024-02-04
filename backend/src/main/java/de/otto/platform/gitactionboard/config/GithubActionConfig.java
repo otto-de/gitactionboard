@@ -14,8 +14,8 @@ public class GithubActionConfig {
   public String githubAuthToken(@Value("${GITHUB_ACCESS_TOKEN:}") final String authToken) {
     if (authToken.isBlank()) return authToken;
 
-    final String base64Creds = convertToBase64(String.format(":%s", authToken));
-    return String.format("Basic %s", base64Creds);
+    final String base64Creds = convertToBase64(":%s".formatted(authToken));
+    return "Basic %s".formatted(base64Creds);
   }
 
   private String convertToBase64(String plainCreds) {

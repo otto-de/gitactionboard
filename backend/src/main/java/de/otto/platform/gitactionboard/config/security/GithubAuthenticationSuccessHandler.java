@@ -84,7 +84,7 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
   private Cookie createAccessTokenCookie(OAuth2AccessToken oAuth2AccessToken) {
     return createCookie(
-        ACCESS_TOKEN, String.format("token %s", oAuth2AccessToken.getTokenValue()), SEVEN_HOURS);
+        ACCESS_TOKEN, "token %s".formatted(oAuth2AccessToken.getTokenValue()), SEVEN_HOURS);
   }
 
   private Cookie createRefreshTokenCookie(OAuth2RefreshToken oAuth2RefreshToken) {

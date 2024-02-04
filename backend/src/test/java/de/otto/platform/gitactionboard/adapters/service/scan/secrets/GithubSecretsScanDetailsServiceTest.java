@@ -44,7 +44,7 @@ class GithubSecretsScanDetailsServiceTest {
   void shouldFetchSecretScanAlertsForGivenRepo() {
     final String url2 = "https://github.com/johndoe/hello-world/security/secret-scanning/2";
     when(apiService.getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class))
         .thenReturn(
@@ -64,7 +64,7 @@ class GithubSecretsScanDetailsServiceTest {
 
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class);
   }
@@ -79,7 +79,7 @@ class GithubSecretsScanDetailsServiceTest {
         new GithubSecretsScanDetailsService(apiService, perPage);
 
     when(apiService.getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 1, perPage),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class))
         .thenReturn(
@@ -89,7 +89,7 @@ class GithubSecretsScanDetailsServiceTest {
             });
 
     when(apiService.getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 2, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 2, perPage),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class))
         .thenReturn(
@@ -109,12 +109,12 @@ class GithubSecretsScanDetailsServiceTest {
 
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 1, perPage),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class);
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 2, perPage),
+            URL_FORMAT.formatted(REPO_NAME, 2, perPage),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class);
   }
@@ -125,7 +125,7 @@ class GithubSecretsScanDetailsServiceTest {
     doThrow(new RuntimeException("Boom"))
         .when(apiService)
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class);
 
@@ -136,7 +136,7 @@ class GithubSecretsScanDetailsServiceTest {
 
     verify(apiService, times(1))
         .getForObject(
-            String.format(URL_FORMAT, REPO_NAME, 1, PER_PAGE),
+            URL_FORMAT.formatted(REPO_NAME, 1, PER_PAGE),
             ACCESS_TOKEN,
             SecretsScanDetailsResponse[].class);
   }

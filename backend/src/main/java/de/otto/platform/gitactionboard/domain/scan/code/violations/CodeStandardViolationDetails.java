@@ -21,6 +21,6 @@ public class CodeStandardViolationDetails {
   @NonNull String repoName;
 
   public String getFormattedName() {
-    return String.format("%s::%s::%d", repoName, name, id);
+    return "%s::%s::%d".formatted(repoName, name, id);
   }
 }

@@ -38,7 +38,7 @@ public class GithubWorkflowService implements WorkflowService {
   }
 
   private List<WorkflowIdentifier> getWorkflowIdentifiers(String repoName, String accessToken) {
-    final String url = String.format("/%s/actions/workflows", repoName);
+    final String url = "/%s/actions/workflows".formatted(repoName);
 
     return Optional.ofNullable(apiService.getForObject(url, accessToken, WorkflowsResponse.class))
         .map(WorkflowsResponse::getWorkflows)

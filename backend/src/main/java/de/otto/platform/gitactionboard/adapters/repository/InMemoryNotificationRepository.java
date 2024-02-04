@@ -27,7 +27,7 @@ public class InMemoryNotificationRepository implements NotificationRepository {
   }
 
   private String createId(String id, String connectorType) {
-    return String.format("%s_%s", id, connectorType);
+    return "%s_%s".formatted(id, connectorType);
   }
 
   @Override

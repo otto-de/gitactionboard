@@ -70,7 +70,7 @@ class GithubControllerTest {
     final List<Project> projects =
         List.of(
             Project.builder()
-                .name(String.format("%s :: dependency-checks :: hello-world-checks", REPO_NAME))
+                .name("%s :: dependency-checks :: hello-world-checks".formatted(REPO_NAME))
                 .lastBuildTime(Instant.parse("2020-09-18T06:14:54.000Z"))
                 .activity("Sleeping")
                 .lastBuildLabel("206")
