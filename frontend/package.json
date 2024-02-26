@@ -26,7 +26,7 @@
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-vue": "^9.21.1",
+    "eslint-plugin-vue": "^9.22.0",
     "flush-promises": "^1.0.2",
     "jest-serializer-vue-tjw": "^3.20.0",
     "jsdom": "^24.0.0",
