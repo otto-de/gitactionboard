@@ -151,7 +151,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               <div class="d-flex">
                 <!--v-if-->
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -180,7 +180,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               <span class="v-btn__underlay"></span>
               <!---->
               <span class="v-btn__content" data-no-activator>
-                <i aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+                <i aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0" test-id="job-hidden-contents-tool-bar-icon"></i>
               </span>
               <!---->
               <!---->
@@ -230,7 +230,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                     <!---->
                   </button>
                   <div class="v-spacer"></div>
-                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
                   <!--teleport start-->
                   <!--teleport end-->
                 </div>
@@ -312,7 +312,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               <div class="d-flex">
                 <!--v-if-->
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -341,7 +341,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               <span class="v-btn__underlay"></span>
               <!---->
               <span class="v-btn__content" data-no-activator>
-                <i aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+                <i aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0" test-id="job-hidden-contents-tool-bar-icon"></i>
               </span>
               <!---->
               <!---->
@@ -435,7 +435,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                   <!---->
                 </button>
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -470,7 +470,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               <div class="d-flex">
                 <!--v-if-->
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -552,7 +552,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               <div class="d-flex">
                 <!--v-if-->
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -581,7 +581,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               <span class="v-btn__underlay"></span>
               <!---->
               <span class="v-btn__content" data-no-activator>
-                <i aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+                <i aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0" test-id="job-hidden-contents-tool-bar-icon"></i>
               </span>
               <!---->
               <!---->
@@ -675,7 +675,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                   <!---->
                 </button>
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -704,7 +704,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               <span class="v-btn__underlay"></span>
               <!---->
               <span class="v-btn__content" data-no-activator>
-                <i aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" test-id="job-hidden-contents-tool-bar-icon"></i>
+                <i aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0" test-id="job-hidden-contents-tool-bar-icon"></i>
               </span>
               <!---->
               <!---->
@@ -745,7 +745,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 <div class="d-flex">
                   <!--v-if-->
                   <div class="v-spacer"></div>
-                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                   <!--teleport start-->
                   <!--teleport end-->
                 </div>
@@ -836,7 +836,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                   <!---->
                 </button>
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -871,7 +871,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               <div class="d-flex">
                 <!--v-if-->
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -962,7 +962,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`
                   <!---->
                 </button>
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>
@@ -997,7 +997,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`
               <div class="d-flex">
                 <!--v-if-->
                 <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
                 <!--teleport start-->
                 <!--teleport end-->
               </div>

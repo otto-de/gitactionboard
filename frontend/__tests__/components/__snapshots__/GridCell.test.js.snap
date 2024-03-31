@@ -26,7 +26,7 @@ exports[`<GridCell /> > Toggle Visibility > should display toggle visibility ico
   <div class="d-flex">
     <!--v-if-->
     <div class="v-spacer"></div>
-    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
     <!--teleport start-->
     <!--teleport end-->
   </div>
@@ -62,7 +62,7 @@ exports[`<GridCell /> > Toggle Visibility > should display toggle visibility ico
   <div class="d-flex">
     <!--v-if-->
     <div class="v-spacer"></div>
-    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
     <!--teleport start-->
     <!--teleport end-->
   </div>
@@ -98,7 +98,7 @@ exports[`<GridCell /> > Toggle Visibility > should display toggle visibility ico
   <div class="d-flex">
     <!--v-if-->
     <div class="v-spacer"></div>
-    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
+    <i aria-describedby="v-tooltip-1" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" targetref="[object Object]" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
     <!--teleport start-->
     <!--teleport end-->
   </div>

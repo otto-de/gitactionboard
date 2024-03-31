@@ -104,7 +104,7 @@ fileignoreconfig:
 - filename: frontend/__tests__/components/LoginPage.test.js
   checksum: 0847b77daef01c0f6aeffe41b3fe220dea85acb732ad51b94ca79516d4ac8d26
 - filename: frontend/__tests__/components/__snapshots__/LoginPage.test.js.snap
-  checksum: 0983be59f610a6ece0e4f7e5868a2406bd6f20226e0443dcd119494a2e19f9bc
+  checksum: 108e8857d21a003ae0890ff9dae8d49eca3979f56914a9929297597d671de6ea
 - filename: frontend/mock-data/data.json
   checksum: 8db91df1d7736cce489b5cfd97e4761f7caf658ebb6d82495d43074bad2bfecc
 - filename: frontend/src/components/Dashboard.vue

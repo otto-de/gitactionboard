@@ -94,7 +94,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Username" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                    <i aria-hidden="false" aria-label="Clear Username" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0"></i>
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
@@ -144,7 +144,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Password" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                    <i aria-hidden="false" aria-label="Clear Password" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0"></i>
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
@@ -246,7 +246,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Username" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                    <i aria-hidden="false" aria-label="Clear Username" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0"></i>
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
@@ -296,7 +296,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Password" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button"></i>
+                    <i aria-hidden="false" aria-label="Clear Password" class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0"></i>
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
