@@ -27,8 +27,6 @@ ext {
     jUnit5PitestVersion = "1.2.1"
 }
 
-ext['logback.version'] = "1.4.14";
-
 repositories {
     mavenCentral()
 }
