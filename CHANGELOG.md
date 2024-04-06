@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.2](https://github.com/otto-de/gitactionboard/compare/v4.0.1...v4.0.2) (2024-04-06)
+
+### 🛡️ Security
+
+- Update com.nimbusds:nimbus-jose-jwt version to fix [CVE-2023-52428](https://nvd.nist.gov/vuln/detail/CVE-2023-52428) ([804500a](https://github.com/otto-de/gitactionboard/commit/804500ad23c7c50fa5af34b08fcd7a81dea1c4c1))
+
+- Remove OWASP dependency suppression for [CVE-2023-45960](https://nvd.nist.gov/vuln/detail/CVE-2023-45960) ([fd39229](https://github.com/otto-de/gitactionboard/commit/fd39229eeead43cff0e10b22955734117e0bea45))
+
+- Suppress CVEs related to openrewrite ([4ec4070](https://github.com/otto-de/gitactionboard/commit/4ec4070e94931407e3f32b894af15a9b6d5a0096))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump actions/cache from 3 to 4 ([75fa1af](https://github.com/otto-de/gitactionboard/commit/75fa1afe6783b2f4652b115eba0a6a2854923621))
+
+- Bump alpine from 3.19.0 to 3.19.1 ([9a0d1e9](https://github.com/otto-de/gitactionboard/commit/9a0d1e974a5ab6733a3749bd86f37b78572e8084))
+
+- Bump dorny/paths-filter from 2 to 3 ([ed937fa](https://github.com/otto-de/gitactionboard/commit/ed937fa9bd9a2058a6a90b8065d44d6b79890ae9))
+
+- Bump peter-evans/dockerhub-description from 3 to 4 ([7f23fa7](https://github.com/otto-de/gitactionboard/commit/7f23fa721ca501641cba4cdc3c5bc3be003798b3))
+
+- Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 ([af6fdea](https://github.com/otto-de/gitactionboard/commit/af6fdea108935c254eb4a60d799b61fc976b362b))
+
+- Integrate openwrite to use modernize java code ([de3c084](https://github.com/otto-de/gitactionboard/commit/de3c0844fa40a25d496633b517fd2186cd3186aa))
+
+- Remove explicit versioning for logback ([5737fa3](https://github.com/otto-de/gitactionboard/commit/5737fa3da99e9234f14366148652c9206f9b672c))
+
+- Update .talismanrc to suppress sha1-\* ([7744e62](https://github.com/otto-de/gitactionboard/commit/7744e62abef7c65b54dee09bfc1b05cf9c912cc1))
+
+### 📚 Documentation
+
+- Update changelog ([37d89db](https://github.com/otto-de/gitactionboard/commit/37d89dbc824122cd27be805409ede356bd3ffaa5))
+
 ## [v4.0.1](https://github.com/otto-de/gitactionboard/compare/v4.0.0...v4.0.1) (2024-01-28)
 
 ### 🐛 Bug Fixes
