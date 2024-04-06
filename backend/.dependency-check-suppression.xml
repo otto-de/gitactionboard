@@ -3,4 +3,35 @@
     <suppress>
         <cve>CVE-2023-2976</cve>
     </suppress>
+
+    <suppress>
+        <notes>
+            <![CDATA[
+              file name: rewrite-gradle-8.21.0.jar
+          ]]>
+        </notes>
+        <filePath regex="true">.*rewrite.*\.jar</filePath>
+        <cve>CVE-2019-11402</cve>
+        <cve>CVE-2019-11403</cve>
+        <cve>CVE-2020-11979</cve>
+        <cve>CVE-2022-30587</cve>
+        <cve>CVE-2021-32751</cve>
+        <cve>CVE-2023-49238</cve>
+        <cve>CVE-2019-15052</cve>
+        <cve>CVE-2023-35947</cve>
+        <cve>CVE-2021-29428</cve>
+        <cve>CVE-2022-25364</cve>
+        <cve>CVE-2021-29427</cve>
+        <cve>CVE-2021-41589</cve>
+    </suppress>
+
+    <suppress>
+        <notes>
+            <![CDATA[
+              file name: rewrite-core-8.21.0.jar
+          ]]>
+        </notes>
+        <filePath regex="true">.*rewrite.*\.jar/META-INF/maven/org.eclipse.jgit/org.eclipse.jgit/pom.xml</filePath>
+        <cve>CVE-2023-4759</cve>
+    </suppress>
 </suppressions>
