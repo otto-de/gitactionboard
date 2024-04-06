@@ -133,6 +133,7 @@ allowed_patterns:
 - \(\[.*\]\(https:\/\/github\.com\/otto-de\/gitactionboard\/commit\/.*\)\)
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)
 - sha512-.*
+- sha1-.*
 - \".*-.*\":\s\"\^\d\.\d\.\d\"
 - \".*\":\s\"\^\d\.\d\.\d\"
 - distributionSha256Sum=.*
