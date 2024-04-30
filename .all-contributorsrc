@@ -174,6 +174,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "fwilhe2",
+      "name": "Florian Wilhelm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52838694?v=4",
+      "profile": "https://github.com/fwilhe2",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
