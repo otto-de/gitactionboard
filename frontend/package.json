@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "vue": "^3.4.25",
+    "vue": "^3.4.26",
     "vue-router": "^4.3.2",
     "vuetify": "^3.5.15"
   },
