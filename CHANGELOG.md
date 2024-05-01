@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.0](https://github.com/otto-de/gitactionboard/compare/v4.0.2...v4.1.0) (2024-05-01)
+
+### ⛰️ Features
+
+- Build multi arch container image ([#666](https://github.com/otto-de/gitactionboard/issues/666)) ([955de93](https://github.com/otto-de/gitactionboard/commit/955de9357b9f02b718bd3b79b9bbbdd9b5700f49))
+
+### 👷 Build
+
+- Update GitHub action modules ([ab873a6](https://github.com/otto-de/gitactionboard/commit/ab873a69c1aff8753620543e63c3e358f12461fc))
+
+### 📚 Documentation
+
+- Update changelog ([9eb4000](https://github.com/otto-de/gitactionboard/commit/9eb40009b75f114002d3ebd8035476cdaaa16e2e))
+
+- Add [@fwilhe2](https://github.com/fwilhe2) to contributors list for code ([ce49489](https://github.com/otto-de/gitactionboard/commit/ce494895ff43fb9ee1104cd3f3b8c70e8ee1a735))
+
 ## [v4.0.2](https://github.com/otto-de/gitactionboard/compare/v4.0.1...v4.0.2) (2024-04-06)
 
 ### 🛡️ Security
