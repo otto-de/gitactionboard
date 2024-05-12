@@ -177,15 +177,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-gradle-
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
-            ${{ runner.os }}-node-
-            ${{ runner.os }}-
       - name: Build boot jar
         id: build_jar
         run: ./run.sh build-jar

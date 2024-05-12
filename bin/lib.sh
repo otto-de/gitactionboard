@@ -115,7 +115,7 @@ _format_sources() {
 _copy_frontend() {
   pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
   _ensure_nvm
-  npm install
+  npm ci
   npm run build
   echo "Copying dist to ../backend/src/main/resources/public"
   cp -r dist/ ../backend/src/main/resources/public
