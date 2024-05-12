@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.1](https://github.com/otto-de/gitactionboard/compare/v4.1.0...v4.1.1) (2024-05-12)
+
+### 🐛 Bug Fixes
+
+- Display correct version on dashboard ([2c7dac7](https://github.com/otto-de/gitactionboard/commit/2c7dac7dcceb49d5f12659084f708aaaf486c92b))
+
+### 📚 Documentation
+
+- Update changelog ([f2fab44](https://github.com/otto-de/gitactionboard/commit/f2fab446ba4a773704a722ef26199aa9e90d0c28))
+
 ## [v4.1.0](https://github.com/otto-de/gitactionboard/compare/v4.0.2...v4.1.0) (2024-05-01)
 
 ### ⛰️ Features
