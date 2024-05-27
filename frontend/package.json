@@ -29,7 +29,7 @@
     "eslint-plugin-vue": "^9.26.0",
     "flush-promises": "^1.0.2",
     "jest-serializer-vue-tjw": "^3.20.0",
-    "jsdom": "^24.0.0",
+    "jsdom": "^24.1.0",
     "postcss-html": "^1.7.0",
     "stylelint": "^16.6.0",
     "stylelint-config-recommended-vue": "^1.5.0",
