@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.2](https://github.com/otto-de/gitactionboard/compare/v4.1.1...v4.1.2) (2024-06-02)
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump alpine from 3.19.1 to 3.20.0 ([3c3cff0](https://github.com/otto-de/gitactionboard/commit/3c3cff09454d27b2814eb22303b476fa3a437422))
+
+- Bump vuetify from 3.5.15 to 3.6.8 ([3b93a96](https://github.com/otto-de/gitactionboard/commit/3b93a96852bea7aae1e1b090ffc635c5f1ff46d6))
+
+- Fix flaky tests ([9fb18f6](https://github.com/otto-de/gitactionboard/commit/9fb18f6dbc1b1e44ab135f686a4e49fb9ca89069))
+
+### 📚 Documentation
+
+- Update changelog ([344d850](https://github.com/otto-de/gitactionboard/commit/344d85035cb3d95f0c21453209ef4bcb0af3d4be))
+
 ## [v4.1.1](https://github.com/otto-de/gitactionboard/compare/v4.1.0...v4.1.1) (2024-05-12)
 
 ### 🐛 Bug Fixes
