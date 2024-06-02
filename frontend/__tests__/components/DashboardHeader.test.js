@@ -14,12 +14,16 @@ describe('<DashboardHeader />', () => {
 
   it.each([
     ['Workflow Jobs'], ['Exposed Secrets'], ['Code Standard Violations']
-  ])('should render dashboard header for %s', (subHeader) => {
-    expect(mountWithWrapper(DashboardHeader, {
+  ])('should render dashboard header for %s', async (subHeader) => {
+    const wrapper = mountWithWrapper(DashboardHeader, {
       props: {
         subHeader
       }
-    }).html()).toMatchSnapshot();
+    });
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.html()).toMatchSnapshot();
     expect(getVersion).toBeCalledTimes(1);
   });
 });

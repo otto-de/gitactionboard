@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { mountWithWrapper } from '../test-utils';
+import { mountWithWrapper, promiseWithResolvers } from '../test-utils';
 import WorkflowDashboard from '@/components/WorkflowDashboard.vue';
 import { fetchCctrayJson } from '@/services/apiService';
 import Spinner from '@/components/Spinner.vue';
@@ -40,12 +40,13 @@ describe('<WorkflowDashboard />', () => {
 
   afterEach(vi.clearAllMocks);
 
-  it('should render spinner while fetching data', () => {
-    fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
+  it('should render spinner while fetching data', async () => {
+    fetchCctrayJson.mockReturnValue(promiseWithResolvers().promise);
 
     const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
 
-    expect(workflowDashboardWrapper.findComponent(Spinner).exists()).toBeTruthy();
+    await vi.waitUntil(() => workflowDashboardWrapper.findComponent(Spinner).exists());
+
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
   });
 
@@ -55,11 +56,15 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
     vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
 
-    fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
+    const { promise, resolve } = promiseWithResolvers();
+
+    fetchCctrayJson.mockReturnValue(promise);
 
     const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
 
-    expect(workflowDashboardWrapper.findComponent(Spinner).exists()).toBeTruthy();
+    await vi.waitUntil(() => workflowDashboardWrapper.findComponent(Spinner).exists());
+
+    resolve([jobDetails1, jobDetails2]);
 
     await flushPromises();
 

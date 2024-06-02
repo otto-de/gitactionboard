@@ -14,3 +14,13 @@ export const mount = (Component, options) =>
 export const mountWithWrapper = (Component, options = {}) =>
   mount(() =>
     h(VApp, () => [h(Component, options.props)]), { ...options, props: null });
+
+export const promiseWithResolvers = () => {
+  let resolve, reject;
+  const promise = new Promise((_resolve, _reject) => {
+    resolve = _resolve;
+    reject = _reject;
+  });
+
+  return { promise, resolve, reject };
+};
