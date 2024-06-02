@@ -39,7 +39,10 @@ describe('<LoginPage />', () => {
       }
     });
 
-  afterEach(vi.clearAllMocks);
+  afterEach(() => {
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  });
 
   it('should render spinner while fetching config', async () => {
     fetchConfig.mockResolvedValueOnce({

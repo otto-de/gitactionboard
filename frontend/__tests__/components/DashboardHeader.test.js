@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, afterEach } from 'vitest';
+import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
 import DashboardHeader from '@/components/DashboardHeader';
 import { getVersion } from '@/services/utils';
 import { mountWithWrapper } from '../test-utils';
@@ -6,11 +6,18 @@ import { mountWithWrapper } from '../test-utils';
 describe('<DashboardHeader />', () => {
   vi.mock('@/services/utils', () => {
     return {
-      getVersion: vi.fn().mockReturnValue('3.1.0')
+      getVersion: vi.fn()
     };
   });
 
-  afterEach(vi.clearAllMocks);
+  beforeEach(() => {
+    getVersion.mockReturnValue('3.1.0');
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  });
 
   it.each([
     ['Workflow Jobs'], ['Exposed Secrets'], ['Code Standard Violations']

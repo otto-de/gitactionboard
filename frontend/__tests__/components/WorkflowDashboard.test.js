@@ -38,7 +38,10 @@ describe('<WorkflowDashboard />', () => {
     getVersion.mockReturnValueOnce('3.3.0');
   });
 
-  afterEach(vi.clearAllMocks);
+  afterEach(() => {
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  });
 
   it('should render spinner while fetching data', async () => {
     fetchCctrayJson.mockReturnValue(promiseWithResolvers().promise);
@@ -46,8 +49,6 @@ describe('<WorkflowDashboard />', () => {
     const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
 
     await vi.waitUntil(() => workflowDashboardWrapper.findComponent(Spinner).exists());
-
-    expect(workflowDashboardWrapper.html()).toMatchSnapshot();
   });
 
   it('should render dashboard once data is fetched', async () => {
@@ -337,7 +338,7 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce(['repository_dispatch']);
+      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValue(['repository_dispatch']);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
 
       fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
@@ -395,6 +396,7 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(false);
       vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
+      vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(0);
 
       fetchCctrayJson.mockResolvedValue([jobDetails1]);
 

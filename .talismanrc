@@ -98,11 +98,11 @@ fileignoreconfig:
 - filename: doc/light-theme/workflow.png
   checksum: 4918fce935cb85039d75ea8e67376564d562ba40fd439650cd53f8111e825c4b
 - filename: frontend/__tests__/components/DashboardHeader.test.js
-  checksum: 4e859cd02e915646e515215c463a3020dc0f67b9ee5638bd11bdd40ae03822d0
+  checksum: f078245a300fbbbc7221072350068e707a825003dd7ac9205c225c4ce0a62e72
 - filename: frontend/__tests__/components/GridCell.test.js
   checksum: da612be8c8f89b10ad0c64830040b8cb51cc0aac237616c311994d0371d8c8c6
 - filename: frontend/__tests__/components/LoginPage.test.js
-  checksum: 0847b77daef01c0f6aeffe41b3fe220dea85acb732ad51b94ca79516d4ac8d26
+  checksum: 31ed54ab84d53d73f9dac6779cdec2d79ec6bbf7adf93e30daa85695c20941b2
 - filename: frontend/__tests__/components/__snapshots__/LoginPage.test.js.snap
   checksum: 67fa67a5e34cc0b9dffa942d8a0d3a680ba3a2c02b8ae5a3627d097ff254dfc8
 - filename: frontend/mock-data/data.json
