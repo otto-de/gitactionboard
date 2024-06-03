@@ -19,7 +19,7 @@ spotless {
 }
 
 ext {
-    javaUuidGeneratorVersion = "5.0.0"
+    javaUuidGeneratorVersion = "5.1.0"
     logstashVersion = "7.4"
     caffeineVersion = "3.1.8"
     mockServerVersion = "5.15.0"
