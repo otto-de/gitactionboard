@@ -12,6 +12,21 @@ updates:
     commit-message:
       prefix: "chore"
     open-pull-requests-limit: 20
+    groups:
+      gradle-version-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+      gradle-security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: "npm"
     directory: "../frontend/"
@@ -25,6 +40,21 @@ updates:
     commit-message:
       prefix: "chore"
     open-pull-requests-limit: 20
+    groups:
+      npm-version-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+      npm-security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -38,6 +68,21 @@ updates:
     reviewers:
       - "sumanmaity1234"
     open-pull-requests-limit: 20
+    groups:
+      github-actions-version-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+      github-actions-security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: "docker"
     directory: "/"
