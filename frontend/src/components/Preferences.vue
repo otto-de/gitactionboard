@@ -40,6 +40,15 @@
           />
         </v-card-item>
         <v-card-item class="pt-0 pb-0">
+          <v-switch
+            v-model="showOnlyJobName"
+            label="Show only job name"
+            color="success"
+            hide-details
+            @update:model-value="modelValueUpdated"
+          />
+        </v-card-item>
+        <v-card-item class="pt-0 pb-0">
           <v-btn
             :icon="themeIcon"
             flat
@@ -99,7 +108,8 @@ export default {
       enableMaxIdleTimeOptimization: preferences.enableMaxIdleTimeOptimization,
       themeInstance,
       isDirty: false,
-      showBuildsDueToTriggeredEvents: getShowBuildsDueToTriggeredEvents()
+      showBuildsDueToTriggeredEvents: getShowBuildsDueToTriggeredEvents(),
+      showOnlyJobName: preferences.showOnlyJobName
     };
   },
   computed: {
@@ -130,6 +140,7 @@ export default {
       preferences.maxIdleTime = this.maxIdleTime;
       preferences.theme = this.themeInstance.global.name;
       preferences.showBuildsDueToTriggeredEvents = this.showBuildsDueToTriggeredEvents;
+      preferences.showOnlyJobName = this.showOnlyJobName;
 
       this.isDirty = false;
     },
@@ -138,6 +149,7 @@ export default {
           this.showHealthyBuilds === preferences.showHealthyBuilds &&
             this.maxIdleTime === preferences.maxIdleTime &&
             this.enableMaxIdleTimeOptimization === preferences.enableMaxIdleTimeOptimization &&
+            this.showOnlyJobName === preferences.showOnlyJobName &&
           this.hasSameShowBuildsDueToTriggeredEvents());
     },
     hasSameShowBuildsDueToTriggeredEvents() {
