@@ -207,7 +207,7 @@ jobs:
           body: "Changelog can be found [here](${{ needs.update_changelog.outputs.CHANGE_LOG_URL }})."
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           tags: ${{ steps.docker_meta.outputs.tags }}
