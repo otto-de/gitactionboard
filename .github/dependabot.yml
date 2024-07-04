@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directory: "../backend/"
+    directory: "/backend"
     schedule:
       interval: "daily"
       time: "04:30"
@@ -14,7 +14,7 @@ updates:
     open-pull-requests-limit: 20
 
   - package-ecosystem: "npm"
-    directory: "../frontend/"
+    directory: "/frontend"
     schedule:
       interval: "daily"
       time: "04:30"
