@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.3](https://github.com/otto-de/gitactionboard/compare/v4.1.2...v4.1.3) (2024-07-12)
+
+### ⚙️ Miscellaneous Tasks
+
+- Enable dependabot groups for automated patch management ([8a1635d](https://github.com/otto-de/gitactionboard/commit/8a1635d67f52d38d8a72139b46092d347b7a4547))
+
+- Downgrade org.owasp.dependencycheck to v8.4.3 ([c9edb16](https://github.com/otto-de/gitactionboard/commit/c9edb1643c035fa374d2c32bc60d5bcc40eb912d))
+
+- Fix dependabot config ([dbe56bd](https://github.com/otto-de/gitactionboard/commit/dbe56bd6af49dd3cac1b9ebe75772431a9840956))
+
+- Bump alpine from 3.20.0 to 3.20.1 ([a6f6ef0](https://github.com/otto-de/gitactionboard/commit/a6f6ef0191274c83a1bb2619239c921ad39a1531))
+
+- Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 ([917e65c](https://github.com/otto-de/gitactionboard/commit/917e65c52213f97f5d1462f221e12857ec6ab457))
+
+### 📚 Documentation
+
+- Update changelog ([9af120b](https://github.com/otto-de/gitactionboard/commit/9af120b4cbfb89587a01b5bda9cb7ecfd9a907f8))
+
 ## [v4.1.2](https://github.com/otto-de/gitactionboard/compare/v4.1.1...v4.1.2) (2024-06-02)
 
 ### ⚙️ Miscellaneous Tasks
