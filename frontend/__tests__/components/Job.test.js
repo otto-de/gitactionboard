@@ -14,21 +14,21 @@ describe('<Job />', () => {
   };
 
   it.each([
-    ['Sleeping', 'Success', false, false, 'success'],
-    ['Sleeping', 'Success', true, false, 'success'],
-    ['Sleeping', 'Failure', false, true, 'failure'],
-    ['Sleeping', 'Unknown', false, true, 'unknown'],
-    ['Sleeping', 'Exception', false, true, 'failure'],
-    ['Building', 'Success', false, false, 'success building'],
-    ['Building', 'Failure', false, false, 'failure building'],
-    ['Building', 'Unknown', false, false, 'unknown building'],
-    ['Building', 'Exception', false, false, 'failure building'],
-    ['CheckingModifications', 'Success', false, false, 'success'],
-    ['CheckingModifications', 'Failure', false, true, 'failure'],
-    ['CheckingModifications', 'Unknown', false, true, 'unknown'],
-    ['CheckingModifications', 'Exception', false, true, 'failure']
+    ['Sleeping', 'Success', false, false, false],
+    ['Sleeping', 'Success', true, false, false],
+    ['Sleeping', 'Failure', false, true, false],
+    ['Sleeping', 'Unknown', false, true, false],
+    ['Sleeping', 'Exception', false, true, false],
+    ['Building', 'Success', false, false, true],
+    ['Building', 'Failure', false, false, true],
+    ['Building', 'Unknown', false, false, true],
+    ['Building', 'Exception', false, false, true],
+    ['CheckingModifications', 'Success', false, false, false],
+    ['CheckingModifications', 'Failure', false, true, false],
+    ['CheckingModifications', 'Unknown', false, true, false],
+    ['CheckingModifications', 'Exception', false, true, false]
   ])('should render job grid when activity is %s and last build status is %s and hidden is %s',
-    async (activity, lastBuildStatus, hidden, showRelativeTime, appendClassNames) => {
+    async (activity, lastBuildStatus, hidden, showRelativeTime, inProgress) => {
       const wrapper = shallowMount(Job, {
         props: {
           content: { ...jobDetails, activity, lastBuildStatus },
@@ -47,7 +47,8 @@ describe('<Job />', () => {
         hidden,
         displayToggleVisibility: true,
         showRelativeTime,
-        appendClassNames
+        status: lastBuildStatus,
+        inProgress
       });
 
       await gridCellComponent.vm.$emit('toggle-visibility', jobDetails.name);

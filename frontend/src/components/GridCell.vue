@@ -1,55 +1,80 @@
 <template>
-  <v-card
-    :id="rootId"
-    :key="name"
-    height="90px"
-    :class="`grid-cell ${appendClassNames}`"
-  >
-    <v-card-text class="grid-cell-name pa-0 ma-0">
-      <v-tooltip text="Open on GitHub">
-        <template #activator="{ props }">
-          <a
-            :id="urlId"
-            :href="url"
-            target="_blank"
-            v-bind="props"
+  <v-hover v-slot="{ isHovering, props: hoverProps }">
+    <v-card
+      :id="rootId"
+      :key="name"
+      height="90px"
+      :class="`grid-cell ${statusIndicator}`"
+      rounded="6"
+      variant="flat"
+      v-bind="hoverProps"
+    >
+      <v-card-text class="grid-cell-name pa-1">
+        {{ name }}
+      </v-card-text>
+      <v-expand-transition class="bg-transparent">
+        <v-toolbar
+          v-if="isHovering"
+          :test-id="`${rootId}-toolbar`"
+          height="24"
+        >
+          <v-chip
+            v-if="showRelativeTime"
+            prepend-icon="mdi-clock-time-four-outline"
+            density="compact"
+            size="small"
+            pill
           >
-            {{ name }}
-          </a>
-        </template>
-      </v-tooltip>
-    </v-card-text>
-    <div class="d-flex">
-      <v-btn
-        v-if="showRelativeTime"
-        disabled
+            {{ relativeTime }}
+          </v-chip>
+          <v-spacer />
+          <v-tooltip text="View on GitHub">
+            <template #activator="{ props }">
+              <v-btn
+                :href="url"
+                icon="mdi-open-in-new"
+                target="_blank"
+                v-bind="props"
+                size="small"
+                :data-testid="urlId"
+              />
+            </template>
+          </v-tooltip>
+
+          <v-tooltip
+            v-if="displayToggleVisibility"
+            :text="`${hidden? 'Show element':'Hide element'}`"
+            :test-id="`${rootId}-toggle-visibility-tooltip`"
+          >
+            <template #activator="{ props }">
+              <v-btn
+                :test-id="`${rootId}-change-visibility-icon`"
+                v-bind="props"
+                :icon="hidden? `mdi-eye`: `mdi-eye-off`"
+                size="small"
+                @click="$emit('toggleVisibility', name)"
+              />
+            </template>
+          </v-tooltip>
+        </v-toolbar>
+      </v-expand-transition>
+      <v-chip
+        v-if="showRelativeTime && !isHovering"
         prepend-icon="mdi-clock-time-four-outline"
+        tile
         size="small"
-        variant="text"
-        density="compact"
-        flat
-        class="relative-time pl-1 align-self-center"
       >
         {{ relativeTime }}
-      </v-btn>
-      <v-spacer />
-      <v-tooltip
-        v-if="displayToggleVisibility"
-        :text="`${hidden? 'Show element':'Hide element'}`"
-        data-testid="toggle-visibility-tooltip"
-      >
-        <template #activator="{ props }">
-          <v-icon
-            :test-id="`${rootId}-change-visibility-icon`"
-            v-bind="props"
-            :icon="hidden? `mdi-eye`: `mdi-eye-off`"
-            size="small"
-            @click="$emit('toggleVisibility', name)"
-          />
-        </template>
-      </v-tooltip>
-    </div>
-  </v-card>
+      </v-chip>
+      <v-progress-linear
+        v-if="inProgress"
+        color="orange-darken-4"
+        height="15"
+        model-value="100"
+        striped
+      />
+    </v-card>
+  </v-hover>
 </template>
 
 <script>
@@ -70,6 +95,14 @@ export default {
       type: String,
       required: true
     },
+    inProgress: {
+      type: Boolean,
+      default: false
+    },
+    status: {
+      type: String,
+      default: ''
+    },
     hidden: {
       type: Boolean,
       default: false
@@ -81,10 +114,6 @@ export default {
     showRelativeTime: {
       type: Boolean,
       default: false
-    },
-    appendClassNames: {
-      default: '',
-      type: String
     }
   },
   emits: ['toggleVisibility'],
@@ -97,17 +126,22 @@ export default {
     },
     urlId() {
       return `${this.rootId}-url`;
+    },
+    statusIndicator() {
+      switch (this.status.toLowerCase()) {
+        case 'success':
+          return 'success';
+        case 'unknown':
+          return 'unknown';
+        default:
+          return 'failure';
+      }
     }
   }
 };
 </script>
 
 <style scoped>
-
-.relative-time{
-  text-transform: none !important;
-  opacity: 1;
-}
 
 .grid-cell-name {
   font-weight: bold;
@@ -118,47 +152,9 @@ export default {
   flex-grow: 1;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .grid-cell {
-  color: white;
-  border-radius: 6px;
-  border: 2px solid  rgb(var(--v-border-color));
-  padding: 5px;
   display: flex;
   flex-direction: column;
-
-  &.building {
-    &.success {
-      background-image:
-          repeating-linear-gradient(
-              135deg,
-              #3a964a 30px,
-              #000 50px
-          );
-    }
-
-    &.failure {
-      background-image:
-          repeating-linear-gradient(
-              135deg,
-              #e23d2c 30px,
-              #000 50px
-          );
-    }
-
-    &.unknown {
-      background-image:
-          repeating-linear-gradient(
-              135deg,
-              #6d6a6a 30px,
-              #000 50px
-          );
-    }
-  }
 }
 
 .success {

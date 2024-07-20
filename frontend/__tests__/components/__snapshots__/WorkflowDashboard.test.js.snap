@@ -126,7 +126,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -144,18 +144,12 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                 <!--v-if-->
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+              </transition-stub>
+              <!--v-if-->
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
@@ -176,7 +170,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-3" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->
@@ -197,7 +191,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
         <div class="v-container v-container--fluid v-locale--is-ltr px-0">
           <div class="v-row v-row--dense grid-cells">
             <div class="v-col">
-              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+              <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
                 <!---->
                 <div class="v-card__loader">
                   <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -215,27 +209,23 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                 </div>
                 <!---->
                 <!---->
-                <div class="v-card-text grid-cell-name pa-0 ma-0">
-                  <a aria-describedby="v-tooltip-5" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
-                  <!--teleport start-->
-                  <!--teleport end-->
-                </div>
-                <div class="d-flex">
-                  <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
-                    <span class="v-btn__overlay"></span>
-                    <span class="v-btn__underlay"></span>
-                    <span class="v-btn__prepend">
-                      <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
-                    </span>
-                    <span class="v-btn__content" data-no-activator></span>
+                <div class="v-card-text grid-cell-name pa-1">webpack-cli :: Cancel :: Cancel Previous Runs</div>
+                <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
+                  <!--v-if-->
+                </transition-stub>
+                <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <div class="v-chip__prepend">
+                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start"></i>
                     <!---->
-                    <!---->
-                  </button>
-                  <div class="v-spacer"></div>
-                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
-                  <!--teleport start-->
-                  <!--teleport end-->
-                </div>
+                  </div>
+                  <div class="v-chip__content" data-no-activator></div>
+                  <!---->
+                  <!---->
+                </span>
+                <!--v-if-->
                 <!---->
                 <!---->
                 <span class="v-card__underlay"></span>
@@ -289,7 +279,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -307,18 +297,12 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                 <!--v-if-->
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+              </transition-stub>
+              <!--v-if-->
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
@@ -339,7 +323,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-3" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->
@@ -404,7 +388,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -422,34 +406,30 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
-                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
-                  <span class="v-btn__overlay"></span>
-                  <span class="v-btn__underlay"></span>
-                  <span class="v-btn__prepend">
-                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
-                  </span>
-                  <span class="v-btn__content" data-no-activator></span>
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: Cancel :: Cancel Previous Runs</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
+                <!--v-if-->
+              </transition-stub>
+              <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+                <!---->
+                <span class="v-chip__underlay"></span>
+                <!---->
+                <div class="v-chip__prepend">
+                  <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start"></i>
                   <!---->
-                  <!---->
-                </button>
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+                </div>
+                <div class="v-chip__content" data-no-activator></div>
+                <!---->
+                <!---->
+              </span>
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
             </div>
           </div>
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -467,18 +447,12 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-4" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                 <!--v-if-->
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+              </transition-stub>
+              <!--v-if-->
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
@@ -532,7 +506,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -550,18 +524,12 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-4" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                 <!--v-if-->
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+              </transition-stub>
+              <!--v-if-->
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
@@ -582,7 +550,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-6" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-7" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->
@@ -647,7 +615,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -665,27 +633,23 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-8" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
-                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
-                  <span class="v-btn__overlay"></span>
-                  <span class="v-btn__underlay"></span>
-                  <span class="v-btn__prepend">
-                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
-                  </span>
-                  <span class="v-btn__content" data-no-activator></span>
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: Cancel :: Cancel Previous Runs</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
+                <!--v-if-->
+              </transition-stub>
+              <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+                <!---->
+                <span class="v-chip__underlay"></span>
+                <!---->
+                <div class="v-chip__prepend">
+                  <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start"></i>
                   <!---->
-                  <!---->
-                </button>
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+                </div>
+                <div class="v-chip__content" data-no-activator></div>
+                <!---->
+                <!---->
+              </span>
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
@@ -727,7 +691,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
         <div class="v-container v-container--fluid v-locale--is-ltr px-0">
           <div class="v-row v-row--dense grid-cells">
             <div class="v-col">
-              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+              <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
                 <!---->
                 <div class="v-card__loader">
                   <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -745,18 +709,12 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 </div>
                 <!---->
                 <!---->
-                <div class="v-card-text grid-cell-name pa-0 ma-0">
-                  <a aria-describedby="v-tooltip-6" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                  <!--teleport start-->
-                  <!--teleport end-->
-                </div>
-                <div class="d-flex">
+                <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+                <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                   <!--v-if-->
-                  <div class="v-spacer"></div>
-                  <i aria-describedby="v-tooltip-7" aria-hidden="false" class="mdi-eye mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                  <!--teleport start-->
-                  <!--teleport end-->
-                </div>
+                </transition-stub>
+                <!--v-if-->
+                <!--v-if-->
                 <!---->
                 <!---->
                 <span class="v-card__underlay"></span>
@@ -810,7 +768,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -828,34 +786,30 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-8" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
-                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
-                  <span class="v-btn__overlay"></span>
-                  <span class="v-btn__underlay"></span>
-                  <span class="v-btn__prepend">
-                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
-                  </span>
-                  <span class="v-btn__content" data-no-activator></span>
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: Cancel :: Cancel Previous Runs</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
+                <!--v-if-->
+              </transition-stub>
+              <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+                <!---->
+                <span class="v-chip__underlay"></span>
+                <!---->
+                <div class="v-chip__prepend">
+                  <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start"></i>
                   <!---->
-                  <!---->
-                </button>
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-10" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+                </div>
+                <div class="v-chip__content" data-no-activator></div>
+                <!---->
+                <!---->
+              </span>
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
             </div>
           </div>
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -873,18 +827,12 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                 <!--v-if-->
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-2" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+              </transition-stub>
+              <!--v-if-->
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
@@ -938,7 +886,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`
       <div class="v-container v-container--fluid v-locale--is-ltr">
         <div class="v-row v-row--dense grid-cells">
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----Cancel----Cancel-Previous-Runs" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -956,34 +904,30 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-1" href="https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true" id="webpack-cli----Cancel----Cancel-Previous-Runs-url" target="_blank">webpack-cli :: Cancel :: Cancel Previous Runs</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
-                <button class="v-btn v-btn--disabled v-btn--flat v-theme--light v-btn--density-compact v-btn--size-small v-btn--variant-text relative-time pl-1 align-self-center" disabled type="button">
-                  <span class="v-btn__overlay"></span>
-                  <span class="v-btn__underlay"></span>
-                  <span class="v-btn__prepend">
-                    <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
-                  </span>
-                  <span class="v-btn__content" data-no-activator></span>
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: Cancel :: Cancel Previous Runs</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
+                <!--v-if-->
+              </transition-stub>
+              <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+                <!---->
+                <span class="v-chip__underlay"></span>
+                <!---->
+                <div class="v-chip__prepend">
+                  <i aria-hidden="true" class="mdi-clock-time-four-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start"></i>
                   <!---->
-                  <!---->
-                </button>
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-3" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----Cancel----Cancel-Previous-Runs-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+                </div>
+                <div class="v-chip__content" data-no-activator></div>
+                <!---->
+                <!---->
+              </span>
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>
             </div>
           </div>
           <div class="v-col">
-            <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+            <div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
               <!---->
               <div class="v-card__loader">
                 <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -1001,18 +945,12 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details 1`
               </div>
               <!---->
               <!---->
-              <div class="v-card-text grid-cell-name pa-0 ma-0">
-                <a aria-describedby="v-tooltip-4" href="https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true" id="webpack-cli----webpack-cli----Lint-Commit-Messages-url" target="_blank">webpack-cli :: webpack-cli :: Lint Commit Messages</a>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
-              <div class="d-flex">
+              <div class="v-card-text grid-cell-name pa-1">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
+              <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
                 <!--v-if-->
-                <div class="v-spacer"></div>
-                <i aria-describedby="v-tooltip-5" aria-hidden="false" class="mdi-eye-off mdi v-icon notranslate v-theme--light v-icon--size-small v-icon--clickable" role="button" tabindex="0" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"></i>
-                <!--teleport start-->
-                <!--teleport end-->
-              </div>
+              </transition-stub>
+              <!--v-if-->
+              <!--v-if-->
               <!---->
               <!---->
               <span class="v-card__underlay"></span>

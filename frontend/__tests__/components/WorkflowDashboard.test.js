@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { mountWithWrapper, promiseWithResolvers } from '../test-utils';
+import { mountWithWrapper, promiseWithResolvers, requestAnimationFrameAsPromise, retryUntil } from '../test-utils';
 import WorkflowDashboard from '@/components/WorkflowDashboard.vue';
 import { fetchCctrayJson } from '@/services/apiService';
 import Spinner from '@/components/Spinner.vue';
@@ -24,6 +24,7 @@ describe('<WorkflowDashboard />', () => {
     webUrl: 'https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true',
     triggeredEvent: 'schedule'
   };
+
   const jobDetails2 = {
     name: 'webpack-cli :: webpack-cli :: Lint Commit Messages',
     activity: 'Sleeping',
@@ -32,6 +33,27 @@ describe('<WorkflowDashboard />', () => {
     lastBuildTime: '2022-08-16T03:45:02.000Z',
     webUrl: 'https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true',
     triggeredEvent: 'push'
+  };
+
+  const jobDetails1RootId = jobDetails1.name.replaceAll(/[\\:\s]/g, '-');
+  const hiddenContentsTitleBarTestId = '[test-id="job-hidden-contents-tool-bar"]';
+
+  const clickOnJobDetailsVisibilityToggleIcon = async (wrapper, jobDetailsRootId) => {
+    const jobDetailsCard = wrapper.find(`#${jobDetailsRootId}`);
+    expect(jobDetailsCard.exists()).toBeTruthy();
+
+    await jobDetailsCard.trigger('mouseenter');
+
+    await retryUntil(async () => {
+      await requestAnimationFrameAsPromise();
+      expect(wrapper.find(`[test-id="${jobDetailsRootId}-toolbar"]`).exists()).toBeTruthy();
+    });
+
+    wrapper
+      .find(`[test-id="${jobDetailsRootId}-change-visibility-icon"]`)
+      .trigger('click');
+    await wrapper.vm.$nextTick();
+    await flushPromises();
   };
 
   beforeEach(() => {
@@ -119,7 +141,7 @@ describe('<WorkflowDashboard />', () => {
     const jobComponents = workflowDashboardWrapper.findAllComponents(Job);
 
     expect(jobComponents).length(1);
-    expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeTruthy();
     expect(workflowDashboardWrapper.find(`#${jobDetails2.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeFalsy();
   });
 
@@ -137,15 +159,13 @@ describe('<WorkflowDashboard />', () => {
     await flushPromises();
 
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeFalsy();
-    workflowDashboardWrapper
-      .find(`[test-id="${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}-change-visibility-icon"]`)
-      .trigger('click');
-    await workflowDashboardWrapper.vm.$nextTick();
-    await flushPromises();
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeFalsy();
+
+    await clickOnJobDetailsVisibilityToggleIcon(workflowDashboardWrapper, jobDetails1RootId);
+
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
-    expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeFalsy();
+    expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeFalsy();
   });
 
   it('should hide job details depends previous config', async () => {
@@ -162,8 +182,8 @@ describe('<WorkflowDashboard />', () => {
     await flushPromises();
 
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
-    expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeFalsy();
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeFalsy();
   });
 
   it('should display hidden jobs when user clicks on show', async () => {
@@ -179,11 +199,11 @@ describe('<WorkflowDashboard />', () => {
 
     await flushPromises();
 
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar-icon"]').trigger('click');
     await workflowDashboardWrapper.vm.$nextTick();
     await flushPromises();
-    expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeTruthy();
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
   });
 
@@ -200,17 +220,12 @@ describe('<WorkflowDashboard />', () => {
 
     await flushPromises();
 
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar-icon"]').trigger('click');
     await workflowDashboardWrapper.vm.$nextTick();
     await flushPromises();
-    expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeTruthy();
-    workflowDashboardWrapper
-      .find(`[test-id="${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}-change-visibility-icon"]`)
-      .trigger('click');
-    await workflowDashboardWrapper.vm.$nextTick();
-    await flushPromises();
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeFalsy();
+    await clickOnJobDetailsVisibilityToggleIcon(workflowDashboardWrapper, jobDetails1RootId);
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeFalsy();
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
   });
 
@@ -228,17 +243,12 @@ describe('<WorkflowDashboard />', () => {
 
     await flushPromises();
 
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar-icon"]').trigger('click');
     await workflowDashboardWrapper.vm.$nextTick();
     await flushPromises();
-    expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeTruthy();
-    workflowDashboardWrapper
-      .find(`[test-id="${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}-change-visibility-icon"]`)
-      .trigger('click');
-    await workflowDashboardWrapper.vm.$nextTick();
-    await flushPromises();
-    expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
+    await clickOnJobDetailsVisibilityToggleIcon(workflowDashboardWrapper, jobDetails1RootId);
+    expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
   });
 
@@ -296,7 +306,7 @@ describe('<WorkflowDashboard />', () => {
       const jobComponents = workflowDashboardWrapper.findAllComponents(Job);
 
       expect(jobComponents).length(1);
-      expect(workflowDashboardWrapper.find(`#${jobDetails1.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeTruthy();
+      expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeTruthy();
       expect(workflowDashboardWrapper.find(`#${jobDetails2.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeFalsy();
     });
 
@@ -364,7 +374,7 @@ describe('<WorkflowDashboard />', () => {
       await flushPromises();
 
       expect(workflowDashboardWrapper.findComponent(NoFailures).exists()).toBeFalsy();
-      expect(workflowDashboardWrapper.find('[test-id="job-hidden-contents-tool-bar"]').exists()).toBeTruthy();
+      expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     });
   });
 

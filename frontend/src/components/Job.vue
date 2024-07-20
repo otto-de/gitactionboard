@@ -5,8 +5,9 @@
     :name="content.name"
     display-toggle-visibility
     :show-relative-time="showRelativeTime"
-    :append-class-names="classNames"
     :hidden="hidden"
+    :in-progress="isInProgress"
+    :status="content.lastBuildStatus"
     @toggle-visibility="toggleVisibility"
   />
 </template>
@@ -30,24 +31,11 @@ export default {
   },
   emits: ['toggleVisibility'],
   computed: {
+    isInProgress() {
+      return this.content.activity === 'Building';
+    },
     showRelativeTime() {
-      const { activity, lastBuildStatus } = this.content;
-      return activity !== 'Building' && lastBuildStatus !== 'Success';
-    },
-    classNames() {
-      return this.content.activity === 'Building'
-        ? `${this.buildStatusIndicator} building`
-        : `${this.buildStatusIndicator}`;
-    },
-    buildStatusIndicator() {
-      switch (this.content.lastBuildStatus) {
-        case 'Success':
-          return 'success';
-        case 'Unknown':
-          return 'unknown';
-        default:
-          return 'failure';
-      }
+      return !this.isInProgress && this.content.lastBuildStatus !== 'Success';
     }
   },
   methods: {

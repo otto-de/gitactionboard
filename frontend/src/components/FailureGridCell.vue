@@ -3,7 +3,7 @@
     :last-executed-time="content.createdAt"
     :url="content.url"
     :name="content.name"
-    append-class-names="failure"
+    status="failure"
     show-relative-time
   />
 </template>

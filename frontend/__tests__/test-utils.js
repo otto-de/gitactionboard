@@ -8,6 +8,9 @@ export const mount = (Component, options) =>
     global: {
       plugins: [getVuetify()]
     },
+    stubs: {
+      transition: true
+    },
     ...options
   });
 
@@ -24,3 +27,23 @@ export const promiseWithResolvers = () => {
 
   return { promise, resolve, reject };
 };
+
+export const requestAnimationFrameAsPromise = () => new Promise((resolve) => requestAnimationFrame(resolve));
+
+export const retryUntil = async (assertivePredicate, maxRetry = 3) =>
+// eslint-disable-next-line no-async-promise-executor
+  new Promise(async (resolve, reject) => {
+    let retryCount = 0;
+    let error;
+    do {
+      try {
+        await assertivePredicate();
+        resolve();
+      } catch (e) {
+        retryCount++;
+        error = e;
+      }
+    } while (retryCount < maxRetry);
+
+    reject(error);
+  });

@@ -1,7 +1,7 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import FailureGridCell from '@/components/FailureGridCell.vue';
-import { mount } from '../test-utils';
-import { getRelativeTime } from '@/services/utils';
+import { shallowMount } from '@vue/test-utils';
+import GridCell from '@/components/GridCell.vue';
 
 describe('<FailureGridCell />', () => {
   vi.mock('@/services/utils', () => {
@@ -13,19 +13,31 @@ describe('<FailureGridCell />', () => {
   it('should render grid cell', () => {
     const createdAt = '2022-08-15T02:20:34Z';
 
-    const wrapper = mount(FailureGridCell, {
+    const name = 'test name';
+    const url = 'https://test.com';
+    const wrapper = shallowMount(FailureGridCell, {
       props: {
         content: {
           id: '1234',
-          name: 'test name',
-          url: 'https://test.com',
+          name,
+          url,
           createdAt
         }
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
-    expect(getRelativeTime).toHaveBeenCalledOnce();
-    expect(getRelativeTime).toHaveBeenCalledWith(createdAt);
+    const gridCellComponent = wrapper.findComponent(GridCell);
+
+    expect(gridCellComponent.exists()).toBeTruthy();
+    expect(gridCellComponent.props()).toEqual({
+      displayToggleVisibility: false,
+      hidden: false,
+      inProgress: false,
+      lastExecutedTime: createdAt,
+      name,
+      showRelativeTime: true,
+      status: 'failure',
+      url
+    });
   });
 });
