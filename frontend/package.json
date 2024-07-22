@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "vue": "^3.4.32",
+    "vue": "^3.4.33",
     "vue-router": "^4.4.0",
     "vuetify": "^3.6.13"
   },
@@ -29,7 +29,7 @@
     "eslint-plugin-vue": "^9.27.0",
     "flush-promises": "^1.0.2",
     "jest-serializer-vue-tjw": "^3.20.0",
-    "jsdom": "^24.1.0",
+    "jsdom": "^24.1.1",
     "postcss-html": "^1.7.0",
     "stylelint": "^16.7.0",
     "stylelint-config-recommended-vue": "^1.5.0",
