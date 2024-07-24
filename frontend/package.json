@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@mockoon/cli": "^8.3.0",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue": "^5.1.0",
     "@vitest/coverage-v8": "^2.0.4",
     "@vue/test-utils": "^2.4.6",
     "concurrently": "^8.2.2",
