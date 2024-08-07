@@ -14,12 +14,12 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "vue": "^3.4.35",
-    "vue-router": "^4.4.2",
+    "vue": "^3.4.36",
+    "vue-router": "^4.4.3",
     "vuetify": "^3.6.14"
   },
   "devDependencies": {
-    "@mockoon/cli": "^8.3.0",
+    "@mockoon/cli": "^8.4.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitest/coverage-v8": "^2.0.5",
     "@vue/test-utils": "^2.4.6",
