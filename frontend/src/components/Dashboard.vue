@@ -14,7 +14,7 @@
     >
       <v-row
         dense
-        class="grid-cells"
+        :class="`grid-cells ${viewPreferenceClass}`"
       >
         <v-col
           v-for="content in visibleContents"
@@ -24,6 +24,7 @@
             :is="contentDisplayer"
             :content="content"
             :hidden="isHidden(content)"
+            :build-monitor-view-enabled="buildMonitorViewEnabled"
             @toggle-visibility="toggleVisibility"
           />
         </v-col>
@@ -58,7 +59,7 @@
       >
         <v-row
           dense
-          class="grid-cells"
+          :class="`grid-cells ${viewPreferenceClass}`"
         >
           <v-col
             v-for="content in hiddenContents"
@@ -68,6 +69,7 @@
               :is="contentDisplayer"
               :content="content"
               :hidden="isHidden(content)"
+              :build-monitor-view-enabled="buildMonitorViewEnabled"
               @toggle-visibility="toggleVisibility"
             />
           </v-col>
@@ -138,6 +140,12 @@ export default {
     },
     hiddenContents() {
       return this.contents.filter(this.isHidden);
+    },
+    buildMonitorViewEnabled() {
+      return preferences.enableBuildMonitorView;
+    },
+    viewPreferenceClass() {
+      return this.buildMonitorViewEnabled ? 'build-monitor' : 'individual';
     }
   },
   mounted() {
@@ -219,6 +227,13 @@ export default {
 
 .grid-cells {
     display: grid;
+
+  &.build-monitor {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  &.individual {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 </style>

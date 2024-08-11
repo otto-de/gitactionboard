@@ -3,13 +3,13 @@
     <v-card
       :id="rootId"
       :key="name"
-      height="90px"
+      :height="`${gridHeight}px`"
       :class="`grid-cell ${statusIndicator}`"
       rounded="6"
       variant="flat"
       v-bind="hoverProps"
     >
-      <v-card-text class="grid-cell-name pa-1">
+      <v-card-text class="grid-cell-name pa-2">
         {{ name }}
       </v-card-text>
       <v-expand-transition class="bg-transparent">
@@ -69,7 +69,7 @@
       <v-progress-linear
         v-if="inProgress"
         color="orange-darken-4"
-        height="15"
+        :height="inProgressIndicatorHeight"
         model-value="100"
         striped
       />
@@ -114,6 +114,10 @@ export default {
     showRelativeTime: {
       type: Boolean,
       default: false
+    },
+    buildMonitorViewEnabled: {
+      type: Boolean,
+      required: true
     }
   },
   emits: ['toggleVisibility'],
@@ -136,6 +140,12 @@ export default {
         default:
           return 'failure';
       }
+    },
+    gridHeight() {
+      return this.buildMonitorViewEnabled ? 90 : 120;
+    },
+    inProgressIndicatorHeight() {
+      return this.buildMonitorViewEnabled ? 15 : 10;
     }
   }
 };

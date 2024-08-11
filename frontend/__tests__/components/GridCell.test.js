@@ -6,7 +6,8 @@ describe('<GridCell />', () => {
   const defaultProps = {
     name: 'webpack-cli :: webpack-cli :: Lint Commit Messages',
     url: 'https://github.com/webpack/webpack-cli/runs/7858502725',
-    lastExecutedTime: '2022-08-16T03:45:02.000Z'
+    lastExecutedTime: '2022-08-16T03:45:02.000Z',
+    buildMonitorViewEnabled: true
   };
 
   const rootId = `${defaultProps.name.replaceAll(/[\\:\s]/g, '-')}`;
@@ -41,6 +42,20 @@ describe('<GridCell />', () => {
       expect(wrapper.html()).toMatchSnapshot();
     });
 
+  it('should render grid cell when build monitor view is disabled', () => {
+    const wrapper = mount(GridCell, {
+      props: { ...defaultProps, buildMonitorViewEnabled: false }
+    });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render in progress grid cell when build monitor view is disabled', () => {
+    const wrapper = mount(GridCell, {
+      props: { ...defaultProps, inProgress: true, buildMonitorViewEnabled: false }
+    });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it.each([
     [true, true, true],
     [false, true, true],
@@ -59,7 +74,7 @@ describe('<GridCell />', () => {
         await requestAnimationFrameAsPromise();
         expect(wrapper.find(`[test-id="${rootId}-toolbar"]`).exists()).toBeTruthy();
       });
-        expect(wrapper.html()).toMatchSnapshot();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
   it.each([

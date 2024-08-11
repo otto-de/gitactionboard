@@ -10,7 +10,10 @@ describe('<FailureGridCell />', () => {
     };
   });
 
-  it('should render grid cell', () => {
+  it.each([
+    [false],
+    [true]
+  ])('should render grid cell when buildMonitorViewEnabled = %s', (buildMonitorViewEnabled) => {
     const createdAt = '2022-08-15T02:20:34Z';
 
     const name = 'test name';
@@ -22,7 +25,8 @@ describe('<FailureGridCell />', () => {
           name,
           url,
           createdAt
-        }
+        },
+        buildMonitorViewEnabled
       }
     });
 
@@ -37,7 +41,8 @@ describe('<FailureGridCell />', () => {
       name,
       showRelativeTime: true,
       status: 'failure',
-      url
+      url,
+      buildMonitorViewEnabled
     });
   });
 });

@@ -58,6 +58,7 @@ describe('<WorkflowDashboard />', () => {
 
   beforeEach(() => {
     getVersion.mockReturnValueOnce('3.3.0');
+    vi.spyOn(preferences, 'enableBuildMonitorView', 'get').mockReturnValueOnce(true);
   });
 
   afterEach(() => {
@@ -106,24 +107,30 @@ describe('<WorkflowDashboard />', () => {
     });
   });
 
-  it('should render dashboard with all job details', async () => {
-    vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
-    vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
-    vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
-    vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({});
+  it.each([
+    [true],
+    [false]
+  ])('should render dashboard with all job details when build monitor view enabled = %s',
+    async (buildMonitorViewEnabled) => {
+      vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
+      vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
+      vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
+      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
+      vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({});
+      vi.spyOn(preferences, 'enableBuildMonitorView', 'get').mockReturnValueOnce(buildMonitorViewEnabled);
 
-    fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
+      fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
 
-    const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
+      const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
 
-    await flushPromises();
+      await flushPromises();
 
-    const jobComponents = workflowDashboardWrapper.findAllComponents(Job);
+      const jobComponents = workflowDashboardWrapper.findAllComponents(Job);
 
-    expect(jobComponents).length(2);
-    expect(workflowDashboardWrapper.html()).toMatchSnapshot();
-  });
+      expect(jobComponents).length(2);
+      await workflowDashboardWrapper.vm.$nextTick();
+      expect(workflowDashboardWrapper.html()).toMatchSnapshot();
+    });
 
   it('should hide success job details', async () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(false);
@@ -379,9 +386,13 @@ describe('<WorkflowDashboard />', () => {
   });
 
   describe('Timers', () => {
-    beforeEach(vi.useFakeTimers);
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
 
-    afterEach(vi.useRealTimers);
+    afterEach(() => {
+      vi.useRealTimers();
+    });
 
     it('should fetch data after every certain interval', async () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);

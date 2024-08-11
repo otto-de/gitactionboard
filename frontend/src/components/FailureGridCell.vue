@@ -5,6 +5,7 @@
     :name="content.name"
     status="failure"
     show-relative-time
+    :build-monitor-view-enabled="buildMonitorViewEnabled"
   />
 </template>
 
@@ -17,6 +18,10 @@ export default {
   props: {
     content: {
       type: Object,
+      required: true
+    },
+    buildMonitorViewEnabled: {
+      type: Boolean,
       required: true
     }
   }

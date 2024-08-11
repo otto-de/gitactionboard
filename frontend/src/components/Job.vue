@@ -8,6 +8,7 @@
     :hidden="hidden"
     :in-progress="isInProgress"
     :status="content.lastBuildStatus"
+    :build-monitor-view-enabled="buildMonitorViewEnabled"
     @toggle-visibility="toggleVisibility"
   />
 </template>
@@ -25,6 +26,10 @@ export default {
       required: true
     },
     hidden: {
+      type: Boolean,
+      required: true
+    },
+    buildMonitorViewEnabled: {
       type: Boolean,
       required: true
     }

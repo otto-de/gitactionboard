@@ -22,6 +22,15 @@ class Preferences {
     this.__set__('show-healthy-builds', value);
   }
 
+  get enableBuildMonitorView() {
+    const enabledBuildMonitorViewConfig = this.__get__('enable-build-monitor-view');
+    return !(enabledBuildMonitorViewConfig && enabledBuildMonitorViewConfig === 'false');
+  }
+
+  set enableBuildMonitorView(value) {
+    this.__set__('enable-build-monitor-view', value);
+  }
+
   disableIdleOptimization() {
     return this.__get__('disable-max-idle-time') === 'true';
   }

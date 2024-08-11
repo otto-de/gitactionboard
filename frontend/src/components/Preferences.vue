@@ -20,6 +20,15 @@
         </v-card-item>
         <v-card-item class="pt-0 pb-0">
           <v-switch
+            v-model="enableBuildMonitorView"
+            label="Enable build monitor view"
+            color="success"
+            hide-details
+            @update:model-value="modelValueUpdated"
+          />
+        </v-card-item>
+        <v-card-item class="pt-0 pb-0">
+          <v-switch
             v-model="enableMaxIdleTimeOptimization"
             label="Enable Maximum Idle Time Restriction"
             color="success"
@@ -95,6 +104,7 @@ export default {
     const themeInstance = useTheme();
     return {
       showHealthyBuilds: preferences.showHealthyBuilds,
+      enableBuildMonitorView: preferences.enableBuildMonitorView,
       maxIdleTime: preferences.maxIdleTime,
       enableMaxIdleTimeOptimization: preferences.enableMaxIdleTimeOptimization,
       themeInstance,
@@ -126,6 +136,7 @@ export default {
     },
     savePreferences() {
       preferences.enableMaxIdleTimeOptimization = this.enableMaxIdleTimeOptimization;
+      preferences.enableBuildMonitorView = this.enableBuildMonitorView;
       preferences.showHealthyBuilds = this.showHealthyBuilds;
       preferences.maxIdleTime = this.maxIdleTime;
       preferences.theme = this.themeInstance.global.name;
@@ -136,6 +147,7 @@ export default {
     modelValueUpdated() {
       this.isDirty = !(this.themeInstance.global.name === preferences.theme &&
           this.showHealthyBuilds === preferences.showHealthyBuilds &&
+          this.enableBuildMonitorView === preferences.enableBuildMonitorView &&
             this.maxIdleTime === preferences.maxIdleTime &&
             this.enableMaxIdleTimeOptimization === preferences.enableMaxIdleTimeOptimization &&
           this.hasSameShowBuildsDueToTriggeredEvents());
