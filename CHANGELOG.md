@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.4](https://github.com/otto-de/gitactionboard/compare/v4.1.3...v4.1.4) (2024-08-14)
+
+### ⚙️ Miscellaneous Tasks
+
+- Enable dependabot groups for automated patch management ([0142c7f](https://github.com/otto-de/gitactionboard/commit/0142c7fe86c8029ee8a749611de8dac482057178))
+
+- Bump dependencies to latest version ([272de32](https://github.com/otto-de/gitactionboard/commit/272de3252d262f263a6144da6189483c25aa803b))
+
+- Bump org.springframework.boot ([4c6f92d](https://github.com/otto-de/gitactionboard/commit/4c6f92dbee257aabc491d9ca74418e21260dbe1e))
+
+- Bump @vitejs/plugin-vue ([f48b4c7](https://github.com/otto-de/gitactionboard/commit/f48b4c7acf90103786be61473148d7cae053d815))
+
+- Bump @vitejs/plugin-vue ([8c7fb7f](https://github.com/otto-de/gitactionboard/commit/8c7fb7f609c472fa2c30b50db78f62134e6b57c2))
+
+- Bump org.openrewrite.rewrite ([ba341b2](https://github.com/otto-de/gitactionboard/commit/ba341b2b513fcf7d0018f08c77c1cd8f4756492b))
+
+- Bump org.openrewrite.rewrite ([67fcae9](https://github.com/otto-de/gitactionboard/commit/67fcae9da0b9d8117ffa766dd0b04251e169c45e))
+
+- Bump vite-plugin-vuetify ([db27221](https://github.com/otto-de/gitactionboard/commit/db272210ac6f9b1698311a69de8106a81e7ff238))
+
+- Bump org.openrewrite.rewrite ([dec2a9d](https://github.com/otto-de/gitactionboard/commit/dec2a9d0190ae66d9eb1ee103824318ebd8572e3))
+
+- Bump alpine from 3.20.1 to 3.20.2 ([606c121](https://github.com/otto-de/gitactionboard/commit/606c121e84449cb79b5c4c2999674d271dfe4fd1))
+
+- Bump org.openrewrite.rewrite ([df9c802](https://github.com/otto-de/gitactionboard/commit/df9c802ef8c211662b43dedeb0a5df9361e66bad))
+
+- Bump the npm-version-updates group across 1 directory with 4 updates ([a08c1f2](https://github.com/otto-de/gitactionboard/commit/a08c1f2573e792803e3e667ef45f00e753398cd0))
+
+### 👷 Build
+
+- Temporarily downgrade nvm to 0.39.7 ([730e2ff](https://github.com/otto-de/gitactionboard/commit/730e2ff597642b8f2da384945aee3b3997d1d0c6))
+
+### 📚 Documentation
+
+- Update changelog ([3c629cc](https://github.com/otto-de/gitactionboard/commit/3c629cc140520a9d8fde13862e788043a56f01a2))
+
 ## [v4.1.3](https://github.com/otto-de/gitactionboard/compare/v4.1.2...v4.1.3) (2024-07-12)
 
 ### ⚙️ Miscellaneous Tasks
