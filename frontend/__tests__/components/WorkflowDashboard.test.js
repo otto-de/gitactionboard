@@ -129,6 +129,10 @@ describe('<WorkflowDashboard />', () => {
 
       expect(jobComponents).length(2);
       await workflowDashboardWrapper.vm.$nextTick();
+      await retryUntil(async () => {
+        await requestAnimationFrameAsPromise();
+        expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeTruthy();
+      });
       expect(workflowDashboardWrapper.html()).toMatchSnapshot();
     });
 
