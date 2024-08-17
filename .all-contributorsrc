@@ -183,6 +183,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "aronhoyer",
+      "name": "Aron Høyer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10201831?v=4",
+      "profile": "https://github.com/aronhoyer",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7

@@ -110,7 +110,7 @@ fileignoreconfig:
 - filename: frontend/package-lock.json
   checksum: 967b3ab055cdd7caba5e33a608250d378bec2c5f6b4a373eb04ca5a56d9a5691
 - filename: frontend/src/components/Dashboard.vue
-  checksum: 55c522358eb8c8cdd66b948f52d837d7f092c9416df3a2b01284a805c1900b0e
+  checksum: e9843ceaf9863419ea77543eaa5f208644bd1631d6877f6595ff01db9da28fbc
 - filename: frontend/src/components/GridCell.vue
   checksum: d8feb1f280a2f8e07dd8ce33ac7648c0e12fac8e91bbc7f27fc5d89d8fe7f7c2
 - filename: frontend/src/components/Job.vue
@@ -122,7 +122,7 @@ fileignoreconfig:
 - filename: frontend/src/services/apiService.js
   checksum: e53a512673b08d7d43e19f8bdaf2f81f11e4600885cc622f61b876676fb4939b
 - filename: frontend/src/services/preferences.js
-  checksum: 4e47359b7c85b9976c4763fb0b0524cd80920865359bc002062fcd70dd554881
+  checksum: 06d9de85d1b310c17721c87a94358f7b0b64c5e2dcf810bc8c5682621da0e4aa
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 allowed_patterns:
