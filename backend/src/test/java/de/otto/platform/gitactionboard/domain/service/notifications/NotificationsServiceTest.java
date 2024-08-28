@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.domain.service.notifications;
 
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -19,7 +19,7 @@ import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Activity;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
-import de.otto.platform.gitactionboard.domain.workflow.Status;
+import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
 import de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
@@ -64,12 +64,12 @@ class NotificationsServiceTest {
 
       final JobDetails job1 =
           getJobDetailsBuilder()
-              .lastBuildStatus(Status.FAILURE)
+              .lastBuildStatus(JobStatus.FAILURE)
               .activity(Activity.SLEEPING)
               .build();
       final JobDetails job2 =
           getJobDetailsBuilder()
-              .lastBuildStatus(Status.FAILURE)
+              .lastBuildStatus(JobStatus.FAILURE)
               .activity(Activity.SLEEPING)
               .name("test")
               .build();
@@ -119,7 +119,7 @@ class NotificationsServiceTest {
         mode = EnumSource.Mode.EXCLUDE)
     void shouldNotSendNotificationIfCurrentActivityStateOtherThanSleeping(Activity activity) {
       final JobDetails job =
-          getJobDetailsBuilder().lastBuildStatus(Status.FAILURE).activity(activity).build();
+          getJobDetailsBuilder().lastBuildStatus(JobStatus.FAILURE).activity(activity).build();
 
       notificationsService.sendNotificationsForWorkflowJobs(List.of(job));
 
@@ -128,13 +128,13 @@ class NotificationsServiceTest {
 
     @ParameterizedTest
     @EnumSource(
-        value = Status.class,
+        value = JobStatus.class,
         names = {"FAILURE"},
         mode = EnumSource.Mode.EXCLUDE)
-    void shouldNotSendNotificationIfBuildStatusOtherThanFailure(Status lastBuildStatus) {
+    void shouldNotSendNotificationIfBuildStatusOtherThanFailure(JobStatus lastBuildJobStatus) {
       final JobDetails job =
           getJobDetailsBuilder()
-              .lastBuildStatus(lastBuildStatus)
+              .lastBuildStatus(lastBuildJobStatus)
               .activity(Activity.SLEEPING)
               .build();
 
@@ -147,7 +147,7 @@ class NotificationsServiceTest {
     void shouldNotSendNotificationIfNotificationIsAlreadySent() {
       final JobDetails job =
           getJobDetailsBuilder()
-              .lastBuildStatus(Status.FAILURE)
+              .lastBuildStatus(JobStatus.FAILURE)
               .activity(Activity.SLEEPING)
               .build();
 
@@ -188,7 +188,7 @@ class NotificationsServiceTest {
     void shouldNotThrowErrorIfUnableToSendNotification() {
       final JobDetails job =
           getJobDetailsBuilder()
-              .lastBuildStatus(Status.FAILURE)
+              .lastBuildStatus(JobStatus.FAILURE)
               .activity(Activity.SLEEPING)
               .build();
 

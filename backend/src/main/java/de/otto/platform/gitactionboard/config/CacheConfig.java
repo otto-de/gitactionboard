@@ -2,7 +2,7 @@ package de.otto.platform.gitactionboard.config;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +25,7 @@ public class CacheConfig {
   }
 
   @Bean(name = "workflowJobDetailsCache")
-  public Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache() {
+  public Cache<String, List<WorkflowJob>> workflowJobDetailsCache() {
     return Caffeine.newBuilder().expireAfterAccess(12, TimeUnit.HOURS).build();
   }
 

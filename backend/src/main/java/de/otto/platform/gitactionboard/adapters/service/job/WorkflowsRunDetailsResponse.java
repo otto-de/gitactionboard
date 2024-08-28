@@ -1,6 +1,9 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.otto.platform.gitactionboard.domain.workflow.RunConclusion;
+import de.otto.platform.gitactionboard.domain.workflow.RunStatus;
+import de.otto.platform.gitactionboard.domain.workflow.WorkflowRun;
 import java.time.Instant;
 import java.util.List;
 import lombok.Builder;
@@ -21,7 +24,7 @@ public class WorkflowsRunDetailsResponse {
 
     long id;
 
-    @NonNull String status;
+    @NonNull RunStatus status;
 
     RunConclusion conclusion;
 
@@ -43,5 +46,27 @@ public class WorkflowsRunDetailsResponse {
     @NonNull
     @JsonProperty("event")
     String triggeredEvent;
+
+    @NonNull
+    @JsonProperty("run_attempt")
+    Integer runAttempt;
+
+    @NonNull
+    @JsonProperty("workflow_id")
+    Integer workflowId;
+
+    public WorkflowRun toWorkflowRun() {
+      return WorkflowRun.builder()
+          .id(id)
+          .status(status)
+          .conclusion(conclusion)
+          .runNumber(runNumber)
+          .updatedAt(updatedAt)
+          .createdAt(createdAt)
+          .triggeredEvent(triggeredEvent)
+          .runAttempt(runAttempt)
+          .workflowId(workflowId)
+          .build();
+    }
   }
 }

@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.domain.service;
 
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.getWorkflowBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
