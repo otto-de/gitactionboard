@@ -8,9 +8,9 @@ import static de.otto.platform.gitactionboard.adapters.service.notifications.Tea
 import static de.otto.platform.gitactionboard.adapters.service.notifications.TeamsNotificationMessagePayload.builder;
 import static de.otto.platform.gitactionboard.fixtures.CodeStandardViolationFixture.CODE_STANDARD_VIOLATION_NAME;
 import static de.otto.platform.gitactionboard.fixtures.CodeStandardViolationFixture.CODE_STANDARD_VIOLATION_URL;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.JOB_NAME;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.JOB_URL;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.WORKFLOW_NAME;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.JOB_NAME;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.JOB_URL;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.WORKFLOW_NAME;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.SECRETS_SCAN_DETAILS_NAME;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.SECRETS_SCAN_DETAILS_URL;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;

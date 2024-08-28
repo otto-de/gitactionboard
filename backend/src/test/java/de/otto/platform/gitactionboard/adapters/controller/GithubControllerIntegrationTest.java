@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.TestUtil;
-import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
+import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import java.util.Objects;
@@ -97,7 +97,7 @@ class GithubControllerIntegrationTest {
   class WithCache {
     @Autowired private MockMvc mockMvc;
 
-    @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+    @Autowired private Cache<String, List<WorkflowJob>> workflowJobDetailsCache;
 
     @Autowired private CacheManager cacheManager;
 
@@ -197,7 +197,7 @@ class GithubControllerIntegrationTest {
 
     @Autowired private MockMvc mockMvc;
 
-    @Autowired private Cache<String, List<WorkflowsJobDetails>> workflowJobDetailsCache;
+    @Autowired private Cache<String, List<WorkflowJob>> workflowJobDetailsCache;
 
     @AfterEach
     void tearDown() {

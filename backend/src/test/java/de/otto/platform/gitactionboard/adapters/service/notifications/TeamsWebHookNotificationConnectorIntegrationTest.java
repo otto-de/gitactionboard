@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
 import static de.otto.platform.gitactionboard.TestUtil.mockRequest;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.NotificationMessagePayloadFixture.getNotificationMessagePayloadBuilder;
 import static jakarta.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 import static org.apache.http.HttpStatus.SC_OK;

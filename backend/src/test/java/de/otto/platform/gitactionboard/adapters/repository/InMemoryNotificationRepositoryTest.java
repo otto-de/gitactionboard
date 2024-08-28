@@ -49,7 +49,7 @@ class InMemoryNotificationRepositoryTest {
   }
 
   @Nested
-  class FindStatusByIdAndType {
+  class FindJobStatusByIdAndType {
     @Test
     void shouldReturnDefaultStatusWhenStoreIsEmpty() {
       assertThat(notificationRepository.findStatusByIdAndType(ID, CONNECTOR_TYPE)).isFalse();
