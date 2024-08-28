@@ -1,10 +1,8 @@
-package de.otto.platform.gitactionboard.adapters.service.job;
+package de.otto.platform.gitactionboard.domain.workflow;
 
-import static de.otto.platform.gitactionboard.adapters.service.job.RunConclusion.ACTION_REQUIRED;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import de.otto.platform.gitactionboard.Parallel;
-import de.otto.platform.gitactionboard.domain.workflow.Status;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,7 +15,7 @@ class RunConclusionTest {
       value = RunConclusion.class,
       names = {"SKIPPED", "SUCCESS"})
   void shouldGiveSuccessStatus(RunConclusion conclusion) {
-    assertThat(RunConclusion.getStatus(conclusion)).isEqualTo(Status.SUCCESS);
+    assertThat(RunConclusion.getStatus(conclusion)).isEqualTo(JobStatus.SUCCESS);
   }
 
   @ParameterizedTest(name = "should give FAILURE status for {0} conclusion")
@@ -25,18 +23,19 @@ class RunConclusionTest {
       value = RunConclusion.class,
       names = {"TIMED_OUT", "CANCELLED", "FAILURE", "STARTUP_FAILURE"})
   void shouldGiveFailureStatus(RunConclusion conclusion) {
-    assertThat(RunConclusion.getStatus(conclusion)).isEqualTo(Status.FAILURE);
+    assertThat(RunConclusion.getStatus(conclusion)).isEqualTo(JobStatus.FAILURE);
   }
 
   @Test
   @DisplayName(value = "should give EXCEPTION status for ACTION_REQUIRED conclusion")
   void shouldGiveExceptionStatus() {
-    assertThat(RunConclusion.getStatus(ACTION_REQUIRED)).isEqualTo(Status.EXCEPTION);
+    assertThat(RunConclusion.getStatus(RunConclusion.ACTION_REQUIRED))
+        .isEqualTo(JobStatus.EXCEPTION);
   }
 
   @Test
   @DisplayName(value = "should give UNKNOWN status for 'null' conclusion")
   void shouldGiveUnknownStatus() {
-    assertThat(RunConclusion.getStatus(null)).isEqualTo(Status.UNKNOWN);
+    assertThat(RunConclusion.getStatus(null)).isEqualTo(JobStatus.UNKNOWN);
   }
 }

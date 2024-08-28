@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
 import static de.otto.platform.gitactionboard.fixtures.CodeStandardViolationFixture.getCodeStandardViolationDetailsBuilder;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures.getSecretsScanDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.TeamsNotificationsMessagePayloadFixture.getTeamsNotificationPayloadBuilderForCodeStandardViolation;
 import static de.otto.platform.gitactionboard.fixtures.TeamsNotificationsMessagePayloadFixture.getTeamsNotificationPayloadBuilderForJob;

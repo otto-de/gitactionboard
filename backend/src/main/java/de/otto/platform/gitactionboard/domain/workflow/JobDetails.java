@@ -1,6 +1,7 @@
 package de.otto.platform.gitactionboard.domain.workflow;
 
 import java.time.Instant;
+import java.util.Optional;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.Value;
@@ -18,7 +19,7 @@ public class JobDetails {
 
   @NonNull Activity activity;
 
-  @NonNull Status lastBuildStatus;
+  @NonNull JobStatus lastBuildStatus;
 
   @NonNull Instant lastBuildTime;
 
@@ -27,6 +28,27 @@ public class JobDetails {
   @NonNull String workflowName;
 
   @NonNull String triggeredEvent;
+
+  public static JobDetails from(
+      long runNumber,
+      Workflow workflow,
+      WorkflowJob currentJob,
+      WorkflowJob previousJob,
+      String triggeredEvent) {
+    return JobDetails.builder()
+        .id(currentJob.getId())
+        .runNumber(runNumber)
+        .url(currentJob.getUrl())
+        .name(currentJob.getName())
+        .repoName(workflow.getRepoName())
+        .workflowName(workflow.getName())
+        .lastBuildStatus(RunConclusion.getStatus(previousJob.getConclusion()))
+        .activity(currentJob.getStatus().getActivity())
+        .lastBuildTime(
+            Optional.ofNullable(previousJob.getCompletedAt()).orElse(previousJob.getStartedAt()))
+        .triggeredEvent(triggeredEvent)
+        .build();
+  }
 
   public String getFormattedName() {
     return String.join(" :: ", repoName, workflowName, name);

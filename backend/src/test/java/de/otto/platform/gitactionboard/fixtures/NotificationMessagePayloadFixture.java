@@ -1,8 +1,8 @@
 package de.otto.platform.gitactionboard.fixtures;
 
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.JOB_NAME;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.JOB_URL;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.WORKFLOW_NAME;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.JOB_NAME;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.JOB_URL;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.WORKFLOW_NAME;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 
 import de.otto.platform.gitactionboard.adapters.service.notifications.TeamsNotificationMessagePayload;

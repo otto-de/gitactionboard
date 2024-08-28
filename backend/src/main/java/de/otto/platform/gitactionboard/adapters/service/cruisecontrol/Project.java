@@ -2,7 +2,7 @@ package de.otto.platform.gitactionboard.adapters.service.cruisecontrol;
 
 import de.otto.platform.gitactionboard.domain.workflow.Activity;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
-import de.otto.platform.gitactionboard.domain.workflow.Status;
+import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
 import java.time.Instant;
 import lombok.Builder;
 import lombok.NonNull;
@@ -29,7 +29,7 @@ public class Project {
     return Project.builder()
         .name(job.getFormattedName())
         .activity(fromActivity(job.getActivity()))
-        .lastBuildStatus(fromStatus(job.getLastBuildStatus()))
+        .lastBuildStatus(fromJobStatus(job.getLastBuildStatus()))
         .lastBuildLabel(String.valueOf(job.getRunNumber()))
         .lastBuildTime(job.getLastBuildTime())
         .webUrl(job.getUrl())
@@ -37,8 +37,8 @@ public class Project {
         .build();
   }
 
-  private static String fromStatus(Status lastBuildStatus) {
-    return switch (lastBuildStatus) {
+  private static String fromJobStatus(JobStatus lastBuildJobStatus) {
+    return switch (lastBuildJobStatus) {
       case FAILURE -> "Failure";
       case SUCCESS -> "Success";
       case UNKNOWN -> "Unknown";

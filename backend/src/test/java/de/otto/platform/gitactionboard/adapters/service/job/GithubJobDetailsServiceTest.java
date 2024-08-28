@@ -1,16 +1,19 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
-import static de.otto.platform.gitactionboard.adapters.service.job.RunConclusion.FAILURE;
-import static de.otto.platform.gitactionboard.adapters.service.job.RunConclusion.SKIPPED;
-import static de.otto.platform.gitactionboard.adapters.service.job.RunConclusion.SUCCESS;
-import static de.otto.platform.gitactionboard.adapters.service.job.RunStatus.COMPLETED;
-import static de.otto.platform.gitactionboard.adapters.service.job.RunStatus.IN_PROGRESS;
-import static de.otto.platform.gitactionboard.adapters.service.job.RunStatus.QUEUED;
+import static de.otto.platform.gitactionboard.TestUtil.readFile;
 import static de.otto.platform.gitactionboard.domain.workflow.Activity.BUILDING;
 import static de.otto.platform.gitactionboard.domain.workflow.Activity.SLEEPING;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.domain.workflow.RunConclusion.FAILURE;
+import static de.otto.platform.gitactionboard.domain.workflow.RunConclusion.SKIPPED;
+import static de.otto.platform.gitactionboard.domain.workflow.RunConclusion.SUCCESS;
+import static de.otto.platform.gitactionboard.domain.workflow.RunStatus.COMPLETED;
+import static de.otto.platform.gitactionboard.domain.workflow.RunStatus.IN_PROGRESS;
+import static de.otto.platform.gitactionboard.domain.workflow.RunStatus.QUEUED;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -19,14 +22,16 @@ import static org.mockito.Mockito.when;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.Sequential;
-import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
-import de.otto.platform.gitactionboard.domain.workflow.Status;
+import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
+import de.otto.platform.gitactionboard.domain.workflow.RunConclusion;
+import de.otto.platform.gitactionboard.domain.workflow.RunStatus;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
+import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collections;
@@ -71,7 +76,7 @@ class GithubJobDetailsServiceTest {
 
   @Mock private ApiService apiService;
 
-  @Mock private Cache<String, List<WorkflowsJobDetails>> mockWorkflowJobDetailsCache;
+  @Mock private Cache<String, List<WorkflowJob>> mockWorkflowJobDetailsCache;
 
   private GithubJobDetailsService githubJobDetailsService;
   private static WorkflowsJobDetailsResponse BASE_JOB_DETAILS_RESPONSE;
@@ -83,13 +88,11 @@ class GithubJobDetailsServiceTest {
   static void beforeAll() {
     BASE_WORKFLOWS_RUN_DETAILS_RESPONSE =
         objectMapper.readValue(
-            TestUtil.readFile("testData/workflowRuns2151835.json"),
-            WorkflowsRunDetailsResponse.class);
+            readFile("testData/workflowRuns2151835.json"), WorkflowsRunDetailsResponse.class);
 
     BASE_JOB_DETAILS_RESPONSE =
         objectMapper.readValue(
-            TestUtil.readFile("testData/jobsDetails260614021.json"),
-            WorkflowsJobDetailsResponse.class);
+            readFile("testData/jobsDetails260614021.json"), WorkflowsJobDetailsResponse.class);
 
     RUN_ID_1 = BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().getId();
   }
@@ -137,7 +140,7 @@ class GithubJobDetailsServiceTest {
 
   @Test
   @SneakyThrows
-  void shouldFetchJobDetailsWhenWorkflowRanOnlyOnce() {
+  void shouldFetchWorkflowJobsWhenWorkflowRanOnlyOnce() {
     final String runDetailUri =
         RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId());
     when(apiService.getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class))
@@ -166,7 +169,7 @@ class GithubJobDetailsServiceTest {
 
   @Test
   @SneakyThrows
-  void shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsSuccess() {
+  void shouldFetchWorkflowJobsForGivenWorkflowWhenLatestBuildIsSuccess() {
     when(apiService.getForObject(
             RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
@@ -190,16 +193,16 @@ class GithubJobDetailsServiceTest {
 
   @Test
   @SneakyThrows
-  void shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsSuccessAndPreviousBuildIsFailed() {
+  void shouldFetchWorkflowJobsForGivenWorkflowWhenLatestBuildIsSuccessAndPreviousBuildIsFailed() {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
-            .status(WorkflowRunDetails.COMPLETED)
+            .status(COMPLETED)
             .conclusion(SUCCESS)
             .build();
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(WorkflowRunDetails.COMPLETED)
+            .status(COMPLETED)
             .conclusion(FAILURE)
             .build();
 
@@ -245,11 +248,11 @@ class GithubJobDetailsServiceTest {
         List.of(
             JOB_DETAILS_1132386046.toBuilder()
                 .activity(SLEEPING)
-                .lastBuildStatus(Status.SUCCESS)
+                .lastBuildStatus(JobStatus.SUCCESS)
                 .build(),
             JOB_DETAILS_1132386127.toBuilder()
                 .activity(SLEEPING)
-                .lastBuildStatus(Status.SUCCESS)
+                .lastBuildStatus(JobStatus.SUCCESS)
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
@@ -260,7 +263,12 @@ class GithubJobDetailsServiceTest {
             workflow.getId(),
             workflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
-    verify(mockWorkflowJobDetailsCache).put(cacheKey, currentWorkflowsJobDetailsResponse.getJobs());
+    verify(mockWorkflowJobDetailsCache)
+        .put(
+            cacheKey,
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
   }
 
   @ParameterizedTest(
@@ -268,8 +276,8 @@ class GithubJobDetailsServiceTest {
   @MethodSource(value = "getSuccessPermutationArguments")
   @SneakyThrows
   void
-      shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIsNotCompletedAndLastBuildStatusIsNotFailure(
-          String latestRunStatus, RunConclusion previousConclusion) {
+      shouldFetchWorkflowJobsForGivenWorkflowWhenLatestBuildIsNotCompletedAndLastBuildStatusIsNotFailure(
+          RunStatus latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(latestRunStatus)
@@ -337,16 +345,21 @@ class GithubJobDetailsServiceTest {
         createCacheKey(
             runId, workflow.getRepoName(), workflow.getId(), workflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
-    verify(mockWorkflowJobDetailsCache).put(cacheKey, workflowsJobDetailsResponse.getJobs());
+    verify(mockWorkflowJobDetailsCache)
+        .put(
+            cacheKey,
+            workflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
   }
 
   @ParameterizedTest(
       name =
-          "shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIs{0}AndPreviousRunConclusionIs{1}")
+          "shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIs{0}AndPreviousWorkflowRunConclusionIs{1}")
   @MethodSource(value = "getPermutationOfWorkflowRunStatusAndPreviousConclusion")
   @SneakyThrows
-  void shouldFetchJobDetailsForGivenWorkflowWhenLatestAndPreviousBothBuildsAreNotSuccessOrSkipped(
-      String latestRunStatus, RunConclusion previousConclusion) {
+  void shouldFetchWorkflowJobsForGivenWorkflowWhenLatestAndPreviousBothBuildsAreNotSuccessOrSkipped(
+      RunStatus latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(latestRunStatus)
@@ -355,7 +368,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(WorkflowRunDetails.COMPLETED)
+            .status(COMPLETED)
             .conclusion(previousConclusion)
             .build();
 
@@ -449,9 +462,17 @@ class GithubJobDetailsServiceTest {
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
     verify(mockWorkflowJobDetailsCache)
-        .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
+        .put(
+            cacheKey1,
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
     verify(mockWorkflowJobDetailsCache)
-        .put(cacheKey2, previousWorkflowsJobDetailsResponse.getJobs());
+        .put(
+            cacheKey2,
+            previousWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
   }
 
   @Test
@@ -459,7 +480,7 @@ class GithubJobDetailsServiceTest {
   void shouldFetchJobDetailsWhenLatestBuildIsRunningAndItHasANewJobAddedAndLastJobIsSuccess() {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
-            .status("in_progress")
+            .status(IN_PROGRESS)
             .conclusion(null)
             .build();
 
@@ -523,17 +544,21 @@ class GithubJobDetailsServiceTest {
         createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache)
-        .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
+        .put(
+            cacheKey1,
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
   }
 
   @ParameterizedTest(
       name =
-          "shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIs{0}AndItHasANewJobAddedAndPreviousRunConclusionIs{1}")
+          "shouldFetchJobDetailsForGivenWorkflowWhenLatestBuildIs{0}AndItHasANewJobAddedAndPreviousWorkflowRunConclusionIs{1}")
   @MethodSource(value = "getPermutationOfWorkflowRunStatusAndPreviousConclusion")
   @SneakyThrows
   void
       shouldFetchJobDetailsWhenLatestBuildIsRunningAndItHasANewJobAddedAndLastJobIsFailureConclusion(
-          String latestRunStatus, RunConclusion previousConclusion) {
+          RunStatus latestRunStatus, RunConclusion previousConclusion) {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
             .status(latestRunStatus)
@@ -542,7 +567,7 @@ class GithubJobDetailsServiceTest {
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(WorkflowRunDetails.COMPLETED)
+            .status(COMPLETED)
             .conclusion(previousConclusion)
             .build();
 
@@ -619,7 +644,7 @@ class GithubJobDetailsServiceTest {
                 .build(),
             JOB_DETAILS_1132386127.toBuilder()
                 .activity(BUILDING)
-                .lastBuildStatus(Status.UNKNOWN)
+                .lastBuildStatus(JobStatus.UNKNOWN)
                 .lastBuildTime(Instant.parse("2020-09-18T06:11:37Z"))
                 .build());
 
@@ -632,9 +657,17 @@ class GithubJobDetailsServiceTest {
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
     verify(mockWorkflowJobDetailsCache)
-        .put(cacheKey1, currentWorkflowsJobDetailsResponse.getJobs());
+        .put(
+            cacheKey1,
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
     verify(mockWorkflowJobDetailsCache)
-        .put(cacheKey2, previousWorkflowsJobDetailsResponse.getJobs());
+        .put(
+            cacheKey2,
+            previousWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
   }
 
   private String createCacheKey(long runId, String repoName, long workflowId, Instant updatedAt) {
@@ -677,13 +710,13 @@ class GithubJobDetailsServiceTest {
   void shouldNotFetchJobDetailsForGivenWorkflowWhenTheDetailsIsPresentInCacheWithCompletedStatus() {
     final WorkflowRunDetails latestWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().toBuilder()
-            .status(WorkflowRunDetails.COMPLETED)
+            .status(COMPLETED)
             .conclusion(SUCCESS)
             .build();
 
     final WorkflowRunDetails previousWorkflowRunDetails =
         BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().get(1).toBuilder()
-            .status(WorkflowRunDetails.COMPLETED)
+            .status(COMPLETED)
             .conclusion(FAILURE)
             .build();
 
@@ -715,7 +748,11 @@ class GithubJobDetailsServiceTest {
                 .conclusion(SUCCESS)
                 .build());
 
-    when(mockWorkflowJobDetailsCache.getIfPresent(cacheKey)).thenReturn(workflowsJobDetails);
+    when(mockWorkflowJobDetailsCache.getIfPresent(cacheKey))
+        .thenReturn(
+            workflowsJobDetails.stream()
+                .map(jobDetails -> jobDetails.toWorkflowJob(workflow.getId()))
+                .toList());
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -724,13 +761,13 @@ class GithubJobDetailsServiceTest {
         List.of(
             JOB_DETAILS_1132386046.toBuilder()
                 .activity(SLEEPING)
-                .lastBuildStatus(Status.SUCCESS)
+                .lastBuildStatus(JobStatus.SUCCESS)
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
 
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
-    verify(mockWorkflowJobDetailsCache, never()).put(cacheKey, workflowsJobDetails);
+    verify(mockWorkflowJobDetailsCache, never()).put(eq(cacheKey), anyList());
     verify(apiService, never())
         .getForObject(
             JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),

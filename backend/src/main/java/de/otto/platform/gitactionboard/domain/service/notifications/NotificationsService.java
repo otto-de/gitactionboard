@@ -5,7 +5,7 @@ import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Activity;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
-import de.otto.platform.gitactionboard.domain.workflow.Status;
+import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
 import java.util.AbstractMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -137,6 +137,6 @@ public class NotificationsService {
 
   private boolean isNotificationRequired(JobDetails jobDetails) {
     return Activity.SLEEPING.equals(jobDetails.getActivity())
-        && Status.FAILURE.equals(jobDetails.getLastBuildStatus());
+        && JobStatus.FAILURE.equals(jobDetails.getLastBuildStatus());
   }
 }

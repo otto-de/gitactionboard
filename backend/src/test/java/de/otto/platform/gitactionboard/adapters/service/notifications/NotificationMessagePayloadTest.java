@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.NotificationMessagePayloadFixture.getNotificationMessagePayloadBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
 

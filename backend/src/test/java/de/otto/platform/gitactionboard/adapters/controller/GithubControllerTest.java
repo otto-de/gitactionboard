@@ -1,7 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.TRIGGERED_EVENT;
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.TRIGGERED_EVENT;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;

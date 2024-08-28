@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.cruisecontrol;
 
-import static de.otto.platform.gitactionboard.fixtures.JobDetailsFixture.getJobDetailsBuilder;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import de.otto.platform.gitactionboard.Sequential;
