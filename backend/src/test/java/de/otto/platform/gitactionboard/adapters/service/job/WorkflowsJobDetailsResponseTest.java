@@ -45,6 +45,7 @@ class WorkflowsJobDetailsResponseTest {
                 .workflowId(workflowId)
                 .workflowRunId(workflowsJobDetails.getRunId())
                 .url(workflowsJobDetails.getUrl())
+                .runAttempt(workflowsJobDetails.getRunAttempt())
                 .build());
   }
 }

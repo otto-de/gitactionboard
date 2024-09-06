@@ -17,6 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.IntegrationTest;
+import de.otto.platform.gitactionboard.PersistingRepositoryCleanupExtension;
 import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -27,6 +28,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.Parameter;
 import org.mockserver.springtest.MockServerTest;
@@ -91,9 +93,11 @@ class GithubControllerIntegrationTest {
       webEnvironment = RANDOM_PORT,
       properties = {
         "spring.cache.cache-names=cctray,cctrayXml,jobDetails",
-        "spring.cache.type=caffeine"
+        "spring.cache.type=caffeine",
+        "sqlite.db.file.path=gitactionboard_GithubControllerIntegrationTest_WithCache_test.db"
       })
   @MockServerTest
+  @ExtendWith(PersistingRepositoryCleanupExtension.class)
   class WithCache {
     @Autowired private MockMvc mockMvc;
 
@@ -190,7 +194,12 @@ class GithubControllerIntegrationTest {
   @Nested
   @AutoConfigureMockMvc
   @MockServerTest
-  @SpringBootTest(webEnvironment = RANDOM_PORT)
+  @SpringBootTest(
+      webEnvironment = RANDOM_PORT,
+      properties = {
+        "sqlite.db.file.path=gitactionboard_GithubControllerIntegrationTest_WithoutCache_test.db"
+      })
+  @ExtendWith(PersistingRepositoryCleanupExtension.class)
   class WithoutCache {
     @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;

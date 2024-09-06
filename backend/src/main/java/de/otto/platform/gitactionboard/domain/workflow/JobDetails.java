@@ -29,6 +29,8 @@ public class JobDetails {
 
   @NonNull String triggeredEvent;
 
+  @NonNull Integer runAttempt;
+
   public static JobDetails from(
       long runNumber,
       Workflow workflow,
@@ -47,6 +49,7 @@ public class JobDetails {
         .lastBuildTime(
             Optional.ofNullable(previousJob.getCompletedAt()).orElse(previousJob.getStartedAt()))
         .triggeredEvent(triggeredEvent)
+        .runAttempt(currentJob.getRunAttempt())
         .build();
   }
 

@@ -38,6 +38,10 @@ public class WorkflowsJobDetailsResponse {
     Long runId;
 
     @NonNull
+    @JsonProperty("run_attempt")
+    Integer runAttempt;
+
+    @NonNull
     @JsonProperty("html_url")
     String url;
 
@@ -52,6 +56,7 @@ public class WorkflowsJobDetailsResponse {
           .workflowId(workflowId)
           .workflowRunId(runId)
           .url(url)
+          .runAttempt(runAttempt)
           .build();
     }
   }

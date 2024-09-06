@@ -55,3 +55,5 @@ hs_err_pid*
 
 # Crash log files
 crash.log
+
+*.db
