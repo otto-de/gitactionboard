@@ -25,4 +25,6 @@ public class WorkflowJob {
   @NonNull Long workflowRunId;
 
   @NonNull String url;
+
+  @NonNull Integer runAttempt;
 }

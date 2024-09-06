@@ -12,7 +12,7 @@ public class WorkflowRun {
 
   @NonNull Integer runAttempt;
 
-  @NonNull Integer workflowId;
+  @NonNull Long workflowId;
 
   @NonNull RunStatus status;
 

@@ -13,15 +13,20 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import de.otto.platform.gitactionboard.adapters.repository.workflow.WorkflowRecord;
+import de.otto.platform.gitactionboard.adapters.repository.workflow.job.WorkflowJobRecord;
+import de.otto.platform.gitactionboard.adapters.repository.workflow.run.WorkflowRunRecord;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import lombok.SneakyThrows;
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.HttpRequest;
 import org.mockserver.model.Parameter;
 import org.mockserver.verify.VerificationTimes;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -128,5 +133,72 @@ public class TestUtil {
             .withPath(url)
             .withQueryStringParameters(Arrays.stream(queryParams).map(Parameter::param).toList()),
         responseBody);
+  }
+
+  public static void saveWorkflowRecords(
+      JdbcTemplate jdbcTemplate, WorkflowRecord... workflowRecords) {
+    saveWorkflowRecords(jdbcTemplate, Arrays.asList(workflowRecords));
+  }
+
+  public static void saveWorkflowRecords(
+      JdbcTemplate jdbcTemplate, List<WorkflowRecord> workflowRecords) {
+    jdbcTemplate.batchUpdate(
+        "insert into workflows (id, name, repo_name) values (?, ?, ?)",
+        workflowRecords,
+        10,
+        (ps, workflow) -> {
+          ps.setLong(1, workflow.getId());
+          ps.setString(2, workflow.getName());
+          ps.setString(3, workflow.getRepoName());
+        });
+  }
+
+  public static void persistWorkflowRunRecords(
+      JdbcTemplate jdbcTemplate, WorkflowRunRecord... workflowRuns) {
+    persistWorkflowRunRecords(jdbcTemplate, Arrays.asList(workflowRuns));
+  }
+
+  public static void persistWorkflowRunRecords(
+      JdbcTemplate jdbcTemplate, List<WorkflowRunRecord> workflowRuns) {
+    jdbcTemplate.batchUpdate(
+        "insert or replace into workflow_runs (id, run_attempt, workflow_id, status, conclusion, run_number, updated_at, created_at, triggered_event) values (?, ?, ?,?, ?, ?,?, ?, ?)",
+        workflowRuns,
+        10,
+        (ps, workflowRun) -> {
+          ps.setLong(1, workflowRun.getId());
+          ps.setLong(2, workflowRun.getRunAttempt());
+          ps.setLong(3, workflowRun.getWorkflowId());
+          ps.setString(4, workflowRun.getStatus());
+          ps.setString(5, workflowRun.getConclusion());
+          ps.setLong(6, workflowRun.getRunNumber());
+          ps.setString(7, workflowRun.getUpdatedAt().toString());
+          ps.setString(8, workflowRun.getCreatedAt().toString());
+          ps.setString(9, workflowRun.getTriggeredEvent());
+        });
+  }
+
+  public static void persistWorkflowJobRecords(
+      JdbcTemplate jdbcTemplate, WorkflowJobRecord... workflowJobRecords) {
+    persistWorkflowJobRecords(jdbcTemplate, Arrays.asList(workflowJobRecords));
+  }
+
+  public static void persistWorkflowJobRecords(
+      JdbcTemplate jdbcTemplate, List<WorkflowJobRecord> workflowJobRecords) {
+    jdbcTemplate.batchUpdate(
+        "insert or replace into workflow_jobs (id, name, status, conclusion, started_at, completed_at, workflow_id,workflow_run_id, run_attempt, url) values (?, ?, ?,?, ?, ?,?, ?, ?, ?)",
+        workflowJobRecords,
+        10,
+        (ps, workflowJob) -> {
+          ps.setLong(1, workflowJob.getId());
+          ps.setString(2, workflowJob.getName());
+          ps.setString(3, workflowJob.getStatus());
+          ps.setString(4, workflowJob.getConclusion());
+          ps.setString(5, workflowJob.getStartedAt().toString());
+          ps.setString(6, workflowJob.getCompletedAt().toString());
+          ps.setLong(7, workflowJob.getWorkflowId());
+          ps.setLong(8, workflowJob.getWorkflowRunId());
+          ps.setLong(9, workflowJob.getRunAttempt());
+          ps.setString(10, workflowJob.getUrl());
+        });
   }
 }
