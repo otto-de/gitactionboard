@@ -53,7 +53,7 @@ public class WorkflowsRunDetailsResponse {
 
     @NonNull
     @JsonProperty("workflow_id")
-    Integer workflowId;
+    Long workflowId;
 
     public WorkflowRun toWorkflowRun() {
       return WorkflowRun.builder()

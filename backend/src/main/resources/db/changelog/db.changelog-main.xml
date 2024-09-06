@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1_create_workflows_table" author="gitactionboard">
+        <createTable tableName="workflows">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="repo_name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="workflows" indexName="workflows_repo_name">
+            <column name="repo_name"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="2_create_workflow_runs_table" author="gitactionboard">
+        <createTable tableName="workflow_runs">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="run_attempt" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="workflow_id" type="int">
+                <constraints referencedTableName="workflows" referencedColumnNames="id"
+                             validateForeignKey="true" foreignKeyName="workflow_runs_workflow_id_fk"/>
+            </column>
+            <column name="status" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="conclusion" type="varchar"/>
+            <column name="run_number" type="int" descending="true"/>
+            <column name="updated_at" type="timestampz" descending="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestampz" descending="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="triggered_event" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="workflow_runs" indexName="workflow_runs_created_at">
+            <column name="created_at"/>
+        </createIndex>
+        <createIndex tableName="workflow_runs" indexName="workflow_runs_updated_at">
+            <column name="updated_at"/>
+        </createIndex>
+        <createIndex tableName="workflow_runs" indexName="workflow_runs_triggered_event">
+            <column name="triggered_event"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="3_create_workflow_jobs_table_for_sqlite" author="gitactionboard" dbms="sqlite">
+        <sql>
+            CREATE TABLE workflow_jobs (
+                id INTEGER NOT NULL,
+                run_attempt INTEGER NOT NULL,
+                name VARCHAR NOT NULL,
+                status VARCHAR NOT NULL,
+                url VARCHAR NOT NULL,
+                conclusion VARCHAR,
+                started_at TIMESTAMPZ NOT NULL,
+                completed_at TIMESTAMPZ NOT NULL,
+                workflow_id INTEGER NOT NULL,
+                workflow_run_id INTEGER NOT NULL,
+                CONSTRAINT PK_WORKFLOW_JOBS PRIMARY KEY (id, run_attempt),
+                CONSTRAINT workflow_jobs_workflow_id_fk FOREIGN KEY (workflow_id) REFERENCES workflows (id),
+                CONSTRAINT workflow_jobs_workflow_runs_id_attempt_fk FOREIGN KEY (workflow_run_id, run_attempt) REFERENCES workflow_runs (id, run_attempt)
+            )
+        </sql>
+    </changeSet>
+
+    <changeSet id="3_create_workflow_jobs_table_for_non_sqlite" author="gitactionboard" dbms="!sqlite">
+        <createTable tableName="workflow_jobs">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="run_attempt" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="conclusion" type="varchar"/>
+            <column name="started_at" type="timestampz" descending="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="completed_at" type="timestampz" descending="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="workflow_id" type="int">
+                <constraints referencedTableName="workflows" referencedColumnNames="id"
+                             validateForeignKey="true" foreignKeyName="workflow_jobs_workflow_id_fk" nullable="false"/>
+            </column>
+            <column name="workflow_run_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="workflow_jobs" baseColumnNames="workflow_run_id, run_attempt"
+                                 constraintName="workflow_jobs_workflow_runs_id_attempt_fk"
+                                 referencedTableName="workflow_runs"
+                                 referencedColumnNames="id, run_attempt"/>
+    </changeSet>
+
+    <changeSet id="3_create_index_for_workflow_jobs_table" author="gitactionboard">
+        <createIndex tableName="workflow_jobs" indexName="workflow_runs_started_at">
+            <column name="started_at"/>
+        </createIndex>
+        <createIndex tableName="workflow_jobs" indexName="workflow_runs_completed_at">
+            <column name="completed_at"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

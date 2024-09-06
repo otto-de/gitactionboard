@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.domain.service;
 
+import de.otto.platform.gitactionboard.domain.repository.WorkflowRepository;
 import de.otto.platform.gitactionboard.domain.service.notifications.NotificationsService;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
@@ -18,6 +19,7 @@ public class PipelineService {
   private final WorkflowService workflowService;
   private final JobDetailsService jobDetailsService;
   private final NotificationsService notificationsService;
+  private final WorkflowRepository workflowRepository;
 
   @SuppressFBWarnings("EI_EXPOSE_REP2")
   private final List<String> repoNames;
@@ -26,10 +28,12 @@ public class PipelineService {
       WorkflowService workflowService,
       JobDetailsService jobDetailsService,
       NotificationsService notificationsService,
+      WorkflowRepository workflowRepository,
       @Qualifier("repoNames") List<String> repoNames) {
     this.workflowService = workflowService;
     this.jobDetailsService = jobDetailsService;
     this.notificationsService = notificationsService;
+    this.workflowRepository = workflowRepository;
     this.repoNames = repoNames;
   }
 
@@ -66,7 +70,13 @@ public class PipelineService {
               return workflowService.fetchWorkflows(repoName, accessToken);
             })
         .map(CompletableFuture::join)
+        .map(this::persistWorkflows)
+        .map(CompletableFuture::join)
         .flatMap(Collection::stream)
         .toList();
+  }
+
+  private CompletableFuture<List<Workflow>> persistWorkflows(List<Workflow> workflows) {
+    return workflowRepository.save(workflows).thenApply(unused -> workflows);
   }
 }

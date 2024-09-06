@@ -6,6 +6,8 @@ import static de.otto.platform.gitactionboard.domain.workflow.RunStatus.COMPLETE
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
+import de.otto.platform.gitactionboard.domain.repository.WorkflowJobRepository;
+import de.otto.platform.gitactionboard.domain.repository.WorkflowRunRepository;
 import de.otto.platform.gitactionboard.domain.service.JobDetailsService;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
@@ -29,6 +31,8 @@ import org.springframework.stereotype.Service;
 public class GithubJobDetailsService implements JobDetailsService {
   private final ApiService apiService;
   private final Cache<String, List<WorkflowJob>> workflowJobDetailsCache;
+  private final WorkflowRunRepository workflowRunRepository;
+  private final WorkflowJobRepository workflowJobRepository;
 
   @Override
   @Async
@@ -152,13 +156,20 @@ public class GithubJobDetailsService implements JobDetailsService {
         .map(
             workflowRunDetails ->
                 workflowRunDetails.stream().map(WorkflowRunDetails::toWorkflowRun).toList())
+        .map(this::persistWorkflowRuns)
+        .map(CompletableFuture::join)
         .orElse(Collections.emptyList());
+  }
+
+  private CompletableFuture<List<WorkflowRun>> persistWorkflowRuns(List<WorkflowRun> workflowRuns) {
+    return workflowRunRepository.save(workflowRuns).thenApply(unused -> workflowRuns);
   }
 
   private List<WorkflowJob> fetchWorkflowJobs(
       WorkflowRun workflowRunDetails, Workflow workflow, String accessToken) {
     final String cacheKey = getCacheKey(workflow, workflowRunDetails);
-    final List<WorkflowJob> cachedWorkflowJobs = workflowJobDetailsCache.getIfPresent(cacheKey);
+    final List<WorkflowJob> cachedWorkflowJobs =
+        getCachedWorkflowJobs(cacheKey, workflowRunDetails);
 
     if (shouldFetchWorkflowJobs(cachedWorkflowJobs)) {
       final List<WorkflowJob> workflowJobs =
@@ -170,6 +181,19 @@ public class GithubJobDetailsService implements JobDetailsService {
     return cachedWorkflowJobs;
   }
 
+  private List<WorkflowJob> getCachedWorkflowJobs(String cacheKey, WorkflowRun workflowRunDetails) {
+    final List<WorkflowJob> inMemoryCachedWorkflowJobs =
+        workflowJobDetailsCache.getIfPresent(cacheKey);
+    if (Objects.isNull(inMemoryCachedWorkflowJobs) || inMemoryCachedWorkflowJobs.isEmpty()) {
+      return workflowJobRepository
+          .findByWorkflowRunIdAndRunAttempt(
+              workflowRunDetails.getId(), workflowRunDetails.getRunAttempt())
+          .join();
+    }
+
+    return inMemoryCachedWorkflowJobs;
+  }
+
   private boolean shouldFetchWorkflowJobs(List<WorkflowJob> workflowJobs) {
     return Objects.isNull(workflowJobs)
         || workflowJobs.isEmpty()
@@ -178,10 +202,11 @@ public class GithubJobDetailsService implements JobDetailsService {
 
   private String getCacheKey(Workflow workflow, WorkflowRun workflowRun) {
     return String.format(
-        "%s_%d_%d_%s",
+        "%s_%d_%d_%d_%s",
         workflow.getRepoName(),
         workflow.getId(),
         workflowRun.getId(),
+        workflowRun.getRunAttempt(),
         workflowRun.getUpdatedAt().getEpochSecond());
   }
 
@@ -212,6 +237,12 @@ public class GithubJobDetailsService implements JobDetailsService {
                 workflowsJobDetails.stream()
                     .map(jobDetails -> jobDetails.toWorkflowJob(workflow.getId()))
                     .toList())
+        .map(this::persistWorkflowJobs)
+        .map(CompletableFuture::join)
         .orElse(Collections.emptyList());
+  }
+
+  private CompletableFuture<List<WorkflowJob>> persistWorkflowJobs(List<WorkflowJob> workflowJobs) {
+    return workflowJobRepository.save(workflowJobs).thenApply(unused -> workflowJobs);
   }
 }

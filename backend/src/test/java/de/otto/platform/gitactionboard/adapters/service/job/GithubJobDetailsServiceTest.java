@@ -12,11 +12,15 @@ import static de.otto.platform.gitactionboard.domain.workflow.RunStatus.QUEUED;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,6 +30,8 @@ import de.otto.platform.gitactionboard.adapters.service.ApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.config.CodecConfig;
+import de.otto.platform.gitactionboard.domain.repository.WorkflowJobRepository;
+import de.otto.platform.gitactionboard.domain.repository.WorkflowRunRepository;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
 import de.otto.platform.gitactionboard.domain.workflow.RunConclusion;
@@ -36,6 +42,7 @@ import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeAll;
@@ -78,10 +85,14 @@ class GithubJobDetailsServiceTest {
 
   @Mock private Cache<String, List<WorkflowJob>> mockWorkflowJobDetailsCache;
 
+  @Mock private WorkflowRunRepository workflowRunRepository;
+  @Mock private WorkflowJobRepository workflowJobRepository;
+
   private GithubJobDetailsService githubJobDetailsService;
   private static WorkflowsJobDetailsResponse BASE_JOB_DETAILS_RESPONSE;
   private static WorkflowsRunDetailsResponse BASE_WORKFLOWS_RUN_DETAILS_RESPONSE;
   private static long RUN_ID_1;
+  private static int RUN_ATTEMPT_1;
 
   @BeforeAll
   @SneakyThrows
@@ -94,7 +105,10 @@ class GithubJobDetailsServiceTest {
         objectMapper.readValue(
             readFile("testData/jobsDetails260614021.json"), WorkflowsJobDetailsResponse.class);
 
-    RUN_ID_1 = BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().getId();
+    final WorkflowRunDetails workflowRunDetails =
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst();
+    RUN_ID_1 = workflowRunDetails.getId();
+    RUN_ATTEMPT_1 = workflowRunDetails.getRunAttempt();
   }
 
   private static Stream<Arguments> getPermutationOfWorkflowRunStatusAndPreviousConclusion() {
@@ -120,7 +134,9 @@ class GithubJobDetailsServiceTest {
 
   @BeforeEach
   void setUp() {
-    githubJobDetailsService = new GithubJobDetailsService(apiService, mockWorkflowJobDetailsCache);
+    githubJobDetailsService =
+        new GithubJobDetailsService(
+            apiService, mockWorkflowJobDetailsCache, workflowRunRepository, workflowJobRepository);
   }
 
   @Test
@@ -132,23 +148,31 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(
             WorkflowsRunDetailsResponse.builder().workflowRuns(Collections.emptyList()).build());
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
     assertThat(jobDetails).isEmpty();
+    verify(workflowRunRepository, times(1)).save(List.of());
   }
 
   @Test
   @SneakyThrows
   void shouldFetchWorkflowJobsWhenWorkflowRanOnlyOnce() {
+    final long workflowId = workflow.getId();
     final String runDetailUri =
-        RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId());
+        RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflowId);
+    final WorkflowRunDetails workflowRunDetails =
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst();
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
     when(apiService.getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class))
         .thenReturn(
             WorkflowsRunDetailsResponse.builder()
-                .workflowRuns(
-                    List.of(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst()))
+                .workflowRuns(List.of(workflowRunDetails))
                 .build());
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final String jobDetailsUri =
         JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), RUN_ID_1);
@@ -165,6 +189,54 @@ class GithubJobDetailsServiceTest {
         .getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class);
     verify(apiService, times(1))
         .getForObject(jobDetailsUri, ACCESS_TOKEN, WorkflowsJobDetailsResponse.class);
+    verify(workflowRunRepository, times(1)).save(List.of(workflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .save(
+            BASE_JOB_DETAILS_RESPONSE.getJobs().stream()
+                .map(jobDetails1 -> jobDetails1.toWorkflowJob(workflowId))
+                .toList());
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            workflowRunDetails.getId(), workflowRunDetails.getRunAttempt());
+  }
+
+  @Test
+  @SneakyThrows
+  void shouldSkipAPICallWhenDataIsPresentInDB() {
+    final long workflowId = workflow.getId();
+    final String runDetailUri =
+        RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflowId);
+    final WorkflowRunDetails workflowRunDetails =
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst();
+
+    when(apiService.getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class))
+        .thenReturn(
+            WorkflowsRunDetailsResponse.builder()
+                .workflowRuns(List.of(workflowRunDetails))
+                .build());
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(
+            CompletableFuture.completedFuture(
+                BASE_JOB_DETAILS_RESPONSE.getJobs().stream()
+                    .map(jobDetails -> jobDetails.toWorkflowJob(workflowId))
+                    .toList()));
+
+    final List<JobDetails> jobDetails =
+        githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
+    final List<JobDetails> expectedJobDetails =
+        List.of(JOB_DETAILS_1132386046, JOB_DETAILS_1132386127);
+
+    assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    verify(apiService, times(1))
+        .getForObject(runDetailUri, ACCESS_TOKEN, WorkflowsRunDetailsResponse.class);
+
+    verify(workflowRunRepository, times(1)).save(List.of(workflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            workflowRunDetails.getId(), workflowRunDetails.getRunAttempt());
+    verifyNoMoreInteractions(apiService, workflowJobRepository, workflowRunRepository);
   }
 
   @Test
@@ -175,12 +247,16 @@ class GithubJobDetailsServiceTest {
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
         .thenReturn(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE);
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
 
     when(apiService.getForObject(
             JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), RUN_ID_1),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(BASE_JOB_DETAILS_RESPONSE);
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -189,6 +265,9 @@ class GithubJobDetailsServiceTest {
         List.of(JOB_DETAILS_1132386046, JOB_DETAILS_1132386127);
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(RUN_ID_1, RUN_ATTEMPT_1);
+    verifyNoMoreInteractions(workflowJobRepository);
   }
 
   @Test
@@ -217,6 +296,9 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
+
     final WorkflowsJobDetailsResponse currentWorkflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
             .jobs(
@@ -231,15 +313,15 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final WorkflowRunDetails workflowRunDetails =
-        workflowsRunDetailsResponse.getWorkflowRuns().getFirst();
-    final long currentRunId = workflowRunDetails.getId();
+    final long currentRunId = latestWorkflowRunDetails.getId();
 
     when(apiService.getForObject(
             JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -261,7 +343,8 @@ class GithubJobDetailsServiceTest {
             currentRunId,
             workflow.getRepoName(),
             workflow.getId(),
-            workflowRunDetails.getUpdatedAt());
+            latestWorkflowRunDetails.getRunAttempt(),
+            latestWorkflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
     verify(mockWorkflowJobDetailsCache)
         .put(
@@ -269,6 +352,19 @@ class GithubJobDetailsServiceTest {
             currentWorkflowsJobDetailsResponse.getJobs().stream()
                 .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
                 .toList());
+    verify(workflowRunRepository, times(1))
+        .save(
+            List.of(
+                latestWorkflowRunDetails.toWorkflowRun(),
+                previousWorkflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .save(
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(jobDetails1 -> jobDetails1.toWorkflowJob(workflow.getId()))
+                .toList());
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(currentRunId, latestWorkflowRunDetails.getRunAttempt());
+    verifyNoMoreInteractions(workflowJobRepository, workflowRunRepository);
   }
 
   @ParameterizedTest(
@@ -299,9 +395,7 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
-    final WorkflowRunDetails workflowRunDetails =
-        workflowsRunDetailsResponse.getWorkflowRuns().getFirst();
-    final long runId = workflowRunDetails.getId();
+    final long runId = latestWorkflowRunDetails.getId();
 
     final WorkflowsJobDetailsResponse workflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
@@ -319,11 +413,16 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
+
     when(apiService.getForObject(
             JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), runId),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(workflowsJobDetailsResponse);
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -343,7 +442,11 @@ class GithubJobDetailsServiceTest {
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
     final String cacheKey =
         createCacheKey(
-            runId, workflow.getRepoName(), workflow.getId(), workflowRunDetails.getUpdatedAt());
+            runId,
+            workflow.getRepoName(),
+            workflow.getId(),
+            latestWorkflowRunDetails.getRunAttempt(),
+            latestWorkflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey);
     verify(mockWorkflowJobDetailsCache)
         .put(
@@ -351,6 +454,18 @@ class GithubJobDetailsServiceTest {
             workflowsJobDetailsResponse.getJobs().stream()
                 .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
                 .toList());
+    verify(workflowRunRepository, times(1))
+        .save(
+            List.of(
+                latestWorkflowRunDetails.toWorkflowRun(),
+                previousWorkflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .save(
+            workflowsJobDetailsResponse.getJobs().stream()
+                .map(jobDetails1 -> jobDetails1.toWorkflowJob(workflow.getId()))
+                .toList());
+    verify(workflowJobRepository, times(1)).findByWorkflowRunIdAndRunAttempt(runId, RUN_ATTEMPT_1);
+    verifyNoMoreInteractions(workflowJobRepository, workflowRunRepository);
   }
 
   @ParameterizedTest(
@@ -376,7 +491,8 @@ class GithubJobDetailsServiceTest {
         WorkflowsRunDetailsResponse.builder()
             .workflowRuns(List.of(latestWorkflowRunDetails, previousWorkflowRunDetails))
             .build();
-
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
     when(apiService.getForObject(
             RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
@@ -399,12 +515,9 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getId();
-    final Instant currentRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getUpdatedAt();
-
     when(apiService.getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(
+                workflow.getRepoName(), latestWorkflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
@@ -428,15 +541,15 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
-    final Instant previousRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
-
     when(apiService.getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), previousRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(
+                workflow.getRepoName(), previousWorkflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(previousWorkflowsJobDetailsResponse);
+
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -455,10 +568,19 @@ class GithubJobDetailsServiceTest {
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
     final String cacheKey1 =
-        createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
+        createCacheKey(
+            latestWorkflowRunDetails.getId(),
+            workflow.getRepoName(),
+            workflow.getId(),
+            latestWorkflowRunDetails.getRunAttempt(),
+            latestWorkflowRunDetails.getUpdatedAt());
     final String cacheKey2 =
         createCacheKey(
-            previousRunId, workflow.getRepoName(), workflow.getId(), previousRunUpdatedAt);
+            previousWorkflowRunDetails.getId(),
+            workflow.getRepoName(),
+            workflow.getId(),
+            previousWorkflowRunDetails.getRunAttempt(),
+            previousWorkflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
     verify(mockWorkflowJobDetailsCache)
@@ -473,6 +595,23 @@ class GithubJobDetailsServiceTest {
             previousWorkflowsJobDetailsResponse.getJobs().stream()
                 .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
                 .toList());
+    verify(workflowRunRepository, times(1))
+        .save(
+            List.of(
+                latestWorkflowRunDetails.toWorkflowRun(),
+                previousWorkflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .save(
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(jobDetails1 -> jobDetails1.toWorkflowJob(workflow.getId()))
+                .toList());
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            latestWorkflowRunDetails.getId(), latestWorkflowRunDetails.getRunAttempt());
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            previousWorkflowRunDetails.getId(), previousWorkflowRunDetails.getRunAttempt());
+    verifyNoMoreInteractions(workflowJobRepository, workflowRunRepository);
   }
 
   @Test
@@ -513,16 +652,16 @@ class GithubJobDetailsServiceTest {
                         .completedAt(null)
                         .build()))
             .build();
-
-    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getId();
-    final Instant currentRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getUpdatedAt();
-
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
     when(apiService.getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(
+                workflow.getRepoName(), latestWorkflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -541,7 +680,12 @@ class GithubJobDetailsServiceTest {
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
     final String cacheKey1 =
-        createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
+        createCacheKey(
+            latestWorkflowRunDetails.getId(),
+            workflow.getRepoName(),
+            workflow.getId(),
+            latestWorkflowRunDetails.getRunAttempt(),
+            latestWorkflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache)
         .put(
@@ -549,6 +693,20 @@ class GithubJobDetailsServiceTest {
             currentWorkflowsJobDetailsResponse.getJobs().stream()
                 .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
                 .toList());
+    verify(workflowRunRepository, times(1))
+        .save(
+            List.of(
+                latestWorkflowRunDetails.toWorkflowRun(),
+                previousWorkflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .save(
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(jobDetails1 -> jobDetails1.toWorkflowJob(workflow.getId()))
+                .toList());
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            latestWorkflowRunDetails.getId(), latestWorkflowRunDetails.getRunAttempt());
+    verifyNoMoreInteractions(workflowJobRepository, workflowRunRepository);
   }
 
   @ParameterizedTest(
@@ -598,12 +756,11 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long currentRunId = workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getId();
-    final Instant currentRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().getFirst().getUpdatedAt();
-
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
     when(apiService.getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(
+                workflow.getRepoName(), latestWorkflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
@@ -622,15 +779,14 @@ class GithubJobDetailsServiceTest {
                         .build()))
             .build();
 
-    final long previousRunId = workflowsRunDetailsResponse.getWorkflowRuns().get(1).getId();
-    final Instant previousRunUpdatedAt =
-        workflowsRunDetailsResponse.getWorkflowRuns().get(1).getUpdatedAt();
-
     when(apiService.getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), previousRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(
+                workflow.getRepoName(), previousWorkflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenReturn(previousWorkflowsJobDetailsResponse);
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
+    when(workflowJobRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -650,10 +806,19 @@ class GithubJobDetailsServiceTest {
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
     final String cacheKey1 =
-        createCacheKey(currentRunId, workflow.getRepoName(), workflow.getId(), currentRunUpdatedAt);
+        createCacheKey(
+            latestWorkflowRunDetails.getId(),
+            workflow.getRepoName(),
+            workflow.getId(),
+            latestWorkflowRunDetails.getRunAttempt(),
+            latestWorkflowRunDetails.getUpdatedAt());
     final String cacheKey2 =
         createCacheKey(
-            previousRunId, workflow.getRepoName(), workflow.getId(), previousRunUpdatedAt);
+            previousWorkflowRunDetails.getId(),
+            workflow.getRepoName(),
+            workflow.getId(),
+            previousWorkflowRunDetails.getRunAttempt(),
+            previousWorkflowRunDetails.getUpdatedAt());
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey1);
     verify(mockWorkflowJobDetailsCache).getIfPresent(cacheKey2);
     verify(mockWorkflowJobDetailsCache)
@@ -668,10 +833,26 @@ class GithubJobDetailsServiceTest {
             previousWorkflowsJobDetailsResponse.getJobs().stream()
                 .map(workflowsJobDetails -> workflowsJobDetails.toWorkflowJob(workflow.getId()))
                 .toList());
+    verify(workflowRunRepository, times(1))
+        .save(
+            List.of(
+                latestWorkflowRunDetails.toWorkflowRun(),
+                previousWorkflowRunDetails.toWorkflowRun()));
+    verify(workflowJobRepository, times(1))
+        .save(
+            currentWorkflowsJobDetailsResponse.getJobs().stream()
+                .map(jobDetails1 -> jobDetails1.toWorkflowJob(workflow.getId()))
+                .toList());
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            previousWorkflowRunDetails.getId(), previousWorkflowRunDetails.getRunAttempt());
+    verifyNoMoreInteractions(workflowJobRepository, workflowRunRepository);
   }
 
-  private String createCacheKey(long runId, String repoName, long workflowId, Instant updatedAt) {
-    return "%s_%d_%d_%s".formatted(repoName, workflowId, runId, updatedAt.getEpochSecond());
+  private String createCacheKey(
+      long runId, String repoName, long workflowId, int runAttempt, Instant updatedAt) {
+    return "%s_%d_%d_%d_%s"
+        .formatted(repoName, workflowId, runId, runAttempt, updatedAt.getEpochSecond());
   }
 
   @Test
@@ -683,6 +864,7 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
     assertThat(githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get()).isEmpty();
+    verifyNoInteractions(workflowRunRepository, workflowJobRepository);
   }
 
   @Test
@@ -694,15 +876,22 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(BASE_WORKFLOWS_RUN_DETAILS_RESPONSE);
 
+    final WorkflowRunDetails workflowRunDetails =
+        BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst();
+    when(workflowJobRepository.findByWorkflowRunIdAndRunAttempt(anyLong(), anyInt()))
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
     when(apiService.getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(
-                workflow.getRepoName(),
-                BASE_WORKFLOWS_RUN_DETAILS_RESPONSE.getWorkflowRuns().getFirst().getId()),
+            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class))
         .thenThrow(new HttpClientErrorException(HttpStatus.NOT_FOUND));
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     assertThat(githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get()).isEmpty();
+    verify(workflowJobRepository, times(1))
+        .findByWorkflowRunIdAndRunAttempt(
+            workflowRunDetails.getId(), workflowRunDetails.getRunAttempt());
+    verifyNoMoreInteractions(workflowJobRepository);
   }
 
   @Test
@@ -731,15 +920,13 @@ class GithubJobDetailsServiceTest {
             WorkflowsRunDetailsResponse.class))
         .thenReturn(workflowsRunDetailsResponse);
 
-    final WorkflowRunDetails workflowRunDetails =
-        workflowsRunDetailsResponse.getWorkflowRuns().getFirst();
-    final long currentRunId = workflowRunDetails.getId();
     final String cacheKey =
         createCacheKey(
-            currentRunId,
+            latestWorkflowRunDetails.getId(),
             workflow.getRepoName(),
             workflow.getId(),
-            workflowRunDetails.getUpdatedAt());
+            latestWorkflowRunDetails.getRunAttempt(),
+            latestWorkflowRunDetails.getUpdatedAt());
 
     final List<WorkflowsJobDetails> workflowsJobDetails =
         List.of(
@@ -753,6 +940,7 @@ class GithubJobDetailsServiceTest {
             workflowsJobDetails.stream()
                 .map(jobDetails -> jobDetails.toWorkflowJob(workflow.getId()))
                 .toList());
+    when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
@@ -770,8 +958,10 @@ class GithubJobDetailsServiceTest {
     verify(mockWorkflowJobDetailsCache, never()).put(eq(cacheKey), anyList());
     verify(apiService, never())
         .getForObject(
-            JOB_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), currentRunId),
+            JOB_DETAILS_URL_TEMPLATE.formatted(
+                workflow.getRepoName(), latestWorkflowRunDetails.getId()),
             ACCESS_TOKEN,
             WorkflowsJobDetailsResponse.class);
+    verifyNoInteractions(workflowJobRepository);
   }
 }

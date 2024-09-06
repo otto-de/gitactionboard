@@ -3,9 +3,9 @@ package de.otto.platform.gitactionboard.domain.workflow;
 import static de.otto.platform.gitactionboard.domain.workflow.JobStatus.UNKNOWN;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.JOB_ID;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.LAST_BUILD_TIME;
-import static de.otto.platform.gitactionboard.fixtures.JobFixture.RUN_NUMBER;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.getWorkflowJobBuilder;
+import static de.otto.platform.gitactionboard.fixtures.WorkflowRunFixture.RUN_NUMBER;
 import static java.time.temporal.ChronoUnit.MINUTES;
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -8,6 +8,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import de.otto.platform.gitactionboard.Sequential;
+import de.otto.platform.gitactionboard.domain.repository.WorkflowRepository;
 import de.otto.platform.gitactionboard.domain.service.notifications.NotificationsService;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
@@ -58,6 +59,7 @@ class PipelineServiceTest {
 
   @Mock private JobDetailsService jobDetailsService;
   @Mock private WorkflowService workflowService;
+  @Mock private WorkflowRepository workflowRepository;
   @Mock private NotificationsService notificationsService;
 
   private PipelineService pipelineService;
@@ -66,7 +68,11 @@ class PipelineServiceTest {
   void setUp() {
     pipelineService =
         new PipelineService(
-            workflowService, jobDetailsService, notificationsService, List.of(REPO_NAME));
+            workflowService,
+            jobDetailsService,
+            notificationsService,
+            workflowRepository,
+            List.of(REPO_NAME));
   }
 
   @Test
@@ -75,9 +81,9 @@ class PipelineServiceTest {
     final Workflow checksWorkflow =
         getWorkflowBuilder().id(2057656).name(CHECKS_WORKFLOW_NAME).build();
 
+    final List<Workflow> workflows = List.of(buildAndDeploymentWorkflow, checksWorkflow);
     when(workflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN))
-        .thenReturn(
-            CompletableFuture.completedFuture(List.of(buildAndDeploymentWorkflow, checksWorkflow)));
+        .thenReturn(CompletableFuture.completedFuture(workflows));
 
     when(jobDetailsService.fetchJobDetails(checksWorkflow, ACCESS_TOKEN))
         .thenReturn(
@@ -87,6 +93,7 @@ class PipelineServiceTest {
     when(jobDetailsService.fetchJobDetails(buildAndDeploymentWorkflow, ACCESS_TOKEN))
         .thenReturn(
             CompletableFuture.completedFuture(List.of(TEST_JOB_DETAILS, FORMAT_JOB_DETAILS)));
+    when(workflowRepository.save(workflows)).thenReturn(CompletableFuture.runAsync(() -> {}));
 
     final List<JobDetails> jobDetails = pipelineService.fetchJobs(ACCESS_TOKEN);
 
@@ -109,8 +116,11 @@ class PipelineServiceTest {
     final Workflow workflow1 = getWorkflowBuilder().build();
     final Workflow workflow2 = getWorkflowBuilder().id(2151836).name("checks").build();
 
+    final List<Workflow> workflows = List.of(workflow1, workflow2);
+
+    when(workflowRepository.save(workflows)).thenReturn(CompletableFuture.runAsync(() -> {}));
     when(workflowService.fetchWorkflows(REPO_NAME, ACCESS_TOKEN))
-        .thenReturn(CompletableFuture.completedFuture(List.of(workflow1, workflow2)));
+        .thenReturn(CompletableFuture.completedFuture(workflows));
 
     when(jobDetailsService.fetchJobDetails(workflow1, ACCESS_TOKEN))
         .thenReturn(CompletableFuture.completedFuture(Collections.emptyList()));

@@ -13,6 +13,7 @@
       "conclusion": "success",
       "started_at": "2020-09-18T06:11:36Z",
       "completed_at": "2020-09-18T06:11:41Z",
+      "run_attempt": 1,
       "name": "format",
       "steps": [
         {
@@ -78,6 +79,7 @@
       "conclusion": "success",
       "started_at": "2020-09-18T06:11:37Z",
       "completed_at": "2020-09-18T06:14:54Z",
+      "run_attempt": 1,
       "name": "test",
       "steps": [
         {
