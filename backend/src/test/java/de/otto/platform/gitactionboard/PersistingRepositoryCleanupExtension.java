@@ -22,11 +22,12 @@ public class PersistingRepositoryCleanupExtension
 
   @Override
   public void afterAll(ExtensionContext context) throws Exception {
-    context
-        .getTestClass()
-        .map(testClass -> isAnnotatedWithCleanupExtension(testClass) || isRootTestClass(context))
-        .filter(Boolean::booleanValue)
-        .ifPresent(persistingRepositoryCleanupExtension -> removeSqliteDB(context));
+        context
+            .getTestClass()
+            .map(testClass -> isAnnotatedWithCleanupExtension(testClass) ||
+     isRootTestClass(context))
+            .filter(Boolean::booleanValue)
+            .ifPresent(persistingRepositoryCleanupExtension -> removeSqliteDB(context));
   }
 
   private boolean isAnnotatedWithCleanupExtension(Class<?> testClass) {
@@ -81,7 +82,7 @@ public class PersistingRepositoryCleanupExtension
 
   @Override
   public void afterEach(ExtensionContext context) throws Exception {
-    truncateApplicationTables(context);
+        truncateApplicationTables(context);
   }
 
   private static void truncateApplicationTables(ExtensionContext context) {
