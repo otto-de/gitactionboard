@@ -128,10 +128,10 @@ Access `http://localhost:<host machine port>/v1/cctray.xml` to get data in **XML
 
 ```xml
 <Projects>
-    <Project name="hello-world :: hello-world-build-and-deployment :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="push"/>
-    <Project name="hello-world :: hello-world-build-and-deployment :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="schedule"/>
-    <Project name="hello-world :: hello-world-checks :: format" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="pull_request"/>
-    <Project name="hello-world :: hello-world-checks :: test" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
+    <Project name="hello-world :: hello-world-build-and-deployment :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="push"/>
+    <Project name="hello-world :: hello-world-build-and-deployment :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="schedule"/>
+    <Project name="hello-world :: hello-world-checks :: format" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="pull_request"/>
+    <Project name="hello-world :: hello-world-checks :: test" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
 </Projects>
 ```
 
@@ -148,7 +148,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "activity": "Sleeping",
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
-    "lastBuildTime": "2020-09-18T06:11:41.000Z",
+    "lastBuildTime": "2024-09-18T06:11:41.000Z",
     "webUrl": "https://github.com/johndoe/hello-world/runs/1132386046",
     "triggeredEvent": "push"
   },
@@ -157,7 +157,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "activity": "Sleeping",
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
-    "lastBuildTime": "2020-09-18T06:14:54.000Z",
+    "lastBuildTime": "2024-09-18T06:14:54.000Z",
     "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127",
     "triggeredEvent": "schedule"
   },
@@ -166,7 +166,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "activity": "Sleeping",
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
-    "lastBuildTime": "2020-09-18T06:11:41.000Z",
+    "lastBuildTime": "2024-09-18T06:11:41.000Z",
     "webUrl": "https://github.com/johndoe/hello-world/runs/1132386046",
     "triggeredEvent": "pull_request"
   },
@@ -175,7 +175,7 @@ Access `http://localhost:<host machine port>/v1/cctray` to get data in **JSON** 
     "activity": "Sleeping",
     "lastBuildStatus": "Success",
     "lastBuildLabel": "206",
-    "lastBuildTime": "2020-09-18T06:14:54.000Z",
+    "lastBuildTime": "2024-09-18T06:14:54.000Z",
     "webUrl": "https://github.com/johndoe/hello-world/runs/1132386127",
     "triggeredEvent": "push"
   }
@@ -223,13 +223,13 @@ Access `http://localhost:<host machine port>/v1/alerts/code-standard-violations`
     "id": "hello-world::Arbitrary file write during zip extraction::4",
     "name": "hello-world :: api-session-spec.ts:917-917 :: Arbitrary file write during zip extraction",
     "url": "https://github.com/johndoe/hello-world/code-scanning/4",
-    "createdAt": "2020-02-13T12:29:18.000Z"
+    "createdAt": "2024-02-13T12:29:18.000Z"
   },
   {
     "id": "hello-world::Redundant else condition::3",
     "name": "hello-world :: api-session-spec.ts:918-918 :: Redundant else condition",
     "url": "https://github.com/johndoe/hello-world/code-scanning/3",
-    "createdAt": "2020-02-12T12:29:18.000Z"
+    "createdAt": "2024-02-12T12:29:18.000Z"
   }
 ]
 ```

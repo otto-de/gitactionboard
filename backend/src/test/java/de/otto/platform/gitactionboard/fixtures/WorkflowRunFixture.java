@@ -16,6 +16,7 @@ public class WorkflowRunFixture {
   public static final long RUN_ID = 1132386117;
   public static final long RUN_NUMBER = 206;
   public static final int RUN_ATTEMPT = 1;
+  public static final RunConclusion RUN_CONCLUSION = RunConclusion.SUCCESS;
 
   public static WorkflowRun.WorkflowRunBuilder getWorkflowRunBuilder() {
     return WorkflowRun.builder()
@@ -23,7 +24,7 @@ public class WorkflowRunFixture {
         .runAttempt(RUN_ATTEMPT)
         .workflowId(WORKFLOW_ID)
         .status(RunStatus.COMPLETED)
-        .conclusion(RunConclusion.SUCCESS)
+        .conclusion(RUN_CONCLUSION)
         .runNumber(RUN_NUMBER)
         .updatedAt(LAST_BUILD_TIME)
         .createdAt(LAST_BUILD_STARTED_AT)
@@ -36,7 +37,7 @@ public class WorkflowRunFixture {
         .runAttempt(RUN_ATTEMPT)
         .workflowId(WORKFLOW_ID)
         .status(RunStatus.COMPLETED.name())
-        .conclusion(RunConclusion.SUCCESS.name())
+        .conclusion(RUN_CONCLUSION.name())
         .runNumber(RUN_NUMBER)
         .updatedAt(LAST_BUILD_TIME)
         .createdAt(LAST_BUILD_STARTED_AT)
