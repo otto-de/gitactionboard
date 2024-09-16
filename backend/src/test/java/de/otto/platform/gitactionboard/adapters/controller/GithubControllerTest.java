@@ -46,7 +46,7 @@ class GithubControllerTest {
     final String cctrayXml =
         """
             <Projects>
-            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2020-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
+            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
             </Projects>""";
 
     final List<JobDetails> jobs = List.of(getJobDetailsBuilder().build());
@@ -71,7 +71,7 @@ class GithubControllerTest {
         List.of(
             Project.builder()
                 .name("%s :: dependency-checks :: hello-world-checks".formatted(REPO_NAME))
-                .lastBuildTime(Instant.parse("2020-09-18T06:14:54.000Z"))
+                .lastBuildTime(Instant.parse("2024-09-18T06:14:54.000Z"))
                 .activity("Sleeping")
                 .lastBuildLabel("206")
                 .lastBuildStatus("Success")

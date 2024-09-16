@@ -14,7 +14,7 @@ fileignoreconfig:
 - filename: backend/gradle/test.gradle
   checksum: 335aafca613cd07460f7d71ae96664d7f0092d1d0afb612e284c8986f039fbca
 - filename: backend/mock-data/data.json
-  checksum: e1bf10d482559702962c218b351121edcf4b0f1421a0778c437a91cec60f34b5
+  checksum: 6138ac73388fae09e19c9aa4f82d2ea6fdaec325f3e2212d4658cbe22962c29b
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: fe023e27937dea383bf70f23a8f1b909497be8d406ac421bdeb234cc83e8dc12
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
@@ -23,6 +23,8 @@ fileignoreconfig:
   checksum: d6fd5356f7bf48951c8e4c1201eaad64f999cad07bf0eb91ab382b8a8cdce8d3
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubController.java
   checksum: c32406ebbcbeb0dcab970022b3b32eab2596c988b8fda7ab6ae9400ff3aaf779
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/MetricsController.java
+  checksum: cf2c0b1f4bad252e49e8416b27137a1a5391e2fced06cd31b7b38dfce9eab67e
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/SecretsScanAlert.java
   checksum: 09ed82bc949fe0f77f188c7bf19d2b2a23c481c370d48abda012e7af911c7f47
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanScheduler.java
@@ -35,6 +37,8 @@ fileignoreconfig:
   checksum: ced647777c1305f75ae86f19de56893c1221dbb216609a47ffa4771d107065ad
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/config/FeaturesConfig.java
   checksum: d6ab1ae1e59159c93cd9daeafea594901eb07df95a014d4b4ec3fe47a155330e
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/metrics/MetricsService.java
+  checksum: 1ae0c14832b30eaf2a6a35588e2895632d71c11389f81d6b348ec808b73cfaa7
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/CodeStandardViolationsScanService.java
   checksum: 814e0ea060181da1c1590a51cd477b93e5ed69f7d6b075afec05710d00a254fc
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/NotificationsService.java
@@ -46,7 +50,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanService.java
   checksum: aa1fa524d64e94ccf01700e9a3d49fa4b590e6aa33705b49aed2c1cf95aa4ef1
 - filename: backend/src/main/resources/application.properties
-  checksum: 3d6252a689e4d92dbac04f259304822aabce7d6ff7cb0446e2528336cb143bae
+  checksum: 335aeb5a638b4562322e6223401c970f45623b18af9fdcbf5d08d1121af0177e
 - filename: backend/src/main/resources/db/changelog/db.changelog-main.xml
   checksum: e2d405b422eecc777aad75b06415b6b0144b86082b0df1a39749e11739f979bb
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java

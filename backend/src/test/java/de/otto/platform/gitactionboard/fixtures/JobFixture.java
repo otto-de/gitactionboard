@@ -21,7 +21,7 @@ public class JobFixture {
   public static final String JOB_NAME = "dependency-checks";
   public static final String TRIGGERED_EVENT = "push";
   public static final int JOB_ID = 1132386127;
-  public static final Instant LAST_BUILD_TIME = Instant.parse("2020-09-18T06:14:54.000Z");
+  public static final Instant LAST_BUILD_TIME = Instant.parse("2024-09-18T06:14:54.000Z");
   public static final Instant LAST_BUILD_STARTED_AT = LAST_BUILD_TIME.minus(1, ChronoUnit.MINUTES);
 
   public static JobDetails.JobDetailsBuilder getJobDetailsBuilder() {

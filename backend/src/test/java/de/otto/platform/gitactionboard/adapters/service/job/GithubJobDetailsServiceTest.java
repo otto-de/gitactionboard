@@ -69,7 +69,7 @@ class GithubJobDetailsServiceTest {
           .id(1132386046)
           .name("talisman-checks")
           .url("https://github.com/johndoe/hello-world/runs/1132386046")
-          .lastBuildTime(Instant.parse("2020-09-18T06:11:41.000Z"))
+          .lastBuildTime(Instant.parse("2024-09-18T06:11:41.000Z"))
           .triggeredEvent("schedule")
           .build();
 
@@ -427,7 +427,7 @@ class GithubJobDetailsServiceTest {
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
-    final Instant lastBuildTime = Instant.parse("2020-09-17T06:14:21Z");
+    final Instant lastBuildTime = Instant.parse("2024-09-17T06:14:21Z");
     final List<JobDetails> expectedJobDetails =
         List.of(
             JOB_DETAILS_1132386046.toBuilder()
@@ -522,21 +522,21 @@ class GithubJobDetailsServiceTest {
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
 
-    final Instant jobCompletedAt = Instant.parse("2020-09-17T06:13:21Z");
+    final Instant jobCompletedAt = Instant.parse("2024-09-17T06:13:21Z");
     final WorkflowsJobDetailsResponse previousWorkflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
             .jobs(
                 List.of(
                     BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(COMPLETED)
-                        .startedAt(Instant.parse("2020-09-17T06:11:04Z"))
+                        .startedAt(Instant.parse("2024-09-17T06:11:04Z"))
                         .completedAt(jobCompletedAt)
                         .conclusion(previousConclusion)
                         .build(),
                     BASE_JOB_DETAILS_RESPONSE.getJobs().get(1).toBuilder()
                         .status(COMPLETED)
-                        .startedAt(Instant.parse("2020-09-17T06:11:04Z"))
-                        .completedAt(Instant.parse("2020-09-17T06:14:20Z"))
+                        .startedAt(Instant.parse("2024-09-17T06:11:04Z"))
+                        .completedAt(Instant.parse("2024-09-17T06:14:20Z"))
                         .conclusion(SUCCESS)
                         .build()))
             .build();
@@ -563,7 +563,7 @@ class GithubJobDetailsServiceTest {
                 .build(),
             JOB_DETAILS_1132386127.toBuilder()
                 .activity(BUILDING)
-                .lastBuildTime(Instant.parse("2020-09-17T06:14:20Z"))
+                .lastBuildTime(Instant.parse("2024-09-17T06:14:20Z"))
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);
@@ -666,7 +666,7 @@ class GithubJobDetailsServiceTest {
     final List<JobDetails> jobDetails =
         githubJobDetailsService.fetchJobDetails(workflow, ACCESS_TOKEN).get();
 
-    final Instant lastBuildTime = Instant.parse("2020-09-17T06:14:21Z");
+    final Instant lastBuildTime = Instant.parse("2024-09-17T06:14:21Z");
     final List<JobDetails> expectedJobDetails =
         List.of(
             JOB_DETAILS_1132386046.toBuilder()
@@ -765,7 +765,7 @@ class GithubJobDetailsServiceTest {
             WorkflowsJobDetailsResponse.class))
         .thenReturn(currentWorkflowsJobDetailsResponse);
 
-    final Instant completedAt = Instant.parse("2020-09-17T06:13:21Z");
+    final Instant completedAt = Instant.parse("2024-09-17T06:13:21Z");
 
     final WorkflowsJobDetailsResponse previousWorkflowsJobDetailsResponse =
         WorkflowsJobDetailsResponse.builder()
@@ -773,7 +773,7 @@ class GithubJobDetailsServiceTest {
                 List.of(
                     BASE_JOB_DETAILS_RESPONSE.getJobs().getFirst().toBuilder()
                         .status(COMPLETED)
-                        .startedAt(Instant.parse("2020-09-17T06:11:04Z"))
+                        .startedAt(Instant.parse("2024-09-17T06:11:04Z"))
                         .completedAt(completedAt)
                         .conclusion(previousConclusion)
                         .build()))
@@ -801,7 +801,7 @@ class GithubJobDetailsServiceTest {
             JOB_DETAILS_1132386127.toBuilder()
                 .activity(BUILDING)
                 .lastBuildStatus(JobStatus.UNKNOWN)
-                .lastBuildTime(Instant.parse("2020-09-18T06:11:37Z"))
+                .lastBuildTime(Instant.parse("2024-09-18T06:11:37Z"))
                 .build());
 
     assertThat(jobDetails).hasSameSizeAs(expectedJobDetails).isEqualTo(expectedJobDetails);

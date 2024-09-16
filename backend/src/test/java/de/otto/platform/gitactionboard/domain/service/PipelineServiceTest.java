@@ -35,7 +35,7 @@ class PipelineServiceTest {
           .id(1132386046)
           .name("talisman-checks")
           .url("https://github.com/johndoe/hello-world/runs/1132386046")
-          .lastBuildTime(Instant.parse("2020-09-18T06:11:41.000Z"))
+          .lastBuildTime(Instant.parse("2024-09-18T06:11:41.000Z"))
           .build();
 
   private static final JobDetails TEST_JOB_DETAILS =
@@ -43,7 +43,7 @@ class PipelineServiceTest {
           .id(2132286036)
           .name("test")
           .url("https://github.com/johndoe/hello-world/runs/2132286036")
-          .lastBuildTime(Instant.parse("2020-09-18T06:11:48.000Z"))
+          .lastBuildTime(Instant.parse("2024-09-18T06:11:48.000Z"))
           .workflowName(WorkflowsFixture.BUILD_AND_DEPLOYMENT_WORKFLOW_NAME)
           .build();
 
@@ -52,7 +52,7 @@ class PipelineServiceTest {
           .id(2132287038)
           .name("format")
           .url("https://github.com/johndoe/hello-world/runs/2132287038")
-          .lastBuildTime(Instant.parse("2020-09-18T06:11:42.000Z"))
+          .lastBuildTime(Instant.parse("2024-09-18T06:11:42.000Z"))
           .workflowName(WorkflowsFixture.BUILD_AND_DEPLOYMENT_WORKFLOW_NAME)
           .build();
   private static final String ACCESS_TOKEN = "accessToken";
