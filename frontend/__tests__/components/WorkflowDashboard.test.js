@@ -59,6 +59,7 @@ describe('<WorkflowDashboard />', () => {
   beforeEach(() => {
     getVersion.mockReturnValueOnce('3.3.0');
     vi.spyOn(preferences, 'enableBuildMonitorView', 'get').mockReturnValueOnce(true);
+    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
   });
 
   afterEach(() => {
@@ -78,7 +79,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
 
     const { promise, resolve } = promiseWithResolvers();
 
@@ -115,7 +115,6 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({});
       vi.spyOn(preferences, 'enableBuildMonitorView', 'get').mockReturnValueOnce(buildMonitorViewEnabled);
 
@@ -140,7 +139,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(false);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
     vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({});
 
     fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
@@ -160,7 +158,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
     vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({});
 
     fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
@@ -183,7 +180,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
     vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ 'job(s)': [jobDetails1.name] });
 
     fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
@@ -201,7 +197,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
     vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ 'job(s)': [jobDetails1.name] });
 
     fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
@@ -222,7 +217,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
     vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ 'job(s)': [jobDetails1.name] });
 
     fetchCctrayJson.mockResolvedValueOnce([jobDetails1, jobDetails2]);
@@ -244,7 +238,6 @@ describe('<WorkflowDashboard />', () => {
     vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-    vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
     vi.spyOn(preferences, 'hiddenElements', 'get')
       .mockReturnValueOnce({ 'job(s)': [jobDetails1.name, jobDetails2.name] });
 
@@ -326,7 +319,6 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
 
       fetchCctrayJson.mockResolvedValueOnce([]);
@@ -343,7 +335,6 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(false);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
 
       fetchCctrayJson.mockResolvedValueOnce([{ ...jobDetails1, lastBuildStatus: 'Success' }, jobDetails2]);
@@ -375,7 +366,6 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ 'job(s)': [jobDetails1.name] });
 
       fetchCctrayJson.mockResolvedValueOnce([jobDetails1]);
@@ -391,6 +381,7 @@ describe('<WorkflowDashboard />', () => {
 
   describe('Timers', () => {
     beforeEach(() => {
+      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.useFakeTimers();
     });
 
@@ -402,7 +393,6 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
 
       fetchCctrayJson.mockResolvedValue([jobDetails1]);
@@ -419,7 +409,6 @@ describe('<WorkflowDashboard />', () => {
     it('should fetch data after every certain interval indefinitely', async () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(false);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(0);
 
@@ -439,7 +428,6 @@ describe('<WorkflowDashboard />', () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
       vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
-      vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({ });
 
       fetchCctrayJson.mockResolvedValue([jobDetails1]);

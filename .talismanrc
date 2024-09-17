@@ -108,7 +108,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 8db91df1d7736cce489b5cfd97e4761f7caf658ebb6d82495d43074bad2bfecc
 - filename: frontend/package-lock.json
-  checksum: 967b3ab055cdd7caba5e33a608250d378bec2c5f6b4a373eb04ca5a56d9a5691
+  checksum: fae7009be53035f4d62632cf0c8d5beb97257fe49f8d5dd6bb5faa22150f7b14
 - filename: frontend/src/components/Dashboard.vue
   checksum: e9843ceaf9863419ea77543eaa5f208644bd1631d6877f6595ff01db9da28fbc
 - filename: frontend/src/components/GridCell.vue
