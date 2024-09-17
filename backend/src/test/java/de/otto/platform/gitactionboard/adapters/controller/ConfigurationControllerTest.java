@@ -2,12 +2,14 @@ package de.otto.platform.gitactionboard.adapters.controller;
 
 import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.BASIC_AUTH;
 import static de.otto.platform.gitactionboard.domain.AuthenticationMechanism.OAUTH2;
+import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
 import java.util.List;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -64,7 +66,11 @@ class ConfigurationControllerTest {
 
     final ConfigurationController controller =
         new ConfigurationController(
-            authenticationMechanisms, secretsScanEnabled, codeScanEnabled, projectVersion);
+            authenticationMechanisms,
+            secretsScanEnabled,
+            codeScanEnabled,
+            projectVersion,
+            List.of());
     assertThat(controller.getAvailableConfig())
         .satisfies(
             config -> {
@@ -75,5 +81,14 @@ class ConfigurationControllerTest {
                   .isEqualTo(expectedCodeScanEnabled);
               assertThat(config.getVersion()).isEqualTo(expectedProjectVersion);
             });
+  }
+
+  @Test
+  void shouldReturnListOfRepositoriesName() {
+    final List<String> repoNames = List.of(REPO_NAME, "dummy");
+    final ConfigurationController configurationController =
+        new ConfigurationController(List.of(), false, null, null, repoNames);
+
+    assertThat(configurationController.getRepositoryNames()).isEqualTo(repoNames);
   }
 }
