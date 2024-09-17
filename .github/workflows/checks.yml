@@ -48,9 +48,6 @@ jobs:
           jenv init -
           jenv add ${JAVA_HOME_21_X64}
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-      - name: Install nvm at specific version
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Get Date
         id: get-date
         run: |

@@ -20,9 +20,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
-      - name: Install nvm at specific version
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Install prettier using npm
         run: sudo npm install --global prettier
       - name: Install jenv
@@ -129,9 +126,6 @@ jobs:
           ref: 'main'
           fetch-depth: 0
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
-      - name: Install nvm at specific version
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Install git-cliff and prettier using npm
         run: sudo npm install --global git-cliff prettier
       - name: Generate changelog
@@ -168,9 +162,6 @@ jobs:
         run: |
           jenv init -
           jenv add ${JAVA_HOME_21_X64}
-      - name: Install nvm at specific version
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Get Date
         id: get-date
         run: |
@@ -255,9 +246,6 @@ jobs:
         run: |
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
-      - name: Install nvm at specific version
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Cache node modules
         uses: actions/cache@v4
         with:
