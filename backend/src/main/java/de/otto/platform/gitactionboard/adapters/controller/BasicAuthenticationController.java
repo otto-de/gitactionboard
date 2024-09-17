@@ -69,9 +69,11 @@ public class BasicAuthenticationController {
   }
 
   private String createAccessToken(String username, String password) {
-    final byte[] encodedAuth =
-        Base64.encodeBase64("%s:%s".formatted(username, password).getBytes(UTF_8), false);
-    return "Basic %s".formatted(new String(encodedAuth, UTF_8));
+    return "Basic %s"
+        .formatted(
+            new String(
+                Base64.encodeBase64("%s:%s".formatted(username, password).getBytes(UTF_8), false),
+                UTF_8));
   }
 
   private Cookie createCookie(String cookieName, String value, int maxAge) {
