@@ -1,12 +1,15 @@
-import { mount as vueMount } from '@vue/test-utils';
+import { mount as vueMount, shallowMount as vueShallowMount } from '@vue/test-utils';
 import { VApp } from 'vuetify/components';
 import { h } from 'vue';
 import getVuetify from '@/plugins/vuetify';
+import charts from '@/plugins/charts';
+
+export const shallowMount = vueShallowMount;
 
 export const mount = (Component, options) =>
   vueMount(Component, {
     global: {
-      plugins: [getVuetify()]
+      plugins: [getVuetify(), charts]
     },
     stubs: {
       transition: true

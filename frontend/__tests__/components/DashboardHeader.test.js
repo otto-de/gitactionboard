@@ -2,6 +2,7 @@ import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
 import DashboardHeader from '@/components/DashboardHeader';
 import { getVersion } from '@/services/utils';
 import { mountWithWrapper } from '../test-utils';
+import preferences from '@/services/preferences';
 
 describe('<DashboardHeader />', () => {
   vi.mock('@/services/utils', () => {
@@ -12,11 +13,11 @@ describe('<DashboardHeader />', () => {
 
   beforeEach(() => {
     getVersion.mockReturnValue('3.1.0');
+    vi.spyOn(preferences, 'theme', 'get').mockReturnValueOnce('light');
   });
 
   afterEach(() => {
     vi.clearAllMocks();
-    vi.resetAllMocks();
   });
 
   it.each([

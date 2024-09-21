@@ -6,6 +6,7 @@ import SecretsDashboard from '@/components/SecretsDashboard';
 import { getAvailableAuths } from '@/services/utils';
 import WorkflowDashboard from '@/components/WorkflowDashboard';
 import CodeStandardViolationsDashboard from '@/components/CodeStandardViolationsDashboard';
+import MetricsDashboard from '@/components/metrics/MetricsDashboard.vue';
 
 const isAuthenticationRequired = () => {
   const availableAuths = getAvailableAuths();
@@ -61,6 +62,14 @@ const routes = [
     path: '/code-standard-violations',
     name: 'Code Standard Violations',
     component: CodeStandardViolationsDashboard,
+    beforeEnter(to, from, next) {
+      validateAuthentication(next);
+    }
+  },
+  {
+    path: '/metrics',
+    name: 'Metrics',
+    component: MetricsDashboard,
     beforeEnter(to, from, next) {
       validateAuthentication(next);
     }
