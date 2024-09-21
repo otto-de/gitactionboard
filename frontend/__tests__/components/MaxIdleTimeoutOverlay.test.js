@@ -2,11 +2,13 @@ import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest';
 import { mount } from '../test-utils';
 
 import MaxIdleTimeoutOverlay from '@/components/MaxIdleTimeoutOverlay.vue';
+import preferences from '@/services/preferences';
 
 describe('<MaxIdleTimeoutOverlay />', () => {
   const { reload } = window.location;
 
   beforeEach(() => {
+    vi.spyOn(preferences, 'theme', 'get').mockReturnValueOnce('light');
     Object.defineProperty(window, 'location', {
       writable: true,
       value: { reload: vi.fn() }

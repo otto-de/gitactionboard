@@ -38,6 +38,7 @@ Check [this link](https://otto-de.github.io/gitactionboard/) to try out **Gitact
 - In-built basic auth and GitHub OAuth2 login mechanism
 - Cache GitHub API response for configured time to avoid rate limit issue
 - Supports Dark and Light theme
+- Key Metrics for Monitoring Workflow Reliability and Performance
 
 ## Usage
 

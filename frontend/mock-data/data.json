@@ -38,6 +38,36 @@
       "responseMode": null
     },
     {
+      "uuid": "2e2619b0-c88e-4866-8c6d-ddcbc403f629",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/metrics/workflow-runs/hello-world",
+      "responses": [
+        {
+          "uuid": "28ae7934-fa25-483f-bfa9-88edd4a54cff",
+          "body": "{\n  \"hello-world-build\": [],\n  \"hello-world-checks\": [\n    {\n      \"workflowName\": \"hello-world-checks\",\n      \"repoName\": \"hello-world\",\n      \"conclusion\": \"SUCCESS\",\n      \"runAttempt\": 1,\n      \"startedAt\": \"2024-09-18T06:11:26.000Z\",\n      \"completedAt\": \"2024-09-18T06:14:58.000Z\",\n      \"triggeredEvent\": \"schedule\"\n    },\n    {\n      \"workflowName\": \"hello-world-checks\",\n      \"repoName\": \"hello-world\",\n      \"conclusion\": \"FAILURE\",\n      \"runAttempt\": 1,\n      \"startedAt\": \"2024-09-18T06:11:26.000Z\",\n      \"completedAt\": \"2024-09-18T06:14:58.000Z\",\n      \"triggeredEvent\": \"schedule\"\n    },\n    {\n      \"workflowName\": \"hello-world-checks\",\n      \"repoName\": \"hello-world\",\n      \"conclusion\": \"SUCCESS\",\n      \"runAttempt\": 1,\n      \"startedAt\": \"2024-09-17T06:11:05.000Z\",\n      \"completedAt\": \"2024-09-17T06:14:21.000Z\",\n      \"triggeredEvent\": \"schedule\"\n    },\n    {\n      \"workflowName\": \"hello-world-checks\",\n      \"repoName\": \"hello-world\",\n      \"conclusion\": \"SUCCESS\",\n      \"runAttempt\": 1,\n      \"startedAt\": \"2024-09-17T06:11:05.000Z\",\n      \"completedAt\": \"2024-09-17T06:14:21.000Z\",\n      \"triggeredEvent\": \"schedule\"\n    }\n  ]\n}",
+          "latency": 700,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "9223b728-5e59-4b11-8f7e-8844465bd152",
       "documentation": "",
       "method": "get",
@@ -79,7 +109,32 @@
       "responses": [
         {
           "uuid": "30cd0af0-5709-4ce8-9616-5cdb0267bf88",
-          "body": "{\n  \"availableAuths\": [\"BASIC_AUTH\", \"OAUTH2\"],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true,\n  \"version\": \"4.0.1\"\n}",
+          "body": "{\n  \"availableAuths\": [\"BASIC_AUTH\", \"OAUTH2\"],\n  \"githubSecretsScanMonitoringEnabled\": true,\n  \"githubCodeScanMonitoringEnabled\": true,\n  \"version\": \"5.0.0\"\n}",
+          "latency": 100,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "86d470a6-3695-4f4a-9b22-361d1e535292",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "config/repository-names",
+      "responses": [
+        {
+          "uuid": "d330d349-d0d3-43df-9731-4034610c9686",
+          "body": "[\n  \"hello-world\"\n]",
           "latency": 100,
           "statusCode": 200,
           "label": "",
