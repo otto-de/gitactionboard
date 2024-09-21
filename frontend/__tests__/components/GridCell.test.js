@@ -1,6 +1,7 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, beforeEach, vi } from 'vitest';
 import { mount, requestAnimationFrameAsPromise, retryUntil } from '../test-utils';
 import GridCell from '@/components/GridCell.vue';
+import preferences from '@/services/preferences';
 
 describe('<GridCell />', () => {
   const defaultProps = {
@@ -11,6 +12,10 @@ describe('<GridCell />', () => {
   };
 
   const rootId = `${defaultProps.name.replaceAll(/[\\:\s]/g, '-')}`;
+
+  beforeEach(() => {
+    vi.spyOn(preferences, 'theme', 'get').mockReturnValueOnce('light');
+  });
 
   it.each([
     [undefined, undefined, undefined, undefined, undefined],

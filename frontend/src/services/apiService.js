@@ -44,6 +44,18 @@ export const fetchSecretAlerts = () =>
 export const fetchCodeStandardViolations = () =>
   fetchJsonContent(preparePath('/v1/alerts/code-standard-violations'), fetchAccessToken());
 
+export const fetchRepositoryNames = () =>
+  fetchJsonContent(preparePath('/config/repository-names'), fetchAccessToken());
+
+export const fetchWorkflowRunMetrics = (repoName, fromDate, toDate) => {
+  const from = fromDate ? fromDate.toISOString() : '';
+  const to = toDate ? toDate.toISOString() : '';
+
+  return fetchJsonContent(
+    preparePath(`/v1/metrics/workflow-runs/${repoName}?from=${from}&to=${to}`),
+    fetchAccessToken());
+};
+
 export const authenticate = (username, password) => {
   return fetch(preparePath('/login/basic'), {
     method: 'POST',

@@ -102,6 +102,7 @@ follow [this link](https://docs.github.com/en/developers/apps/building-oauth-app
 |         <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/workflow.png">         |         <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/workflow.png">         |
 | <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/code-standard-violations.png"> | <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/code-standard-violations.png"> |
 |     <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/exposed-secrets.png">      |     <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/exposed-secrets.png">      |
+|         <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/metrics.png">          |         <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/metrics.png">          |
 |       <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/dark-theme/preferences.png">        |       <img src="https://raw.githubusercontent.com/otto-de/gitactionboard/main/doc/light-theme/preferences.png">        |
 
 #### UI Dashboard Configurations

@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: USAGE.md
-  checksum: 0d58c2498fa8c8b5adf524bd212c16b18bb8a5917802061669a5ba1ded91d08b
+  checksum: 666c1aa4631e80ff93196f0ef1c9afd1650dd48116c0b4509b7c1a36681509ff
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -16,9 +16,9 @@ fileignoreconfig:
 - filename: backend/mock-data/data.json
   checksum: 6138ac73388fae09e19c9aa4f82d2ea6fdaec325f3e2212d4658cbe22962c29b
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
-  checksum: fe023e27937dea383bf70f23a8f1b909497be8d406ac421bdeb234cc83e8dc12
+  checksum: 4ae935e8b52b6d3e2eb8a1d8ac9aaa3b7af96e4c7aa770a41b96d8881d520141
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
-  checksum: 819676c3cc11bce98c6de721f0955119c81e838f81bb874eccc28a8e2ebbb19c
+  checksum: 1f6dd7166a2550569928a991ff81afe4c7a1fdb4b99a103fc4ae97ad60786d5f
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsController.java
   checksum: d6fd5356f7bf48951c8e4c1201eaad64f999cad07bf0eb91ab382b8a8cdce8d3
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/GithubController.java
@@ -41,10 +41,10 @@ fileignoreconfig:
   checksum: 1ae0c14832b30eaf2a6a35588e2895632d71c11389f81d6b348ec808b73cfaa7
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/CodeStandardViolationsScanService.java
   checksum: 814e0ea060181da1c1590a51cd477b93e5ed69f7d6b075afec05710d00a254fc
-- filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/NotificationsService.java
-  checksum: 6a5ce5991f2eff2b911684233c2926432aadad937074cfa3c8f22c0aaaff488b
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/notifications/NotificationsService.java
+  checksum: 9c4b344e4d0e6eeaf030bcd7fe4eca0267425d4616adf562ec710ea78bfc08db
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/PipelineService.java
-  checksum: a146cfc47bfd6e5c19abc67c70bd0887a2c59b9566d04fea92a6914c6c1e11d4
+  checksum: 3ef22931f20c4f6e61b6c0fc271ae84d30083362a71fca3378574aad99495b9a
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanDetailsService.java
   checksum: 6a9bdc8f95ac77877aee525f1e8faa52c0dec6e254dd0c4d7f0416c61062a731
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanService.java
@@ -62,9 +62,9 @@ fileignoreconfig:
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanSchedulerTest.java
   checksum: 7f39196e1a6cfd1926146f7a1712ac3b6d9adbffde1b5de93a7845c3c5c17e59
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsServiceTest.java
-  checksum: 546ad219550ea2ea44908f830d5ef9c30207a6b80783f292aa3227c0cdf15a7d
+  checksum: 8d5ac4ea42c0805ceda1a7ebf1e9429c0aaf7c0b0bef293fdb3cc09cbdfc7e10
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayloadTest.java
-  checksum: efdf67477b04bf07df791fcdad4735da5d76502c6e28a4fbf9cef5267ed75a87
+  checksum: cd056d985cf2825738a1f25487382806962df3be1a2c932d04b6d61e511d9aa2
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsServiceTest.java
   checksum: 6b5a473e0fedf4056aa1521e3186edeb1c029fd02404b134e66afc35110550a0
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/config/FeaturesConfigTest.java
@@ -74,21 +74,29 @@ fileignoreconfig:
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/domain/service/SecretsScanServiceTest.java
   checksum: 46294abaf91cdba7d13fe2a48b950b323fa8b8ea72013a0aeba2cea3bc357d99
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/domain/service/notifications/NotificationsServiceTest.java
-  checksum: 3b1846ed4dc9ce887145953c106859c4e606e5cd4b1fe09811c0f2243ebc72b5
+  checksum: 93f08e966b19d2a3835da75adddf971790f4a1519067af16d8e9da321341345a
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/SecretsScanDetailsFixtures.java
   checksum: 5fc33e775aa2694b4400c9a1c787a824b04decd058d3e1c299c3ca2852333657
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/SecurityScanAlertFixtures.java
   checksum: 78e756e8c4cad7f3ff3c6f7e79ed56197d1b4fa5690527be90418f9079e02cab
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/TeamsNotificationsMessagePayloadFixture.java
-  checksum: 03c114ed197443db6a5917da996dcc0d6ad08ed78e1dcc9bd09103bceba1d84f
+  checksum: 9213e0e646926c885bde2f8031a8d42a8860c5deabe4c08b2f304c64a1b176b1
 - filename: backend/src/test/resources/.htpasswd
   checksum: 2e31e64b696f0f9267a4ebd694d90b27c6e0c4cefdd11349d199e185daab2d6c
 - filename: backend/src/test/resources/testData/githubCodeScanAlerts.json
-  checksum: 722789f39323355ca986bd68bee1826c45802a9650b0e16920a42b98a36dd05d
+  checksum: b6b279e5a22b92cd3c6875e0b446af17456ded5c95520b6b209e8e4bb8397e0f
 - filename: backend/src/test/resources/testData/secretsScanAlerts.json
   checksum: 20a8516a61fb4fe163d17f0bcee078b5371c8f267be0cd07370e77355e0cc623
 - filename: backend/src/test/resources/testData/securityScanAlerts.json
   checksum: ce87091b9e60b4172b60c0e6845eb70022027a5e1b2ff1d0ce838682f24d0100
+- filename: backend/src/test/resources/testData/jobsDetails260614024.json
+  checksum: 0a0dca99d8e21a4dcd144cee11139a8ff15490a31c2392c380e58d3da9ca3d34
+- filename: backend/src/test/resources/testData/jobsDetails260614021.json
+  checksum: f87d11a7f74186e36131417e1ae277a7bebfdf5aea6eacf8dae2b0f04097075e
+- filename: backend/src/test/resources/testData/workflowRuns2057656.json
+  checksum: 5fd0fa16989754deaeab5b6e95e84715169c0b54f59704088353f6a38678939c
+- filename: backend/src/test/resources/testData/workflowRuns2151835.json
+  checksum: dc9708355d74d47bae2f6a2d43ed2f6e746c9e736c37dbc1079db0feb882e1c8
 - filename: bin/install-talisman.sh
   checksum: 636c29faa1a28f65f300e2de2fc4466d6f800f312afff3a17ece63c7e1d47099
 - filename: bin/lib.sh
@@ -104,15 +112,15 @@ fileignoreconfig:
 - filename: doc/light-theme/workflow.png
   checksum: 4918fce935cb85039d75ea8e67376564d562ba40fd439650cd53f8111e825c4b
 - filename: frontend/__tests__/components/DashboardHeader.test.js
-  checksum: f078245a300fbbbc7221072350068e707a825003dd7ac9205c225c4ce0a62e72
+  checksum: 49d79632c3100eb408110edfbf8d7eab0258bc4b06f65ee47db7b4ed76e37807
 - filename: frontend/__tests__/components/GridCell.test.js
   checksum: da612be8c8f89b10ad0c64830040b8cb51cc0aac237616c311994d0371d8c8c6
 - filename: frontend/__tests__/components/LoginPage.test.js
-  checksum: 31ed54ab84d53d73f9dac6779cdec2d79ec6bbf7adf93e30daa85695c20941b2
+  checksum: 50df57eeeb5daa25d817280852361c0f12b82fd11de3771003f83ca25fdaebea
 - filename: frontend/__tests__/components/__snapshots__/LoginPage.test.js.snap
   checksum: 7339892a4d449bb5da239c6c15f52b7d9ded478f5f0c7960cff2ed331b134aae
 - filename: frontend/mock-data/data.json
-  checksum: 8db91df1d7736cce489b5cfd97e4761f7caf658ebb6d82495d43074bad2bfecc
+  checksum: ee8531df97c579c3c4ded7f884e4033c28096d227eec725f533d8c85b1f567e2
 - filename: frontend/package-lock.json
   checksum: e046437d8f00be8ddb9f4d5f98636dad5a462cafb123adca036b3cb95cb1ad6c
 - filename: frontend/src/components/Dashboard.vue
@@ -125,8 +133,12 @@ fileignoreconfig:
   checksum: 9236e0c978aab223a3c489920cec4caf2cace99f744eccda2da0849e35a881ee
 - filename: frontend/src/components/WorkflowDashboard.vue
   checksum: 29de553931ddefe3aa93eb28d247f1773215148efd45aeb67a20e8047a08345f
+- filename: frontend/src/components/metrics/MetricsDashboard.vue
+  checksum: 6b79b1bae68ed56f2304b019df7201f31325dd8baec46ba08925fbf4f26cd891
+- filename: frontend/src/components/metrics/TimeSeriesLineChart.vue
+  checksum: 36d07fa620b3361148b31396b447035c0fee02b0ee206ae87630fd2bd831c691
 - filename: frontend/src/services/apiService.js
-  checksum: e53a512673b08d7d43e19f8bdaf2f81f11e4600885cc622f61b876676fb4939b
+  checksum: d7de34db23336915c4fefa6001eb2c0d9cdeeb0db60a4d5dcffded918939515e
 - filename: frontend/src/services/preferences.js
   checksum: 06d9de85d1b310c17721c87a94358f7b0b64c5e2dcf810bc8c5682621da0e4aa
 - filename: frontend/src/services/storageService.js
