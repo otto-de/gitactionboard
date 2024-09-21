@@ -35,6 +35,14 @@
         href="#/code-standard-violations"
       />
       <v-list-item
+        :active="currentPath === '/metrics'"
+        active-class="active"
+        prepend-icon="mdi-chart-line"
+        title="Metrics"
+        value="metrics"
+        href="#/metrics"
+      />
+      <v-list-item
         :active="currentPath === '/preferences'"
         prepend-icon="mdi-cog-outline"
         active-class="active"

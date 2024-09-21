@@ -14,6 +14,7 @@ import {
 import flushPromises from 'flush-promises';
 import Spinner from '@/components/Spinner.vue';
 import getVuetify from '@/plugins/vuetify';
+import preferences from '@/services/preferences';
 
 vi.mock('@/services/apiService');
 vi.mock('@/services/authenticationService');
@@ -39,9 +40,12 @@ describe('<LoginPage />', () => {
       }
     });
 
+  beforeEach(() => {
+    vi.spyOn(preferences, 'theme', 'get').mockReturnValueOnce('light');
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
-    vi.resetAllMocks();
   });
 
   it('should render spinner while fetching config', async () => {

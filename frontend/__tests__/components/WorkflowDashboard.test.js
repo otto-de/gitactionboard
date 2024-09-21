@@ -58,13 +58,13 @@ describe('<WorkflowDashboard />', () => {
 
   beforeEach(() => {
     getVersion.mockReturnValueOnce('3.3.0');
+    vi.spyOn(preferences, 'theme', 'get').mockReturnValueOnce('light');
     vi.spyOn(preferences, 'enableBuildMonitorView', 'get').mockReturnValueOnce(true);
     vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
   });
 
   afterEach(() => {
     vi.clearAllMocks();
-    vi.resetAllMocks();
   });
 
   it('should render spinner while fetching data', async () => {
@@ -326,6 +326,7 @@ describe('<WorkflowDashboard />', () => {
       const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
 
       await flushPromises();
+      await requestAnimationFrameAsPromise();
 
       expect(workflowDashboardWrapper.findComponent(NoFailures).exists()).toBeTruthy();
       expect(workflowDashboardWrapper.html()).toMatchSnapshot();
