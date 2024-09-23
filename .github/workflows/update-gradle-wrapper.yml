@@ -20,7 +20,7 @@ jobs:
           java-version: '21'
           cache: 'gradle'
       - name: Update Gradle Wrapper
-        uses: gradle-update/update-gradle-wrapper-action@v1
+        uses: gradle-update/update-gradle-wrapper-action@v2
         with:
           labels: dependencies, gradle
           pr-title-template: 'chore: Bump Gradle Wrapper from %sourceVersion% to %targetVersion%'
