@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "vue": "^3.5.11",
+    "vue": "^3.5.12",
     "vue-router": "^4.4.5",
     "vuetify": "^3.7.2"
   },
@@ -26,12 +26,12 @@
     "concurrently": "^9.0.1",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-vue": "^9.28.0",
+    "eslint-plugin-vue": "^9.29.0",
     "flush-promises": "^1.0.2",
     "jest-serializer-vue-tjw": "^3.20.0",
     "jsdom": "^25.0.1",
     "postcss-html": "^1.7.0",
-    "stylelint": "^16.9.0",
+    "stylelint": "^16.10.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard": "^36.0.1",
     "vite": "^5.4.8",
