@@ -50,13 +50,24 @@ export default {
     isIdleHealthyBuild(lastBuildStatus, activity) {
       return lastBuildStatus === 'Success' && activity === 'Sleeping';
     },
+    mapNameIfPreferred(data) {
+      const parts = data.name.split(' :: ');
+
+      return preferences.showOnlyJobName
+        ? {
+            ...data,
+            name: parts[parts.length - 1]
+          }
+        : data;
+    },
     marshalData(data) {
       return data
         .filter(({ lastBuildStatus, activity }) =>
           this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity))
         .filter(({ triggeredEvent }) =>
           !this.hasPreferredTriggeredEvents ||
-            preferences.showBuildsDueToTriggeredEvents.indexOf(triggeredEvent) !== -1);
+            preferences.showBuildsDueToTriggeredEvents.indexOf(triggeredEvent) !== -1)
+        .map(this.mapNameIfPreferred);
     }
   }
 };
