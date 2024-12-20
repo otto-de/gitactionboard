@@ -1,7 +1,7 @@
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "3.4.0"
+    id "org.springframework.boot" version "3.4.1"
     id "io.spring.dependency-management" version "1.1.7"
     id "io.freefair.lombok" version "8.11"
     id "com.github.spotbugs" version "6.0.27"
@@ -9,7 +9,7 @@ plugins {
     id "org.owasp.dependencycheck" version "8.4.3"
     id "com.diffplug.spotless" version "6.25.0"
     id "info.solidsoft.pitest" version "1.15.0"
-    id "org.openrewrite.rewrite" version "6.28.3"
+    id "org.openrewrite.rewrite" version "6.29.0"
 }
 
 spotless {
