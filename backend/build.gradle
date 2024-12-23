@@ -40,7 +40,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
-    implementation "com.nimbusds:nimbus-jose-jwt:9.47" // Explicit version to fix CVE-2023-52428
+    implementation "com.nimbusds:nimbus-jose-jwt:9.48" // Explicit version to fix CVE-2023-52428
     implementation "com.fasterxml.uuid:java-uuid-generator:${javaUuidGeneratorVersion}"
     implementation "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
     implementation "com.github.ben-manes.caffeine:caffeine:${caffeineVersion}"
