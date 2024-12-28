@@ -10,6 +10,8 @@ dependencyCheck {
         }
     }
 
+    skipConfigurations = ['rewrite']
+
     analyzers {
         assemblyEnabled = false
         experimentalEnabled = false
