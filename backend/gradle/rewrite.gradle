@@ -1,7 +1,7 @@
 apply plugin: "org.openrewrite.rewrite"
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.31.0")
 }
 
 rewrite {

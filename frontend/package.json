@@ -19,11 +19,11 @@
     "vuetify": "^3.7.6"
   },
   "devDependencies": {
-    "@mockoon/cli": "^8.4.0",
+    "@mockoon/cli": "^9.1.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-v8": "^2.1.8",
     "@vue/test-utils": "^2.4.6",
-    "concurrently": "^9.1.0",
+    "concurrently": "^9.1.1",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-vue": "^9.32.0",
@@ -34,9 +34,9 @@
     "stylelint": "^16.12.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard": "^36.0.1",
-    "vite": "^5.4.11",
+    "vite": "^6.0.6",
     "vite-plugin-vuetify": "^2.0.4",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.8"
   },
   "eslintConfig": {
     "root": true,
