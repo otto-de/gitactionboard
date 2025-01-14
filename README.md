@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/docker/v/ottoopensource/gitactionboard?sort=semver)](https://hub.docker.com/r/ottoopensource/gitactionboard)
 ![Docker Image Size](https://img.shields.io/docker/image-size/ottoopensource/gitactionboard?label=docker%20image%20size&sort=semver)
 ![Release Date](https://img.shields.io/github/release-date/otto-de/gitactionboard)
+![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https://github.com/otto-de/gitactionboard/blob/ab8b1d093ce6f11f0d4dd98d01e16cf7839c9a02/OSSMETADATA.txt)
 
 Gitaction Board - Ultimate Dashboard for GithubActions.
 
