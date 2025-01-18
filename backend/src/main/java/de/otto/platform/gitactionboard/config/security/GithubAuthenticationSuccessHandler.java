@@ -75,8 +75,7 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
             createCookie(authenticationPrincipal, NAME, NAME),
             optionalAccessToken.map(this::createAccessTokenCookie),
             optionalRefreshToken.map(this::createRefreshTokenCookie))
-        .filter(Optional::isPresent)
-        .map(Optional::get)
+        .flatMap(Optional::stream)
         .forEach(response::addCookie);
 
     response.sendRedirect("/#/workflow-jobs");

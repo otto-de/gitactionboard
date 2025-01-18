@@ -5,7 +5,7 @@ displayName: Rewrite code
 description: This recipe is a composite recipe for Gitaction Board
 
 recipeList:
-  - org.openrewrite.java.migrate.JavaVersion21
+  - org.openrewrite.java.migrate.UpgradeToJava21
   - org.openrewrite.java.migrate.lang.StringFormatted
   - org.openrewrite.java.migrate.lang.ThreadStopUnsupported
   - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes

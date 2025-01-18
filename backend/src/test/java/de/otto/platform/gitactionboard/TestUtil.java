@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Objects;
 import lombok.SneakyThrows;
@@ -31,7 +31,7 @@ public class TestUtil {
 
   @SneakyThrows
   public static String readFile(String fileName) {
-    return Files.readString(Paths.get("./src/test/resources/%s".formatted(fileName)), UTF_8);
+    return Files.readString(Path.of("./src/test/resources/%s".formatted(fileName)), UTF_8);
   }
 
   @SneakyThrows

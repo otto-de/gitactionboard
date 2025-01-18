@@ -141,4 +141,6 @@ allowed_patterns:
 - distributionSha256Sum=.*
 - minipass.*
 - Thanks\sgoes\sto\sthese\swonderful\speople\s\(\[emoji\skey\]\(https:\/\/allcontributors\.org\/docs\/en\/emoji-key\)\)
+- Lifecycle\]\(https:\/\/img\.shields.*
+- \"deprecated\":.*
 version: "1.0"
