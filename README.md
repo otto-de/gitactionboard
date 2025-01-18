@@ -84,6 +84,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/globaltopmedia"><img src="https://avatars.githubusercontent.com/u/95023?v=4?s=100" width="100px;" alt="Marcel Dumont"/><br /><sub><b>Marcel Dumont</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Aglobaltopmedia" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fwilhe2"><img src="https://avatars.githubusercontent.com/u/52838694?v=4?s=100" width="100px;" alt="Florian Wilhelm"/><br /><sub><b>Florian Wilhelm</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/commits?author=fwilhe2" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aronhoyer"><img src="https://avatars.githubusercontent.com/u/10201831?v=4?s=100" width="100px;" alt="Aron Høyer"/><br /><sub><b>Aron Høyer</b></sub></a><br /><a href="#design-aronhoyer" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://fabasoad.com/"><img src="https://avatars.githubusercontent.com/u/2127723?v=4?s=100" width="100px;" alt="Eugene"/><br /><sub><b>Eugene</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Afabasoad" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>

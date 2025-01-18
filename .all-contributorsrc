@@ -192,6 +192,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "fabasoad",
+      "name": "Eugene",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2127723?v=4",
+      "profile": "https://fabasoad.com/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
