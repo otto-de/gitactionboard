@@ -46,7 +46,7 @@ dependencies {
     implementation "org.liquibase:liquibase-core"
     implementation "org.xerial:sqlite-jdbc:${sqliteJdbcVersion}"
     implementation "org.komamitsu:spring-data-sqlite:${springDataSqliteVersion}"
-    implementation "com.nimbusds:nimbus-jose-jwt:9.48" // Explicit version to fix CVE-2023-52428
+    implementation "com.nimbusds:nimbus-jose-jwt:10.0.1" // Explicit version to fix CVE-2023-52428
     implementation "com.fasterxml.uuid:java-uuid-generator:${javaUuidGeneratorVersion}"
     implementation "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
     implementation "com.github.ben-manes.caffeine:caffeine:${caffeineVersion}"
