@@ -12,6 +12,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
+import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -54,7 +55,8 @@ class JdbcWorkflowRunMetricRepositoryTest {
     final Instant to = Instant.now();
 
     assertThat(jdbcWorkflowRunMetricRepository.getWorkflowRunMetrics(Set.of(1L, 2L), from, to))
-        .isCompletedWithValue(List.of(workflowRunMetric1, workflowRunMetric2))
-        .succeedsWithin(DURATION);
+        .succeedsWithin(DURATION)
+        .asInstanceOf(InstanceOfAssertFactories.LIST)
+        .isEqualTo(List.of(workflowRunMetric1, workflowRunMetric2));
   }
 }
