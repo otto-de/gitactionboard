@@ -4,7 +4,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import java.net.URLDecoder;
 import java.util.Optional;
-import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,6 @@ public class Utils {
     return ResponseEntity.ok().headers(responseHeaders);
   }
 
-  @SneakyThrows
   public static String decodeUrlEncodedText(String urlEncodedText) {
     return Optional.ofNullable(urlEncodedText)
         .map(value -> URLDecoder.decode(value, UTF_8))
