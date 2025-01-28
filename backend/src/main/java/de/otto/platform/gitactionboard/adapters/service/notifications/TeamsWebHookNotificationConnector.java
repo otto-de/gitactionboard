@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.BufferingClientHttpRequestFactory;
+import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,8 +27,11 @@ public class TeamsWebHookNotificationConnector implements NotificationConnector 
 
   @Autowired
   public TeamsWebHookNotificationConnector(
-      RestTemplateBuilder restTemplateBuilder,
+      RestTemplateBuilder builder,
       @Value("${MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL}") String webHookUrl) {
+    final ClientHttpRequestFactory requestFactory = builder.buildRequestFactory();
+    final RestTemplateBuilder restTemplateBuilder =
+        builder.requestFactory(() -> new BufferingClientHttpRequestFactory(requestFactory));
     this.restTemplate = restTemplateBuilder.build();
     this.webHookUrl = webHookUrl;
   }
