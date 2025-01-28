@@ -45,7 +45,7 @@
             >
               <v-icon
                 :test-id="`${contentDisplayer.toLowerCase()}-hidden-contents-tool-bar-icon`"
-                :icon="`mdi-${showHiddenElements? 'eye-off': 'eye'}`"
+                :icon="`${showHiddenElements? '$hide': '$view'}`"
                 @click="toggleHiddenElements"
               />
             </v-btn>

@@ -120,7 +120,7 @@ export default {
       return !(this.isValid && this.isDirty);
     },
     themeIcon() {
-      return this.theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night';
+      return this.theme === 'light' ? '$light' : '$dark';
     },
     theme() {
       return this.themeInstance.global.name;

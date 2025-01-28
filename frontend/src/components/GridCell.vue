@@ -20,7 +20,7 @@
         >
           <v-chip
             v-if="showRelativeTime"
-            prepend-icon="mdi-clock-time-four-outline"
+            prepend-icon="$clock"
             density="compact"
             size="small"
             pill
@@ -32,7 +32,7 @@
             <template #activator="{ props }">
               <v-btn
                 :href="url"
-                icon="mdi-open-in-new"
+                icon="$openInNewWindow"
                 target="_blank"
                 v-bind="props"
                 size="small"
@@ -50,7 +50,7 @@
               <v-btn
                 :test-id="`${rootId}-change-visibility-icon`"
                 v-bind="props"
-                :icon="hidden? `mdi-eye`: `mdi-eye-off`"
+                :icon="hidden? `$view`: `$hide`"
                 size="small"
                 @click="$emit('toggleVisibility', name)"
               />
@@ -60,7 +60,7 @@
       </v-expand-transition>
       <v-chip
         v-if="showRelativeTime && !isHovering"
-        prepend-icon="mdi-clock-time-four-outline"
+        prepend-icon="$clock"
         tile
         size="small"
       >

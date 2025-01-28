@@ -67,7 +67,7 @@
             size="large"
             type="submit"
             variant="elevated"
-            append-icon="mdi-login"
+            append-icon="$login"
             test-id="basic-auth-login-button"
           >
             Login
@@ -86,7 +86,7 @@
           type="submit"
           variant="elevated"
           :href="getOauth2LoginUrl()"
-          append-icon="mdi-github"
+          append-icon="$github"
         >
           Login with Github
         </v-btn>

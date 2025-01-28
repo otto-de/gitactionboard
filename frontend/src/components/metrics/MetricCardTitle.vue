@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     icon() {
-      return this.expanded ? 'mdi-close-circle' : 'mdi-arrow-expand';
+      return this.expanded ? '$close' : '$expand';
     },
     iconLabel() {
       return this.expanded ? 'Close' : 'Expand';

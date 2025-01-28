@@ -5,13 +5,13 @@
   >
     <v-list nav>
       <v-list-item
-        :prepend-icon="rail ? `mdi-menu`:`mdi-menu-open`"
+        :prepend-icon="rail ? `$menu`:`$menuOpen`"
         @click="toggleSideBar"
       />
       <v-list-item
         :active="currentPath === '/workflow-jobs'"
         active-class="active"
-        prepend-icon="mdi-sitemap"
+        prepend-icon="$workflowJobs"
         title="Workflow Jobs"
         value="workflowJobs"
         href="#/workflow-jobs"
@@ -20,7 +20,7 @@
         v-if="githubSecretsScanMonitoringEnabled"
         :active="currentPath === '/secrets'"
         active-class="active"
-        prepend-icon="mdi-shield-lock-outline"
+        prepend-icon="$secrets"
         title="Exposed Secrets"
         value="secrets"
         href="#/secrets"
@@ -29,7 +29,7 @@
         v-if="isGithubCodeScanMonitoringEnabled"
         :active="currentPath === '/code-standard-violations'"
         active-class="active"
-        prepend-icon="mdi-code-braces-box"
+        prepend-icon="$codeStandards"
         title="Code Standard Violations"
         value="codeStandardViolations"
         href="#/code-standard-violations"
@@ -37,14 +37,14 @@
       <v-list-item
         :active="currentPath === '/metrics'"
         active-class="active"
-        prepend-icon="mdi-chart-line"
+        prepend-icon="$metrics"
         title="Metrics"
         value="metrics"
         href="#/metrics"
       />
       <v-list-item
         :active="currentPath === '/preferences'"
-        prepend-icon="mdi-cog-outline"
+        prepend-icon="$preferences"
         active-class="active"
         title="Preferences"
         value="preferences"
@@ -60,12 +60,12 @@
         />
         <v-list-item
           v-if="!avatarUrl"
-          prepend-icon="mdi-account-circle"
+          prepend-icon="$avatar"
           :title="firstName"
         />
         <v-list-item
           v-if="isAuthenticate"
-          prepend-icon="mdi-logout"
+          prepend-icon="$logout"
           title="Logout"
           @click="logout"
         />

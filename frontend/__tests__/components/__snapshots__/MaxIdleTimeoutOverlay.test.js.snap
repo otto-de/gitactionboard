@@ -31,7 +31,11 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
           <span class="v-alert__underlay"></span>
           <!---->
           <div class="v-alert__prepend">
-            <i aria-hidden="true" class="mdi-alert-circle mdi v-icon notranslate v-theme--light" density="default" style="font-size: 28px; height: 28px; width: 28px;"></i>
+            <i aria-hidden="true" class="v-icon notranslate v-theme--light" density="default" style="font-size: 28px; height: 28px; width: 28px;">
+              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+              </svg>
+            </i>
           </div>
           <div class="v-alert__content">
             <div class="v-alert-title">Stopped automatic page refreshment due to maximum idle timeout</div>
@@ -47,7 +51,11 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
             <span class="v-btn__overlay"></span>
             <span class="v-btn__underlay"></span>
             <span class="v-btn__prepend">
-              <i aria-hidden="true" class="mdi-refresh mdi v-icon notranslate v-theme--light v-icon--size-default"></i>
+              <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
+                <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" />
+                </svg>
+              </i>
             </span>
             <span class="v-btn__content" data-no-activator> Reload Page </span>
             <!---->

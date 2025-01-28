@@ -15,7 +15,7 @@
         <v-spacer />
         <v-btn
           elevation="3"
-          prepend-icon="mdi-refresh"
+          prepend-icon="$refresh"
           test-id="reload-button"
           @click="reloadPage"
         >

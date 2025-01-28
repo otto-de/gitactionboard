@@ -98,14 +98,16 @@ describe('MetricsDashboard', () => {
     await vi.waitUntil(() => wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`).exists());
 
     const repoName1ExpansionPanelWrapper = wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`);
-    await repoName1ExpansionPanelWrapper.find('.mdi-chevron-down').trigger('click');
+
+    const repo1ExpansionIcon = repoName1ExpansionPanelWrapper.find('svg');
+    expect(repo1ExpansionIcon.html()).toMatchSnapshot();
+
+    await repo1ExpansionIcon.trigger('click');
     await vi.waitUntil(() => wrapper.find(`#${repoName1}-metrics`).exists());
 
     expect(wrapper.find("[test-id='metrics-dashboard-expansion-panels']")).toMatchSnapshot();
     expect(fetchWorkflowRunMetrics).toHaveBeenCalledOnce();
-    expect(fetchWorkflowRunMetrics)
-      .toHaveBeenCalledWith(repoName1, FROM,
-        TO);
+    expect(fetchWorkflowRunMetrics).toHaveBeenCalledWith(repoName1, FROM, TO);
     expect(wrapper.find(`#${repoName2}-metrics`).exists()).toBeFalsy();
   });
 
@@ -119,19 +121,22 @@ describe('MetricsDashboard', () => {
 
     await vi.waitUntil(() => wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`).exists());
 
-    await wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`)
-      .find('.mdi-chevron-down').trigger('click');
+    let repo1ExpansionIcon = wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`)
+      .find('svg');
+    expect(repo1ExpansionIcon.html()).toMatchSnapshot();
+    await repo1ExpansionIcon.trigger('click');
 
     await vi.waitUntil(() => wrapper.find(`#${repoName1}-metrics`).exists());
 
-    await wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`)
-      .find('.mdi-chevron-up').trigger('click');
+    repo1ExpansionIcon = wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`)
+      .find('svg');
+    expect(repo1ExpansionIcon.html()).toMatchSnapshot();
+    await repo1ExpansionIcon.trigger('click');
     await wrapper.vm.$nextTick();
     await flushPromises();
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`)
-      .find('.mdi-chevron-up').exists()).toBeFalsy();
+    expect(wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`).html()).toMatchSnapshot();
     // TODO: Check RepositoryMetrics components gets unmounted
   });
 
@@ -151,10 +156,8 @@ describe('MetricsDashboard', () => {
     await vi.waitUntil(() => wrapper.find(`#${repoName2}-metrics`).exists());
 
     expect(fetchWorkflowRunMetrics).toHaveBeenCalledTimes(2);
-    expect(fetchWorkflowRunMetrics).toHaveBeenCalledWith(repoName1,
-      FROM, TO);
-    expect(fetchWorkflowRunMetrics).toHaveBeenCalledWith(repoName2,
-      FROM, TO);
+    expect(fetchWorkflowRunMetrics).toHaveBeenCalledWith(repoName1, FROM, TO);
+    expect(fetchWorkflowRunMetrics).toHaveBeenCalledWith(repoName2, FROM, TO);
   });
 
   it('should collapse all repository metrics when clicks on collapse all button', async () => {
@@ -178,9 +181,6 @@ describe('MetricsDashboard', () => {
     await wrapper.vm.$nextTick();
     await flushPromises();
 
-    expect(wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName1}']`)
-      .find('.mdi-chevron-up').exists()).toBeFalsy();
-    expect(wrapper.find(`[test-id='metrics-dashboard-expansion-panel-${repoName2}']`)
-      .find('.mdi-chevron-up').exists()).toBeFalsy();
+    expect(wrapper.find('[test-id=\'metrics-dashboard-expansion-panels\']').html()).toMatchSnapshot();
   });
 });

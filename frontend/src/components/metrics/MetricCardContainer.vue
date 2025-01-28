@@ -80,7 +80,7 @@ export default {
       return `${this.repoName}_${this.title.replaceAll(' ', '_')}`;
     },
     icon() {
-      return this.fullScreen ? 'mdi-close-circle' : 'mdi-arrow-expand';
+      return this.fullScreen ? '$close' : '$expand';
     }
   },
   methods: {

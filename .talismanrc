@@ -118,7 +118,7 @@ fileignoreconfig:
 - filename: frontend/__tests__/components/LoginPage.test.js
   checksum: 50df57eeeb5daa25d817280852361c0f12b82fd11de3771003f83ca25fdaebea
 - filename: frontend/__tests__/components/__snapshots__/LoginPage.test.js.snap
-  checksum: 7339892a4d449bb5da239c6c15f52b7d9ded478f5f0c7960cff2ed331b134aae
+  checksum: 6f0a3d08a4055cfd14a13d98fccac05f9b165f2357b1c815618f9f3ea5aa57f6
 - filename: frontend/mock-data/data.json
   checksum: ee8531df97c579c3c4ded7f884e4033c28096d227eec725f533d8c85b1f567e2
 - filename: frontend/package-lock.json
@@ -137,6 +137,8 @@ fileignoreconfig:
   checksum: 6b79b1bae68ed56f2304b019df7201f31325dd8baec46ba08925fbf4f26cd891
 - filename: frontend/src/components/metrics/TimeSeriesLineChart.vue
   checksum: 36d07fa620b3361148b31396b447035c0fee02b0ee206ae87630fd2bd831c691
+- filename: frontend/src/plugins/vuetify.js
+  checksum: 9a504ff801dff0d9669fb271292ffd5d0361aa4a0e9f6bce3188a2668214b4ce
 - filename: frontend/src/services/apiService.js
   checksum: d7de34db23336915c4fefa6001eb2c0d9cdeeb0db60a4d5dcffded918939515e
 - filename: frontend/src/services/preferences.js
