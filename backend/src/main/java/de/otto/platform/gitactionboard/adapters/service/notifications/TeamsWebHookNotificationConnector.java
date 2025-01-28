@@ -27,12 +27,13 @@ public class TeamsWebHookNotificationConnector implements NotificationConnector 
 
   @Autowired
   public TeamsWebHookNotificationConnector(
-      RestTemplateBuilder builder,
+      RestTemplateBuilder restTemplateBuilder,
       @Value("${MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL}") String webHookUrl) {
-    final ClientHttpRequestFactory requestFactory = builder.buildRequestFactory();
-    final RestTemplateBuilder restTemplateBuilder =
-        builder.requestFactory(() -> new BufferingClientHttpRequestFactory(requestFactory));
-    this.restTemplate = restTemplateBuilder.build();
+    final ClientHttpRequestFactory requestFactory = restTemplateBuilder.buildRequestFactory();
+    this.restTemplate =
+        restTemplateBuilder
+            .requestFactory(() -> new BufferingClientHttpRequestFactory(requestFactory))
+            .build();
     this.webHookUrl = webHookUrl;
   }
 
