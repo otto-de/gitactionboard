@@ -21,12 +21,12 @@
     "vue": "^3.5.13",
     "vue-chartjs": "^5.3.2",
     "vue-router": "^4.5.0",
-    "vuetify": "^3.7.7"
+    "vuetify": "^3.7.9"
   },
   "devDependencies": {
     "@mockoon/cli": "^9.1.0",
     "@vitejs/plugin-vue": "^5.2.1",
-    "@vitest/coverage-v8": "^3.0.4",
+    "@vitest/coverage-v8": "^3.0.5",
     "@vue/test-utils": "^2.4.6",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.0",
