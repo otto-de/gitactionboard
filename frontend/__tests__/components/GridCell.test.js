@@ -2,8 +2,11 @@ import { describe, expect, it, beforeEach, vi } from 'vitest';
 import { mount, requestAnimationFrameAsPromise, retryUntil } from '../test-utils';
 import GridCell from '@/components/GridCell.vue';
 import preferences from '@/services/preferences';
+import { getRelativeTime } from '@/services/utils';
 
 describe('<GridCell />', () => {
+  vi.mock('@/services/utils');
+
   const defaultProps = {
     name: 'webpack-cli :: webpack-cli :: Lint Commit Messages',
     url: 'https://github.com/webpack/webpack-cli/runs/7858502725',
@@ -14,6 +17,7 @@ describe('<GridCell />', () => {
   const rootId = `${defaultProps.name.replaceAll(/[\\:\s]/g, '-')}`;
 
   beforeEach(() => {
+    getRelativeTime.mockReturnValue('2 years ago');
     vi.spyOn(preferences, 'theme', 'get').mockReturnValueOnce('light');
   });
 
