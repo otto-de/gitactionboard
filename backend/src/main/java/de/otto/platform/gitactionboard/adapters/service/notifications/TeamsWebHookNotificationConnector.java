@@ -1,5 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.notifications;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+
 import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardViolationDetails;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.notifications.NotificationConnector;
@@ -9,12 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.BufferingClientHttpRequestFactory;
-import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 
 @Component
 @Slf4j
@@ -22,18 +20,14 @@ import org.springframework.web.client.RestTemplate;
 @SuppressFBWarnings("EI_EXPOSE_REP2")
 public class TeamsWebHookNotificationConnector implements NotificationConnector {
   private static final String CONNECTOR_TYPE = "MS_TEAMS_WEB_HOOK";
-  private final RestTemplate restTemplate;
   private final String webHookUrl;
+  private final RestClient restClient;
 
   @Autowired
   public TeamsWebHookNotificationConnector(
-      RestTemplateBuilder restTemplateBuilder,
+      RestClient.Builder restClientBuilder,
       @Value("${MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL}") String webHookUrl) {
-    final ClientHttpRequestFactory requestFactory = restTemplateBuilder.buildRequestFactory();
-    this.restTemplate =
-        restTemplateBuilder
-            .requestFactory(() -> new BufferingClientHttpRequestFactory(requestFactory))
-            .build();
+    restClient = restClientBuilder.build();
     this.webHookUrl = webHookUrl;
   }
 
@@ -45,11 +39,13 @@ public class TeamsWebHookNotificationConnector implements NotificationConnector 
   }
 
   private void notify(TeamsNotificationMessagePayload messagePayload) {
-    final ResponseEntity<String> responseEntity =
-        restTemplate.postForEntity(webHookUrl, messagePayload, String.class);
-
-    if (!responseEntity.getStatusCode().is2xxSuccessful())
-      throw new RuntimeException(responseEntity.getBody());
+    restClient
+        .post()
+        .uri(webHookUrl)
+        .body(messagePayload)
+        .contentType(APPLICATION_JSON)
+        .retrieve()
+        .toBodilessEntity();
   }
 
   @Override

@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.scan.code.violations;
 
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.scan.GithubAlertsService;
 import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardViolationDetails;
 import de.otto.platform.gitactionboard.domain.service.CodeStandardViolationsService;
@@ -22,7 +22,7 @@ public class GithubCodeStandardViolationsService
 
   @Autowired
   public GithubCodeStandardViolationsService(
-      ApiService apiService, @Value("${app.github.alerts.page.size:100}") Integer perPage) {
+      GithubApiService apiService, @Value("${app.github.alerts.page.size:100}") Integer perPage) {
     super(apiService, perPage, ALERTS_TYPE);
   }
 

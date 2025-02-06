@@ -7,7 +7,7 @@ import static org.mockito.Mockito.when;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.TestUtil;
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
@@ -27,7 +27,7 @@ class GithubWorkflowServiceTest {
 
   private static final String ACCESS_TOKEN = "accessToken";
   private final ObjectMapper objectMapper = CodecConfig.OBJECT_MAPPER_BUILDER.build();
-  @Mock private ApiService apiService;
+  @Mock private GithubApiService apiService;
 
   private GithubWorkflowService githubWorkflowService;
 

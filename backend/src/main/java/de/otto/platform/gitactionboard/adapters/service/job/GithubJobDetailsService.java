@@ -4,7 +4,7 @@ import static de.otto.platform.gitactionboard.domain.workflow.RunConclusion.SUCC
 import static de.otto.platform.gitactionboard.domain.workflow.RunStatus.COMPLETED;
 
 import com.github.benmanes.caffeine.cache.Cache;
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.domain.repository.WorkflowJobRepository;
 import de.otto.platform.gitactionboard.domain.repository.WorkflowRunRepository;
@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor
 public class GithubJobDetailsService implements JobDetailsService {
-  private final ApiService apiService;
+  private final GithubApiService apiService;
   private final Cache<String, List<WorkflowJob>> workflowJobDetailsCache;
   private final WorkflowRunRepository workflowRunRepository;
   private final WorkflowJobRepository workflowJobRepository;

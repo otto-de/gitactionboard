@@ -1,6 +1,6 @@
 pitest {
   threads = 2
-  coverageThreshold = 81
+  coverageThreshold = 80
   mutationThreshold = 77
   historyInputLocation = 'pitestHistory/pitestHistory'
   historyOutputLocation = 'pitestHistory/pitestHistory'

@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.workflow;
 
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import de.otto.platform.gitactionboard.domain.service.WorkflowService;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor
 public class GithubWorkflowService implements WorkflowService {
-  private final ApiService apiService;
+  private final GithubApiService apiService;
 
   @Override
   @Async

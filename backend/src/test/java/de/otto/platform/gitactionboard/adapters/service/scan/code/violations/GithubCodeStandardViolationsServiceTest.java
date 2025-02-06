@@ -10,7 +10,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import de.otto.platform.gitactionboard.Sequential;
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardViolationDetails;
 import java.util.List;
 import lombok.SneakyThrows;
@@ -23,7 +23,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 @Sequential
 class GithubCodeStandardViolationsServiceTest {
-  @Mock private ApiService apiService;
+  @Mock private GithubApiService apiService;
 
   private static final String ACCESS_TOKEN = "accessToken";
 

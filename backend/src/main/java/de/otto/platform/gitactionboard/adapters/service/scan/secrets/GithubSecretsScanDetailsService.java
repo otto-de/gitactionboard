@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.scan.secrets;
 
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.scan.GithubAlertsService;
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.SecretsScanDetailsService;
@@ -23,7 +23,7 @@ public class GithubSecretsScanDetailsService
 
   @Autowired
   public GithubSecretsScanDetailsService(
-      ApiService apiService, @Value("${app.github.alerts.page.size:100}") Integer perPage) {
+      GithubApiService apiService, @Value("${app.github.alerts.page.size:100}") Integer perPage) {
     super(apiService, perPage, ALERTS_TYPE);
   }
 

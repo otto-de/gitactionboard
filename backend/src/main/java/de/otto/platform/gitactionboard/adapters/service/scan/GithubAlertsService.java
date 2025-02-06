@@ -1,6 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.service.scan;
 
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public abstract class GithubAlertsService<T, U> {
-  private final ApiService apiService;
+  private final GithubApiService apiService;
   private final Integer perPage;
   private final String alertsType;
 

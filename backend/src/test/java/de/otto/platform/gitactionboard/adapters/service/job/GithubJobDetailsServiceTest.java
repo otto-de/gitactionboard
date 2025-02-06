@@ -26,7 +26,7 @@ import static org.mockito.Mockito.when;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.Sequential;
-import de.otto.platform.gitactionboard.adapters.service.ApiService;
+import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsJobDetailsResponse.WorkflowsJobDetails;
 import de.otto.platform.gitactionboard.adapters.service.job.WorkflowsRunDetailsResponse.WorkflowRunDetails;
 import de.otto.platform.gitactionboard.config.CodecConfig;
@@ -81,7 +81,7 @@ class GithubJobDetailsServiceTest {
   private final Workflow workflow =
       Workflow.builder().id(2151835).name(WORKFLOW_NAME).repoName(REPO_NAME).build();
 
-  @Mock private ApiService apiService;
+  @Mock private GithubApiService apiService;
 
   @Mock private Cache<String, List<WorkflowJob>> mockWorkflowJobDetailsCache;
 
