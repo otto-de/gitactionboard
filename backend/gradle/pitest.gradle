@@ -1,12 +1,13 @@
 pitest {
   threads = 2
-  coverageThreshold = 80
-  mutationThreshold = 77
+  coverageThreshold = 88
+  mutationThreshold = 85
   historyInputLocation = 'pitestHistory/pitestHistory'
   historyOutputLocation = 'pitestHistory/pitestHistory'
   useClasspathFile = true
   timestampedReports = false
   excludedTestClasses = ['de.otto.platform.gitactionboard.**.*IntegrationTest']
+  excludedClasses = ['de.otto.platform.gitactionboard.config.**']
   withHistory = true
   mutators = ["DEFAULTS"]
   outputFormats = ['HTML']
