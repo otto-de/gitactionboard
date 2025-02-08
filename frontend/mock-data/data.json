@@ -1,11 +1,11 @@
 {
   "uuid": "8d7caae6-16ec-48db-8c68-39f462541fe7",
-  "lastMigration": 22,
+  "lastMigration": 33,
   "name": "gitactionboard API",
   "endpointPrefix": "",
   "latency": 0,
   "port": 8080,
-  "hostname": "0.0.0.0",
+  "hostname": "",
   "routes": [
     {
       "uuid": "75129208-9021-4cfd-82a4-c90ddeb94ee1",
@@ -31,11 +31,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "2e2619b0-c88e-4866-8c6d-ddcbc403f629",
@@ -61,11 +67,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "9223b728-5e59-4b11-8f7e-8844465bd152",
@@ -95,11 +107,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "e516b503-72d5-4b22-909c-ad4835c1f0e9",
@@ -120,11 +138,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "86d470a6-3695-4f4a-9b22-361d1e535292",
@@ -145,11 +169,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "8a33d02d-3df6-4492-861e-ffdff334d504",
@@ -175,11 +205,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "2d89f277-487e-4ecf-bcaa-8ebc728b993c",
@@ -205,11 +241,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "7ca77669-4ef2-471f-865d-f93f27f8427f",
@@ -258,7 +300,11 @@
           "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         },
         {
           "uuid": "cb790b32-330d-45b5-986b-282fa75ae0a9",
@@ -288,11 +334,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "e36dff74-05cc-4f7b-a35d-c540bc31843f",
@@ -330,11 +382,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     },
     {
       "uuid": "9c6dcdd5-24ad-4ceb-989f-92ef3d2e9867",
@@ -364,11 +422,17 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
-      "responseMode": null
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
     }
   ],
   "proxyMode": false,
@@ -401,5 +465,50 @@
       "key": "",
       "value": ""
     }
-  ]
+  ],
+  "data": [],
+  "folders": [],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "75129208-9021-4cfd-82a4-c90ddeb94ee1"
+    },
+    {
+      "type": "route",
+      "uuid": "2e2619b0-c88e-4866-8c6d-ddcbc403f629"
+    },
+    {
+      "type": "route",
+      "uuid": "9223b728-5e59-4b11-8f7e-8844465bd152"
+    },
+    {
+      "type": "route",
+      "uuid": "e516b503-72d5-4b22-909c-ad4835c1f0e9"
+    },
+    {
+      "type": "route",
+      "uuid": "86d470a6-3695-4f4a-9b22-361d1e535292"
+    },
+    {
+      "type": "route",
+      "uuid": "8a33d02d-3df6-4492-861e-ffdff334d504"
+    },
+    {
+      "type": "route",
+      "uuid": "2d89f277-487e-4ecf-bcaa-8ebc728b993c"
+    },
+    {
+      "type": "route",
+      "uuid": "7ca77669-4ef2-471f-865d-f93f27f8427f"
+    },
+    {
+      "type": "route",
+      "uuid": "e36dff74-05cc-4f7b-a35d-c540bc31843f"
+    },
+    {
+      "type": "route",
+      "uuid": "9c6dcdd5-24ad-4ceb-989f-92ef3d2e9867"
+    }
+  ],
+  "callbacks": []
 }

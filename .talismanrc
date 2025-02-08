@@ -14,7 +14,7 @@ fileignoreconfig:
 - filename: backend/gradle/test.gradle
   checksum: 335aafca613cd07460f7d71ae96664d7f0092d1d0afb612e284c8986f039fbca
 - filename: backend/mock-data/data.json
-  checksum: 6138ac73388fae09e19c9aa4f82d2ea6fdaec325f3e2212d4658cbe22962c29b
+  checksum: 7abd498544a9674fc49b372efd8ea89421b19afa876802d2cf86d524051c9cbc
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: 4ae935e8b52b6d3e2eb8a1d8ac9aaa3b7af96e4c7aa770a41b96d8881d520141
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
@@ -112,7 +112,7 @@ fileignoreconfig:
 - filename: doc/light-theme/workflow.png
   checksum: 4918fce935cb85039d75ea8e67376564d562ba40fd439650cd53f8111e825c4b
 - filename: frontend/__tests__/components/DashboardHeader.test.js
-  checksum: 49d79632c3100eb408110edfbf8d7eab0258bc4b06f65ee47db7b4ed76e37807
+  checksum: 9acb9f9c9ea076afb92d4fe5901109a43636c97b091d184f29ceb8757a610add
 - filename: frontend/__tests__/components/GridCell.test.js
   checksum: da612be8c8f89b10ad0c64830040b8cb51cc0aac237616c311994d0371d8c8c6
 - filename: frontend/__tests__/components/LoginPage.test.js
@@ -120,7 +120,7 @@ fileignoreconfig:
 - filename: frontend/__tests__/components/__snapshots__/LoginPage.test.js.snap
   checksum: 6f0a3d08a4055cfd14a13d98fccac05f9b165f2357b1c815618f9f3ea5aa57f6
 - filename: frontend/mock-data/data.json
-  checksum: ee8531df97c579c3c4ded7f884e4033c28096d227eec725f533d8c85b1f567e2
+  checksum: 002e577e9037797c7a7ed9535a755a2fd456430b97241305b0ed2806ecc9d1f3
 - filename: frontend/package-lock.json
   checksum: 7bfe7fa152d4d94d6216e5246a7995d98b839c498dde51dff54c09f7beb146f1
 - filename: frontend/src/components/Dashboard.vue
@@ -165,4 +165,5 @@ allowed_patterns:
 - Thanks\sgoes\sto\sthese\swonderful\speople\s\(\[emoji\skey\]\(https:\/\/allcontributors\.org\/docs\/en\/emoji-key\)\)
 - Lifecycle\]\(https:\/\/img\.shields.*
 - \"deprecated\":.*
+- \"@typescript-eslint/visitor-keys\":.*
 version: "1.0"
