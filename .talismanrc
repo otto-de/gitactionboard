@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: USAGE.md
-  checksum: 666c1aa4631e80ff93196f0ef1c9afd1650dd48116c0b4509b7c1a36681509ff
+  checksum: 3fcae5ec893be92769a9f1c9e334e446458e2b3ce404a31c9ced5c7cae3df526
 - filename: backend/build.gradle
   checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
 - filename: backend/gradle/config/checkstyle.xml
@@ -34,7 +34,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayload.java
   checksum: d4bafd4580b23f4a8e830c749df73f85ad5fa9952d4c8ffadd9e38cf0cda4580
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsWorkflowNotificationMessagePayload.java
-  checksum: 4f6c2f75831e5c4ddd53a3c1567d176044c4965c2f007f240301ea069e83f5e0
+  checksum: d282772cb39dc64b40a15248ae62992ac7ee3f913134270b0e86941fd20655e9
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsService.java
   checksum: 75771c4a2ca13fd847c8538cb1acf95e315c73c04e1dec620f97a99ca3b094dc
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/config/FeaturesConfig.java
@@ -58,7 +58,7 @@ fileignoreconfig:
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java
   checksum: 0b94970267dcee93a6d21b2389840221badf8c2940208ef6fac5d6f4e8647e61
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java
-  checksum: 463e14930e8b747c69b163851f0fafbbe612113c8286c8da61c1fea0448c2f5f
+  checksum: 635d3923866882e488121d1f4f5d1a7c52ed8d0d1efab12932f77d3f952d946a
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerTest.java
   checksum: d3432ba9062b0425f90b8c3e6b703211b479d667f51239a5df2532815ee4f6a0
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanSchedulerTest.java
@@ -106,7 +106,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: 636c29faa1a28f65f300e2de2fc4466d6f800f312afff3a17ece63c7e1d47099
 - filename: bin/lib.sh
-  checksum: 7a195e75ded7e8c2cf3716da52c05295bb3aac49e97a98c46c15a621a8bfc2f8
+  checksum: 337bc214cb50e764520fa8c72694dc94f3761219e75505ef201d7c6e12c11a36
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png

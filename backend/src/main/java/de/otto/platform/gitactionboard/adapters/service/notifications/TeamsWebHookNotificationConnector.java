@@ -7,6 +7,7 @@ import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.notifications.NotificationConnector;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,8 +17,9 @@ import org.springframework.web.client.RestClient;
 
 @Component
 @Slf4j
-@ConditionalOnProperty("MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL")
 @SuppressFBWarnings("EI_EXPOSE_REP2")
+@Deprecated(forRemoval = true, since = "5.0.0")
+@ConditionalOnProperty("MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL")
 public class TeamsWebHookNotificationConnector implements NotificationConnector {
   private static final String CONNECTOR_TYPE = "MS_TEAMS_WEB_HOOK";
   private final String webHookUrl;
@@ -61,5 +63,11 @@ public class TeamsWebHookNotificationConnector implements NotificationConnector 
   @Override
   public String getType() {
     return CONNECTOR_TYPE;
+  }
+
+  @PostConstruct
+  private void postConstruct() {
+    log.warn(
+        "MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL is deprecated and will be removed in a future version. Please switch to MS_TEAMS_NOTIFICATIONS_WORKFLOW_URL");
   }
 }
