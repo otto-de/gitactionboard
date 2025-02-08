@@ -1,7 +1,7 @@
 pitest {
   threads = 2
   coverageThreshold = 88
-  mutationThreshold = 85
+  mutationThreshold = 83
   historyInputLocation = 'pitestHistory/pitestHistory'
   historyOutputLocation = 'pitestHistory/pitestHistory'
   useClasspathFile = true

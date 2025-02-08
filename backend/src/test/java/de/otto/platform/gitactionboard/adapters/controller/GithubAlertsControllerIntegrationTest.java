@@ -74,6 +74,9 @@ class GithubAlertsControllerIntegrationTest {
     mockServerClient
         .when(request().withMethod("POST").withPath("/webhook/notifications"))
         .respond(response().withStatusCode(SC_OK));
+    mockServerClient
+        .when(request().withMethod("POST").withPath("/workflow/notifications"))
+        .respond(response().withStatusCode(SC_OK));
   }
 
   private void stubCodeScanApiRequests(MockServerClient mockServerClient) {
@@ -87,6 +90,10 @@ class GithubAlertsControllerIntegrationTest {
 
     mockServerClient
         .when(request().withMethod("POST").withPath("/webhook/notifications"))
+        .respond(response().withStatusCode(SC_OK));
+
+    mockServerClient
+        .when(request().withMethod("POST").withPath("/workflow/notifications"))
         .respond(response().withStatusCode(SC_OK));
   }
 
@@ -154,6 +161,9 @@ class GithubAlertsControllerIntegrationTest {
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
 
+    @Value("${wiremock.workflow.url}")
+    private String notificationWorkflowUrl;
+
     @AfterEach
     void tearDown() {
       notificationRepository.deleteAll();
@@ -170,7 +180,7 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           content().json(readFile(SECURITY_SCAN_ALERTS_JSON)));
 
-      mockServerClient.verify(request(), exactly(4));
+      mockServerClient.verify(request(), exactly(7));
 
       verifyRequestWithPageQueryParams(
           mockServerClient,
@@ -180,6 +190,7 @@ class GithubAlertsControllerIntegrationTest {
           Parameter.param("page", "1"),
           Parameter.param("per_page", "100"));
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(3));
     }
 
     @Test
@@ -196,7 +207,7 @@ class GithubAlertsControllerIntegrationTest {
           content().json(readFile(SECURITY_SCAN_ALERTS_JSON)),
           dummyAccessToken);
 
-      mockServerClient.verify(request(), exactly(4));
+      mockServerClient.verify(request(), exactly(7));
 
       verifyRequestWithPageQueryParams(
           mockServerClient,
@@ -206,6 +217,7 @@ class GithubAlertsControllerIntegrationTest {
           Parameter.param("page", "1"),
           Parameter.param("per_page", "100"));
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(3));
     }
 
     @Test
@@ -243,6 +255,9 @@ class GithubAlertsControllerIntegrationTest {
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
 
+    @Value("${wiremock.workflow.url}")
+    private String notificationWorkflowUrl;
+
     @Autowired private CacheManager cacheManager;
 
     @Autowired private NotificationRepository notificationRepository;
@@ -270,9 +285,10 @@ class GithubAlertsControllerIntegrationTest {
       invokeGetApiAndValidate(
           mockMvc, SECURITY_SCAN_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      mockServerClient.verify(request(), exactly(4));
+      mockServerClient.verify(request(), exactly(7));
       verifyRequest(mockServerClient, SECRETS_SCAN_ALERTS_URL, "");
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(3));
       mockServerClient.reset();
 
       invokeGetApiAndValidate(
@@ -294,9 +310,10 @@ class GithubAlertsControllerIntegrationTest {
           resultMatcher,
           dummyToken1);
 
-      mockServerClient.verify(request(), exactly(4));
+      mockServerClient.verify(request(), exactly(7));
       verifyRequest(mockServerClient, SECRETS_SCAN_ALERTS_URL, dummyToken1);
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(3));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(3));
 
       mockServerClient.reset();
 
@@ -325,6 +342,9 @@ class GithubAlertsControllerIntegrationTest {
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
 
+    @Value("${wiremock.workflow.url}")
+    private String notificationWorkflowUrl;
+
     @AfterEach
     void tearDown() {
       notificationRepository.deleteAll();
@@ -341,9 +361,10 @@ class GithubAlertsControllerIntegrationTest {
           APPLICATION_JSON_VALUE,
           content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON)));
 
-      mockServerClient.verify(request(), exactly(3));
+      mockServerClient.verify(request(), exactly(5));
       verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, "");
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(2));
     }
 
     @Test
@@ -360,9 +381,10 @@ class GithubAlertsControllerIntegrationTest {
           content().json(readFile(CODE_STANDARD_VIOLATIONS_JSON)),
           dummyAccessToken);
 
-      mockServerClient.verify(request(), exactly(3));
+      mockServerClient.verify(request(), exactly(5));
       verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, dummyAccessToken);
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(2));
     }
 
     @Test
@@ -405,6 +427,9 @@ class GithubAlertsControllerIntegrationTest {
     @Value("${wiremock.webhook.url}")
     private String notificationWebHookUrl;
 
+    @Value("${wiremock.workflow.url}")
+    private String notificationWorkflowUrl;
+
     @Autowired private CacheManager cacheManager;
 
     @Autowired private NotificationRepository notificationRepository;
@@ -432,9 +457,10 @@ class GithubAlertsControllerIntegrationTest {
       invokeGetApiAndValidate(
           mockMvc, CODE_STANDARD_VIOLATION_ALERTS_ENDPOINT, APPLICATION_JSON_VALUE, resultMatcher);
 
-      mockServerClient.verify(request(), exactly(3));
+      mockServerClient.verify(request(), exactly(5));
       verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, "");
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(2));
       mockServerClient.reset();
 
       invokeGetApiAndValidate(
@@ -456,9 +482,10 @@ class GithubAlertsControllerIntegrationTest {
           resultMatcher,
           dummyToken1);
 
-      mockServerClient.verify(request(), exactly(3));
+      mockServerClient.verify(request(), exactly(5));
       verifyRequest(mockServerClient, CODE_SCAN_ALERTS_URL, dummyToken1);
       verifyRequest(mockServerClient, request().withPath(notificationWebHookUrl), exactly(2));
+      verifyRequest(mockServerClient, request().withPath(notificationWorkflowUrl), exactly(2));
       mockServerClient.reset();
 
       invokeGetApiAndValidate(

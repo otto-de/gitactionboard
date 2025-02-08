@@ -33,6 +33,8 @@ fileignoreconfig:
   checksum: d0882ef379e23d19a82db44bc456b142e3059e66ab3613e02032ec2d20aed05f
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayload.java
   checksum: d4bafd4580b23f4a8e830c749df73f85ad5fa9952d4c8ffadd9e38cf0cda4580
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsWorkflowNotificationMessagePayload.java
+  checksum: 4f6c2f75831e5c4ddd53a3c1567d176044c4965c2f007f240301ea069e83f5e0
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsService.java
   checksum: 75771c4a2ca13fd847c8538cb1acf95e315c73c04e1dec620f97a99ca3b094dc
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/config/FeaturesConfig.java
@@ -65,6 +67,8 @@ fileignoreconfig:
   checksum: 517c7274a1dad812004e1de4ff1012177a28124691b05b51d125647b1703db9f
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayloadTest.java
   checksum: cd056d985cf2825738a1f25487382806962df3be1a2c932d04b6d61e511d9aa2
+- filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsWorkflowNotificationMessagePayloadTest.java
+  checksum: 45d498ccc918be3dc2f72c095f264fa7be66ea1dab2f8d395cf587844e04ec80
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsServiceTest.java
   checksum: 3f8b618831cdc0870d4cfabc156954177169230395c958509cef3e4214c793a9
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/config/FeaturesConfigTest.java
@@ -81,6 +85,8 @@ fileignoreconfig:
   checksum: 78e756e8c4cad7f3ff3c6f7e79ed56197d1b4fa5690527be90418f9079e02cab
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/TeamsNotificationsMessagePayloadFixture.java
   checksum: 9213e0e646926c885bde2f8031a8d42a8860c5deabe4c08b2f304c64a1b176b1
+- filename: backend/src/test/java/de/otto/platform/gitactionboard/fixtures/TeamsWorkflowNotificationsMessagePayloadFixture.java
+  checksum: ac43328cc1933b017d3b95f63e6c1b3ce6f93e28d167b8e061a15359f23a004b
 - filename: backend/src/test/resources/.htpasswd
   checksum: 2e31e64b696f0f9267a4ebd694d90b27c6e0c4cefdd11349d199e185daab2d6c
 - filename: backend/src/test/resources/testData/githubCodeScanAlerts.json
