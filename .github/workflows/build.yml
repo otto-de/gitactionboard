@@ -62,14 +62,13 @@ jobs:
             ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-node-
             ${{ runner.os }}-
-      - name: Cache pitest history
-        uses: pat-s/always-upload-cache@v3.0.11
+      - name: Restore pitest history from cache
+        id: cache-pitest-history-restore
+        uses: actions/cache/restore@v4
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
-          key: pitestHistory-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            pitestHistory-${{ steps.get-date.outputs.date }}-
-            pitestHistory-
+          key: pitestHistory-${{ hashFiles('**/*.gradle*', '**/*.java*') }}
+          restore-keys: pitestHistory-
       - name: Run all tests
         run: ./run.sh test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
@@ -82,6 +81,12 @@ jobs:
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
+      - name: Save pitest history
+        if: always() && steps.cache-pitest-history-restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
+          key: ${{ steps.cache-pitest-history-restore.outputs.cache-primary-key }}
 
   determaine_should_publish_new_version:
     runs-on: ubuntu-22.04
