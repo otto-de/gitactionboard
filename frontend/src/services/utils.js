@@ -102,12 +102,10 @@ export const getGithubCodeScanMonitoringEnabled = () =>
 
 export const getVersion = () => storageService.getItem('version');
 
-const buildTriggeredEvents = (keys) => {
-  return keys.map(key => ({
-    title: ALL_POSSIBLE_EVENTS[key],
-    value: key
-  }));
-};
+const buildTriggeredEvents = (keys) => keys.map(key => ({
+  title: ALL_POSSIBLE_EVENTS[key],
+  value: key
+}));
 
 export const getAllPossibleTriggeredEvents = () => buildTriggeredEvents(Object.keys(ALL_POSSIBLE_EVENTS));
 

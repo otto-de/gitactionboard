@@ -32,30 +32,28 @@ describe('MetricsDashboard', () => {
   const repoName2 = 'test';
 
   const mockSuccessfulWorkflowRunMetrics = () => {
-    fetchWorkflowRunMetrics.mockImplementation((repoName) => {
-      return Promise.resolve({
-        test: [
-          {
-            workflowName: 'test',
-            repoName,
-            conclusion: 'FAILURE',
-            runAttempt: 1,
-            startedAt: '2024-09-06T06:06:04.000Z',
-            completedAt: '2024-09-06T06:09:44.000Z',
-            triggeredEvent: 'schedule'
-          },
-          {
-            workflowName: 'test',
-            repoName,
-            conclusion: 'FAILURE',
-            runAttempt: 1,
-            startedAt: '2024-09-05T11:18:38.000Z',
-            completedAt: '2024-09-05T11:22:06.000Z',
-            triggeredEvent: 'push'
-          }
-        ]
-      });
-    });
+    fetchWorkflowRunMetrics.mockImplementation((repoName) => Promise.resolve({
+      test: [
+        {
+          workflowName: 'test',
+          repoName,
+          conclusion: 'FAILURE',
+          runAttempt: 1,
+          startedAt: '2024-09-06T06:06:04.000Z',
+          completedAt: '2024-09-06T06:09:44.000Z',
+          triggeredEvent: 'schedule'
+        },
+        {
+          workflowName: 'test',
+          repoName,
+          conclusion: 'FAILURE',
+          runAttempt: 1,
+          startedAt: '2024-09-05T11:18:38.000Z',
+          completedAt: '2024-09-05T11:22:06.000Z',
+          triggeredEvent: 'push'
+        }
+      ]
+    }));
   };
 
   it('should display spinner when component is loading', async () => {
@@ -181,6 +179,6 @@ describe('MetricsDashboard', () => {
     await wrapper.vm.$nextTick();
     await flushPromises();
 
-    expect(wrapper.find('[test-id=\'metrics-dashboard-expansion-panels\']').html()).toMatchSnapshot();
+    expect(wrapper.find("[test-id='metrics-dashboard-expansion-panels']").html()).toMatchSnapshot();
   });
 });

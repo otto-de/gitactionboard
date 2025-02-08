@@ -39,7 +39,7 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
       <!--v-if-->
       <div class="v-container v-container--fluid v-locale--is-ltr fill-height justify-center fill-height content-container">
         <svg height="500" viewBox="0 0 1946 1705.2141" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-          <!--  eslint-disable max-len no-tabs -->
+          <!-- eslint-disable max-len @stylistic/no-tabs -->
           <g>
             <path class="svg-path-stroke" d="M906.4456,89.3981
 		c201.0077-104.258,412.7543,30.0585,470.6719,190.6148c62.9608,174.5369-6.3352,332.0576-128.3406,459.4916
@@ -79,7 +79,7 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
 			c23.6894,16.5013,55.3917,17.0296,94.2277,1.5536c15.0493-5.9911,32.1033,1.3445,38.0972,16.391
 			c5.9939,15.045-1.3431,32.1018-16.3895,38.0957C1068.869,719.3103,1044.4323,724.4637,1021.602,724.4637z" />
             </g>
-          </g><!--  eslint-enable max-len no-tabs -->
+          </g><!--  eslint-enable max-len @stylistic/no-tabs -->
         </svg>
       </div>
       <!--v-if-->

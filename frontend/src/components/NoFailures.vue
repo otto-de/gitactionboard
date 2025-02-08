@@ -12,7 +12,7 @@
       viewBox="0 0 1946 1705.2141"
       xml:space="preserve"
     >
-      <!--  eslint-disable max-len no-tabs -->
+      <!-- eslint-disable max-len @stylistic/no-tabs -->
       <g>
         <path
           fill="none"
@@ -67,7 +67,7 @@
           />
         </g>
       </g>
-    <!--  eslint-enable max-len no-tabs -->
+      <!--  eslint-enable max-len @stylistic/no-tabs -->
     </svg>
   </v-container>
 </template>
@@ -80,14 +80,14 @@ export default {
 
 <style scoped>
 .svg-path-fill {
-    fill: currentcolor;
+  fill: currentcolor;
 }
 
 .svg-path-stroke {
-    stroke: currentcolor;
+  stroke: currentcolor;
 }
 
 .content-container {
-    height: 90vh !important;
+  height: 90vh !important;
 }
 </style>

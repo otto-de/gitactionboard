@@ -5,11 +5,9 @@ import { mountWithWrapper } from '../test-utils';
 import preferences from '@/services/preferences';
 
 describe('<DashboardHeader />', () => {
-  vi.mock('@/services/utils', () => {
-    return {
-      getVersion: vi.fn()
-    };
-  });
+  vi.mock('@/services/utils', () => ({
+    getVersion: vi.fn()
+  }));
 
   beforeEach(() => {
     getVersion.mockReturnValue('3.1.0');

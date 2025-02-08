@@ -4,11 +4,9 @@ import { shallowMount } from '@vue/test-utils';
 import GridCell from '@/components/GridCell.vue';
 
 describe('<FailureGridCell />', () => {
-  vi.mock('@/services/utils', () => {
-    return {
-      getRelativeTime: vi.fn().mockReturnValue('10 months ago')
-    };
-  });
+  vi.mock('@/services/utils', () => ({
+    getRelativeTime: vi.fn().mockReturnValue('10 months ago')
+  }));
 
   it.each([
     [false],

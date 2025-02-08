@@ -122,7 +122,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: ee8531df97c579c3c4ded7f884e4033c28096d227eec725f533d8c85b1f567e2
 - filename: frontend/package-lock.json
-  checksum: e046437d8f00be8ddb9f4d5f98636dad5a462cafb123adca036b3cb95cb1ad6c
+  checksum: 7bfe7fa152d4d94d6216e5246a7995d98b839c498dde51dff54c09f7beb146f1
 - filename: frontend/src/components/Dashboard.vue
   checksum: 03ea94fc9fb03bf4856d852582831b8a1c239bfa486de8cb34c38c208fd76b2a
 - filename: frontend/src/components/GridCell.vue
@@ -140,11 +140,13 @@ fileignoreconfig:
 - filename: frontend/src/plugins/vuetify.js
   checksum: 9a504ff801dff0d9669fb271292ffd5d0361aa4a0e9f6bce3188a2668214b4ce
 - filename: frontend/src/services/apiService.js
-  checksum: d7de34db23336915c4fefa6001eb2c0d9cdeeb0db60a4d5dcffded918939515e
+  checksum: 22bf32f502d924032c18bebe3a95577214236835b6a18ff102c4171cb92bbe8a
 - filename: frontend/src/services/preferences.js
   checksum: 06d9de85d1b310c17721c87a94358f7b0b64c5e2dcf810bc8c5682621da0e4aa
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
+- filename: frontend/src/services/utils.js
+  checksum: 43173fd13de1e607f4210361b4e3aefd712cb25e3a5f6d4b8f98310251d0caf6
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-nvd-nist-cache-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
