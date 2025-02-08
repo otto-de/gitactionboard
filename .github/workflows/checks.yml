@@ -13,6 +13,28 @@ env:
   SERVICE_NAME: gitactionboard
 
 jobs:
+  determine-changes:
+    runs-on: ubuntu-22.04
+    outputs:
+      HAS_BACKEND_CHANGES: ${{ steps.changes.outputs.backend }}
+      HAS_FRONTEND_CHANGES: ${{ steps.changes.outputs.frontend }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+          fetch-depth: 5
+      - name: Determine new changes
+        uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+            frontend:
+              - 'frontend/**'
+          working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+
   talisman-checks:
     runs-on: ubuntu-22.04
     if: ${{ github.actor != 'dependabot[bot]' && github.event_name != 'schedule' }}
@@ -31,9 +53,10 @@ jobs:
         run: ./run.sh talisman-verify
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
-  dependency-checks:
-    if: ${{ github.event_name != 'pull_request' || github.actor == 'dependabot[bot]' }}
+  backend-dependency-checks:
+    if: ${{ github.event_name == 'schedule' || needs.determine-changes.outputs.HAS_BACKEND_CHANGES == 'true' }}
     runs-on: ubuntu-22.04
+    needs: [ determine-changes ]
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v4
@@ -48,9 +71,6 @@ jobs:
           jenv init -
           jenv add ${JAVA_HOME_21_X64}
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
-      - name: Install nvm at specific version
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Get Date
         id: get-date
         run: |
@@ -76,7 +96,7 @@ jobs:
             ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-gradle-
       - name: Dependency Check
-        run: ./run.sh check
+        run: ./run.sh check-backend
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload dependency check report to artifacts
         if: ${{ failure() }}
@@ -84,3 +104,19 @@ jobs:
         with:
           name: dependency-check-report.html
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/dependency-check-report.html
+
+  frontend-dependency-checks:
+    if: ${{ github.event_name == 'schedule' || needs.determine-changes.outputs.HAS_FRONTEND_CHANGES == 'true' }}
+    runs-on: ubuntu-22.04
+    needs: [ determine-changes ]
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Install nvm at specific version
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+      - name: Dependency Check
+        run: ./run.sh check-frontend
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/

@@ -13,7 +13,9 @@ _usage() {
 Usage: $0 command
 
 commands:
-  check                                                Run checks (OWASP dependency check)
+  check                                                Run security checks for complete codebase
+  check-backend                                        Run security checks (OWASP dependency check) for backend codebase
+  check-frontend                                       Run security checks for frontend codebase
   format                                               Auto format source files
   run-locally [auth token] [with frontend]             Run local version of service with/without frontend
   run-frontend-locally                                 Run local version of frontend service with mock data
@@ -40,6 +42,8 @@ CMD=${1:-}
 shift || true
 case ${CMD} in
   check) _check ;;
+  check-frontend) _check "frontend" ;;
+  check-backend) _check "backend" ;;
   format) _format_sources ;;
   run-locally) _run_locally "${1:-}" "${2:-true}" ;;
   run-locally-with-mock-data) _run_locally_with_mock_data "${1:-}" "${2:-true}" ;;

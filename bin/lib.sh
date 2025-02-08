@@ -31,16 +31,20 @@ _ensure_nvm() {
 }
 
 _check() {
-  pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
-  _ensure_jenv
-  jenv exec ./gradlew clean dependencyCheckAnalyze --info --stacktrace
-  popd >/dev/null || exit
+  local code_folder="${1:-}"
 
-  pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
-  _ensure_nvm
-  npm audit --audit-level=moderate
-  popd >/dev/null || exit
-
+  if [[ -z ${code_folder} || ${code_folder} == "backend" ]]; then
+    pushd "${SCRIPT_DIR}/backend" >/dev/null || exit
+    _ensure_jenv
+    jenv exec ./gradlew clean dependencyCheckAnalyze --info --stacktrace
+    popd >/dev/null || exit
+  fi
+  if [[ -z ${code_folder} || ${code_folder} == "frontend" ]]; then
+    pushd "${SCRIPT_DIR}/frontend" >/dev/null || exit
+    _ensure_nvm
+    npm audit --audit-level=moderate
+    popd >/dev/null || exit
+  fi
 }
 
 _license_report() {
