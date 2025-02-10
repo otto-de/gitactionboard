@@ -14,19 +14,11 @@ All notable changes to this project will be documented in this file.
 
 - Bump @vitejs/plugin-vue ([f48b4c7](https://github.com/otto-de/gitactionboard/commit/f48b4c7acf90103786be61473148d7cae053d815))
 
-- Bump @vitejs/plugin-vue ([8c7fb7f](https://github.com/otto-de/gitactionboard/commit/8c7fb7f609c472fa2c30b50db78f62134e6b57c2))
-
 - Bump org.openrewrite.rewrite ([ba341b2](https://github.com/otto-de/gitactionboard/commit/ba341b2b513fcf7d0018f08c77c1cd8f4756492b))
-
-- Bump org.openrewrite.rewrite ([67fcae9](https://github.com/otto-de/gitactionboard/commit/67fcae9da0b9d8117ffa766dd0b04251e169c45e))
 
 - Bump vite-plugin-vuetify ([db27221](https://github.com/otto-de/gitactionboard/commit/db272210ac6f9b1698311a69de8106a81e7ff238))
 
-- Bump org.openrewrite.rewrite ([dec2a9d](https://github.com/otto-de/gitactionboard/commit/dec2a9d0190ae66d9eb1ee103824318ebd8572e3))
-
 - Bump alpine from 3.20.1 to 3.20.2 ([606c121](https://github.com/otto-de/gitactionboard/commit/606c121e84449cb79b5c4c2999674d271dfe4fd1))
-
-- Bump org.openrewrite.rewrite ([df9c802](https://github.com/otto-de/gitactionboard/commit/df9c802ef8c211662b43dedeb0a5df9361e66bad))
 
 - Bump the npm-version-updates group across 1 directory with 4 updates ([a08c1f2](https://github.com/otto-de/gitactionboard/commit/a08c1f2573e792803e3e667ef45f00e753398cd0))
 
@@ -372,8 +364,6 @@ All notable changes to this project will be documented in this file.
 
 - Update sample screenshots ([f0b99e9](https://github.com/otto-de/gitactionboard/commit/f0b99e911e0e730448d390d57e181893b77f6939))
 
-- Update sample screenshots ([05b57fa](https://github.com/otto-de/gitactionboard/commit/05b57fa67afff12bfe5bdfd04a696d8fd14b9249))
-
 - Add [@pbonner-1](https://github.com/pbonner-1) to contributors list ([a3bbcb6](https://github.com/otto-de/gitactionboard/commit/a3bbcb6fdcfb7676dfe6dcb67e78c81695574dcd))
 
 ## [v3.3.0](https://github.com/otto-de/gitactionboard/compare/v3.2.1...v3.3.0) (2023-05-20)
@@ -614,8 +604,6 @@ All notable changes to this project will be documented in this file.
 
 - Delombok backend java before codeql analysis ([2b6eaf3](https://github.com/otto-de/gitactionboard/commit/2b6eaf32bf657814c7760fb0f4d2036d36abf459))
 
-- Suppress talisman warnings ([0eae03b](https://github.com/otto-de/gitactionboard/commit/0eae03be157a76455b7b76a7ff97830e20808499))
-
 ### 📚 Documentation
 
 - Update documentation ([c9576cb](https://github.com/otto-de/gitactionboard/commit/c9576cb9ae28d21228b00b55e0485e9443a00e45))
@@ -736,8 +724,6 @@ All notable changes to this project will be documented in this file.
 
 - Migrate to vite from vue-cli-service for frontend ([3422bb3](https://github.com/otto-de/gitactionboard/commit/3422bb3bc8ae18462fd3c1e53925f4e3156123cb))
 
-- Suppress talisman warnings ([42c16da](https://github.com/otto-de/gitactionboard/commit/42c16da782afa40397481e0c689e5a785b96034b))
-
 ### 📚 Documentation
 
 - Add contributions guide ([75089fd](https://github.com/otto-de/gitactionboard/commit/75089fd4e644e04aee903e9cc2f76f693827e568))
@@ -782,8 +768,6 @@ All notable changes to this project will be documented in this file.
 
 - Bump stylelint from 14.12.1 to 14.13.0 in /frontend ([d162802](https://github.com/otto-de/gitactionboard/commit/d16280201d8922ba28932e34fe647e40dc71fe74))
 
-- Suppress talisman warnings ([659747a](https://github.com/otto-de/gitactionboard/commit/659747a1445e49ba06939684280908ff62b1b466))
-
 - Update talisman and handolint version ([09eac8c](https://github.com/otto-de/gitactionboard/commit/09eac8c50e5dd68ac6b8982a2b0e2a9a2135850f))
 
 - Update talisman checksum ([04e799d](https://github.com/otto-de/gitactionboard/commit/04e799db1e9c49824c13d5a102af902ebec84ea1))
@@ -803,8 +787,6 @@ All notable changes to this project will be documented in this file.
 - Configure semantic-build-versioning plugin to auto update version based on commit message ([1d2baed](https://github.com/otto-de/gitactionboard/commit/1d2baed7f07c1666d1b687c4fea813e70bd0ddbd))
 
 - Fine tune changelog generator script ([92fa491](https://github.com/otto-de/gitactionboard/commit/92fa49136e252debd1cd9e6c0e3fe71a228f79b1))
-
-- Suppress talisman warnings ([9dd75e0](https://github.com/otto-de/gitactionboard/commit/9dd75e037963f7bbe1d1b0cc54b93481194ac63b))
 
 ### 📚 Documentation
 
@@ -917,8 +899,6 @@ All notable changes to this project will be documented in this file.
 - Update gradle version to v7.5.1 ([a6d3978](https://github.com/otto-de/gitactionboard/commit/a6d39785b1665d2a5bceb22f47fbed493e4a6799))
 
 - Enable dependabot for GitHub actions and docker dependencies ([5662baa](https://github.com/otto-de/gitactionboard/commit/5662baacb7d0faa322a3c952e101b3fa99b46f73))
-
-- Bump org.owasp.dependencycheck in /backend ([915370b](https://github.com/otto-de/gitactionboard/commit/915370b9ad5b39eb6b658df43a42403ed6288120))
 
 - Bump actions/checkout from 2 to 3 ([#38](https://github.com/otto-de/gitactionboard/issues/38)) ([5752740](https://github.com/otto-de/gitactionboard/commit/5752740497806dd09f52e395f292b2cb3104a8cd))
 
