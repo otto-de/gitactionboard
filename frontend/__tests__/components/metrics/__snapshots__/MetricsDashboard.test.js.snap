@@ -1192,7 +1192,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
           </i>
         </div>
         <div class="v-input__control">
-          <div aria-expanded="false" aria-haspopup="menu" aria-owns="v-menu-3" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
+          <div aria-controls="v-menu-3" aria-expanded="false" aria-haspopup="menu" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -1236,8 +1236,8 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
           </div>
         </div>
         <!---->
-        <div class="v-input__details">
-          <transition-group-stub appear="false" aria-live="polite" class="v-messages" css="true" id="input-1-messages" name="slide-y-transition" persisted="false" role="alert" tag="div">
+        <div aria-live="polite" class="v-input__details" id="input-1-messages" role="alert">
+          <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
             <!---->
           </transition-group-stub>
           <!---->
