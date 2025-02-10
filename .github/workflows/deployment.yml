@@ -1,0 +1,59 @@
+name: deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: 'Git commit reference'
+        required: true
+
+env:
+  SERVICE_NAME: gitactionboard
+
+jobs:
+  deploy_to_github_pages:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+          ref: ${{ inputs.git_ref }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+        shell: bash
+      - name: Install nvm at specific version
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      - name: Build frontend
+        run: ./run.sh frontend-build-for-github-pages
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/frontend/dist"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
