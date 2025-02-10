@@ -106,7 +106,7 @@ fileignoreconfig:
 - filename: bin/install-talisman.sh
   checksum: 636c29faa1a28f65f300e2de2fc4466d6f800f312afff3a17ece63c7e1d47099
 - filename: bin/lib.sh
-  checksum: 337bc214cb50e764520fa8c72694dc94f3761219e75505ef201d7c6e12c11a36
+  checksum: f07de9504f5b51c29f7e255d32e421e1e2dbeb1b514d23bbd23b423b00fd300c
 - filename: doc/dark-theme/login.png
   checksum: 74fccd805c33fa7ba0a31b2798ff245c7789d7f02dee471cdbfaaff9e2ccb15e
 - filename: doc/dark-theme/workflow.png
@@ -146,7 +146,7 @@ fileignoreconfig:
 - filename: frontend/src/plugins/vuetify.js
   checksum: 9a504ff801dff0d9669fb271292ffd5d0361aa4a0e9f6bce3188a2668214b4ce
 - filename: frontend/src/services/apiService.js
-  checksum: 22bf32f502d924032c18bebe3a95577214236835b6a18ff102c4171cb92bbe8a
+  checksum: c47a8f07ecb0862b8b5c7cad9465291dc7d97ea28094671af294a559d41525d1
 - filename: frontend/src/services/preferences.js
   checksum: 06d9de85d1b310c17721c87a94358f7b0b64c5e2dcf810bc8c5682621da0e4aa
 - filename: frontend/src/services/storageService.js

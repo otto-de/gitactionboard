@@ -31,7 +31,8 @@ const fetchJsonContent = (url, authToken) => fetch(url, {
   .then(validate)
   .then((res) => res.json());
 
-export const fetchConfig = () => fetchJsonContent(preparePath('/config'));
+export const fetchConfig = () =>
+  fetchJsonContent(preparePath(`${import.meta.env.VITE_PROXY_CONFIG_TARGET_PATH || '/config'}`));
 
 export const fetchCctrayJson = () =>
   fetchJsonContent(preparePath('/v1/cctray'), fetchAccessToken());

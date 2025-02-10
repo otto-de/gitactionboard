@@ -264,7 +264,7 @@ _frontend_build_for_github_pages(){
   pushd "frontend" >/dev/null || exit
     _ensure_nvm
     npm install
-    VITE_PROXY_TARGET="https://otto-de.github.io/gitactionboard/apis" BASE_PATH="/gitactionboard" npm run build
+    VITE_PROXY_TARGET="https://otto-de.github.io/gitactionboard/apis" BASE_PATH="/gitactionboard" VITE_PROXY_CONFIG_TARGET_PATH="/config/index" npm run build
     for route in $(jq -r '.routes[] | select(.method == "get") | @base64' mock-data/data.json); do
       local endpoint
       local content
@@ -272,7 +272,8 @@ _frontend_build_for_github_pages(){
       content=$(echo "${route}" | base64 --decode | jq -r ".responses[0].body")
       mkdir -p "$(dirname dist/apis/"${endpoint}")"
       if [[ ${endpoint} == "config" ]]; then
-        echo "${content}" | jq -r '.availableAuths = []' > "dist/apis/${endpoint}"
+        mkdir -p "$(dirname dist/apis/"${endpoint}/index")"
+        echo "${content}" | jq -r '.availableAuths = []' > "dist/apis/${endpoint}/index"
       else
         echo "${content}" > "dist/apis/${endpoint}"
       fi
