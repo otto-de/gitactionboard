@@ -2,6 +2,134 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.0](https://github.com/otto-de/gitactionboard/compare/v4.1.4...v5.0.0) (2025-02-10)
+
+### ⚠ BREAKING CHANGES
+
+- Introduce SQLite db as second level cache for workflows ([67b5fcb](https://github.com/otto-de/gitactionboard/commit/67b5fcb330a24c1483db07ccf62e8452b3e62b63))
+
+### ⛰️ Features
+
+- Reduce clutter from the dashboard ([7363ea4](https://github.com/otto-de/gitactionboard/commit/7363ea46c9a643535538b2156711f2db240c7202))
+
+- Introduce individual view preference for user without build monitor ([8c30d9d](https://github.com/otto-de/gitactionboard/commit/8c30d9d171d66a882329c4f7b3a88e64f6a56544))
+
+- Introduce API endpoint to fetch workflow run metrics as timeseries data for given repo ([b6e4b0b](https://github.com/otto-de/gitactionboard/commit/b6e4b0bc8e15707a97e33fc91d8f4d3f4e299998))
+
+- Introduce /config/repository-names to fetch configured repo names ([4e48ecc](https://github.com/otto-de/gitactionboard/commit/4e48eccf81ec9d2fd7456e0325ec2438e35e448d))
+
+- Introduce metrics dashboard with key metrics to monitor workflow reliability and performance ([668132f](https://github.com/otto-de/gitactionboard/commit/668132f5c71b2dd3533ddf0ae72a58acb807615c))
+
+- Send notification to MS Teams workflow ([30bd48e](https://github.com/otto-de/gitactionboard/commit/30bd48ee30da24c269b9f27d1450b0008ed31e82))
+
+### 🐛 Bug Fixes
+
+- Add "Content-Length" in HTTP POST request header to fix notifications to MS Teams workflows ([9187337](https://github.com/otto-de/gitactionboard/commit/91873370443f80e380002560351d4f013f0c29cd))
+
+- Downgrade mockoon cli to 8.4.0 to fix api fetch issue ([46aaa4f](https://github.com/otto-de/gitactionboard/commit/46aaa4f343144d5f676727509559837b59b15aa0))
+
+### 🚜 Refactor
+
+- Refactor backend code to use better Domain Driven design ([972adb9](https://github.com/otto-de/gitactionboard/commit/972adb9177d5356970d10d541e4f4109c2d9f50b))
+
+- Refactor initialization of restTemplate ([fac50d2](https://github.com/otto-de/gitactionboard/commit/fac50d25e1926e5167e56f5832d6078f1e0f5886))
+
+- Replace spring RestTemplate with RestClient ([3624297](https://github.com/otto-de/gitactionboard/commit/3624297e713c4a54d4b6cc0e7054c742a335bfdf))
+
+### ⚡ Performance
+
+- Allow support for single core CPU ([5e17793](https://github.com/otto-de/gitactionboard/commit/5e17793b025b3217553fa46c2d05e29c53b9b754))
+
+- Reduce overall frontend bundle size ([550f464](https://github.com/otto-de/gitactionboard/commit/550f464f07362e8f2830b208628a85a4b4c0b37e))
+
+### 🧪 Testing
+
+- Fix flaky test ([3c5887f](https://github.com/otto-de/gitactionboard/commit/3c5887fc685b7df896b64b7571017afddf7a8e00))
+
+- Add missing unit tests for backend ([901bb51](https://github.com/otto-de/gitactionboard/commit/901bb5102613183ffd185c6a378eab504287c59d))
+
+- Fix failed forntend test due to year change ([aab346a](https://github.com/otto-de/gitactionboard/commit/aab346a249ddf46c8cf33f3ba67981a75a51806f))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump docker/build-push-action from 5 to 6 ([58c93dd](https://github.com/otto-de/gitactionboard/commit/58c93dd9089ce0094c744fd757a2c81bc1e25453))
+
+- Bump org.openrewrite.rewrite ([aff9f82](https://github.com/otto-de/gitactionboard/commit/aff9f827a10494506aa99eb4d6edbeabee1e05ca))
+
+- Bump org.springframework.boot ([17f4e46](https://github.com/otto-de/gitactionboard/commit/17f4e46756868ab2f3648ed03fbb139e473cf146))
+
+- Bump com.github.spotbugs ([801a586](https://github.com/otto-de/gitactionboard/commit/801a586996b71db9e8c68138db1a7293b153efc1))
+
+- Bump com.nimbusds:nimbus-jose-jwt ([b019e5b](https://github.com/otto-de/gitactionboard/commit/b019e5b08b9b3fa3701db8abd450ee9e95ea49ee))
+
+- Bump alpine from 3.20.2 to 3.20.3 ([48f8d22](https://github.com/otto-de/gitactionboard/commit/48f8d2219a7322a65b7e96fabc206b96fb7b18b2))
+
+- Upgrade dependencies version ([676e681](https://github.com/otto-de/gitactionboard/commit/676e681e684c12f454057a753896d9ad68bfbd78))
+
+- Bump @vitejs/plugin-vue ([3845013](https://github.com/otto-de/gitactionboard/commit/3845013f5afd17f125d20e0b17fd657afeecebf6))
+
+- Bump gradle-update/update-gradle-wrapper-action from 1 to 2 ([66f787d](https://github.com/otto-de/gitactionboard/commit/66f787df60de5114a7f89dccc47612b71570b3b6))
+
+- Bump io.freefair.lombok ([e7a2df7](https://github.com/otto-de/gitactionboard/commit/e7a2df7c339dbf49f0e35f3101f9e3aa7e4454b0))
+
+- Bump eslint-plugin-vue ([16bb18c](https://github.com/otto-de/gitactionboard/commit/16bb18c2604af62ef569b674bc7c9b493484387d))
+
+- Bump io.spring.dependency-management ([5885285](https://github.com/otto-de/gitactionboard/commit/5885285a47dceba3950930c7b6cd0c4af9691d45))
+
+- Patch management ([e02e744](https://github.com/otto-de/gitactionboard/commit/e02e744190cb2b3da8c82a31866d0a450516f166))
+
+- Cleanup dependency suppress file ([b5657aa](https://github.com/otto-de/gitactionboard/commit/b5657aa68c347d777488a65d657549fa9b97b285))
+
+- Bump alpine from 3.20.3 to 3.21.0 ([d9db552](https://github.com/otto-de/gitactionboard/commit/d9db5526475183bfc367db6371d4eef86980714c))
+
+- Adding Maintainers list ([b9cfab6](https://github.com/otto-de/gitactionboard/commit/b9cfab6f9e3929510ec1db458c7cfc5a041402d5))
+
+- Adding OSSMETADATA ([ab8b1d0](https://github.com/otto-de/gitactionboard/commit/ab8b1d093ce6f11f0d4dd98d01e16cf7839c9a02))
+
+- Adding badge in readme ([939e741](https://github.com/otto-de/gitactionboard/commit/939e7411da1609ef0656cd74f5fa580c4a29483a))
+
+- Bump alpine from 3.21.0 to 3.21.2 ([82ca48c](https://github.com/otto-de/gitactionboard/commit/82ca48c24f7d445803086e7103cbabb15f600c32))
+
+- Patch managment for backend and frontend codebase ([63f41f8](https://github.com/otto-de/gitactionboard/commit/63f41f81e6b0fa974f438bee7c281277ab9ccdbc))
+
+- Bump the npm-version-updates group across 1 directory with 3 updates ([bd3a225](https://github.com/otto-de/gitactionboard/commit/bd3a2254c7f51b58861b234e59e05756ecda1c59))
+
+- Patch management for backend and frontend codebase ([3f4586c](https://github.com/otto-de/gitactionboard/commit/3f4586c99ab59a0f66cf4ab45a76ca7473167149))
+
+- Bump org.xerial:sqlite-jdbc ([8b410c9](https://github.com/otto-de/gitactionboard/commit/8b410c95fecd8d8a4d89c40af7cd683e4832032c))
+
+- Migrate eslint to v9.x.x from v8.x.x ([6cae9a6](https://github.com/otto-de/gitactionboard/commit/6cae9a6288ddfb869bdb5811f12c3dbe1fde24ea))
+
+- Upgrade mockoon cli to v9.1.0 ([426c604](https://github.com/otto-de/gitactionboard/commit/426c604e686be8c604dd2cc766ed564483d2fc69))
+
+- Mark MS_TEAMS_NOTIFICATIONS_WEB_HOOK_URL as deprecated ([1108f07](https://github.com/otto-de/gitactionboard/commit/1108f0733de80015108b2e8466de7d0c9a4dcaaf))
+
+- Bump dependabot/fetch-metadata ([4cf29e5](https://github.com/otto-de/gitactionboard/commit/4cf29e54a893be33d237ee9025a0ade88f296dc3))
+
+### 👷 Build
+
+- Skip OWASP depency check for rewrite config ([749c0db](https://github.com/otto-de/gitactionboard/commit/749c0dbb07281bc2d9446e5ff4cde9d3cd528dbd))
+
+- Exclude config package from mutation test ([125d3de](https://github.com/otto-de/gitactionboard/commit/125d3de5d5d1b305f5139419afa96850cc983431))
+
+- Optimise checks workflow by splitting checks specific for changes ([cbfdac8](https://github.com/otto-de/gitactionboard/commit/cbfdac83665f0d5487384321a4026bb771b880d2))
+
+- Migrate to actions/cache from pat-s/always-upload-cache GitHub action ([1e64304](https://github.com/otto-de/gitactionboard/commit/1e643041d30c5decc69819e4c29480301b6cada9))
+
+- Add only unique commit messages to changelog ([7f3261a](https://github.com/otto-de/gitactionboard/commit/7f3261ae02f39987cf5d2dfc0963f22d2d141e3f))
+
+### 📚 Documentation
+
+- Update changelog ([9be8624](https://github.com/otto-de/gitactionboard/commit/9be8624cc65b87a69f49babbd7b01f76102700af))
+
+- Add [@aronhoyer](https://github.com/aronhoyer) to contributors for design ([718e88d](https://github.com/otto-de/gitactionboard/commit/718e88d18d8523389d60ee0198087c5701f030d7))
+
+- Add [@fabasoad](https://github.com/fabasoad) to contributors list for bug reports ([6b767fb](https://github.com/otto-de/gitactionboard/commit/6b767fb7c4d9da6dbab949ad8bf15aa52ca6af4f))
+
+- Add [@marczimmermann1234](https://github.com/marczimmermann1234) to contributors list for bug fixes ([5e62d15](https://github.com/otto-de/gitactionboard/commit/5e62d15ac2298e05d377b1234948d7d76294edb9))
+
+- Add [@sumanmaity112](https://github.com/sumanmaity112) to contributors list ([da02429](https://github.com/otto-de/gitactionboard/commit/da02429691d9859cb564fcfb09e1180d58696705))
+
 ## [v4.1.4](https://github.com/otto-de/gitactionboard/compare/v4.1.3...v4.1.4) (2024-08-14)
 
 ### ⚙️ Miscellaneous Tasks
