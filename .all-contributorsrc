@@ -201,6 +201,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "marczimmermann1234",
+      "name": "marczimmermann1234",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80051702?v=4",
+      "profile": "https://github.com/marczimmermann1234",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
