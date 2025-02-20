@@ -26,7 +26,7 @@ ext {
     archUnitVersion = "1.4.0"
     jUnit5PitestVersion = "1.2.1"
     springDataSqliteVersion = "1.3.0"
-    sqliteJdbcVersion = "3.49.0.0"
+    sqliteJdbcVersion = "3.49.1.0"
     apacheHttpClient5Version = "5.4.2"
 }
 
