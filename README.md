@@ -90,6 +90,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/marczimmermann1234"><img src="https://avatars.githubusercontent.com/u/80051702?v=4?s=100" width="100px;" alt="marczimmermann1234"/><br /><sub><b>marczimmermann1234</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Amarczimmermann1234" title="Bug reports">🐛</a> <a href="https://github.com/otto-de/gitactionboard/commits?author=marczimmermann1234" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/patricialarisa"><img src="https://avatars.githubusercontent.com/u/28388335?v=4?s=100" width="100px;" alt="patricialarisa"/><br /><sub><b>patricialarisa</b></sub></a><br /><a href="https://github.com/otto-de/gitactionboard/issues?q=author%3Apatricialarisa" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
