@@ -30,9 +30,9 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/PeriodicScanScheduler.java
   checksum: 5a3e3aa35f695587a15c0528a0adc84f5d11a4bc59c2212de66ee136814535e0
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/job/GithubJobDetailsService.java
-  checksum: d0882ef379e23d19a82db44bc456b142e3059e66ab3613e02032ec2d20aed05f
+  checksum: e5335a9fbccd20c51595277a08d214368b447522dc8e92955c66330dd60b3fdd
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsNotificationMessagePayload.java
-  checksum: d4bafd4580b23f4a8e830c749df73f85ad5fa9952d4c8ffadd9e38cf0cda4580
+  checksum: bce940d28274a0acdb8b5ef126d34387aed839d1d808827483ee9a66f9316df3
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/notifications/TeamsWorkflowNotificationMessagePayload.java
   checksum: d282772cb39dc64b40a15248ae62992ac7ee3f913134270b0e86941fd20655e9
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/service/scan/secrets/GithubSecretsScanDetailsService.java
@@ -54,7 +54,7 @@ fileignoreconfig:
 - filename: backend/src/main/resources/application.properties
   checksum: 335aeb5a638b4562322e6223401c970f45623b18af9fdcbf5d08d1121af0177e
 - filename: backend/src/main/resources/db/changelog/db.changelog-main.xml
-  checksum: e2d405b422eecc777aad75b06415b6b0144b86082b0df1a39749e11739f979bb
+  checksum: eeeb57b59d002aac2154ca1b769b8b4cfb7aec00294eb4c7f16a4e6ea3f034e9
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java
   checksum: 0b94970267dcee93a6d21b2389840221badf8c2940208ef6fac5d6f4e8647e61
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/GithubAlertsControllerIntegrationTest.java

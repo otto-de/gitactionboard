@@ -118,20 +118,18 @@ public class TeamsNotificationMessagePayload {
   }
 
   private static String getSummary(SecretsScanDetails secretsScanDetails) {
-    return String.format(
-        "[%s] Exposed secret found: %s",
-        secretsScanDetails.getRepoName(), secretsScanDetails.getName());
+    return "[%s] Exposed secret found: %s"
+        .formatted(secretsScanDetails.getRepoName(), secretsScanDetails.getName());
   }
 
   private static String getSummary(JobDetails jobDetails) {
-    return String.format(
-        "[%s] Run failed: %s::%s",
-        jobDetails.getRepoName(), jobDetails.getWorkflowName(), jobDetails.getName());
+    return "[%s] Run failed: %s::%s"
+        .formatted(jobDetails.getRepoName(), jobDetails.getWorkflowName(), jobDetails.getName());
   }
 
   private static String getSummary(CodeStandardViolationDetails codeStandardViolationDetails) {
-    return String.format(
-        "[%s] Code standard violation found: %s",
-        codeStandardViolationDetails.getRepoName(), codeStandardViolationDetails.getName());
+    return "[%s] Code standard violation found: %s"
+        .formatted(
+            codeStandardViolationDetails.getRepoName(), codeStandardViolationDetails.getName());
   }
 }

@@ -25,14 +25,14 @@ public class CruiseControlService {
   }
 
   private String createCctrayProject(Project project) {
-    return String.format(
-        "<Project name=\"%s\" activity=\"%s\" lastBuildStatus=\"%s\" lastBuildLabel=\"%s\" lastBuildTime=\"%s\" webUrl=\"%s\" triggeredEvent=\"%s\"/>",
-        project.getName(),
-        project.getActivity(),
-        project.getLastBuildStatus(),
-        project.getLastBuildLabel(),
-        project.getLastBuildTime(),
-        project.getWebUrl(),
-        project.getTriggeredEvent());
+    return "<Project name=\"%s\" activity=\"%s\" lastBuildStatus=\"%s\" lastBuildLabel=\"%s\" lastBuildTime=\"%s\" webUrl=\"%s\" triggeredEvent=\"%s\"/>"
+        .formatted(
+            project.getName(),
+            project.getActivity(),
+            project.getLastBuildStatus(),
+            project.getLastBuildLabel(),
+            project.getLastBuildTime(),
+            project.getWebUrl(),
+            project.getTriggeredEvent());
   }
 }

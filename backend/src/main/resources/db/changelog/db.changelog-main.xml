@@ -125,4 +125,38 @@
             <column name="completed_at"/>
         </createIndex>
     </changeSet>
+
+    <changeSet id="5_alter_workflow_jobs_table_remove_not_null_constraints_for_sqlite" author="gitactionboard" dbms="sqlite">
+        <sql>
+            PRAGMA foreign_keys = OFF;
+            ALTER TABLE workflow_jobs RENAME TO old_workflow_jobs;
+            CREATE TABLE workflow_jobs (
+                                           id INTEGER NOT NULL,
+                                           run_attempt INTEGER NOT NULL,
+                                           name VARCHAR NOT NULL,
+                                           status VARCHAR NOT NULL,
+                                           url VARCHAR NOT NULL,
+                                           conclusion VARCHAR,
+                                           started_at TIMESTAMPZ NOT NULL,
+                                           completed_at TIMESTAMPZ,
+                                           workflow_id INTEGER NOT NULL,
+                                           workflow_run_id INTEGER NOT NULL,
+                                           CONSTRAINT PK_WORKFLOW_JOBS PRIMARY KEY (id, run_attempt),
+                                           CONSTRAINT workflow_jobs_workflow_id_fk FOREIGN KEY (workflow_id) REFERENCES workflows (id),
+                                           CONSTRAINT workflow_jobs_workflow_runs_id_attempt_fk FOREIGN KEY (workflow_run_id, run_attempt) REFERENCES workflow_runs (id, run_attempt)
+            );
+            INSERT INTO workflow_jobs SELECT * from old_workflow_jobs;
+            DROP TABLE old_workflow_jobs;
+            PRAGMA foreign_keys = ON;
+        </sql>
+    </changeSet>
+
+    <changeSet id="5_alter_workflow_jobs_table_remove_not_null_constraints_for_non_sqlite" author="gitactionboard" dbms="!sqlite">
+        <dropNotNullConstraint
+                tableName="workflow_jobs"
+                columnName="completed_at"
+                columnDataType="timestampz"
+        />
+    </changeSet>
+
 </databaseChangeLog>

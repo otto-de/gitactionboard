@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.repository.workflow.job;
 
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.LAST_BUILD_TIME;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.getWorkflowJobBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowRunFixture.RUN_ATTEMPT;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowRunFixture.RUN_ID;
@@ -75,7 +76,12 @@ class PersistingWorkflowJobRepositoryTest {
   @NullSource
   @EnumSource(RunConclusion.class)
   void shouldSaveGivenWorkflowJobs(RunConclusion runConclusion) {
-    final WorkflowJob workflowJob = getWorkflowJobBuilder().conclusion(runConclusion).build();
+    final WorkflowJob workflowJob =
+        getWorkflowJobBuilder()
+            .conclusion(runConclusion)
+            .completedAt(
+                Optional.ofNullable(runConclusion).map(unused -> LAST_BUILD_TIME).orElse(null))
+            .build();
 
     final List<WorkflowJob> workflowJobs = List.of(workflowJob, mockWorkflowJob2);
 
@@ -99,7 +105,12 @@ class PersistingWorkflowJobRepositoryTest {
     verify(preparedStatement)
         .setString(4, Optional.ofNullable(runConclusion).map(Enum::name).orElse(null));
     verify(preparedStatement).setString(5, workflowJob.getStartedAt().toString());
-    verify(preparedStatement).setString(6, workflowJob.getCompletedAt().toString());
+    verify(preparedStatement)
+        .setString(
+            6,
+            Optional.ofNullable(runConclusion)
+                .map(unused -> LAST_BUILD_TIME.toString())
+                .orElse(null));
     verify(preparedStatement).setLong(7, workflowJob.getWorkflowId());
     verify(preparedStatement).setLong(8, workflowJob.getWorkflowRunId());
     verify(preparedStatement).setLong(9, workflowJob.getRunAttempt());

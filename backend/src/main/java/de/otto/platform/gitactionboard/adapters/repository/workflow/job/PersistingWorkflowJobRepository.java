@@ -2,6 +2,7 @@ package de.otto.platform.gitactionboard.adapters.repository.workflow.job;
 
 import de.otto.platform.gitactionboard.domain.repository.WorkflowJobRepository;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -45,7 +46,11 @@ public class PersistingWorkflowJobRepository implements WorkflowJobRepository {
                           .map(Enum::name)
                           .orElse(null));
                   ps.setString(5, workflowJob.getStartedAt().toString());
-                  ps.setString(6, workflowJob.getCompletedAt().toString());
+                  ps.setString(
+                      6,
+                      Optional.ofNullable(workflowJob.getCompletedAt())
+                          .map(Instant::toString)
+                          .orElse(null));
                   ps.setLong(7, workflowJob.getWorkflowId());
                   ps.setLong(8, workflowJob.getWorkflowRunId());
                   ps.setLong(9, workflowJob.getRunAttempt());

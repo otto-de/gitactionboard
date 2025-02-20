@@ -145,9 +145,8 @@ public class GithubJobDetailsService implements JobDetailsService {
 
     final WorkflowsRunDetailsResponse runDetailsResponse =
         apiService.getForObject(
-            String.format(
-                "/%s/actions/workflows/%s/runs?per_page=2",
-                workflow.getRepoName(), workflow.getId()),
+            "/%s/actions/workflows/%s/runs?per_page=2"
+                .formatted(workflow.getRepoName(), workflow.getId()),
             accessToken,
             WorkflowsRunDetailsResponse.class);
 
@@ -201,13 +200,13 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private String getCacheKey(Workflow workflow, WorkflowRun workflowRun) {
-    return String.format(
-        "%s_%d_%d_%d_%s",
-        workflow.getRepoName(),
-        workflow.getId(),
-        workflowRun.getId(),
-        workflowRun.getRunAttempt(),
-        workflowRun.getUpdatedAt().getEpochSecond());
+    return "%s_%d_%d_%d_%s"
+        .formatted(
+            workflow.getRepoName(),
+            workflow.getId(),
+            workflowRun.getId(),
+            workflowRun.getRunAttempt(),
+            workflowRun.getUpdatedAt().getEpochSecond());
   }
 
   private boolean anyJobNotCompleted(List<WorkflowJob> workflowJobs) {
@@ -226,7 +225,7 @@ public class GithubJobDetailsService implements JobDetailsService {
 
     final WorkflowsJobDetailsResponse jobDetailsResponse =
         apiService.getForObject(
-            String.format("/%s/actions/runs/%s/jobs", workflow.getRepoName(), workflowRun.getId()),
+            "/%s/actions/runs/%s/jobs".formatted(workflow.getRepoName(), workflowRun.getId()),
             accessToken,
             WorkflowsJobDetailsResponse.class);
 
