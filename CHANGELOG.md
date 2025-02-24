@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.1](https://github.com/otto-de/gitactionboard/compare/v5.0.0...v5.0.1) (2025-02-24)
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump org.openrewrite.rewrite ([1439f5d](https://github.com/otto-de/gitactionboard/commit/1439f5dc17848e7af88a04f529348314b24fabf3))
+
+- Bump org.xerial:sqlite-jdbc ([3409478](https://github.com/otto-de/gitactionboard/commit/34094784b86396730bbd436683c106aad3c5c872))
+
+- Bump alpine from 3.21.2 to 3.21.3 ([#986](https://github.com/otto-de/gitactionboard/issues/986)) ([2932286](https://github.com/otto-de/gitactionboard/commit/29322866be7907106aaa518bd49a0890b2c976a2))
+
+- Fix null pointer exception while storing in-progress workflow jobs ([c79b980](https://github.com/otto-de/gitactionboard/commit/c79b980ee9963160929596bb6e60c28c6e2c4373))
+
+### 👷 Build
+
+- Fix GitHub pages deployment ([d041283](https://github.com/otto-de/gitactionboard/commit/d0412837c012b899b1eb1ca71fd0fc8f5f99797d))
+
+- Add deployment workflow to deploy on GitHub pages ([e0f1eed](https://github.com/otto-de/gitactionboard/commit/e0f1eedb9e7ae46b734b46f0058c227e44d8cc02))
+
+### 📚 Documentation
+
+- Update changelog ([b3dff93](https://github.com/otto-de/gitactionboard/commit/b3dff93d82f29644eb1ace71743c1eec9aea687a))
+
+- Add [@patricialarisa](https://github.com/patricialarisa) to contributors list for bug reports ([bef8609](https://github.com/otto-de/gitactionboard/commit/bef8609a9648b8ede7bba780633ae0e8221d0c4d))
+
 ## [v5.0.0](https://github.com/otto-de/gitactionboard/compare/v4.1.4...v5.0.0) (2025-02-10)
 
 ### ⚠ BREAKING CHANGES
