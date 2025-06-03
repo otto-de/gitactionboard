@@ -124,7 +124,7 @@ fileignoreconfig:
 - filename: frontend/__tests__/components/LoginPage.test.js
   checksum: 50df57eeeb5daa25d817280852361c0f12b82fd11de3771003f83ca25fdaebea
 - filename: frontend/__tests__/components/__snapshots__/LoginPage.test.js.snap
-  checksum: 6f0a3d08a4055cfd14a13d98fccac05f9b165f2357b1c815618f9f3ea5aa57f6
+  checksum: d7377c6f3ad44fc54752977af61fb0f4524d8a78674393d28ee9a195d3e79eb0
 - filename: frontend/mock-data/data.json
   checksum: 002e577e9037797c7a7ed9535a755a2fd456430b97241305b0ed2806ecc9d1f3
 - filename: frontend/package-lock.json

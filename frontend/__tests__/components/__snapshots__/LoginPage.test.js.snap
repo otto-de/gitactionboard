@@ -33,7 +33,7 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
 </div>
 `;
 
-exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BASIC_AUTH' ] 1`] = `
+exports[`<LoginPage /> > should render login page only with auth mechanism BASIC_AUTH 1`] = `
 <div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
   <!--v-if-->
   <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
@@ -200,7 +200,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
 </div>
 `;
 
-exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BASIC_AUTH', 'OAUTH2' ] 1`] = `
+exports[`<LoginPage /> > should render login page only with auth mechanism BASIC_AUTH,OAUTH2 1`] = `
 <div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
   <!--v-if-->
   <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
@@ -404,7 +404,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism [ 'BA
 </div>
 `;
 
-exports[`<LoginPage /> > should render login page only with auth mechanism [ 'OAUTH2' ] 1`] = `
+exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH2 1`] = `
 <div class="v-container v-container--fluid v-locale--is-ltr h-screen fill-height justify-center main-container">
   <!--v-if-->
   <div class="v-card v-theme--light v-card--density-default elevation-5 v-card--rounded v-card--variant-elevated px-5 py-10 rounded-xl" style="min-width: 33%;">
