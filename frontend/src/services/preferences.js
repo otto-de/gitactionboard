@@ -79,6 +79,14 @@ class Preferences {
   set showBuildsDueToTriggeredEvents(events) {
     this.__set__('show-builds-due-to-triggered-events', JSON.stringify(events));
   }
+
+  set showOnlyJobName(value) {
+    this.__set__('show-only-job-name', JSON.stringify(value));
+  }
+
+  get showOnlyJobName() {
+    return JSON.parse(this.__get__('show-only-job-name'));
+  }
 }
 
 export default new Preferences();
