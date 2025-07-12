@@ -1,10 +1,10 @@
 package de.otto.platform.gitactionboard.adapters.repository.workflow;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import lombok.Builder;
 import lombok.Value;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Builder
@@ -13,7 +13,7 @@ import org.springframework.data.relational.core.mapping.Table;
 public class WorkflowRecord {
   String name;
 
-  @JsonProperty("repo_name")
+  @Column("repo_name")
   String repoName;
 
   @Id Long id;

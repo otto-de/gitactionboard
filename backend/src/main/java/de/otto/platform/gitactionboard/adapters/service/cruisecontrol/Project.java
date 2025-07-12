@@ -25,6 +25,8 @@ public class Project {
 
   @NonNull String triggeredEvent;
 
+  @NonNull String branch;
+
   public static Project fromJobDetails(JobDetails job) {
     return Project.builder()
         .name(job.getFormattedName())
@@ -34,6 +36,7 @@ public class Project {
         .lastBuildTime(job.getLastBuildTime())
         .webUrl(job.getUrl())
         .triggeredEvent(job.getTriggeredEvent())
+        .branch(job.getBranch())
         .build();
   }
 

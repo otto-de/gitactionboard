@@ -1,6 +1,7 @@
 package de.otto.platform.gitactionboard.adapters.service.job;
 
 import static de.otto.platform.gitactionboard.TestUtil.readFile;
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.BRANCH;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,6 +47,7 @@ class WorkflowsJobDetailsResponseTest {
                 .workflowRunId(workflowsJobDetails.getRunId())
                 .url(workflowsJobDetails.getUrl())
                 .runAttempt(workflowsJobDetails.getRunAttempt())
+                .branch(BRANCH)
                 .build());
   }
 }

@@ -1,6 +1,5 @@
 package de.otto.platform.gitactionboard.adapters.repository.workflow.job;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import de.otto.platform.gitactionboard.domain.workflow.RunConclusion;
 import de.otto.platform.gitactionboard.domain.workflow.RunStatus;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
@@ -9,6 +8,7 @@ import java.util.Optional;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.Value;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Value
@@ -24,24 +24,28 @@ public class WorkflowJobRecord {
   String conclusion;
 
   @NonNull
-  @JsonProperty("started_at")
+  @Column("started_at")
   Instant startedAt;
 
-  @JsonProperty("completed_at")
+  @Column("completed_at")
   Instant completedAt;
 
   @NonNull
-  @JsonProperty("workflow_id")
+  @Column("workflow_id")
   Long workflowId;
 
   @NonNull
-  @JsonProperty("workflow_run_id")
+  @Column("workflow_run_id")
   Long workflowRunId;
 
   @NonNull String url;
 
+  @Column("branch_name")
   @NonNull
-  @JsonProperty("run_attempt")
+  String branch;
+
+  @NonNull
+  @Column("run_attempt")
   Integer runAttempt;
 
   public static WorkflowJobRecord from(WorkflowJob workflowJob) {
@@ -56,6 +60,7 @@ public class WorkflowJobRecord {
         .workflowRunId(workflowJob.getWorkflowRunId())
         .url(workflowJob.getUrl())
         .runAttempt(workflowJob.getRunAttempt())
+        .branch(workflowJob.getBranch())
         .build();
   }
 
@@ -71,6 +76,7 @@ public class WorkflowJobRecord {
         .workflowRunId(workflowRunId)
         .url(url)
         .runAttempt(runAttempt)
+        .branch(branch)
         .build();
   }
 }

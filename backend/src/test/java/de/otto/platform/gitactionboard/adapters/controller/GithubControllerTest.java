@@ -1,5 +1,6 @@
 package de.otto.platform.gitactionboard.adapters.controller;
 
+import static de.otto.platform.gitactionboard.fixtures.JobFixture.BRANCH;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.TRIGGERED_EVENT;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.getJobDetailsBuilder;
 import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAME;
@@ -77,6 +78,7 @@ class GithubControllerTest {
                 .lastBuildStatus("Success")
                 .webUrl("https://github.com/johndoe/hello-world/runs/1132386127")
                 .triggeredEvent(TRIGGERED_EVENT)
+                .branch(BRANCH)
                 .build());
 
     when(pipelineService.fetchJobs(accessToken)).thenReturn(jobs);

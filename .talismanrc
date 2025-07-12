@@ -14,7 +14,7 @@ fileignoreconfig:
 - filename: backend/gradle/test.gradle
   checksum: 335aafca613cd07460f7d71ae96664d7f0092d1d0afb612e284c8986f039fbca
 - filename: backend/mock-data/data.json
-  checksum: 7abd498544a9674fc49b372efd8ea89421b19afa876802d2cf86d524051c9cbc
+  checksum: 5d5d18a22faaa684519b519bf3685905d21aabcd8b4ce3d3a73e433bee2a3b88
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/BasicAuthenticationController.java
   checksum: 4ae935e8b52b6d3e2eb8a1d8ac9aaa3b7af96e4c7aa770a41b96d8881d520141
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationController.java
@@ -43,6 +43,8 @@ fileignoreconfig:
   checksum: 1ae0c14832b30eaf2a6a35588e2895632d71c11389f81d6b348ec808b73cfaa7
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/CodeStandardViolationsScanService.java
   checksum: 814e0ea060181da1c1590a51cd477b93e5ed69f7d6b075afec05710d00a254fc
+- filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/ConfigurationService.java
+  checksum: 4027ff73be97ab1c27ae9c1fe6feb55fc1b4785810858292d914b3174c23aee1
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/PipelineService.java
   checksum: 3ef22931f20c4f6e61b6c0fc271ae84d30083362a71fca3378574aad99495b9a
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/SecretsScanDetailsService.java
@@ -52,7 +54,7 @@ fileignoreconfig:
 - filename: backend/src/main/java/de/otto/platform/gitactionboard/domain/service/notifications/NotificationsService.java
   checksum: 9c4b344e4d0e6eeaf030bcd7fe4eca0267425d4616adf562ec710ea78bfc08db
 - filename: backend/src/main/resources/application.properties
-  checksum: 335aeb5a638b4562322e6223401c970f45623b18af9fdcbf5d08d1121af0177e
+  checksum: a9a12d18a3fbb33b50623fc3d91505a54cc3d5dff7f8ab7dbb17bd4b38c14df8
 - filename: backend/src/main/resources/db/changelog/db.changelog-main.xml
   checksum: eeeb57b59d002aac2154ca1b769b8b4cfb7aec00294eb4c7f16a4e6ea3f034e9
 - filename: backend/src/test/java/de/otto/platform/gitactionboard/adapters/controller/ConfigurationControllerTest.java

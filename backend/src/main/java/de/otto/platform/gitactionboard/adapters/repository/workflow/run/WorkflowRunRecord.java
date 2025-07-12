@@ -1,6 +1,5 @@
 package de.otto.platform.gitactionboard.adapters.repository.workflow.run;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import de.otto.platform.gitactionboard.domain.workflow.RunConclusion;
 import de.otto.platform.gitactionboard.domain.workflow.RunStatus;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowRun;
@@ -9,6 +8,7 @@ import java.util.Optional;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.Value;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Value
@@ -18,30 +18,30 @@ public class WorkflowRunRecord {
   Long id;
 
   @NonNull
-  @JsonProperty("run_attempt")
+  @Column("run_attempt")
   Integer runAttempt;
 
   @NonNull
-  @JsonProperty("workflow_id")
+  @Column("workflow_id")
   Long workflowId;
 
   @NonNull String status;
 
   String conclusion;
 
-  @JsonProperty("run_number")
+  @Column("run_number")
   long runNumber;
 
   @NonNull
-  @JsonProperty("updated_at")
+  @Column("updated_at")
   Instant updatedAt;
 
   @NonNull
-  @JsonProperty("created_at")
+  @Column("created_at")
   Instant createdAt;
 
   @NonNull
-  @JsonProperty("triggered_event")
+  @Column("triggered_event")
   String triggeredEvent;
 
   public static WorkflowRunRecord from(WorkflowRun workflowRun) {

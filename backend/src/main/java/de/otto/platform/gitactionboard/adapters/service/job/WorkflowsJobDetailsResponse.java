@@ -45,6 +45,10 @@ public class WorkflowsJobDetailsResponse {
     @JsonProperty("html_url")
     String url;
 
+    @NonNull
+    @JsonProperty("head_branch")
+    String branch;
+
     public WorkflowJob toWorkflowJob(long workflowId) {
       return WorkflowJob.builder()
           .id(id)
@@ -57,6 +61,7 @@ public class WorkflowsJobDetailsResponse {
           .workflowRunId(runId)
           .url(url)
           .runAttempt(runAttempt)
+          .branch(branch)
           .build();
     }
   }

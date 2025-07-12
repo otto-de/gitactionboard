@@ -31,6 +31,8 @@ public class JobDetails {
 
   @NonNull Integer runAttempt;
 
+  @NonNull String branch;
+
   public static JobDetails from(
       long runNumber,
       Workflow workflow,
@@ -50,6 +52,7 @@ public class JobDetails {
             Optional.ofNullable(previousJob.getCompletedAt()).orElse(previousJob.getStartedAt()))
         .triggeredEvent(triggeredEvent)
         .runAttempt(currentJob.getRunAttempt())
+        .branch(currentJob.getBranch())
         .build();
   }
 

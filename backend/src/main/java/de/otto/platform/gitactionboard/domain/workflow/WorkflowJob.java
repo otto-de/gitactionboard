@@ -27,4 +27,6 @@ public class WorkflowJob {
   @NonNull String url;
 
   @NonNull Integer runAttempt;
+
+  @NonNull String branch;
 }

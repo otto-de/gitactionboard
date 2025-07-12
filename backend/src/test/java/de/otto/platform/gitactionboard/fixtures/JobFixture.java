@@ -20,6 +20,7 @@ public class JobFixture {
   public static final String JOB_URL = "https://github.com/johndoe/hello-world/runs/1132386127";
   public static final String JOB_NAME = "dependency-checks";
   public static final String TRIGGERED_EVENT = "push";
+  public static final String BRANCH = "main";
   public static final int JOB_ID = 1132386127;
   public static final Instant LAST_BUILD_TIME = Instant.parse("2024-09-18T06:14:54.000Z");
   public static final Instant LAST_BUILD_STARTED_AT = LAST_BUILD_TIME.minus(1, ChronoUnit.MINUTES);
@@ -36,7 +37,8 @@ public class JobFixture {
         .triggeredEvent(TRIGGERED_EVENT)
         .repoName(REPO_NAME)
         .runAttempt(RUN_ATTEMPT)
-        .workflowName(WORKFLOW_NAME);
+        .workflowName(WORKFLOW_NAME)
+        .branch(BRANCH);
   }
 
   public static WorkflowJob.WorkflowJobBuilder getWorkflowJobBuilder() {
@@ -50,7 +52,8 @@ public class JobFixture {
         .workflowId(WORKFLOW_ID)
         .workflowRunId(WorkflowRunFixture.RUN_ID)
         .runAttempt(RUN_ATTEMPT)
-        .url(JOB_URL);
+        .url(JOB_URL)
+        .branch(BRANCH);
   }
 
   public static WorkflowJobRecord.WorkflowJobRecordBuilder getWorkflowJobRecordBuilder() {
@@ -64,6 +67,7 @@ public class JobFixture {
         .workflowId(WORKFLOW_ID)
         .workflowRunId(WorkflowRunFixture.RUN_ID)
         .runAttempt(RUN_ATTEMPT)
-        .url(JOB_URL);
+        .url(JOB_URL)
+        .branch(BRANCH);
   }
 }

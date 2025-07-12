@@ -159,4 +159,24 @@
         />
     </changeSet>
 
+    <changeSet id="6_alter_workflow_jobs_table_add_branch_column_sqlite" author="gitactionboard" dbms="sqlite">
+        <sql>
+            ALTER TABLE workflow_jobs ADD COLUMN branch_name VARCHAR NOT NULL DEFAULT 'main';
+        </sql>
+    </changeSet>
+
+    <changeSet id="6_alter_workflow_jobs_table_add_branch_column_non_sqlite" author="gitactionboard" dbms="!sqlite">
+        <addColumn tableName="workflow_jobs">
+            <column name="branch_name" type="varchar" value="main" defaultValue="main">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="7_alter_workflow_jobs_add_index_on_branch_name" author="gitactionboard">
+        <createIndex tableName="workflow_jobs" indexName="workflow_jobs_branch_name">
+            <column name="branch_name"/>
+        </createIndex>
+    </changeSet>
+
 </databaseChangeLog>

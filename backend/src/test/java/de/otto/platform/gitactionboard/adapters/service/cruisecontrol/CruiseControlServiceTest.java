@@ -35,8 +35,8 @@ class CruiseControlServiceTest {
     final String expectedCctrayXml =
         """
             <Projects>
-            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push"/>
-            <Project name="hello-world :: hello-world-checks :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="pull_request"/>
+            <Project name="hello-world :: hello-world-checks :: dependency-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:14:54Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386127" triggeredEvent="push" branch="main"/>
+            <Project name="hello-world :: hello-world-checks :: talisman-checks" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="206" lastBuildTime="2024-09-18T06:11:41Z" webUrl="https://github.com/johndoe/hello-world/runs/1132386046" triggeredEvent="pull_request" branch="main"/>
             </Projects>""";
 
     final String ccTrayXml =

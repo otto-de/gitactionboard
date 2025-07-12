@@ -65,7 +65,8 @@
           "completed_at": "2024-09-18T08:11:41.000+02:00"
         }
       ],
-      "check_run_url": "https://api.github.com/repos/johndoe/hello-world/check-runs/1132386046"
+      "check_run_url": "https://api.github.com/repos/johndoe/hello-world/check-runs/1132386046",
+      "head_branch": "main"
     },
     {
       "id": 1132386127,
@@ -131,7 +132,8 @@
           "completed_at": "2024-09-18T08:14:54.000+02:00"
         }
       ],
-      "check_run_url": "https://api.github.com/repos/johndoe/hello-world/check-runs/1132386127"
+      "check_run_url": "https://api.github.com/repos/johndoe/hello-world/check-runs/1132386127",
+      "head_branch": "main"
     }
   ]
 }
