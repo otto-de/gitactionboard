@@ -1,0 +1,47 @@
+[
+  {
+    "name": "main",
+    "commit": {
+      "sha": "c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc",
+      "url": "https://api.github.com/repos/johndoe/dummy-repo/commits/c5b97d5ae6c19d5c5df71a34c7fbeeda2479ccbc"
+    },
+    "protected": true,
+    "protection": {
+      "required_status_checks": {
+        "enforcement_level": "non_admins",
+        "contexts": ["ci-test", "linter"]
+      }
+    },
+    "protection_url": "https://api.github.com/repos/johndoe/dummy-repo/branches/main/protection"
+  },
+  {
+    "name": "feature/new-login-flow",
+    "commit": {
+      "sha": "3c4a1b9e8d7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b",
+      "url": "https://api.github.com/repos/johndoe/dummy-repo/commits/3c4a1b9e8d7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b"
+    },
+    "protected": false,
+    "protection": {
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": []
+      }
+    },
+    "protection_url": null
+  },
+  {
+    "name": "release/v2.1.0",
+    "commit": {
+      "sha": "8f8e9d5e4f3c2b1a0987654321fedcba98765432",
+      "url": "https://api.github.com/repos/johndoe/dummy-repo/commits/8f8e9d5e4f3c2b1a0987654321fedcba98765432"
+    },
+    "protected": true,
+    "protection": {
+      "required_status_checks": {
+        "enforcement_level": "everyone",
+        "contexts": ["ci-test", "security-scan", "deploy-staging"]
+      }
+    },
+    "protection_url": "https://api.github.com/repos/johndoe/dummy-repo/branches/release/v2.1.0/protection"
+  }
+]

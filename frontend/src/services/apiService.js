@@ -46,6 +46,9 @@ export const fetchCodeStandardViolations = () =>
 export const fetchRepositoryNames = () =>
   fetchJsonContent(preparePath('/config/repository-names'), fetchAccessToken());
 
+export const fetchBranchNames = () =>
+  fetchJsonContent(preparePath('/config/branch-names'), fetchAccessToken());
+
 export const fetchWorkflowRunMetrics = (repoName, fromDate, toDate) => {
   const from = fromDate ? fromDate.toISOString() : '';
   const to = toDate ? toDate.toISOString() : '';

@@ -39,6 +39,7 @@ Check [this link](https://otto-de.github.io/gitactionboard/) to try out **Gitact
 - Cache GitHub API response for configured time to avoid rate limit issue
 - Supports Dark and Light theme
 - Key Metrics for Monitoring workflow reliability and performance
+- Filter workflow runs by branch name and triggered event type
 
 ## Usage
 

@@ -134,7 +134,6 @@
                         :text="eventDetail.description"
                       >
                         <template #activator="{ props }">
-                          <!-- Consistent icon size for tooltips -->
                           <v-icon
                             v-bind="props"
                             size="x-small"
@@ -157,6 +156,67 @@
                 @click="toggleAllEventsSelection"
               >
                 {{ areAllEventsSelected ? 'Deselect All Events' : 'Select All Events' }}
+              </v-btn>
+            </v-expansion-panel-text>
+          </v-expansion-panel>
+
+          <v-expansion-panel>
+            <v-expansion-panel-title class="text-h5 py-4 px-6">
+              Filter Builds by Branch Name
+            </v-expansion-panel-title>
+            <v-expansion-panel-text class="py-4 px-6">
+              <p class="text-subtitle-1 text-medium-emphasis mb-6">
+                Select the branch names for which you want to view builds. Only builds associated with
+                the checked branches will be displayed.
+              </p>
+
+              <v-text-field
+                v-model="branchSearchQuery"
+                label="Search Branches"
+                prepend-inner-icon="mdi-magnify"
+                variant="outlined"
+                clearable
+                density="compact"
+                class="mb-4"
+              />
+              <v-row dense>
+                <v-col
+                  v-for="branch in filteredBranchNames"
+                  :key="branch"
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-checkbox
+                    v-model="showBuildsForBranches"
+                    :value="branch"
+                    color="success"
+                    hide-details
+                    density="compact"
+                    class="mb-1"
+                    :label="branch"
+                    @update:model-value="modelValueUpdated"
+                  />
+                </v-col>
+                <v-col
+                  v-if="filteredBranchNames.length === 0"
+                  cols="12"
+                >
+                  <p class="text-medium-emphasis">
+                    No branches found matching your search.
+                  </p>
+                </v-col>
+              </v-row>
+
+              <v-btn
+                variant="outlined"
+                color="success"
+                size="default"
+                width="310px"
+                class="mt-6"
+                @click="toggleAllBranchesSelection"
+              >
+                {{ selectDeselectAllBranchesLabel }}
               </v-btn>
             </v-expansion-panel-text>
           </v-expansion-panel>
@@ -188,6 +248,8 @@ import {
   getShowBuildsDueToTriggeredEvents
 } from '@/services/utils';
 
+import { fetchBranchNames } from '@/services/apiService';
+
 export default {
   name: 'Preferences',
   components: { DashboardHeader },
@@ -200,7 +262,10 @@ export default {
       enableMaxIdleTimeOptimization: preferences.enableMaxIdleTimeOptimization,
       themeInstance,
       isDirty: false,
-      showBuildsDueToTriggeredEvents: getShowBuildsDueToTriggeredEvents()
+      showBuildsDueToTriggeredEvents: getShowBuildsDueToTriggeredEvents(),
+      showBuildsForBranches: preferences.showBuildsForBranches || [],
+      allPossibleBranchNames: [],
+      branchSearchQuery: '',
     };
   },
   computed: {
@@ -224,9 +289,45 @@ export default {
     },
     areAllEventsSelected() {
       const selectedEvents = new Set(this.showBuildsDueToTriggeredEvents);
-
       return selectedEvents.size === this.allPossibleTriggeredEvents.length &&
           this.allPossibleTriggeredEvents.every(event => selectedEvents.has(event));
+    },
+    filteredBranchNames() {
+      if (!this.branchSearchQuery) {
+        return this.allPossibleBranchNames;
+      }
+      const query = this.branchSearchQuery.toLowerCase();
+      return this.allPossibleBranchNames.filter(branch =>
+        branch.toLowerCase().includes(query)
+      );
+    },
+    areAllBranchesSelectedFiltered() {
+      if (this.filteredBranchNames.length === 0) {
+        return false;
+      }
+      const selectedBranches = new Set(this.showBuildsForBranches);
+      return this.filteredBranchNames.every(branch => selectedBranches.has(branch));
+    },
+    selectDeselectAllBranchesLabel() {
+      const filtered = !!this.branchSearchQuery;
+      return this.areAllBranchesSelectedFiltered
+        ? `Deselect All ${filtered ? 'Filtered ' : ''}Branches`
+        : `Select All ${filtered ? 'Filtered ' : ''}Branches`;
+    },
+  },
+  async mounted() {
+    try {
+      this.allPossibleBranchNames = (await fetchBranchNames()).sort();
+      if (!preferences.showBuildsForBranches || preferences.showBuildsForBranches.length === 0) {
+        this.showBuildsForBranches = [...this.allPossibleBranchNames];
+      } else {
+        this.showBuildsForBranches = preferences.showBuildsForBranches.filter(branch =>
+          this.allPossibleBranchNames.includes(branch)
+        );
+        this.modelValueUpdated();
+      }
+    } catch (error) {
+      console.error('Failed to fetch branch names:', error);
     }
   },
   methods: {
@@ -241,6 +342,7 @@ export default {
       preferences.maxIdleTime = this.maxIdleTime;
       preferences.theme = this.themeInstance.global.name;
       preferences.showBuildsDueToTriggeredEvents = this.showBuildsDueToTriggeredEvents;
+      preferences.showBuildsForBranches = this.showBuildsForBranches;
 
       this.isDirty = false;
     },
@@ -250,7 +352,8 @@ export default {
           this.enableBuildMonitorView === preferences.enableBuildMonitorView &&
           this.maxIdleTime === preferences.maxIdleTime &&
           this.enableMaxIdleTimeOptimization === preferences.enableMaxIdleTimeOptimization &&
-          this.hasSameShowBuildsDueToTriggeredEvents());
+          this.hasSameShowBuildsDueToTriggeredEvents() &&
+          this.hasSameShowBuildsForBranches());
     },
     hasSameShowBuildsDueToTriggeredEvents() {
       const preferredTriggeredEvents = preferences.showBuildsDueToTriggeredEvents;
@@ -264,16 +367,40 @@ export default {
       return newPreferredTriggeredEvents.size === preferredTriggeredEvents.length &&
           preferredTriggeredEvents.every(event => newPreferredTriggeredEvents.has(event));
     },
+    hasSameShowBuildsForBranches() {
+      const preferredBranches = preferences.showBuildsForBranches;
+
+      if (!preferredBranches || preferredBranches.length === 0) {
+        return this.showBuildsForBranches.length === this.allPossibleBranchNames.length &&
+            this.allPossibleBranchNames.every(branch => this.showBuildsForBranches.includes(branch));
+      }
+
+      const currentSelectedBranches = new Set(this.showBuildsForBranches);
+      return currentSelectedBranches.size === preferredBranches.length &&
+          preferredBranches.every(branch => currentSelectedBranches.has(branch));
+    },
     toggleAllEventsSelection() {
       if (this.areAllEventsSelected) {
         this.showBuildsDueToTriggeredEvents = [];
       } else {
         this.showBuildsDueToTriggeredEvents = [...this.allPossibleTriggeredEvents];
       }
+      this.modelValueUpdated();
+    },
+    toggleAllBranchesSelection() {
+      const currentSelectionsSet = new Set(this.showBuildsForBranches);
+
+      if (this.areAllBranchesSelectedFiltered) {
+        this.filteredBranchNames.forEach(branch => currentSelectionsSet.delete(branch));
+      } else {
+        this.filteredBranchNames.forEach(branch => currentSelectionsSet.add(branch));
+      }
+
+      this.showBuildsForBranches = Array.from(currentSelectionsSet);
 
       this.modelValueUpdated();
-    }
-  }
+    },
+  },
 };
 </script>
 

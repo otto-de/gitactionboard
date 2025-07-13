@@ -91,8 +91,12 @@ fileignoreconfig:
   checksum: ac43328cc1933b017d3b95f63e6c1b3ce6f93e28d167b8e061a15359f23a004b
 - filename: backend/src/test/resources/.htpasswd
   checksum: 2e31e64b696f0f9267a4ebd694d90b27c6e0c4cefdd11349d199e185daab2d6c
+- filename: backend/src/test/resources/testData/dummyRepoBranches.json
+  checksum: 93cf5067886260e93183e0318d64e0a398d689fa231782e4d66a38561ddb1ae9
 - filename: backend/src/test/resources/testData/githubCodeScanAlerts.json
   checksum: b6b279e5a22b92cd3c6875e0b446af17456ded5c95520b6b209e8e4bb8397e0f
+- filename: backend/src/test/resources/testData/helloWorldBranches.json
+  checksum: 1d0197ee6b99d921e036057b6ece13ea3dd3a1902fe60ca9a7c18f00058b4034
 - filename: backend/src/test/resources/testData/jobsDetails260614021.json
   checksum: f87d11a7f74186e36131417e1ae277a7bebfdf5aea6eacf8dae2b0f04097075e
 - filename: backend/src/test/resources/testData/jobsDetails260614024.json
@@ -140,7 +144,7 @@ fileignoreconfig:
 - filename: frontend/src/components/LoginPage.vue
   checksum: 05020dbf6e1bcecfeb9f3bc18eba9d5278d9dde6170f0bdcc9514f5f4b18152e
 - filename: frontend/src/components/Preferences.vue
-  checksum: fa8e5a3bccbd69ff0af9f126dc02975d7ecd853bb9c6aa8cc2266a53b072ee08
+  checksum: 8ca09a6590eaa0d4e8624e8be3e7c32ae0fc6d3f3b437e3c34c543569ea260a8
 - filename: frontend/src/components/WorkflowDashboard.vue
   checksum: 29de553931ddefe3aa93eb28d247f1773215148efd45aeb67a20e8047a08345f
 - filename: frontend/src/components/metrics/MetricsDashboard.vue

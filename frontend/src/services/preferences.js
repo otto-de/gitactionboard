@@ -79,6 +79,14 @@ class Preferences {
   set showBuildsDueToTriggeredEvents(events) {
     this.__set__('show-builds-due-to-triggered-events', JSON.stringify(events));
   }
+
+  get showBuildsForBranches() {
+    return JSON.parse(this.__get__('show-builds-due-for-branch-names') || '[]');
+  }
+
+  set showBuildsForBranches(branchNames) {
+    this.__set__('show-builds-due-for-branch-names', JSON.stringify(branchNames));
+  }
 }
 
 export default new Preferences();

@@ -22,7 +22,8 @@ describe('<WorkflowDashboard />', () => {
     lastBuildLabel: '4',
     lastBuildTime: '2022-08-15T02:20:34.000Z',
     webUrl: 'https://github.com/webpack/webpack-cli/runs/7831157675?check_suite_focus=true',
-    triggeredEvent: 'schedule'
+    triggeredEvent: 'schedule',
+    branch: 'main'
   };
 
   const jobDetails2 = {
@@ -32,7 +33,8 @@ describe('<WorkflowDashboard />', () => {
     lastBuildLabel: '7613',
     lastBuildTime: '2022-08-16T03:45:02.000Z',
     webUrl: 'https://github.com/webpack/webpack-cli/runs/7858502725?check_suite_focus=true',
-    triggeredEvent: 'push'
+    triggeredEvent: 'push',
+    branch: 'main'
   };
 
   const jobDetails1RootId = jobDetails1.name.replaceAll(/[\\:\s]/g, '-');
@@ -260,6 +262,26 @@ describe('<WorkflowDashboard />', () => {
     await clickOnJobDetailsVisibilityToggleIcon(workflowDashboardWrapper, jobDetails1RootId);
     expect(workflowDashboardWrapper.find(hiddenContentsTitleBarTestId).exists()).toBeTruthy();
     expect(workflowDashboardWrapper.html()).toMatchSnapshot();
+  });
+
+  it('should filter by triggered branch name', async () => {
+    vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
+    vi.spyOn(preferences, 'enableMaxIdleTimeOptimization', 'get').mockReturnValueOnce(true);
+    vi.spyOn(preferences, 'maxIdleTime', 'get').mockReturnValueOnce(10);
+    vi.spyOn(preferences, 'hiddenElements', 'get').mockReturnValueOnce({});
+    vi.spyOn(preferences, 'showBuildsForBranches', 'get').mockReturnValue(['main']);
+
+    fetchCctrayJson.mockResolvedValueOnce([jobDetails1, { ...jobDetails2, branch: 'test-branch' }]);
+
+    const workflowDashboardWrapper = mountWithWrapper(WorkflowDashboard);
+
+    await flushPromises();
+
+    const jobComponents = workflowDashboardWrapper.findAllComponents(Job);
+
+    expect(jobComponents).length(1);
+    expect(workflowDashboardWrapper.find(`#${jobDetails1RootId}`).exists()).toBeTruthy();
+    expect(workflowDashboardWrapper.find(`#${jobDetails2.name.replaceAll(/[\\:\s]/g, '-')}`).exists()).toBeFalsy();
   });
 
   it.each([

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import router from '@/router';
 import preferences from '@/services/preferences';
 import Dashboard from '@/components/Dashboard';
 import { fetchCctrayJson } from '@/services/apiService';
@@ -27,9 +26,6 @@ export default {
   name: 'WorkflowDashboard',
   components: { DashboardHeader, Dashboard },
   computed: {
-    currentPath() {
-      return router.currentRoute.value.path;
-    },
     showHealthyBuilds() {
       return preferences.showHealthyBuilds;
     },
@@ -41,6 +37,9 @@ export default {
     },
     hasPreferredTriggeredEvents() {
       return preferences.showBuildsDueToTriggeredEvents.length > 0;
+    },
+    hasPreferredBranchNames() {
+      return preferences.showBuildsForBranches.length > 0;
     }
   },
   methods: {
@@ -51,12 +50,18 @@ export default {
       return lastBuildStatus === 'Success' && activity === 'Sleeping';
     },
     marshalData(data) {
+      const showBuildsDueToTriggeredEventsConfig = preferences.showBuildsDueToTriggeredEvents;
+      const showBuildsForBranchesConfig = preferences.showBuildsForBranches;
+
       return data
         .filter(({ lastBuildStatus, activity }) =>
           this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity))
         .filter(({ triggeredEvent }) =>
           !this.hasPreferredTriggeredEvents ||
-            preferences.showBuildsDueToTriggeredEvents.indexOf(triggeredEvent) !== -1);
+              showBuildsDueToTriggeredEventsConfig.indexOf(triggeredEvent) !== -1)
+        .filter(({ branch }) =>
+          !this.hasPreferredBranchNames ||
+              showBuildsForBranchesConfig.indexOf(branch) !== -1);
     }
   }
 };
