@@ -24,7 +24,8 @@ import {
   mdiEyeOff,
   mdiClose,
   mdiArrowExpand,
-  mdiGithub
+  mdiGithub,
+  mdiInformationOutline
 } from '@mdi/js';
 
 export default () => createVuetify({
@@ -56,7 +57,8 @@ export default () => createVuetify({
       close: mdiClose,
       expand: mdiArrowExpand,
       login: mdiLogin,
-      github: mdiGithub
+      github: mdiGithub,
+      information: mdiInformationOutline,
     },
     sets: {
       mdi

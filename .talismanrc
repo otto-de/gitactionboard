@@ -137,6 +137,8 @@ fileignoreconfig:
   checksum: 9e2de0706e69c81dce66767e5632556b03a549aab0dc7ef6791daa5f427c461d
 - filename: frontend/src/components/LoginPage.vue
   checksum: 05020dbf6e1bcecfeb9f3bc18eba9d5278d9dde6170f0bdcc9514f5f4b18152e
+- filename: frontend/src/components/Preferences.vue
+  checksum: fa8e5a3bccbd69ff0af9f126dc02975d7ecd853bb9c6aa8cc2266a53b072ee08
 - filename: frontend/src/components/WorkflowDashboard.vue
   checksum: 29de553931ddefe3aa93eb28d247f1773215148efd45aeb67a20e8047a08345f
 - filename: frontend/src/components/metrics/MetricsDashboard.vue
@@ -152,7 +154,7 @@ fileignoreconfig:
 - filename: frontend/src/services/storageService.js
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 - filename: frontend/src/services/utils.js
-  checksum: 43173fd13de1e607f4210361b4e3aefd712cb25e3a5f6d4b8f98310251d0caf6
+  checksum: c5cba3ba2e794a959e0c114ad4715bb433aa805fc5113892304a919f8a44478b
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-nvd-nist-cache-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}
