@@ -236,6 +236,24 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "ynixon",
+      "name": "Yossi Nixon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27818726?v=4",
+      "profile": "https://oracledba.blogspot.com/",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "fmontorsi-equinix",
+      "name": "Francesco Montorsi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/165799982?v=4",
+      "profile": "https://github.com/fmontorsi-equinix",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
