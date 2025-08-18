@@ -22,7 +22,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           ref: ${{ inputs.git_ref }}

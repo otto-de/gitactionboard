@@ -20,7 +20,7 @@ jobs:
       HAS_FRONTEND_CHANGES: ${{ steps.changes.outputs.frontend }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           fetch-depth: 5
@@ -40,7 +40,7 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' && github.event_name != 'schedule' }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 5
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
@@ -59,7 +59,7 @@ jobs:
     needs: [ determine-changes ]
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install jenv
@@ -111,7 +111,7 @@ jobs:
     needs: [ determine-changes ]
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
