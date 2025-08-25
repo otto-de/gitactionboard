@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @IntegrationTest
 @DirtiesContext
-@SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+@SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
 @Parallel
 class BasicAuthenticationControllerIntegrationTest {
   private static final String NAME = "name";

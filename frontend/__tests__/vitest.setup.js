@@ -1,4 +1,4 @@
-import { expect } from 'vitest';
+import { expect, vi } from 'vitest';
 import vueSnapshotSerializer from 'jest-serializer-vue-tjw';
 import 'vitest-canvas-mock';
 
@@ -12,3 +12,4 @@ window.ResizeObserver = window.ResizeObserver || ResizeObserverStub;
 expect.addSnapshotSerializer(vueSnapshotSerializer);
 global.CSS = { supports: () => false };
 process.env.TZ = 'Asia/Kolkata';
+vi.stubGlobal('visualViewport', new EventTarget());

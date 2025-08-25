@@ -10,6 +10,7 @@
     :min="minAllowedDate"
     :rules="rules"
     :disabled="disabled"
+    :hide-actions="false"
     @update:model-value="dateRangeUpdated"
   />
 </template>

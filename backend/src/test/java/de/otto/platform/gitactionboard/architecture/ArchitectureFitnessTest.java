@@ -11,7 +11,7 @@ import com.tngtech.archunit.junit.ArchTest;
 @AnalyzeClasses(
     packages = "de.otto.platform.gitactionboard",
     importOptions = DoNotIncludeTests.class)
-@SuppressWarnings("PMD.TestClassWithoutTestCases")
+@SuppressWarnings({"PMD.TestClassWithoutTestCases", "PMD.LooseCoupling"})
 class ArchitectureFitnessTest {
 
   @ArchTest

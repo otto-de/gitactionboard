@@ -94,6 +94,7 @@ class MetricsControllerIntegrationTest {
   }
 
   @Test
+  @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
   void shouldFindWorkflowRunMetricForGivenRepoName() {
     invokeGetApiAndValidate(
         mockMvc,

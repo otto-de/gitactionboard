@@ -1192,7 +1192,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
           </i>
         </div>
         <div class="v-input__control">
-          <div aria-controls="v-menu-3" aria-expanded="false" aria-haspopup="menu" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
+          <div aria-controls="v-menu-v-3" aria-expanded="false" aria-haspopup="menu" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -1210,11 +1210,11 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
             </div>
             <!---->
             <div class="v-field__field" data-no-activator>
-              <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-1">
+              <label aria-hidden="false" class="v-label v-field-label v-field-label--floating" for="input-v-1">
                 <!---->
                 Date Range
               </label>
-              <label class="v-label v-field-label" for="input-1">
+              <label class="v-label v-field-label" for="input-v-1">
                 <!---->
                 Date Range
               </label>
@@ -1223,7 +1223,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
                 <!---->
                 <!---->
                 <!---->
-                <input aria-describedby="input-1-messages" id="input-1" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
+                <input aria-describedby="input-v-1-messages" id="input-v-1" inputmode="none" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
               </div>
               <!---->
             </div>
@@ -1236,7 +1236,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
           </div>
         </div>
         <!---->
-        <div aria-live="polite" class="v-input__details" id="input-1-messages" role="alert">
+        <div aria-live="polite" class="v-input__details" id="input-v-1-messages" role="alert">
           <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
             <!---->
           </transition-group-stub>

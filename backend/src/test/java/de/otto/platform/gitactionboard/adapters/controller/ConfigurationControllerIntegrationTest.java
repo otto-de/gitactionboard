@@ -58,6 +58,8 @@ class ConfigurationControllerIntegrationTest {
       "%s/dummy-repo/branches".formatted(GITHUB_API_BASE_PATH);
   private static final String HELLO_WORLD_BRANCHES_URL =
       "%s/hello-world/branches".formatted(GITHUB_API_BASE_PATH);
+  private static final String PER_PAGE = "per_page";
+  private static final String ONE_HUNDRED = "100";
 
   @Autowired private MockMvc mockMvc;
 
@@ -66,7 +68,7 @@ class ConfigurationControllerIntegrationTest {
 
   @Test
   @SneakyThrows
-  @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+  @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
   void shouldGiveAvailableConfig() {
     mockMvc
         .perform(MockMvcRequestBuilders.get("/config"))
@@ -81,7 +83,7 @@ class ConfigurationControllerIntegrationTest {
 
   @Test
   @SneakyThrows
-  @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+  @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
   void shouldFetchListOfRepositories() {
     mockMvc
         .perform(
@@ -102,13 +104,13 @@ class ConfigurationControllerIntegrationTest {
         mockServerClient,
         HELLO_WORLD_BRANCHES_URL,
         readFile("testData/helloWorldBranches.json"),
-        "per_page");
+        PER_PAGE);
 
     mockGetRequestWithPageQueryParam(
         mockServerClient,
         DUMMY_REPO_BRANCHES_URL,
         readFile("testData/dummyRepoBranches.json"),
-        "per_page");
+        PER_PAGE);
 
     mockMvc
         .perform(
@@ -124,9 +126,9 @@ class ConfigurationControllerIntegrationTest {
         .andExpect(jsonPath("$[3]").value("release/v2.1.0"));
 
     verifyRequestWithPageQueryParams(
-        mockServerClient, HELLO_WORLD_BRANCHES_URL, "", Parameter.param("per_page", "100"));
+        mockServerClient, HELLO_WORLD_BRANCHES_URL, "", Parameter.param(PER_PAGE, ONE_HUNDRED));
     verifyRequestWithPageQueryParams(
-        mockServerClient, DUMMY_REPO_BRANCHES_URL, "", Parameter.param("per_page", "100"));
+        mockServerClient, DUMMY_REPO_BRANCHES_URL, "", Parameter.param(PER_PAGE, ONE_HUNDRED));
 
     verifyRequest(mockServerClient, request().withPath(HELLO_WORLD_BRANCHES_URL), exactly(1));
     verifyRequest(mockServerClient, request().withPath(DUMMY_REPO_BRANCHES_URL), exactly(1));
@@ -140,7 +142,7 @@ class ConfigurationControllerIntegrationTest {
         mockServerClient,
         HELLO_WORLD_BRANCHES_URL,
         readFile("testData/helloWorldBranches.json"),
-        "per_page");
+        PER_PAGE);
 
     mockRequest(
         mockServerClient,
@@ -162,9 +164,9 @@ class ConfigurationControllerIntegrationTest {
         .andExpect(jsonPath("$[2]").value("main"));
 
     verifyRequestWithPageQueryParams(
-        mockServerClient, HELLO_WORLD_BRANCHES_URL, "", Parameter.param("per_page", "100"));
+        mockServerClient, HELLO_WORLD_BRANCHES_URL, "", Parameter.param(PER_PAGE, ONE_HUNDRED));
     verifyRequestWithPageQueryParams(
-        mockServerClient, DUMMY_REPO_BRANCHES_URL, "", Parameter.param("per_page", "100"));
+        mockServerClient, DUMMY_REPO_BRANCHES_URL, "", Parameter.param(PER_PAGE, ONE_HUNDRED));
 
     verifyRequest(mockServerClient, request().withPath(HELLO_WORLD_BRANCHES_URL), exactly(1));
     verifyRequest(mockServerClient, request().withPath(DUMMY_REPO_BRANCHES_URL), exactly(1));
@@ -197,9 +199,9 @@ class ConfigurationControllerIntegrationTest {
         .andExpect(jsonPath("$", empty()));
 
     verifyRequestWithPageQueryParams(
-        mockServerClient, HELLO_WORLD_BRANCHES_URL, "", Parameter.param("per_page", "100"));
+        mockServerClient, HELLO_WORLD_BRANCHES_URL, "", Parameter.param(PER_PAGE, ONE_HUNDRED));
     verifyRequestWithPageQueryParams(
-        mockServerClient, DUMMY_REPO_BRANCHES_URL, "", Parameter.param("per_page", "100"));
+        mockServerClient, DUMMY_REPO_BRANCHES_URL, "", Parameter.param(PER_PAGE, ONE_HUNDRED));
 
     verifyRequest(mockServerClient, request().withPath(HELLO_WORLD_BRANCHES_URL), exactly(1));
     verifyRequest(mockServerClient, request().withPath(DUMMY_REPO_BRANCHES_URL), exactly(1));

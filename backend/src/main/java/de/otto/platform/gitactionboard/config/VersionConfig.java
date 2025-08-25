@@ -33,8 +33,9 @@ public class VersionConfig {
   }
 
   @SneakyThrows
+  @SuppressWarnings("PMD.LooseCoupling")
   private Attributes getManifestAttributes() {
-    final ClassLoader classLoader = this.getClass().getClassLoader();
+    final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
     try (InputStream resourceAsStream = classLoader.getResourceAsStream("META-INF/MANIFEST.MF")) {
       final Manifest manifest = new Manifest(resourceAsStream);
       return manifest.getMainAttributes();

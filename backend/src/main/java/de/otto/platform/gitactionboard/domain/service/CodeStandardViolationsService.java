@@ -4,6 +4,7 @@ import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardV
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+@FunctionalInterface
 public interface CodeStandardViolationsService {
   CompletableFuture<List<CodeStandardViolationDetails>> fetchCodeViolations(
       String repoName, String accessToken);

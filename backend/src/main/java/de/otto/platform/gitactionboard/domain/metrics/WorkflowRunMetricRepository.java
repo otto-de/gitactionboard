@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
+@FunctionalInterface
 public interface WorkflowRunMetricRepository {
   CompletableFuture<List<WorkflowRunMetric>> getWorkflowRunMetrics(
       Set<Long> workflowIds, Instant from, Instant to);

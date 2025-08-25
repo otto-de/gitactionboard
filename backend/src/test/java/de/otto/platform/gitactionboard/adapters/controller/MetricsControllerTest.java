@@ -81,8 +81,8 @@ class MetricsControllerTest {
               invocation -> {
                 final WorkflowRunMetric argument =
                     invocation.getArgument(0, WorkflowRunMetric.class);
-                if (argument == workflowRunMetric1) return workflowRunMetricDetails1;
-                if (argument == workflowRunMetric2) return workflowRunMetricDetails2;
+                if (workflowRunMetric1.equals(argument)) return workflowRunMetricDetails1;
+                if (workflowRunMetric2.equals(argument)) return workflowRunMetricDetails2;
                 return workflowRunMetricDetails3;
               });
       assertThat(

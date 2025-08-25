@@ -274,7 +274,7 @@ class GithubControllerIntegrationTest {
 
     @Test
     @SneakyThrows
-    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+    @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
     void shouldNotThrowErrorIfWorkflowsApiCallFails() {
       mockServerClient
           .when(request().withMethod("GET").withPath(WORKFLOWS_URL))

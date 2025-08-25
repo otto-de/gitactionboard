@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 
 @UtilityClass
+@SuppressWarnings("PMD.LooseCoupling")
 public class Utils {
 
   public static ResponseEntity.BodyBuilder createResponseEntityBodyBuilder() {

@@ -31,7 +31,7 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
           <span class="v-alert__underlay"></span>
           <!---->
           <div class="v-alert__prepend">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light" density="default" style="font-size: 28px; height: 28px; width: 28px;">
+            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default" density="default">
               <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
               </svg>

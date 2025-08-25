@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`DateRangePicker > should allow update selected date range 1`] = `
-<div class="v-sheet v-theme--light elevation-24 v-picker v-picker--with-actions v-date-picker v-date-picker--month" style="max-width: 350px;">
+<div class="v-sheet v-theme--light elevation-24 v-picker v-picker--with-actions v-date-picker v-date-picker--month v-locale--is-ltr" style="max-width: 350px;">
   <!---->
   <div class="v-picker__body">
     <div class="v-date-picker-controls">
@@ -13,7 +13,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
         <!---->
         <!---->
       </button>
-      <button class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text v-date-picker-controls__mode-btn" type="button">
+      <button aria-label="Select year" class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text v-date-picker-controls__mode-btn" type="button">
         <span class="v-btn__overlay"></span>
         <span class="v-btn__underlay"></span>
         <!---->
@@ -29,7 +29,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
       </button>
       <div class="v-spacer"></div>
       <div class="v-date-picker-controls__month">
-        <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+        <button aria-label="Previous month" class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" type="button">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -43,7 +43,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
           <!---->
           <!---->
         </button>
-        <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button aria-label="Next month" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -59,7 +59,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
         </button>
       </div>
     </div><transition-stub appear="false" css="true" name="fade-transition" persisted="false">
-      <div class="v-date-picker-month">
+      <div class="v-date-picker-month" style="--v-date-picker-days-in-week: 7;">
         <!---->
         <transition-stub appear="false" css="true" name="picker-transition" persisted="false">
           <div class="v-date-picker-month__days">
@@ -70,20 +70,48 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
             <div class="v-date-picker-month__day v-date-picker-month__weekday">T</div>
             <div class="v-date-picker-month__day v-date-picker-month__weekday">F</div>
             <div class="v-date-picker-month__day v-date-picker-month__weekday">S</div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent v-date-picker-month__day--week-start">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
+              <button aria-label="Sunday, July 28, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>28</span>
+                <!---->
+                <!---->
+              </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Monday, July 29, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>29</span>
+                <!---->
+                <!---->
+              </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Tuesday, July 30, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>30</span>
+                <!---->
+                <!---->
+              </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Wednesday, July 31, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>31</span>
+                <!---->
+                <!---->
+              </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Thursday, August 1, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -93,7 +121,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Friday, August 2, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -103,7 +131,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Saturday, August 3, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -113,7 +141,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Sunday, August 4, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -123,7 +151,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Monday, August 5, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -133,7 +161,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Tuesday, August 6, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -143,7 +171,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Wednesday, August 7, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -153,7 +181,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Thursday, August 8, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -163,7 +191,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Friday, August 9, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -173,7 +201,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Saturday, August 10, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -183,7 +211,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Sunday, August 11, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -193,7 +221,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Monday, August 12, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -203,7 +231,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Tuesday, August 13, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -213,7 +241,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Wednesday, August 14, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -223,7 +251,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Thursday, August 15, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -233,7 +261,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Friday, August 16, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -243,7 +271,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Saturday, August 17, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -253,7 +281,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Sunday, August 18, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -263,7 +291,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Monday, August 19, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -273,7 +301,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Tuesday, August 20, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -283,7 +311,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Wednesday, August 21, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -293,7 +321,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-current="date" aria-label="Today, Thursday, August 22, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -303,7 +331,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Friday, August 23, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -313,7 +341,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Saturday, August 24, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -323,7 +351,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Sunday, August 25, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -333,7 +361,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Monday, August 26, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -343,7 +371,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Tuesday, August 27, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -353,7 +381,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Wednesday, August 28, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -363,7 +391,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Thursday, August 29, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -373,7 +401,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Friday, August 30, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -383,11 +411,81 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Saturday, August 31, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
                 <span class="v-btn__content" data-no-activator>31</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
+              <button aria-label="Sunday, September 1, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>1</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Monday, September 2, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>2</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Tuesday, September 3, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>3</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Wednesday, September 4, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>4</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Thursday, September 5, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>5</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Friday, September 6, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>6</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-end">
+              <button aria-label="Saturday, September 7, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>7</span>
                 <!---->
                 <!---->
               </button>
@@ -398,7 +496,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
     </transition-stub>
   </div>
   <div class="v-picker__actions">
-    <button class="v-btn v-btn--disabled v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" disabled type="button">
+    <button class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
       <span class="v-btn__overlay"></span>
       <span class="v-btn__underlay"></span>
       <!---->
@@ -419,7 +517,7 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
 `;
 
 exports[`DateRangePicker > should allow update selected date range 2`] = `
-<div class="v-sheet v-theme--light elevation-24 v-picker v-picker--with-actions v-date-picker v-date-picker--month" style="max-width: 350px;">
+<div class="v-sheet v-theme--light elevation-24 v-picker v-picker--with-actions v-date-picker v-date-picker--month v-locale--is-ltr" style="max-width: 350px;">
   <!---->
   <div class="v-picker__body">
     <div class="v-date-picker-controls">
@@ -431,7 +529,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
         <!---->
         <!---->
       </button>
-      <button class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text v-date-picker-controls__mode-btn" type="button">
+      <button aria-label="Select year" class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text v-date-picker-controls__mode-btn" type="button">
         <span class="v-btn__overlay"></span>
         <span class="v-btn__underlay"></span>
         <!---->
@@ -447,7 +545,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
       </button>
       <div class="v-spacer"></div>
       <div class="v-date-picker-controls__month">
-        <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+        <button aria-label="Previous month" class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" type="button">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -461,7 +559,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
           <!---->
           <!---->
         </button>
-        <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button aria-label="Next month" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -477,7 +575,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
         </button>
       </div>
     </div><transition-stub appear="false" css="true" name="fade-transition" persisted="false">
-      <div class="v-date-picker-month">
+      <div class="v-date-picker-month" style="--v-date-picker-days-in-week: 7;">
         <!---->
         <transition-stub appear="false" css="true" name="picker-transition" persisted="false">
           <div class="v-date-picker-month__days">
@@ -488,20 +586,48 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
             <div class="v-date-picker-month__day v-date-picker-month__weekday">T</div>
             <div class="v-date-picker-month__day v-date-picker-month__weekday">F</div>
             <div class="v-date-picker-month__day v-date-picker-month__weekday">S</div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent v-date-picker-month__day--week-start">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
+              <button aria-label="Sunday, July 28, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>28</span>
+                <!---->
+                <!---->
+              </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Monday, July 29, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>29</span>
+                <!---->
+                <!---->
+              </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Tuesday, July 30, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>30</span>
+                <!---->
+                <!---->
+              </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--hide-adjacent">
-              <!---->
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Wednesday, July 31, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>31</span>
+                <!---->
+                <!---->
+              </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Thursday, August 1, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -511,7 +637,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Friday, August 2, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -521,7 +647,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Saturday, August 3, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -531,7 +657,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Sunday, August 4, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -541,7 +667,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Monday, August 5, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -551,7 +677,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Tuesday, August 6, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -561,7 +687,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Wednesday, August 7, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -571,7 +697,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Thursday, August 8, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -581,7 +707,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Friday, August 9, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -591,7 +717,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Saturday, August 10, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -601,7 +727,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Sunday, August 11, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -611,7 +737,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Monday, August 12, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -621,7 +747,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Tuesday, August 13, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -631,7 +757,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Wednesday, August 14, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -641,7 +767,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Thursday, August 15, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -651,7 +777,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Friday, August 16, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -661,7 +787,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Saturday, August 17, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -671,7 +797,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Sunday, August 18, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -681,7 +807,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Monday, August 19, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -691,7 +817,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Tuesday, August 20, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -701,7 +827,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
+              <button aria-label="Wednesday, August 21, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -711,7 +837,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-outlined v-date-picker-month__day-btn" type="button">
+              <button aria-current="date" aria-label="Today, Thursday, August 22, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-outlined v-date-picker-month__day-btn" type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -721,7 +847,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Friday, August 23, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -731,7 +857,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Saturday, August 24, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -741,7 +867,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Sunday, August 25, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -751,7 +877,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Monday, August 26, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -761,7 +887,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Tuesday, August 27, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -771,7 +897,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Wednesday, August 28, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -781,7 +907,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Thursday, August 29, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -791,7 +917,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Friday, August 30, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
@@ -801,11 +927,81 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button aria-label="Saturday, August 31, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
                 <span class="v-btn__content" data-no-activator>31</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
+              <button aria-label="Sunday, September 1, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>1</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Monday, September 2, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>2</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Tuesday, September 3, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>3</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Wednesday, September 4, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>4</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Thursday, September 5, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>5</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
+              <button aria-label="Friday, September 6, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>6</span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-end">
+              <button aria-label="Saturday, September 7, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span class="v-btn__content" data-no-activator>7</span>
                 <!---->
                 <!---->
               </button>
@@ -837,7 +1033,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
 `;
 
 exports[`DateRangePicker > should allow update selected date range 3`] = `
-<div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--light v-locale--is-ltr v-input--dirty v-text-field" style="max-width: 350px;">
+<div class="v-input v-input--horizontal v-input--center-affix v-input--focused v-input--density-default v-theme--light v-locale--is-ltr v-input--dirty v-text-field" style="max-width: 350px;">
   <div class="v-input__prepend">
     <!---->
     <i aria-hidden="false" aria-label=" prepended action" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
@@ -847,7 +1043,7 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
     </i>
   </div>
   <div class="v-input__control">
-    <div aria-controls="v-menu-2" aria-expanded="true" aria-haspopup="menu" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-field--focused v-locale--is-ltr">
+    <div aria-controls="v-menu-v-2" aria-expanded="true" aria-haspopup="menu" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-field--focused v-locale--is-ltr">
       <div class="v-field__overlay"></div>
       <div class="v-field__loader">
         <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
@@ -873,7 +1069,7 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
           <!--teleport start-->
           <!--teleport end-->
           <!---->
-          <input aria-describedby="input-0-messages" id="input-0" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
+          <input aria-describedby="input-v-0-messages" id="input-v-0" inputmode="none" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
         </div>
         <!---->
       </div>
@@ -886,7 +1082,7 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
     </div>
   </div>
   <!---->
-  <div aria-live="polite" class="v-input__details" id="input-0-messages" role="alert">
+  <div aria-live="polite" class="v-input__details" id="input-v-0-messages" role="alert">
     <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
       <!---->
     </transition-group-stub>
@@ -895,7 +1091,7 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
 </div>
 `;
 
-exports[`DateRangePicker > should provide correct props to date range component 1`] = `<v-date-input disabled="false" elevation="24" label max="Thu Aug 22 2024 17:30:00 GMT+0530 (India Standard Time)" max-width="350px" min="Mon Jan 01 2024 00:00:00 GMT+0530 (India Standard Time)" modelvalue="Thu Aug 15 2024 00:00:00 GMT+0530 (India Standard Time),Fri Aug 16 2024 00:00:00 GMT+0530 (India Standard Time),Sat Aug 17 2024 00:00:00 GMT+0530 (India Standard Time),Sun Aug 18 2024 00:00:00 GMT+0530 (India Standard Time),Mon Aug 19 2024 00:00:00 GMT+0530 (India Standard Time),Tue Aug 20 2024 00:00:00 GMT+0530 (India Standard Time),Wed Aug 21 2024 00:00:00 GMT+0530 (India Standard Time),Thu Aug 22 2024 00:00:00 GMT+0530 (India Standard Time)" multiple="range" rules="(updatedInput) => !!updatedInput" test-id="vuetify-date-range-picker"></v-date-input>`;
+exports[`DateRangePicker > should provide correct props to date range component 1`] = `<v-date-input disabled="false" elevation="24" hide-actions="false" label max="Thu Aug 22 2024 17:30:00 GMT+0530 (India Standard Time)" max-width="350px" min="Mon Jan 01 2024 00:00:00 GMT+0530 (India Standard Time)" modelvalue="Thu Aug 15 2024 00:00:00 GMT+0530 (India Standard Time),Fri Aug 16 2024 00:00:00 GMT+0530 (India Standard Time),Sat Aug 17 2024 00:00:00 GMT+0530 (India Standard Time),Sun Aug 18 2024 00:00:00 GMT+0530 (India Standard Time),Mon Aug 19 2024 00:00:00 GMT+0530 (India Standard Time),Tue Aug 20 2024 00:00:00 GMT+0530 (India Standard Time),Wed Aug 21 2024 00:00:00 GMT+0530 (India Standard Time),Thu Aug 22 2024 00:00:00 GMT+0530 (India Standard Time)" multiple="range" rules="(updatedInput) => !!updatedInput" test-id="vuetify-date-range-picker"></v-date-input>`;
 
 exports[`DateRangePicker > should render date range with selected last 7 days by default 1`] = `
 <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--light v-locale--is-ltr v-input--dirty v-text-field" style="max-width: 350px;">
@@ -933,7 +1129,7 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
           <!---->
           <!---->
           <!---->
-          <input aria-describedby="input-0-messages" id="input-0" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
+          <input aria-describedby="input-v-0-messages" id="input-v-0" inputmode="none" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
         </div>
         <!---->
       </div>
@@ -946,7 +1142,7 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
     </div>
   </div>
   <!---->
-  <div aria-live="polite" class="v-input__details" id="input-0-messages" role="alert">
+  <div aria-live="polite" class="v-input__details" id="input-v-0-messages" role="alert">
     <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
       <!---->
     </transition-group-stub>

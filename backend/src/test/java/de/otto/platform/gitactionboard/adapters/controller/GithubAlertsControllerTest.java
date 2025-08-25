@@ -28,6 +28,8 @@ import org.springframework.http.ResponseEntity;
 @ExtendWith(MockitoExtension.class)
 @Sequential
 class GithubAlertsControllerTest {
+  private static final String ACCESS_TOKEN = "accessToken";
+
   @Mock private SecretsScanService secretsScanService;
   @Mock private CodeStandardViolationsScanService codeStandardViolationsScanService;
   private GithubAlertsController githubAlertsController;
@@ -44,7 +46,7 @@ class GithubAlertsControllerTest {
 
     @ParameterizedTest
     @NullSource
-    @CsvSource(value = {"accessToken"})
+    @CsvSource(value = {ACCESS_TOKEN})
     void shouldFetchSecurityScanAlertsAsJson(String accessToken) {
       final SecretsScanDetails scanDetails =
           SecretsScanDetailsFixtures.getSecretsScanDetailsBuilder().build();
@@ -75,7 +77,7 @@ class GithubAlertsControllerTest {
 
     @ParameterizedTest
     @NullSource
-    @CsvSource(value = {"accessToken"})
+    @CsvSource(value = {ACCESS_TOKEN})
     void shouldFetchCodeViolationAlertsAsJson(String accessToken) {
       final CodeStandardViolationDetails codeStandardViolationDetails =
           CodeStandardViolationFixture.getCodeStandardViolationDetailsBuilder().build();
@@ -127,7 +129,7 @@ class GithubAlertsControllerTest {
 
     @ParameterizedTest
     @NullSource
-    @CsvSource(value = {"accessToken"})
+    @CsvSource(value = {ACCESS_TOKEN})
     void shouldFetchSecurityScanAlertsAsJson(String accessToken) {
       final ResponseEntity<List<SecretsScanAlert>> securityScanAlertsResponse =
           githubAlertsController.getSecretsScanAlerts(accessToken);
@@ -139,7 +141,7 @@ class GithubAlertsControllerTest {
 
     @ParameterizedTest
     @NullSource
-    @CsvSource(value = {"accessToken"})
+    @CsvSource(value = {ACCESS_TOKEN})
     void shouldFetchCodeViolationAlertsAsJson(String accessToken) {
       final ResponseEntity<List<CodeStandardViolationAlert>> codeViolationAlertsResponse =
           githubAlertsController.getCodeStandardViolationAlerts(accessToken);

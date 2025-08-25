@@ -19,7 +19,7 @@ public class RestClientConfig {
 
   @Bean
   @Primary
-  private static RestClient.Builder restClientBuilder(
+  public RestClient.Builder restClientBuilder(
       ObjectMapper objectMapper, BufferingClientHttpRequestFactory requestFactory) {
     return RestClient.builder()
         .requestFactory(requestFactory)

@@ -111,7 +111,7 @@ class GithubAlertsControllerIntegrationTest {
     @NullSource
     @CsvSource(value = {"accessToken"})
     @SneakyThrows
-    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+    @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
     void shouldReturnNotFoundWhileFetchingSecurityAlerts(String accessToken) {
       final MockHttpServletRequestBuilder requestBuilder =
           Objects.isNull(accessToken)
@@ -136,7 +136,7 @@ class GithubAlertsControllerIntegrationTest {
     @NullSource
     @CsvSource(value = {"accessToken"})
     @SneakyThrows
-    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+    @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
     void shouldReturnNotFoundWhileFetchingCodeStandardViolationAlerts(String accessToken) {
       final MockHttpServletRequestBuilder requestBuilder =
           Objects.isNull(accessToken)
@@ -222,7 +222,7 @@ class GithubAlertsControllerIntegrationTest {
 
     @Test
     @SneakyThrows
-    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+    @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
     void shouldNotThrowErrorIfWorkflowsApiCallFails() {
 
       mockRequest(
@@ -389,7 +389,7 @@ class GithubAlertsControllerIntegrationTest {
 
     @Test
     @SneakyThrows
-    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
+    @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
     void shouldNotThrowErrorIfCodeScanApiCallFails() {
 
       mockRequest(

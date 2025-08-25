@@ -54,7 +54,7 @@ public class WebSecurityConfig {
       @Value("${BASIC_AUTH_USER_DETAILS_FILE_PATH:}") String basicAuthDetailsFilePath,
       @Value("${spring.security.oauth2.client.registration.github.client-id:-}")
           String githubClientId) {
-    final ArrayList<AuthenticationMechanism> authenticationMechanisms = new ArrayList<>();
+    final List<AuthenticationMechanism> authenticationMechanisms = new ArrayList<>();
 
     if (StringUtils.hasText(basicAuthDetailsFilePath))
       authenticationMechanisms.add(AuthenticationMechanism.BASIC_AUTH);

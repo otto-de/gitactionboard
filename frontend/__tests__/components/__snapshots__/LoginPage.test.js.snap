@@ -83,21 +83,21 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-0">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-0">
                     <!---->
                     Username
                   </label>
-                  <label class="v-label v-field-label" for="input-0">
+                  <label class="v-label v-field-label" for="input-v-0">
                     <!---->
                     Username
                   </label>
                   <!---->
-                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text" value>
+                  <input class="v-field__input" id="input-v-0" placeholder="Enter your username" size="1" test-id="username" type="text" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Username" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
+                    <i aria-hidden="false" aria-label="Clear Username" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="-1">
                       <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
                       </svg>
@@ -138,21 +138,21 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-2">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-2">
                     <!---->
                     Password
                   </label>
-                  <label class="v-label v-field-label" for="input-2">
+                  <label class="v-label v-field-label" for="input-v-2">
                     <!---->
                     Password
                   </label>
                   <!---->
-                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password" value>
+                  <input class="v-field__input" id="input-v-2" placeholder="Enter your password" size="1" test-id="password" type="password" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Password" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
+                    <i aria-hidden="false" aria-label="Clear Password" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="-1">
                       <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
                       </svg>
@@ -250,21 +250,21 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-0">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-0">
                     <!---->
                     Username
                   </label>
-                  <label class="v-label v-field-label" for="input-0">
+                  <label class="v-label v-field-label" for="input-v-0">
                     <!---->
                     Username
                   </label>
                   <!---->
-                  <input aria-describedby="input-0-messages" class="v-field__input" id="input-0" placeholder="Enter your username" size="1" test-id="username" type="text" value>
+                  <input class="v-field__input" id="input-v-0" placeholder="Enter your username" size="1" test-id="username" type="text" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Username" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
+                    <i aria-hidden="false" aria-label="Clear Username" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="-1">
                       <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
                       </svg>
@@ -305,21 +305,21 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-2">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-2">
                     <!---->
                     Password
                   </label>
-                  <label class="v-label v-field-label" for="input-2">
+                  <label class="v-label v-field-label" for="input-v-2">
                     <!---->
                     Password
                   </label>
                   <!---->
-                  <input aria-describedby="input-2-messages" class="v-field__input" id="input-2" placeholder="Enter your password" size="1" test-id="password" type="password" value>
+                  <input class="v-field__input" id="input-v-2" placeholder="Enter your password" size="1" test-id="password" type="password" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
                   <div class="v-field__clearable" style="display: none;">
-                    <i aria-hidden="false" aria-label="Clear Password" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
+                    <i aria-hidden="false" aria-label="Clear Password" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="-1">
                       <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
                       </svg>

@@ -170,7 +170,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-v-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->
@@ -331,7 +331,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-v-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->
@@ -566,7 +566,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-7" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-v-7" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->
@@ -694,7 +694,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               </div>
             </div>
             <div class="v-spacer"></div>
-            <button aria-describedby="v-tooltip-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+            <button aria-describedby="v-tooltip-v-1" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
               <span class="v-btn__overlay"></span>
               <span class="v-btn__underlay"></span>
               <!---->

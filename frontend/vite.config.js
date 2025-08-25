@@ -1,4 +1,4 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
@@ -14,8 +14,7 @@ export default defineConfig({
     vue({
       template: { transformAssetUrls }
     }),
-    vuetify(),
-    splitVendorChunkPlugin()
+    vuetify()
   ],
   resolve: {
     alias: {
