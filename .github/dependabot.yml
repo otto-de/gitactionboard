@@ -66,7 +66,7 @@ updates:
       - "dependencies"
       - "dependabot"
     reviewers:
-      - "sumanmaity1234"
+      - "sumanmaity112"
     open-pull-requests-limit: 20
     groups:
       github-actions-version-updates:
@@ -94,7 +94,7 @@ updates:
       - "dependencies"
       - "dependabot"
     reviewers:
-      - "sumanmaity1234"
+      - "sumanmaity112"
     commit-message:
       prefix: "chore"
     open-pull-requests-limit: 20
