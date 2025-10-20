@@ -21,7 +21,7 @@
     "vue": "^3.5.22",
     "vue-chartjs": "^5.3.2",
     "vue-router": "^4.6.3",
-    "vuetify": "^3.9.7"
+    "vuetify": "^3.10.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
