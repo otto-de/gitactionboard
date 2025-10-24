@@ -36,7 +36,7 @@
     "flush-promises": "^1.0.2",
     "globals": "^16.4.0",
     "jest-serializer-vue-tjw": "^4.0.0",
-    "jsdom": "^26.1.0",
+    "jsdom": "^27.0.1",
     "neostandard": "^0.12.2",
     "postcss-html": "^1.8.0",
     "stylelint": "^16.25.0",
