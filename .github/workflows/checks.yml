@@ -100,7 +100,7 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload dependency check report to artifacts
         if: ${{ failure() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dependency-check-report.html
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/dependency-check-report.html
