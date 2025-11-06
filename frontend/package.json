@@ -18,7 +18,7 @@
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-plugin-autocolors": "^0.3.1",
     "date-fns": "^4.1.0",
-    "vue": "^3.5.22",
+    "vue": "^3.5.23",
     "vue-chartjs": "^5.3.3",
     "vue-router": "^4.6.3",
     "vuetify": "^3.9.7"
@@ -42,7 +42,7 @@
     "stylelint": "^16.25.0",
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^39.0.1",
-    "vite": "^7.1.12",
+    "vite": "^7.2.1",
     "vite-plugin-vuetify": "^2.1.2",
     "vitest": "^3.2.4",
     "vitest-canvas-mock": "^0.3.3"
