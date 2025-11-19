@@ -27,7 +27,7 @@
     "@eslint/js": "^9.39.1",
     "@mdi/js": "^7.4.47",
     "@mockoon/cli": "^9.4.0",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue": "^6.0.2",
     "@vitest/coverage-v8": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
     "concurrently": "^9.2.1",
