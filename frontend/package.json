@@ -44,7 +44,7 @@
     "stylelint-config-standard": "^39.0.1",
     "vite": "^7.2.4",
     "vite-plugin-vuetify": "^2.1.2",
-    "vitest": "^3.2.4",
+    "vitest": "^4.0.12",
     "vitest-canvas-mock": "^0.3.3"
   },
   "stylelint": {
