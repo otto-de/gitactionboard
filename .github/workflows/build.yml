@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
@@ -94,7 +94,7 @@ jobs:
       PUBLISH_NEW_VERSION: ${{ steps.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Determine should publish docker image
         id: determaine_should_publish_new_version
         run: |
@@ -112,7 +112,7 @@ jobs:
       CURRENT_TAG: ${{ steps.find_current_tag_name.outputs.CURRENT_TAG }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Determine current tag
         id: find_current_tag_name
         run: |
@@ -129,7 +129,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: 'main'
           fetch-depth: 0
@@ -162,7 +162,7 @@ jobs:
     needs: [ build, determaine_current_tag_name, update_changelog ]
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install jenv
@@ -248,7 +248,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Setup Pages
