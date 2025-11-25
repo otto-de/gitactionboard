@@ -45,7 +45,7 @@
     "vite": "^7.2.4",
     "vite-plugin-vuetify": "^2.1.2",
     "vitest": "^3.2.4",
-    "vitest-canvas-mock": "^0.3.3"
+    "vitest-canvas-mock": "^1.1.2"
   },
   "stylelint": {
     "extends": [
