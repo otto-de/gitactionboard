@@ -1,36 +1,125 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`MetricsDashboard > should collapse all repository metrics when clicks on collapse all button 1`] = `
-<div class="v-expansion-panels v-theme--light v-expansion-panels--variant-default" test-id="metrics-dashboard-expansion-panels">
-  <div class="v-expansion-panel" test-id="metrics-dashboard-expansion-panel-hello_world">
+<div
+  class="
+    v-expansion-panels
+    v-expansion-panels--variant-default
+    v-theme--light
+  "
+  test-id="metrics-dashboard-expansion-panels"
+>
+  <div
+    class="v-expansion-panel"
+    test-id="metrics-dashboard-expansion-panel-hello_world"
+  >
     <div class="v-expansion-panel__shadow"></div>
-    <button aria-expanded="false" class="v-expansion-panel-title v-expansion-panel-title--static" type="button">
-      <span class="v-expansion-panel-title__overlay"></span>hello_world<span class="v-expansion-panel-title__icon">
-        <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-          <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <button
+      aria-expanded="false"
+      class="
+        v-expansion-panel-title
+        v-expansion-panel-title--static
+      "
+      type="button"
+    >
+      <span class="v-expansion-panel-title__overlay"></span>
+      hello_world
+      <span class="v-expansion-panel-title__icon">
+        <i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        >
+          <svg
+            aria-hidden="true"
+            class="v-icon__svg"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
           </svg>
         </i>
       </span>
     </button>
     <!---->
-    <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
-      <div class="v-expansion-panel-text" style="display: none;">
+    <transition-stub
+      appear="false"
+      css="true"
+      name="expand-transition"
+      persisted="false"
+    >
+      <div
+        class="v-expansion-panel-text"
+        style="display: none;"
+      >
         <div class="v-expansion-panel-text__wrapper">
-          <div class="v-container v-container--fluid v-locale--is-ltr" id="hello_world-metrics">
-            <div class="v-row v-row--dense">
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+          <div
+            class="
+              v-container
+              v-container--fluid
+              v-locale--is-ltr
+            "
+            id="hello_world-metrics"
+          >
+            <div class="
+              v-row
+              v-row--dense
+            ">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -39,16 +128,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Workflow Run Frequency</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Run Frequency
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -59,7 +189,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="hello_world_Workflow_Run_Frequency_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="hello_world_Workflow_Run_Frequency_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -69,18 +210,56 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                 <!---->
                 <!---->
               </div>
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -89,16 +268,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Workflow Run Failure Rate</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Run Failure Rate
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -109,7 +329,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="hello_world_Workflow_Run_Failure_Rate_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="hello_world_Workflow_Run_Failure_Rate_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -119,18 +350,56 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                 <!---->
                 <!---->
               </div>
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -139,16 +408,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Workflow Re-trigger Rate</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Re-trigger Rate
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -159,7 +469,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="hello_world_Workflow_Re-trigger_Rate_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="hello_world_Workflow_Re-trigger_Rate_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -169,18 +490,56 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                 <!---->
                 <!---->
               </div>
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -189,16 +548,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Average Workflow Run Time (Minutes)</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Average Workflow Run Time (Minutes)
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -209,7 +609,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="hello_world_Average_Workflow_Run_Time_(Minutes)_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="hello_world_Average_Workflow_Run_Time_(Minutes)_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -225,35 +636,117 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
       </div>
     </transition-stub>
   </div>
-  <div class="v-expansion-panel" test-id="metrics-dashboard-expansion-panel-test">
+  <div
+    class="v-expansion-panel"
+    test-id="metrics-dashboard-expansion-panel-test"
+  >
     <div class="v-expansion-panel__shadow"></div>
-    <button aria-expanded="false" class="v-expansion-panel-title v-expansion-panel-title--static" type="button">
-      <span class="v-expansion-panel-title__overlay"></span>test<span class="v-expansion-panel-title__icon">
-        <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-          <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <button
+      aria-expanded="false"
+      class="
+        v-expansion-panel-title
+        v-expansion-panel-title--static
+      "
+      type="button"
+    >
+      <span class="v-expansion-panel-title__overlay"></span>
+      test
+      <span class="v-expansion-panel-title__icon">
+        <i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        >
+          <svg
+            aria-hidden="true"
+            class="v-icon__svg"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
           </svg>
         </i>
       </span>
     </button>
     <!---->
-    <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
-      <div class="v-expansion-panel-text" style="display: none;">
+    <transition-stub
+      appear="false"
+      css="true"
+      name="expand-transition"
+      persisted="false"
+    >
+      <div
+        class="v-expansion-panel-text"
+        style="display: none;"
+      >
         <div class="v-expansion-panel-text__wrapper">
-          <div class="v-container v-container--fluid v-locale--is-ltr" id="test-metrics">
-            <div class="v-row v-row--dense">
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+          <div
+            class="
+              v-container
+              v-container--fluid
+              v-locale--is-ltr
+            "
+            id="test-metrics"
+          >
+            <div class="
+              v-row
+              v-row--dense
+            ">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -262,16 +755,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Workflow Run Frequency</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Run Frequency
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -282,7 +816,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="test_Workflow_Run_Frequency_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="test_Workflow_Run_Frequency_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -292,18 +837,56 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                 <!---->
                 <!---->
               </div>
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -312,16 +895,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Workflow Run Failure Rate</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Run Failure Rate
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -332,7 +956,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="test_Workflow_Run_Failure_Rate_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="test_Workflow_Run_Failure_Rate_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -342,18 +977,56 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                 <!---->
                 <!---->
               </div>
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -362,16 +1035,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Workflow Re-trigger Rate</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Re-trigger Rate
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -382,7 +1096,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="test_Workflow_Re-trigger_Rate_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="test_Workflow_Re-trigger_Rate_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -392,18 +1117,56 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                 <!---->
                 <!---->
               </div>
-              <div class="v-col v-col-3">
-                <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
                   <!---->
                   <div class="v-card__loader">
-                    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
                       <!---->
                       <div class="v-progress-linear__background"></div>
-                      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
                         <div class="v-progress-linear__indeterminate">
-                          <div class="v-progress-linear__indeterminate long"></div>
-                          <div class="v-progress-linear__indeterminate short"></div>
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
                       </transition-stub>
                       <!---->
@@ -412,16 +1175,57 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <!---->
                   <div class="v-card-subtitle">
-                    <div class="v-row align-center justify-space-between">
-                      <div class="v-col v-col-auto">Average Workflow Run Time (Minutes)</div>
-                      <div class="v-col v-col-auto">
-                        <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Average Workflow Run Time (Minutes)
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
                           <span class="v-btn__overlay"></span>
                           <span class="v-btn__underlay"></span>
                           <!---->
-                          <span class="v-btn__content" data-no-activator>
-                            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                               </svg>
                             </i>
@@ -432,7 +1236,18 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                       </div>
                     </div>
                   </div>
-                  <canvas height="0" id="test_Average_Workflow_Run_Time_(Minutes)_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                  <canvas
+                    height="0"
+                    id="test_Average_Workflow_Run_Time_(Minutes)_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
                     <p></p>
                   </canvas>
                   <!---->
@@ -452,717 +1267,797 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
 `;
 
 exports[`MetricsDashboard > should display repository metrics when clicks on expansion icon 1`] = `
-<svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg
+  aria-hidden="true"
+  class="v-icon__svg"
+  role="img"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
   <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
 </svg>
 `;
 
 exports[`MetricsDashboard > should display repository metrics when clicks on expansion icon 2`] = `
-DOMWrapper {
-  "isDisabled": [Function],
-  "wrapperElement": <div
-    class="v-expansion-panels v-theme--light v-expansion-panels--variant-default"
-    data-v-a30323f4=""
-    test-id="metrics-dashboard-expansion-panels"
+<div
+  class="
+    v-expansion-panels
+    v-expansion-panels--variant-default
+    v-theme--light
+  "
+  test-id="metrics-dashboard-expansion-panels"
+>
+  <div
+    class="
+      v-expansion-panel
+      v-expansion-panel--active
+    "
+    test-id="metrics-dashboard-expansion-panel-hello_world"
   >
-    
-    
-    <div
-      class="v-expansion-panel v-expansion-panel--active"
-      data-v-a30323f4=""
-      test-id="metrics-dashboard-expansion-panel-hello_world"
+    <div class="v-expansion-panel__shadow"></div>
+    <button
+      aria-expanded="true"
+      class="
+        v-expansion-panel-title
+        v-expansion-panel-title--active
+        v-expansion-panel-title--static
+      "
+      type="button"
+    >
+      <span class="v-expansion-panel-title__overlay"></span>
+      hello_world
+      <span class="v-expansion-panel-title__icon">
+        <i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        >
+          <svg
+            aria-hidden="true"
+            class="v-icon__svg"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+          </svg>
+        </i>
+      </span>
+    </button>
+    <!---->
+    <transition-stub
+      appear="false"
+      css="true"
+      name="expand-transition"
+      persisted="false"
     >
       <div
-        class="v-expansion-panel__shadow"
-      />
-      
-      <button
-        aria-expanded="true"
-        class="v-expansion-panel-title v-expansion-panel-title--active v-expansion-panel-title--static"
-        type="button"
+        class="v-expansion-panel-text"
+        style=""
       >
-        <span
-          class="v-expansion-panel-title__overlay"
-        />
-        
-        hello_world
-        
-        
-        <span
-          class="v-expansion-panel-title__icon"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon notranslate v-theme--light v-icon--size-default"
-          >
-            <svg
-              aria-hidden="true"
-              class="v-icon__svg"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"
-              />
-            </svg>
-          </i>
-        </span>
-        
-      </button>
-      <!---->
-      
-      <transition-stub
-        appear="false"
-        css="true"
-        data-v-a30323f4=""
-        name="expand-transition"
-        persisted="false"
-      >
-        <div
-          class="v-expansion-panel-text"
-          style=""
-        >
+        <div class="v-expansion-panel-text__wrapper">
           <div
-            class="v-expansion-panel-text__wrapper"
+            class="
+              v-container
+              v-container--fluid
+              v-locale--is-ltr
+            "
+            id="hello_world-metrics"
           >
-            
-            <div
-              class="v-container v-container--fluid v-locale--is-ltr"
-              data-v-a30323f4=""
-              id="hello_world-metrics"
-            >
-              <div
-                class="v-row v-row--dense"
-              >
-                <div
-                  class="v-col v-col-3"
-                >
-                  
-                  <div
-                    class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin"
-                  >
-                    <!---->
+            <div class="
+              v-row
+              v-row--dense
+            ">
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
+                  <!---->
+                  <div class="v-card__loader">
                     <div
-                      class="v-card__loader"
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
                     >
+                      <!---->
+                      <div class="v-progress-linear__background"></div>
                       <div
-                        aria-hidden="true"
-                        aria-valuemax="100"
-                        aria-valuemin="0"
-                        class="v-progress-linear v-theme--light v-locale--is-ltr"
-                        role="progressbar"
-                        style="top: 0px; height: 0px; --v-progress-linear-height: 2px;"
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
                       >
-                        <!---->
-                        <div
-                          class="v-progress-linear__background"
-                        />
-                        <div
-                          class="v-progress-linear__buffer"
-                          style="width: 0%;"
-                        />
-                        <transition-stub
-                          appear="false"
-                          css="true"
-                          name="fade-transition"
-                          persisted="false"
-                        >
-                          <div
-                            class="v-progress-linear__indeterminate"
-                          >
-                            
-                            <div
-                              class="v-progress-linear__indeterminate long"
-                            />
-                            <div
-                              class="v-progress-linear__indeterminate short"
-                            />
-                            
-                          </div>
-                        </transition-stub>
-                        <!---->
-                      </div>
-                    </div>
-                    <!---->
-                    <!---->
-                    
-                    <div
-                      class="v-card-subtitle"
-                    >
-                      <div
-                        class="v-row align-center justify-space-between"
-                      >
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          Workflow Run Frequency
+                        <div class="v-progress-linear__indeterminate">
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
                         </div>
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          <button
-                            aria-label="Expand"
-                            class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated"
-                            type="button"
-                          >
-                            
-                            <span
-                              class="v-btn__overlay"
-                            />
-                            <span
-                              class="v-btn__underlay"
-                            />
-                            
-                            <!---->
-                            <span
-                              class="v-btn__content"
-                              data-no-activator=""
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon notranslate v-theme--light v-icon--size-default"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="v-icon__svg"
-                                  role="img"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"
-                                  />
-                                </svg>
-                              </i>
-                            </span>
-                            <!---->
-                            <!---->
-                          </button>
-                        </div>
-                      </div>
+                      </transition-stub>
+                      <!---->
                     </div>
-                    <canvas
-                      height="0"
-                      id="hello_world_Workflow_Run_Frequency_grid"
-                      role="img"
-                      style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
-                      width="0"
-                    >
-                      <p>
-                        
-                      </p>
-                    </canvas>
-                    
-                    <!---->
-                    
-                    <!---->
-                    <span
-                      class="v-card__underlay"
-                    />
-                    
                   </div>
-                  
                   <!---->
                   <!---->
-                  
-                  
-                </div>
-                <div
-                  class="v-col v-col-3"
-                >
-                  
-                  <div
-                    class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin"
-                  >
-                    <!---->
-                    <div
-                      class="v-card__loader"
-                    >
-                      <div
-                        aria-hidden="true"
-                        aria-valuemax="100"
-                        aria-valuemin="0"
-                        class="v-progress-linear v-theme--light v-locale--is-ltr"
-                        role="progressbar"
-                        style="top: 0px; height: 0px; --v-progress-linear-height: 2px;"
-                      >
-                        <!---->
-                        <div
-                          class="v-progress-linear__background"
-                        />
-                        <div
-                          class="v-progress-linear__buffer"
-                          style="width: 0%;"
-                        />
-                        <transition-stub
-                          appear="false"
-                          css="true"
-                          name="fade-transition"
-                          persisted="false"
-                        >
-                          <div
-                            class="v-progress-linear__indeterminate"
-                          >
-                            
-                            <div
-                              class="v-progress-linear__indeterminate long"
-                            />
-                            <div
-                              class="v-progress-linear__indeterminate short"
-                            />
-                            
-                          </div>
-                        </transition-stub>
-                        <!---->
+                  <div class="v-card-subtitle">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Run Frequency
                       </div>
-                    </div>
-                    <!---->
-                    <!---->
-                    
-                    <div
-                      class="v-card-subtitle"
-                    >
-                      <div
-                        class="v-row align-center justify-space-between"
-                      >
-                        <div
-                          class="v-col v-col-auto"
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
                         >
-                          Workflow Run Failure Rate
-                        </div>
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          <button
-                            aria-label="Expand"
-                            class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated"
-                            type="button"
+                          <span class="v-btn__overlay"></span>
+                          <span class="v-btn__underlay"></span>
+                          <!---->
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
                           >
-                            
-                            <span
-                              class="v-btn__overlay"
-                            />
-                            <span
-                              class="v-btn__underlay"
-                            />
-                            
-                            <!---->
-                            <span
-                              class="v-btn__content"
-                              data-no-activator=""
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
                             >
-                              <i
+                              <svg
                                 aria-hidden="true"
-                                class="v-icon notranslate v-theme--light v-icon--size-default"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  aria-hidden="true"
-                                  class="v-icon__svg"
-                                  role="img"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"
-                                  />
-                                </svg>
-                              </i>
-                            </span>
-                            <!---->
-                            <!---->
-                          </button>
-                        </div>
+                                <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
+                              </svg>
+                            </i>
+                          </span>
+                          <!---->
+                          <!---->
+                        </button>
                       </div>
                     </div>
-                    <canvas
-                      height="0"
-                      id="hello_world_Workflow_Run_Failure_Rate_grid"
-                      role="img"
-                      style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
-                      width="0"
-                    >
-                      <p>
-                        
-                      </p>
-                    </canvas>
-                    
-                    <!---->
-                    
-                    <!---->
-                    <span
-                      class="v-card__underlay"
-                    />
-                    
                   </div>
-                  
-                  <!---->
-                  <!---->
-                  
-                  
-                </div>
-                <div
-                  class="v-col v-col-3"
-                >
-                  
-                  <div
-                    class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin"
+                  <canvas
+                    height="0"
+                    id="hello_world_Workflow_Run_Frequency_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
                   >
-                    <!---->
-                    <div
-                      class="v-card__loader"
-                    >
-                      <div
-                        aria-hidden="true"
-                        aria-valuemax="100"
-                        aria-valuemin="0"
-                        class="v-progress-linear v-theme--light v-locale--is-ltr"
-                        role="progressbar"
-                        style="top: 0px; height: 0px; --v-progress-linear-height: 2px;"
-                      >
-                        <!---->
-                        <div
-                          class="v-progress-linear__background"
-                        />
-                        <div
-                          class="v-progress-linear__buffer"
-                          style="width: 0%;"
-                        />
-                        <transition-stub
-                          appear="false"
-                          css="true"
-                          name="fade-transition"
-                          persisted="false"
-                        >
-                          <div
-                            class="v-progress-linear__indeterminate"
-                          >
-                            
-                            <div
-                              class="v-progress-linear__indeterminate long"
-                            />
-                            <div
-                              class="v-progress-linear__indeterminate short"
-                            />
-                            
-                          </div>
-                        </transition-stub>
-                        <!---->
-                      </div>
-                    </div>
-                    <!---->
-                    <!---->
-                    
-                    <div
-                      class="v-card-subtitle"
-                    >
-                      <div
-                        class="v-row align-center justify-space-between"
-                      >
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          Workflow Re-trigger Rate
-                        </div>
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          <button
-                            aria-label="Expand"
-                            class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated"
-                            type="button"
-                          >
-                            
-                            <span
-                              class="v-btn__overlay"
-                            />
-                            <span
-                              class="v-btn__underlay"
-                            />
-                            
-                            <!---->
-                            <span
-                              class="v-btn__content"
-                              data-no-activator=""
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon notranslate v-theme--light v-icon--size-default"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="v-icon__svg"
-                                  role="img"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"
-                                  />
-                                </svg>
-                              </i>
-                            </span>
-                            <!---->
-                            <!---->
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <canvas
-                      height="0"
-                      id="hello_world_Workflow_Re-trigger_Rate_grid"
-                      role="img"
-                      style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
-                      width="0"
-                    >
-                      <p>
-                        
-                      </p>
-                    </canvas>
-                    
-                    <!---->
-                    
-                    <!---->
-                    <span
-                      class="v-card__underlay"
-                    />
-                    
-                  </div>
-                  
+                    <p></p>
+                  </canvas>
                   <!---->
                   <!---->
-                  
-                  
+                  <span class="v-card__underlay"></span>
                 </div>
-                <div
-                  class="v-col v-col-3"
-                >
-                  
-                  <div
-                    class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin"
+                <!---->
+                <!---->
+              </div>
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
+                  <!---->
+                  <div class="v-card__loader">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
+                      <!---->
+                      <div class="v-progress-linear__background"></div>
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
+                        <div class="v-progress-linear__indeterminate">
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
+                        </div>
+                      </transition-stub>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                  <!---->
+                  <div class="v-card-subtitle">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Run Failure Rate
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
+                          <span class="v-btn__overlay"></span>
+                          <span class="v-btn__underlay"></span>
+                          <!---->
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
+                              </svg>
+                            </i>
+                          </span>
+                          <!---->
+                          <!---->
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <canvas
+                    height="0"
+                    id="hello_world_Workflow_Run_Failure_Rate_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
                   >
-                    <!---->
-                    <div
-                      class="v-card__loader"
-                    >
-                      <div
-                        aria-hidden="true"
-                        aria-valuemax="100"
-                        aria-valuemin="0"
-                        class="v-progress-linear v-theme--light v-locale--is-ltr"
-                        role="progressbar"
-                        style="top: 0px; height: 0px; --v-progress-linear-height: 2px;"
-                      >
-                        <!---->
-                        <div
-                          class="v-progress-linear__background"
-                        />
-                        <div
-                          class="v-progress-linear__buffer"
-                          style="width: 0%;"
-                        />
-                        <transition-stub
-                          appear="false"
-                          css="true"
-                          name="fade-transition"
-                          persisted="false"
-                        >
-                          <div
-                            class="v-progress-linear__indeterminate"
-                          >
-                            
-                            <div
-                              class="v-progress-linear__indeterminate long"
-                            />
-                            <div
-                              class="v-progress-linear__indeterminate short"
-                            />
-                            
-                          </div>
-                        </transition-stub>
-                        <!---->
-                      </div>
-                    </div>
-                    <!---->
-                    <!---->
-                    
-                    <div
-                      class="v-card-subtitle"
-                    >
-                      <div
-                        class="v-row align-center justify-space-between"
-                      >
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          Average Workflow Run Time (Minutes)
-                        </div>
-                        <div
-                          class="v-col v-col-auto"
-                        >
-                          <button
-                            aria-label="Expand"
-                            class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated"
-                            type="button"
-                          >
-                            
-                            <span
-                              class="v-btn__overlay"
-                            />
-                            <span
-                              class="v-btn__underlay"
-                            />
-                            
-                            <!---->
-                            <span
-                              class="v-btn__content"
-                              data-no-activator=""
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="v-icon notranslate v-theme--light v-icon--size-default"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="v-icon__svg"
-                                  role="img"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"
-                                  />
-                                </svg>
-                              </i>
-                            </span>
-                            <!---->
-                            <!---->
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <canvas
-                      height="0"
-                      id="hello_world_Average_Workflow_Run_Time_(Minutes)_grid"
-                      role="img"
-                      style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
-                      width="0"
-                    >
-                      <p>
-                        
-                      </p>
-                    </canvas>
-                    
-                    <!---->
-                    
-                    <!---->
-                    <span
-                      class="v-card__underlay"
-                    />
-                    
-                  </div>
-                  
+                    <p></p>
+                  </canvas>
                   <!---->
                   <!---->
-                  
-                  
+                  <span class="v-card__underlay"></span>
                 </div>
+                <!---->
+                <!---->
+              </div>
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
+                  <!---->
+                  <div class="v-card__loader">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
+                      <!---->
+                      <div class="v-progress-linear__background"></div>
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
+                        <div class="v-progress-linear__indeterminate">
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
+                        </div>
+                      </transition-stub>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                  <!---->
+                  <div class="v-card-subtitle">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Workflow Re-trigger Rate
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
+                          <span class="v-btn__overlay"></span>
+                          <span class="v-btn__underlay"></span>
+                          <!---->
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
+                              </svg>
+                            </i>
+                          </span>
+                          <!---->
+                          <!---->
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <canvas
+                    height="0"
+                    id="hello_world_Workflow_Re-trigger_Rate_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
+                    <p></p>
+                  </canvas>
+                  <!---->
+                  <!---->
+                  <span class="v-card__underlay"></span>
+                </div>
+                <!---->
+                <!---->
+              </div>
+              <div class="
+                v-col
+                v-col-3
+              ">
+                <div class="
+                  border-thin
+                  v-card
+                  v-card--density-default
+                  v-card--variant-elevated
+                  v-theme--light
+                ">
+                  <!---->
+                  <div class="v-card__loader">
+                    <div
+                      aria-hidden="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      class="
+                        v-locale--is-ltr
+                        v-progress-linear
+                        v-theme--light
+                      "
+                      role="progressbar"
+                      style="
+                        top: 0px;
+                        height: 0px;
+                        --v-progress-linear-height: 2px;
+                      "
+                    >
+                      <!---->
+                      <div class="v-progress-linear__background"></div>
+                      <div
+                        class="v-progress-linear__buffer"
+                        style="width: 0%;"
+                      ></div>
+                      <transition-stub
+                        appear="false"
+                        css="true"
+                        name="fade-transition"
+                        persisted="false"
+                      >
+                        <div class="v-progress-linear__indeterminate">
+                          <div class="
+                            long
+                            v-progress-linear__indeterminate
+                          "></div>
+                          <div class="
+                            short
+                            v-progress-linear__indeterminate
+                          "></div>
+                        </div>
+                      </transition-stub>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                  <!---->
+                  <div class="v-card-subtitle">
+                    <div class="
+                      align-center
+                      justify-space-between
+                      v-row
+                    ">
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        Average Workflow Run Time (Minutes)
+                      </div>
+                      <div class="
+                        v-col
+                        v-col-auto
+                      ">
+                        <button
+                          aria-label="Expand"
+                          class="
+                            v-btn
+                            v-btn--density-default
+                            v-btn--elevated
+                            v-btn--icon
+                            v-btn--size-default
+                            v-btn--variant-elevated
+                            v-theme--light
+                          "
+                          type="button"
+                        >
+                          <span class="v-btn__overlay"></span>
+                          <span class="v-btn__underlay"></span>
+                          <!---->
+                          <span
+                            class="v-btn__content"
+                            data-no-activator=""
+                          >
+                            <i
+                              aria-hidden="true"
+                              class="
+                                notranslate
+                                v-icon
+                                v-icon--size-default
+                                v-theme--light
+                              "
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="v-icon__svg"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
+                              </svg>
+                            </i>
+                          </span>
+                          <!---->
+                          <!---->
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <canvas
+                    height="0"
+                    id="hello_world_Average_Workflow_Run_Time_(Minutes)_grid"
+                    role="img"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 0px;
+                      width: 0px;
+                    "
+                    width="0"
+                  >
+                    <p></p>
+                  </canvas>
+                  <!---->
+                  <!---->
+                  <span class="v-card__underlay"></span>
+                </div>
+                <!---->
+                <!---->
               </div>
             </div>
-            
           </div>
         </div>
-      </transition-stub>
-      
-      
-    </div>
-    <div
-      class="v-expansion-panel v-expansion-panel--after-active"
-      data-v-a30323f4=""
-      test-id="metrics-dashboard-expansion-panel-test"
+      </div>
+    </transition-stub>
+  </div>
+  <div
+    class="
+      v-expansion-panel
+      v-expansion-panel--after-active
+    "
+    test-id="metrics-dashboard-expansion-panel-test"
+  >
+    <div class="v-expansion-panel__shadow"></div>
+    <button
+      aria-expanded="false"
+      class="
+        v-expansion-panel-title
+        v-expansion-panel-title--static
+      "
+      type="button"
+    >
+      <span class="v-expansion-panel-title__overlay"></span>
+      test
+      <span class="v-expansion-panel-title__icon">
+        <i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        >
+          <svg
+            aria-hidden="true"
+            class="v-icon__svg"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
+          </svg>
+        </i>
+      </span>
+    </button>
+    <!---->
+    <transition-stub
+      appear="false"
+      css="true"
+      name="expand-transition"
+      persisted="false"
     >
       <div
-        class="v-expansion-panel__shadow"
-      />
-      
-      <button
-        aria-expanded="false"
-        class="v-expansion-panel-title v-expansion-panel-title--static"
-        type="button"
+        class="v-expansion-panel-text"
+        style="display: none;"
       >
-        <span
-          class="v-expansion-panel-title__overlay"
-        />
-        
-        test
-        
-        
-        <span
-          class="v-expansion-panel-title__icon"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon notranslate v-theme--light v-icon--size-default"
-          >
-            <svg
-              aria-hidden="true"
-              class="v-icon__svg"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"
-              />
-            </svg>
-          </i>
-        </span>
-        
-      </button>
-      <!---->
-      
-      <transition-stub
-        appear="false"
-        css="true"
-        data-v-a30323f4=""
-        name="expand-transition"
-        persisted="false"
-      >
-        <div
-          class="v-expansion-panel-text"
-          style="display: none;"
-        >
-          <!---->
-        </div>
-      </transition-stub>
-      
-      
-    </div>
-    
-    
-  </div>,
-}
+        <!---->
+      </div>
+    </transition-stub>
+  </div>
+</div>
 `;
 
 exports[`MetricsDashboard > should display spinner when component is loading 1`] = `
-<div class="v-container v-container--fluid v-locale--is-ltr" id="metrics-dashboard">
-  <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0px); position: fixed; left: 0px; width: calc(100% - 0px);">
+<div
+  class="
+    v-container
+    v-container--fluid
+    v-locale--is-ltr
+  "
+  id="metrics-dashboard"
+>
+  <header
+    class="
+      elevation-5
+      v-app-bar
+      v-locale--is-ltr
+      v-theme--light
+      v-toolbar
+      v-toolbar--collapse-start
+      v-toolbar--density-default
+    "
+    style="
+      top: 0px;
+      z-index: 1004;
+      transform: translateY(0px);
+      position: fixed;
+      left: 0px;
+      width: calc(100% - 0px);
+    "
+  >
     <!---->
-    <div class="v-toolbar__content" style="height: 64px;">
+    <div
+      class="v-toolbar__content"
+      style="height: 64px;"
+    >
       <!---->
       <!---->
-      <div class="v-row v-row--no-gutters">
-        <div class="v-col v-col-10">
-          <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+      <div class="
+        v-row
+        v-row--no-gutters
+      ">
+        <div class="
+          v-col
+          v-col-10
+        ">
+          <div class="
+            font-weight-bold
+            header-title
+            pl-10
+            text-center
+            v-app-bar-title
+            v-toolbar-title
+          ">
             <div class="v-toolbar-title__placeholder">
               <!---->
-              <span>Gitaction Board</span>
-              <span class="version">(v5.0.0)</span>
+              <span>
+                Gitaction Board
+              </span>
+              <span class="version">
+                (v5.0.0)
+              </span>
             </div>
           </div>
         </div>
-        <div class="v-col v-col-2 d-inline-flex">
-          <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+        <div class="
+          d-inline-flex
+          v-col
+          v-col-2
+        ">
+          <div
+            class="
+              align-center
+              d-inline-flex
+              fill-height
+              flex-row-reverse
+              font-weight-bold
+              mt-3
+              pr-4
+              text-right
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
             <div class="v-toolbar-title__placeholder">
               <!---->
               Metrics
@@ -1172,57 +2067,179 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
       </div>
       <!---->
     </div>
-    <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+    <transition-stub
+      appear="false"
+      css="true"
+      name="expand-transition"
+      persisted="false"
+    >
       <!---->
     </transition-stub>
   </header>
-  <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-4 v-theme--light v-locale--is-ltr mb-2">
+  <header class="
+    elevation-4
+    mb-2
+    v-locale--is-ltr
+    v-theme--light
+    v-toolbar
+    v-toolbar--collapse-start
+    v-toolbar--density-default
+  ">
     <!---->
-    <div class="v-toolbar__content" style="height: 64px;">
+    <div
+      class="v-toolbar__content"
+      style="height: 64px;"
+    >
       <!---->
       <!---->
       <div class="v-spacer"></div>
-      <div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--light v-locale--is-ltr v-input--dirty v-text-field mr-2" style="max-width: 350px;">
+      <div
+        class="
+          mr-2
+          v-input
+          v-input--center-affix
+          v-input--density-default
+          v-input--dirty
+          v-input--horizontal
+          v-locale--is-ltr
+          v-text-field
+          v-theme--light
+        "
+        style="max-width: 350px;"
+      >
         <div class="v-input__prepend">
-          <i aria-hidden="false" aria-label="Date Range prepended action" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
-            <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <i
+            aria-hidden="false"
+            aria-label="Date Range prepended action"
+            class="
+              notranslate
+              v-icon
+              v-icon--clickable
+              v-icon--size-default
+              v-theme--light
+            "
+            role="button"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="v-icon__svg"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
             </svg>
           </i>
         </div>
         <div class="v-input__control">
-          <div aria-controls="v-menu-v-4" aria-expanded="false" aria-haspopup="menu" aria-owns="v-menu-v-4" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
+          <div
+            aria-controls="v-menu-v-4"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-owns="v-menu-v-4"
+            class="
+              v-field
+              v-field--active
+              v-field--center-affix
+              v-field--dirty
+              v-field--variant-filled
+              v-locale--is-ltr
+              v-theme--light
+            "
+          >
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+              <div
+                aria-hidden="true"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                class="
+                  v-locale--is-ltr
+                  v-progress-linear
+                  v-theme--light
+                "
+                role="progressbar"
+                style="
+                  top: 0px;
+                  height: 0px;
+                  --v-progress-linear-height: 2px;
+                "
+              >
                 <!---->
                 <div class="v-progress-linear__background"></div>
-                <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                <div
+                  class="v-progress-linear__buffer"
+                  style="width: 0%;"
+                ></div>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <div class="v-progress-linear__indeterminate">
-                    <div class="v-progress-linear__indeterminate long"></div>
-                    <div class="v-progress-linear__indeterminate short"></div>
+                    <div class="
+                      long
+                      v-progress-linear__indeterminate
+                    "></div>
+                    <div class="
+                      short
+                      v-progress-linear__indeterminate
+                    "></div>
                   </div>
                 </transition-stub>
                 <!---->
               </div>
             </div>
             <!---->
-            <div class="v-field__field" data-no-activator>
-              <label aria-hidden="false" class="v-label v-field-label v-field-label--floating" for="input-v-2">
+            <div
+              class="v-field__field"
+              data-no-activator=""
+            >
+              <label
+                aria-hidden="false"
+                class="
+                  v-field-label
+                  v-field-label--floating
+                  v-label
+                "
+                for="input-v-2"
+              >
                 <!---->
                 Date Range
               </label>
-              <label aria-hidden="true" class="v-label v-field-label" for="input-v-2" id="input-v-2-label">
+              <label
+                aria-hidden="true"
+                class="
+                  v-field-label
+                  v-label
+                "
+                for="input-v-2"
+                id="input-v-2-label"
+              >
                 <!---->
                 Date Range
               </label>
               <!---->
-              <div class="v-field__input" data-no-activator>
+              <div
+                class="v-field__input"
+                data-no-activator=""
+              >
                 <!---->
                 <!---->
                 <!---->
-                <input aria-describedby="input-v-2-messages" aria-labelledby="input-v-2-label" id="input-v-2" inputmode="none" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
+                <input
+                  aria-describedby="input-v-2-messages"
+                  aria-labelledby="input-v-2-label"
+                  id="input-v-2"
+                  inputmode="none"
+                  placeholder="mm/dd/yyyy"
+                  size="1"
+                  test-id="vuetify-date-range-picker"
+                  type="text"
+                  value="08/15/2024 - 08/22/2024"
+                />
               </div>
               <!---->
             </div>
@@ -1235,40 +2252,137 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
           </div>
         </div>
         <!---->
-        <div aria-live="polite" class="v-input__details" id="input-v-2-messages" role="alert">
-          <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
+        <div
+          aria-live="polite"
+          class="v-input__details"
+          id="input-v-2-messages"
+          role="alert"
+        >
+          <transition-group-stub
+            appear="false"
+            class="v-messages"
+            css="true"
+            name="slide-y-transition"
+            persisted="false"
+            tag="div"
+          >
             <!---->
           </transition-group-stub>
           <!---->
         </div>
       </div>
-      <button class="v-btn v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text text-none" test-id="expand-all" type="button">
+      <button
+        class="
+          text-none
+          v-btn
+          v-btn--density-default
+          v-btn--rounded
+          v-btn--size-default
+          v-btn--variant-text
+          v-theme--light
+        "
+        test-id="expand-all"
+        type="button"
+      >
         <span class="v-btn__overlay"></span>
         <span class="v-btn__underlay"></span>
         <!---->
-        <span class="v-btn__content" data-no-activator>Expand all</span>
+        <span
+          class="v-btn__content"
+          data-no-activator=""
+        >
+          Expand all
+        </span>
         <!---->
         <!---->
       </button>
-      <button class="v-btn v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text text-none" test-id="collapse-all" type="button">
+      <button
+        class="
+          text-none
+          v-btn
+          v-btn--density-default
+          v-btn--rounded
+          v-btn--size-default
+          v-btn--variant-text
+          v-theme--light
+        "
+        test-id="collapse-all"
+        type="button"
+      >
         <span class="v-btn__overlay"></span>
         <span class="v-btn__underlay"></span>
         <!---->
-        <span class="v-btn__content" data-no-activator>Collapse all</span>
+        <span
+          class="v-btn__content"
+          data-no-activator=""
+        >
+          Collapse all
+        </span>
         <!---->
         <!---->
       </button>
       <!---->
     </div>
-    <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+    <transition-stub
+      appear="false"
+      css="true"
+      name="expand-transition"
+      persisted="false"
+    >
       <!---->
     </transition-stub>
   </header>
-  <div class="v-container v-locale--is-ltr justify-center fill-height spinner-container" id="spinner-container">
-    <div aria-valuemax="100" aria-valuemin="0" class="v-progress-circular v-progress-circular--indeterminate v-theme--light" role="progressbar" style="width: 128px; height: 128px; color: rgb(95, 141, 119); caret-color: #5f8d77;">
-      <svg style="transform: rotate(calc(-90deg + 0deg));" viewBox="0 0 44.13793103448276 44.13793103448276" xmlns="http://www.w3.org/2000/svg">
-        <circle class="v-progress-circular__underlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="0" stroke-width="4.137931034482759" />
-        <circle class="v-progress-circular__overlay" cx="50%" cy="50%" fill="transparent" r="20" stroke-dasharray="125.66370614359172" stroke-dashoffset="125.66370614359172px" stroke-width="4.137931034482759" />
+  <div
+    class="
+      fill-height
+      justify-center
+      spinner-container
+      v-container
+      v-locale--is-ltr
+    "
+    id="spinner-container"
+  >
+    <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-progress-circular
+        v-progress-circular--indeterminate
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        width: 128px;
+        height: 128px;
+        color: rgb(95, 141, 119);
+        caret-color: #5f8d77;
+      "
+    >
+      <svg
+        style="transform: rotate(calc(-90deg + 0deg));"
+        viewBox="0 0 44.13793103448276 44.13793103448276"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          class="v-progress-circular__underlay"
+          cx="50%"
+          cy="50%"
+          fill="transparent"
+          r="20"
+          stroke-dasharray="125.66370614359172"
+          stroke-dashoffset="0"
+          stroke-width="4.137931034482759"
+        />
+        <circle
+          class="v-progress-circular__overlay"
+          cx="50%"
+          cy="50%"
+          fill="transparent"
+          r="20"
+          stroke-dasharray="125.66370614359172"
+          stroke-dashoffset="125.66370614359172px"
+          stroke-width="4.137931034482759"
+        />
       </svg>
       <!---->
     </div>
@@ -1277,47 +2391,141 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
 `;
 
 exports[`MetricsDashboard > should hide repository metrics when clicks on collapse icon 1`] = `
-<svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg
+  aria-hidden="true"
+  class="v-icon__svg"
+  role="img"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
   <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
 </svg>
 `;
 
 exports[`MetricsDashboard > should hide repository metrics when clicks on collapse icon 2`] = `
-<svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg
+  aria-hidden="true"
+  class="v-icon__svg"
+  role="img"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
   <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
 </svg>
 `;
 
 exports[`MetricsDashboard > should hide repository metrics when clicks on collapse icon 3`] = `
-<div class="v-expansion-panel" test-id="metrics-dashboard-expansion-panel-hello_world">
+<div
+  class="v-expansion-panel"
+  test-id="metrics-dashboard-expansion-panel-hello_world"
+>
   <div class="v-expansion-panel__shadow"></div>
-  <button aria-expanded="false" class="v-expansion-panel-title v-expansion-panel-title--static" type="button">
-    <span class="v-expansion-panel-title__overlay"></span>hello_world<span class="v-expansion-panel-title__icon">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <button
+    aria-expanded="false"
+    class="
+      v-expansion-panel-title
+      v-expansion-panel-title--static
+    "
+    type="button"
+  >
+    <span class="v-expansion-panel-title__overlay"></span>
+    hello_world
+    <span class="v-expansion-panel-title__icon">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
         </svg>
       </i>
     </span>
   </button>
   <!---->
-  <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
-    <div class="v-expansion-panel-text" style="display: none;">
+  <transition-stub
+    appear="false"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <div
+      class="v-expansion-panel-text"
+      style="display: none;"
+    >
       <div class="v-expansion-panel-text__wrapper">
-        <div class="v-container v-container--fluid v-locale--is-ltr" id="hello_world-metrics">
-          <div class="v-row v-row--dense">
-            <div class="v-col v-col-3">
-              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+        <div
+          class="
+            v-container
+            v-container--fluid
+            v-locale--is-ltr
+          "
+          id="hello_world-metrics"
+        >
+          <div class="
+            v-row
+            v-row--dense
+          ">
+            <div class="
+              v-col
+              v-col-3
+            ">
+              <div class="
+                border-thin
+                v-card
+                v-card--density-default
+                v-card--variant-elevated
+                v-theme--light
+              ">
                 <!---->
                 <div class="v-card__loader">
-                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                  <div
+                    aria-hidden="true"
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="
+                      v-locale--is-ltr
+                      v-progress-linear
+                      v-theme--light
+                    "
+                    role="progressbar"
+                    style="
+                      top: 0px;
+                      height: 0px;
+                      --v-progress-linear-height: 2px;
+                    "
+                  >
                     <!---->
                     <div class="v-progress-linear__background"></div>
-                    <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div
+                      class="v-progress-linear__buffer"
+                      style="width: 0%;"
+                    ></div>
+                    <transition-stub
+                      appear="false"
+                      css="true"
+                      name="fade-transition"
+                      persisted="false"
+                    >
                       <div class="v-progress-linear__indeterminate">
-                        <div class="v-progress-linear__indeterminate long"></div>
-                        <div class="v-progress-linear__indeterminate short"></div>
+                        <div class="
+                          long
+                          v-progress-linear__indeterminate
+                        "></div>
+                        <div class="
+                          short
+                          v-progress-linear__indeterminate
+                        "></div>
                       </div>
                     </transition-stub>
                     <!---->
@@ -1326,16 +2534,57 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <!---->
                 <div class="v-card-subtitle">
-                  <div class="v-row align-center justify-space-between">
-                    <div class="v-col v-col-auto">Workflow Run Frequency</div>
-                    <div class="v-col v-col-auto">
-                      <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                  <div class="
+                    align-center
+                    justify-space-between
+                    v-row
+                  ">
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      Workflow Run Frequency
+                    </div>
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      <button
+                        aria-label="Expand"
+                        class="
+                          v-btn
+                          v-btn--density-default
+                          v-btn--elevated
+                          v-btn--icon
+                          v-btn--size-default
+                          v-btn--variant-elevated
+                          v-theme--light
+                        "
+                        type="button"
+                      >
                         <span class="v-btn__overlay"></span>
                         <span class="v-btn__underlay"></span>
                         <!---->
-                        <span class="v-btn__content" data-no-activator>
-                          <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                            <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <span
+                          class="v-btn__content"
+                          data-no-activator=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="
+                              notranslate
+                              v-icon
+                              v-icon--size-default
+                              v-theme--light
+                            "
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="v-icon__svg"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
                               <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                             </svg>
                           </i>
@@ -1346,7 +2595,18 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                     </div>
                   </div>
                 </div>
-                <canvas height="0" id="hello_world_Workflow_Run_Frequency_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                <canvas
+                  height="0"
+                  id="hello_world_Workflow_Run_Frequency_grid"
+                  role="img"
+                  style="
+                    display: block;
+                    box-sizing: border-box;
+                    height: 0px;
+                    width: 0px;
+                  "
+                  width="0"
+                >
                   <p></p>
                 </canvas>
                 <!---->
@@ -1356,18 +2616,56 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
               <!---->
               <!---->
             </div>
-            <div class="v-col v-col-3">
-              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+            <div class="
+              v-col
+              v-col-3
+            ">
+              <div class="
+                border-thin
+                v-card
+                v-card--density-default
+                v-card--variant-elevated
+                v-theme--light
+              ">
                 <!---->
                 <div class="v-card__loader">
-                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                  <div
+                    aria-hidden="true"
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="
+                      v-locale--is-ltr
+                      v-progress-linear
+                      v-theme--light
+                    "
+                    role="progressbar"
+                    style="
+                      top: 0px;
+                      height: 0px;
+                      --v-progress-linear-height: 2px;
+                    "
+                  >
                     <!---->
                     <div class="v-progress-linear__background"></div>
-                    <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div
+                      class="v-progress-linear__buffer"
+                      style="width: 0%;"
+                    ></div>
+                    <transition-stub
+                      appear="false"
+                      css="true"
+                      name="fade-transition"
+                      persisted="false"
+                    >
                       <div class="v-progress-linear__indeterminate">
-                        <div class="v-progress-linear__indeterminate long"></div>
-                        <div class="v-progress-linear__indeterminate short"></div>
+                        <div class="
+                          long
+                          v-progress-linear__indeterminate
+                        "></div>
+                        <div class="
+                          short
+                          v-progress-linear__indeterminate
+                        "></div>
                       </div>
                     </transition-stub>
                     <!---->
@@ -1376,16 +2674,57 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <!---->
                 <div class="v-card-subtitle">
-                  <div class="v-row align-center justify-space-between">
-                    <div class="v-col v-col-auto">Workflow Run Failure Rate</div>
-                    <div class="v-col v-col-auto">
-                      <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                  <div class="
+                    align-center
+                    justify-space-between
+                    v-row
+                  ">
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      Workflow Run Failure Rate
+                    </div>
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      <button
+                        aria-label="Expand"
+                        class="
+                          v-btn
+                          v-btn--density-default
+                          v-btn--elevated
+                          v-btn--icon
+                          v-btn--size-default
+                          v-btn--variant-elevated
+                          v-theme--light
+                        "
+                        type="button"
+                      >
                         <span class="v-btn__overlay"></span>
                         <span class="v-btn__underlay"></span>
                         <!---->
-                        <span class="v-btn__content" data-no-activator>
-                          <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                            <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <span
+                          class="v-btn__content"
+                          data-no-activator=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="
+                              notranslate
+                              v-icon
+                              v-icon--size-default
+                              v-theme--light
+                            "
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="v-icon__svg"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
                               <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                             </svg>
                           </i>
@@ -1396,7 +2735,18 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                     </div>
                   </div>
                 </div>
-                <canvas height="0" id="hello_world_Workflow_Run_Failure_Rate_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                <canvas
+                  height="0"
+                  id="hello_world_Workflow_Run_Failure_Rate_grid"
+                  role="img"
+                  style="
+                    display: block;
+                    box-sizing: border-box;
+                    height: 0px;
+                    width: 0px;
+                  "
+                  width="0"
+                >
                   <p></p>
                 </canvas>
                 <!---->
@@ -1406,18 +2756,56 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
               <!---->
               <!---->
             </div>
-            <div class="v-col v-col-3">
-              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+            <div class="
+              v-col
+              v-col-3
+            ">
+              <div class="
+                border-thin
+                v-card
+                v-card--density-default
+                v-card--variant-elevated
+                v-theme--light
+              ">
                 <!---->
                 <div class="v-card__loader">
-                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                  <div
+                    aria-hidden="true"
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="
+                      v-locale--is-ltr
+                      v-progress-linear
+                      v-theme--light
+                    "
+                    role="progressbar"
+                    style="
+                      top: 0px;
+                      height: 0px;
+                      --v-progress-linear-height: 2px;
+                    "
+                  >
                     <!---->
                     <div class="v-progress-linear__background"></div>
-                    <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div
+                      class="v-progress-linear__buffer"
+                      style="width: 0%;"
+                    ></div>
+                    <transition-stub
+                      appear="false"
+                      css="true"
+                      name="fade-transition"
+                      persisted="false"
+                    >
                       <div class="v-progress-linear__indeterminate">
-                        <div class="v-progress-linear__indeterminate long"></div>
-                        <div class="v-progress-linear__indeterminate short"></div>
+                        <div class="
+                          long
+                          v-progress-linear__indeterminate
+                        "></div>
+                        <div class="
+                          short
+                          v-progress-linear__indeterminate
+                        "></div>
                       </div>
                     </transition-stub>
                     <!---->
@@ -1426,16 +2814,57 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <!---->
                 <div class="v-card-subtitle">
-                  <div class="v-row align-center justify-space-between">
-                    <div class="v-col v-col-auto">Workflow Re-trigger Rate</div>
-                    <div class="v-col v-col-auto">
-                      <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                  <div class="
+                    align-center
+                    justify-space-between
+                    v-row
+                  ">
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      Workflow Re-trigger Rate
+                    </div>
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      <button
+                        aria-label="Expand"
+                        class="
+                          v-btn
+                          v-btn--density-default
+                          v-btn--elevated
+                          v-btn--icon
+                          v-btn--size-default
+                          v-btn--variant-elevated
+                          v-theme--light
+                        "
+                        type="button"
+                      >
                         <span class="v-btn__overlay"></span>
                         <span class="v-btn__underlay"></span>
                         <!---->
-                        <span class="v-btn__content" data-no-activator>
-                          <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                            <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <span
+                          class="v-btn__content"
+                          data-no-activator=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="
+                              notranslate
+                              v-icon
+                              v-icon--size-default
+                              v-theme--light
+                            "
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="v-icon__svg"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
                               <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                             </svg>
                           </i>
@@ -1446,7 +2875,18 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                     </div>
                   </div>
                 </div>
-                <canvas height="0" id="hello_world_Workflow_Re-trigger_Rate_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                <canvas
+                  height="0"
+                  id="hello_world_Workflow_Re-trigger_Rate_grid"
+                  role="img"
+                  style="
+                    display: block;
+                    box-sizing: border-box;
+                    height: 0px;
+                    width: 0px;
+                  "
+                  width="0"
+                >
                   <p></p>
                 </canvas>
                 <!---->
@@ -1456,18 +2896,56 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
               <!---->
               <!---->
             </div>
-            <div class="v-col v-col-3">
-              <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated border-thin">
+            <div class="
+              v-col
+              v-col-3
+            ">
+              <div class="
+                border-thin
+                v-card
+                v-card--density-default
+                v-card--variant-elevated
+                v-theme--light
+              ">
                 <!---->
                 <div class="v-card__loader">
-                  <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+                  <div
+                    aria-hidden="true"
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    class="
+                      v-locale--is-ltr
+                      v-progress-linear
+                      v-theme--light
+                    "
+                    role="progressbar"
+                    style="
+                      top: 0px;
+                      height: 0px;
+                      --v-progress-linear-height: 2px;
+                    "
+                  >
                     <!---->
                     <div class="v-progress-linear__background"></div>
-                    <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                    <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+                    <div
+                      class="v-progress-linear__buffer"
+                      style="width: 0%;"
+                    ></div>
+                    <transition-stub
+                      appear="false"
+                      css="true"
+                      name="fade-transition"
+                      persisted="false"
+                    >
                       <div class="v-progress-linear__indeterminate">
-                        <div class="v-progress-linear__indeterminate long"></div>
-                        <div class="v-progress-linear__indeterminate short"></div>
+                        <div class="
+                          long
+                          v-progress-linear__indeterminate
+                        "></div>
+                        <div class="
+                          short
+                          v-progress-linear__indeterminate
+                        "></div>
                       </div>
                     </transition-stub>
                     <!---->
@@ -1476,16 +2954,57 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <!---->
                 <div class="v-card-subtitle">
-                  <div class="v-row align-center justify-space-between">
-                    <div class="v-col v-col-auto">Average Workflow Run Time (Minutes)</div>
-                    <div class="v-col v-col-auto">
-                      <button aria-label="Expand" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" type="button">
+                  <div class="
+                    align-center
+                    justify-space-between
+                    v-row
+                  ">
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      Average Workflow Run Time (Minutes)
+                    </div>
+                    <div class="
+                      v-col
+                      v-col-auto
+                    ">
+                      <button
+                        aria-label="Expand"
+                        class="
+                          v-btn
+                          v-btn--density-default
+                          v-btn--elevated
+                          v-btn--icon
+                          v-btn--size-default
+                          v-btn--variant-elevated
+                          v-theme--light
+                        "
+                        type="button"
+                      >
                         <span class="v-btn__overlay"></span>
                         <span class="v-btn__underlay"></span>
                         <!---->
-                        <span class="v-btn__content" data-no-activator>
-                          <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-                            <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <span
+                          class="v-btn__content"
+                          data-no-activator=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            class="
+                              notranslate
+                              v-icon
+                              v-icon--size-default
+                              v-theme--light
+                            "
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="v-icon__svg"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
                               <path d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z" />
                             </svg>
                           </i>
@@ -1496,7 +3015,18 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                     </div>
                   </div>
                 </div>
-                <canvas height="0" id="hello_world_Average_Workflow_Run_Time_(Minutes)_grid" role="img" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0">
+                <canvas
+                  height="0"
+                  id="hello_world_Average_Workflow_Run_Time_(Minutes)_grid"
+                  role="img"
+                  style="
+                    display: block;
+                    box-sizing: border-box;
+                    height: 0px;
+                    width: 0px;
+                  "
+                  width="0"
+                >
                   <p></p>
                 </canvas>
                 <!---->

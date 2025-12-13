@@ -1,19 +1,59 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`DateRangePicker > should allow update selected date range 1`] = `
-<div class="v-sheet v-theme--light elevation-24 v-picker v-picker--with-actions v-date-picker v-date-picker--month v-locale--is-ltr">
+<div class="
+  elevation-24
+  v-date-picker
+  v-date-picker--month
+  v-locale--is-ltr
+  v-picker
+  v-picker--with-actions
+  v-sheet
+  v-theme--light
+">
   <!---->
   <div class="v-picker__body">
-    <div class="v-date-picker-controls v-date-picker-controls--variant-docked">
+    <div class="
+      v-date-picker-controls
+      v-date-picker-controls--variant-docked
+    ">
       <!---->
       <div class="v-date-picker-controls__month">
-        <button aria-label="Previous month" class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" type="button">
+        <button
+          aria-label="Previous month"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
               </svg>
             </i>
@@ -21,27 +61,88 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
           <!---->
           <!---->
         </button>
-        <button aria-label="Select month" class="v-btn v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text v-date-picker-controls__only-month-btn" type="button">
+        <button
+          aria-label="Select month"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--rounded
+            v-btn--size-default
+            v-btn--variant-text
+            v-date-picker-controls__only-month-btn
+            v-theme--light
+          "
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>Aug</span>
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            Aug
+          </span>
           <span class="v-btn__append">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M7,10L12,15L17,10H7Z" />
               </svg>
             </i>
           </span>
           <!---->
         </button>
-        <button aria-label="Next month" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button
+          aria-label="Next month"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--disabled
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          disabled=""
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
             </i>
@@ -52,13 +153,43 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
       </div>
       <div class="v-spacer"></div>
       <div class="v-date-picker-controls__year">
-        <button aria-label="Previous year" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button
+          aria-label="Previous year"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--disabled
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          disabled=""
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
               </svg>
             </i>
@@ -66,27 +197,88 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
           <!---->
           <!---->
         </button>
-        <button aria-label="Select year" class="v-btn v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text v-date-picker-controls__only-year-btn" type="button">
+        <button
+          aria-label="Select year"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--rounded
+            v-btn--size-default
+            v-btn--variant-text
+            v-date-picker-controls__only-year-btn
+            v-theme--light
+          "
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>2024</span>
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            2024
+          </span>
           <span class="v-btn__append">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M7,10L12,15L17,10H7Z" />
               </svg>
             </i>
           </span>
           <!---->
         </button>
-        <button aria-label="Next year" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button
+          aria-label="Next year"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--disabled
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          disabled=""
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
             </i>
@@ -95,192 +287,186 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
           <!---->
         </button>
       </div>
-    </div><transition-stub appear="false" css="true" name="fade-transition" persisted="false">
-      <div class="v-date-picker-month" style="--v-date-picker-days-in-week: 7;">
+    </div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="fade-transition"
+      persisted="false"
+    >
+      <div
+        class="v-date-picker-month"
+        style="--v-date-picker-days-in-week: 7;"
+      >
         <!---->
-        <transition-stub appear="false" css="true" name="picker-transition" persisted="false">
+        <transition-stub
+          appear="false"
+          css="true"
+          name="picker-transition"
+          persisted="false"
+        >
           <div class="v-date-picker-month__days">
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">S</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">M</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">T</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">W</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">T</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">F</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">S</div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, July 28, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              S
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              M
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              T
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              W
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              T
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              F
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              S
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, July 28, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>28
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  28
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Monday, July 29, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Monday, July 29, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>29
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  29
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Tuesday, July 30, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Tuesday, July 30, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>30
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  30
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Wednesday, July 31, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Wednesday, July 31, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>31
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Thursday, August 1, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>1
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 2, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>2
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 3, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>3
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 4, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>4
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Monday, August 5, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>5
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Tuesday, August 6, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>6
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Wednesday, August 7, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>7
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Thursday, August 8, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>8
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 9, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>9
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 10, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>10
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 11, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>11
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  31
                   <!---->
                 </span>
                 <!---->
@@ -288,11 +474,27 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Monday, August 12, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+              <button
+                aria-label="Thursday, August 1, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>12
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  1
                   <!---->
                 </span>
                 <!---->
@@ -300,11 +502,89 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Tuesday, August 13, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+              <button
+                aria-label="Friday, August 2, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>13
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  2
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 3, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  3
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 4, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  4
                   <!---->
                 </span>
                 <!---->
@@ -312,107 +592,27 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Wednesday, August 14, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+              <button
+                aria-label="Monday, August 5, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>14
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Thursday, August 15, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>15
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Friday, August 16, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>16
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 17, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>17
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 18, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>18
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Monday, August 19, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>19
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Tuesday, August 20, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>20
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Wednesday, August 21, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>21
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-current="date" aria-label="Today, Thursday, August 22, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>22
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  5
                   <!---->
                 </span>
                 <!---->
@@ -420,35 +620,27 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 23, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Tuesday, August 6, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>23
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 24, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>24
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 25, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>25
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  6
                   <!---->
                 </span>
                 <!---->
@@ -456,11 +648,27 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Monday, August 26, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Wednesday, August 7, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>26
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  7
                   <!---->
                 </span>
                 <!---->
@@ -468,11 +676,27 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Tuesday, August 27, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Thursday, August 8, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>27
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  8
                   <!---->
                 </span>
                 <!---->
@@ -480,11 +704,89 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Wednesday, August 28, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Friday, August 9, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>28
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  9
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 10, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  10
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 11, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  11
                   <!---->
                 </span>
                 <!---->
@@ -492,11 +794,27 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Thursday, August 29, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Monday, August 12, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>29
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  12
                   <!---->
                 </span>
                 <!---->
@@ -504,107 +822,818 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 30, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Tuesday, August 13, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>30
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  13
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 31, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Wednesday, August 14, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>31
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  14
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, September 1, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Thursday, August 15, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>1
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  15
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Monday, September 2, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Friday, August 16, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>2
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  16
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Tuesday, September 3, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 17, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>3
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  17
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Wednesday, September 4, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 18, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>4
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  18
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Thursday, September 5, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Monday, August 19, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>5
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  19
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Friday, September 6, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Tuesday, August 20, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>6
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  20
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, September 7, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Wednesday, August 21, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>7
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  21
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-current="date"
+                aria-label="Today, Thursday, August 22, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  22
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Friday, August 23, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  23
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 24, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  24
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 25, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  25
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Monday, August 26, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  26
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Tuesday, August 27, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  27
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Wednesday, August 28, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  28
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Thursday, August 29, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  29
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Friday, August 30, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  30
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 31, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  31
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, September 1, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  1
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Monday, September 2, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  2
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Tuesday, September 3, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  3
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Wednesday, September 4, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  4
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Thursday, September 5, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  5
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Friday, September 6, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  6
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, September 7, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  7
                   <!---->
                 </span>
                 <!---->
@@ -617,19 +1646,51 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
     </transition-stub>
   </div>
   <div class="v-picker__actions">
-    <button class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+    <button
+      class="
+        v-btn
+        v-btn--density-default
+        v-btn--size-default
+        v-btn--slim
+        v-btn--variant-text
+        v-theme--light
+      "
+      type="button"
+    >
       <span class="v-btn__overlay"></span>
       <span class="v-btn__underlay"></span>
       <!---->
-      <span class="v-btn__content" data-no-activator>Cancel</span>
+      <span
+        class="v-btn__content"
+        data-no-activator=""
+      >
+        Cancel
+      </span>
       <!---->
       <!---->
     </button>
-    <button class="v-btn v-btn--disabled v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" disabled type="button">
+    <button
+      class="
+        v-btn
+        v-btn--density-default
+        v-btn--disabled
+        v-btn--size-default
+        v-btn--slim
+        v-btn--variant-text
+        v-theme--light
+      "
+      disabled=""
+      type="button"
+    >
       <span class="v-btn__overlay"></span>
       <span class="v-btn__underlay"></span>
       <!---->
-      <span class="v-btn__content" data-no-activator>OK</span>
+      <span
+        class="v-btn__content"
+        data-no-activator=""
+      >
+        OK
+      </span>
       <!---->
       <!---->
     </button>
@@ -638,19 +1699,59 @@ exports[`DateRangePicker > should allow update selected date range 1`] = `
 `;
 
 exports[`DateRangePicker > should allow update selected date range 2`] = `
-<div class="v-sheet v-theme--light elevation-24 v-picker v-picker--with-actions v-date-picker v-date-picker--month v-locale--is-ltr">
+<div class="
+  elevation-24
+  v-date-picker
+  v-date-picker--month
+  v-locale--is-ltr
+  v-picker
+  v-picker--with-actions
+  v-sheet
+  v-theme--light
+">
   <!---->
   <div class="v-picker__body">
-    <div class="v-date-picker-controls v-date-picker-controls--variant-docked">
+    <div class="
+      v-date-picker-controls
+      v-date-picker-controls--variant-docked
+    ">
       <!---->
       <div class="v-date-picker-controls__month">
-        <button aria-label="Previous month" class="v-btn v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" type="button">
+        <button
+          aria-label="Previous month"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
               </svg>
             </i>
@@ -658,27 +1759,88 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
           <!---->
           <!---->
         </button>
-        <button aria-label="Select month" class="v-btn v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text v-date-picker-controls__only-month-btn" type="button">
+        <button
+          aria-label="Select month"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--rounded
+            v-btn--size-default
+            v-btn--variant-text
+            v-date-picker-controls__only-month-btn
+            v-theme--light
+          "
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>Aug</span>
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            Aug
+          </span>
           <span class="v-btn__append">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M7,10L12,15L17,10H7Z" />
               </svg>
             </i>
           </span>
           <!---->
         </button>
-        <button aria-label="Next month" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button
+          aria-label="Next month"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--disabled
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          disabled=""
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
             </i>
@@ -689,13 +1851,43 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
       </div>
       <div class="v-spacer"></div>
       <div class="v-date-picker-controls__year">
-        <button aria-label="Previous year" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button
+          aria-label="Previous year"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--disabled
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          disabled=""
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
               </svg>
             </i>
@@ -703,27 +1895,88 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
           <!---->
           <!---->
         </button>
-        <button aria-label="Select year" class="v-btn v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text v-date-picker-controls__only-year-btn" type="button">
+        <button
+          aria-label="Select year"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--rounded
+            v-btn--size-default
+            v-btn--variant-text
+            v-date-picker-controls__only-year-btn
+            v-theme--light
+          "
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>2024</span>
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            2024
+          </span>
           <span class="v-btn__append">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M7,10L12,15L17,10H7Z" />
               </svg>
             </i>
           </span>
           <!---->
         </button>
-        <button aria-label="Next year" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-comfortable v-btn--size-default v-btn--variant-text" disabled type="button">
+        <button
+          aria-label="Next year"
+          class="
+            v-btn
+            v-btn--density-comfortable
+            v-btn--disabled
+            v-btn--icon
+            v-btn--size-default
+            v-btn--variant-text
+            v-theme--light
+          "
+          disabled=""
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
             </i>
@@ -732,300 +1985,186 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
           <!---->
         </button>
       </div>
-    </div><transition-stub appear="false" css="true" name="fade-transition" persisted="false">
-      <div class="v-date-picker-month" style="--v-date-picker-days-in-week: 7;">
+    </div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="fade-transition"
+      persisted="false"
+    >
+      <div
+        class="v-date-picker-month"
+        style="--v-date-picker-days-in-week: 7;"
+      >
         <!---->
-        <transition-stub appear="false" css="true" name="picker-transition" persisted="false">
+        <transition-stub
+          appear="false"
+          css="true"
+          name="picker-transition"
+          persisted="false"
+        >
           <div class="v-date-picker-month__days">
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">S</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">M</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">T</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">W</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">T</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">F</div>
-            <div class="v-date-picker-month__day v-date-picker-month__weekday">S</div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, July 28, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              S
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              M
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              T
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              W
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              T
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              F
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__weekday
+            ">
+              S
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, July 28, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>28
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  28
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Monday, July 29, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Monday, July 29, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>29
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  29
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Tuesday, July 30, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Tuesday, July 30, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>30
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  30
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Wednesday, July 31, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Wednesday, July 31, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>31
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Thursday, August 1, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>1
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 2, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>2
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 3, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>3
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 4, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>4
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Monday, August 5, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>5
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Tuesday, August 6, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>6
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Wednesday, August 7, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>7
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Thursday, August 8, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>8
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Friday, August 9, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>9
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 10, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>10
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 11, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>11
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Monday, August 12, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>12
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Tuesday, August 13, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>13
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Wednesday, August 14, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>14
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Thursday, August 15, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>15
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Friday, August 16, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>16
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 17, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>17
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 18, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>18
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Monday, August 19, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>19
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--selected">
-              <button aria-label="Tuesday, August 20, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat v-date-picker-month__day-btn" type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>20
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  31
                   <!---->
                 </span>
                 <!---->
@@ -1033,11 +2172,27 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Wednesday, August 21, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" type="button">
+              <button
+                aria-label="Thursday, August 1, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>21
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  1
                   <!---->
                 </span>
                 <!---->
@@ -1045,11 +2200,589 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-current="date" aria-label="Today, Thursday, August 22, 2024" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-outlined v-date-picker-month__day-btn" type="button">
+              <button
+                aria-label="Friday, August 2, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>22
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  2
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 3, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  3
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 4, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  4
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Monday, August 5, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  5
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Tuesday, August 6, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  6
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Wednesday, August 7, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  7
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Thursday, August 8, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  8
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Friday, August 9, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  9
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 10, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  10
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 11, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  11
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Monday, August 12, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  12
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Tuesday, August 13, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  13
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Wednesday, August 14, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  14
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Thursday, August 15, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  15
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Friday, August 16, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  16
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 17, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  17
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 18, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  18
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Monday, August 19, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  19
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--selected
+            ">
+              <button
+                aria-label="Tuesday, August 20, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-flat
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  20
                   <!---->
                 </span>
                 <!---->
@@ -1057,35 +2790,27 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 23, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Wednesday, August 21, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>23
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 24, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>24
-                  <!---->
-                </span>
-                <!---->
-                <!---->
-              </button>
-            </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, August 25, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <!---->
-                <span class="v-btn__content" data-no-activator>25
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  21
                   <!---->
                 </span>
                 <!---->
@@ -1093,11 +2818,28 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Monday, August 26, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-current="date"
+                aria-label="Today, Thursday, August 22, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-outlined
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>26
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  22
                   <!---->
                 </span>
                 <!---->
@@ -1105,11 +2847,95 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Tuesday, August 27, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Friday, August 23, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>27
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  23
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 24, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  24
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, August 25, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  25
                   <!---->
                 </span>
                 <!---->
@@ -1117,11 +2943,29 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Wednesday, August 28, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Monday, August 26, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>28
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  26
                   <!---->
                 </span>
                 <!---->
@@ -1129,11 +2973,29 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Thursday, August 29, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Tuesday, August 27, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>29
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  27
                   <!---->
                 </span>
                 <!---->
@@ -1141,107 +3003,355 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
               </button>
             </div>
             <div class="v-date-picker-month__day">
-              <button aria-label="Friday, August 30, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+              <button
+                aria-label="Wednesday, August 28, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>30
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  28
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, August 31, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Thursday, August 29, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>31
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  29
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-start">
-              <button aria-label="Sunday, September 1, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="v-date-picker-month__day">
+              <button
+                aria-label="Friday, August 30, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>1
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  30
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Monday, September 2, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, August 31, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>2
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  31
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Tuesday, September 3, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+              v-date-picker-month__day--week-start
+            ">
+              <button
+                aria-label="Sunday, September 1, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>3
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  1
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Wednesday, September 4, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Monday, September 2, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>4
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  2
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Thursday, September 5, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Tuesday, September 3, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>5
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  3
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent">
-              <button aria-label="Friday, September 6, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Wednesday, September 4, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>6
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  4
                   <!---->
                 </span>
                 <!---->
                 <!---->
               </button>
             </div>
-            <div class="v-date-picker-month__day v-date-picker-month__day--adjacent v-date-picker-month__day--week-end">
-              <button aria-label="Saturday, September 7, 2024" class="v-btn v-btn--disabled v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-date-picker-month__day-btn" disabled type="button">
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Thursday, September 5, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
                 <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
                 <!---->
-                <span class="v-btn__content" data-no-activator>7
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  5
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+            ">
+              <button
+                aria-label="Friday, September 6, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  6
+                  <!---->
+                </span>
+                <!---->
+                <!---->
+              </button>
+            </div>
+            <div class="
+              v-date-picker-month__day
+              v-date-picker-month__day--adjacent
+              v-date-picker-month__day--week-end
+            ">
+              <button
+                aria-label="Saturday, September 7, 2024"
+                class="
+                  v-btn
+                  v-btn--density-default
+                  v-btn--disabled
+                  v-btn--icon
+                  v-btn--size-default
+                  v-btn--variant-text
+                  v-date-picker-month__day-btn
+                  v-theme--light
+                "
+                disabled=""
+                type="button"
+              >
+                <span class="v-btn__overlay"></span>
+                <span class="v-btn__underlay"></span>
+                <!---->
+                <span
+                  class="v-btn__content"
+                  data-no-activator=""
+                >
+                  7
                   <!---->
                 </span>
                 <!---->
@@ -1254,19 +3364,49 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
     </transition-stub>
   </div>
   <div class="v-picker__actions">
-    <button class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+    <button
+      class="
+        v-btn
+        v-btn--density-default
+        v-btn--size-default
+        v-btn--slim
+        v-btn--variant-text
+        v-theme--light
+      "
+      type="button"
+    >
       <span class="v-btn__overlay"></span>
       <span class="v-btn__underlay"></span>
       <!---->
-      <span class="v-btn__content" data-no-activator>Cancel</span>
+      <span
+        class="v-btn__content"
+        data-no-activator=""
+      >
+        Cancel
+      </span>
       <!---->
       <!---->
     </button>
-    <button class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" type="button">
+    <button
+      class="
+        v-btn
+        v-btn--density-default
+        v-btn--size-default
+        v-btn--slim
+        v-btn--variant-text
+        v-theme--light
+      "
+      type="button"
+    >
       <span class="v-btn__overlay"></span>
       <span class="v-btn__underlay"></span>
       <!---->
-      <span class="v-btn__content" data-no-activator>OK</span>
+      <span
+        class="v-btn__content"
+        data-no-activator=""
+      >
+        OK
+      </span>
       <!---->
       <!---->
     </button>
@@ -1275,42 +3415,134 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
 `;
 
 exports[`DateRangePicker > should allow update selected date range 3`] = `
-<div class="v-input v-input--horizontal v-input--center-affix v-input--focused v-input--density-default v-theme--light v-locale--is-ltr v-input--dirty v-text-field" style="max-width: 350px;">
+<div
+  class="
+    v-input
+    v-input--center-affix
+    v-input--density-default
+    v-input--dirty
+    v-input--focused
+    v-input--horizontal
+    v-locale--is-ltr
+    v-text-field
+    v-theme--light
+  "
+  style="max-width: 350px;"
+>
   <div class="v-input__prepend">
-    <i aria-hidden="false" aria-label=" prepended action" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
-      <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <i
+      aria-hidden="false"
+      aria-label=" prepended action"
+      class="
+        notranslate
+        v-icon
+        v-icon--clickable
+        v-icon--size-default
+        v-theme--light
+      "
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="v-icon__svg"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
       </svg>
     </i>
   </div>
   <div class="v-input__control">
-    <div aria-controls="v-menu-v-3" aria-expanded="true" aria-haspopup="menu" aria-owns="v-menu-v-3" class="v-field v-field--active v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-field--focused v-locale--is-ltr">
+    <div
+      aria-controls="v-menu-v-3"
+      aria-expanded="true"
+      aria-haspopup="menu"
+      aria-owns="v-menu-v-3"
+      class="
+        v-field
+        v-field--active
+        v-field--center-affix
+        v-field--dirty
+        v-field--focused
+        v-field--no-label
+        v-field--variant-filled
+        v-locale--is-ltr
+        v-theme--light
+      "
+    >
       <div class="v-field__overlay"></div>
       <div class="v-field__loader">
-        <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+        <div
+          aria-hidden="true"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          class="
+            v-locale--is-ltr
+            v-progress-linear
+            v-theme--light
+          "
+          role="progressbar"
+          style="
+            top: 0px;
+            height: 0px;
+            --v-progress-linear-height: 2px;
+          "
+        >
           <!---->
           <div class="v-progress-linear__background"></div>
-          <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-          <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+          <div
+            class="v-progress-linear__buffer"
+            style="width: 0%;"
+          ></div>
+          <transition-stub
+            appear="false"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
             <div class="v-progress-linear__indeterminate">
-              <div class="v-progress-linear__indeterminate long"></div>
-              <div class="v-progress-linear__indeterminate short"></div>
+              <div class="
+                long
+                v-progress-linear__indeterminate
+              "></div>
+              <div class="
+                short
+                v-progress-linear__indeterminate
+              "></div>
             </div>
           </transition-stub>
           <!---->
         </div>
       </div>
       <!---->
-      <div class="v-field__field" data-no-activator>
+      <div
+        class="v-field__field"
+        data-no-activator=""
+      >
         <!---->
         <!---->
         <!---->
-        <div class="v-field__input" data-no-activator>
+        <div
+          class="v-field__input"
+          data-no-activator=""
+        >
           <!---->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!-- teleport start -->
+          <!-- teleport end -->
           <!---->
-          <input aria-describedby="input-v-1-messages" aria-labelledby="input-v-1-label" id="input-v-1" inputmode="none" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
+          <input
+            aria-describedby="input-v-1-messages"
+            aria-labelledby="input-v-1-label"
+            id="input-v-1"
+            inputmode="none"
+            placeholder="mm/dd/yyyy"
+            size="1"
+            test-id="vuetify-date-range-picker"
+            type="text"
+            value="08/15/2024 - 08/22/2024"
+          />
         </div>
         <!---->
       </div>
@@ -1323,8 +3555,20 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
     </div>
   </div>
   <!---->
-  <div aria-live="polite" class="v-input__details" id="input-v-1-messages" role="alert">
-    <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
+  <div
+    aria-live="polite"
+    class="v-input__details"
+    id="input-v-1-messages"
+    role="alert"
+  >
+    <transition-group-stub
+      appear="false"
+      class="v-messages"
+      css="true"
+      name="slide-y-transition"
+      persisted="false"
+      tag="div"
+    >
       <!---->
     </transition-group-stub>
     <!---->
@@ -1332,44 +3576,142 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
 </div>
 `;
 
-exports[`DateRangePicker > should provide correct props to date range component 1`] = `<v-date-input disabled="false" elevation="24" hide-actions="false" label max="Thu Aug 22 2024 17:30:00 GMT+0530 (India Standard Time)" max-width="350px" min="Mon Jan 01 2024 00:00:00 GMT+0530 (India Standard Time)" modelvalue="Thu Aug 15 2024 00:00:00 GMT+0530 (India Standard Time),Fri Aug 16 2024 00:00:00 GMT+0530 (India Standard Time),Sat Aug 17 2024 00:00:00 GMT+0530 (India Standard Time),Sun Aug 18 2024 00:00:00 GMT+0530 (India Standard Time),Mon Aug 19 2024 00:00:00 GMT+0530 (India Standard Time),Tue Aug 20 2024 00:00:00 GMT+0530 (India Standard Time),Wed Aug 21 2024 00:00:00 GMT+0530 (India Standard Time),Thu Aug 22 2024 00:00:00 GMT+0530 (India Standard Time)" multiple="range" rules="(updatedInput) => !!updatedInput" test-id="vuetify-date-range-picker"></v-date-input>`;
+exports[`DateRangePicker > should provide correct props to date range component 1`] = `
+<v-date-input
+  disabled="false"
+  elevation="24"
+  hide-actions="false"
+  label=""
+  max="Thu Aug 22 2024 17:30:00 GMT+0530 (India Standard Time)"
+  max-width="350px"
+  min="Mon Jan 01 2024 00:00:00 GMT+0530 (India Standard Time)"
+  modelvalue="Thu Aug 15 2024 00:00:00 GMT+0530 (India Standard Time),Fri Aug 16 2024 00:00:00 GMT+0530 (India Standard Time),Sat Aug 17 2024 00:00:00 GMT+0530 (India Standard Time),Sun Aug 18 2024 00:00:00 GMT+0530 (India Standard Time),Mon Aug 19 2024 00:00:00 GMT+0530 (India Standard Time),Tue Aug 20 2024 00:00:00 GMT+0530 (India Standard Time),Wed Aug 21 2024 00:00:00 GMT+0530 (India Standard Time),Thu Aug 22 2024 00:00:00 GMT+0530 (India Standard Time)"
+  multiple="range"
+  rules="(updatedInput) => !!updatedInput"
+  test-id="vuetify-date-range-picker"
+></v-date-input>
+`;
 
 exports[`DateRangePicker > should render date range with selected last 7 days by default 1`] = `
-<div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--light v-locale--is-ltr v-input--dirty v-text-field" style="max-width: 350px;">
+<div
+  class="
+    v-input
+    v-input--center-affix
+    v-input--density-default
+    v-input--dirty
+    v-input--horizontal
+    v-locale--is-ltr
+    v-text-field
+    v-theme--light
+  "
+  style="max-width: 350px;"
+>
   <div class="v-input__prepend">
-    <i aria-hidden="false" aria-label=" prepended action" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" tabindex="0">
-      <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <i
+      aria-hidden="false"
+      aria-label=" prepended action"
+      class="
+        notranslate
+        v-icon
+        v-icon--clickable
+        v-icon--size-default
+        v-theme--light
+      "
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="v-icon__svg"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
       </svg>
     </i>
   </div>
   <div class="v-input__control">
-    <div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-locale--is-ltr">
+    <div class="
+      v-field
+      v-field--active
+      v-field--center-affix
+      v-field--dirty
+      v-field--no-label
+      v-field--variant-filled
+      v-locale--is-ltr
+      v-theme--light
+    ">
       <div class="v-field__overlay"></div>
       <div class="v-field__loader">
-        <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+        <div
+          aria-hidden="true"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          class="
+            v-locale--is-ltr
+            v-progress-linear
+            v-theme--light
+          "
+          role="progressbar"
+          style="
+            top: 0px;
+            height: 0px;
+            --v-progress-linear-height: 2px;
+          "
+        >
           <!---->
           <div class="v-progress-linear__background"></div>
-          <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-          <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+          <div
+            class="v-progress-linear__buffer"
+            style="width: 0%;"
+          ></div>
+          <transition-stub
+            appear="false"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
             <div class="v-progress-linear__indeterminate">
-              <div class="v-progress-linear__indeterminate long"></div>
-              <div class="v-progress-linear__indeterminate short"></div>
+              <div class="
+                long
+                v-progress-linear__indeterminate
+              "></div>
+              <div class="
+                short
+                v-progress-linear__indeterminate
+              "></div>
             </div>
           </transition-stub>
           <!---->
         </div>
       </div>
       <!---->
-      <div class="v-field__field" data-no-activator>
+      <div
+        class="v-field__field"
+        data-no-activator=""
+      >
         <!---->
         <!---->
         <!---->
-        <div class="v-field__input" data-no-activator>
+        <div
+          class="v-field__input"
+          data-no-activator=""
+        >
           <!---->
           <!---->
           <!---->
-          <input aria-describedby="input-v-1-messages" aria-labelledby="input-v-1-label" id="input-v-1" inputmode="none" placeholder="mm/dd/yyyy" size="1" test-id="vuetify-date-range-picker" type="text" value="08/15/2024 - 08/22/2024">
+          <input
+            aria-describedby="input-v-1-messages"
+            aria-labelledby="input-v-1-label"
+            id="input-v-1"
+            inputmode="none"
+            placeholder="mm/dd/yyyy"
+            size="1"
+            test-id="vuetify-date-range-picker"
+            type="text"
+            value="08/15/2024 - 08/22/2024"
+          />
         </div>
         <!---->
       </div>
@@ -1382,8 +3724,20 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
     </div>
   </div>
   <!---->
-  <div aria-live="polite" class="v-input__details" id="input-v-1-messages" role="alert">
-    <transition-group-stub appear="false" class="v-messages" css="true" name="slide-y-transition" persisted="false" tag="div">
+  <div
+    aria-live="polite"
+    class="v-input__details"
+    id="input-v-1-messages"
+    role="alert"
+  >
+    <transition-group-stub
+      appear="false"
+      class="v-messages"
+      css="true"
+      name="slide-y-transition"
+      persisted="false"
+      tag="div"
+    >
       <!---->
     </transition-group-stub>
     <!---->

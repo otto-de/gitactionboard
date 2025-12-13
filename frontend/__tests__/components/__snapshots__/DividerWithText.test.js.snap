@@ -1,15 +1,59 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<DividerWithText /> > should render with default thickness 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+<div class="
+  v-application
+  v-layout
+  v-layout--full-height
+  v-locale--is-ltr
+  v-theme--light
+">
   <div class="v-application__wrap">
-    <div class="v-row align-center my-3">
-      <div class="v-col v-col-5">
-        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px; border-style: solid;">
+    <div class="
+      align-center
+      my-3
+      v-row
+    ">
+      <div class="
+        v-col
+        v-col-5
+      ">
+        <hr
+          aria-orientation="horizontal"
+          class="
+            v-divider
+            v-theme--light
+          "
+          role="separator"
+          style="
+            border-top-width: 3px;
+            border-style: solid;
+          "
+        />
       </div>
-      <div class="v-col text-center font-weight-bold"> OR </div>
-      <div class="v-col v-col-5">
-        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px; border-style: solid;">
+      <div class="
+        font-weight-bold
+        text-center
+        v-col
+      ">
+        OR
+      </div>
+      <div class="
+        v-col
+        v-col-5
+      ">
+        <hr
+          aria-orientation="horizontal"
+          class="
+            v-divider
+            v-theme--light
+          "
+          role="separator"
+          style="
+            border-top-width: 3px;
+            border-style: solid;
+          "
+        />
       </div>
     </div>
   </div>
@@ -17,15 +61,59 @@ exports[`<DividerWithText /> > should render with default thickness 1`] = `
 `;
 
 exports[`<DividerWithText /> > should render with given thickness 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+<div class="
+  v-application
+  v-layout
+  v-layout--full-height
+  v-locale--is-ltr
+  v-theme--light
+">
   <div class="v-application__wrap">
-    <div class="v-row align-center my-3">
-      <div class="v-col v-col-5">
-        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 2px; border-style: solid;">
+    <div class="
+      align-center
+      my-3
+      v-row
+    ">
+      <div class="
+        v-col
+        v-col-5
+      ">
+        <hr
+          aria-orientation="horizontal"
+          class="
+            v-divider
+            v-theme--light
+          "
+          role="separator"
+          style="
+            border-top-width: 2px;
+            border-style: solid;
+          "
+        />
       </div>
-      <div class="v-col text-center font-weight-bold"> OR </div>
-      <div class="v-col v-col-5">
-        <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 2px; border-style: solid;">
+      <div class="
+        font-weight-bold
+        text-center
+        v-col
+      ">
+        OR
+      </div>
+      <div class="
+        v-col
+        v-col-5
+      ">
+        <hr
+          aria-orientation="horizontal"
+          class="
+            v-divider
+            v-theme--light
+          "
+          role="separator"
+          style="
+            border-top-width: 2px;
+            border-style: solid;
+          "
+        />
       </div>
     </div>
   </div>

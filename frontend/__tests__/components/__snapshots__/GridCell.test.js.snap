@@ -1,17 +1,58 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=false, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -19,12 +60,24 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -32,17 +85,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=false, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -50,27 +144,69 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -78,17 +214,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=true, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -96,12 +273,24 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -109,17 +298,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=true, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -127,27 +357,69 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -155,17 +427,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=false, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -173,12 +486,24 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -186,17 +511,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=false, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -204,27 +570,69 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -232,17 +640,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=true, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -250,12 +699,24 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -263,17 +724,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 `;
 
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=true, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -281,27 +783,69 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -309,17 +853,58 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=false, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -327,41 +912,93 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <!--v-if-->
+        <!-- v-if -->
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-0" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-0"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <!--v-if-->
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <!-- v-if -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -369,17 +1006,58 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=false, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -387,56 +1065,138 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <span class="v-chip v-chip--pill v-theme--light v-chip--density-compact v-chip--size-small v-chip--variant-tonal" draggable="false">
+        <span
+          class="
+            v-chip
+            v-chip--density-compact
+            v-chip--pill
+            v-chip--size-small
+            v-chip--variant-tonal
+            v-theme--light
+          "
+          draggable="false"
+        >
           <!---->
           <span class="v-chip__underlay"></span>
           <!---->
           <div class="v-chip__prepend">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-icon--start
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
               </svg>
             </i>
             <!---->
           </div>
-          <div class="v-chip__content" data-no-activator>2 years ago</div>
+          <div
+            class="v-chip__content"
+            data-no-activator=""
+          >
+            2 years ago
+          </div>
           <!---->
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-4"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <!--v-if-->
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <!-- v-if -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -444,17 +1204,58 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=true, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -462,38 +1263,114 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <!--v-if-->
+        <!-- v-if -->
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-0" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-0"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <button aria-describedby="v-tooltip-v-2" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <button
+          aria-describedby="v-tooltip-v-2"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z" />
               </svg>
             </i>
@@ -501,17 +1378,22 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
           <!---->
           <!---->
         </button>
-        <!--teleport start-->
-        <!--teleport end-->
+        <!-- teleport start -->
+        <!-- teleport end -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -519,17 +1401,58 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=true, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -537,53 +1460,159 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <span class="v-chip v-chip--pill v-theme--light v-chip--density-compact v-chip--size-small v-chip--variant-tonal" draggable="false">
+        <span
+          class="
+            v-chip
+            v-chip--density-compact
+            v-chip--pill
+            v-chip--size-small
+            v-chip--variant-tonal
+            v-theme--light
+          "
+          draggable="false"
+        >
           <!---->
           <span class="v-chip__underlay"></span>
           <!---->
           <div class="v-chip__prepend">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-icon--start
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
               </svg>
             </i>
             <!---->
           </div>
-          <div class="v-chip__content" data-no-activator>2 years ago</div>
+          <div
+            class="v-chip__content"
+            data-no-activator=""
+          >
+            2 years ago
+          </div>
           <!---->
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-4"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <button aria-describedby="v-tooltip-v-6" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <button
+          aria-describedby="v-tooltip-v-6"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z" />
               </svg>
             </i>
@@ -591,17 +1620,22 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
           <!---->
           <!---->
         </button>
-        <!--teleport start-->
-        <!--teleport end-->
+        <!-- teleport start -->
+        <!-- teleport end -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -609,17 +1643,58 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=false, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -627,41 +1702,93 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <!--v-if-->
+        <!-- v-if -->
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-0" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-0"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <!--v-if-->
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <!-- v-if -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -669,17 +1796,58 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=false, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -687,56 +1855,138 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <span class="v-chip v-chip--pill v-theme--light v-chip--density-compact v-chip--size-small v-chip--variant-tonal" draggable="false">
+        <span
+          class="
+            v-chip
+            v-chip--density-compact
+            v-chip--pill
+            v-chip--size-small
+            v-chip--variant-tonal
+            v-theme--light
+          "
+          draggable="false"
+        >
           <!---->
           <span class="v-chip__underlay"></span>
           <!---->
           <div class="v-chip__prepend">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-icon--start
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
               </svg>
             </i>
             <!---->
           </div>
-          <div class="v-chip__content" data-no-activator>2 years ago</div>
+          <div
+            class="v-chip__content"
+            data-no-activator=""
+          >
+            2 years ago
+          </div>
           <!---->
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-4"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <!--v-if-->
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <!-- v-if -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -744,17 +1994,58 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=true, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -762,38 +2053,114 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <!--v-if-->
+        <!-- v-if -->
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-0" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-0"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <button aria-describedby="v-tooltip-v-2" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <button
+          aria-describedby="v-tooltip-v-2"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
               </svg>
             </i>
@@ -801,17 +2168,22 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
           <!---->
           <!---->
         </button>
-        <!--teleport start-->
-        <!--teleport end-->
+        <!-- teleport start -->
+        <!-- teleport end -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -819,17 +2191,58 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 `;
 
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=true, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -837,53 +2250,159 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <header
+      class="
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar"
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 24px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 24px;"
+      >
         <!---->
         <!---->
-        <span class="v-chip v-chip--pill v-theme--light v-chip--density-compact v-chip--size-small v-chip--variant-tonal" draggable="false">
+        <span
+          class="
+            v-chip
+            v-chip--density-compact
+            v-chip--pill
+            v-chip--size-small
+            v-chip--variant-tonal
+            v-theme--light
+          "
+          draggable="false"
+        >
           <!---->
           <span class="v-chip__underlay"></span>
           <!---->
           <div class="v-chip__prepend">
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-icon--start
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
               </svg>
             </i>
             <!---->
           </div>
-          <div class="v-chip__content" data-no-activator>2 years ago</div>
+          <div
+            class="v-chip__content"
+            data-no-activator=""
+          >
+            2 years ago
+          </div>
           <!---->
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
-          <span class="v-btn__overlay"></span>
-          <span class="v-btn__underlay"></span>
-          <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-              </svg>
-            </i>
-          </span>
-          <!---->
-          <!---->
+        <a
+          aria-describedby="v-tooltip-v-4"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          href="https://github.com/webpack/webpack-cli/runs/7858502725"
+          target="_blank"
+        ><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+          
+        <!----><span
+          class="v-btn__content"
+          data-no-activator=""
+        ><i
+          aria-hidden="true"
+          class="
+            notranslate
+            v-icon
+            v-icon--size-default
+            v-theme--light
+          "
+        ><svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg></i></span>
+          
+        <!---->
+          
+        <!---->
         </a>
-        <!--teleport start-->
-        <!--teleport end-->
-        <button aria-describedby="v-tooltip-v-6" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
+        <!-- teleport start -->
+        <!-- teleport end -->
+        <button
+          aria-describedby="v-tooltip-v-6"
+          class="
+            v-btn
+            v-btn--density-default
+            v-btn--icon
+            v-btn--size-small
+            v-btn--variant-text
+            v-theme--light
+          "
+          test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon"
+          type="button"
+        >
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
-          <span class="v-btn__content" data-no-activator>
-            <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default">
-              <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <span
+            class="v-btn__content"
+            data-no-activator=""
+          >
+            <i
+              aria-hidden="true"
+              class="
+                notranslate
+                v-icon
+                v-icon--size-default
+                v-theme--light
+              "
+            >
+              <svg
+                aria-hidden="true"
+                class="v-icon__svg"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
               </svg>
             </i>
@@ -891,17 +2410,22 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
           <!---->
           <!---->
         </button>
-        <!--teleport start-->
-        <!--teleport end-->
+        <!-- teleport start -->
+        <!-- teleport end -->
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -909,17 +2433,58 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 `;
 
 exports[`<GridCell /> > should render grid cell when build monitor view is disabled 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 120px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 120px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -927,12 +2492,24 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -940,17 +2517,58 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=FAILURE, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -958,12 +2576,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -971,17 +2601,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=SUCCESS, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -989,12 +2660,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1002,17 +2685,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=failure, hidden=false, displayToggleVisibility=true, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1020,27 +2744,69 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1048,17 +2814,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=failure, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1066,27 +2873,69 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1094,17 +2943,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=random, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1112,12 +3002,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1125,17 +3027,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1143,27 +3086,69 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <!--v-if-->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1171,17 +3156,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1189,12 +3215,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1202,17 +3240,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=undefined, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1220,12 +3299,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1233,17 +3324,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=unknown, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell unknown" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    unknown
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1251,12 +3383,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1264,17 +3408,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAILURE, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1282,17 +3467,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1303,17 +3537,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUCCESS, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1321,17 +3596,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1342,17 +3666,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=failure, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1360,17 +3725,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1381,17 +3795,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=failure, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1399,32 +3854,111 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1435,17 +3969,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=random, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1453,17 +4028,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1474,17 +4098,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=false 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1492,17 +4157,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1513,17 +4227,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1531,32 +4286,111 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <span class="v-chip v-theme--light v-chip--density-default rounded-0 v-chip--size-small v-chip--variant-tonal" draggable="false">
+  <span
+    class="
+      rounded-0
+      v-chip
+      v-chip--density-default
+      v-chip--size-small
+      v-chip--variant-tonal
+      v-theme--light
+    "
+    draggable="false"
+  >
     <!---->
     <span class="v-chip__underlay"></span>
     <!---->
     <div class="v-chip__prepend">
-      <i aria-hidden="true" class="v-icon notranslate v-theme--light v-icon--size-default v-icon--start">
-        <svg aria-hidden="true" class="v-icon__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <i
+        aria-hidden="true"
+        class="
+          notranslate
+          v-icon
+          v-icon--size-default
+          v-icon--start
+          v-theme--light
+        "
+      >
+        <svg
+          aria-hidden="true"
+          class="v-icon__svg"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
         </svg>
       </i>
       <!---->
     </div>
-    <div class="v-chip__content" data-no-activator>2 years ago</div>
+    <div
+      class="v-chip__content"
+      data-no-activator=""
+    >
+      2 years ago
+    </div>
     <!---->
     <!---->
   </span>
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1567,17 +4401,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell success" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    success
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1585,17 +4460,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1606,17 +4530,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=undefined, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1624,17 +4589,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1645,17 +4659,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=unknown, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell unknown" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    grid-cell
+    rounded-6
+    unknown
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1663,17 +4718,66 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 15px; --v-progress-linear-height: 15px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 15px;
+      --v-progress-linear-height: 15px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>
@@ -1684,17 +4788,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
 `;
 
 exports[`<GridCell /> > should render grid cell when inProgress=undefined, status=undefined, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 90px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 90px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1702,12 +4847,24 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <!--v-if-->
+  <!-- v-if -->
+  <!-- v-if -->
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -1715,17 +4872,58 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
 `;
 
 exports[`<GridCell /> > should render in progress grid cell when build monitor view is disabled 1`] = `
-<div class="v-card v-theme--light v-card--density-default rounded-6 v-card--variant-flat grid-cell failure" id="webpack-cli----webpack-cli----Lint-Commit-Messages" style="height: 120px;">
+<div
+  class="
+    failure
+    grid-cell
+    rounded-6
+    v-card
+    v-card--density-default
+    v-card--variant-flat
+    v-theme--light
+  "
+  id="webpack-cli----webpack-cli----Lint-Commit-Messages"
+  style="height: 120px;"
+>
   <!---->
   <div class="v-card__loader">
-    <div aria-hidden="true" aria-valuemax="100" aria-valuemin="0" class="v-progress-linear v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;">
+    <div
+      aria-hidden="true"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      class="
+        v-locale--is-ltr
+        v-progress-linear
+        v-theme--light
+      "
+      role="progressbar"
+      style="
+        top: 0px;
+        height: 0px;
+        --v-progress-linear-height: 2px;
+      "
+    >
       <!---->
       <div class="v-progress-linear__background"></div>
-      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-      <transition-stub appear="false" css="true" name="fade-transition" persisted="false">
+      <div
+        class="v-progress-linear__buffer"
+        style="width: 0%;"
+      ></div>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade-transition"
+        persisted="false"
+      >
         <div class="v-progress-linear__indeterminate">
-          <div class="v-progress-linear__indeterminate long"></div>
-          <div class="v-progress-linear__indeterminate short"></div>
+          <div class="
+            long
+            v-progress-linear__indeterminate
+          "></div>
+          <div class="
+            short
+            v-progress-linear__indeterminate
+          "></div>
         </div>
       </transition-stub>
       <!---->
@@ -1733,17 +4931,66 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
   </div>
   <!---->
   <!---->
-  <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
-  <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <!--v-if-->
+  <div class="
+    grid-cell-name
+    pa-2
+    v-card-text
+  ">
+    webpack-cli :: webpack-cli :: Lint Commit Messages
+  </div>
+  <transition-stub
+    appear="false"
+    class="bg-transparent"
+    css="true"
+    name="expand-transition"
+    persisted="false"
+  >
+    <!-- v-if -->
   </transition-stub>
-  <!--v-if-->
-  <div aria-hidden="false" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="v-progress-linear v-progress-linear--striped v-theme--light v-locale--is-ltr" role="progressbar" style="top: 0px; height: 10px; --v-progress-linear-height: 10px;">
+  <!-- v-if -->
+  <div
+    aria-hidden="false"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="100"
+    class="
+      v-locale--is-ltr
+      v-progress-linear
+      v-progress-linear--striped
+      v-theme--light
+    "
+    role="progressbar"
+    style="
+      top: 0px;
+      height: 10px;
+      --v-progress-linear-height: 10px;
+    "
+  >
     <!---->
-    <div class="v-progress-linear__background bg-orange-darken-4"></div>
-    <div class="v-progress-linear__buffer bg-orange-darken-4" style="width: 0%;"></div>
-    <transition-stub appear="false" css="true" name="slide-x-transition" persisted="false">
-      <div class="v-progress-linear__determinate bg-orange-darken-4" style="width: 100%;"></div>
+    <div class="
+      bg-orange-darken-4
+      v-progress-linear__background
+    "></div>
+    <div
+      class="
+        bg-orange-darken-4
+        v-progress-linear__buffer
+      "
+      style="width: 0%;"
+    ></div>
+    <transition-stub
+      appear="false"
+      css="true"
+      name="slide-x-transition"
+      persisted="false"
+    >
+      <div
+        class="
+          bg-orange-darken-4
+          v-progress-linear__determinate
+        "
+        style="width: 100%;"
+      ></div>
     </transition-stub>
     <!---->
   </div>

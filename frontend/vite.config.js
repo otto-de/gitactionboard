@@ -52,6 +52,5 @@ export default defineConfig({
       thresholdAutoUpdate: true
     },
     setupFiles: '__tests__/vitest.setup.js',
-    snapshotSerializers: ['jest-serializer-vue-tjw']
   }
 });

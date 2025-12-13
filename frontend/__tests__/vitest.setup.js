@@ -1,5 +1,5 @@
 import { expect, vi } from 'vitest';
-import vueSnapshotSerializer from 'jest-serializer-vue-tjw';
+import vueSnapshotSerializer from 'vue3-snapshot-serializer';
 import 'vitest-canvas-mock';
 
 class ResizeObserverStub {

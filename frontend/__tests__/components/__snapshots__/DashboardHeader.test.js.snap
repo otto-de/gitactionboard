@@ -1,25 +1,88 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<DashboardHeader /> > should render dashboard header for Code Standard Violations 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+<div class="
+  v-application
+  v-layout
+  v-layout--full-height
+  v-locale--is-ltr
+  v-theme--light
+">
   <div class="v-application__wrap">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0px); position: fixed; transition: none; left: 0px; width: calc(100% - 0px);">
+    <header
+      class="
+        elevation-5
+        v-app-bar
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      style="
+        top: 0px;
+        z-index: 1004;
+        transform: translateY(0px);
+        position: fixed;
+        transition: none;
+        left: 0px;
+        width: calc(100% - 0px);
+      "
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 64px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 64px;"
+      >
         <!---->
         <!---->
-        <div class="v-row v-row--no-gutters">
-          <div class="v-col v-col-10">
-            <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+        <div class="
+          v-row
+          v-row--no-gutters
+        ">
+          <div class="
+            v-col
+            v-col-10
+          ">
+            <div class="
+              font-weight-bold
+              header-title
+              pl-10
+              text-center
+              v-app-bar-title
+              v-toolbar-title
+            ">
               <div class="v-toolbar-title__placeholder">
                 <!---->
-                <span>Gitaction Board</span>
-                <span class="version">(v3.1.0)</span>
+                <span>
+                  Gitaction Board
+                </span>
+                <span class="version">
+                  (v3.1.0)
+                </span>
               </div>
             </div>
           </div>
-          <div class="v-col v-col-2 d-inline-flex">
-            <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+          <div class="
+            d-inline-flex
+            v-col
+            v-col-2
+          ">
+            <div
+              class="
+                align-center
+                d-inline-flex
+                fill-height
+                flex-row-reverse
+                font-weight-bold
+                mt-3
+                pr-4
+                text-right
+                v-app-bar-title
+                v-toolbar-title
+              "
+              id="sub-header"
+            >
               <div class="v-toolbar-title__placeholder">
                 <!---->
                 Code Standard Violations
@@ -29,7 +92,12 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
         </div>
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
@@ -38,25 +106,88 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
 `;
 
 exports[`<DashboardHeader /> > should render dashboard header for Exposed Secrets 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+<div class="
+  v-application
+  v-layout
+  v-layout--full-height
+  v-locale--is-ltr
+  v-theme--light
+">
   <div class="v-application__wrap">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0px); position: fixed; transition: none; left: 0px; width: calc(100% - 0px);">
+    <header
+      class="
+        elevation-5
+        v-app-bar
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      style="
+        top: 0px;
+        z-index: 1004;
+        transform: translateY(0px);
+        position: fixed;
+        transition: none;
+        left: 0px;
+        width: calc(100% - 0px);
+      "
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 64px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 64px;"
+      >
         <!---->
         <!---->
-        <div class="v-row v-row--no-gutters">
-          <div class="v-col v-col-10">
-            <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+        <div class="
+          v-row
+          v-row--no-gutters
+        ">
+          <div class="
+            v-col
+            v-col-10
+          ">
+            <div class="
+              font-weight-bold
+              header-title
+              pl-10
+              text-center
+              v-app-bar-title
+              v-toolbar-title
+            ">
               <div class="v-toolbar-title__placeholder">
                 <!---->
-                <span>Gitaction Board</span>
-                <span class="version">(v3.1.0)</span>
+                <span>
+                  Gitaction Board
+                </span>
+                <span class="version">
+                  (v3.1.0)
+                </span>
               </div>
             </div>
           </div>
-          <div class="v-col v-col-2 d-inline-flex">
-            <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+          <div class="
+            d-inline-flex
+            v-col
+            v-col-2
+          ">
+            <div
+              class="
+                align-center
+                d-inline-flex
+                fill-height
+                flex-row-reverse
+                font-weight-bold
+                mt-3
+                pr-4
+                text-right
+                v-app-bar-title
+                v-toolbar-title
+              "
+              id="sub-header"
+            >
               <div class="v-toolbar-title__placeholder">
                 <!---->
                 Exposed Secrets
@@ -66,7 +197,12 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
         </div>
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
@@ -75,25 +211,88 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
 `;
 
 exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 1`] = `
-<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+<div class="
+  v-application
+  v-layout
+  v-layout--full-height
+  v-locale--is-ltr
+  v-theme--light
+">
   <div class="v-application__wrap">
-    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-5 v-theme--light v-locale--is-ltr v-app-bar" style="top: 0px; z-index: 1004; transform: translateY(0px); position: fixed; transition: none; left: 0px; width: calc(100% - 0px);">
+    <header
+      class="
+        elevation-5
+        v-app-bar
+        v-locale--is-ltr
+        v-theme--light
+        v-toolbar
+        v-toolbar--collapse-start
+        v-toolbar--density-default
+      "
+      style="
+        top: 0px;
+        z-index: 1004;
+        transform: translateY(0px);
+        position: fixed;
+        transition: none;
+        left: 0px;
+        width: calc(100% - 0px);
+      "
+    >
       <!---->
-      <div class="v-toolbar__content" style="height: 64px;">
+      <div
+        class="v-toolbar__content"
+        style="height: 64px;"
+      >
         <!---->
         <!---->
-        <div class="v-row v-row--no-gutters">
-          <div class="v-col v-col-10">
-            <div class="v-toolbar-title header-title text-center font-weight-bold pl-10 v-app-bar-title">
+        <div class="
+          v-row
+          v-row--no-gutters
+        ">
+          <div class="
+            v-col
+            v-col-10
+          ">
+            <div class="
+              font-weight-bold
+              header-title
+              pl-10
+              text-center
+              v-app-bar-title
+              v-toolbar-title
+            ">
               <div class="v-toolbar-title__placeholder">
                 <!---->
-                <span>Gitaction Board</span>
-                <span class="version">(v3.1.0)</span>
+                <span>
+                  Gitaction Board
+                </span>
+                <span class="version">
+                  (v3.1.0)
+                </span>
               </div>
             </div>
           </div>
-          <div class="v-col v-col-2 d-inline-flex">
-            <div class="v-toolbar-title pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3 v-app-bar-title" id="sub-header">
+          <div class="
+            d-inline-flex
+            v-col
+            v-col-2
+          ">
+            <div
+              class="
+                align-center
+                d-inline-flex
+                fill-height
+                flex-row-reverse
+                font-weight-bold
+                mt-3
+                pr-4
+                text-right
+                v-app-bar-title
+                v-toolbar-title
+              "
+              id="sub-header"
+            >
               <div class="v-toolbar-title__placeholder">
                 <!---->
                 Workflow Jobs
@@ -103,7 +302,12 @@ exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 
         </div>
         <!---->
       </div>
-      <transition-stub appear="false" css="true" name="expand-transition" persisted="false">
+      <transition-stub
+        appear="false"
+        css="true"
+        name="expand-transition"
+        persisted="false"
+      >
         <!---->
       </transition-stub>
     </header>
