@@ -21,7 +21,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
@@ -47,7 +46,6 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 @DirtiesContext
 @IntegrationTest
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
-@SuppressFBWarnings("NP_UNWRITTEN_FIELD")
 class GithubAlertsControllerIntegrationTest {
   private static final String API_BASE_PATH = "/repos/johndoe/hello-world";
   private static final String SECURITY_SCAN_ALERTS_ENDPOINT = "/v1/alerts/secrets";
@@ -102,7 +100,6 @@ class GithubAlertsControllerIntegrationTest {
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"ENABLE_GITHUB_SECRETS_SCAN_ALERTS_MONITORING=false"})
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
   class DisableSecurityAlerts {
 
     @Autowired private MockMvc mockMvc;
@@ -127,7 +124,6 @@ class GithubAlertsControllerIntegrationTest {
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"ENABLE_GITHUB_CODE_SCAN_ALERTS_MONITORING=false"})
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
   class DisableCodeStandardViolationAlerts {
 
     @Autowired private MockMvc mockMvc;
@@ -152,7 +148,6 @@ class GithubAlertsControllerIntegrationTest {
   @MockServerTest
   @SpringBootTest(webEnvironment = RANDOM_PORT)
   class WithoutCacheForSecurityAlerts {
-    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
 
     @Autowired private MockMvc mockMvc;
@@ -247,7 +242,6 @@ class GithubAlertsControllerIntegrationTest {
         "spring.cache.type=caffeine"
       })
   class WithCacheSecurityScanAlerts {
-    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
 
     @Autowired private MockMvc mockMvc;
@@ -336,7 +330,6 @@ class GithubAlertsControllerIntegrationTest {
     @Autowired private MockMvc mockMvc;
     @Autowired private NotificationRepository notificationRepository;
 
-    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
 
     @Value("${wiremock.webhook.url}")
@@ -419,7 +412,6 @@ class GithubAlertsControllerIntegrationTest {
         "spring.cache.type=caffeine"
       })
   class WithCacheCodeScanAlerts {
-    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
 
     @Autowired private MockMvc mockMvc;

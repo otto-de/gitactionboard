@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.config.CodecConfig;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -77,7 +76,6 @@ class BasicAuthenticationControllerIntegrationTest {
   @SpringBootTest(
       webEnvironment = RANDOM_PORT,
       properties = {"BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd"})
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
   class WithDefaultContextPathTest {
     @Autowired private MockMvc mockMvc;
 
@@ -105,7 +103,6 @@ class BasicAuthenticationControllerIntegrationTest {
         "BASIC_AUTH_USER_DETAILS_FILE_PATH=src/test/resources/.htpasswd",
         "server.servlet.context-path=/test"
       })
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
   class WithCustomContextPathTest {
     @Autowired private MockMvc mockMvc;
 

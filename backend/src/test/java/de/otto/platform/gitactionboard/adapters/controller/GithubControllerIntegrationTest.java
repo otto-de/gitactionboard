@@ -20,7 +20,6 @@ import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.PersistingRepositoryCleanupExtension;
 import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import java.util.Objects;
 import lombok.SneakyThrows;
@@ -42,7 +41,6 @@ import org.springframework.test.web.servlet.ResultMatcher;
 
 @DirtiesContext
 @IntegrationTest
-@SuppressFBWarnings("NP_UNWRITTEN_FIELD")
 class GithubControllerIntegrationTest {
   private static final String API_BASE_PATH = "/repos/johndoe/hello-world";
 
@@ -105,7 +103,6 @@ class GithubControllerIntegrationTest {
 
     @Autowired private CacheManager cacheManager;
 
-    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
 
     @BeforeEach
@@ -201,7 +198,6 @@ class GithubControllerIntegrationTest {
       })
   @ExtendWith(PersistingRepositoryCleanupExtension.class)
   class WithoutCache {
-    @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
     private MockServerClient mockServerClient;
 
     @Autowired private MockMvc mockMvc;

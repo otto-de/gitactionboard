@@ -16,7 +16,6 @@ import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.config.CodecConfig;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +28,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @IntegrationTest
 @MockServerTest
-@SuppressFBWarnings("NP_UNWRITTEN_FIELD")
 class TeamsWorkflowNotificationConnectorIntegrationTest {
 
   @Autowired private TeamsWorkflowNotificationConnector teamsWorkflowNotificationConnector;
@@ -39,7 +37,6 @@ class TeamsWorkflowNotificationConnectorIntegrationTest {
 
   private ObjectMapper objectMapper;
 
-  @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
   private MockServerClient mockServerClient;
 
   @BeforeEach

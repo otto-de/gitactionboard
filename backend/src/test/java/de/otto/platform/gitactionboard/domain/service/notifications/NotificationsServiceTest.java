@@ -21,7 +21,6 @@ import de.otto.platform.gitactionboard.domain.workflow.Activity;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
 import de.otto.platform.gitactionboard.fixtures.SecretsScanDetailsFixtures;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -34,7 +33,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-@SuppressFBWarnings("RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT")
 @Sequential
 class NotificationsServiceTest {
   @Mock private NotificationRepository notificationRepository;

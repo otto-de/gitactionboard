@@ -7,7 +7,6 @@ import static org.mockito.Mockito.when;
 
 import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.AuthenticationMechanism;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.servlet.ServletContext;
 import java.util.List;
 import java.util.stream.Stream;
@@ -52,7 +51,6 @@ class WebSecurityConfigTest {
 
   @Nested
   @ExtendWith(MockitoExtension.class)
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
   class ServletContextPathTest {
 
     @Mock private ServletContext servletContext;
@@ -86,7 +84,6 @@ class WebSecurityConfigTest {
   }
 
   @Nested
-  @SuppressFBWarnings("SIC_INNER_SHOULD_BE_STATIC")
   class BasicAuthSecurityConfigTest {
 
     private WebSecurityConfig.BasicAuthSecurityConfig securityConfig;

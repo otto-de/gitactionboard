@@ -6,7 +6,6 @@ import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardV
 import de.otto.platform.gitactionboard.domain.scan.secrets.SecretsScanDetails;
 import de.otto.platform.gitactionboard.domain.service.notifications.NotificationConnector;
 import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +16,6 @@ import org.springframework.web.client.RestClient;
 @Component
 @Slf4j
 @ConditionalOnProperty("MS_TEAMS_NOTIFICATIONS_WORKFLOW_URL")
-@SuppressFBWarnings("EI_EXPOSE_REP2")
 public class TeamsWorkflowNotificationConnector implements NotificationConnector {
   private static final String CONNECTOR_TYPE = "MS_TEAMS_WORKFLOW";
   private final String webHookUrl;

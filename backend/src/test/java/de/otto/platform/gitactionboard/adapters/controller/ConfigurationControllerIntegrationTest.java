@@ -21,7 +21,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.Sequential;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Base64;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
@@ -63,7 +62,6 @@ class ConfigurationControllerIntegrationTest {
 
   @Autowired private MockMvc mockMvc;
 
-  @SuppressFBWarnings("UWF_UNWRITTEN_FIELD")
   private MockServerClient mockServerClient;
 
   @Test

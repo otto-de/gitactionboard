@@ -16,7 +16,6 @@ import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.domain.Notification;
 import de.otto.platform.gitactionboard.domain.repository.NotificationRepository;
 import de.otto.platform.gitactionboard.domain.scan.code.violations.CodeStandardViolationDetails;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +25,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-@SuppressFBWarnings("RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT")
 @Sequential
 class CodeStandardViolationNotificationServiceTest {
   @Mock private NotificationRepository notificationRepository;
