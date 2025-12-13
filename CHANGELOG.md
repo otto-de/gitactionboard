@@ -2,6 +2,90 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.1.0](https://github.com/otto-de/gitactionboard/compare/v5.0.1...v5.1.0) (2025-12-13)
+
+### ⛰️ Features
+
+- ([#1065](https://github.com/otto-de/gitactionboard/issues/1065)) Provide branch information in /cctray and /cctray.xml api response ([b1d5ae0](https://github.com/otto-de/gitactionboard/commit/b1d5ae096933a7956002966e56e93e0c497f4884))
+
+- ([#1065](https://github.com/otto-de/gitactionboard/issues/1065)) Filter workflow runs by triggered branch names ([a65c37d](https://github.com/otto-de/gitactionboard/commit/a65c37defc3d44a67d74b0d5c4cc9a4b0c720321))
+
+### 🛡️ Security
+
+- Bump js-yaml ([5fb6fda](https://github.com/otto-de/gitactionboard/commit/5fb6fdab03ddc2c462233551f8621478845c120f))
+
+### 🎨 Styling
+
+- Redesign preferences page ([d143c93](https://github.com/otto-de/gitactionboard/commit/d143c93a6ce99474d8b288a3ca9a9410d5b2333a))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump io.freefair.lombok ([d3518d9](https://github.com/otto-de/gitactionboard/commit/d3518d9818fbf758cd7961cfac781323d41b1a73))
+
+- Bump org.pitest:pitest-junit5-plugin ([b4a3047](https://github.com/otto-de/gitactionboard/commit/b4a30470eec00ba4243a5aec6fe847b43592f774))
+
+- Bump org.openrewrite.rewrite ([928ace5](https://github.com/otto-de/gitactionboard/commit/928ace55613e8ea6a51059d6e8071da010f5fa66))
+
+- Bump org.springframework.boot ([f4f436a](https://github.com/otto-de/gitactionboard/commit/f4f436a6d062c6cb67a944fbd6b4c211889381c4))
+
+- Bump org.apache.httpcomponents.client5:httpclient5 ([5582711](https://github.com/otto-de/gitactionboard/commit/5582711572453572286a9e98845866abe8c972e8))
+
+- Bump net.logstash.logback:logstash-logback-encoder ([43553d7](https://github.com/otto-de/gitactionboard/commit/43553d7b4a36185392ebd2fb11d5cc45dc9f992e))
+
+- Bump com.diffplug.spotless ([fa65a61](https://github.com/otto-de/gitactionboard/commit/fa65a615c38edf108e70af38ad655ccdae006a19))
+
+- Patch management for gradle and frontend dependencies ([e8790ed](https://github.com/otto-de/gitactionboard/commit/e8790ed3364c6ed7a89059816e477a20089e0f6a))
+
+- Bump alpine from 3.21.3 to 3.22.0 ([51d7310](https://github.com/otto-de/gitactionboard/commit/51d731048705ab460e92b677f0c6737e049d1cd9))
+
+- Patch management ([cf9ee2c](https://github.com/otto-de/gitactionboard/commit/cf9ee2cc09dd5366298a4b512c7d27d6962f6a64))
+
+- Patch management for openrewrite and springboot ([a289138](https://github.com/otto-de/gitactionboard/commit/a289138a5b34cc95b64961f97e2dad6ed5e520b7))
+
+- Update dependabot PR reviewer GitHub username ([91a86f7](https://github.com/otto-de/gitactionboard/commit/91a86f7ffbae0c8641010cbca78395302d2752f6))
+
+- Upgrade node version to v22 ([24f0259](https://github.com/otto-de/gitactionboard/commit/24f0259f13345331172d27257d95c86c6883a720))
+
+- Bump alpine from 3.22.0 to 3.22.1 ([#1068](https://github.com/otto-de/gitactionboard/issues/1068)) ([3d31f58](https://github.com/otto-de/gitactionboard/commit/3d31f58ac1ba32c6d32aa5e78071d9042e83f58c))
+
+- Update maintainers email id ([ef32540](https://github.com/otto-de/gitactionboard/commit/ef325408aef25650d4f57dee33731d0892ca10a0))
+
+- Exclude vuetify from dependabot groupped PR ([b10f25b](https://github.com/otto-de/gitactionboard/commit/b10f25bd89b3406c1a61772d0bca7c917325ce95))
+
+- Bump alpine from 3.22.1 to 3.22.2 ([#1096](https://github.com/otto-de/gitactionboard/issues/1096)) ([c7b054f](https://github.com/otto-de/gitactionboard/commit/c7b054f6062fbbc5d953ea7f32f5ffc0a1038bb0))
+
+- Bump the npm-version-updates group across 1 directory with 8 updates ([c588bcb](https://github.com/otto-de/gitactionboard/commit/c588bcbc1353e0f4648a1441776e01a291c80b83))
+
+- Bump peter-evans/dockerhub-description from 4 to 5 ([413d6e7](https://github.com/otto-de/gitactionboard/commit/413d6e79861574e0d9a9e7ee89c32967cc40be86))
+
+- Bump @vitejs/plugin-vue ([93cbdda](https://github.com/otto-de/gitactionboard/commit/93cbddab19b5de6d2a1be66a5f422a241a6ee755))
+
+- Bump github/codeql-action from 3 to 4 ([f75bf8e](https://github.com/otto-de/gitactionboard/commit/f75bf8e66eb745cf70809daecd658936dcfb7c58))
+
+- Bump alpine from 3.22.2 to 3.23.0 ([a96179c](https://github.com/otto-de/gitactionboard/commit/a96179c17daeebb0173f6799f0aa0c0de014c40d))
+
+- Bump actions/checkout from 5 to 6 ([7200136](https://github.com/otto-de/gitactionboard/commit/72001362e9cf02652ef91d527ca45934a447811e))
+
+- Fix spotbugs upgrade issue ([788e9bd](https://github.com/otto-de/gitactionboard/commit/788e9bdc8996db02106f6b5874bb78f760403d83))
+
+- Bump the gradle-version-updates group across 1 directory with 7 updates ([6faa057](https://github.com/otto-de/gitactionboard/commit/6faa057503a5a9028e9cfbb37f9517376e611eae))
+
+- Bump actions/upload-artifact from 4 to 5 ([40821ea](https://github.com/otto-de/gitactionboard/commit/40821eaceec5af97b3b370241aae0f2031d532fe))
+
+- Patch managment for frontend ([0f456d4](https://github.com/otto-de/gitactionboard/commit/0f456d4cf7814fe6814dbdefe3120e343ecca33f))
+
+- Migrate to vue3-snapshot-serializer from jest-serializer-vue-tjw ([c2b6a4c](https://github.com/otto-de/gitactionboard/commit/c2b6a4c1c9db527eecbb797359421e2069767ce4))
+
+- Upgrade to node v24 ([e8713c8](https://github.com/otto-de/gitactionboard/commit/e8713c894bf15e977ff212101b5d570a1ef6357e))
+
+- Update .talismanrc ([9b8bcbc](https://github.com/otto-de/gitactionboard/commit/9b8bcbc23f1db0992f781f1daadb0cf76d6a5952))
+
+### 📚 Documentation
+
+- Update changelog ([eea3bc2](https://github.com/otto-de/gitactionboard/commit/eea3bc25286cbd649fce4fe7b1f18af8d64c75ae))
+
+- Add [@fmontorsi-equinix](https://github.com/fmontorsi-equinix) and [@ynixon](https://github.com/ynixon) to contributors list ([f9664b6](https://github.com/otto-de/gitactionboard/commit/f9664b6711ddb80131589b75d97ae82cefe9d269))
+
 ## [v5.0.1](https://github.com/otto-de/gitactionboard/compare/v5.0.0...v5.0.1) (2025-02-24)
 
 ### ⚙️ Miscellaneous Tasks
@@ -1279,5 +1363,7 @@ All notable changes to this project will be documented in this file.
 - Add changelog ([39f16bf](https://github.com/otto-de/gitactionboard/commit/39f16bf4a927f177814c992715004152c2d8a794))
 
 - Link changelog on readme file ([1546a10](https://github.com/otto-de/gitactionboard/commit/1546a10776946cb79c3c481e8d5f858962fec162))
+
+## [v1.0.0](https://github.com/otto-de/gitactionboard/compare/...v1.0.0) (2021-03-02)
 
 <!-- generated by git-cliff -->
