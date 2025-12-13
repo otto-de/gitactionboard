@@ -34,7 +34,7 @@ If you are not sure how to begin contributing to GitactionBoard, have a look at 
 - [Prettier](https://prettier.io/)
 - [talisman](https://github.com/thoughtworks/talisman)
 - [Trivy](https://github.com/aquasecurity/trivy)
-- [Node.js v22](https://nodejs.org)
+- [Node.js v24](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [all-contributors cli](https://allcontributors.org/docs/en/cli/overview) (only for maintainers)
 
