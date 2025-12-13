@@ -36,8 +36,10 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    deps: {
-      inline: ['vuetify', 'vitest-canvas-mock']
+    server: {
+      deps: {
+        inline: ['vuetify', 'vitest-canvas-mock']
+      }
     },
     include: ['**/?(*.){test,spec}.?([cm])[jt]s?(x)'],
     coverage: {
@@ -49,6 +51,7 @@ export default defineConfig({
       lines: 80.58,
       thresholdAutoUpdate: true
     },
-    setupFiles: '__tests__/vitest.setup.js'
+    setupFiles: '__tests__/vitest.setup.js',
+    snapshotSerializers: ['jest-serializer-vue-tjw']
   }
 });

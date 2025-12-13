@@ -83,16 +83,16 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-0">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-1">
                     <!---->
                     Username
                   </label>
-                  <label class="v-label v-field-label" for="input-v-0">
+                  <label aria-hidden="false" class="v-label v-field-label" for="input-v-1" id="input-v-1-label">
                     <!---->
                     Username
                   </label>
                   <!---->
-                  <input class="v-field__input" id="input-v-0" placeholder="Enter your username" size="1" test-id="username" type="text" value>
+                  <input aria-labelledby="input-v-1-label" class="v-field__input" id="input-v-1" placeholder="Enter your username" size="1" test-id="username" type="text" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -105,7 +105,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
-                  <!---->
                   <!---->
                 </div>
                 <div class="v-field__outline">
@@ -138,16 +137,16 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-2">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-4">
                     <!---->
                     Password
                   </label>
-                  <label class="v-label v-field-label" for="input-v-2">
+                  <label aria-hidden="false" class="v-label v-field-label" for="input-v-4" id="input-v-4-label">
                     <!---->
                     Password
                   </label>
                   <!---->
-                  <input class="v-field__input" id="input-v-2" placeholder="Enter your password" size="1" test-id="password" type="password" value>
+                  <input aria-labelledby="input-v-4-label" class="v-field__input" id="input-v-4" placeholder="Enter your password" size="1" test-id="password" type="password" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -160,7 +159,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
-                  <!---->
                   <!---->
                 </div>
                 <div class="v-field__outline">
@@ -250,16 +248,16 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-0">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-1">
                     <!---->
                     Username
                   </label>
-                  <label class="v-label v-field-label" for="input-v-0">
+                  <label aria-hidden="false" class="v-label v-field-label" for="input-v-1" id="input-v-1-label">
                     <!---->
                     Username
                   </label>
                   <!---->
-                  <input class="v-field__input" id="input-v-0" placeholder="Enter your username" size="1" test-id="username" type="text" value>
+                  <input aria-labelledby="input-v-1-label" class="v-field__input" id="input-v-1" placeholder="Enter your username" size="1" test-id="username" type="text" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -272,7 +270,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
-                  <!---->
                   <!---->
                 </div>
                 <div class="v-field__outline">
@@ -305,16 +302,16 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator>
-                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-2">
+                  <label aria-hidden="true" class="v-label v-field-label v-field-label--floating" for="input-v-4">
                     <!---->
                     Password
                   </label>
-                  <label class="v-label v-field-label" for="input-v-2">
+                  <label aria-hidden="false" class="v-label v-field-label" for="input-v-4" id="input-v-4-label">
                     <!---->
                     Password
                   </label>
                   <!---->
-                  <input class="v-field__input" id="input-v-2" placeholder="Enter your password" size="1" test-id="password" type="password" value>
+                  <input aria-labelledby="input-v-4-label" class="v-field__input" id="input-v-4" placeholder="Enter your password" size="1" test-id="password" type="password" value>
                   <!---->
                 </div>
                 <transition-stub appear="false" css="true" name="expand-x-transition" persisted="false">
@@ -327,7 +324,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
-                  <!---->
                   <!---->
                 </div>
                 <div class="v-field__outline">
@@ -365,11 +361,11 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
         <!---->
         <div class="v-row align-center my-3">
           <div class="v-col v-col-5">
-            <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px;">
+            <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px; border-style: solid;">
           </div>
           <div class="v-col text-center font-weight-bold"> OR </div>
           <div class="v-col v-col-5">
-            <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px;">
+            <hr aria-orientation="horizontal" class="v-divider v-theme--light" role="separator" style="border-top-width: 3px; border-style: solid;">
           </div>
         </div>
       </div>

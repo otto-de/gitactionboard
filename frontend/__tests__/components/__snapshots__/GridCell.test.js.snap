@@ -329,7 +329,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -389,7 +389,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -411,7 +411,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-2" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
+        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -464,7 +464,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -539,7 +539,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -561,7 +561,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-2" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
+        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -577,7 +577,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         </a>
         <!--teleport start-->
         <!--teleport end-->
-        <button aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
+        <button aria-describedby="v-tooltip-v-6" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -629,7 +629,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -689,7 +689,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -711,7 +711,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-2" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
+        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -764,7 +764,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -839,7 +839,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   <!---->
   <div class="v-card-text grid-cell-name pa-2">webpack-cli :: webpack-cli :: Lint Commit Messages</div>
   <transition-stub appear="false" class="bg-transparent" css="true" name="expand-transition" persisted="false">
-    <header class="v-toolbar v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
+    <header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-toolbar">
       <!---->
       <div class="v-toolbar__content" style="height: 24px;">
         <!---->
@@ -861,7 +861,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
           <!---->
         </span>
         <div class="v-spacer"></div>
-        <a aria-describedby="v-tooltip-v-2" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
+        <a aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" href="https://github.com/webpack/webpack-cli/runs/7858502725" target="_blank">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
@@ -877,7 +877,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         </a>
         <!--teleport start-->
         <!--teleport end-->
-        <button aria-describedby="v-tooltip-v-4" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
+        <button aria-describedby="v-tooltip-v-6" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-text" test-id="webpack-cli----webpack-cli----Lint-Commit-Messages-change-visibility-icon" type="button">
           <span class="v-btn__overlay"></span>
           <span class="v-btn__underlay"></span>
           <!---->
