@@ -41,7 +41,7 @@
     "stylelint": "^16.26.1",
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^39.0.1",
-    "vite": "^7.2.7",
+    "vite": "^7.3.0",
     "vite-plugin-vuetify": "^2.1.2",
     "vitest": "^4.0.15",
     "vitest-canvas-mock": "^1.1.3",
