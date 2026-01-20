@@ -77,7 +77,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache nvd nist data
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: nvd-nist-cache
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/.nvd-nist-cache
@@ -86,7 +86,7 @@ jobs:
             ${{ runner.os }}-nvd-nist-cache-${{ steps.get-date.outputs.date }}
             ${{ runner.os }}-nvd-nist-cache
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches

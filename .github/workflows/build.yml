@@ -44,7 +44,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -54,7 +54,7 @@ jobs:
             ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-gradle-
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
@@ -64,7 +64,7 @@ jobs:
             ${{ runner.os }}-
       - name: Restore pitest history from cache
         id: cache-pitest-history-restore
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
           key: pitestHistory-${{ hashFiles('**/*.gradle*', '**/*.java*') }}
@@ -83,7 +83,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
       - name: Save pitest history
         if: always() && steps.cache-pitest-history-restore.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
           key: ${{ steps.cache-pitest-history-restore.outputs.cache-primary-key }}
@@ -182,7 +182,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -264,7 +264,7 @@ jobs:
         run: |
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
