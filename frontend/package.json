@@ -24,7 +24,7 @@
     "vuetify": "^3.11.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@mdi/js": "^7.4.47",
     "@mockoon/cli": "^9.5.0",
     "@vitejs/plugin-vue": "^6.0.4",
