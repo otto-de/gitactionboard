@@ -826,7 +826,7 @@ All notable changes to this project will be documented in this file.
 
 - Run checks for PR review_requested, edited and ready_for_review type ([f15e89d](https://github.com/otto-de/gitactionboard/commit/f15e89d0b292fe4d61232b4dcd034771c38b72d2))
 
-- Update GitHub runner to use ubuntu-22.04 ([5c93889](https://github.com/otto-de/gitactionboard/commit/5c938892ea85dbbbf4c83d48917e474d311173e7))
+- Update GitHub runner to use ubuntu-24.04 ([5c93889](https://github.com/otto-de/gitactionboard/commit/5c938892ea85dbbbf4c83d48917e474d311173e7))
 
 - Remove uses of deprecated properties ([5cd4dfc](https://github.com/otto-de/gitactionboard/commit/5cd4dfc994d99a32bd97222f17c2c53d274ef28f))
 

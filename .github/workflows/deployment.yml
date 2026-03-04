@@ -12,7 +12,7 @@ env:
 
 jobs:
   deploy_to_github_pages:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       pages: write
@@ -37,9 +37,9 @@ jobs:
         shell: bash
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}

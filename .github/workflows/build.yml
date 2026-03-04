@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v6
@@ -22,7 +22,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Install prettier using npm
         run: sudo npm install --global prettier
       - name: Install jenv
@@ -44,7 +44,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -54,7 +54,7 @@ jobs:
             ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-gradle-
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
@@ -64,7 +64,7 @@ jobs:
             ${{ runner.os }}-
       - name: Restore pitest history from cache
         id: cache-pitest-history-restore
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
           key: pitestHistory-${{ hashFiles('**/*.gradle*', '**/*.java*') }}
@@ -76,20 +76,20 @@ jobs:
         run: ./run.sh pitest
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload build report to artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
       - name: Save pitest history
         if: always() && steps.cache-pitest-history-restore.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
           key: ${{ steps.cache-pitest-history-restore.outputs.cache-primary-key }}
 
   determaine_should_publish_new_version:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       PUBLISH_NEW_VERSION: ${{ steps.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION }}
     steps:
@@ -105,7 +105,7 @@ jobs:
           echo "PUBLISH_NEW_VERSION=${PUBLISH_NEW_VERSION}" >> $GITHUB_OUTPUT
 
   determaine_current_tag_name:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ build, determaine_should_publish_new_version ]
     if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
     outputs:
@@ -120,7 +120,7 @@ jobs:
           echo "CURRENT_TAG=${CURRENT_TAG}" >> $GITHUB_OUTPUT
 
   update_changelog:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ build, determaine_should_publish_new_version, determaine_current_tag_name ]
     if: ${{ needs.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION == 'true' }}
     outputs:
@@ -136,7 +136,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Install git-cliff and prettier using npm
         run: sudo npm install --global git-cliff prettier
       - name: Generate changelog
@@ -158,7 +158,7 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
   docker:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ build, determaine_current_tag_name, update_changelog ]
     steps:
       - name: Checkout local repository
@@ -175,14 +175,14 @@ jobs:
           jenv add ${JAVA_HOME_21_X64}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Get Date
         id: get-date
         run: |
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -208,7 +208,7 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
       - name: Login to DockerHub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
@@ -237,7 +237,7 @@ jobs:
           readme-filepath: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/README.md
 
   deploy_to_github_pages:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ docker ]
     permissions:
       contents: read
@@ -262,9 +262,9 @@ jobs:
         shell: bash
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}

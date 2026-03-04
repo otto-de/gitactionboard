@@ -19,7 +19,7 @@ env:
 
 jobs:
   trivy-checks:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v6
@@ -27,7 +27,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Cache boot jar
         id: boot-jar
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar
           key: ${{ runner.os }}-bootjar-${{ hashFiles('**/*.gradle*') }}
@@ -43,7 +43,7 @@ jobs:
           jenv add ${JAVA_HOME_21_X64}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Get Date
         id: get-date
         run: |
@@ -51,7 +51,7 @@ jobs:
         shell: bash
       - name: Cache gradle wrapper and jars
         if: steps.boot-jar.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -62,7 +62,7 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Cache node modules
         if: steps.boot-jar.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
