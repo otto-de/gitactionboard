@@ -69,7 +69,7 @@ jobs:
       - name: Configure jenv
         run: |
           jenv init -
-          jenv add ${JAVA_HOME_21_X64}
+          jenv add ${JAVA_HOME_25_X64}
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Get Date
         id: get-date
