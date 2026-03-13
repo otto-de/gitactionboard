@@ -35,7 +35,7 @@
     "eslint-plugin-vue": "^9.33.0",
     "flush-promises": "^1.0.2",
     "globals": "^16.5.0",
-    "jsdom": "^27.4.0",
+    "jsdom": "^28.1.0",
     "neostandard": "^0.13.0",
     "postcss-html": "^1.8.1",
     "stylelint": "^16.26.1",
