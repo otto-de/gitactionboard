@@ -24,7 +24,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
         z-index: 1004;
         transform: translateY(0px);
         position: fixed;
-        transition: none;
+        transition: none !important;
         left: 0px;
         width: calc(100% - 0px);
       "
@@ -129,7 +129,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
         z-index: 1004;
         transform: translateY(0px);
         position: fixed;
-        transition: none;
+        transition: none !important;
         left: 0px;
         width: calc(100% - 0px);
       "
@@ -234,7 +234,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 
         z-index: 1004;
         transform: translateY(0px);
         position: fixed;
-        transition: none;
+        transition: none !important;
         left: 0px;
         width: calc(100% - 0px);
       "

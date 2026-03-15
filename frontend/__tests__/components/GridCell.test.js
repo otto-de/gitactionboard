@@ -4,9 +4,9 @@ import GridCell from '@/components/GridCell.vue';
 import preferences from '@/services/preferences';
 import { getRelativeTime } from '@/services/utils';
 
-describe('<GridCell />', () => {
-  vi.mock('@/services/utils');
+vi.mock('@/services/utils');
 
+describe('<GridCell />', () => {
   const defaultProps = {
     name: 'webpack-cli :: webpack-cli :: Lint Commit Messages',
     url: 'https://github.com/webpack/webpack-cli/runs/7858502725',

@@ -14,7 +14,7 @@ exports[`<Spinner /> > should render spinner 1`] = `
     width: 128px;
     height: 128px;
     color: rgb(95, 141, 119);
-    caret-color: #5f8d77;
+    caret-color: rgb(95, 141, 119);
   "
 >
   <svg
