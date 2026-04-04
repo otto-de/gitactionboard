@@ -1,6 +1,7 @@
 apply plugin: 'checkstyle'
 
 checkstyle {
+    toolVersion = "13.4.0"
     ignoreFailures = false
     maxWarnings = 0
     configFile file("${projectDir}/gradle/config/checkstyle.xml")

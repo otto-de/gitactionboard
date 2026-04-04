@@ -1,13 +1,13 @@
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "3.5.5"
+    id "org.springframework.boot" version "3.5.13"
     id "io.spring.dependency-management" version "1.1.7"
-    id "io.freefair.lombok" version "8.14"
+    id "io.freefair.lombok" version "9.2.0"
     id "com.github.spotbugs" version "6.4.8"
     id "com.github.ben-manes.versions" version "0.53.0"
-    id "org.owasp.dependencycheck" version "8.4.3"
-    id "com.diffplug.spotless" version "7.1.0"
+    id "org.owasp.dependencycheck" version "12.2.0"
+    id "com.diffplug.spotless" version "8.4.0"
     id "info.solidsoft.pitest" version "1.19.0"
     id "org.openrewrite.rewrite" version "7.29.0"
 }
@@ -20,7 +20,7 @@ spotless {
 
 ext {
     javaUuidGeneratorVersion = "5.2.0"
-    logstashVersion = "8.1"
+    logstashVersion = "9.0"
     caffeineVersion = "3.2.3"
     mockServerVersion = "5.15.0"
     archUnitVersion = "1.4.1"
@@ -47,11 +47,11 @@ dependencies {
     implementation "org.liquibase:liquibase-core"
     implementation "org.xerial:sqlite-jdbc:${sqliteJdbcVersion}"
     implementation "org.komamitsu:spring-data-sqlite:${springDataSqliteVersion}"
-    implementation "com.nimbusds:nimbus-jose-jwt:9.48" // Explicit version to fix CVE-2023-52428
     implementation "com.fasterxml.uuid:java-uuid-generator:${javaUuidGeneratorVersion}"
     implementation "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
     implementation "com.github.ben-manes.caffeine:caffeine:${caffeineVersion}"
     implementation "org.apache.httpcomponents.client5:httpclient5:${apacheHttpClient5Version}"
+    implementation 'tools.jackson.core:jackson-core:3.1.1'
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude group: "org.junit.vintage", module: "junit-vintage-engine"
