@@ -12,7 +12,7 @@ env:
 
 jobs:
   determine-changes:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       HAS_BACKEND_CHANGES: ${{ steps.changes.outputs.backend }}
       HAS_FRONTEND_CHANGES: ${{ steps.changes.outputs.frontend }}
@@ -36,7 +36,7 @@ jobs:
   backend-verification:
     needs: [ determine-changes ]
     if: ${{ needs.determine-changes.outputs.HAS_BACKEND_CHANGES == 'true' }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v6
@@ -63,7 +63,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -76,7 +76,7 @@ jobs:
         run: ./run.sh backend-test
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload build report to artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ${{ env.SERVICE_NAME }}-build-reports
@@ -85,7 +85,7 @@ jobs:
   frontend-verification:
     needs: [ determine-changes ]
     if: ${{ needs.determine-changes.outputs.HAS_FRONTEND_CHANGES == 'true' }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout local repository
         uses: actions/checkout@v6
@@ -93,7 +93,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
       - name: Install prettier using npm
         run: sudo npm install --global prettier
       - name: Install Hadolint and add to PATH
@@ -107,7 +107,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
@@ -120,7 +120,7 @@ jobs:
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
 
   dependabot:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [ backend-verification, frontend-verification ]
     if: ${{ always() && github.actor == 'dependabot[bot]' && contains(needs.*.result, 'success') && !(contains(needs.*.result, 'failure')) }}
     permissions:
@@ -129,7 +129,7 @@ jobs:
     steps:
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v2.4.0
+        uses: dependabot/fetch-metadata@v2.5.0
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Enable auto-merge for Dependabot PRs
