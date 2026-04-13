@@ -223,12 +223,10 @@ export default {
 <style scoped>
 .spinner-container {
     height: 90vh !important;
-  animation: softPulse 900ms ease-in-out infinite alternate;
 }
 
 .grid-cells {
     display: grid;
-  animation: fadeLiftIn 170ms ease-out;
 
   &.build-monitor {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -239,25 +237,22 @@ export default {
   }
 }
 
-@keyframes fadeLiftIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:deep(.v-toolbar) {
+  margin-top: 6px;
+  border: 1px solid rgb(15 23 42 / 8%);
+  border-radius: 12px;
+  background-color: rgb(248 250 252 / 92%);
+  padding-inline: 6px;
 }
 
-@keyframes softPulse {
-  from {
-    opacity: 0.72;
-  }
+:deep(.v-toolbar-title) {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgb(15 23 42 / 78%);
+}
 
-  to {
-    opacity: 1;
-  }
+:deep(.v-btn.v-btn--icon) {
+  width: 34px;
+  height: 34px;
 }
 </style>
