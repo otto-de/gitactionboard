@@ -26,7 +26,7 @@ export default defineConfig({
   server: {
     proxy: {
       '^/v1|^/config|^/login|^/oauth2|^/logout': {
-        target: 'http://localhost:8080',
+        target: process.env.VITE_PROXY_API_TARGET || 'http://localhost:8080',
         changeOrigin: true
       }
     },
