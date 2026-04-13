@@ -223,10 +223,12 @@ export default {
 <style scoped>
 .spinner-container {
     height: 90vh !important;
+  animation: softPulse 900ms ease-in-out infinite alternate;
 }
 
 .grid-cells {
     display: grid;
+  animation: fadeLiftIn 170ms ease-out;
 
   &.build-monitor {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -234,6 +236,28 @@ export default {
 
   &.individual {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@keyframes fadeLiftIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softPulse {
+  from {
+    opacity: 0.72;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 </style>
