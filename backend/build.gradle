@@ -3,9 +3,9 @@ plugins {
     id "idea"
     id "org.springframework.boot" version "3.5.13"
     id "io.spring.dependency-management" version "1.1.7"
-    id "io.freefair.lombok" version "9.2.0"
-    id "com.github.spotbugs" version "6.5.0"
-    id "com.github.ben-manes.versions" version "0.53.0"
+    id "io.freefair.lombok" version "9.4.0"
+    id "com.github.spotbugs" version "6.5.1"
+    id "com.github.ben-manes.versions" version "0.54.0"
     id "org.owasp.dependencycheck" version "12.2.0"
     id "com.diffplug.spotless" version "8.4.0"
     id "info.solidsoft.pitest" version "1.19.0"
@@ -23,11 +23,11 @@ ext {
     logstashVersion = "9.0"
     caffeineVersion = "3.2.3"
     mockServerVersion = "5.15.0"
-    archUnitVersion = "1.4.1"
+    archUnitVersion = "1.4.2"
     jUnit5PitestVersion = "1.2.3"
     springDataSqliteVersion = "1.4.0"
     sqliteJdbcVersion = "3.53.0.0"
-    apacheHttpClient5Version = "5.6"
+    apacheHttpClient5Version = "5.6.1"
 }
 
 repositories {
