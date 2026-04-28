@@ -236,4 +236,23 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+
+:deep(.v-toolbar) {
+  margin-top: 6px;
+  border: 1px solid rgb(15 23 42 / 8%);
+  border-radius: 12px;
+  background-color: rgb(248 250 252 / 92%);
+  padding-inline: 6px;
+}
+
+:deep(.v-toolbar-title) {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgb(15 23 42 / 78%);
+}
+
+:deep(.v-btn.v-btn--icon) {
+  width: 34px;
+  height: 34px;
+}
 </style>
