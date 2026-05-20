@@ -14,4 +14,19 @@ export default {
 </script>
 
 <style scoped>
+.v-progress-circular {
+  animation: spinnerEntrance 180ms ease-out;
+}
+
+@keyframes spinnerEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 </style>
