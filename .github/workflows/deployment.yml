@@ -27,7 +27,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
           ref: ${{ inputs.git_ref }}
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           enablement: true
       - name: Get Date
@@ -51,9 +51,9 @@ jobs:
         run: ./run.sh frontend-build-for-github-pages
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: "${{ github.workspace }}/${{ env.SERVICE_NAME }}/frontend/dist"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
