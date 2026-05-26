@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd">
+    <suppress>
+        <notes><![CDATA[
+        SQLite vulnerabilities detected in spring-data-sqlite-1.4.0.jar.
+        Currently using latest available version (1.4.0).
+        These CVEs are in the underlying SQLite C library bundled with spring-data-sqlite - fixes require upstream updates.
+        ]]></notes>
+        <cve>CVE-2019-19646</cve>
+        <cve>CVE-2018-20346</cve>
+        <cve>CVE-2018-20505</cve>
+        <cve>CVE-2020-11656</cve>
+        <cve>CVE-2020-11655</cve>
+        <cve>CVE-2022-35737</cve>
+        <cve>CVE-2020-13630</cve>
+        <cve>CVE-2017-10989</cve>
+        <cve>CVE-2018-8740</cve>
+        <cve>CVE-2018-20506</cve>
+        <cve>CVE-2015-3416</cve>
+        <cve>CVE-2015-3415</cve>
+        <cve>CVE-2015-3414</cve>
+        <cve>CVE-2023-7104</cve>
+        <cve>CVE-2015-5895</cve>
+        <cve>CVE-2025-6965</cve>
+        <cve>CVE-2015-3717</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[
+        CVE-2025-67030: Vulnerability in plexus-utils-3.3.0.jar - transitive dependency from build tools
+        ]]></notes>
+        <cve>CVE-2025-67030</cve>
+    </suppress>
 </suppressions>
