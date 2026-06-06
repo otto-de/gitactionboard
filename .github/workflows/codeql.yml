@@ -16,7 +16,7 @@ on:
 
 jobs:
   determine-changes:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       LANGUAGES: ${{ steps.changes.outputs.changes }}
     steps:
@@ -25,7 +25,7 @@ jobs:
         with:
           fetch-depth: 5
       - name: Determine new changes
-        uses: dorny/paths-filter@v3
+        uses: dorny/paths-filter@v4
         id: changes
         with:
           filters: |
@@ -38,7 +38,7 @@ jobs:
 
   analyze:
     name: Analyze
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: determine-changes
     permissions:
       actions: read
