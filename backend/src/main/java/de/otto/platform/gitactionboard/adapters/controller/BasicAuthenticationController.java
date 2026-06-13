@@ -5,11 +5,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import java.net.URLEncoder;
+import java.util.Base64;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
@@ -72,7 +72,7 @@ public class BasicAuthenticationController {
     return "Basic %s"
         .formatted(
             new String(
-                Base64.encodeBase64("%s:%s".formatted(username, password).getBytes(UTF_8), false),
+                Base64.getEncoder().encode("%s:%s".formatted(username, password).getBytes(UTF_8)),
                 UTF_8));
   }
 

@@ -1,13 +1,13 @@
 package de.otto.platform.gitactionboard.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.web.client.RestClient;
+import tools.jackson.databind.json.JsonMapper;
 
 @Configuration
 public class RestClientConfig {
@@ -20,13 +20,10 @@ public class RestClientConfig {
   @Bean
   @Primary
   public RestClient.Builder restClientBuilder(
-      ObjectMapper objectMapper, BufferingClientHttpRequestFactory requestFactory) {
+      JsonMapper jsonMapper, BufferingClientHttpRequestFactory requestFactory) {
     return RestClient.builder()
         .requestFactory(requestFactory)
-        .messageConverters(
-            converters -> {
-              converters.removeIf(MappingJackson2HttpMessageConverter.class::isInstance);
-              converters.add(new MappingJackson2HttpMessageConverter(objectMapper));
-            });
+        .configureMessageConverters(
+            builder -> builder.withJsonConverter(new JacksonJsonHttpMessageConverter(jsonMapper)));
   }
 }

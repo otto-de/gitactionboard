@@ -12,7 +12,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -96,7 +99,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -225,7 +231,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -309,7 +318,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -438,7 +450,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -522,7 +537,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -651,7 +669,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -735,7 +756,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -864,7 +888,10 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -1017,7 +1044,10 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -1215,7 +1245,10 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -1412,7 +1445,10 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -1654,7 +1690,10 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -1807,7 +1846,10 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2005,7 +2047,10 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2202,7 +2247,10 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2444,7 +2492,10 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 120px;"
+  style="
+    height: 120px;
+    --v-card-height: 120px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2528,7 +2579,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2612,7 +2666,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2696,7 +2753,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2825,7 +2885,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -2954,7 +3017,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3038,7 +3104,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3167,7 +3236,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3251,7 +3323,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3335,7 +3410,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3419,7 +3497,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3548,7 +3629,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3677,7 +3761,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3806,7 +3893,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -3980,7 +4070,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4109,7 +4202,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4238,7 +4334,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4412,7 +4511,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4541,7 +4643,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4670,7 +4775,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4799,7 +4907,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 90px;"
+  style="
+    height: 90px;
+    --v-card-height: 90px;
+  "
 >
   <!---->
   <div class="v-card__loader">
@@ -4883,7 +4994,10 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
     v-theme--light
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-  style="height: 120px;"
+  style="
+    height: 120px;
+    --v-card-height: 120px;
+  "
 >
   <!---->
   <div class="v-card__loader">

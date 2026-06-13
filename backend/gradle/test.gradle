@@ -22,10 +22,9 @@ tasks.withType(Test).configureEach {
 
 // unit tests
 test {
-    useJUnitPlatform() {
+    useJUnitPlatform {
         excludeTags "integration"
     }
-
     reports.html.required = false
 }
 
@@ -39,10 +38,9 @@ tasks.register('integrationTest', Test) {
 
     dependsOn test
 
-    useJUnitPlatform() {
+    useJUnitPlatform {
         includeTags "integration"
     }
-
     reports.html.required = false
 }
 

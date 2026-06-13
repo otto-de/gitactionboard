@@ -270,7 +270,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       v-field-label--floating
                       v-label
                     "
-                    for="input-v-1"
                   >
                     <!---->
                     Username
@@ -422,7 +421,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       v-field-label--floating
                       v-label
                     "
-                    for="input-v-4"
                   >
                     <!---->
                     Password
@@ -734,7 +732,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       v-field-label--floating
                       v-label
                     "
-                    for="input-v-1"
                   >
                     <!---->
                     Username
@@ -886,7 +883,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       v-field-label--floating
                       v-label
                     "
-                    for="input-v-4"
                   >
                     <!---->
                     Password
@@ -1304,6 +1300,7 @@ exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
       height: 128px;
       color: rgb(95, 141, 119);
       caret-color: rgb(95, 141, 119);
+      --progress-reveal-duration: 900ms;
     "
   >
     <svg

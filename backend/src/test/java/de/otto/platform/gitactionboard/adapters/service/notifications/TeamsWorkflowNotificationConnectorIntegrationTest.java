@@ -13,7 +13,6 @@ import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.IntegrationTest;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import lombok.SneakyThrows;
@@ -24,6 +23,7 @@ import org.mockserver.springtest.MockServerTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import tools.jackson.databind.ObjectMapper;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @IntegrationTest
@@ -41,7 +41,7 @@ class TeamsWorkflowNotificationConnectorIntegrationTest {
 
   @BeforeEach
   void setUp() {
-    objectMapper = CodecConfig.OBJECT_MAPPER_BUILDER.build();
+    objectMapper = new CodecConfig().objectMapper();
   }
 
   @Test

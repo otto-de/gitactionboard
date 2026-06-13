@@ -325,7 +325,10 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -510,7 +513,10 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                   v-theme--light
                 "
                 id="webpack-cli----Cancel----Cancel-Previous-Runs"
-                style="height: 90px;"
+                style="
+                  height: 90px;
+                  --v-card-height: 90px;
+                "
               >
                 <!---->
                 <div class="v-card__loader">
@@ -766,7 +772,10 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -1068,7 +1077,10 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                 v-theme--light
               "
               id="webpack-cli----Cancel----Cancel-Previous-Runs"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -1194,7 +1206,10 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -1407,7 +1422,10 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -1709,7 +1727,10 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 v-theme--light
               "
               id="webpack-cli----Cancel----Cancel-Previous-Runs"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -1937,7 +1958,10 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                   v-theme--light
                 "
                 id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-                style="height: 90px;"
+                style="
+                  height: 90px;
+                  --v-card-height: 90px;
+                "
               >
                 <!---->
                 <div class="v-card__loader">
@@ -2150,7 +2174,10 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                 v-theme--light
               "
               id="webpack-cli----Cancel----Cancel-Previous-Runs"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -2276,7 +2303,10 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -2489,7 +2519,10 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                 v-theme--light
               "
               id="webpack-cli----Cancel----Cancel-Previous-Runs"
-              style="height: 120px;"
+              style="
+                height: 120px;
+                --v-card-height: 120px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -2615,7 +2648,10 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 120px;"
+              style="
+                height: 120px;
+                --v-card-height: 120px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -2828,7 +2864,10 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                 v-theme--light
               "
               id="webpack-cli----Cancel----Cancel-Previous-Runs"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">
@@ -2954,7 +2993,10 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                 v-theme--light
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
-              style="height: 90px;"
+              style="
+                height: 90px;
+                --v-card-height: 90px;
+              "
             >
               <!---->
               <div class="v-card__loader">

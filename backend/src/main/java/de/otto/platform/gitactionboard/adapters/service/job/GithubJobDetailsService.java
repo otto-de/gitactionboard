@@ -15,7 +15,6 @@ import de.otto.platform.gitactionboard.domain.workflow.RunConclusion;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowRun;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -42,7 +41,7 @@ public class GithubJobDetailsService implements JobDetailsService {
             () -> {
               final List<WorkflowRun> workflowsRunDetails =
                   fetchWorkflowRuns(workflow, accessToken);
-              if (workflowsRunDetails.isEmpty()) return Collections.<JobDetails>emptyList();
+              if (workflowsRunDetails.isEmpty()) return List.<JobDetails>of();
 
               final WorkflowRun currentWorkflowRun = workflowsRunDetails.getFirst();
               final List<WorkflowJob> currentJobs =
@@ -66,7 +65,7 @@ public class GithubJobDetailsService implements JobDetailsService {
         .exceptionally(
             throwable -> {
               log.error(throwable.getMessage(), throwable);
-              return Collections.emptyList();
+              return List.of();
             });
   }
 
@@ -157,7 +156,7 @@ public class GithubJobDetailsService implements JobDetailsService {
                 workflowRunDetails.stream().map(WorkflowRunDetails::toWorkflowRun).toList())
         .map(this::persistWorkflowRuns)
         .map(CompletableFuture::join)
-        .orElse(Collections.emptyList());
+        .orElse(List.of());
   }
 
   private CompletableFuture<List<WorkflowRun>> persistWorkflowRuns(List<WorkflowRun> workflowRuns) {
@@ -238,7 +237,7 @@ public class GithubJobDetailsService implements JobDetailsService {
                     .toList())
         .map(this::persistWorkflowJobs)
         .map(CompletableFuture::join)
-        .orElse(Collections.emptyList());
+        .orElse(List.of());
   }
 
   private CompletableFuture<List<WorkflowJob>> persistWorkflowJobs(List<WorkflowJob> workflowJobs) {

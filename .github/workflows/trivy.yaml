@@ -43,7 +43,7 @@ jobs:
           jenv add ${JAVA_HOME_21_X64}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
       - name: Get Date
         id: get-date
         run: |
@@ -79,7 +79,7 @@ jobs:
         run: docker build -t "${{ env.SERVICE_NAME }}:trivy-scan" .
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: 'docker.io/library/${{ env.SERVICE_NAME }}:trivy-scan'
           format: 'table'

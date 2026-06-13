@@ -4,13 +4,13 @@ import static de.otto.platform.gitactionboard.TestUtil.readFile;
 import static de.otto.platform.gitactionboard.fixtures.JobFixture.BRANCH;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.Parallel;
 import de.otto.platform.gitactionboard.config.CodecConfig;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tools.jackson.databind.ObjectMapper;
 
 @Parallel
 class WorkflowsJobDetailsResponseTest {

@@ -4,7 +4,6 @@ import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import de.otto.platform.gitactionboard.adapters.service.workflow.WorkflowsResponse.WorkflowIdentifier;
 import de.otto.platform.gitactionboard.domain.service.WorkflowService;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -33,7 +32,7 @@ public class GithubWorkflowService implements WorkflowService {
         .exceptionally(
             throwable -> {
               log.error(throwable.getMessage(), throwable);
-              return Collections.emptyList();
+              return List.of();
             });
   }
 
@@ -42,7 +41,7 @@ public class GithubWorkflowService implements WorkflowService {
 
     return Optional.ofNullable(apiService.getForObject(url, accessToken, WorkflowsResponse.class))
         .map(WorkflowsResponse::getWorkflows)
-        .orElse(Collections.emptyList())
+        .orElse(List.of())
         .stream()
         .filter(WorkflowIdentifier::isActive)
         .toList();

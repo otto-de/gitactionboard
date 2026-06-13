@@ -116,7 +116,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
       - name: Dependency Check
         run: ./run.sh check-frontend
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/

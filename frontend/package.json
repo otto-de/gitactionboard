@@ -21,18 +21,18 @@
     "vue": "^3.5.38",
     "vue-chartjs": "^5.3.3",
     "vue-router": "^5.1.0",
-    "vuetify": "^3.11.3"
+    "vuetify": "^3.12.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^9.39.4",
     "@mdi/js": "^7.4.47",
     "@mockoon/cli": "^9.6.1",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vitest/coverage-v8": "^4.1.8",
     "@vue/test-utils": "^2.4.11",
     "concurrently": "^10.0.3",
-    "eslint": "^9.39.2",
-    "eslint-plugin-vue": "^9.33.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-vue": "^10.9.2",
     "flush-promises": "^1.0.2",
     "globals": "^17.6.0",
     "jsdom": "^29.1.1",
@@ -43,8 +43,9 @@
     "stylelint-config-standard": "^40.0.0",
     "vite": "^8.0.16",
     "vite-plugin-vuetify": "^2.1.3",
-    "vitest": "^4.1.2",
+    "vitest": "^4.1.8",
     "vitest-canvas-mock": "^1.1.4",
+    "vue-eslint-parser": "^10.4.1",
     "vue3-snapshot-serializer": "^2.13.3"
   },
   "stylelint": {

@@ -93,7 +93,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
       - name: Install prettier using npm
         run: sudo npm install --global prettier
       - name: Install Hadolint and add to PATH

@@ -58,8 +58,8 @@ class GithubAlertsControllerTest {
           githubAlertsController.getSecretsScanAlerts(accessToken);
 
       assertThat(securityScanAlertsResponse.getStatusCode()).isEqualTo(OK);
-      assertThat(securityScanAlertsResponse.getHeaders())
-          .containsEntry(ACCESS_CONTROL_ALLOW_ORIGIN, List.of("*"));
+      assertThat(securityScanAlertsResponse.getHeaders().get(ACCESS_CONTROL_ALLOW_ORIGIN))
+          .containsExactly("*");
       assertThat(securityScanAlertsResponse.getBody())
           .hasSameSizeAs(secretsScanDetails)
           .allSatisfy(
@@ -91,8 +91,8 @@ class GithubAlertsControllerTest {
           githubAlertsController.getCodeStandardViolationAlerts(accessToken);
 
       assertThat(codeViolationAlertsResponse.getStatusCode()).isEqualTo(OK);
-      assertThat(codeViolationAlertsResponse.getHeaders())
-          .containsEntry(ACCESS_CONTROL_ALLOW_ORIGIN, List.of("*"));
+      assertThat(codeViolationAlertsResponse.getHeaders().get(ACCESS_CONTROL_ALLOW_ORIGIN))
+          .containsExactly("*");
       assertThat(codeViolationAlertsResponse.getBody())
           .hasSameSizeAs(codeViolations)
           .allSatisfy(

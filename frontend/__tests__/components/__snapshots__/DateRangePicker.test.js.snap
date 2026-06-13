@@ -3417,6 +3417,7 @@ exports[`DateRangePicker > should allow update selected date range 2`] = `
 exports[`DateRangePicker > should allow update selected date range 3`] = `
 <div
   class="
+    v-date-input
     v-input
     v-input--center-affix
     v-input--density-default
@@ -3432,7 +3433,6 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
   <div class="v-input__prepend">
     <i
       aria-hidden="false"
-      aria-label=" prepended action"
       class="
         notranslate
         v-icon
@@ -3441,7 +3441,7 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
         v-theme--light
       "
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -3595,6 +3595,7 @@ exports[`DateRangePicker > should provide correct props to date range component 
 exports[`DateRangePicker > should render date range with selected last 7 days by default 1`] = `
 <div
   class="
+    v-date-input
     v-input
     v-input--center-affix
     v-input--density-default
@@ -3609,7 +3610,6 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
   <div class="v-input__prepend">
     <i
       aria-hidden="false"
-      aria-label=" prepended action"
       class="
         notranslate
         v-icon
@@ -3618,7 +3618,7 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
         v-theme--light
       "
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"

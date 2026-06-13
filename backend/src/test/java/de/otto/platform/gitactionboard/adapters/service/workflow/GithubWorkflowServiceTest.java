@@ -4,7 +4,6 @@ import static de.otto.platform.gitactionboard.fixtures.WorkflowsFixture.REPO_NAM
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.TestUtil;
 import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
@@ -20,6 +19,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
+import tools.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)
 @Sequential

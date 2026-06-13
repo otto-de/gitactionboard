@@ -1,11 +1,6 @@
 package de.otto.platform.gitactionboard.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import java.io.Serial;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
@@ -13,23 +8,24 @@ import java.time.format.DateTimeFormatterBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.ext.javatime.ser.InstantSerializer;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.module.SimpleModule;
 
 @Configuration
 public class CodecConfig {
 
-  public static final Jackson2ObjectMapperBuilder OBJECT_MAPPER_BUILDER =
-      new Jackson2ObjectMapperBuilder()
-          .modules(
-              new JavaTimeModule()
-                  .addSerializer(Instant.class, new IsoWithMillisInstantSerializer()))
-          .serializationInclusion(JsonInclude.Include.NON_NULL)
-          .featuresToEnable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS)
-          .featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+  public static final JsonMapper.Builder OBJECT_MAPPER_BUILDER =
+      JsonMapper.builder()
+          .addModule(
+              new SimpleModule().addSerializer(Instant.class, new IsoWithMillisInstantSerializer()))
+          .changeDefaultPropertyInclusion(v -> v.withValueInclusion(JsonInclude.Include.NON_NULL))
+          .enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS);
 
   @Bean
   @Primary
-  public ObjectMapper objectMapper() {
+  public JsonMapper objectMapper() {
     return OBJECT_MAPPER_BUILDER.build();
   }
 
@@ -40,7 +36,7 @@ public class CodecConfig {
         new DateTimeFormatterBuilder().appendInstant(3).toFormatter();
 
     IsoWithMillisInstantSerializer() {
-      super(InstantSerializer.INSTANCE, false, false, ISO_WITH_MILLIS);
+      super(InstantSerializer.INSTANCE, ISO_WITH_MILLIS, false, false, null);
     }
   }
 }

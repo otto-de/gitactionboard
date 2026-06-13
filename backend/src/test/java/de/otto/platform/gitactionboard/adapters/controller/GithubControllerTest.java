@@ -58,8 +58,7 @@ class GithubControllerTest {
     final ResponseEntity<String> cctrayResponse = githubController.getCctrayXml(accessToken);
 
     assertThat(cctrayResponse.getStatusCode()).isEqualTo(OK);
-    assertThat(cctrayResponse.getHeaders())
-        .containsEntry(ACCESS_CONTROL_ALLOW_ORIGIN, List.of("*"));
+    assertThat(cctrayResponse.getHeaders().get(ACCESS_CONTROL_ALLOW_ORIGIN)).containsExactly("*");
     assertThat(cctrayResponse.getBody()).isEqualTo(cctrayXml);
   }
 
@@ -87,8 +86,7 @@ class GithubControllerTest {
     final ResponseEntity<List<Project>> cctrayResponse = githubController.getCctray(accessToken);
 
     assertThat(cctrayResponse.getStatusCode()).isEqualTo(OK);
-    assertThat(cctrayResponse.getHeaders())
-        .containsEntry(ACCESS_CONTROL_ALLOW_ORIGIN, List.of("*"));
+    assertThat(cctrayResponse.getHeaders().get(ACCESS_CONTROL_ALLOW_ORIGIN)).containsExactly("*");
     assertThat(cctrayResponse.getBody()).isEqualTo(projects);
   }
 }

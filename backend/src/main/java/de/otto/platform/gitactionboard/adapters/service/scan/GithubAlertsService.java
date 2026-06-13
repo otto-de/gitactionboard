@@ -2,7 +2,6 @@ package de.otto.platform.gitactionboard.adapters.service.scan;
 
 import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -28,7 +27,7 @@ public abstract class GithubAlertsService<T, U> {
         .exceptionally(
             throwable -> {
               log.error(throwable.getMessage(), throwable);
-              return Collections.emptyList();
+              return List.of();
             });
   }
 

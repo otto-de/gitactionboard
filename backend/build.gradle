@@ -1,15 +1,16 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "3.5.13"
-    id "io.spring.dependency-management" version "1.1.7"
-    id "io.freefair.lombok" version "9.2.0"
-    id "com.github.spotbugs" version "6.5.0"
-    id "com.github.ben-manes.versions" version "0.53.0"
-    id "org.owasp.dependencycheck" version "12.2.0"
-    id "com.diffplug.spotless" version "8.4.0"
+    id "org.springframework.boot" version "4.1.0"
+    id "io.freefair.lombok" version "9.5.0"
+    id "com.github.spotbugs" version "6.5.6"
+    id "com.github.ben-manes.versions" version "0.54.0"
+    id "org.owasp.dependencycheck" version "12.2.2"
+    id "com.diffplug.spotless" version "8.6.0"
     id "info.solidsoft.pitest" version "1.19.0"
-    id "org.openrewrite.rewrite" version "7.30.0"
+    id "org.openrewrite.rewrite" version "7.34.0"
 }
 
 spotless {
@@ -18,16 +19,19 @@ spotless {
     }
 }
 
+lombok {
+    version = "1.18.46"
+}
+
 ext {
     javaUuidGeneratorVersion = "5.2.0"
     logstashVersion = "9.0"
-    caffeineVersion = "3.2.3"
+    caffeineVersion = "3.2.4"
     mockServerVersion = "5.15.0"
     archUnitVersion = "1.4.1"
-    jUnit5PitestVersion = "1.2.3"
     springDataSqliteVersion = "1.4.0"
-    sqliteJdbcVersion = "3.53.0.0"
-    apacheHttpClient5Version = "5.6"
+    sqliteJdbcVersion = "3.53.2.0"
+    apacheHttpClient5Version = "5.6.1"
 }
 
 repositories {
@@ -39,26 +43,34 @@ bootJar {
 }
 
 dependencies {
+    // Import the Spring Boot BOM as a Gradle platform() so all Spring Boot dependencies
+    // get version recommendations without io.spring.dependency-management.
+    // SpringBootPlugin.BOM_COORDINATES stays in sync with the plugin version above.
+    implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
     implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
-    implementation "org.liquibase:liquibase-core"
+    // In Spring Boot 4.x, LiquibaseAutoConfiguration moved to the separate spring-boot-liquibase
+    // module. The starter pulls in both spring-boot-liquibase (auto-configuration) + liquibase-core.
+    implementation "org.springframework.boot:spring-boot-starter-liquibase"
     implementation "org.xerial:sqlite-jdbc:${sqliteJdbcVersion}"
     implementation "org.komamitsu:spring-data-sqlite:${springDataSqliteVersion}"
     implementation "com.fasterxml.uuid:java-uuid-generator:${javaUuidGeneratorVersion}"
     implementation "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
     implementation "com.github.ben-manes.caffeine:caffeine:${caffeineVersion}"
     implementation "org.apache.httpcomponents.client5:httpclient5:${apacheHttpClient5Version}"
-    implementation 'tools.jackson.core:jackson-core:3.1.2'
-
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude group: "org.junit.vintage", module: "junit-vintage-engine"
     }
+    testImplementation "org.springframework.boot:spring-boot-webmvc-test"
+    testImplementation "org.springframework.boot:spring-boot-data-jdbc-test"
     testImplementation "com.tngtech.archunit:archunit-junit5:${archUnitVersion}"
     testImplementation "org.mock-server:mockserver-spring-test-listener:${mockServerVersion}"
-    testImplementation "org.pitest:pitest-junit5-plugin:${jUnit5PitestVersion}"
+    // @SneakyThrows bytecode calls lombok.Lombok.sneakyThrow() at runtime; lombok is compile-only
+    // by default (via the freefair plugin) so we must also add it as a test runtime dependency.
+    testRuntimeOnly "org.projectlombok:lombok"
 }
 
 group = "de.otto.platform"
@@ -97,3 +109,5 @@ apply from: "${rootDir}/gradle/pmd.gradle"
 apply from: "${rootDir}/gradle/jacoco.gradle"
 apply from: "${rootDir}/gradle/pitest.gradle"
 apply from: "${rootDir}/gradle/rewrite.gradle"
+
+

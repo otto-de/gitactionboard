@@ -23,7 +23,6 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.benmanes.caffeine.cache.Cache;
 import de.otto.platform.gitactionboard.Sequential;
 import de.otto.platform.gitactionboard.adapters.service.GithubApiService;
@@ -40,7 +39,6 @@ import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import de.otto.platform.gitactionboard.domain.workflow.WorkflowJob;
 import java.time.Instant;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
@@ -56,6 +54,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
+import tools.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)
 @Sequential
@@ -146,8 +145,7 @@ class GithubJobDetailsServiceTest {
             RUN_DETAILS_URL_TEMPLATE.formatted(workflow.getRepoName(), workflow.getId()),
             ACCESS_TOKEN,
             WorkflowsRunDetailsResponse.class))
-        .thenReturn(
-            WorkflowsRunDetailsResponse.builder().workflowRuns(Collections.emptyList()).build());
+        .thenReturn(WorkflowsRunDetailsResponse.builder().workflowRuns(List.of()).build());
     when(workflowRunRepository.save(anyList())).thenReturn(CompletableFuture.completedFuture(null));
 
     final List<JobDetails> jobDetails =

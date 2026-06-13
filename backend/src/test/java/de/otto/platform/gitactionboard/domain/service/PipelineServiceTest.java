@@ -14,7 +14,6 @@ import de.otto.platform.gitactionboard.domain.workflow.JobDetails;
 import de.otto.platform.gitactionboard.domain.workflow.Workflow;
 import de.otto.platform.gitactionboard.fixtures.WorkflowsFixture;
 import java.time.Instant;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import org.junit.jupiter.api.BeforeEach;
@@ -123,7 +122,7 @@ class PipelineServiceTest {
         .thenReturn(CompletableFuture.completedFuture(workflows));
 
     when(jobDetailsService.fetchJobDetails(workflow1, ACCESS_TOKEN))
-        .thenReturn(CompletableFuture.completedFuture(Collections.emptyList()));
+        .thenReturn(CompletableFuture.completedFuture(List.of()));
     when(jobDetailsService.fetchJobDetails(workflow2, ACCESS_TOKEN))
         .thenReturn(
             CompletableFuture.completedFuture(

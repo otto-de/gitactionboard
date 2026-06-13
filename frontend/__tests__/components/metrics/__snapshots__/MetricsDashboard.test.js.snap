@@ -2096,6 +2096,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
       <div
         class="
           mr-2
+          v-date-input
           v-input
           v-input--center-affix
           v-input--density-default
@@ -2110,7 +2111,6 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
         <div class="v-input__prepend">
           <i
             aria-hidden="false"
-            aria-label="Date Range prepended action"
             class="
               notranslate
               v-icon
@@ -2119,7 +2119,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
               v-theme--light
             "
             role="button"
-            tabindex="0"
+            tabindex="-1"
           >
             <svg
               aria-hidden="true"
@@ -2215,7 +2215,6 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
                   v-field-label
                   v-label
                 "
-                for="input-v-2"
                 id="input-v-2-label"
               >
                 <!---->
@@ -2356,6 +2355,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
         height: 128px;
         color: rgb(95, 141, 119);
         caret-color: rgb(95, 141, 119);
+        --progress-reveal-duration: 900ms;
       "
     >
       <svg

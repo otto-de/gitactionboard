@@ -1,4 +1,5 @@
 pitest {
+  junit5PluginVersion = "1.2.2"
   threads = 2
   coverageThreshold = 86
   mutationThreshold = 83
