@@ -28,7 +28,7 @@ ext {
     logstashVersion = "9.0"
     caffeineVersion = "3.2.4"
     mockServerVersion = "5.15.0"
-    archUnitVersion = "1.4.1"
+    archUnitVersion = "1.4.2"
     springDataSqliteVersion = "1.4.0"
     sqliteJdbcVersion = "3.53.2.0"
     apacheHttpClient5Version = "5.6.1"
