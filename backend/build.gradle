@@ -8,9 +8,9 @@ plugins {
     id "com.github.spotbugs" version "6.5.6"
     id "com.github.ben-manes.versions" version "0.54.0"
     id "org.owasp.dependencycheck" version "12.2.2"
-    id "com.diffplug.spotless" version "8.6.0"
+    id "com.diffplug.spotless" version "8.7.0"
     id "info.solidsoft.pitest" version "1.19.0"
-    id "org.openrewrite.rewrite" version "7.34.0"
+    id "org.openrewrite.rewrite" version "7.35.0"
 }
 
 spotless {
