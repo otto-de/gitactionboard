@@ -27,7 +27,7 @@ ext {
     javaUuidGeneratorVersion = "5.2.0"
     logstashVersion = "9.0"
     caffeineVersion = "3.2.4"
-    mockServerVersion = "5.15.0"
+    mockServerVersion = "7.1.0"
     archUnitVersion = "1.4.2"
     springDataSqliteVersion = "1.4.0"
     sqliteJdbcVersion = "3.53.2.0"
