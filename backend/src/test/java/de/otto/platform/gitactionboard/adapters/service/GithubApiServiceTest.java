@@ -35,6 +35,7 @@ class GithubApiServiceTest {
             "http://localhost:%d".formatted(mockServer.getPort()),
             OWNER,
             "defaultToken",
+            false,
             RestClient.builder());
   }
 

@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -23,15 +24,19 @@ public class GithubApiService {
 
   private final String authToken;
   private final RestClient.Builder restClientBuilder;
+  private final boolean skipRemainingOnRateLimit;
   private final AtomicReference<Instant> rateLimitResetAt = new AtomicReference<>(Instant.EPOCH);
 
   public GithubApiService(
       @Qualifier("domainName") String baseUri,
       @Qualifier("ownerName") String ownerName,
       @Qualifier("authToken") String authToken,
+      @Value("${app.github.rate-limit.skip-remaining-on-limit:false}")
+          boolean skipRemainingOnRateLimit,
       RestClient.Builder restClientBuilder) {
     this.restClientBuilder = restClientBuilder.baseUrl("%s/repos/%s".formatted(baseUri, ownerName));
     this.authToken = authToken;
+    this.skipRemainingOnRateLimit = skipRemainingOnRateLimit;
   }
 
   private RestClient getRestClient(String accessToken) {
@@ -46,6 +51,10 @@ public class GithubApiService {
 
   public <T> T getForObject(String url, String accessToken, Class<T> responseType) {
     final RestClient restClient = getRestClient(accessToken);
+
+    if (skipRemainingOnRateLimit) {
+      return getForObjectSkippingWhenRateLimited(url, responseType, restClient);
+    }
 
     // Another request may already have tripped the GitHub rate limit; hold off until it resets.
     waitUntilRateLimitResets();
@@ -62,6 +71,26 @@ public class GithubApiService {
 
       // Retry once now that the window has reset; any further failure propagates to the caller.
       return restClient.get().uri(url).retrieve().body(responseType);
+    }
+  }
+
+  private <T> T getForObjectSkippingWhenRateLimited(
+      String url, Class<T> responseType, RestClient restClient) {
+    // Another request already tripped the rate limit; skip this call until the window resets.
+    if (Instant.now().isBefore(rateLimitResetAt.get())) {
+      throw new GithubRateLimitException(rateLimitResetAt.get());
+    }
+
+    try {
+      return restClient.get().uri(url).retrieve().body(responseType);
+    } catch (HttpClientErrorException exception) {
+      if (!isRateLimited(exception)) {
+        throw exception;
+      }
+
+      // Skip mode: don't wait or retry so the remaining calls fail fast until the window resets.
+      rememberRateLimitReset(exception);
+      throw new GithubRateLimitException(rateLimitResetAt.get());
     }
   }
 
