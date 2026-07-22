@@ -5,12 +5,12 @@ plugins {
     id "idea"
     id "org.springframework.boot" version "4.1.0"
     id "io.freefair.lombok" version "9.5.0"
-    id "com.github.spotbugs" version "6.5.6"
+    id "com.github.spotbugs" version "6.5.9"
     id "com.github.ben-manes.versions" version "0.54.0"
     id "org.owasp.dependencycheck" version "12.2.2"
-    id "com.diffplug.spotless" version "8.6.0"
+    id "com.diffplug.spotless" version "8.8.0"
     id "info.solidsoft.pitest" version "1.19.0"
-    id "org.openrewrite.rewrite" version "7.34.0"
+    id "org.openrewrite.rewrite" version "7.37.0"
 }
 
 spotless {
@@ -31,7 +31,7 @@ ext {
     archUnitVersion = "1.4.2"
     springDataSqliteVersion = "1.4.0"
     sqliteJdbcVersion = "3.53.2.0"
-    apacheHttpClient5Version = "5.6.1"
+    apacheHttpClient5Version = "5.6.2"
 }
 
 repositories {
