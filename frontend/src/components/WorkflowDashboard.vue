@@ -68,5 +68,8 @@ export default {
 </script>
 
 <style scoped>
+#workflows-dashboard {
+  padding: 0 12px 16px;
+}
 
 </style>

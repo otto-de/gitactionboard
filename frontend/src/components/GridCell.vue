@@ -165,6 +165,17 @@ export default {
 .grid-cell {
   display: flex;
   flex-direction: column;
+  border: 1px solid rgb(255 255 255 / 22%);
+  box-shadow: 0 6px 18px rgb(17 24 39 / 18%);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .grid-cell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgb(17 24 39 / 26%);
+    filter: saturate(1.03);
+  }
 }
 
 .success {
@@ -177,6 +188,11 @@ export default {
 
 .unknown {
   background-color: #6d6a6a;
+}
+
+:global(.v-theme--dark) .grid-cell {
+  border-color: rgb(255 255 255 / 10%);
+  box-shadow: 0 8px 22px rgb(0 0 0 / 48%);
 }
 
 </style>
