@@ -140,12 +140,18 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private List<WorkflowRun> fetchWorkflowRuns(Workflow workflow, String accessToken) {
-    log.info("Fetching run details for {}", workflow);
+    StringBuilder url = new StringBuilder();
+    url.append(String.format("/%s/actions/workflows/%s/runs?per_page=2", workflow.getRepoName(), workflow.getId()));
 
-    final WorkflowsRunDetailsResponse runDetailsResponse =
-        apiService.getForObject(
-            "/%s/actions/workflows/%s/runs?per_page=2"
-                .formatted(workflow.getRepoName(), workflow.getId()),
+    String dateFilter = System.getenv("DATE_FILTER");
+    if (!dateFilter.isEmpty()) {
+        url.append("&").append("created").append(dateFilter);
+    }
+
+    log.info("Fetching run details for {}", url.toString());
+
+    final WorkflowsRunDetailsResponse runDetailsResponse =apiService.getForObject(
+            url.toString(),
             accessToken,
             WorkflowsRunDetailsResponse.class);
 
