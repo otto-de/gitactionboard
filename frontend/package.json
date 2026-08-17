@@ -37,7 +37,7 @@
     "globals": "^17.11.0",
     "jsdom": "^29.1.1",
     "neostandard": "^0.13.0",
-    "postcss-html": "^1.8.1",
+    "postcss-html": "^2.0.0",
     "stylelint": "^17.14.1",
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^40.0.0",
