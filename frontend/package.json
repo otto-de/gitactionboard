@@ -31,7 +31,7 @@
     "@vitest/coverage-v8": "^4.1.11",
     "@vue/test-utils": "^2.4.11",
     "concurrently": "^10.0.5",
-    "eslint": "^9.39.4",
+    "eslint": "^10.9.0",
     "eslint-plugin-vue": "^10.10.0",
     "flush-promises": "^1.0.2",
     "globals": "^17.11.0",
