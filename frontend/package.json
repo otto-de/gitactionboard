@@ -18,9 +18,9 @@
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-plugin-autocolors": "^0.3.1",
     "date-fns": "^4.4.0",
-    "vue": "^3.5.41",
+    "vue": "^3.5.42",
     "vue-chartjs": "^5.3.4",
-    "vue-router": "^5.2.0",
+    "vue-router": "^5.3.0",
     "vuetify": "^3.12.8"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "@mockoon/cli": "^9.8.0",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vitest/coverage-v8": "^4.1.11",
-    "@vue/test-utils": "^2.4.11",
+    "@vue/test-utils": "^2.5.0",
     "concurrently": "^10.0.5",
     "eslint": "^9.39.4",
     "eslint-plugin-vue": "^10.10.0",
