@@ -3,14 +3,14 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "4.1.0"
+    id "org.springframework.boot" version "4.1.1"
     id "io.freefair.lombok" version "9.5.0"
-    id "com.github.spotbugs" version "6.5.6"
-    id "com.github.ben-manes.versions" version "0.54.0"
+    id "com.github.spotbugs" version "6.5.11"
+    id "com.github.ben-manes.versions" version "0.61.0"
     id "org.owasp.dependencycheck" version "12.2.2"
-    id "com.diffplug.spotless" version "8.6.0"
+    id "com.diffplug.spotless" version "8.10.1"
     id "info.solidsoft.pitest" version "1.19.0"
-    id "org.openrewrite.rewrite" version "7.34.0"
+    id "org.openrewrite.rewrite" version "7.41.0"
 }
 
 spotless {
@@ -28,10 +28,10 @@ ext {
     logstashVersion = "9.0"
     caffeineVersion = "3.2.4"
     mockServerVersion = "5.15.0"
-    archUnitVersion = "1.4.2"
+    archUnitVersion = "1.5.0"
     springDataSqliteVersion = "1.4.0"
-    sqliteJdbcVersion = "3.53.2.0"
-    apacheHttpClient5Version = "5.6.1"
+    sqliteJdbcVersion = "3.53.4.0"
+    apacheHttpClient5Version = "5.6.4"
 }
 
 repositories {
