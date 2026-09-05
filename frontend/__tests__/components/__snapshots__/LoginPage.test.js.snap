@@ -2,7 +2,10 @@
 
 exports[`<LoginPage /> > should redirect to dashboard page if authentication is not configured 1`] = `
 <div class="
+  align-center
+  d-flex
   fill-height
+  flex-wrap
   h-screen
   justify-center
   main-container
@@ -41,6 +44,8 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
           top: 0px;
           height: 0px;
           --v-progress-linear-height: 2px;
+          --v-progress-reveal-duration: 900ms;
+          --v-progress-chunk-gap: 4px;
         "
       >
         <!---->
@@ -56,6 +61,7 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
           persisted="false"
         >
           <div class="v-progress-linear__indeterminate">
+            <!---->
             <div class="
               long
               v-progress-linear__indeterminate
@@ -99,7 +105,10 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
 
 exports[`<LoginPage /> > should render login page only with auth mechanism BASIC_AUTH 1`] = `
 <div class="
+  align-center
+  d-flex
   fill-height
+  flex-wrap
   h-screen
   justify-center
   main-container
@@ -138,6 +147,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           top: 0px;
           height: 0px;
           --v-progress-linear-height: 2px;
+          --v-progress-reveal-duration: 900ms;
+          --v-progress-chunk-gap: 4px;
         "
       >
         <!---->
@@ -153,6 +164,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           persisted="false"
         >
           <div class="v-progress-linear__indeterminate">
+            <!---->
             <div class="
               long
               v-progress-linear__indeterminate
@@ -200,6 +212,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             v-input--center-affix
             v-input--density-default
             v-input--horizontal
+            v-input--indent-details
             v-locale--is-ltr
             v-text-field
             v-theme--light
@@ -230,6 +243,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -245,6 +260,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -351,6 +367,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             v-input--center-affix
             v-input--density-default
             v-input--horizontal
+            v-input--indent-details
             v-locale--is-ltr
             v-text-field
             v-theme--light
@@ -381,6 +398,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -396,6 +415,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -561,7 +581,10 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
 
 exports[`<LoginPage /> > should render login page only with auth mechanism BASIC_AUTH,OAUTH2 1`] = `
 <div class="
+  align-center
+  d-flex
   fill-height
+  flex-wrap
   h-screen
   justify-center
   main-container
@@ -600,6 +623,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           top: 0px;
           height: 0px;
           --v-progress-linear-height: 2px;
+          --v-progress-reveal-duration: 900ms;
+          --v-progress-chunk-gap: 4px;
         "
       >
         <!---->
@@ -615,6 +640,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           persisted="false"
         >
           <div class="v-progress-linear__indeterminate">
+            <!---->
             <div class="
               long
               v-progress-linear__indeterminate
@@ -662,6 +688,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             v-input--center-affix
             v-input--density-default
             v-input--horizontal
+            v-input--indent-details
             v-locale--is-ltr
             v-text-field
             v-theme--light
@@ -692,6 +719,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -707,6 +736,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -813,6 +843,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             v-input--center-affix
             v-input--density-default
             v-input--horizontal
+            v-input--indent-details
             v-locale--is-ltr
             v-text-field
             v-theme--light
@@ -843,6 +874,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -858,6 +891,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -1018,13 +1052,15 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
         <!---->
         <!---->
         <div class="
+          align--center
           align-center
           my-3
           v-row
+          v-row--density-default
         ">
           <div class="
             v-col
-            v-col-5
+            v-col--cols-5
           ">
             <hr
               aria-orientation="horizontal"
@@ -1032,7 +1068,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 v-divider
                 v-theme--light
               "
-              role="separator"
               style="
                 border-top-width: 3px;
                 border-style: solid;
@@ -1048,7 +1083,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           </div>
           <div class="
             v-col
-            v-col-5
+            v-col--cols-5
           ">
             <hr
               aria-orientation="horizontal"
@@ -1056,7 +1091,6 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                 v-divider
                 v-theme--light
               "
-              role="separator"
               style="
                 border-top-width: 3px;
                 border-style: solid;
@@ -1129,7 +1163,10 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
 
 exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH2 1`] = `
 <div class="
+  align-center
+  d-flex
   fill-height
+  flex-wrap
   h-screen
   justify-center
   main-container
@@ -1168,6 +1205,8 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
           top: 0px;
           height: 0px;
           --v-progress-linear-height: 2px;
+          --v-progress-reveal-duration: 900ms;
+          --v-progress-chunk-gap: 4px;
         "
       >
         <!---->
@@ -1183,6 +1222,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
           persisted="false"
         >
           <div class="v-progress-linear__indeterminate">
+            <!---->
             <div class="
               long
               v-progress-linear__indeterminate
@@ -1278,7 +1318,10 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
 
 exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
 <div class="
+  align-center
+  d-flex
   fill-height
+  flex-wrap
   h-screen
   justify-center
   main-container
@@ -1300,7 +1343,7 @@ exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
       height: 128px;
       color: rgb(95, 141, 119);
       caret-color: rgb(95, 141, 119);
-      --progress-reveal-duration: 900ms;
+      --v-progress-reveal-duration: 900ms;
     "
   >
     <svg

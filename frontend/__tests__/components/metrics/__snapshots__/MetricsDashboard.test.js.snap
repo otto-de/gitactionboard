@@ -3,6 +3,7 @@
 exports[`MetricsDashboard > should collapse all repository metrics when clicks on collapse all button 1`] = `
 <div
   class="
+    rounded-0
     v-expansion-panels
     v-expansion-panels--variant-default
     v-theme--light
@@ -18,6 +19,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
       aria-expanded="false"
       class="
         v-expansion-panel-title
+        v-expansion-panel-title--hover
         v-expansion-panel-title--static
       "
       type="button"
@@ -68,11 +70,11 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
           >
             <div class="
               v-row
-              v-row--dense
+              v-row--density-compact
             ">
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -97,6 +99,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -112,6 +116,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -129,19 +134,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Run Frequency
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -212,7 +220,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -237,6 +245,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -252,6 +262,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -269,19 +280,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Run Failure Rate
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -352,7 +366,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -377,6 +391,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -392,6 +408,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -409,19 +426,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Re-trigger Rate
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -492,7 +512,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -517,6 +537,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -532,6 +554,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -549,19 +572,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Average Workflow Run Time (Minutes)
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -645,6 +671,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
       aria-expanded="false"
       class="
         v-expansion-panel-title
+        v-expansion-panel-title--hover
         v-expansion-panel-title--static
       "
       type="button"
@@ -695,11 +722,11 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
           >
             <div class="
               v-row
-              v-row--dense
+              v-row--density-compact
             ">
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -724,6 +751,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -739,6 +768,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -756,19 +786,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Run Frequency
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -839,7 +872,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -864,6 +897,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -879,6 +914,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -896,19 +932,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Run Failure Rate
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -979,7 +1018,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -1004,6 +1043,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -1019,6 +1060,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -1036,19 +1078,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Re-trigger Rate
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -1119,7 +1164,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -1144,6 +1189,8 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -1159,6 +1206,7 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -1176,19 +1224,22 @@ exports[`MetricsDashboard > should collapse all repository metrics when clicks o
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Average Workflow Run Time (Minutes)
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -1281,6 +1332,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
 exports[`MetricsDashboard > should display repository metrics when clicks on expansion icon 2`] = `
 <div
   class="
+    rounded-0
     v-expansion-panels
     v-expansion-panels--variant-default
     v-theme--light
@@ -1300,6 +1352,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
       class="
         v-expansion-panel-title
         v-expansion-panel-title--active
+        v-expansion-panel-title--hover
         v-expansion-panel-title--static
       "
       type="button"
@@ -1350,11 +1403,11 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
           >
             <div class="
               v-row
-              v-row--dense
+              v-row--density-compact
             ">
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -1379,6 +1432,8 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -1394,6 +1449,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -1411,19 +1467,22 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Run Frequency
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -1494,7 +1553,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -1519,6 +1578,8 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -1534,6 +1595,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -1551,19 +1613,22 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Run Failure Rate
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -1634,7 +1699,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -1659,6 +1724,8 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -1674,6 +1741,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -1691,19 +1759,22 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Workflow Re-trigger Rate
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -1774,7 +1845,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
               </div>
               <div class="
                 v-col
-                v-col-3
+                v-col--cols-3
               ">
                 <div class="
                   border-thin
@@ -1799,6 +1870,8 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         top: 0px;
                         height: 0px;
                         --v-progress-linear-height: 2px;
+                        --v-progress-reveal-duration: 900ms;
+                        --v-progress-chunk-gap: 4px;
                       "
                     >
                       <!---->
@@ -1814,6 +1887,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                         persisted="false"
                       >
                         <div class="v-progress-linear__indeterminate">
+                          <!---->
                           <div class="
                             long
                             v-progress-linear__indeterminate
@@ -1831,19 +1905,22 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
                   <!---->
                   <div class="v-card-subtitle">
                     <div class="
+                      align--center
                       align-center
+                      justify--space-between
                       justify-space-between
                       v-row
+                      v-row--density-default
                     ">
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         Average Workflow Run Time (Minutes)
                       </div>
                       <div class="
                         v-col
-                        v-col-auto
+                        v-col--cols-auto
                       ">
                         <button
                           aria-label="Expand"
@@ -1930,6 +2007,7 @@ exports[`MetricsDashboard > should display repository metrics when clicks on exp
       aria-expanded="false"
       class="
         v-expansion-panel-title
+        v-expansion-panel-title--hover
         v-expansion-panel-title--static
       "
       type="button"
@@ -2017,7 +2095,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
       ">
         <div class="
           v-col
-          v-col-10
+          v-col--cols-10
         ">
           <div class="
             font-weight-bold
@@ -2041,7 +2119,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
         <div class="
           d-inline-flex
           v-col
-          v-col-2
+          v-col--cols-2
         ">
           <div
             class="
@@ -2102,6 +2180,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
           v-input--density-default
           v-input--dirty
           v-input--horizontal
+          v-input--indent-details
           v-locale--is-ltr
           v-text-field
           v-theme--light
@@ -2164,6 +2243,8 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
                   top: 0px;
                   height: 0px;
                   --v-progress-linear-height: 2px;
+                  --v-progress-reveal-duration: 900ms;
+                  --v-progress-chunk-gap: 4px;
                 "
               >
                 <!---->
@@ -2179,6 +2260,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
                   persisted="false"
                 >
                   <div class="v-progress-linear__indeterminate">
+                    <!---->
                     <div class="
                       long
                       v-progress-linear__indeterminate
@@ -2228,12 +2310,13 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
                 <!---->
                 <!---->
                 <!---->
+                <!---->
                 <input
                   aria-describedby="input-v-2-messages"
                   aria-labelledby="input-v-2-label"
                   id="input-v-2"
                   inputmode="none"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/dd/yyyy - mm/dd/yyyy"
                   size="1"
                   test-id="vuetify-date-range-picker"
                   type="text"
@@ -2333,6 +2416,8 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
   </header>
   <div
     class="
+      align-center
+      d-flex
       fill-height
       justify-center
       spinner-container
@@ -2355,7 +2440,7 @@ exports[`MetricsDashboard > should display spinner when component is loading 1`]
         height: 128px;
         color: rgb(95, 141, 119);
         caret-color: rgb(95, 141, 119);
-        --progress-reveal-duration: 900ms;
+        --v-progress-reveal-duration: 900ms;
       "
     >
       <svg
@@ -2424,6 +2509,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
     aria-expanded="false"
     class="
       v-expansion-panel-title
+      v-expansion-panel-title--hover
       v-expansion-panel-title--static
     "
     type="button"
@@ -2474,11 +2560,11 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
         >
           <div class="
             v-row
-            v-row--dense
+            v-row--density-compact
           ">
             <div class="
               v-col
-              v-col-3
+              v-col--cols-3
             ">
               <div class="
                 border-thin
@@ -2503,6 +2589,8 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -2518,6 +2606,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -2535,19 +2624,22 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <div class="v-card-subtitle">
                   <div class="
+                    align--center
                     align-center
+                    justify--space-between
                     justify-space-between
                     v-row
+                    v-row--density-default
                   ">
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       Workflow Run Frequency
                     </div>
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       <button
                         aria-label="Expand"
@@ -2618,7 +2710,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
             </div>
             <div class="
               v-col
-              v-col-3
+              v-col--cols-3
             ">
               <div class="
                 border-thin
@@ -2643,6 +2735,8 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -2658,6 +2752,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -2675,19 +2770,22 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <div class="v-card-subtitle">
                   <div class="
+                    align--center
                     align-center
+                    justify--space-between
                     justify-space-between
                     v-row
+                    v-row--density-default
                   ">
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       Workflow Run Failure Rate
                     </div>
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       <button
                         aria-label="Expand"
@@ -2758,7 +2856,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
             </div>
             <div class="
               v-col
-              v-col-3
+              v-col--cols-3
             ">
               <div class="
                 border-thin
@@ -2783,6 +2881,8 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -2798,6 +2898,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -2815,19 +2916,22 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <div class="v-card-subtitle">
                   <div class="
+                    align--center
                     align-center
+                    justify--space-between
                     justify-space-between
                     v-row
+                    v-row--density-default
                   ">
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       Workflow Re-trigger Rate
                     </div>
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       <button
                         aria-label="Expand"
@@ -2898,7 +3002,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
             </div>
             <div class="
               v-col
-              v-col-3
+              v-col--cols-3
             ">
               <div class="
                 border-thin
@@ -2923,6 +3027,8 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -2938,6 +3044,7 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -2955,19 +3062,22 @@ exports[`MetricsDashboard > should hide repository metrics when clicks on collap
                 <!---->
                 <div class="v-card-subtitle">
                   <div class="
+                    align--center
                     align-center
+                    justify--space-between
                     justify-space-between
                     v-row
+                    v-row--density-default
                   ">
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       Average Workflow Run Time (Minutes)
                     </div>
                     <div class="
                       v-col
-                      v-col-auto
+                      v-col--cols-auto
                     ">
                       <button
                         aria-label="Expand"

@@ -10,13 +10,15 @@ exports[`<DividerWithText /> > should render with default thickness 1`] = `
 ">
   <div class="v-application__wrap">
     <div class="
+      align--center
       align-center
       my-3
       v-row
+      v-row--density-default
     ">
       <div class="
         v-col
-        v-col-5
+        v-col--cols-5
       ">
         <hr
           aria-orientation="horizontal"
@@ -24,7 +26,6 @@ exports[`<DividerWithText /> > should render with default thickness 1`] = `
             v-divider
             v-theme--light
           "
-          role="separator"
           style="
             border-top-width: 3px;
             border-style: solid;
@@ -40,7 +41,7 @@ exports[`<DividerWithText /> > should render with default thickness 1`] = `
       </div>
       <div class="
         v-col
-        v-col-5
+        v-col--cols-5
       ">
         <hr
           aria-orientation="horizontal"
@@ -48,7 +49,6 @@ exports[`<DividerWithText /> > should render with default thickness 1`] = `
             v-divider
             v-theme--light
           "
-          role="separator"
           style="
             border-top-width: 3px;
             border-style: solid;
@@ -70,13 +70,15 @@ exports[`<DividerWithText /> > should render with given thickness 1`] = `
 ">
   <div class="v-application__wrap">
     <div class="
+      align--center
       align-center
       my-3
       v-row
+      v-row--density-default
     ">
       <div class="
         v-col
-        v-col-5
+        v-col--cols-5
       ">
         <hr
           aria-orientation="horizontal"
@@ -84,7 +86,6 @@ exports[`<DividerWithText /> > should render with given thickness 1`] = `
             v-divider
             v-theme--light
           "
-          role="separator"
           style="
             border-top-width: 2px;
             border-style: solid;
@@ -100,7 +101,7 @@ exports[`<DividerWithText /> > should render with given thickness 1`] = `
       </div>
       <div class="
         v-col
-        v-col-5
+        v-col--cols-5
       ">
         <hr
           aria-orientation="horizontal"
@@ -108,7 +109,6 @@ exports[`<DividerWithText /> > should render with given thickness 1`] = `
             v-divider
             v-theme--light
           "
-          role="separator"
           style="
             border-top-width: 2px;
             border-style: solid;

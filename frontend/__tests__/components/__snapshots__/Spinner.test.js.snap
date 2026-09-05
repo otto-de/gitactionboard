@@ -15,7 +15,7 @@ exports[`<Spinner /> > should render spinner 1`] = `
     height: 128px;
     color: rgb(95, 141, 119);
     caret-color: rgb(95, 141, 119);
-    --progress-reveal-duration: 900ms;
+    --v-progress-reveal-duration: 900ms;
   "
 >
   <svg

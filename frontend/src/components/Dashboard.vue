@@ -2,7 +2,7 @@
   <v-container
     v-if="loading"
     id="spinner-container"
-    class="justify-center fill-height spinner-container"
+    class="d-flex justify-center align-center fill-height spinner-container"
   >
     <Spinner />
   </v-container>

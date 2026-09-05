@@ -1,6 +1,5 @@
 package de.otto.platform.gitactionboard;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
@@ -36,7 +35,7 @@ public class TestUtil {
 
   @SneakyThrows
   public static String readFile(String fileName) {
-    return Files.readString(Path.of("./src/test/resources/%s".formatted(fileName)), UTF_8);
+    return Files.readString(Path.of("./src/test/resources/%s".formatted(fileName)));
   }
 
   @SneakyThrows

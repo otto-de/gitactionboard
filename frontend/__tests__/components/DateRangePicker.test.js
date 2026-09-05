@@ -42,14 +42,18 @@ describe('DateRangePicker', () => {
 
     expect(document.querySelector('.v-date-picker').outerHTML).toMatchSnapshot();
 
-    document.querySelector('[data-v-date="2024-08-05"] > button').click();
+    document.querySelector('button[aria-label="Monday, August 5, 2024"]').click();
 
     await vi.waitUntil(() =>
-      document.querySelector('.v-date-picker-month__day--selected[data-v-date="2024-08-05"]') !== null);
+      document.querySelector(
+        '.v-date-picker-month__day--selected button[aria-label="Monday, August 5, 2024"]'
+      ) !== null);
 
-    document.querySelector('[data-v-date="2024-08-20"] > button').click();
+    document.querySelector('button[aria-label="Tuesday, August 20, 2024"]').click();
     await vi.waitUntil(() =>
-      document.querySelector('.v-date-picker-month__day--selected[data-v-date="2024-08-20"]') !== null);
+      document.querySelector(
+        '.v-date-picker-month__day--selected button[aria-label="Tuesday, August 20, 2024"]'
+      ) !== null);
 
     expect(document.querySelector('.v-date-picker').outerHTML).toMatchSnapshot();
 

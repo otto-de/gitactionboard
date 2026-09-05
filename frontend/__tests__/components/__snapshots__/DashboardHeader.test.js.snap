@@ -42,7 +42,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
         ">
           <div class="
             v-col
-            v-col-10
+            v-col--cols-10
           ">
             <div class="
               font-weight-bold
@@ -66,7 +66,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Code Standard 
           <div class="
             d-inline-flex
             v-col
-            v-col-2
+            v-col--cols-2
           ">
             <div
               class="
@@ -147,7 +147,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
         ">
           <div class="
             v-col
-            v-col-10
+            v-col--cols-10
           ">
             <div class="
               font-weight-bold
@@ -171,7 +171,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Exposed Secret
           <div class="
             d-inline-flex
             v-col
-            v-col-2
+            v-col--cols-2
           ">
             <div
               class="
@@ -252,7 +252,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 
         ">
           <div class="
             v-col
-            v-col-10
+            v-col--cols-10
           ">
             <div class="
               font-weight-bold
@@ -276,7 +276,7 @@ exports[`<DashboardHeader /> > should render dashboard header for Workflow Jobs 
           <div class="
             d-inline-flex
             v-col
-            v-col-2
+            v-col--cols-2
           ">
             <div
               class="

@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
@@ -44,7 +44,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             ~/.gradle/caches
@@ -54,7 +54,7 @@ jobs:
             ${{ runner.os }}-gradle-${{ steps.get-date.outputs.date }}-
             ${{ runner.os }}-gradle-
       - name: Cache node modules
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}
@@ -64,7 +64,7 @@ jobs:
             ${{ runner.os }}-
       - name: Restore pitest history from cache
         id: cache-pitest-history-restore
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
           key: pitestHistory-${{ hashFiles('**/*.gradle*', '**/*.java*') }}
@@ -83,7 +83,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/reports/
       - name: Save pitest history
         if: always() && steps.cache-pitest-history-restore.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/pitestHistory/pitestHistory
           key: ${{ steps.cache-pitest-history-restore.outputs.cache-primary-key }}
@@ -94,7 +94,7 @@ jobs:
       PUBLISH_NEW_VERSION: ${{ steps.determaine_should_publish_new_version.outputs.PUBLISH_NEW_VERSION }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Determine should publish docker image
         id: determaine_should_publish_new_version
         run: |
@@ -112,7 +112,7 @@ jobs:
       CURRENT_TAG: ${{ steps.find_current_tag_name.outputs.CURRENT_TAG }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Determine current tag
         id: find_current_tag_name
         run: |
@@ -129,7 +129,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: 'main'
           fetch-depth: 0
@@ -162,7 +162,7 @@ jobs:
     needs: [ build, determaine_current_tag_name, update_changelog ]
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install jenv
@@ -182,7 +182,7 @@ jobs:
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
         shell: bash
       - name: Cache gradle wrapper and jars
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             ~/.gradle/caches
@@ -248,7 +248,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout local repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Setup Pages
@@ -264,7 +264,7 @@ jobs:
         run: |
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
       - name: Cache node modules
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/package-lock.json') }}

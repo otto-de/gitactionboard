@@ -49,7 +49,7 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -73,7 +73,7 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -112,9 +112,11 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
       <!-- v-if -->
       <!-- v-if -->
       <div class="
+        align-center
         content-container
+        d-flex
         fill-height
-        fill-height
+        flex-column
         justify-center
         v-container
         v-container--fluid
@@ -242,7 +244,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -266,7 +268,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -311,13 +313,12 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -328,6 +329,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -346,6 +348,8 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -361,6 +365,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -499,14 +504,13 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
             build-monitor
             grid-cells
             v-row
-            v-row--dense
+            v-row--density-compact
           ">
             <div class="v-col">
               <div
                 class="
                   failure
                   grid-cell
-                  rounded-6
                   v-card
                   v-card--density-default
                   v-card--variant-flat
@@ -516,6 +520,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                 style="
                   height: 90px;
                   --v-card-height: 90px;
+                  border-radius: 6px;
                 "
               >
                 <!---->
@@ -534,6 +539,8 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -549,6 +556,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -689,7 +697,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -713,7 +721,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -758,13 +766,12 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -775,6 +782,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -793,6 +801,8 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -808,6 +818,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -994,7 +1005,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -1018,7 +1029,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -1063,14 +1074,13 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 failure
                 grid-cell
-                rounded-6
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -1080,6 +1090,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -1098,6 +1109,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -1113,6 +1126,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -1198,7 +1212,6 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -1209,6 +1222,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -1227,6 +1241,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -1242,6 +1258,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -1339,7 +1356,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -1363,7 +1380,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -1408,13 +1425,12 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -1425,6 +1441,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -1443,6 +1460,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -1458,6 +1477,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -1644,7 +1664,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -1668,7 +1688,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -1713,14 +1733,13 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 failure
                 grid-cell
-                rounded-6
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -1730,6 +1749,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -1748,6 +1768,8 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -1763,6 +1785,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -1944,13 +1967,12 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
             build-monitor
             grid-cells
             v-row
-            v-row--dense
+            v-row--density-compact
           ">
             <div class="v-col">
               <div
                 class="
                   grid-cell
-                  rounded-6
                   success
                   v-card
                   v-card--density-default
@@ -1961,6 +1983,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 style="
                   height: 90px;
                   --v-card-height: 90px;
+                  border-radius: 6px;
                 "
               >
                 <!---->
@@ -1979,6 +2002,8 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                       top: 0px;
                       height: 0px;
                       --v-progress-linear-height: 2px;
+                      --v-progress-reveal-duration: 900ms;
+                      --v-progress-chunk-gap: 4px;
                     "
                   >
                     <!---->
@@ -1994,6 +2019,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                       persisted="false"
                     >
                       <div class="v-progress-linear__indeterminate">
+                        <!---->
                         <div class="
                           long
                           v-progress-linear__indeterminate
@@ -2091,7 +2117,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -2115,7 +2141,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -2160,14 +2186,13 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 failure
                 grid-cell
-                rounded-6
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -2177,6 +2202,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -2195,6 +2221,8 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -2210,6 +2238,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -2295,7 +2324,6 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -2306,6 +2334,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -2324,6 +2353,8 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -2339,6 +2370,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -2436,7 +2468,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -2460,7 +2492,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -2505,14 +2537,13 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           grid-cells
           individual
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 failure
                 grid-cell
-                rounded-6
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -2522,6 +2553,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               style="
                 height: 120px;
                 --v-card-height: 120px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -2540,6 +2572,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -2555,6 +2589,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -2640,7 +2675,6 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -2651,6 +2685,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               style="
                 height: 120px;
                 --v-card-height: 120px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -2669,6 +2704,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -2684,6 +2721,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -2781,7 +2819,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           ">
             <div class="
               v-col
-              v-col-10
+              v-col--cols-10
             ">
               <div class="
                 font-weight-bold
@@ -2805,7 +2843,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
             <div class="
               d-inline-flex
               v-col
-              v-col-2
+              v-col--cols-2
             ">
               <div
                 class="
@@ -2850,14 +2888,13 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           build-monitor
           grid-cells
           v-row
-          v-row--dense
+          v-row--density-compact
         ">
           <div class="v-col">
             <div
               class="
                 failure
                 grid-cell
-                rounded-6
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -2867,6 +2904,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -2885,6 +2923,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -2900,6 +2940,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate
@@ -2985,7 +3026,6 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
             <div
               class="
                 grid-cell
-                rounded-6
                 success
                 v-card
                 v-card--density-default
@@ -2996,6 +3036,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               style="
                 height: 90px;
                 --v-card-height: 90px;
+                border-radius: 6px;
               "
             >
               <!---->
@@ -3014,6 +3055,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     top: 0px;
                     height: 0px;
                     --v-progress-linear-height: 2px;
+                    --v-progress-reveal-duration: 900ms;
+                    --v-progress-chunk-gap: 4px;
                   "
                 >
                   <!---->
@@ -3029,6 +3072,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
                     persisted="false"
                   >
                     <div class="v-progress-linear__indeterminate">
+                      <!---->
                       <div class="
                         long
                         v-progress-linear__indeterminate

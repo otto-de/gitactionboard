@@ -382,7 +382,6 @@ class GithubAlertsControllerIntegrationTest {
 
     @Test
     @SneakyThrows
-    @SuppressWarnings("PMD.UnitTestShouldIncludeAssert")
     void shouldNotThrowErrorIfCodeScanApiCallFails() {
 
       mockRequest(

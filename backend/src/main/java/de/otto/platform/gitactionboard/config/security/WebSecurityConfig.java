@@ -10,7 +10,6 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.AbstractMap;
@@ -108,7 +107,7 @@ public class WebSecurityConfig {
     public List<UserDetails> getBasicAuthUsers(
         @Value("${BASIC_AUTH_USER_DETAILS_FILE_PATH}") String basicAuthFilePath)
         throws IOException {
-      return Files.readAllLines(Path.of(basicAuthFilePath), StandardCharsets.UTF_8).stream()
+      return Files.readAllLines(Path.of(basicAuthFilePath)).stream()
           .filter(line -> !line.isBlank())
           .map(
               line -> {
@@ -137,7 +136,6 @@ public class WebSecurityConfig {
     }
 
     @PostConstruct
-    @SuppressWarnings("PMD.UnusedPrivateMethod")
     private void logInfo() {
       log.info(
           "Enabled Basic authentication as value is present for BASIC_AUTH_USER_DETAILS_FILE_PATH");
@@ -195,7 +193,6 @@ public class WebSecurityConfig {
   public static class GithubOauthSecurityConfig {
 
     @PostConstruct
-    @SuppressWarnings("PMD.UnusedPrivateMethod")
     private void logInfo() {
       log.info("Enabled Github authentication as value is present for GITHUB_OAUTH2_CLIENT_ID");
     }

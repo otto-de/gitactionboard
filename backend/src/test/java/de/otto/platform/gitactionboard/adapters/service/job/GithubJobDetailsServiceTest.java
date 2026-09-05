@@ -114,7 +114,7 @@ class GithubJobDetailsServiceTest {
 
     final List<RunConclusion> runConclusions =
         Arrays.stream(RunConclusion.values())
-            .filter(conclusion -> !conclusion.equals(SUCCESS) && !conclusion.equals(SKIPPED))
+            .filter(conclusion -> conclusion != SUCCESS && conclusion != SKIPPED)
             .toList();
 
     return Stream.of(QUEUED, IN_PROGRESS)

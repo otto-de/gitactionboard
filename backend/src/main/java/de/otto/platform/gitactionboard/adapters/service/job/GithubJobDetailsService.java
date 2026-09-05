@@ -76,7 +76,7 @@ public class GithubJobDetailsService implements JobDetailsService {
       WorkflowRun previousWorkflowRun,
       String accessToken) {
 
-    if (COMPLETED.equals(currentWorkflowRun.getStatus())) {
+    if (COMPLETED == currentWorkflowRun.getStatus()) {
       return currentJobs;
     }
     return fetchPreviousJobs(workflow, currentJobs, previousWorkflowRun, accessToken);
@@ -106,7 +106,7 @@ public class GithubJobDetailsService implements JobDetailsService {
   }
 
   private boolean isFailureConclusion(RunConclusion conclusion) {
-    return !JobStatus.SUCCESS.equals(RunConclusion.getStatus(conclusion));
+    return JobStatus.SUCCESS != RunConclusion.getStatus(conclusion);
   }
 
   private List<JobDetails> convertToJobDetails(
@@ -211,7 +211,7 @@ public class GithubJobDetailsService implements JobDetailsService {
   private boolean anyJobNotCompleted(List<WorkflowJob> workflowJobs) {
     return workflowJobs.stream()
         .map(WorkflowJob::getStatus)
-        .anyMatch(runStatus -> !COMPLETED.equals(runStatus));
+        .anyMatch(runStatus -> COMPLETED != runStatus);
   }
 
   private List<WorkflowJob> getWorkflowsJobs(

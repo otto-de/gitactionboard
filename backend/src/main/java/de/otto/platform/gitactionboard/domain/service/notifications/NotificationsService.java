@@ -9,6 +9,7 @@ import de.otto.platform.gitactionboard.domain.workflow.JobStatus;
 import java.util.AbstractMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -44,7 +45,7 @@ public class NotificationsService {
   private void sendNotifications(CompletableFuture<?>... completableFutures) {
     try {
       CompletableFuture.allOf(completableFutures).get();
-    } catch (Exception exception) {
+    } catch (InterruptedException | ExecutionException exception) {
       log.warn("Unable to send notifications", exception);
     }
   }
@@ -102,7 +103,9 @@ public class NotificationsService {
     try {
       notificationConnector.notify(secretsScanDetails);
       return true;
-    } catch (Exception exception) {
+      // NotificationConnector implementations may throw arbitrary unchecked exceptions;
+      // one connector's failure must not prevent other connectors/alerts from being processed.
+    } catch (RuntimeException exception) { // NOPMD - intentional error boundary, see above
       log.warn(
           "Unable to send notification to {} for secret scan alert with name {}",
           notificationConnector.getType(),
@@ -118,7 +121,9 @@ public class NotificationsService {
     try {
       notificationConnector.notify(jobDetails);
       return true;
-    } catch (Exception exception) {
+      // NotificationConnector implementations may throw arbitrary unchecked exceptions;
+      // one connector's failure must not prevent other connectors/alerts from being processed.
+    } catch (RuntimeException exception) { // NOPMD - intentional error boundary, see above
       log.warn(
           "Unable to send notification to {} for job with name {}",
           notificationConnector.getType(),
@@ -136,7 +141,7 @@ public class NotificationsService {
   }
 
   private boolean isNotificationRequired(JobDetails jobDetails) {
-    return Activity.SLEEPING.equals(jobDetails.getActivity())
-        && JobStatus.FAILURE.equals(jobDetails.getLastBuildStatus());
+    return Activity.SLEEPING == jobDetails.getActivity()
+        && JobStatus.FAILURE == jobDetails.getLastBuildStatus();
   }
 }

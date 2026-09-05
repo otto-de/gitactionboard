@@ -9,6 +9,8 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
     v-locale--is-ltr
     v-overlay
     v-overlay--active
+    v-overlay--align-center
+    v-overlay--justify-center
     v-theme--light
   "
   role="dialog"
@@ -30,7 +32,10 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
   >
     <div
       class="v-overlay__content"
-      style="width: auto;"
+      style="
+        width: auto;
+        transform-origin: center center;
+      "
       tabindex="-1"
     >
       <div class="
@@ -57,6 +62,8 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
               top: 0px;
               height: 0px;
               --v-progress-linear-height: 2px;
+              --v-progress-reveal-duration: 900ms;
+              --v-progress-chunk-gap: 4px;
             "
           >
             <!---->
@@ -72,6 +79,7 @@ exports[`<MaxIdleTimeoutOverlay /> > should render overlay 1`] = `
               persisted="false"
             >
               <div class="v-progress-linear__indeterminate">
+                <!---->
                 <div class="
                   long
                   v-progress-linear__indeterminate

@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="fill-height justify-center fill-height content-container"
+    class="fill-height d-flex justify-center align-center flex-column content-container"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

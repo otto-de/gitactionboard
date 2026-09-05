@@ -7,6 +7,6 @@ public enum RunStatus {
   WAITING;
 
   public Activity getActivity() {
-    return RunStatus.COMPLETED.equals(this) ? Activity.SLEEPING : Activity.BUILDING;
+    return this == RunStatus.COMPLETED ? Activity.SLEEPING : Activity.BUILDING;
   }
 }

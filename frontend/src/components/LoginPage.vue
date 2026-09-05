@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="h-screen fill-height justify-center main-container"
+    class="h-screen fill-height d-flex justify-center align-center flex-wrap main-container"
   >
     <template v-if="loading">
       <Spinner />

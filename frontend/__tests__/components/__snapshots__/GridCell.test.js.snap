@@ -5,7 +5,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -15,6 +14,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -33,6 +33,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -48,6 +50,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -92,7 +95,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -102,6 +104,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -120,6 +123,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -135,6 +140,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -224,7 +230,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -234,6 +239,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -252,6 +258,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -267,6 +275,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -311,7 +320,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -321,6 +329,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -339,6 +348,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -354,6 +365,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -443,7 +455,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -453,6 +464,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -471,6 +483,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -486,6 +500,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -530,7 +545,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -540,6 +554,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -558,6 +573,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -573,6 +590,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -662,7 +680,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -672,6 +689,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -690,6 +708,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -705,6 +725,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -749,7 +770,6 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -759,6 +779,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -777,6 +798,8 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -792,6 +815,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -881,7 +905,6 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -891,6 +914,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -909,6 +933,8 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -924,6 +950,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -1037,7 +1064,6 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -1047,6 +1073,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -1065,6 +1092,8 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -1080,6 +1109,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -1238,7 +1268,6 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -1248,6 +1277,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -1266,6 +1296,8 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -1281,6 +1313,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -1438,7 +1471,6 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -1448,6 +1480,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -1466,6 +1499,8 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -1481,6 +1516,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -1683,7 +1719,6 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -1693,6 +1728,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -1711,6 +1747,8 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -1726,6 +1764,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -1839,7 +1878,6 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -1849,6 +1887,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -1867,6 +1906,8 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -1882,6 +1923,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2040,7 +2082,6 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2050,6 +2091,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2068,6 +2110,8 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2083,6 +2127,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2240,7 +2285,6 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2250,6 +2294,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2268,6 +2313,8 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2283,6 +2330,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2485,7 +2533,6 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2495,6 +2542,7 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
   style="
     height: 120px;
     --v-card-height: 120px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2513,6 +2561,8 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2528,6 +2578,7 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2572,7 +2623,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2582,6 +2632,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2600,6 +2651,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2615,6 +2668,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2658,7 +2712,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -2669,6 +2722,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2687,6 +2741,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2702,6 +2758,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2746,7 +2803,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2756,6 +2812,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2774,6 +2831,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2789,6 +2848,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -2878,7 +2938,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2888,6 +2947,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -2906,6 +2966,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -2921,6 +2983,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3010,7 +3073,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3020,6 +3082,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3038,6 +3101,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3053,6 +3118,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3096,7 +3162,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -3107,6 +3172,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3125,6 +3191,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3140,6 +3208,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3228,7 +3297,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -3239,6 +3307,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3257,6 +3326,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3272,6 +3343,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3316,7 +3388,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3326,6 +3397,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3344,6 +3416,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3359,6 +3433,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3402,7 +3477,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
 <div
   class="
     grid-cell
-    rounded-6
     unknown
     v-card
     v-card--density-default
@@ -3413,6 +3487,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3431,6 +3506,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3446,6 +3523,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3490,7 +3568,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3500,6 +3577,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3518,6 +3596,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3533,6 +3613,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3581,6 +3662,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -3621,7 +3704,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -3632,6 +3714,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3650,6 +3733,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3665,6 +3750,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3713,6 +3799,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -3754,7 +3842,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3764,6 +3851,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3782,6 +3870,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3797,6 +3887,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -3845,6 +3936,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -3886,7 +3979,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3896,6 +3988,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -3914,6 +4007,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -3929,6 +4024,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4022,6 +4118,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4063,7 +4161,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4073,6 +4170,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4091,6 +4189,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4106,6 +4206,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4154,6 +4255,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4194,7 +4297,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -4205,6 +4307,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4223,6 +4326,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4238,6 +4343,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4286,6 +4392,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4326,7 +4434,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -4337,6 +4444,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4355,6 +4463,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4370,6 +4480,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4463,6 +4574,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4503,7 +4616,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 <div
   class="
     grid-cell
-    rounded-6
     success
     v-card
     v-card--density-default
@@ -4514,6 +4626,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4532,6 +4645,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4547,6 +4662,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4595,6 +4711,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4636,7 +4754,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4646,6 +4763,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4664,6 +4782,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4679,6 +4799,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4727,6 +4848,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4767,7 +4890,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
 <div
   class="
     grid-cell
-    rounded-6
     unknown
     v-card
     v-card--density-default
@@ -4778,6 +4900,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4796,6 +4919,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4811,6 +4936,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4859,6 +4985,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
       top: 0px;
       height: 15px;
       --v-progress-linear-height: 15px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->
@@ -4900,7 +5028,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4910,6 +5037,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
   style="
     height: 90px;
     --v-card-height: 90px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -4928,6 +5056,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -4943,6 +5073,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -4987,7 +5118,6 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
   class="
     failure
     grid-cell
-    rounded-6
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4997,6 +5127,7 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
   style="
     height: 120px;
     --v-card-height: 120px;
+    border-radius: 6px;
   "
 >
   <!---->
@@ -5015,6 +5146,8 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
         top: 0px;
         height: 0px;
         --v-progress-linear-height: 2px;
+        --v-progress-reveal-duration: 900ms;
+        --v-progress-chunk-gap: 4px;
       "
     >
       <!---->
@@ -5030,6 +5163,7 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
         persisted="false"
       >
         <div class="v-progress-linear__indeterminate">
+          <!---->
           <div class="
             long
             v-progress-linear__indeterminate
@@ -5078,6 +5212,8 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
       top: 0px;
       height: 10px;
       --v-progress-linear-height: 10px;
+      --v-progress-reveal-duration: 900ms;
+      --v-progress-chunk-gap: 4px;
     "
   >
     <!---->

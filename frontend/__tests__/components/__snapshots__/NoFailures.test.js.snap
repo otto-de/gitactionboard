@@ -2,9 +2,11 @@
 
 exports[`<NoFailures /> > should render no failures components 1`] = `
 <div class="
+  align-center
   content-container
+  d-flex
   fill-height
-  fill-height
+  flex-column
   justify-center
   v-container
   v-container--fluid

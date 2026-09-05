@@ -16,7 +16,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Slf4j
 public class NoOpsWebSecurityConfig {
   @PostConstruct
-  @SuppressWarnings("PMD.UnusedPrivateMethod")
   private void logInfo() {
     log.info(
         "Disabled authentication mechanism as value is missing for GITHUB_OAUTH2_CLIENT_ID and BASIC_AUTH_USER_DETAILS_FILE_PATH property");
