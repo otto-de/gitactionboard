@@ -184,16 +184,24 @@ export default {
   background-image: radial-gradient(#5f8d77, #282a27);
 }
 
+.v-card {
+  border: 1px solid rgb(255 255 255 / 10%);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 28%);
+}
+
 .header {
-  font-family: "American Typewriter", serif;
-  font-size: 40px;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .welcome-message {
   margin-bottom: 30px;
-  font-size: 25px;
-  font-weight: bold;
-  font-family: "Snell Roundhand", cursive;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgb(255 255 255 / 88%);
 }
 
 </style>
