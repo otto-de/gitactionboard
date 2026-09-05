@@ -4,7 +4,9 @@ public enum RunStatus {
   QUEUED,
   IN_PROGRESS,
   COMPLETED,
-  WAITING;
+  WAITING,
+  PENDING,
+  REQUESTED;
 
   public Activity getActivity() {
     return this == RunStatus.COMPLETED ? Activity.SLEEPING : Activity.BUILDING;

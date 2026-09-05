@@ -9,6 +9,7 @@ public enum RunConclusion {
   NEUTRAL,
   CANCELLED,
   SKIPPED,
+  STALE,
   TIMED_OUT,
   ACTION_REQUIRED;
 
@@ -18,7 +19,7 @@ public enum RunConclusion {
     }
     return switch (conclusion) {
       case SUCCESS, SKIPPED -> JobStatus.SUCCESS;
-      case FAILURE, STARTUP_FAILURE, CANCELLED, TIMED_OUT -> JobStatus.FAILURE;
+      case FAILURE, STARTUP_FAILURE, CANCELLED, TIMED_OUT, STALE -> JobStatus.FAILURE;
       case ACTION_REQUIRED -> JobStatus.EXCEPTION;
       default -> JobStatus.UNKNOWN;
     };
