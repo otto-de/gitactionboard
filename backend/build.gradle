@@ -3,7 +3,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "4.1.0"
+    id "org.springframework.boot" version "4.1.1"
     id "io.freefair.lombok" version "9.5.0"
     id "com.github.spotbugs" version "6.5.11"
     id "com.github.ben-manes.versions" version "0.61.0"
