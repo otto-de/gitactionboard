@@ -5,6 +5,8 @@
     elevation="24"
     max-width="350px"
     multiple="range"
+    density="compact"
+    hide-details="auto"
     :label="label"
     :max="maxAllowedDate"
     :min="minAllowedDate"

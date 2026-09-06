@@ -54,6 +54,7 @@ describe('<Job />', () => {
           showRelativeTime,
           status: lastBuildStatus,
           inProgress,
+          runLabel: null,
           buildMonitorViewEnabled
         });
 

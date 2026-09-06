@@ -3,7 +3,7 @@
     indeterminate
     size="128"
     width="12"
-    color="#5f8d77"
+    color="primary"
   />
 </template>
 

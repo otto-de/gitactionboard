@@ -1,6 +1,11 @@
-import { expect, vi } from 'vitest';
+import { afterEach, expect, vi } from 'vitest';
 import vueSnapshotSerializer from 'vue3-snapshot-serializer';
 import 'vitest-canvas-mock';
+import { unmountAllWrappers } from './test-utils';
+
+afterEach(() => {
+  unmountAllWrappers();
+});
 
 class ResizeObserverStub {
   observe() { }

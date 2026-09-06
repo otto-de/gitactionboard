@@ -6,8 +6,14 @@ import charts from '@/plugins/charts';
 
 export const shallowMount = vueShallowMount;
 
-export const mount = (Component, options) =>
-  vueMount(Component, {
+const mountedWrappers = [];
+
+export const unmountAllWrappers = () => {
+  mountedWrappers.splice(0).forEach(wrapper => wrapper.unmount());
+};
+
+export const mount = (Component, options) => {
+  const wrapper = vueMount(Component, {
     global: {
       plugins: [getVuetify(), charts]
     },
@@ -16,6 +22,9 @@ export const mount = (Component, options) =>
     },
     ...options
   });
+  mountedWrappers.push(wrapper);
+  return wrapper;
+};
 
 export const mountWithWrapper = (Component, options = {}) =>
   mount(() =>

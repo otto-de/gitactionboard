@@ -230,10 +230,12 @@ export default {
 
   &.build-monitor {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
   }
 
   &.individual {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
   }
 }
 </style>

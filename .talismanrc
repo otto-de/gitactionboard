@@ -136,25 +136,25 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 7142c869a6c0f35d4cc53f6fbf034cf17c451f4152d513054162feece5b3492c
 - filename: frontend/package-lock.json
-  checksum: 42c525df02bbff76a54f5153f6f44babb8f05a6bc53ebb8a44d8181c363f451a
+  checksum: c5d8e23d381726152eb39583c4436a983bbe0c7458d1a8cab9d66a5f28e4b44a
 - filename: frontend/src/components/Dashboard.vue
-  checksum: 7fd656ec52593312a1c87c41e47eb3f44f108e6f5548c22e75a4e4f35295998b
+  checksum: b686e327e71dd6ffa96e48e02198495cf7793216a8eee9a9e2a73ce54fa9ab1f
 - filename: frontend/src/components/GridCell.vue
   checksum: d8feb1f280a2f8e07dd8ce33ac7648c0e12fac8e91bbc7f27fc5d89d8fe7f7c2
 - filename: frontend/src/components/Job.vue
   checksum: 9e2de0706e69c81dce66767e5632556b03a549aab0dc7ef6791daa5f427c461d
 - filename: frontend/src/components/LoginPage.vue
-  checksum: 45a243e45e157f5156758b67dd1d77d85032c8eb8352474bd96f4a5d2e99459b
+  checksum: 12c90b844627918fe8d00ae671d964afe1082c0b398584255fcd7b2d643e7510
 - filename: frontend/src/components/Preferences.vue
-  checksum: 8ca09a6590eaa0d4e8624e8be3e7c32ae0fc6d3f3b437e3c34c543569ea260a8
+  checksum: 289cffeda24ea71cdb5b6f05dd27a3d1f67bb4a774fb5a43dbbf8ee9b902128e
 - filename: frontend/src/components/WorkflowDashboard.vue
   checksum: 92507211573d6756fd7a086a29af1d4b9954648dbf35a7e9fc125a26ddcf1dc9
 - filename: frontend/src/components/metrics/MetricsDashboard.vue
-  checksum: 57b4b4cd02599a9f40dbdc571c4f00f20f8ad07a08d1ee48fd9c8f8d4d844ee3
+  checksum: 4495202f04d46c94a1fa14146bb4764eb96e4b948bb2d84d9cea3ec4c2b45688
 - filename: frontend/src/components/metrics/TimeSeriesLineChart.vue
-  checksum: 36d07fa620b3361148b31396b447035c0fee02b0ee206ae87630fd2bd831c691
+  checksum: 8ab4882e34f7323790d40f047c9c0a8b384e10bc51d4a5b63ec76f4ac97bc19e
 - filename: frontend/src/plugins/vuetify.js
-  checksum: 452a3c896bf14338e718f969806c523436c0fe0d5a13b3972b33c9875968f2e3
+  checksum: 1946bb9e50137307117545928dd4714ae16d920ee4ccd853bb1f0719d587f608
 - filename: frontend/src/services/apiService.js
   checksum: 1b0130ddb280a7b9c2e2765f38d639d1fb582dee8c2b0288b8f23e2606bf48a6
 - filename: frontend/src/services/preferences.js
@@ -163,6 +163,10 @@ fileignoreconfig:
   checksum: 1201404e951f36868d024c62dd75f8339953922e43c68626e4698a5d6c1e11bc
 - filename: frontend/src/services/utils.js
   checksum: c5cba3ba2e794a959e0c114ad4715bb433aa805fc5113892304a919f8a44478b
+- filename: PRODUCT.md
+  checksum: 30b324f902d0c0d6715537b006bfed3e281163d7b32b506f7a06a29fa7cc2f64
+- filename: DESIGN.md
+  checksum: 95377918eee6b92a0669ac814a5c671f1d4ec9786452d9d70cda64a137c05f54
 allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-nvd-nist-cache-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-node-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/package-lock\.json\'\)\s\}\}

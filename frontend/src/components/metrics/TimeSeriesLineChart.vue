@@ -9,6 +9,7 @@
 <script>
 import { Line as LineChart } from 'vue-chartjs';
 import { differenceInDays, format } from 'date-fns';
+import { useTheme } from 'vuetify';
 
 export default {
   name: 'TimeSeriesLineChart',
@@ -47,9 +48,20 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      themeInstance: useTheme()
+    };
   },
   computed: {
+    isDarkTheme() {
+      return this.themeInstance.global.current.dark;
+    },
+    axisColor() {
+      return this.isDarkTheme ? '#9aa1af' : '#5b6472';
+    },
+    gridColor() {
+      return this.isDarkTheme ? '#2c303a' : '#e4e6ea';
+    },
     diffBetweenDays() {
       return differenceInDays(this.endDateTime, this.startDateTime);
     },
@@ -68,6 +80,11 @@ export default {
           mode: 'nearest'
         },
         plugins: {
+          legend: {
+            labels: {
+              color: this.axisColor
+            }
+          },
           tooltip: {
             callbacks: {
               title(tooltipItem) {
@@ -90,6 +107,7 @@ export default {
               unit: this.aggregateBy
             },
             ticks: {
+              color: this.axisColor,
               major: {
                 enabled: true
               },
@@ -100,13 +118,22 @@ export default {
                   };
                 }
               }
+            },
+            grid: {
+              color: this.gridColor
             }
           },
           y: {
             beginAtZero: true,
             type: 'linear',
             suggestedMax: 1,
-            suggestedMin: 0
+            suggestedMin: 0,
+            ticks: {
+              color: this.axisColor
+            },
+            grid: {
+              color: this.gridColor
+            }
           }
         }
       };

@@ -3,6 +3,7 @@
 exports[`<LoginPage /> > should redirect to dashboard page if authentication is not configured 1`] = `
 <div class="
   align-center
+  bg-background
   d-flex
   fill-height
   flex-wrap
@@ -14,20 +15,18 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
   v-locale--is-ltr
 ">
   <!-- v-if -->
-  <div
-    class="
-      elevation-5
-      px-5
-      py-10
-      rounded-xl
-      v-card
-      v-card--density-default
-      v-card--rounded
-      v-card--variant-elevated
-      v-theme--light
-    "
-    style="min-width: 33%;"
-  >
+  <div class="
+    elevation-0
+    login-card
+    px-5
+    py-8
+    rounded-xl
+    v-card
+    v-card--density-default
+    v-card--rounded
+    v-card--variant-elevated
+    v-theme--light
+  ">
     <!---->
     <div class="v-card__loader">
       <div
@@ -78,16 +77,76 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
     <!---->
     <!---->
     <div class="
-      header
-      text-center
-      v-card-title
+      brand-row
+      mb-1
+      pb-0
+      pt-0
+      px-0
+      v-card-item
     ">
-      Gitaction Board
+      <div class="v-card-item__prepend">
+        <div
+          aria-label="GitactionBoard"
+          class="
+            brand-mark
+            v-img
+            v-img--booting
+            v-responsive
+          "
+          role="img"
+          style="
+            height: 28px;
+            width: 38px;
+          "
+        >
+          <div class="v-responsive__sizer"></div>
+          <transition-stub
+            appear="true"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <img
+              alt="GitactionBoard"
+              class="
+                v-img__img
+                v-img__img--contain
+              "
+              src="/favicon.ico"
+              style="display: none;"
+            />
+          </transition-stub>
+          <transition-stub
+            appear="false"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <!---->
+          </transition-stub>
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <div class="
+          header
+          pa-0
+          v-card-title
+        ">
+          GitactionBoard
+        </div>
+      </div>
+      <!---->
     </div>
     <div class="
-      mb-10
+      mb-8
       mt-1
-      text-center
+      pl-0
       v-card-subtitle
       welcome-message
     ">
@@ -106,6 +165,7 @@ exports[`<LoginPage /> > should redirect to dashboard page if authentication is 
 exports[`<LoginPage /> > should render login page only with auth mechanism BASIC_AUTH 1`] = `
 <div class="
   align-center
+  bg-background
   d-flex
   fill-height
   flex-wrap
@@ -117,20 +177,18 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
   v-locale--is-ltr
 ">
   <!-- v-if -->
-  <div
-    class="
-      elevation-5
-      px-5
-      py-10
-      rounded-xl
-      v-card
-      v-card--density-default
-      v-card--rounded
-      v-card--variant-elevated
-      v-theme--light
-    "
-    style="min-width: 33%;"
-  >
+  <div class="
+    elevation-0
+    login-card
+    px-5
+    py-8
+    rounded-xl
+    v-card
+    v-card--density-default
+    v-card--rounded
+    v-card--variant-elevated
+    v-theme--light
+  ">
     <!---->
     <div class="v-card__loader">
       <div
@@ -181,16 +239,76 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
     <!---->
     <!---->
     <div class="
-      header
-      text-center
-      v-card-title
+      brand-row
+      mb-1
+      pb-0
+      pt-0
+      px-0
+      v-card-item
     ">
-      Gitaction Board
+      <div class="v-card-item__prepend">
+        <div
+          aria-label="GitactionBoard"
+          class="
+            brand-mark
+            v-img
+            v-img--booting
+            v-responsive
+          "
+          role="img"
+          style="
+            height: 28px;
+            width: 38px;
+          "
+        >
+          <div class="v-responsive__sizer"></div>
+          <transition-stub
+            appear="true"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <img
+              alt="GitactionBoard"
+              class="
+                v-img__img
+                v-img__img--contain
+              "
+              src="/favicon.ico"
+              style="display: none;"
+            />
+          </transition-stub>
+          <transition-stub
+            appear="false"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <!---->
+          </transition-stub>
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <div class="
+          header
+          pa-0
+          v-card-title
+        ">
+          GitactionBoard
+        </div>
+      </div>
+      <!---->
     </div>
     <div class="
-      mb-10
+      mb-8
       mt-1
-      text-center
+      pl-0
       v-card-subtitle
       welcome-message
     ">
@@ -220,6 +338,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             <!---->
             <div class="v-input__control">
               <div class="
+                rounded-lg
                 v-field
                 v-field--appended
                 v-field--center-affix
@@ -375,6 +494,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             <!---->
             <div class="v-input__control">
               <div class="
+                rounded-lg
                 v-field
                 v-field--appended
                 v-field--center-affix
@@ -506,7 +626,29 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
-                  <!---->
+                  <i
+                    aria-hidden="false"
+                    aria-label="Password appended action"
+                    class="
+                      notranslate
+                      v-icon
+                      v-icon--clickable
+                      v-icon--size-default
+                      v-theme--light
+                    "
+                    role="button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="v-icon__svg"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
+                    </svg>
+                  </i>
                 </div>
                 <div class="v-field__outline">
                   <!---->
@@ -520,7 +662,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           <!---->
           <button
             class="
-              bg-success
+              bg-primary
               mt-4
               v-btn
               v-btn--block
@@ -582,6 +724,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
 exports[`<LoginPage /> > should render login page only with auth mechanism BASIC_AUTH,OAUTH2 1`] = `
 <div class="
   align-center
+  bg-background
   d-flex
   fill-height
   flex-wrap
@@ -593,20 +736,18 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
   v-locale--is-ltr
 ">
   <!-- v-if -->
-  <div
-    class="
-      elevation-5
-      px-5
-      py-10
-      rounded-xl
-      v-card
-      v-card--density-default
-      v-card--rounded
-      v-card--variant-elevated
-      v-theme--light
-    "
-    style="min-width: 33%;"
-  >
+  <div class="
+    elevation-0
+    login-card
+    px-5
+    py-8
+    rounded-xl
+    v-card
+    v-card--density-default
+    v-card--rounded
+    v-card--variant-elevated
+    v-theme--light
+  ">
     <!---->
     <div class="v-card__loader">
       <div
@@ -657,16 +798,76 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
     <!---->
     <!---->
     <div class="
-      header
-      text-center
-      v-card-title
+      brand-row
+      mb-1
+      pb-0
+      pt-0
+      px-0
+      v-card-item
     ">
-      Gitaction Board
+      <div class="v-card-item__prepend">
+        <div
+          aria-label="GitactionBoard"
+          class="
+            brand-mark
+            v-img
+            v-img--booting
+            v-responsive
+          "
+          role="img"
+          style="
+            height: 28px;
+            width: 38px;
+          "
+        >
+          <div class="v-responsive__sizer"></div>
+          <transition-stub
+            appear="true"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <img
+              alt="GitactionBoard"
+              class="
+                v-img__img
+                v-img__img--contain
+              "
+              src="/favicon.ico"
+              style="display: none;"
+            />
+          </transition-stub>
+          <transition-stub
+            appear="false"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <!---->
+          </transition-stub>
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <div class="
+          header
+          pa-0
+          v-card-title
+        ">
+          GitactionBoard
+        </div>
+      </div>
+      <!---->
     </div>
     <div class="
-      mb-10
+      mb-8
       mt-1
-      text-center
+      pl-0
       v-card-subtitle
       welcome-message
     ">
@@ -696,6 +897,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             <!---->
             <div class="v-input__control">
               <div class="
+                rounded-lg
                 v-field
                 v-field--appended
                 v-field--center-affix
@@ -851,6 +1053,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
             <!---->
             <div class="v-input__control">
               <div class="
+                rounded-lg
                 v-field
                 v-field--appended
                 v-field--center-affix
@@ -982,7 +1185,29 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
                   </div>
                 </transition-stub>
                 <div class="v-field__append-inner">
-                  <!---->
+                  <i
+                    aria-hidden="false"
+                    aria-label="Password appended action"
+                    class="
+                      notranslate
+                      v-icon
+                      v-icon--clickable
+                      v-icon--size-default
+                      v-theme--light
+                    "
+                    role="button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="v-icon__svg"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
+                    </svg>
+                  </i>
                 </div>
                 <div class="v-field__outline">
                   <!---->
@@ -996,7 +1221,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
           <!---->
           <button
             class="
-              bg-success
+              bg-primary
               mt-4
               v-btn
               v-btn--block
@@ -1108,13 +1333,12 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
         <!---->
         <button
           class="
-            bg-success
+            text-primary
             v-btn
             v-btn--block
             v-btn--density-default
-            v-btn--elevated
             v-btn--size-large
-            v-btn--variant-elevated
+            v-btn--variant-outlined
             v-theme--light
           "
           type="submit"
@@ -1164,6 +1388,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism BASIC
 exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH2 1`] = `
 <div class="
   align-center
+  bg-background
   d-flex
   fill-height
   flex-wrap
@@ -1175,20 +1400,18 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
   v-locale--is-ltr
 ">
   <!-- v-if -->
-  <div
-    class="
-      elevation-5
-      px-5
-      py-10
-      rounded-xl
-      v-card
-      v-card--density-default
-      v-card--rounded
-      v-card--variant-elevated
-      v-theme--light
-    "
-    style="min-width: 33%;"
-  >
+  <div class="
+    elevation-0
+    login-card
+    px-5
+    py-8
+    rounded-xl
+    v-card
+    v-card--density-default
+    v-card--rounded
+    v-card--variant-elevated
+    v-theme--light
+  ">
     <!---->
     <div class="v-card__loader">
       <div
@@ -1239,16 +1462,76 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
     <!---->
     <!---->
     <div class="
-      header
-      text-center
-      v-card-title
+      brand-row
+      mb-1
+      pb-0
+      pt-0
+      px-0
+      v-card-item
     ">
-      Gitaction Board
+      <div class="v-card-item__prepend">
+        <div
+          aria-label="GitactionBoard"
+          class="
+            brand-mark
+            v-img
+            v-img--booting
+            v-responsive
+          "
+          role="img"
+          style="
+            height: 28px;
+            width: 38px;
+          "
+        >
+          <div class="v-responsive__sizer"></div>
+          <transition-stub
+            appear="true"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <img
+              alt="GitactionBoard"
+              class="
+                v-img__img
+                v-img__img--contain
+              "
+              src="/favicon.ico"
+              style="display: none;"
+            />
+          </transition-stub>
+          <transition-stub
+            appear="false"
+            css="true"
+            name="fade-transition"
+            persisted="false"
+          >
+            <!---->
+          </transition-stub>
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div class="v-card-item__content">
+        <!---->
+        <!---->
+        <div class="
+          header
+          pa-0
+          v-card-title
+        ">
+          GitactionBoard
+        </div>
+      </div>
+      <!---->
     </div>
     <div class="
-      mb-10
+      mb-8
       mt-1
-      text-center
+      pl-0
       v-card-subtitle
       welcome-message
     ">
@@ -1263,13 +1546,12 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
         <!---->
         <button
           class="
-            bg-success
+            text-primary
             v-btn
             v-btn--block
             v-btn--density-default
-            v-btn--elevated
             v-btn--size-large
-            v-btn--variant-elevated
+            v-btn--variant-outlined
             v-theme--light
           "
           type="submit"
@@ -1319,6 +1601,7 @@ exports[`<LoginPage /> > should render login page only with auth mechanism OAUTH
 exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
 <div class="
   align-center
+  bg-background
   d-flex
   fill-height
   flex-wrap
@@ -1333,6 +1616,7 @@ exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
     aria-valuemax="100"
     aria-valuemin="0"
     class="
+      text-primary
       v-progress-circular
       v-progress-circular--indeterminate
       v-theme--light
@@ -1341,8 +1625,6 @@ exports[`<LoginPage /> > should render spinner while fetching config 1`] = `
     style="
       width: 128px;
       height: 128px;
-      color: rgb(95, 141, 119);
-      caret-color: rgb(95, 141, 119);
       --v-progress-reveal-duration: 900ms;
     "
   >

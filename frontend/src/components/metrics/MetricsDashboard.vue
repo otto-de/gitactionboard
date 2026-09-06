@@ -5,13 +5,15 @@
   >
     <DashboardHeader sub-header="Metrics" />
     <v-toolbar
-      elevation="4"
-      class="mb-2"
+      color="surface"
+      elevation="0"
+      class="mb-2 border-b metrics-toolbar"
+      height="auto"
     >
       <v-spacer />
       <DateRangePicker
         label="Date Range"
-        class="mr-2"
+        class="mr-2 date-range-picker"
         @date-range-updated="dateRangeUpdated"
       />
       <v-btn
@@ -111,5 +113,20 @@ export default {
 <style scoped>
 .spinner-container {
   height: 90vh !important;
+}
+
+.date-range-picker {
+  min-width: 220px;
+  flex-grow: 1;
+}
+
+/* Vue's scoped :deep() reaching into Vuetify's internal toolbar content class */
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown, selector-class-pattern */
+.metrics-toolbar :deep(.v-toolbar__content) {
+  flex-wrap: wrap;
+  height: auto !important;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  gap: 8px;
 }
 </style>

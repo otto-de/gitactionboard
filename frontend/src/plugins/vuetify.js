@@ -24,12 +24,42 @@ import {
   mdiClose,
   mdiArrowExpand,
   mdiGithub,
-  mdiInformationOutline
+  mdiInformationOutline,
+  mdiChevronDown
 } from '@mdi/js';
 
 export default () => createVuetify({
   components,
   directives,
+  theme: {
+    defaultTheme: 'light',
+    themes: {
+      light: {
+        dark: false,
+        colors: {
+          background: '#f6f7f9',
+          surface: '#ffffff',
+          'surface-raised': '#f0f1f4',
+          primary: '#4a63d6',
+          success: '#1f9d55',
+          error: '#d1483e',
+          warning: '#b8790f'
+        }
+      },
+      dark: {
+        dark: true,
+        colors: {
+          background: '#14161a',
+          surface: '#1c1f26',
+          'surface-raised': '#23262e',
+          primary: '#7c9eff',
+          success: '#4fb87a',
+          error: '#e2685f',
+          warning: '#d9a441'
+        }
+      }
+    }
+  },
   icons: {
     defaultSet: 'mdi',
     aliases: {
@@ -52,6 +82,7 @@ export default () => createVuetify({
       hide: mdiEyeOff,
       close: mdiClose,
       expand: mdiArrowExpand,
+      chevronDown: mdiChevronDown,
       login: mdiLogin,
       github: mdiGithub,
       information: mdiInformationOutline,

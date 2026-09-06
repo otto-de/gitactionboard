@@ -2,8 +2,9 @@
   <v-row
     align="center"
     justify="space-between"
+    no-gutters
   >
-    <v-col cols="auto">
+    <v-col class="metric-card-title">
       {{ title }}
     </v-col>
     <v-col cols="auto">
@@ -47,5 +48,13 @@ export default {
 </script>
 
 <style scoped>
-
+.metric-card-title {
+  min-width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.3;
+  white-space: normal;
+}
 </style>

@@ -3,58 +3,50 @@
     :id="`${repoName}-metrics`"
     fluid
   >
-    <v-row dense>
-      <v-col cols="3">
-        <MetricCardContainer
-          title="Workflow Run Frequency"
-          :repo-name="repoName"
-          :start-date="startDate"
-          :end-date="endDate"
-          :data-set="workflowRunMetrics"
-          :time-extractor="workflowRunStartedAtExtractor"
-          :value-extractor="workflowRunCountExtractor"
-        />
-      </v-col>
+    <div class="metric-cards-grid">
+      <MetricCardContainer
+        title="Workflow Run Frequency"
+        :repo-name="repoName"
+        :start-date="startDate"
+        :end-date="endDate"
+        :data-set="workflowRunMetrics"
+        :time-extractor="workflowRunStartedAtExtractor"
+        :value-extractor="workflowRunCountExtractor"
+      />
 
-      <v-col cols="3">
-        <MetricCardContainer
-          title="Workflow Run Failure Rate"
-          :repo-name="repoName"
-          :start-date="startDate"
-          :end-date="endDate"
-          :data-set="workflowRunMetrics"
-          :time-extractor="workflowRunStartedAtExtractor"
-          :value-extractor="workflowRunFailureCountExtractor"
-          rate-series
-        />
-      </v-col>
+      <MetricCardContainer
+        title="Workflow Run Failure Rate"
+        :repo-name="repoName"
+        :start-date="startDate"
+        :end-date="endDate"
+        :data-set="workflowRunMetrics"
+        :time-extractor="workflowRunStartedAtExtractor"
+        :value-extractor="workflowRunFailureCountExtractor"
+        rate-series
+      />
 
-      <v-col cols="3">
-        <MetricCardContainer
-          title="Workflow Re-trigger Rate"
-          :repo-name="repoName"
-          :start-date="startDate"
-          :end-date="endDate"
-          :data-set="workflowRunMetrics"
-          :time-extractor="workflowRunStartedAtExtractor"
-          :value-extractor="workflowRetriggeredCountExtractor"
-          rate-series
-        />
-      </v-col>
+      <MetricCardContainer
+        title="Workflow Re-trigger Rate"
+        :repo-name="repoName"
+        :start-date="startDate"
+        :end-date="endDate"
+        :data-set="workflowRunMetrics"
+        :time-extractor="workflowRunStartedAtExtractor"
+        :value-extractor="workflowRetriggeredCountExtractor"
+        rate-series
+      />
 
-      <v-col cols="3">
-        <MetricCardContainer
-          title="Average Workflow Run Time (Minutes)"
-          :repo-name="repoName"
-          :start-date="startDate"
-          :end-date="endDate"
-          :data-set="workflowRunMetrics"
-          :time-extractor="workflowRunStartedAtExtractor"
-          :value-extractor="workflowRunTimeExtractor"
-          rate-series
-        />
-      </v-col>
-    </v-row>
+      <MetricCardContainer
+        title="Average Workflow Run Time (Minutes)"
+        :repo-name="repoName"
+        :start-date="startDate"
+        :end-date="endDate"
+        :data-set="workflowRunMetrics"
+        :time-extractor="workflowRunStartedAtExtractor"
+        :value-extractor="workflowRunTimeExtractor"
+        rate-series
+      />
+    </div>
   </v-container>
 </template>
 
@@ -140,5 +132,9 @@ export default {
 </script>
 
 <style scoped>
-
+.metric-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
 </style>

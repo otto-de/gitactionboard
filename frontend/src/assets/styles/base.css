@@ -1,0 +1,13 @@
+/* DESIGN.md typography tokens: Inter (UI text) + JetBrains Mono (literal identifiers only). */
+/* Self-hosted via @fontsource-variable, see src/main.js */
+.v-application {
+  font-family:
+    "Inter Variable",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono Variable", monospace;
+}

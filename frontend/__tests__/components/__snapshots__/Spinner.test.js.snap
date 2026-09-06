@@ -5,6 +5,7 @@ exports[`<Spinner /> > should render spinner 1`] = `
   aria-valuemax="100"
   aria-valuemin="0"
   class="
+    text-primary
     v-progress-circular
     v-progress-circular--indeterminate
     v-theme--light
@@ -13,8 +14,6 @@ exports[`<Spinner /> > should render spinner 1`] = `
   style="
     width: 128px;
     height: 128px;
-    color: rgb(95, 141, 119);
-    caret-color: rgb(95, 141, 119);
     --v-progress-reveal-duration: 900ms;
   "
 >

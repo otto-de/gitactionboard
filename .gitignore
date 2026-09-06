@@ -58,3 +58,9 @@ crash.log
 
 *.db
 .maintenance-agent/
+
+.agents/
+.claude/
+.impeccable/
+skills-lock.json
+.playwright-mcp

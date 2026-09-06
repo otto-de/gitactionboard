@@ -411,6 +411,11 @@ describe('<WorkflowDashboard />', () => {
   });
 
   describe('Timers', () => {
+    // The "indefinitely" case synchronously fires ~17,281 interval ticks, which alone
+    // takes 20+ real seconds. Passed as `it`'s 3rd arg since Vitest resolves testTimeout
+    // at collection time, before a describe-scoped vi.setConfig would take effect.
+    const TIMER_TEST_TIMEOUT = 45000;
+
     beforeEach(() => {
       vi.spyOn(preferences, 'showBuildsDueToTriggeredEvents', 'get').mockReturnValueOnce([]);
       vi.useFakeTimers();
@@ -435,7 +440,7 @@ describe('<WorkflowDashboard />', () => {
       vi.advanceTimersByTime(10 * 1000);
       expect(fetchCctrayJson).toHaveBeenCalledTimes(3);
       expect(workflowDashboardWrapper.findAllComponents(Job)).length(1);
-    });
+    }, TIMER_TEST_TIMEOUT);
 
     it('should fetch data after every certain interval indefinitely', async () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
@@ -453,7 +458,7 @@ describe('<WorkflowDashboard />', () => {
       vi.advanceTimersByTime(oneDay);
       expect(fetchCctrayJson).toHaveBeenCalledTimes(oneDay / 5000 + 1);
       expect(workflowDashboardWrapper.findAllComponents(Job)).length(1);
-    });
+    }, TIMER_TEST_TIMEOUT);
 
     it('should show stopped automated page refresh popup', async () => {
       vi.spyOn(preferences, 'showHealthyBuilds', 'get').mockReturnValueOnce(true);
@@ -467,7 +472,9 @@ describe('<WorkflowDashboard />', () => {
 
       await flushPromises();
       expect(workflowDashboardWrapper.findComponent(MaxIdleTimeoutOverlay).exists()).toBeFalsy();
-      vi.advanceTimersByTime(11 * 1000 * 60);
+      // +5s: the idle (60s) and render (5s) timers can land on the same tick at exactly
+      // 11 minutes, so advance past it to avoid depending on fake-timer tie-break order.
+      vi.advanceTimersByTime(11 * 1000 * 60 + 5000);
       await workflowDashboardWrapper.vm.$nextTick();
       await flushPromises();
       expect(workflowDashboardWrapper.findComponent(MaxIdleTimeoutOverlay).exists()).toBeTruthy();
@@ -476,6 +483,6 @@ describe('<WorkflowDashboard />', () => {
       await workflowDashboardWrapper.vm.$nextTick();
       await flushPromises();
       expect(fetchCctrayJson).not.toHaveBeenCalled();
-    });
+    }, TIMER_TEST_TIMEOUT);
   });
 });

@@ -3,7 +3,7 @@
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=false, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -14,7 +14,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -66,12 +66,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -82,7 +100,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -93,7 +114,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=false, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -104,7 +125,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -156,12 +177,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -172,52 +211,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -228,7 +225,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=true, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -239,7 +236,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -291,12 +288,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -307,7 +322,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -318,7 +336,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=false, displayToggleVisibility=true, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -329,7 +347,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -381,12 +399,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -397,52 +433,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -453,7 +447,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=fa
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=false, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -464,7 +458,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -516,12 +510,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -532,7 +544,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -543,7 +558,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=false, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -554,7 +569,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -606,12 +621,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -622,52 +655,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -678,7 +669,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=true, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -689,7 +680,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -741,12 +732,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -757,7 +766,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -768,7 +780,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 exports[`<GridCell /> > should flip back once mouse is moved away when hidden=true, displayToggleVisibility=true, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -779,7 +791,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -831,12 +843,30 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -847,52 +877,10 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -903,7 +891,7 @@ exports[`<GridCell /> > should flip back once mouse is moved away when hidden=tr
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=false, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -914,7 +902,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -966,12 +954,30 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -1062,7 +1068,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=false, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -1073,7 +1079,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -1125,12 +1131,30 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -1204,7 +1228,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         </span>
         <div class="v-spacer"></div>
         <a
-          aria-describedby="v-tooltip-v-4"
+          aria-describedby="v-tooltip-v-2"
           class="
             v-btn
             v-btn--density-default
@@ -1266,7 +1290,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=true, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -1277,7 +1301,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -1329,12 +1353,30 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -1469,7 +1511,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVisibility=true, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -1480,7 +1522,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -1532,12 +1574,30 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -1611,7 +1671,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         </span>
         <div class="v-spacer"></div>
         <a
-          aria-describedby="v-tooltip-v-4"
+          aria-describedby="v-tooltip-v-2"
           class="
             v-btn
             v-btn--density-default
@@ -1650,7 +1710,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
         <!-- teleport start -->
         <!-- teleport end -->
         <button
-          aria-describedby="v-tooltip-v-6"
+          aria-describedby="v-tooltip-v-4"
           class="
             v-btn
             v-btn--density-default
@@ -1717,7 +1777,7 @@ exports[`<GridCell /> > should flip on hover when hidden=false, displayToggleVis
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=false, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -1728,7 +1788,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -1780,12 +1840,30 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -1876,7 +1954,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=false, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -1887,7 +1965,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -1939,12 +2017,30 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2018,7 +2114,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         </span>
         <div class="v-spacer"></div>
         <a
-          aria-describedby="v-tooltip-v-4"
+          aria-describedby="v-tooltip-v-2"
           class="
             v-btn
             v-btn--density-default
@@ -2080,7 +2176,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=true, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -2091,7 +2187,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2143,12 +2239,30 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2283,7 +2397,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisibility=true, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -2294,7 +2408,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2346,12 +2460,30 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2425,7 +2557,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         </span>
         <div class="v-spacer"></div>
         <a
-          aria-describedby="v-tooltip-v-4"
+          aria-describedby="v-tooltip-v-2"
           class="
             v-btn
             v-btn--density-default
@@ -2464,7 +2596,7 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
         <!-- teleport start -->
         <!-- teleport end -->
         <button
-          aria-describedby="v-tooltip-v-6"
+          aria-describedby="v-tooltip-v-4"
           class="
             v-btn
             v-btn--density-default
@@ -2531,7 +2663,6 @@ exports[`<GridCell /> > should flip on hover when hidden=true, displayToggleVisi
 exports[`<GridCell /> > should render grid cell when build monitor view is disabled 1`] = `
 <div
   class="
-    failure
     grid-cell
     v-card
     v-card--density-default
@@ -2540,9 +2671,9 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
   style="
-    height: 120px;
-    --v-card-height: 120px;
-    border-radius: 6px;
+    height: 112px;
+    --v-card-height: 112px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2594,12 +2725,30 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2610,7 +2759,10 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -2621,7 +2773,7 @@ exports[`<GridCell /> > should render grid cell when build monitor view is disab
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=FAILURE, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -2632,7 +2784,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2684,12 +2836,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2700,7 +2870,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -2711,8 +2884,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=FA
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=SUCCESS, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -2722,7 +2895,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2774,12 +2947,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2790,7 +2981,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -2801,7 +2995,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=SU
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=failure, hidden=false, displayToggleVisibility=true, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -2812,7 +3006,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2864,12 +3058,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -2880,52 +3092,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -2936,7 +3106,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=failure, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -2947,7 +3117,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -2999,12 +3169,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3015,52 +3203,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -3071,7 +3217,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=fa
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=random, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -3082,7 +3228,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3134,12 +3280,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3150,7 +3314,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -3161,8 +3328,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=ra
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3172,7 +3339,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3224,12 +3391,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3240,52 +3425,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -3296,8 +3439,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3307,7 +3450,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3359,12 +3502,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3375,7 +3536,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -3386,7 +3550,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=su
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=undefined, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -3397,7 +3561,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3449,12 +3613,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3465,7 +3647,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -3476,8 +3661,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
 exports[`<GridCell /> > should render grid cell when inProgress=false, status=unknown, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    unknown
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3487,7 +3672,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3539,12 +3724,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    unknown
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3555,7 +3758,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -3566,7 +3772,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=false, status=un
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAILURE, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -3577,7 +3783,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3629,12 +3835,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3645,55 +3869,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -3703,8 +3883,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=FAI
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUCCESS, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -3714,7 +3894,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3766,12 +3946,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3782,55 +3980,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -3840,7 +3994,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=SUC
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=failure, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=false 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -3851,7 +4005,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -3903,12 +4057,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -3919,55 +4091,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -3977,7 +4105,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=failure, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -3988,7 +4116,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4040,12 +4168,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4056,100 +4202,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -4159,7 +4216,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=fai
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=random, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -4170,7 +4227,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4222,12 +4279,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4238,55 +4313,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -4296,8 +4327,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=ran
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=false 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4307,7 +4338,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4359,12 +4390,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4375,55 +4424,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -4433,8 +4438,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=true 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4444,7 +4449,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4496,12 +4501,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4512,100 +4535,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   >
     <!-- v-if -->
   </transition-stub>
-  <span
-    class="
-      rounded-0
-      v-chip
-      v-chip--density-default
-      v-chip--size-small
-      v-chip--variant-tonal
-      v-theme--light
-    "
-    draggable="false"
-  >
-    <!---->
-    <span class="v-chip__underlay"></span>
-    <!---->
-    <div class="v-chip__prepend">
-      <i
-        aria-hidden="true"
-        class="
-          notranslate
-          v-icon
-          v-icon--size-default
-          v-icon--start
-          v-theme--light
-        "
-      >
-        <svg
-          aria-hidden="true"
-          class="v-icon__svg"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-        </svg>
-      </i>
-      <!---->
-    </div>
-    <div
-      class="v-chip__content"
-      data-no-activator=""
-    >
-      2 years ago
-    </div>
-    <!---->
-    <!---->
-  </span>
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    2 years ago
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -4615,8 +4549,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=success, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    success
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4626,7 +4560,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4678,12 +4612,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    success
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4694,55 +4646,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -4752,7 +4660,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=suc
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=undefined, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -4763,7 +4671,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4815,12 +4723,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4831,55 +4757,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -4889,8 +4771,8 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=und
 exports[`<GridCell /> > should render grid cell when inProgress=true, status=unknown, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
+    build-monitor
     grid-cell
-    unknown
     v-card
     v-card--density-default
     v-card--variant-flat
@@ -4900,7 +4782,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -4952,12 +4834,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
   </div>
   <!---->
   <!---->
+  <span class="
+    status-bar
+    unknown
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -4968,55 +4868,11 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 15px;
-      --v-progress-linear-height: 15px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>
@@ -5026,7 +4882,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=true, status=unk
 exports[`<GridCell /> > should render grid cell when inProgress=undefined, status=undefined, hidden=undefined, displayToggleVisibility=undefined, showRelativeTime=undefined 1`] = `
 <div
   class="
-    failure
+    build-monitor
     grid-cell
     v-card
     v-card--density-default
@@ -5037,7 +4893,7 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
   style="
     height: 90px;
     --v-card-height: 90px;
-    border-radius: 6px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -5089,12 +4945,30 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -5105,7 +4979,10 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
+  </div>
   <!-- v-if -->
   <!---->
   <!---->
@@ -5116,7 +4993,6 @@ exports[`<GridCell /> > should render grid cell when inProgress=undefined, statu
 exports[`<GridCell /> > should render in progress grid cell when build monitor view is disabled 1`] = `
 <div
   class="
-    failure
     grid-cell
     v-card
     v-card--density-default
@@ -5125,9 +5001,9 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
   "
   id="webpack-cli----webpack-cli----Lint-Commit-Messages"
   style="
-    height: 120px;
-    --v-card-height: 120px;
-    border-radius: 6px;
+    height: 112px;
+    --v-card-height: 112px;
+    border-radius: 8px;
   "
 >
   <!---->
@@ -5179,12 +5055,30 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
   </div>
   <!---->
   <!---->
+  <span class="
+    failure
+    status-bar
+  "></span>
   <div class="
     grid-cell-name
-    pa-2
+    pa-0
     v-card-text
   ">
-    webpack-cli :: webpack-cli :: Lint Commit Messages
+    <div class="
+      card-repo
+      font-mono
+      pa-0
+      v-card-subtitle
+    ">
+      webpack-cli
+    </div>
+    <div class="
+      card-title
+      pa-0
+      v-card-title
+    ">
+      webpack-cli :: Lint Commit Messages
+    </div>
   </div>
   <transition-stub
     appear="false"
@@ -5195,55 +5089,11 @@ exports[`<GridCell /> > should render in progress grid cell when build monitor v
   >
     <!-- v-if -->
   </transition-stub>
-  <!-- v-if -->
-  <div
-    aria-hidden="false"
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow="100"
-    class="
-      v-locale--is-ltr
-      v-progress-linear
-      v-progress-linear--striped
-      v-theme--light
-    "
-    role="progressbar"
-    style="
-      top: 0px;
-      height: 10px;
-      --v-progress-linear-height: 10px;
-      --v-progress-reveal-duration: 900ms;
-      --v-progress-chunk-gap: 4px;
-    "
-  >
-    <!---->
-    <div class="
-      bg-orange-darken-4
-      v-progress-linear__background
-    "></div>
-    <div
-      class="
-        bg-orange-darken-4
-        v-progress-linear__buffer
-      "
-      style="width: 0%;"
-    ></div>
-    <transition-stub
-      appear="false"
-      css="true"
-      name="slide-x-transition"
-      persisted="false"
-    >
-      <div
-        class="
-          bg-orange-darken-4
-          v-progress-linear__determinate
-        "
-        style="width: 100%;"
-      ></div>
-    </transition-stub>
-    <!---->
+  <div class="card-meta">
+    <!-- v-if -->
+    <!-- v-if -->
   </div>
+  <div class="progress-bar"></div>
   <!---->
   <!---->
   <span class="v-card__underlay"></span>

@@ -1,16 +1,19 @@
 <template>
   <v-navigation-drawer
-    permanent
-    :rail="rail"
+    v-model="navigationState.drawerOpen"
+    :permanent="!mobile"
+    :rail="!mobile && navigationState.rail"
   >
-    <v-list nav>
+    <v-list
+      nav
+      color="primary"
+    >
       <v-list-item
-        :prepend-icon="rail ? `$menu`:`$menuOpen`"
+        :prepend-icon="(mobile ? !navigationState.drawerOpen : navigationState.rail) ? `$menu`:`$menuOpen`"
         @click="toggleSideBar"
       />
       <v-list-item
         :active="currentPath === '/workflow-jobs'"
-        active-class="active"
         prepend-icon="$workflowJobs"
         title="Workflow Jobs"
         value="workflowJobs"
@@ -19,7 +22,6 @@
       <v-list-item
         v-if="githubSecretsScanMonitoringEnabled"
         :active="currentPath === '/secrets'"
-        active-class="active"
         prepend-icon="$secrets"
         title="Exposed Secrets"
         value="secrets"
@@ -28,7 +30,6 @@
       <v-list-item
         v-if="isGithubCodeScanMonitoringEnabled"
         :active="currentPath === '/code-standard-violations'"
-        active-class="active"
         prepend-icon="$codeStandards"
         title="Code Standard Violations"
         value="codeStandardViolations"
@@ -36,7 +37,6 @@
       />
       <v-list-item
         :active="currentPath === '/metrics'"
-        active-class="active"
         prepend-icon="$metrics"
         title="Metrics"
         value="metrics"
@@ -45,14 +45,16 @@
       <v-list-item
         :active="currentPath === '/preferences'"
         prepend-icon="$preferences"
-        active-class="active"
         title="Preferences"
         value="preferences"
         href="#/preferences"
       />
     </v-list>
     <template #append>
-      <v-list nav>
+      <v-list
+        nav
+        color="primary"
+      >
         <v-list-item
           v-if="avatarUrl"
           :prepend-avatar="avatarUrl"
@@ -78,15 +80,19 @@
 import { clearCookies, getAvatarUrl, getName, isAuthenticate } from '@/services/authenticationService';
 import { getGithubCodeScanMonitoringEnabled, getGithubSecretsScanMonitoringEnabled } from '@/services/utils';
 import router from '@/router';
+import navigationState from '@/services/navigationState';
 
 export default {
   name: 'SideMenuBar',
   data() {
     return {
-      rail: true
+      navigationState
     };
   },
   computed: {
+    mobile() {
+      return this.$vuetify.display.xs;
+    },
     currentPath() {
       return router.currentRoute.value.path;
     },
@@ -106,9 +112,16 @@ export default {
       return isAuthenticate();
     }
   },
+  created() {
+    navigationState.drawerOpen = !this.mobile;
+  },
   methods: {
     toggleSideBar() {
-      this.rail = !this.rail;
+      if (this.mobile) {
+        navigationState.drawerOpen = !navigationState.drawerOpen;
+      } else {
+        navigationState.rail = !navigationState.rail;
+      }
     },
     logout() {
       clearCookies();
@@ -117,10 +130,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.active {
-    background-color: #5f8d77;
-}
-
-</style>

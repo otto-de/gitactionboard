@@ -39,6 +39,7 @@ describe('<FailureGridCell />', () => {
       name,
       showRelativeTime: true,
       status: 'failure',
+      runLabel: null,
       url,
       buildMonitorViewEnabled
     });

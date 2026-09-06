@@ -19,7 +19,8 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -43,58 +44,83 @@ exports[`<WorkflowDashboard /> > No contents > should show no contents when ther
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -214,7 +240,8 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -238,58 +265,83 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -318,8 +370,8 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
           <div class="v-col">
             <div
               class="
+                build-monitor
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -329,7 +381,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -381,12 +433,30 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -397,7 +467,34 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -436,7 +533,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
             </div>
             <div class="v-spacer"></div>
             <button
-              aria-describedby="v-tooltip-v-1"
+              aria-describedby="v-tooltip-v-3"
               class="
                 v-btn
                 v-btn--density-default
@@ -509,7 +606,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
             <div class="v-col">
               <div
                 class="
-                  failure
+                  build-monitor
                   grid-cell
                   v-card
                   v-card--density-default
@@ -520,7 +617,7 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                 style="
                   height: 90px;
                   --v-card-height: 90px;
-                  border-radius: 6px;
+                  border-radius: 8px;
                 "
               >
                 <!---->
@@ -572,12 +669,30 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                 </div>
                 <!---->
                 <!---->
+                <span class="
+                  failure
+                  status-bar
+                "></span>
                 <div class="
                   grid-cell-name
-                  pa-2
+                  pa-0
                   v-card-text
                 ">
-                  webpack-cli :: Cancel :: Cancel Previous Runs
+                  <div class="
+                    card-repo
+                    font-mono
+                    pa-0
+                    v-card-subtitle
+                  ">
+                    webpack-cli
+                  </div>
+                  <div class="
+                    card-title
+                    pa-0
+                    v-card-title
+                  ">
+                    Cancel :: Cancel Previous Runs
+                  </div>
                 </div>
                 <transition-stub
                   appear="false"
@@ -588,50 +703,33 @@ exports[`<WorkflowDashboard /> > should display hidden jobs when user clicks on 
                 >
                   <!-- v-if -->
                 </transition-stub>
-                <span
-                  class="
-                    rounded-0
-                    v-chip
-                    v-chip--density-default
-                    v-chip--size-small
-                    v-chip--variant-tonal
-                    v-theme--light
-                  "
-                  draggable="false"
-                >
-                  <!---->
-                  <span class="v-chip__underlay"></span>
-                  <!---->
-                  <div class="v-chip__prepend">
-                    <i
-                      aria-hidden="true"
-                      class="
-                        notranslate
-                        v-icon
-                        v-icon--size-default
-                        v-icon--start
-                        v-theme--light
-                      "
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="v-icon__svg"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-                      </svg>
-                    </i>
+                <div class="card-meta">
+                  <span
+                    class="
+                      font-mono
+                      meta-tag
+                      v-chip
+                      v-chip--density-compact
+                      v-chip--size-x-small
+                      v-chip--variant-flat
+                      v-theme--light
+                    "
+                    draggable="false"
+                  >
                     <!---->
-                  </div>
-                  <div
-                    class="v-chip__content"
-                    data-no-activator=""
-                  ></div>
-                  <!---->
-                  <!---->
-                </span>
+                    <span class="v-chip__underlay"></span>
+                    <!---->
+                    <!---->
+                    <div
+                      class="v-chip__content"
+                      data-no-activator=""
+                    >
+                      #4
+                    </div>
+                    <!---->
+                    <!---->
+                  </span>
+                </div>
                 <!-- v-if -->
                 <!---->
                 <!---->
@@ -667,7 +765,8 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -691,58 +790,83 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -771,8 +895,8 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
           <div class="v-col">
             <div
               class="
+                build-monitor
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -782,7 +906,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -834,12 +958,30 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -850,7 +992,34 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -889,7 +1058,7 @@ exports[`<WorkflowDashboard /> > should hide job details depends previous config
             </div>
             <div class="v-spacer"></div>
             <button
-              aria-describedby="v-tooltip-v-1"
+              aria-describedby="v-tooltip-v-3"
               class="
                 v-btn
                 v-btn--density-default
@@ -975,7 +1144,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -999,58 +1169,83 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -1079,7 +1274,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           <div class="v-col">
             <div
               class="
-                failure
+                build-monitor
                 grid-cell
                 v-card
                 v-card--density-default
@@ -1090,7 +1285,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -1142,12 +1337,30 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
               <!---->
               <!---->
+              <span class="
+                failure
+                status-bar
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: Cancel :: Cancel Previous Runs
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  Cancel :: Cancel Previous Runs
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -1158,50 +1371,33 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               >
                 <!-- v-if -->
               </transition-stub>
-              <span
-                class="
-                  rounded-0
-                  v-chip
-                  v-chip--density-default
-                  v-chip--size-small
-                  v-chip--variant-tonal
-                  v-theme--light
-                "
-                draggable="false"
-              >
-                <!---->
-                <span class="v-chip__underlay"></span>
-                <!---->
-                <div class="v-chip__prepend">
-                  <i
-                    aria-hidden="true"
-                    class="
-                      notranslate
-                      v-icon
-                      v-icon--size-default
-                      v-icon--start
-                      v-theme--light
-                    "
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="v-icon__svg"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-                    </svg>
-                  </i>
+              <div class="card-meta">
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
                   <!---->
-                </div>
-                <div
-                  class="v-chip__content"
-                  data-no-activator=""
-                ></div>
-                <!---->
-                <!---->
-              </span>
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #4
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -1211,8 +1407,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           <div class="v-col">
             <div
               class="
+                build-monitor
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -1222,7 +1418,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -1274,12 +1470,30 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -1290,7 +1504,34 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -1326,7 +1567,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -1350,58 +1592,83 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -1430,8 +1697,8 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
           <div class="v-col">
             <div
               class="
+                build-monitor
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -1441,7 +1708,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -1493,12 +1760,30 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -1509,7 +1794,34 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -1548,7 +1860,7 @@ exports[`<WorkflowDashboard /> > should hide job details when user clicks on hid
             </div>
             <div class="v-spacer"></div>
             <button
-              aria-describedby="v-tooltip-v-9"
+              aria-describedby="v-tooltip-v-11"
               class="
                 v-btn
                 v-btn--density-default
@@ -1634,7 +1946,8 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -1658,58 +1971,83 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -1738,7 +2076,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
           <div class="v-col">
             <div
               class="
-                failure
+                build-monitor
                 grid-cell
                 v-card
                 v-card--density-default
@@ -1749,7 +2087,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -1801,12 +2139,30 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               </div>
               <!---->
               <!---->
+              <span class="
+                failure
+                status-bar
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: Cancel :: Cancel Previous Runs
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  Cancel :: Cancel Previous Runs
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -1817,50 +2173,33 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
               >
                 <!-- v-if -->
               </transition-stub>
-              <span
-                class="
-                  rounded-0
-                  v-chip
-                  v-chip--density-default
-                  v-chip--size-small
-                  v-chip--variant-tonal
-                  v-theme--light
-                "
-                draggable="false"
-              >
-                <!---->
-                <span class="v-chip__underlay"></span>
-                <!---->
-                <div class="v-chip__prepend">
-                  <i
-                    aria-hidden="true"
-                    class="
-                      notranslate
-                      v-icon
-                      v-icon--size-default
-                      v-icon--start
-                      v-theme--light
-                    "
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="v-icon__svg"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-                    </svg>
-                  </i>
+              <div class="card-meta">
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
                   <!---->
-                </div>
-                <div
-                  class="v-chip__content"
-                  data-no-activator=""
-                ></div>
-                <!---->
-                <!---->
-              </span>
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #4
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -1972,8 +2311,8 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
             <div class="v-col">
               <div
                 class="
+                  build-monitor
                   grid-cell
-                  success
                   v-card
                   v-card--density-default
                   v-card--variant-flat
@@ -1983,7 +2322,7 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 style="
                   height: 90px;
                   --v-card-height: 90px;
-                  border-radius: 6px;
+                  border-radius: 8px;
                 "
               >
                 <!---->
@@ -2035,12 +2374,30 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 </div>
                 <!---->
                 <!---->
+                <span class="
+                  status-bar
+                  success
+                "></span>
                 <div class="
                   grid-cell-name
-                  pa-2
+                  pa-0
                   v-card-text
                 ">
-                  webpack-cli :: webpack-cli :: Lint Commit Messages
+                  <div class="
+                    card-repo
+                    font-mono
+                    pa-0
+                    v-card-subtitle
+                  ">
+                    webpack-cli
+                  </div>
+                  <div class="
+                    card-title
+                    pa-0
+                    v-card-title
+                  ">
+                    webpack-cli :: Lint Commit Messages
+                  </div>
                 </div>
                 <transition-stub
                   appear="false"
@@ -2051,7 +2408,34 @@ exports[`<WorkflowDashboard /> > should not remove hidden jobs toolbar when hidd
                 >
                   <!-- v-if -->
                 </transition-stub>
-                <!-- v-if -->
+                <div class="card-meta">
+                  <!-- v-if -->
+                  <span
+                    class="
+                      font-mono
+                      meta-tag
+                      v-chip
+                      v-chip--density-compact
+                      v-chip--size-x-small
+                      v-chip--variant-flat
+                      v-theme--light
+                    "
+                    draggable="false"
+                  >
+                    <!---->
+                    <span class="v-chip__underlay"></span>
+                    <!---->
+                    <!---->
+                    <div
+                      class="v-chip__content"
+                      data-no-activator=""
+                    >
+                      #7613
+                    </div>
+                    <!---->
+                    <!---->
+                  </span>
+                </div>
                 <!-- v-if -->
                 <!---->
                 <!---->
@@ -2087,7 +2471,8 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -2111,58 +2496,83 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -2191,7 +2601,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
           <div class="v-col">
             <div
               class="
-                failure
+                build-monitor
                 grid-cell
                 v-card
                 v-card--density-default
@@ -2202,7 +2612,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -2254,12 +2664,30 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               </div>
               <!---->
               <!---->
+              <span class="
+                failure
+                status-bar
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: Cancel :: Cancel Previous Runs
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  Cancel :: Cancel Previous Runs
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -2270,50 +2698,33 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               >
                 <!-- v-if -->
               </transition-stub>
-              <span
-                class="
-                  rounded-0
-                  v-chip
-                  v-chip--density-default
-                  v-chip--size-small
-                  v-chip--variant-tonal
-                  v-theme--light
-                "
-                draggable="false"
-              >
-                <!---->
-                <span class="v-chip__underlay"></span>
-                <!---->
-                <div class="v-chip__prepend">
-                  <i
-                    aria-hidden="true"
-                    class="
-                      notranslate
-                      v-icon
-                      v-icon--size-default
-                      v-icon--start
-                      v-theme--light
-                    "
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="v-icon__svg"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-                    </svg>
-                  </i>
+              <div class="card-meta">
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
                   <!---->
-                </div>
-                <div
-                  class="v-chip__content"
-                  data-no-activator=""
-                ></div>
-                <!---->
-                <!---->
-              </span>
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #4
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -2323,8 +2734,8 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
           <div class="v-col">
             <div
               class="
+                build-monitor
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -2334,7 +2745,7 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -2386,12 +2797,30 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -2402,7 +2831,34 @@ exports[`<WorkflowDashboard /> > should put hidden jobs to normal job list when 
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -2438,7 +2894,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -2462,58 +2919,83 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -2542,7 +3024,6 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           <div class="v-col">
             <div
               class="
-                failure
                 grid-cell
                 v-card
                 v-card--density-default
@@ -2551,9 +3032,9 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               "
               id="webpack-cli----Cancel----Cancel-Previous-Runs"
               style="
-                height: 120px;
-                --v-card-height: 120px;
-                border-radius: 6px;
+                height: 112px;
+                --v-card-height: 112px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -2605,12 +3086,30 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               </div>
               <!---->
               <!---->
+              <span class="
+                failure
+                status-bar
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: Cancel :: Cancel Previous Runs
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  Cancel :: Cancel Previous Runs
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -2621,50 +3120,33 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               >
                 <!-- v-if -->
               </transition-stub>
-              <span
-                class="
-                  rounded-0
-                  v-chip
-                  v-chip--density-default
-                  v-chip--size-small
-                  v-chip--variant-tonal
-                  v-theme--light
-                "
-                draggable="false"
-              >
-                <!---->
-                <span class="v-chip__underlay"></span>
-                <!---->
-                <div class="v-chip__prepend">
-                  <i
-                    aria-hidden="true"
-                    class="
-                      notranslate
-                      v-icon
-                      v-icon--size-default
-                      v-icon--start
-                      v-theme--light
-                    "
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="v-icon__svg"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-                    </svg>
-                  </i>
+              <div class="card-meta">
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
                   <!---->
-                </div>
-                <div
-                  class="v-chip__content"
-                  data-no-activator=""
-                ></div>
-                <!---->
-                <!---->
-              </span>
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #4
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -2675,7 +3157,6 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
             <div
               class="
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -2683,9 +3164,9 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               "
               id="webpack-cli----webpack-cli----Lint-Commit-Messages"
               style="
-                height: 120px;
-                --v-card-height: 120px;
-                border-radius: 6px;
+                height: 112px;
+                --v-card-height: 112px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -2737,12 +3218,30 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -2753,7 +3252,34 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -2789,7 +3315,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
     >
       <header
         class="
-          elevation-5
+          border-b
+          elevation-0
           v-app-bar
           v-locale--is-ltr
           v-theme--light
@@ -2813,58 +3340,83 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
         >
           <!---->
           <!---->
+          <!-- v-if -->
           <div class="
-            v-row
-            v-row--no-gutters
+            brand-row
+            pl-4
+            v-app-bar-title
+            v-toolbar-title
           ">
-            <div class="
-              v-col
-              v-col--cols-10
-            ">
-              <div class="
-                font-weight-bold
-                header-title
-                pl-10
-                text-center
-                v-app-bar-title
-                v-toolbar-title
-              ">
-                <div class="v-toolbar-title__placeholder">
-                  <!---->
-                  <span>
-                    Gitaction Board
-                  </span>
-                  <span class="version">
-                    (v3.3.0)
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="
-              d-inline-flex
-              v-col
-              v-col--cols-2
-            ">
+            <div class="v-toolbar-title__placeholder">
+              <!---->
               <div
+                aria-label="GitactionBoard"
                 class="
-                  align-center
-                  d-inline-flex
-                  fill-height
-                  flex-row-reverse
-                  font-weight-bold
-                  mt-3
-                  pr-4
-                  text-right
-                  v-app-bar-title
-                  v-toolbar-title
+                  brand-mark
+                  v-img
+                  v-img--booting
+                  v-responsive
                 "
-                id="sub-header"
+                role="img"
+                style="
+                  height: 28px;
+                  width: 38px;
+                "
               >
-                <div class="v-toolbar-title__placeholder">
+                <div class="v-responsive__sizer"></div>
+                <transition-stub
+                  appear="true"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
+                  <img
+                    alt="GitactionBoard"
+                    class="
+                      v-img__img
+                      v-img__img--contain
+                    "
+                    src="/favicon.ico"
+                    style="display: none;"
+                  />
+                </transition-stub>
+                <transition-stub
+                  appear="false"
+                  css="true"
+                  name="fade-transition"
+                  persisted="false"
+                >
                   <!---->
-                  Workflow Jobs
-                </div>
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
               </div>
+              <span class="brand-name">
+                GitactionBoard
+              </span>
+              <span class="
+                font-mono
+                version
+              ">
+                v3.3.0
+              </span>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div
+            class="
+              page-title
+              pr-4
+              v-app-bar-title
+              v-toolbar-title
+            "
+            id="sub-header"
+          >
+            <div class="v-toolbar-title__placeholder">
+              <!---->
+              Workflow Jobs
             </div>
           </div>
           <!---->
@@ -2893,7 +3445,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           <div class="v-col">
             <div
               class="
-                failure
+                build-monitor
                 grid-cell
                 v-card
                 v-card--density-default
@@ -2904,7 +3456,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -2956,12 +3508,30 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               </div>
               <!---->
               <!---->
+              <span class="
+                failure
+                status-bar
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: Cancel :: Cancel Previous Runs
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  Cancel :: Cancel Previous Runs
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -2972,50 +3542,33 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               >
                 <!-- v-if -->
               </transition-stub>
-              <span
-                class="
-                  rounded-0
-                  v-chip
-                  v-chip--density-default
-                  v-chip--size-small
-                  v-chip--variant-tonal
-                  v-theme--light
-                "
-                draggable="false"
-              >
-                <!---->
-                <span class="v-chip__underlay"></span>
-                <!---->
-                <div class="v-chip__prepend">
-                  <i
-                    aria-hidden="true"
-                    class="
-                      notranslate
-                      v-icon
-                      v-icon--size-default
-                      v-icon--start
-                      v-theme--light
-                    "
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="v-icon__svg"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M12 20C16.4 20 20 16.4 20 12S16.4 4 12 4 4 7.6 4 12 7.6 20 12 20M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M17 13.9L16.3 15.2L11 12.3V7H12.5V11.4L17 13.9Z" />
-                    </svg>
-                  </i>
+              <div class="card-meta">
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
                   <!---->
-                </div>
-                <div
-                  class="v-chip__content"
-                  data-no-activator=""
-                ></div>
-                <!---->
-                <!---->
-              </span>
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #4
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->
@@ -3025,8 +3578,8 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
           <div class="v-col">
             <div
               class="
+                build-monitor
                 grid-cell
-                success
                 v-card
                 v-card--density-default
                 v-card--variant-flat
@@ -3036,7 +3589,7 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               style="
                 height: 90px;
                 --v-card-height: 90px;
-                border-radius: 6px;
+                border-radius: 8px;
               "
             >
               <!---->
@@ -3088,12 +3641,30 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               </div>
               <!---->
               <!---->
+              <span class="
+                status-bar
+                success
+              "></span>
               <div class="
                 grid-cell-name
-                pa-2
+                pa-0
                 v-card-text
               ">
-                webpack-cli :: webpack-cli :: Lint Commit Messages
+                <div class="
+                  card-repo
+                  font-mono
+                  pa-0
+                  v-card-subtitle
+                ">
+                  webpack-cli
+                </div>
+                <div class="
+                  card-title
+                  pa-0
+                  v-card-title
+                ">
+                  webpack-cli :: Lint Commit Messages
+                </div>
               </div>
               <transition-stub
                 appear="false"
@@ -3104,7 +3675,34 @@ exports[`<WorkflowDashboard /> > should render dashboard with all job details wh
               >
                 <!-- v-if -->
               </transition-stub>
-              <!-- v-if -->
+              <div class="card-meta">
+                <!-- v-if -->
+                <span
+                  class="
+                    font-mono
+                    meta-tag
+                    v-chip
+                    v-chip--density-compact
+                    v-chip--size-x-small
+                    v-chip--variant-flat
+                    v-theme--light
+                  "
+                  draggable="false"
+                >
+                  <!---->
+                  <span class="v-chip__underlay"></span>
+                  <!---->
+                  <!---->
+                  <div
+                    class="v-chip__content"
+                    data-no-activator=""
+                  >
+                    #7613
+                  </div>
+                  <!---->
+                  <!---->
+                </span>
+              </div>
               <!-- v-if -->
               <!---->
               <!---->

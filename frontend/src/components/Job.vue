@@ -8,6 +8,7 @@
     :hidden="hidden"
     :in-progress="isInProgress"
     :status="content.lastBuildStatus"
+    :run-label="content.lastBuildLabel"
     :build-monitor-view-enabled="buildMonitorViewEnabled"
     @toggle-visibility="toggleVisibility"
   />

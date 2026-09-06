@@ -4118,7 +4118,7 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
     v-date-input
     v-input
     v-input--center-affix
-    v-input--density-default
+    v-input--density-compact
     v-input--dirty
     v-input--focused
     v-input--horizontal
@@ -4236,7 +4236,6 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
           <!-- teleport end -->
           <!---->
           <input
-            aria-describedby="input-v-1-messages"
             aria-labelledby="input-v-1-label"
             id="input-v-1"
             inputmode="none"
@@ -4260,8 +4259,10 @@ exports[`DateRangePicker > should allow update selected date range 3`] = `
   <!---->
   <div
     aria-live="polite"
-    class="v-input__details"
-    id="input-v-1-messages"
+    class="
+      v-input__details
+      v-input__details--hidden
+    "
     role="alert"
   >
     <transition-group-stub
@@ -4288,7 +4289,7 @@ exports[`DateRangePicker > should provide correct props to date range component 
   clearable="false"
   clearicon="$clear"
   controlvariant="docked"
-  density="default"
+  density="compact"
   dirty="false"
   disabled="false"
   divided="false"
@@ -4301,7 +4302,7 @@ exports[`DateRangePicker > should provide correct props to date range component 
   header="$vuetify.datePicker.header"
   headerdateformat="normalDateWithWeekday"
   hideactions="false"
-  hidedetails="false"
+  hidedetails="auto"
   hideheader="true"
   hidespinbuttons="false"
   hidetitle="false"
@@ -4357,7 +4358,7 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
     v-date-input
     v-input
     v-input--center-affix
-    v-input--density-default
+    v-input--density-compact
     v-input--dirty
     v-input--horizontal
     v-input--indent-details
@@ -4466,7 +4467,6 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
           <!---->
           <!---->
           <input
-            aria-describedby="input-v-1-messages"
             aria-labelledby="input-v-1-label"
             id="input-v-1"
             inputmode="none"
@@ -4490,8 +4490,10 @@ exports[`DateRangePicker > should render date range with selected last 7 days by
   <!---->
   <div
     aria-live="polite"
-    class="v-input__details"
-    id="input-v-1-messages"
+    class="
+      v-input__details
+      v-input__details--hidden
+    "
     role="alert"
   >
     <transition-group-stub

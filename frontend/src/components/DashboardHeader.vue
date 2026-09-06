@@ -1,32 +1,42 @@
 <template>
   <v-app-bar
-    elevation="5"
+    elevation="0"
+    class="border-b"
   >
-    <v-row no-gutters>
-      <v-col cols="10">
-        <v-app-bar-title
-          class="header-title text-center font-weight-bold pl-10"
-        >
-          <span>Gitaction Board</span> <span class="version">(v{{ version }})</span>
-        </v-app-bar-title>
-      </v-col>
-      <v-col
-        cols="2"
-        class="d-inline-flex"
-      >
-        <v-app-bar-title
-          id="sub-header"
-          class="pr-4 text-right font-weight-bold align-center fill-height d-inline-flex flex-row-reverse mt-3"
-        >
-          {{ subHeader }}
-        </v-app-bar-title>
-      </v-col>
-    </v-row>
+    <v-app-bar-nav-icon
+      v-if="mobile"
+      @click="navigationState.drawerOpen = !navigationState.drawerOpen"
+    />
+    <v-app-bar-title class="brand-row pl-4">
+      <v-img
+        src="/favicon.ico"
+        alt="GitactionBoard"
+        class="brand-mark"
+        width="38"
+        height="28"
+      />
+      <span
+        v-if="!mobile"
+        class="brand-name"
+      >GitactionBoard</span>
+      <span
+        v-if="!mobile"
+        class="version font-mono"
+      >v{{ version }}</span>
+    </v-app-bar-title>
+    <v-spacer />
+    <v-app-bar-title
+      id="sub-header"
+      class="page-title pr-4"
+    >
+      {{ subHeader }}
+    </v-app-bar-title>
   </v-app-bar>
 </template>
 
 <script>
 import { getVersion } from '@/services/utils';
+import navigationState from '@/services/navigationState';
 
 export default {
   name: 'DashboardHeader',
@@ -38,27 +48,50 @@ export default {
   },
   data() {
     return {
-      version: getVersion()
+      version: getVersion(),
+      navigationState
     };
+  },
+  computed: {
+    mobile() {
+      return this.$vuetify.display.xs;
+    }
   }
 };
 </script>
 
 <style scoped>
-.header-title {
-    line-height: normal;
-    font-size: 50px;
-    font-family: "Snell Roundhand", cursive;
+.brand-row {
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .version {
-    font-size: 15px;
-    font-family: "American Typewriter", serif;
+  font-size: 11px;
+  opacity: var(--v-medium-emphasis-opacity);
+  margin-left: 2px;
 }
 
-#sub-header {
-    font-size: 20px;
-    font-family: "American Typewriter", serif;
+.page-title {
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 </style>
