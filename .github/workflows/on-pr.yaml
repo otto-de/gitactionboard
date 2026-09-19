@@ -44,6 +44,11 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install prettier using npm
         run: sudo npm install --global prettier
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          java-version-file: 'backend/.java-version'
+          distribution: 'temurin'
       - name: Install jenv
         run: |
           git clone https://github.com/gcuisinier/jenv.git ~/.jenv
