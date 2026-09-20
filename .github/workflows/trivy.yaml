@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-java@v6
         with:
           java-version-file: ${{ env.SERVICE_NAME }}/backend/.java-version
-          distribution: 'temurin'
+          distribution: 'corretto'
       - name: Install jenv
         if: steps.boot-jar.outputs.cache-hit != 'true'
         run: |

@@ -2,9 +2,9 @@ fileignoreconfig:
 - filename: talisman_report/talisman_reports/data/report.json
   checksum: 1105c64f71c0727a644ebdb6b8e8f0685132fa4e4d0ff756f173fde1df26e681
 - filename: .github/workflows/build.yml
-  checksum: a5070fc1f5cb967918469cd03c606589200314746803c655a514f98013b69194
+  checksum: d22aa6c12afcfeb65f0bad3682e78e2fb7bc4171e98c38a62a55dff7167bbdd6
 - filename: .github/workflows/checks.yml
-  checksum: 18c9fcb5bc5c7259f0baad18a4b83813864672093358de8746104f5475a8920c
+  checksum: 369f18a26bbed9010f60baa4a1e191929d43dc5c5e2885b3fdc8d2bd839cd3ab
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: USAGE.md
