@@ -1,8 +1,10 @@
 fileignoreconfig:
+- filename: .talismanrc
+  checksum: fbf053c383e99155248d2eaf2c84f4936999377849bf380c5784b8f135512d1b
 - filename: talisman_report/talisman_reports/data/report.json
   checksum: 1105c64f71c0727a644ebdb6b8e8f0685132fa4e4d0ff756f173fde1df26e681
 - filename: .github/workflows/build.yml
-  checksum: 1394e840d06e53e78039c6d56bc28bdc59c9464dece65e581f1255bdce5e304b
+  checksum: 8771d84850fb306697796c814643733623c338a24e14040ffc4f91bfe7eb7bab
 - filename: .github/workflows/checks.yml
   checksum: 6c20cc1918bc946c569e85926b8e788a184b0301f55ad9fb71c6b2fdec2b79d1
 - filename: CHANGELOG.md
@@ -175,6 +177,9 @@ allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-bootjar-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\spitestHistory-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\spitestHistory-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\',\s\'\*\*\/\*\.java\*'\)\s\}\}
+- restore-keys:\spitestHistory-
+- key:\s\$\{\{\ssteps\.cache-pitest-history-restore\.outputs\.cache-primary-key\s\}\}
 - password:\s\$\{\{\ssecrets\.DOCKER_HUB_PASSWORD\s\}\}
 - \(\[.*\]\(https:\/\/github\.com\/otto-de\/gitactionboard\/commit\/.*\)\)
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)
