@@ -35,7 +35,7 @@ jobs:
         if: steps.boot-jar.outputs.cache-hit != 'true'
         uses: actions/setup-java@v6
         with:
-          java-version-file: 'backend/.java-version'
+          java-version-file: ${{ env.SERVICE_NAME }}/backend/.java-version
           distribution: 'temurin'
       - name: Install jenv
         if: steps.boot-jar.outputs.cache-hit != 'true'
@@ -49,7 +49,7 @@ jobs:
           jenv add ${JAVA_HOME_27_X64}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
       - name: Get Date
         id: get-date
         run: |

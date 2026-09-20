@@ -47,7 +47,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v6
         with:
-          java-version-file: 'backend/.java-version'
+          java-version-file: ${{ env.SERVICE_NAME }}/backend/.java-version
           distribution: 'temurin'
       - name: Install jenv
         run: |
@@ -98,7 +98,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
       - name: Install prettier using npm
         run: sudo npm install --global prettier
       - name: Install Hadolint and add to PATH
