@@ -76,8 +76,8 @@ dependencies {
 group = "de.otto.platform"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_27
-    targetCompatibility = JavaVersion.VERSION_27
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 tag {
