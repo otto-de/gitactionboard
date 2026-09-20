@@ -12,7 +12,7 @@ fileignoreconfig:
 - filename: backend/gradlew
   checksum: cab980ac9254370e9f15af3910717c7c02b4792327daa622c54c085412a3fa76
 - filename: backend/build.gradle
-  checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
+  checksum: 1c621f6215707931da1c0083303e380595beeee41d4aa1729efa7648c2463d30
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/gradle/test.gradle
