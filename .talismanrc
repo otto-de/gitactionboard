@@ -1,8 +1,12 @@
 fileignoreconfig:
+- filename: .talismanrc
+  checksum: fbf053c383e99155248d2eaf2c84f4936999377849bf380c5784b8f135512d1b
+- filename: talisman_report/talisman_reports/data/report.json
+  checksum: 1105c64f71c0727a644ebdb6b8e8f0685132fa4e4d0ff756f173fde1df26e681
 - filename: .github/workflows/build.yml
-  checksum: a0366e1ad87383ab49927d95973ab77311db508ec51f48ccd7499fb2d0bdce7b
+  checksum: 8771d84850fb306697796c814643733623c338a24e14040ffc4f91bfe7eb7bab
 - filename: .github/workflows/checks.yml
-  checksum: 9f233870f84c4fb074a144d3abd47b3441214dff1a739bcece5409d2ff6bbde3
+  checksum: 6c20cc1918bc946c569e85926b8e788a184b0301f55ad9fb71c6b2fdec2b79d1
 - filename: CHANGELOG.md
   checksum: c6c036d8bc39ed89984d47d43a6831a9aa943a41a0ab90d034ee1cf6ed616e5a
 - filename: USAGE.md
@@ -10,7 +14,7 @@ fileignoreconfig:
 - filename: backend/gradlew
   checksum: cab980ac9254370e9f15af3910717c7c02b4792327daa622c54c085412a3fa76
 - filename: backend/build.gradle
-  checksum: 916137197f40c06d4a6c49f9a52eb04ed823d7d7e9c86a0297279fdfb7a4be09
+  checksum: cc6b51edc9273af79c62b08afe0a804d06aa2bd3ef5cad0566448e51eef3b797
 - filename: backend/gradle/config/checkstyle.xml
   checksum: 42bddec292c1e767c376d9a2344581a901ce9bc538950a6402b02d71c7e445a1
 - filename: backend/gradle/test.gradle
@@ -136,7 +140,7 @@ fileignoreconfig:
 - filename: frontend/mock-data/data.json
   checksum: 7142c869a6c0f35d4cc53f6fbf034cf17c451f4152d513054162feece5b3492c
 - filename: frontend/package-lock.json
-  checksum: c5d8e23d381726152eb39583c4436a983bbe0c7458d1a8cab9d66a5f28e4b44a
+  checksum: b0eacbecd313bf9921002d1beb094937d0bf4ba7ab802ae9f2bbc09220c7065b
 - filename: frontend/src/components/Dashboard.vue
   checksum: b686e327e71dd6ffa96e48e02198495cf7793216a8eee9a9e2a73ce54fa9ab1f
 - filename: frontend/src/components/GridCell.vue
@@ -173,6 +177,9 @@ allowed_patterns:
 - key:\s\$\{\{\srunner\.os\s\}\}-gradle-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\s\$\{\{\srunner\.os\s\}\}-bootjar-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
 - key:\spitestHistory-\$\{\{\ssteps\.get-date\.outputs\.date\s\}\}-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\'\)\s\}\}
+- key:\spitestHistory-\$\{\{\shashFiles\(\'\*\*\/\*\.gradle\*\',\s\'\*\*\/\*\.java\*'\)\s\}\}
+- restore-keys:\spitestHistory-
+- key:\s\$\{\{\ssteps\.cache-pitest-history-restore\.outputs\.cache-primary-key\s\}\}
 - password:\s\$\{\{\ssecrets\.DOCKER_HUB_PASSWORD\s\}\}
 - \(\[.*\]\(https:\/\/github\.com\/otto-de\/gitactionboard\/commit\/.*\)\)
 - \[.*\]\(https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE.*\)

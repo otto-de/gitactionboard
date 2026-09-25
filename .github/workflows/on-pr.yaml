@@ -44,6 +44,11 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install prettier using npm
         run: sudo npm install --global prettier
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          java-version-file: ${{ env.SERVICE_NAME }}/backend/.java-version
+          distribution: 'corretto'
       - name: Install jenv
         run: |
           git clone https://github.com/gcuisinier/jenv.git ~/.jenv
@@ -51,7 +56,7 @@ jobs:
       - name: Configure jenv
         run: |
           jenv init -
-          jenv add ${JAVA_HOME_21_X64}
+          jenv add ${JAVA_HOME_25_X64}
       - name: Install Hadolint and add to PATH
         run: |
           sh bin/install-hadolint.sh
@@ -93,7 +98,7 @@ jobs:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
       - name: Install prettier using npm
         run: sudo npm install --global prettier
       - name: Install Hadolint and add to PATH
