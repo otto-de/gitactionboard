@@ -5,8 +5,8 @@ spotbugs {
 }
 
 dependencies {
-    spotbugs 'com.github.spotbugs:spotbugs:4.9.8'
-    spotbugs 'com.github.spotbugs:spotbugs-annotations:4.9.8'
+    spotbugs 'com.github.spotbugs:spotbugs:4.10.4'
+    spotbugs 'com.github.spotbugs:spotbugs-annotations:4.10.4'
 }
 
 spotbugsMain {

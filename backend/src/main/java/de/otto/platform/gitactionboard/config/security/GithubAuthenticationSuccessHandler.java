@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.time.Duration;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
@@ -59,7 +60,7 @@ public class GithubAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
       HttpServletRequest request, HttpServletResponse response, Authentication authentication)
       throws ServletException, IOException {
     final DefaultOAuth2User authenticationPrincipal =
-        (DefaultOAuth2User) authentication.getPrincipal();
+        Objects.requireNonNull((DefaultOAuth2User) authentication.getPrincipal());
 
     final Optional<OAuth2AuthorizedClient> optionalAuthorisedClient =
         Optional.ofNullable(getAuthorisedClient(authentication));
