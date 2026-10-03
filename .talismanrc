@@ -1,6 +1,4 @@
 fileignoreconfig:
-- filename: .talismanrc
-  checksum: fbf053c383e99155248d2eaf2c84f4936999377849bf380c5784b8f135512d1b
 - filename: talisman_report/talisman_reports/data/report.json
   checksum: 1105c64f71c0727a644ebdb6b8e8f0685132fa4e4d0ff756f173fde1df26e681
 - filename: .github/workflows/build.yml
@@ -193,4 +191,5 @@ allowed_patterns:
 - Lifecycle\]\(https:\/\/img\.shields.*
 - \"deprecated\":.*
 - \"@typescript-eslint/visitor-keys\":.*
+- \"eslint-visitor-keys\":.*
 version: "1.0"
