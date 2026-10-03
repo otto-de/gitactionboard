@@ -52,7 +52,7 @@
   },
   "overrides": {
     "@faker-js/faker": "^10.6.0",
-    "brace-expansion": "^5.0.9",
+    "brace-expansion": "^5.0.12",
     "qs": "^6.16.0",
     "vitest-canvas-mock": {
       "vitest": "$vitest"
