@@ -62,10 +62,10 @@
       ]
     },
     {
-      "login": "stdogr",
+      "login": "offbyabyte",
       "name": "Stefan Greis",
       "avatar_url": "https://avatars.githubusercontent.com/u/61870228?v=4",
-      "profile": "https://github.com/stdogr",
+      "profile": "https://github.com/offbyabyte",
       "contributions": [
         "code"
       ]
@@ -121,7 +121,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2461869?v=4",
       "profile": "https://github.com/baztian",
       "contributions": [
-        "bug"
+        "bug",
+        "design"
       ]
     },
     {
@@ -215,7 +216,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2127723?v=4",
       "profile": "https://fabasoad.com/",
       "contributions": [
-        "bug"
+        "bug",
+        "code"
       ]
     },
     {
