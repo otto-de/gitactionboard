@@ -31,6 +31,12 @@ jobs:
         with:
           path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/build/libs/gitactionboard.jar
           key: ${{ runner.os }}-bootjar-${{ hashFiles('**/*.gradle*') }}
+      - name: Set up Java
+        if: steps.boot-jar.outputs.cache-hit != 'true'
+        uses: actions/setup-java@v6
+        with:
+          java-version-file: ${{ env.SERVICE_NAME }}/backend/.java-version
+          distribution: 'corretto'
       - name: Install jenv
         if: steps.boot-jar.outputs.cache-hit != 'true'
         run: |
@@ -40,10 +46,10 @@ jobs:
         if: steps.boot-jar.outputs.cache-hit != 'true'
         run: |
           jenv init -
-          jenv add ${JAVA_HOME_21_X64}
+          jenv add ${JAVA_HOME_25_X64}
       - name: Install nvm at specific version
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
       - name: Get Date
         id: get-date
         run: |
