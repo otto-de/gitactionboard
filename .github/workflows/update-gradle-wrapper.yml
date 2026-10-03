@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-java@v6
         with:
           distribution: 'corretto'
-          java-version-file: 'backend/.java-version'
+          java-version-file: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/.java-version
           cache: 'gradle'
       - name: Update Gradle Wrapper
         uses: gradle-update/update-gradle-wrapper-action@v2

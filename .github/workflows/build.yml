@@ -28,7 +28,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v6
         with:
-          java-version-file: 'backend/.java-version'
+          java-version-file: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/.java-version
           distribution: 'corretto'
       - name: Install jenv
         run: |
@@ -173,7 +173,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v6
         with:
-          java-version-file: ${{ env.SERVICE_NAME }}/backend/.java-version
+          java-version-file: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/backend/.java-version
           distribution: 'corretto'
       - name: Install jenv
         run: |
