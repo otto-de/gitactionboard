@@ -2,6 +2,92 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.2.0](https://github.com/otto-de/gitactionboard/compare/v5.1.0...v5.2.0) (2026-10-31)
+
+### ⛰️ Features
+
+- Revamp UI ([f2633d9](https://github.com/otto-de/gitactionboard/commit/f2633d94544485b8e32e66dda4737bfaff26403e))
+
+### 🐛 Bug Fixes
+
+- Add missing enums for run status ([21401e0](https://github.com/otto-de/gitactionboard/commit/21401e0c2b3de872c68701fa9da809efd2aa4362))
+
+### 🛡️ Security
+
+- Bump follow-redirects ([68bac3d](https://github.com/otto-de/gitactionboard/commit/68bac3d91de94dd1d6e176e806e84e551c9ae035))
+
+- Bump the npm-security-updates group across 1 directory with 2 updates ([6a53e5e](https://github.com/otto-de/gitactionboard/commit/6a53e5e5ae2c4b7289d5b8b6f1408c1bb543ee70))
+
+- Bump shell-quote ([ea6a6a5](https://github.com/otto-de/gitactionboard/commit/ea6a6a55275e23db6fef4ba16f56a7b26b1e09d6))
+
+- Bump js-yaml ([cd08ddf](https://github.com/otto-de/gitactionboard/commit/cd08ddfc6b1b977e7d145c7b081ece6023f0fdec))
+
+- Bump @humanfs/node ([b5956e9](https://github.com/otto-de/gitactionboard/commit/b5956e917cb0d13be40100ea7a219c2d68173543))
+
+- Bump the npm-security-updates group across 1 directory with 3 updates ([6a32d8d](https://github.com/otto-de/gitactionboard/commit/6a32d8d8302c1679650fe09ef9b36000d7ece25b))
+
+- Bump hono ([19db7be](https://github.com/otto-de/gitactionboard/commit/19db7be6c18b1abd0cfcd0a06afe4d4e20011af8))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump org.openrewrite.rewrite ([ebf951d](https://github.com/otto-de/gitactionboard/commit/ebf951d88f549e19f5c958ab1c9fae932cf30d5b))
+
+- Bump org.apache.httpcomponents.client5:httpclient5 ([848d850](https://github.com/otto-de/gitactionboard/commit/848d850eaa4e2838d006857c99c5788f1ecdfd07))
+
+- Bump org.komamitsu:spring-data-sqlite ([1098bec](https://github.com/otto-de/gitactionboard/commit/1098bec7ab4303a2a2b5ed96b31b24ead99d5841))
+
+- Bump gradle-wrapper ([46335bc](https://github.com/otto-de/gitactionboard/commit/46335bc65f05620d8b7fd64eb120f0d38b52e8a2))
+
+- Bump @vitejs/plugin-vue ([fba69d1](https://github.com/otto-de/gitactionboard/commit/fba69d153b41f55bed147f2bcf949b94bbc438ac))
+
+- Bump org.xerial:sqlite-jdbc ([ea0028d](https://github.com/otto-de/gitactionboard/commit/ea0028ddb5212924b1e2942aaa8ebd578e1b560a))
+
+- Bump vue3-snapshot-serializer ([b27e372](https://github.com/otto-de/gitactionboard/commit/b27e3725a2dd4b7c564543e2ba85e316b8604e48))
+
+- Bump vitest-canvas-mock ([98cb809](https://github.com/otto-de/gitactionboard/commit/98cb809195c33b1d0aba595daf517d7717dad15b))
+
+- Bump alpine from 3.23.0 to 3.23.3 ([15df7c8](https://github.com/otto-de/gitactionboard/commit/15df7c80a92f59d9e245de997f0b8bbc92c2a10a))
+
+- Update frontend dependencies ([e88a215](https://github.com/otto-de/gitactionboard/commit/e88a215eccf262598a4ab6865cd3512d738c2920))
+
+- Upgrade backend dependencies ([0675f87](https://github.com/otto-de/gitactionboard/commit/0675f87895c75b8cba3c2932c5239aa1d18d6b33))
+
+- Bump the gradle-version-updates group across 1 directory with 3 updates ([bc66646](https://github.com/otto-de/gitactionboard/commit/bc66646c35701f6b4d6784ceb23b6530838a5c1d))
+
+- Bump alpine from 3.23.3 to 3.23.4 ([2eb26e2](https://github.com/otto-de/gitactionboard/commit/2eb26e2c6b37f7daa242891a7e55c0aef542728c))
+
+- Bump @vue/test-utils ([2172ee8](https://github.com/otto-de/gitactionboard/commit/2172ee8ac788aad00fdc2b0c03e13114d285b82f))
+
+- Bump dependencies ([884dedd](https://github.com/otto-de/gitactionboard/commit/884deddf490107ccb58b83346159c7892419d318))
+
+- Bump com.tngtech.archunit:archunit-junit5 ([f7ab00e](https://github.com/otto-de/gitactionboard/commit/f7ab00eba91f833994c31db40997641b1a74a970))
+
+- Bump eslint-plugin-vue ([d42afa2](https://github.com/otto-de/gitactionboard/commit/d42afa28dae791885f8a3cf44e2ca6a3f5603e29))
+
+- Upgrade alpine to v3.24.1 ([90fe948](https://github.com/otto-de/gitactionboard/commit/90fe94896311f2cf16f5eb21e69f353fceb4bedc))
+
+- Upgrade spring boot to 4.1.1 ([316ff14](https://github.com/otto-de/gitactionboard/commit/316ff14daef34b930bbfe12abf28a4527c8af44c))
+
+- Bump chartjs-plugin-autocolors ([f37a3ec](https://github.com/otto-de/gitactionboard/commit/f37a3ec40fd66b33f0fcddc5b176c80a4e9a9537))
+
+- Bump java from 21 to 25 ([#1459](https://github.com/otto-de/gitactionboard/issues/1459)) ([6c20bf3](https://github.com/otto-de/gitactionboard/commit/6c20bf3b4a0a65083078fa982c375089057fef32))
+
+- Bump alpine from 3.24.1 to 3.24.2 ([#1465](https://github.com/otto-de/gitactionboard/issues/1465)) ([7ff202c](https://github.com/otto-de/gitactionboard/commit/7ff202cc1abb146cac35e82dff0aac6f1679218a))
+
+- Fix workflows path reference ([764c0de](https://github.com/otto-de/gitactionboard/commit/764c0de40ca02204a5b31db1330e69b37b2a65ad))
+
+- Update .talismanrc file ([42598ed](https://github.com/otto-de/gitactionboard/commit/42598ed631d84255e854a9a50842c4e4c1f1ae61))
+
+- Update contributors list ([7030a2d](https://github.com/otto-de/gitactionboard/commit/7030a2d67c0e1f201103ca688837a8b1b9fbe9bd))
+
+### 📚 Documentation
+
+- Update changelog ([862bd0f](https://github.com/otto-de/gitactionboard/commit/862bd0f8d2f3694bb48d3f026a5bd09297214390))
+
+### Ci
+
+- Bump GitHub Actions to the latest version ([#1256](https://github.com/otto-de/gitactionboard/issues/1256)) ([f8a1979](https://github.com/otto-de/gitactionboard/commit/f8a1979a52a360efdfba03cd112f8dcdfa541261))
+
 ## [v5.1.0](https://github.com/otto-de/gitactionboard/compare/v5.0.1...v5.1.0) (2025-12-13)
 
 ### ⛰️ Features
@@ -326,14 +412,6 @@ All notable changes to this project will be documented in this file.
 
 ## [v4.0.2](https://github.com/otto-de/gitactionboard/compare/v4.0.1...v4.0.2) (2024-04-06)
 
-### 🛡️ Security
-
-- Update com.nimbusds:nimbus-jose-jwt version to fix [CVE-2023-52428](https://nvd.nist.gov/vuln/detail/CVE-2023-52428) ([804500a](https://github.com/otto-de/gitactionboard/commit/804500ad23c7c50fa5af34b08fcd7a81dea1c4c1))
-
-- Remove OWASP dependency suppression for [CVE-2023-45960](https://nvd.nist.gov/vuln/detail/CVE-2023-45960) ([fd39229](https://github.com/otto-de/gitactionboard/commit/fd39229eeead43cff0e10b22955734117e0bea45))
-
-- Suppress CVEs related to openrewrite ([4ec4070](https://github.com/otto-de/gitactionboard/commit/4ec4070e94931407e3f32b894af15a9b6d5a0096))
-
 ### ⚙️ Miscellaneous Tasks
 
 - Bump actions/cache from 3 to 4 ([75fa1af](https://github.com/otto-de/gitactionboard/commit/75fa1afe6783b2f4652b115eba0a6a2854923621))
@@ -350,7 +428,13 @@ All notable changes to this project will be documented in this file.
 
 - Remove explicit versioning for logback ([5737fa3](https://github.com/otto-de/gitactionboard/commit/5737fa3da99e9234f14366148652c9206f9b672c))
 
-- Update .talismanrc to suppress sha1-\* ([7744e62](https://github.com/otto-de/gitactionboard/commit/7744e62abef7c65b54dee09bfc1b05cf9c912cc1))
+- Update com.nimbusds:nimbus-jose-jwt version to fix [CVE-2023-52428](https://nvd.nist.gov/vuln/detail/CVE-2023-52428) ([804500a](https://github.com/otto-de/gitactionboard/commit/804500ad23c7c50fa5af34b08fcd7a81dea1c4c1))
+
+- Remove OWASP dependency suppression for [CVE-2023-45960](https://nvd.nist.gov/vuln/detail/CVE-2023-45960) ([fd39229](https://github.com/otto-de/gitactionboard/commit/fd39229eeead43cff0e10b22955734117e0bea45))
+
+- Suppress CVEs related to openrewrite ([4ec4070](https://github.com/otto-de/gitactionboard/commit/4ec4070e94931407e3f32b894af15a9b6d5a0096))
+
+- Update .talismanrc to suppress sha1-* ([7744e62](https://github.com/otto-de/gitactionboard/commit/7744e62abef7c65b54dee09bfc1b05cf9c912cc1))
 
 ### 📚 Documentation
 
@@ -384,10 +468,6 @@ All notable changes to this project will be documented in this file.
 
 - Upgrade node version to v20 ([8cf5b98](https://github.com/otto-de/gitactionboard/commit/8cf5b98d01ff7a0487225f39ca12cff4498e7f11))
 
-### 🛡️ Security
-
-- Update logback version to fix [CVE-2023-6378](https://nvd.nist.gov/vuln/detail/CVE-2023-6378) ([bb33755](https://github.com/otto-de/gitactionboard/commit/bb33755a879d53295bf54d715cbe62dd0f6c1ba1))
-
 ### ⚡ Performance
 
 - Enable java virtual threads to improve performance ([19ac181](https://github.com/otto-de/gitactionboard/commit/19ac1815693c8515d0090fcdcc5c2b5ca071f4ce))
@@ -397,6 +477,8 @@ All notable changes to this project will be documented in this file.
 - Add mock backend data to run backend server locally ([7d59cb7](https://github.com/otto-de/gitactionboard/commit/7d59cb736ae9509d8af5ad592e9b64a76f6c0211))
 
 - Update Gradle Wrapper from 8.4 to 8.5. ([#529](https://github.com/otto-de/gitactionboard/issues/529)) ([c2d2b82](https://github.com/otto-de/gitactionboard/commit/c2d2b820de8393645df0cef9861c19cdb1dd7303))
+
+- Update logback version to fix [CVE-2023-6378](https://nvd.nist.gov/vuln/detail/CVE-2023-6378) ([bb33755](https://github.com/otto-de/gitactionboard/commit/bb33755a879d53295bf54d715cbe62dd0f6c1ba1))
 
 - Bump actions/setup-java from 3 to 4 ([#532](https://github.com/otto-de/gitactionboard/issues/532)) ([794e014](https://github.com/otto-de/gitactionboard/commit/794e014b12ef17d1c38d07a5909e49ef34eff76a))
 
@@ -424,7 +506,7 @@ All notable changes to this project will be documented in this file.
 
 - ([#484](https://github.com/otto-de/gitactionboard/issues/484)) Add missing waiting run status ([abfb062](https://github.com/otto-de/gitactionboard/commit/abfb062a14441561bfd1ff276191f770fb467755))
 
-### 🛡️ Security
+### ⚙️ Miscellaneous Tasks
 
 - Suppress [CVE-2023-45960](https://nvd.nist.gov/vuln/detail/CVE-2023-45960) and remove [CVE-2023-2976](https://nvd.nist.gov/vuln/detail/CVE-2023-2976) from supression list ([787ed14](https://github.com/otto-de/gitactionboard/commit/787ed14578558fd80f77f581b9fd778eaea23f1f))
 
@@ -440,11 +522,9 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
-- Fix five months is seconds calculation ([b8269c2](https://github.com/otto-de/gitactionboard/commit/b8269c29b8b523a5eb559c7c02fd08429ae38f88))
-
-### 🛡️ Security
-
 - Update npm dependencies to fix security vulnerabilities ([6430114](https://github.com/otto-de/gitactionboard/commit/64301141888131d6a379e59473cfae915c178957))
+
+- Fix five months is seconds calculation ([b8269c2](https://github.com/otto-de/gitactionboard/commit/b8269c29b8b523a5eb559c7c02fd08429ae38f88))
 
 ### 🚜 Refactor
 
@@ -478,7 +558,7 @@ All notable changes to this project will be documented in this file.
 
 - Fix GitHub Oauth2 logout process ([6fd71e7](https://github.com/otto-de/gitactionboard/commit/6fd71e7f65cb392f42eeb4639867c2ff2a65c6ea))
 
-### 🛡️ Security
+### 🚜 Refactor
 
 - Remove usage of deprecated methods from Spring security ([0314ca3](https://github.com/otto-de/gitactionboard/commit/0314ca3b1c383b5d266e2dd9d9ea65408efda3fc))
 
@@ -502,15 +582,13 @@ All notable changes to this project will be documented in this file.
 
 ## [v3.3.4](https://github.com/otto-de/gitactionboard/compare/v3.3.3...v3.3.4) (2023-07-25)
 
-### 🛡️ Security
-
-- Remove [CVE-2023-35116](https://nvd.nist.gov/vuln/detail/CVE-2023-35116) from suppression list ([d1955ca](https://github.com/otto-de/gitactionboard/commit/d1955cac59adc50e661214ae58cdf1b386611206))
-
 ### ⚙️ Miscellaneous Tasks
 
 - Bump actions/upload-pages-artifact from 1 to 2 ([8e48c93](https://github.com/otto-de/gitactionboard/commit/8e48c9390cba7048ade261bd142e947ecf8b1798))
 
 - Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 ([dd15953](https://github.com/otto-de/gitactionboard/commit/dd159531ec9512888e79e92b128808db17ec75a2))
+
+- Remove [CVE-2023-35116](https://nvd.nist.gov/vuln/detail/CVE-2023-35116) from suppression list ([d1955ca](https://github.com/otto-de/gitactionboard/commit/d1955cac59adc50e661214ae58cdf1b386611206))
 
 ### 📚 Documentation
 
@@ -523,14 +601,6 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 - ([#380](https://github.com/otto-de/gitactionboard/issues/380)) Consume status for /{workflowId}/runs api as string instead of Enum ([3bc1442](https://github.com/otto-de/gitactionboard/commit/3bc1442b38b2a78d9b98b3f04ce2c1b223c5229a))
-
-### 🛡️ Security
-
-- Rename security-checks paramter to scanners for trivy ([3864199](https://github.com/otto-de/gitactionboard/commit/3864199f57153122e4aab362f04bdaa0a789ff19))
-
-- Suppress [CVE-2023-2976](https://nvd.nist.gov/vuln/detail/CVE-2023-2976) and [CVE-2023-35116](https://nvd.nist.gov/vuln/detail/CVE-2023-35116) ([ed38c7e](https://github.com/otto-de/gitactionboard/commit/ed38c7e4fa6336bb9505c4a9591898544c39f93f))
-
-- Temporarily omit dev and optional frontend dependencies from checks as fix is not available for [CVE-2022-25883](https://nvd.nist.gov/vuln/detail/CVE-2022-25883) and [CVE-2023-26115](https://nvd.nist.gov/vuln/detail/CVE-2023-26115) ([c49332e](https://github.com/otto-de/gitactionboard/commit/c49332ed23854ff33290755a79ef7d54ae2be56c))
 
 ### 🧪 Testing
 
@@ -545,6 +615,14 @@ All notable changes to this project will be documented in this file.
 - Update frontend dependencies ([f45599d](https://github.com/otto-de/gitactionboard/commit/f45599df1618828ee22c818f56263e3b0e932697))
 
 - Fix formatting for index.html ([ca446d5](https://github.com/otto-de/gitactionboard/commit/ca446d5c089a4b1457ebe83e7e289ec716c2a757))
+
+### 👷 Build
+
+- Rename security-checks paramter to scanners for trivy ([3864199](https://github.com/otto-de/gitactionboard/commit/3864199f57153122e4aab362f04bdaa0a789ff19))
+
+- Suppress [CVE-2023-2976](https://nvd.nist.gov/vuln/detail/CVE-2023-2976) and [CVE-2023-35116](https://nvd.nist.gov/vuln/detail/CVE-2023-35116) ([ed38c7e](https://github.com/otto-de/gitactionboard/commit/ed38c7e4fa6336bb9505c4a9591898544c39f93f))
+
+- Temporarily omit dev and optional frontend dependencies from checks as fix is not available for [CVE-2022-25883](https://nvd.nist.gov/vuln/detail/CVE-2022-25883) and [CVE-2023-26115](https://nvd.nist.gov/vuln/detail/CVE-2023-26115) ([c49332e](https://github.com/otto-de/gitactionboard/commit/c49332ed23854ff33290755a79ef7d54ae2be56c))
 
 ### 📚 Documentation
 
@@ -577,8 +655,6 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 - ([#344](https://github.com/otto-de/gitactionboard/issues/344)) Build filter on preference page ([6dcf5a2](https://github.com/otto-de/gitactionboard/commit/6dcf5a23a441cdbf4910b21e61cc0d295e9a67eb))
-
-### 🛡️ Security
 
 - Explicitly upgrade libssl3 and libcrypto3 for fix [CVE-2023-2650](https://nvd.nist.gov/vuln/detail/CVE-2023-2650) ([1d2ddbd](https://github.com/otto-de/gitactionboard/commit/1d2ddbdadc3b7272f38b3eab1ab0c7d3bf18f31f))
 
@@ -618,17 +694,13 @@ All notable changes to this project will be documented in this file.
 
 - Add missed GitHub merge_group and schedule event ([a49ddc1](https://github.com/otto-de/gitactionboard/commit/a49ddc1bbd2c6e3cbe49fbc96b69ce1ba9334fd1))
 
-### 🛡️ Security
-
-- Use alpine 3.18.0 to fix cves related to libssl and libcrypto ([74f8a23](https://github.com/otto-de/gitactionboard/commit/74f8a23bddcf7f4ca5da5654576d1503cc7b83dc))
-
-- Provide link for CVE on changelog file ([3f220bb](https://github.com/otto-de/gitactionboard/commit/3f220bba7c709ab55d259f4d79857bde61cb837e))
-
 ### ⚙️ Miscellaneous Tasks
 
 - Deploy demo website to GitHub pages ([86b239f](https://github.com/otto-de/gitactionboard/commit/86b239f1694ac899cac3b2da0b378cddb6a05935))
 
 - Update vuetify and jsdom to latest version ([6a800ec](https://github.com/otto-de/gitactionboard/commit/6a800eca69205a54a53265c12522b221c49c1e4e))
+
+- Use alpine 3.18.0 to fix cves related to libssl and libcrypto ([74f8a23](https://github.com/otto-de/gitactionboard/commit/74f8a23bddcf7f4ca5da5654576d1503cc7b83dc))
 
 - Cleanup unnecessary fixtures ([9427137](https://github.com/otto-de/gitactionboard/commit/94271379535b5ea1f35b590885cd628a7543c58f))
 
@@ -639,6 +711,8 @@ All notable changes to this project will be documented in this file.
 - Use git-cliff to generate changelog as part of CI process ([8d367d5](https://github.com/otto-de/gitactionboard/commit/8d367d5d14b9ed5801873d0accb87fbf796ea933))
 
 - Update git cliff config to skip talisman suppression commits ([c8aed12](https://github.com/otto-de/gitactionboard/commit/c8aed12401ef10e61cd0d8fa1c903506f45fb6b2))
+
+- Provide link for CVE on changelog file ([3f220bb](https://github.com/otto-de/gitactionboard/commit/3f220bba7c709ab55d259f4d79857bde61cb837e))
 
 - Add write permission for update_changelog job ([ac7ef43](https://github.com/otto-de/gitactionboard/commit/ac7ef43f7641e64333d131bd9d283a69add196b9))
 
@@ -672,9 +746,7 @@ All notable changes to this project will be documented in this file.
 
 - Introduce long-awaited dark theme ([ae0fbc1](https://github.com/otto-de/gitactionboard/commit/ae0fbc19e035630843e6a2b2a5afc0f13c09e8cb))
 
-### 🛡️ Security
-
-- Remove [CVE-2022-1471](https://nvd.nist.gov/vuln/detail/CVE-2022-1471) from dependency check suppression file ([c865114](https://github.com/otto-de/gitactionboard/commit/c865114d9bb64c1760981da95209a56a95acebc2))
+### 🐛 Bug Fixes
 
 - Explicitly upgrade libssl3 and libcrypto3 for fix [CVE-2023-1255](https://nvd.nist.gov/vuln/detail/CVE-2023-1255) ([53b5b77](https://github.com/otto-de/gitactionboard/commit/53b5b7731bd1fd835260f67423ed5f6bcac40607))
 
@@ -693,6 +765,8 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Bump dependabot/fetch-metadata from 1.3.6 to 1.4.0 ([b877470](https://github.com/otto-de/gitactionboard/commit/b877470c37e07aeef121b1494c2410a422219454))
+
+- Remove [CVE-2022-1471](https://nvd.nist.gov/vuln/detail/CVE-2022-1471) from dependency check suppression file ([c865114](https://github.com/otto-de/gitactionboard/commit/c865114d9bb64c1760981da95209a56a95acebc2))
 
 - Upgrade gradle to v8.1.1 ([b3330d6](https://github.com/otto-de/gitactionboard/commit/b3330d629b56e887f20fe6bc9dd07dac8628fac1))
 
@@ -722,7 +796,7 @@ All notable changes to this project will be documented in this file.
 
 - ([#162](https://github.com/otto-de/gitactionboard/issues/162)) Display gitactionboard version on dashboard ([ad8df47](https://github.com/otto-de/gitactionboard/commit/ad8df47715e951c61f2f61215754775cd1f38d06))
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Fix [CVE-2023-0464](https://nvd.nist.gov/vuln/detail/CVE-2023-0464) related to libcrypto3 and libssl3 ([03bb494](https://github.com/otto-de/gitactionboard/commit/03bb494f251d1201a01eedc9380b44fa737e817b))
 
@@ -756,11 +830,7 @@ All notable changes to this project will be documented in this file.
 
 ### 🛡️ Security
 
-- Suppress [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064) ([8e1174c](https://github.com/otto-de/gitactionboard/commit/8e1174c667539f6d4fadeb6658153b51b89b35d7))
-
 - Remove explicit libssl3 libcrypto3 upgrade from dockerfile ([2427914](https://github.com/otto-de/gitactionboard/commit/2427914687455996c2da116062aaa2ccc2decadb))
-
-- Remove [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064) from suppression list ([5675197](https://github.com/otto-de/gitactionboard/commit/56751970d157aec42e9c60e05ba8e4a0c60317c6))
 
 - Fix cve related to libcrypto3 and libssl3 ([2eb1a47](https://github.com/otto-de/gitactionboard/commit/2eb1a47215f8305a49089b6c229dcce9bf4dee1c))
 
@@ -772,11 +842,15 @@ All notable changes to this project will be documented in this file.
 
 - Bump docker/build-push-action from 3 to 4 ([c85b856](https://github.com/otto-de/gitactionboard/commit/c85b856f9aec5bf7c7607af57dbc8c0afa0b4708))
 
+- Remove [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064) from suppression list ([5675197](https://github.com/otto-de/gitactionboard/commit/56751970d157aec42e9c60e05ba8e4a0c60317c6))
+
 ### 👷 Build
 
 - Fine tune paths for codeql analysis ([7ef98e8](https://github.com/otto-de/gitactionboard/commit/7ef98e83bbc825de7aad4ff971846f9af59f2960))
 
 - Run dependency checks for pull request created by dependabot ([3575ae3](https://github.com/otto-de/gitactionboard/commit/3575ae3338cb48da576106be83e0df10be4d4b17))
+
+- Suppress [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064) ([8e1174c](https://github.com/otto-de/gitactionboard/commit/8e1174c667539f6d4fadeb6658153b51b89b35d7))
 
 - Remove explicit toolVersion for checkstyle and pmd plugin ([c16775f](https://github.com/otto-de/gitactionboard/commit/c16775fa16d5af8dd43be86580fa871c3bad0a6d))
 
@@ -798,8 +872,6 @@ All notable changes to this project will be documented in this file.
 
 ### 🛡️ Security
 
-- Suppress [CVE-2022-1471](https://nvd.nist.gov/vuln/detail/CVE-2022-1471) ([fe3fc21](https://github.com/otto-de/gitactionboard/commit/fe3fc21caccaaa610115e26d3d77ec06ff18087a))
-
 - Upgrade libssl3 and libcrypto3 to fix [CVE-2022-3996](https://nvd.nist.gov/vuln/detail/CVE-2022-3996) ([a211f90](https://github.com/otto-de/gitactionboard/commit/a211f90f2191a5f6ee93bc6c3b8cd7aca5997cae))
 
 ### 🚜 Refactor
@@ -817,6 +889,8 @@ All notable changes to this project will be documented in this file.
 ### 👷 Build
 
 - Configure boring cyborg ([5961013](https://github.com/otto-de/gitactionboard/commit/5961013bd640c8b215d251e443689ffa5144d79d))
+
+- Suppress [CVE-2022-1471](https://nvd.nist.gov/vuln/detail/CVE-2022-1471) ([fe3fc21](https://github.com/otto-de/gitactionboard/commit/fe3fc21caccaaa610115e26d3d77ec06ff18087a))
 
 - Merge backend and frontend PR automerge workflow ([775714e](https://github.com/otto-de/gitactionboard/commit/775714e01942108f7f682d19bd396153fa5cc2bc))
 
@@ -856,7 +930,7 @@ All notable changes to this project will be documented in this file.
 
 - Allow everyone to access resources from /assets ([64c1e3f](https://github.com/otto-de/gitactionboard/commit/64c1e3f680e56335da8d4dc828fa0d5166a4d48a))
 
-### 🛡️ Security
+### 🚜 Refactor
 
 - Remove unnecessary whitelisted endpoint from security config ([2d7d4a4](https://github.com/otto-de/gitactionboard/commit/2d7d4a4b0a4511500deb592373d786d3216f4d07))
 
@@ -884,10 +958,6 @@ All notable changes to this project will be documented in this file.
 
 ## [v3.0.3](https://github.com/otto-de/gitactionboard/compare/v3.0.2...v3.0.3) (2022-11-20)
 
-### 🛡️ Security
-
-- Suppress [CVE-2022-42920](https://nvd.nist.gov/vuln/detail/CVE-2022-42920) ([fcd4ed8](https://github.com/otto-de/gitactionboard/commit/fcd4ed8f13ea6a3f4d1824053cc692e7a3c8fd1d))
-
 ### ⚡ Performance
 
 - Use custom build JRE to reduce the docker image size ([c404c21](https://github.com/otto-de/gitactionboard/commit/c404c2161e17bbbc49864a164cfe992775499aa0))
@@ -897,6 +967,8 @@ All notable changes to this project will be documented in this file.
 - Bump dependabot/fetch-metadata from 1.3.4 to 1.3.5 ([5496c1b](https://github.com/otto-de/gitactionboard/commit/5496c1bbc07d3cc4f969c943997e0b425735e216))
 
 ### 👷 Build
+
+- Suppress [CVE-2022-42920](https://nvd.nist.gov/vuln/detail/CVE-2022-42920) ([fcd4ed8](https://github.com/otto-de/gitactionboard/commit/fcd4ed8f13ea6a3f4d1824053cc692e7a3c8fd1d))
 
 - Suppress talisman warnings ([b0a003c](https://github.com/otto-de/gitactionboard/commit/b0a003ca065d1ed323b4c785f920ee5d4e37431f))
 
@@ -912,7 +984,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v3.0.2](https://github.com/otto-de/gitactionboard/compare/v3.0.1...v3.0.2) (2022-11-03)
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Update spring security version to fix [CVE-2022-31690](https://nvd.nist.gov/vuln/detail/CVE-2022-31690), [CVE-2022-31692](https://nvd.nist.gov/vuln/detail/CVE-2022-31692) ([29177d0](https://github.com/otto-de/gitactionboard/commit/29177d059ebc2b989fe01e608e31a770fc0daa71))
 
@@ -974,7 +1046,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v3.0.1](https://github.com/otto-de/gitactionboard/compare/v3.0.0...v3.0.1) (2022-10-08)
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Update docker base image to fix [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097) and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434) ([3b839b0](https://github.com/otto-de/gitactionboard/commit/3b839b0cb0834b8ccc9444b37e70952763bbd9ca))
 
@@ -1056,11 +1128,9 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
-- Fix alignment issue with menu items ([bbb48a3](https://github.com/otto-de/gitactionboard/commit/bbb48a3d0d19b581b8b354654e0a60e7e8cd82b0))
-
-### 🛡️ Security
-
 - Update snakeyaml version to fix [CVE-2022-25857](https://nvd.nist.gov/vuln/detail/CVE-2022-25857) ([c803bfb](https://github.com/otto-de/gitactionboard/commit/c803bfb244ec6d55a720ea6060237d5aefdfd9c8))
+
+- Fix alignment issue with menu items ([bbb48a3](https://github.com/otto-de/gitactionboard/commit/bbb48a3d0d19b581b8b354654e0a60e7e8cd82b0))
 
 ### 🚜 Refactor
 
@@ -1192,7 +1262,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v2.0.7](https://github.com/otto-de/gitactionboard/compare/v2.0.6...v2.0.7) (2022-05-25)
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Update spring dependency to fix [CVE-2022-22970](https://nvd.nist.gov/vuln/detail/CVE-2022-22970), [CVE-2022-22978](https://nvd.nist.gov/vuln/detail/CVE-2022-22978) and [CVE-2022-29885](https://nvd.nist.gov/vuln/detail/CVE-2022-29885) ([c632e04](https://github.com/otto-de/gitactionboard/commit/c632e0415ddb2dc9f968c6e1204feb9fa1ae48e3))
 
@@ -1204,15 +1274,13 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
-- Make page scrollable so that side bar is always accessible ([d5cf429](https://github.com/otto-de/gitactionboard/commit/d5cf4298bf3b10c5200d2fb230f1895e263f5faa))
-
-- Log correct information when authentication is disabled ([e492ce0](https://github.com/otto-de/gitactionboard/commit/e492ce0f7bd9b34141129fe012eeea6e0d750abb))
-
-### 🛡️ Security
-
 - Move to amazoncorretto docker base image from openjdk to fix security vulnerabilities ([d1f7cf5](https://github.com/otto-de/gitactionboard/commit/d1f7cf5e133d514f6b64453a485851a26e4109d5))
 
 - Update npm dependencies to fix security vulnerabilities ([534ce21](https://github.com/otto-de/gitactionboard/commit/534ce210555f3ad4b86dd5da0107e32aba8791dd))
+
+- Make page scrollable so that side bar is always accessible ([d5cf429](https://github.com/otto-de/gitactionboard/commit/d5cf4298bf3b10c5200d2fb230f1895e263f5faa))
+
+- Log correct information when authentication is disabled ([e492ce0](https://github.com/otto-de/gitactionboard/commit/e492ce0f7bd9b34141129fe012eeea6e0d750abb))
 
 ### 👷 Build
 
@@ -1226,7 +1294,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v2.0.5](https://github.com/otto-de/gitactionboard/compare/v2.0.4...v2.0.5) (2022-04-25)
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Update spring dependencies to fix [CVE-2022-22968](https://nvd.nist.gov/vuln/detail/CVE-2022-22968) ([0aeb21f](https://github.com/otto-de/gitactionboard/commit/0aeb21f9c0e99ea6308d9493c3f2b4a39d930f4c))
 
@@ -1244,7 +1312,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v2.0.4](https://github.com/otto-de/gitactionboard/compare/v2.0.3...v2.0.4) (2022-04-01)
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Update spring boot version to fix [CVE-222-22965](https://nvd.nist.gov/vuln/detail/CVE-222-22965) ([359147d](https://github.com/otto-de/gitactionboard/commit/359147dcbe97a83727ee3f9ccf16eb9b901f8434))
 
@@ -1256,11 +1324,9 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
-- Intermittent solution to prevent RCE with Spring Core ([52c17b5](https://github.com/otto-de/gitactionboard/commit/52c17b5220769b721058967ee723140067d9f708))
-
-### 🛡️ Security
-
 - Update dependency to fix [CVE-2022-23181](https://nvd.nist.gov/vuln/detail/CVE-2022-23181) ([5140721](https://github.com/otto-de/gitactionboard/commit/514072123190105fab84cbbbd30dc5b04a182744))
+
+- Intermittent solution to prevent RCE with Spring Core ([52c17b5](https://github.com/otto-de/gitactionboard/commit/52c17b5220769b721058967ee723140067d9f708))
 
 ### 👷 Build
 
@@ -1272,7 +1338,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v2.0.2](https://github.com/otto-de/gitactionboard/compare/v2.0.1...v2.0.2) (2022-03-31)
 
-### 🛡️ Security
+### 🐛 Bug Fixes
 
 - Update dependency to fix [CVE-2020-36518](https://nvd.nist.gov/vuln/detail/CVE-2020-36518) ([3926e50](https://github.com/otto-de/gitactionboard/commit/3926e505b027b0bc5677b84ae1cab54bbdbe8bc0))
 
